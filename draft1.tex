@@ -28,7 +28,6 @@ lightness}
 \maketitle
 
 \section{Introduction}
-I am trying to add to git.
 The color of an object has important behavioral implications. This important property of an object is perceived from the light reflected off the object surface. The reflected light depends not just on the properties intrinsic to the object, such as the object's surface reflectance, its texture, material properties and geometry (shape, size, orientation), but also on extrinsic factors that depend on the object's surround (Fig. \ref{fig:introSchematic}). The surround dependent extrinsic factors that affect the reflected light are: the surface reflectance, texture and material properties of the objects in the surround, the illumination spectrum of the sources of light illuminating the object, the geometry, relative position and pose of the objects and light sources in the surround, and the position of the observer. As these extrinsic factors vary considerably from scene to scene, the challenge faced by the visual system is to recover a stable perceptual representation of the object's surface reflectance, ignoring the  variations in the reflected light resulting from the extrinsic factors. The ability of the visual system to extract such a stable representation, its perceived color, is called color constancy. We are interested in identifying the computations that lead to such constancy.
 
 In this work, we study a simpler analogue of color constancy called lightness constancy. Here, we consider the lightness component of the 3D color space. Lightness is the attribute that determines the brightness of a color. For achromatic objects, it is the property that changes from black to gray to white. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. We study the effects of variations in the reflected light on the perceived lightness of an object.
@@ -239,63 +238,7 @@ In this work we have studied the effects of spectral variations on perceived lig
     \caption{{\bf Receptive fields and lightness estimates. Case 3:}  Same as Fig. \ref{fig:case9AllResults}.}
 \end{figure}
 
-\begin{comment}
 % Figure 8
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.3 \textwidth}
-		\centering
-        \includegraphics[width=\textwidth]{Figure8/case9AcrossCaseComparisonSVD.pdf}
-        \caption{SVD RFs of Case 1}
-        \label{fig:case9AcrossCaseComparisonSVD}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3 \textwidth}   
-        \includegraphics[width=\textwidth]{Figure8/case10AcrossCaseComparisonSVD.pdf}
-        \caption{SVD RFs of Case 2}
-        \label{fig:case10AcrossCaseComparisonSVD}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{Figure8/case12AcrossCaseComparisonSVD.pdf}
-        \caption{SVD RFs of Case 3}
-        \label{fig:case12AcrossCaseComparisonSVD}
-    \end{subfigure}
-    \label{fig:SVDComparison}
-    \caption{SVD Filter Comparison:}
-\end{figure}
-
-% Figure 9
-\begin{figure}
-\centering
-\begin{subfigure}[b]{0.3 \textwidth}
-		\centering
-        \includegraphics[width=\textwidth]{Figure9/case9AcrossCaseComparisonAMA.pdf}
-        \caption{AMA RFs of Case 1}
-        \label{fig:case9AcrossCaseComparisonAMA}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3 \textwidth}   
-        \includegraphics[width=\textwidth]{Figure9/case10AcrossCaseComparisonAMA.pdf}
-        \caption{AMA RFs of Case 2}
-        \label{fig:case10AcrossCaseComparisonAMA}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{Figure9/case12AcrossCaseComparisonAMA.pdf}
-        \caption{AMA RFs of Case 3}
-        \label{fig:case12AcrossCaseComparisonAMA}
-    \end{subfigure}
-    \label{fig:AMAComparison}
-    \caption{AMA Filter Comparison:}
-\end{figure}
-\end{comment}
-
-% Figure 10
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.3 \textwidth}
@@ -343,7 +286,7 @@ To overcome this  challenge, we have developed an image rendering software pipel
 
 The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
 
-% Figure 11
+% Figure 9
 \begin{figure}[t]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
@@ -388,7 +331,7 @@ The process of generating an individual virtual scene begins with the selection 
 
 VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted in the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from materials made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library.
 
-% Figure 12
+% Figure 10
 \begin{figure}[h]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
@@ -436,7 +379,7 @@ The size, position and orientation of the inserted objects and lights may be spe
 Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign the illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
 [GOT TO HERE.  DHB.]
-% Figure13
+% Figure11
 \begin{figure}
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
@@ -490,7 +433,7 @@ For the images used in this work, we first selected the ``{\it Library}'' base s
 \subsection{Illumination Spectrum}
 The illumination spectrum is generated through a random statistical sampling of a natural illumination spectrum dataset. First, we decompose the spectra in the database as a linear sum using principle component analysis (PCA) basis vectors. This decomposition is approximated by taking a sum over the PCA basis vectors corresponding to the largest 6 eigenvalues. Random spectra are sampled from this low 6 dimensional PCA space assuming the spectral distribution to be a multivariate gaussian.
 
-% Figure 14
+% Figure 12
 \begin{figure}
 \centering
 	\includegraphics[width=\textwidth]{Figure14/illumination.pdf}
@@ -522,7 +465,7 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 \end{align}
 Finally $\tilde{I}(\lambda)$ is rescaled by a uniform random number between [0, 300].
 
-% Figure 15
+% Figure 13
 \subsection{Reflectance Spectrum}
 \begin{figure}
 \centering
@@ -561,7 +504,7 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 such that $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, the new surface reflectance 
 is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.
 
-% Figure 16
+% Figure 14
 \begin{figure}
 \centering
 	\includegraphics[width=\textwidth]{Figure16/target.pdf}
@@ -625,12 +568,12 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 \subsection{Explanation of the various cases}
 In this work we have labeled the images using the lightness of the target object under  standard daylight spectrum ($D_65$). The images are labeled such that the total light reflected from the target object equals a fixed value. At this fixed value, we generate multiple images with variations in the spectral properties of the objects and the light sources. At fixed target lightness (Y65), spectral variations can result from variations in the shape of: 1. Target surface reflectance spectrum, 2. Background object surface reflectance, and 3. Spectral power distribution of the light source. These give rise to 12 distinct cases (Fig. \ref{fig:caseIcons}). The icons on the left and the top represent the spectrum of the illuminant, the background and the target object. For the illuminant and background, only one curve in the represents fixed spectra from image to image. Two curve imply that the spectra were varied randomly from image to image. For the target object, we show the spectrum at two distinct lightness levels. At a particular level, the meaning of the curves is the same as that of illuminant and background icons. Additionally, same shape of the target reflectance spectrum at both the levels means that Y65 was changed by changing the mean value of the surface reflectance spectrum keeping the same shape.
 
-\begin{figure}
-\centering
-	\includegraphics[width=0.6 \textwidth]{cases.pdf}
-    \caption{\bf{Spectral variations considered in our analysis.} }
-    \label{fig:casesIcons}
-\end{figure}
+%\begin{figure}
+%\centering
+%	\includegraphics[width=0.6 \textwidth]{cases.pdf}
+%    \caption{\bf{Spectral variations considered in our analysis.} }
+%    \label{fig:casesIcons}
+% \end{figure}
 
 To illustrate, in case 1 the spectral power distribution of the light source and the surface reflectance of the background objects are fixed from image to image. Further, the shape of the target object surface reflectance also remains the same from to image to image at the same standard lightness level, and only vary in their mean value between standard luminance levels. Thus in case 1, at one standard lightness, all images are identical (Fig. . This is the simplest possible scene variation considered here. Similarly, in the most complex case, case 12, all the spectra are allowed to vary from image to image. 
 
