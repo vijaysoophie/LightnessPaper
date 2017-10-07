@@ -1,0 +1,141 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{%
+Burge%
+\ \BBA{} Jaini%
+}{%
+Burge%
+\ \BBA{} Jaini%
+}{%
+{\protect\APACyear{2017}}%
+}]{%
+burge2017accuracy}%
+\APACinsertmetastar{%
+burge2017accuracy}%
+Burge, J.%
+\BCBT{}\ \BBA{} Jaini, P.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Accuracy Maximization Analysis for Sensory-Perceptual
+  Tasks: Computational Improvements, Filter Robustness, and Coding Advantages
+  for Scaled Additive Noise}{Accuracy maximization analysis for
+  sensory-perceptual tasks: Computational improvements, filter robustness, and
+  coding advantages for scaled additive noise}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{PLoS computational biology}{13}{2}{e1005281}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Geisler%
+, Najemnik%
+\BCBL{}\ \BBA{} Ing%
+}{%
+Geisler%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2009}}%
+}]{%
+geisler2009optimal}%
+\APACinsertmetastar{%
+geisler2009optimal}%
+Geisler, W\BPBI S.%
+, Najemnik, J.%
+\BCBL{}\ \BBA{} Ing, A\BPBI D.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Optimal stimulus encoders for natural tasks}{Optimal
+  stimulus encoders for natural tasks}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of vision}{9}{13}{17--17}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Heasly%
+, Cottaris%
+, Lichtman%
+, Xiao%
+\BCBL{}\ \BBA{} Brainard%
+}{%
+Heasly%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2014}}%
+}]{%
+heasly2014rendertoolbox3}%
+\APACinsertmetastar{%
+heasly2014rendertoolbox3}%
+Heasly, B\BPBI S.%
+, Cottaris, N\BPBI P.%
+, Lichtman, D\BPBI P.%
+, Xiao, B.%
+\BCBL{}\ \BBA{} Brainard, D\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{RenderToolbox3: MATLAB tools that facilitate physically
+  based stimulus rendering for vision research}{Rendertoolbox3: Matlab tools
+  that facilitate physically based stimulus rendering for vision
+  research}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of vision}{14}{2}{6--6}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Jakob%
+}{%
+Jakob%
+}{%
+{\protect\APACyear{2015}}%
+}]{%
+jakob2015mitsuba}%
+\APACinsertmetastar{%
+jakob2015mitsuba}%
+Jakob, W.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Mitsuba renderer, 2010}{Mitsuba renderer, 2010}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{URL: http://www. mitsuba-renderer. org}{3}{}{10}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Peyvandi%
+, Hern{\'a}ndez-Andr{\'e}s%
+, Olmo%
+, Nieves%
+\BCBL{}\ \BBA{} Romero%
+}{%
+Peyvandi%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2016}}%
+}]{%
+peyvandi2016colorimetric}%
+\APACinsertmetastar{%
+peyvandi2016colorimetric}%
+Peyvandi, S.%
+, Hern{\'a}ndez-Andr{\'e}s, J.%
+, Olmo, F.%
+, Nieves, J\BPBI L.%
+\BCBL{}\ \BBA{} Romero, J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Colorimetric analysis of outdoor illumination across
+  varieties of atmospheric conditions}{Colorimetric analysis of outdoor
+  illumination across varieties of atmospheric conditions}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{JOSA A}{33}{6}{1049--1059}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
