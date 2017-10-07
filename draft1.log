@@ -1,17 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 OCT 2017 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 OCT 2017 14:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **draft1.tex
 (./draft1.tex
-LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (./jov.cls
 Document Class: jov 2008/12/16 Journal of Vision class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -26,133 +26,132 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 142.
+Package color Info: Driver file: pdftex.def on input line 144.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count87
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen103
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2016/05/05 v6.83n Hypertext links for LaTeX
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
 Package hobsub Info: Skipping package `infwarerr' (already loaded).
 Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen104
 \Hy@linkcounter=\count88
 \Hy@pagecounter=\count89
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2016/05/05 v6.83n Hyperref: PDFDocEncoding definition (HO)
 )
 \Hy@SavedSpaceFactor=\count90
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
-Package hyperref Info: Option `pageanchor' set `true' on input line 4319.
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4322.
+Package hyperref Info: Option `pageanchor' set `true' on input line 4322.
+Package hyperref Info: Hyper figures OFF on input line 4446.
+Package hyperref Info: Link nesting OFF on input line 4451.
+Package hyperref Info: Hyper index ON on input line 4454.
+Package hyperref Info: Plain pages OFF on input line 4461.
+Package hyperref Info: Backreferencing OFF on input line 4466.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
+Package hyperref Info: Bookmarks ON on input line 4691.
 \c@Hy@tempcnt=\count91
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5041.
+LaTeX Info: Redefining \url on input line 5044.
 \XeTeXLinkMargin=\dimen105
 \Fld@menulength=\count92
 \Field@Width=\dimen106
 \Fld@charsize=\dimen107
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring ON on input line 6313.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
+Package hyperref Info: Hyper figures OFF on input line 6298.
+Package hyperref Info: Link nesting OFF on input line 6303.
+Package hyperref Info: Hyper index ON on input line 6306.
+Package hyperref Info: backreferencing OFF on input line 6313.
+Package hyperref Info: Link coloring ON on input line 6316.
+Package hyperref Info: Link coloring with OCG OFF on input line 6323.
+Package hyperref Info: PDF/A mode OFF on input line 6328.
+LaTeX Info: Redefining \ref on input line 6368.
+LaTeX Info: Redefining \pageref on input line 6372.
 \Hy@abspage=\count93
 \c@Item=\count94
 \c@Hfootnote=\count95
@@ -160,13 +159,13 @@ LaTeX Info: Redefining \pageref on input line 6369.
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2016/05/05 v6.83n Hyperref driver for pdfTeX
 \Fld@listcount=\count96
 \c@bookmark@seq@number=\count97
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
@@ -179,45 +178,45 @@ Package: jovcite 2008/12/22 Journal of Vision, inofficial LaTeX stylesheet
 \bibindent=\skip45
 \bibparsep=\skip46
 \bibitemsep=\skip47
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/pifont.sty
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/pifont.sty
 Package: pifont 2005/04/12 PSNFSS-v9.2a Pi font support (SPQR) 
 LaTeX Font Info:    Try loading font information for U+pzd on input line 63.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/upzd.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/upsy.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
 ))
 \c@nauthors=\count99
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 94.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 )
 \Gin@req@height=\dimen108
 \Gin@req@width=\dimen109
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/subcaption.sty
-Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2016/02/20 v1.1-142 Sub-captions (AR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/02/04 v1.7-139 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen110
 \captionmargin@=\dimen111
 \captionwidth=\dimen112
@@ -242,41 +241,41 @@ Package caption Info: hyperref package is loaded.
 )
 \c@subfigure=\count101
 \c@subtable=\count102
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen117
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen118
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count103
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count104
 \leftroot@=\count105
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 297.
 \classnum@=\count106
 \DOTSCASE@=\count107
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen119
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count108
 \c@MaxMatrixCols=\count109
 \dotsspace@=\muskip11
@@ -297,23 +296,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip49
 \multlinetaggap=\skip50
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/comment/comment.sty
+(/usr/local/texlive/2016/texmf-dist/tex/latex/comment/comment.sty
 \CommentStream=\write3
 
-Excluding comment 'comment') (./draft1.aux)
+Excluding comment 'comment')
+No file draft1.aux.
 \openout1 = `draft1.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
@@ -331,11 +331,10 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 15.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count115
 \scratchdimen=\dimen126
@@ -351,37 +350,36 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 \AtBeginShipoutBox=\box29
 Package hyperref Info: Link coloring ON on input line 15.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
 LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
-
-(./draft1.out) (./draft1.out)
 \@outlinefile=\write4
 \openout4 = `draft1.out'.
 
- (./english.apc
+
+(./english.apc
 File: english.apc 2007/09/03 v4.00 apacite language file
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
 Package grfext Info: Graphics extension search list:
 (grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -389,17 +387,17 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 28.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1phv.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 28.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 28.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
@@ -414,412 +412,649 @@ Package hyperref Warning: Suppressing link with empty target on input line 28.
 Overfull \vbox (7.80003pt too high) detected at line 28
  []
 
-<introSchematic.png, id=82, 1027.84pt x 770.88pt>
-File: introSchematic.png Graphic file (type png)
- <use introSchematic.png>
-Package pdftex.def Info: introSchematic.png used on input line 40.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+
+LaTeX Warning: Reference `fig:introSchematic' on page 1 undefined on input line
+ 32.
+
+<Figure1/introSchematic.png, id=5, 1027.84pt x 770.88pt>
+File: Figure1/introSchematic.png Graphic file (type png)
+
+<use Figure1/introSchematic.png>
+Package pdftex.def Info: Figure1/introSchematic.png used on input line 41.
 (pdftex.def)             Requested size: 216.23764pt x 162.17188pt.
 
-<introExampleFigure.jpeg, id=84, 1016.79875pt x 654.445pt>
-File: introExampleFigure.jpeg Graphic file (type jpg)
+<Figure1/introExampleFigure.jpeg, id=7, 1016.79875pt x 654.445pt>
+File: Figure1/introExampleFigure.jpeg Graphic file (type jpg)
 
-<use introExampleFigure.jpeg>
-Package pdftex.def Info: introExampleFigure.jpeg used on input line 45.
+<use Figure1/introExampleFigure.jpeg>
+Package pdftex.def Info: Figure1/introExampleFigure.jpeg used on input line 46.
+
 (pdftex.def)             Requested size: 243.26941pt x 156.57071pt.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+
+
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 51.
+
+
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 51.
+
+
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 51.
+
+
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 51.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-Excluding 'comment' comment.
-<targetVarying.jpeg, id=95, 1026.83624pt x 652.4375pt>
-File: targetVarying.jpeg Graphic file (type jpg)
 
-<use targetVarying.jpeg>
-Package pdftex.def Info: targetVarying.jpeg used on input line 70.
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 54.
+
+Excluding 'comment' comment.
+
+LaTeX Warning: Reference `fig:introExampleFigure' on page 1 undefined on input 
+line 65.
+
+
+LaTeX Warning: Reference `fig:studiedCases' on page 1 undefined on input line 6
+5.
+
+
+LaTeX Warning: Reference `fig:targetVarying' on page 1 undefined on input line 
+65.
+
+
+LaTeX Warning: Reference `fig:targetIlluminantVarying' on page 1 undefined on i
+nput line 65.
+
+
+LaTeX Warning: Reference `fig:allSpectraVarying' on page 1 undefined on input l
+ine 65.
+
+<Figure2/targetVarying.jpeg, id=8, 1026.83624pt x 652.4375pt>
+File: Figure2/targetVarying.jpeg Graphic file (type jpg)
+
+<use Figure2/targetVarying.jpeg>
+Package pdftex.def Info: Figure2/targetVarying.jpeg used on input line 71.
 (pdftex.def)             Requested size: 178.39977pt x 113.35197pt.
 
-<targetIlluminantVarying.jpeg, id=96, 1027.84pt x 652.4375pt>
-File: targetIlluminantVarying.jpeg Graphic file (type jpg)
+<Figure2/targetIlluminantVarying.jpeg, id=9, 1027.84pt x 652.4375pt>
+File: Figure2/targetIlluminantVarying.jpeg Graphic file (type jpg)
 
-<use targetIlluminantVarying.jpeg>
-Package pdftex.def Info: targetIlluminantVarying.jpeg used on input line 75.
+<use Figure2/targetIlluminantVarying.jpeg>
+Package pdftex.def Info: Figure2/targetIlluminantVarying.jpeg used on input lin
+e 76.
 (pdftex.def)             Requested size: 178.39977pt x 113.24246pt.
 
-<allSpectraVarying.jpeg, id=97, 1027.84pt x 652.4375pt>
-File: allSpectraVarying.jpeg Graphic file (type jpg)
+<Figure2/allSpectraVarying.jpeg, id=10, 1027.84pt x 652.4375pt>
+File: Figure2/allSpectraVarying.jpeg Graphic file (type jpg)
 
-<use allSpectraVarying.jpeg>
-Package pdftex.def Info: allSpectraVarying.jpeg used on input line 80.
+<use Figure2/allSpectraVarying.jpeg>
+Package pdftex.def Info: Figure2/allSpectraVarying.jpeg used on input line 81.
 (pdftex.def)             Requested size: 178.39977pt x 113.24246pt.
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 90.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsphv.fd
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
- [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+ [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2 <./introSchematic.png> <./introExampleFigure.jpeg>]
+]
+
+LaTeX Warning: Reference `method:VirtualWorld' on page 2 undefined on input lin
+e 91.
+
+
+LaTeX Warning: Reference `method:Isetbio' on page 2 undefined on input line 91.
+
+
+
+LaTeX Warning: Reference `method:SupervisedLearning' on page 2 undefined on inp
+ut line 91.
+
+[2 <./Figure1/introSchematic.png> <./Figure1/introExampleFigure.jpeg>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 95.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 95.
- <3DScene.png, id=130, 1027.84pt x 770.88pt>
-File: 3DScene.png Graphic file (type png)
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 96.
 
-<use 3DScene.png>
-Package pdftex.def Info: 3DScene.png used on input line 103.
+
+LaTeX Warning: Reference `fig:3DScene' on page 3 undefined on input line 97.
+
+
+LaTeX Warning: Citation `jakob2015mitsuba' undefined on input line 97.
+
+
+LaTeX Warning: Reference `fig:croppedImage' on page 3 undefined on input line 9
+7.
+
+
+LaTeX Warning: Reference `fig:studiedCases' on page 3 undefined on input line 9
+7.
+
+<Figure3/3DScene.png, id=37, 1027.84pt x 770.88pt>
+File: Figure3/3DScene.png Graphic file (type png)
+ <use Figure3/3DScene.png>
+Package pdftex.def Info: Figure3/3DScene.png used on input line 104.
 (pdftex.def)             Requested size: 135.15059pt x 101.35889pt.
- <croppedImage.png, id=131, 770.88pt x 770.88pt>
-File: croppedImage.png Graphic file (type png)
 
-<use croppedImage.png>
-Package pdftex.def Info: croppedImage.png used on input line 111.
+<Figure3/croppedImage.png, id=38, 770.88pt x 770.88pt>
+File: Figure3/croppedImage.png Graphic file (type png)
+
+<use Figure3/croppedImage.png>
+Package pdftex.def Info: Figure3/croppedImage.png used on input line 112.
 (pdftex.def)             Requested size: 102.71576pt x 102.7116pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
+Underfull \hbox (badness 10000) in paragraph at lines 111--113
 []
  []
 
-<croppedImageWithMosaic.png, id=132, 766.865pt x 770.88pt>
-File: croppedImageWithMosaic.png Graphic file (type png)
+<Figure3/croppedImageWithMosaic.png, id=39, 766.865pt x 770.88pt>
+File: Figure3/croppedImageWithMosaic.png Graphic file (type png)
 
-<use croppedImageWithMosaic.png>
-Package pdftex.def Info: croppedImageWithMosaic.png used on input line 119.
+<use Figure3/croppedImageWithMosaic.png>
+Package pdftex.def Info: Figure3/croppedImageWithMosaic.png used on input line 
+120.
 (pdftex.def)             Requested size: 102.71576pt x 103.25269pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--120
+Underfull \hbox (badness 10000) in paragraph at lines 119--121
 []
  []
 
-<coneContrast.png, id=133, 798.985pt x 764.8575pt>
-File: coneContrast.png Graphic file (type png)
- <use coneContrast.png>
-Package pdftex.def Info: coneContrast.png used on input line 125.
+<Figure3/coneContrast.png, id=40, 798.985pt x 764.8575pt>
+File: Figure3/coneContrast.png Graphic file (type png)
+
+<use Figure3/coneContrast.png>
+Package pdftex.def Info: Figure3/coneContrast.png used on input line 126.
 (pdftex.def)             Requested size: 108.11882pt x 103.49638pt.
 
-[3 <./targetVarying.jpeg> <./targetIlluminantVarying.jpeg> <./allSpectraVarying
-.jpeg>]
+
+LaTeX Warning: Reference `fig:croppedImageWithMosaic' on page 3 undefined on in
+put line 132.
+
+
+LaTeX Warning: Reference `fig:croppedImageWithMosaic' on page 3 undefined on in
+put line 132.
+
+
+LaTeX Warning: Reference `fig:croppedImage' on page 3 undefined on input line 1
+36.
+
+[3 <./Figure2/targetVarying.jpeg> <./Figure2/targetIlluminantVarying.jpeg> <./F
+igure2/allSpectraVarying.jpeg>]
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <10> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 138.
- <case9SVD.pdf, id=149, 555.07375pt x 339.2675pt>
-File: case9SVD.pdf Graphic file (type pdf)
- <use case9SVD.pdf>
-Package pdftex.def Info: case9SVD.pdf used on input line 154.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 139.
+
+
+LaTeX Warning: Reference `fig:studiedCases' on page 4 undefined on input line 1
+44.
+
+
+LaTeX Warning: Reference `fig:targetVarying' on page 4 undefined on input line 
+144.
+
+
+LaTeX Warning: Reference `fig:targetIlluminantVarying' on page 4 undefined on i
+nput line 144.
+
+
+LaTeX Warning: Reference `fig:allSpectraVarying' on page 4 undefined on input l
+ine 144.
+
+<Figure4/case9SVD.pdf, id=51, 555.07375pt x 339.2675pt>
+File: Figure4/case9SVD.pdf Graphic file (type pdf)
+
+<use Figure4/case9SVD.pdf>
+Package pdftex.def Info: Figure4/case9SVD.pdf used on input line 155.
 (pdftex.def)             Requested size: 145.96494pt x 89.21693pt.
 
-<case9AMA.pdf, id=150, 555.07375pt x 340.27126pt>
-File: case9AMA.pdf Graphic file (type pdf)
- <use case9AMA.pdf>
-Package pdftex.def Info: case9AMA.pdf used on input line 159.
+<Figure4/case9AMA.pdf, id=52, 555.07375pt x 340.27126pt>
+File: Figure4/case9AMA.pdf Graphic file (type pdf)
+
+<use Figure4/case9AMA.pdf>
+Package pdftex.def Info: Figure4/case9AMA.pdf used on input line 160.
 (pdftex.def)             Requested size: 145.96494pt x 89.4809pt.
 
-<case9FiltersResponse.pdf, id=151, 501.875pt x 501.875pt>
-File: case9FiltersResponse.pdf Graphic file (type pdf)
+<Figure4/case9FiltersResponse.pdf, id=53, 501.875pt x 501.875pt>
+File: Figure4/case9FiltersResponse.pdf Graphic file (type pdf)
 
-<use case9FiltersResponse.pdf>
-Package pdftex.def Info: case9FiltersResponse.pdf used on input line 164.
+<use Figure4/case9FiltersResponse.pdf>
+Package pdftex.def Info: Figure4/case9FiltersResponse.pdf used on input line 16
+5.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<case9Results.pdf, id=152, 501.875pt x 501.875pt>
-File: case9Results.pdf Graphic file (type pdf)
- <use case9Results.pdf>
-Package pdftex.def Info: case9Results.pdf used on input line 169.
+<Figure4/case9Results.pdf, id=54, 501.875pt x 501.875pt>
+File: Figure4/case9Results.pdf Graphic file (type pdf)
+
+<use Figure4/case9Results.pdf>
+Package pdftex.def Info: Figure4/case9Results.pdf used on input line 170.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-[4 <./3DScene.png> <./croppedImage.png> <./croppedImageWithMosaic.png> <./coneC
-ontrast.png>] <RMSEvsNFilters16.pdf, id=166, 501.875pt x 501.875pt>
-File: RMSEvsNFilters16.pdf Graphic file (type pdf)
+<Figure5/RMSEvsNFilters16.pdf, id=55, 501.875pt x 501.875pt>
+File: Figure5/RMSEvsNFilters16.pdf Graphic file (type pdf)
 
-<use RMSEvsNFilters16.pdf>
-Package pdftex.def Info: RMSEvsNFilters16.pdf used on input line 180.
+<use Figure5/RMSEvsNFilters16.pdf>
+Package pdftex.def Info: Figure5/RMSEvsNFilters16.pdf used on input line 181.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
- <case10SVD.pdf, id=167, 554.07pt x 337.26pt>
-File: case10SVD.pdf Graphic file (type pdf)
 
-<use case10SVD.pdf>
-Package pdftex.def Info: case10SVD.pdf used on input line 190.
+<Figure6/case10SVD.pdf, id=56, 554.07pt x 337.26pt>
+File: Figure6/case10SVD.pdf Graphic file (type pdf)
+
+<use Figure6/case10SVD.pdf>
+Package pdftex.def Info: Figure6/case10SVD.pdf used on input line 191.
 (pdftex.def)             Requested size: 145.96494pt x 88.84856pt.
- <case10AMA.pdf, id=168, 554.07pt x 340.27126pt>
-File: case10AMA.pdf Graphic file (type pdf)
 
-<use case10AMA.pdf>
-Package pdftex.def Info: case10AMA.pdf used on input line 195.
+<Figure6/case10AMA.pdf, id=57, 554.07pt x 340.27126pt>
+File: Figure6/case10AMA.pdf Graphic file (type pdf)
+
+<use Figure6/case10AMA.pdf>
+Package pdftex.def Info: Figure6/case10AMA.pdf used on input line 196.
 (pdftex.def)             Requested size: 145.96494pt x 89.64185pt.
- <case10FiltersResponse.pdf, id=169, 501.875pt x 501.875pt>
-File: case10FiltersResponse.pdf Graphic file (type pdf)
 
-<use case10FiltersResponse.pdf>
-Package pdftex.def Info: case10FiltersResponse.pdf used on input line 200.
+<Figure6/case10FiltersResponse.pdf, id=58, 501.875pt x 501.875pt>
+File: Figure6/case10FiltersResponse.pdf Graphic file (type pdf)
+
+<use Figure6/case10FiltersResponse.pdf>
+Package pdftex.def Info: Figure6/case10FiltersResponse.pdf used on input line 2
+01.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<case10Results.pdf, id=170, 501.875pt x 501.875pt>
-File: case10Results.pdf Graphic file (type pdf)
- <use case10Results.pdf>
-Package pdftex.def Info: case10Results.pdf used on input line 205.
+<Figure6/case10Results.pdf, id=59, 501.875pt x 501.875pt>
+File: Figure6/case10Results.pdf Graphic file (type pdf)
+
+<use Figure6/case10Results.pdf>
+Package pdftex.def Info: Figure6/case10Results.pdf used on input line 206.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<case12SVD.pdf, id=173, 552.0625pt x 339.2675pt>
-File: case12SVD.pdf Graphic file (type pdf)
- <use case12SVD.pdf>
-Package pdftex.def Info: case12SVD.pdf used on input line 218.
+
+LaTeX Warning: Reference `fig:case9AllResults' on page 4 undefined on input lin
+e 211.
+
+
+LaTeX Warning: Reference `fig:case9AllResults' on page 4 undefined on input lin
+e 211.
+
+<Figure7/case12SVD.pdf, id=60, 552.0625pt x 339.2675pt>
+File: Figure7/case12SVD.pdf Graphic file (type pdf)
+
+<use Figure7/case12SVD.pdf>
+Package pdftex.def Info: Figure7/case12SVD.pdf used on input line 219.
 (pdftex.def)             Requested size: 145.96494pt x 89.70355pt.
 
-<case12AMA.pdf, id=174, 555.07375pt x 337.26pt>
-File: case12AMA.pdf Graphic file (type pdf)
- <use case12AMA.pdf>
-Package pdftex.def Info: case12AMA.pdf used on input line 223.
+<Figure7/case12AMA.pdf, id=61, 555.07375pt x 337.26pt>
+File: Figure7/case12AMA.pdf Graphic file (type pdf)
+
+<use Figure7/case12AMA.pdf>
+Package pdftex.def Info: Figure7/case12AMA.pdf used on input line 224.
 (pdftex.def)             Requested size: 145.96494pt x 88.68903pt.
 
-<case12FiltersResponse.pdf, id=175, 501.875pt x 501.875pt>
-File: case12FiltersResponse.pdf Graphic file (type pdf)
+<Figure7/case12FiltersResponse.pdf, id=62, 501.875pt x 501.875pt>
+File: Figure7/case12FiltersResponse.pdf Graphic file (type pdf)
 
-<use case12FiltersResponse.pdf>
-Package pdftex.def Info: case12FiltersResponse.pdf used on input line 228.
+<use Figure7/case12FiltersResponse.pdf>
+Package pdftex.def Info: Figure7/case12FiltersResponse.pdf used on input line 2
+29.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<case12Results.pdf, id=176, 501.875pt x 501.875pt>
-File: case12Results.pdf Graphic file (type pdf)
- <use case12Results.pdf>
-Package pdftex.def Info: case12Results.pdf used on input line 233.
+<Figure7/case12Results.pdf, id=63, 501.875pt x 501.875pt>
+File: Figure7/case12Results.pdf Graphic file (type pdf)
+
+<use Figure7/case12Results.pdf>
+Package pdftex.def Info: Figure7/case12Results.pdf used on input line 234.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
+
+
+LaTeX Warning: Reference `fig:case9AllResults' on page 4 undefined on input lin
+e 239.
+
+
+LaTeX Warning: Reference `fig:case9AllResults' on page 4 undefined on input lin
+e 239.
 
 Excluding 'comment' comment.
-<summaryBarGraph.pdf, id=179, 501.875pt x 501.875pt>
-File: summaryBarGraph.pdf Graphic file (type pdf)
- <use summaryBarGraph.pdf>
-Package pdftex.def Info: summaryBarGraph.pdf used on input line 301.
+<Figure10/summaryBarGraph.pdf, id=64, 501.875pt x 501.875pt>
+File: Figure10/summaryBarGraph.pdf Graphic file (type pdf)
+
+<use Figure10/summaryBarGraph.pdf>
+Package pdftex.def Info: Figure10/summaryBarGraph.pdf used on input line 302.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<SVDSummaryBarGraph.pdf, id=180, 501.875pt x 501.875pt>
-File: SVDSummaryBarGraph.pdf Graphic file (type pdf)
+<Figure10/SVDSummaryBarGraph.pdf, id=65, 501.875pt x 501.875pt>
+File: Figure10/SVDSummaryBarGraph.pdf Graphic file (type pdf)
 
-<use SVDSummaryBarGraph.pdf>
-Package pdftex.def Info: SVDSummaryBarGraph.pdf used on input line 308.
+<use Figure10/SVDSummaryBarGraph.pdf>
+Package pdftex.def Info: Figure10/SVDSummaryBarGraph.pdf used on input line 309
+.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<AMASummaryBarGraph.pdf, id=181, 501.875pt x 501.875pt>
-File: AMASummaryBarGraph.pdf Graphic file (type pdf)
+<Figure10/AMASummaryBarGraph.pdf, id=66, 501.875pt x 501.875pt>
+File: Figure10/AMASummaryBarGraph.pdf Graphic file (type pdf)
 
-<use AMASummaryBarGraph.pdf>
-Package pdftex.def Info: AMASummaryBarGraph.pdf used on input line 315.
+<use Figure10/AMASummaryBarGraph.pdf>
+Package pdftex.def Info: Figure10/AMASummaryBarGraph.pdf used on input line 316
+.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
- [5 <./case9SVD.pdf> <./case9AMA.pdf> <./case9FiltersResponse.pdf> <./case9Resu
-lts.pdf> <./RMSEvsNFilters16.pdf>] [6 <./case10SVD.pdf> <./case10AMA.pdf> <./ca
-se10FiltersResponse.pdf> <./case10Results.pdf> <./case12SVD.pdf> <./case12AMA.p
-df> <./case12FiltersResponse.pdf> <./case12Results.pdf> <./summaryBarGraph.pdf>
- <./SVDSummaryBarGraph.pdf> <./AMASummaryBarGraph.pdf>] <baseSceneLibrary.png, 
-id=536, 321.2pt x 240.9pt>
-File: baseSceneLibrary.png Graphic file (type png)
 
-<use baseSceneLibrary.png>
-Package pdftex.def Info: baseSceneLibrary.png used on input line 348.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
- <baseSceneMill.png, id=537, 321.2pt x 240.9pt>
-File: baseSceneMill.png Graphic file (type png)
 
-<use baseSceneMill.png>
-Package pdftex.def Info: baseSceneMill.png used on input line 355.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
- <baseSceneTableChairs.png, id=538, 321.2pt x 240.9pt>
-File: baseSceneTableChairs.png Graphic file (type png)
+LaTeX Warning: Reference `fig:SVDBAR' on page 4 undefined on input line 320.
 
-<use baseSceneTableChairs.png>
-Package pdftex.def Info: baseSceneTableChairs.png used on input line 362.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<baseSceneIndoorPlant.png, id=539, 321.2pt x 240.9pt>
-File: baseSceneIndoorPlant.png Graphic file (type png)
+LaTeX Warning: Reference `fig:SVDBAR' on page 4 undefined on input line 320.
 
-<use baseSceneIndoorPlant.png>
-Package pdftex.def Info: baseSceneIndoorPlant.png used on input line 368.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+[4 <./Figure3/3DScene.png> <./Figure3/croppedImage.png> <./Figure3/croppedImage
+WithMosaic.png> <./Figure3/coneContrast.png>] [5 <./Figure4/case9SVD.pdf> <./Fi
+gure4/case9AMA.pdf> <./Figure4/case9FiltersResponse.pdf> <./Figure4/case9Result
+s.pdf> <./Figure5/RMSEvsNFilters16.pdf> <./Figure6/case10SVD.pdf> <./Figure6/ca
+se10AMA.pdf> <./Figure6/case10FiltersResponse.pdf> <./Figure6/case10Results.pdf
+>] [6 <./Figure7/case12SVD.pdf> <./Figure7/case12AMA.pdf> <./Figure7/case12Filt
+ersResponse.pdf> <./Figure7/case12Results.pdf> <./Figure10/summaryBarGraph.pdf>
+ <./Figure10/SVDSummaryBarGraph.pdf> <./Figure10/AMASummaryBarGraph.pdf>]
 
-<baseSceneWarehouse.png, id=540, 321.2pt x 240.9pt>
-File: baseSceneWarehouse.png Graphic file (type png)
+LaTeX Warning: Citation `heasly2014rendertoolbox3' undefined on input line 342.
 
-<use baseSceneWarehouse.png>
-Package pdftex.def Info: baseSceneWarehouse.png used on input line 374.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<baseSceneCheckerBoard.png, id=541, 321.2pt x 240.9pt>
-File: baseSceneCheckerBoard.png Graphic file (type png)
 
-<use baseSceneCheckerBoard.png>
-Package pdftex.def Info: baseSceneCheckerBoard.png used on input line 380.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
- [7]
-<libraryWithBigBall.png, id=552, 321.2pt x 240.9pt>
-File: libraryWithBigBall.png Graphic file (type png)
+LaTeX Warning: Reference `fig:baseScenes' on page 7 undefined on input line 344
+.
 
-<use libraryWithBigBall.png>
-Package pdftex.def Info: libraryWithBigBall.png used on input line 392.
-(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<libraryWithSmallBall.png, id=553, 321.2pt x 240.9pt>
-File: libraryWithSmallBall.png Graphic file (type png)
+LaTeX Warning: Reference `fig:baseSceneLibrary' on page 7 undefined on input li
+ne 344.
 
-<use libraryWithSmallBall.png>
-Package pdftex.def Info: libraryWithSmallBall.png used on input line 399.
+
+LaTeX Warning: Reference `fig:baseSceneMill' on page 7 undefined on input line 
+344.
+
+
+LaTeX Warning: Reference `fig:baseSceneTableChairs' on page 7 undefined on inpu
+t line 344.
+
+
+LaTeX Warning: Reference `fig:baseSceneIndoorPlant' on page 7 undefined on inpu
+t line 344.
+
+
+LaTeX Warning: Reference `fig:baseSceneWarehouse' on page 7 undefined on input 
+line 344.
+
+
+LaTeX Warning: Reference `fig:baseSceneCheckerBoard' on page 7 undefined on inp
+ut line 344.
+
+[7] <Figure11/baseSceneLibrary.png, id=442, 321.2pt x 240.9pt>
+File: Figure11/baseSceneLibrary.png Graphic file (type png)
+
+<use Figure11/baseSceneLibrary.png>
+Package pdftex.def Info: Figure11/baseSceneLibrary.png used on input line 350.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<libraryWithBarrel.png, id=554, 321.2pt x 240.9pt>
-File: libraryWithBarrel.png Graphic file (type png)
- <use libraryWithBarrel.png>
-Package pdftex.def Info: libraryWithBarrel.png used on input line 406.
+<Figure11/baseSceneMill.png, id=443, 321.2pt x 240.9pt>
+File: Figure11/baseSceneMill.png Graphic file (type png)
+
+<use Figure11/baseSceneMill.png>
+Package pdftex.def Info: Figure11/baseSceneMill.png used on input line 357.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<libraryWithXylophone.png, id=555, 321.2pt x 240.9pt>
-File: libraryWithXylophone.png Graphic file (type png)
+<Figure11/baseSceneTableChairs.png, id=444, 321.2pt x 240.9pt>
+File: Figure11/baseSceneTableChairs.png Graphic file (type png)
 
-<use libraryWithXylophone.png>
-Package pdftex.def Info: libraryWithXylophone.png used on input line 412.
+<use Figure11/baseSceneTableChairs.png>
+Package pdftex.def Info: Figure11/baseSceneTableChairs.png used on input line 3
+64.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<libraryWithRingToy.png, id=556, 321.2pt x 240.9pt>
-File: libraryWithRingToy.png Graphic file (type png)
+<Figure11/baseSceneIndoorPlant.png, id=445, 321.2pt x 240.9pt>
+File: Figure11/baseSceneIndoorPlant.png Graphic file (type png)
 
-<use libraryWithRingToy.png>
-Package pdftex.def Info: libraryWithRingToy.png used on input line 418.
+<use Figure11/baseSceneIndoorPlant.png>
+Package pdftex.def Info: Figure11/baseSceneIndoorPlant.png used on input line 3
+70.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
-<libraryWithChampagneBottle.png, id=557, 321.2pt x 240.9pt>
-File: libraryWithChampagneBottle.png Graphic file (type png)
+<Figure11/baseSceneWarehouse.png, id=446, 321.2pt x 240.9pt>
+File: Figure11/baseSceneWarehouse.png Graphic file (type png)
 
-<use libraryWithChampagneBottle.png>
-Package pdftex.def Info: libraryWithChampagneBottle.png used on input line 424.
+<use Figure11/baseSceneWarehouse.png>
+Package pdftex.def Info: Figure11/baseSceneWarehouse.png used on input line 376
+.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure11/baseSceneCheckerBoard.png, id=447, 321.2pt x 240.9pt>
+File: Figure11/baseSceneCheckerBoard.png Graphic file (type png)
+
+<use Figure11/baseSceneCheckerBoard.png>
+Package pdftex.def Info: Figure11/baseSceneCheckerBoard.png used on input line 
+382.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+
+LaTeX Warning: Reference `fig:libraryWithTarget' on page 8 undefined on input l
+ine 389.
+
+<Figure12/libraryWithBigBall.png, id=448, 321.2pt x 240.9pt>
+File: Figure12/libraryWithBigBall.png Graphic file (type png)
+
+<use Figure12/libraryWithBigBall.png>
+Package pdftex.def Info: Figure12/libraryWithBigBall.png used on input line 395
+.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure12/libraryWithSmallBall.png, id=449, 321.2pt x 240.9pt>
+File: Figure12/libraryWithSmallBall.png Graphic file (type png)
+
+<use Figure12/libraryWithSmallBall.png>
+Package pdftex.def Info: Figure12/libraryWithSmallBall.png used on input line 4
+02.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure12/libraryWithBarrel.png, id=450, 321.2pt x 240.9pt>
+File: Figure12/libraryWithBarrel.png Graphic file (type png)
+
+<use Figure12/libraryWithBarrel.png>
+Package pdftex.def Info: Figure12/libraryWithBarrel.png used on input line 409.
 
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure12/libraryWithXylophone.png, id=451, 321.2pt x 240.9pt>
+File: Figure12/libraryWithXylophone.png Graphic file (type png)
+
+<use Figure12/libraryWithXylophone.png>
+Package pdftex.def Info: Figure12/libraryWithXylophone.png used on input line 4
+15.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure12/libraryWithRingToy.png, id=452, 321.2pt x 240.9pt>
+File: Figure12/libraryWithRingToy.png Graphic file (type png)
+
+<use Figure12/libraryWithRingToy.png>
+Package pdftex.def Info: Figure12/libraryWithRingToy.png used on input line 421
+.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<Figure12/libraryWithChampagneBottle.png, id=453, 321.2pt x 240.9pt>
+File: Figure12/libraryWithChampagneBottle.png Graphic file (type png)
+
+<use Figure12/libraryWithChampagneBottle.png>
+Package pdftex.def Info: Figure12/libraryWithChampagneBottle.png used on input 
+line 427.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: Reference `fig:objectTransformations' on page 8 undefined on inp
-ut line 431.
+ut line 434.
 
-[8 <./baseSceneLibrary.png (PNG copy)> <./baseSceneMill.png (PNG copy)> <./base
-SceneTableChairs.png (PNG copy)> <./baseSceneIndoorPlant.png (PNG copy)> <./bas
-eSceneWarehouse.png (PNG copy)> <./baseSceneCheckerBoard.png (PNG copy)> <./lib
-raryWithBigBall.png> <./libraryWithSmallBall.png> <./libraryWithBarrel.png> <./
-libraryWithXylophone.png> <./libraryWithRingToy.png> <./libraryWithChampagneBot
-tle.png>] <targetVariation.png, id=570, 326.21875pt x 739.76375pt>
-File: targetVariation.png Graphic file (type png)
+<Figure13/targetVariation.png, id=454, 326.21875pt x 739.76375pt>
+File: Figure13/targetVariation.png Graphic file (type png)
 
-<use targetVariation.png>
-Package pdftex.def Info: targetVariation.png used on input line 439.
+<use Figure13/targetVariation.png>
+Package pdftex.def Info: Figure13/targetVariation.png used on input line 443.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
-<backgroundVariation.png, id=571, 326.21875pt x 739.76375pt>
-File: backgroundVariation.png Graphic file (type png)
+<Figure13/backgroundVariation.png, id=455, 326.21875pt x 739.76375pt>
+File: Figure13/backgroundVariation.png Graphic file (type png)
 
-<use backgroundVariation.png>
-Package pdftex.def Info: backgroundVariation.png used on input line 447.
+<use Figure13/backgroundVariation.png>
+Package pdftex.def Info: Figure13/backgroundVariation.png used on input line 45
+1.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
-<illuminationVariation.png, id=572, 326.21875pt x 739.76375pt>
-File: illuminationVariation.png Graphic file (type png)
+<Figure13/illuminationVariation.png, id=456, 326.21875pt x 739.76375pt>
+File: Figure13/illuminationVariation.png Graphic file (type png)
 
-<use illuminationVariation.png>
-Package pdftex.def Info: illuminationVariation.png used on input line 455.
+<use Figure13/illuminationVariation.png>
+Package pdftex.def Info: Figure13/illuminationVariation.png used on input line 
+459.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
-<targetPosition.png, id=573, 326.21875pt x 739.76375pt>
-File: targetPosition.png Graphic file (type png)
+<Figure13/targetPosition.png, id=457, 326.21875pt x 739.76375pt>
+File: Figure13/targetPosition.png Graphic file (type png)
 
-<use targetPosition.png>
-Package pdftex.def Info: targetPosition.png used on input line 463.
+<use Figure13/targetPosition.png>
+Package pdftex.def Info: Figure13/targetPosition.png used on input line 467.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
-<targetSizeOrientation.png, id=574, 326.21875pt x 739.76375pt>
-File: targetSizeOrientation.png Graphic file (type png)
+<Figure13/targetSizeOrientation.png, id=458, 326.21875pt x 739.76375pt>
+File: Figure13/targetSizeOrientation.png Graphic file (type png)
 
-<use targetSizeOrientation.png>
-Package pdftex.def Info: targetSizeOrientation.png used on input line 471.
+<use Figure13/targetSizeOrientation.png>
+Package pdftex.def Info: Figure13/targetSizeOrientation.png used on input line 
+475.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
- [9 <./targetVariation.png> <./backgroundVariation.png> <./illuminationVariatio
-n.png> <./targetPosition.png> <./targetSizeOrientation.png>] <illumination.pdf,
- id=586, 1204.5pt x 803.0pt>
+ [8 <./Figure11/baseSceneLibrary.png (PNG copy)> <./Figure11/baseSceneMill.png 
+(PNG copy)> <./Figure11/baseSceneTableChairs.png (PNG copy)> <./Figure11/baseSc
+eneIndoorPlant.png (PNG copy)> <./Figure11/baseSceneWarehouse.png (PNG copy)> <
+./Figure11/baseSceneCheckerBoard.png (PNG copy)>] <illumination.pdf, id=465, 12
+04.5pt x 803.0pt>
 File: illumination.pdf Graphic file (type pdf)
 
 <use illumination.pdf>
-Package pdftex.def Info: illumination.pdf used on input line 491.
+Package pdftex.def Info: illumination.pdf used on input line 495.
 (pdftex.def)             Requested size: 540.60236pt x 360.41545pt.
- [10 <./illumination.pdf>]
-<reflectance.pdf, id=608, 1204.5pt x 401.5pt>
+
+
+LaTeX Warning: Citation `peyvandi2016colorimetric' undefined on input line 499.
+
+
+[9 <./Figure12/libraryWithBigBall.png> <./Figure12/libraryWithSmallBall.png> <.
+/Figure12/libraryWithBarrel.png> <./Figure12/libraryWithXylophone.png> <./Figur
+e12/libraryWithRingToy.png> <./Figure12/libraryWithChampagneBottle.png>]
+<reflectance.pdf, id=482, 1204.5pt x 401.5pt>
 File: reflectance.pdf Graphic file (type pdf)
  <use reflectance.pdf>
-Package pdftex.def Info: reflectance.pdf used on input line 523.
+Package pdftex.def Info: reflectance.pdf used on input line 527.
 (pdftex.def)             Requested size: 540.60236pt x 180.20772pt.
-
-<target.pdf, id=609, 1204.5pt x 401.5pt>
+ [10 <./Figure13/targetVariation.png> <./Figure13/backgroundVariation.png> <./F
+igure13/illuminationVariation.png> <./Figure13/targetPosition.png> <./Figure13/
+targetSizeOrientation.png>] [11 <./illumination.pdf> <./reflectance.pdf>]
+<target.pdf, id=520, 1204.5pt x 401.5pt>
 File: target.pdf Graphic file (type pdf)
  <use target.pdf>
-Package pdftex.def Info: target.pdf used on input line 560.
+Package pdftex.def Info: target.pdf used on input line 564.
 (pdftex.def)             Requested size: 540.60236pt x 180.20772pt.
- [11 <./reflectance.pdf>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 579.
- [12 <./target.pdf>]
 
-LaTeX Warning: Reference `fig:caseIcons' on page 13 undefined on input line 619
+
+LaTeX Warning: Citation `geisler2009optimal' undefined on input line 581.
+
+
+LaTeX Warning: Citation `burge2017accuracy' undefined on input line 581.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 583.
+[12 <./target.pdf>]
+
+LaTeX Warning: Reference `eq:condProb' on page 13 undefined on input line 601.
+
+
+LaTeX Warning: Reference `eq:posterior' on page 13 undefined on input line 601.
+
+
+
+LaTeX Warning: Reference `eq:finalPosterior' on page 13 undefined on input line
+ 606.
+
+
+LaTeX Warning: Reference `eq:fopt' on page 13 undefined on input line 615.
+
+[13]
+
+LaTeX Warning: Reference `fig:caseIcons' on page 14 undefined on input line 623
 .
 
-[13] <cases.pdf, id=657, 1027.84pt x 770.88pt>
+<cases.pdf, id=552, 1027.84pt x 770.88pt>
 File: cases.pdf Graphic file (type pdf)
  <use cases.pdf>
-Package pdftex.def Info: cases.pdf used on input line 623.
+Package pdftex.def Info: cases.pdf used on input line 627.
 (pdftex.def)             Requested size: 324.3647pt x 243.27547pt.
  (./draft1.bbl
 [14 <./cases.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 635.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 639.
  [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 635.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 639.
  (./draft1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 635.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 635.
-Package rerunfilecheck Info: File `draft1.out' has not changed.
-(rerunfilecheck)             Checksum: 32BB3A7E8401521D1EA973E736C4669D;1095.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 639.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 639.
 
+
+Package rerunfilecheck Warning: File `draft1.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `draft1.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  32BB3A7E8401521D1EA973E736C4669D;1095.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 635.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 639.
  ) 
 Here is how much of TeX's memory you used:
- 8044 strings out of 493089
- 122404 string characters out of 6134842
- 218176 words of memory out of 5000000
- 11294 multiletter control sequences out of 15000+600000
+ 8051 strings out of 493014
+ 123949 string characters out of 6133351
+ 216092 words of memory out of 5000000
+ 11353 multiletter control sequences out of 15000+600000
  36807 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,40p,1933b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/
-helvetic/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
-utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
-b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft1.pdf (15 pages, 9982070 bytes).
+ 42i,14n,40p,1933b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/typ
+e1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/
+utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on draft1.pdf (15 pages, 9979373 bytes).
 PDF statistics:
- 820 PDF objects out of 1000 (max. 8388607)
- 630 compressed objects within 7 object streams
+ 717 PDF objects out of 1000 (max. 8388607)
+ 534 compressed objects within 6 object streams
  67 named destinations out of 1000 (max. 500000)
- 383 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

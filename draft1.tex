@@ -33,17 +33,17 @@ The color of an object has important behavioral implications. This important pro
 
 In this work, we study a simpler analogue of color constancy called lightness constancy. Here, we consider the lightness component of the 3D color space. Lightness is the attribute that determines the brightness of a color. For achromatic objects, it is the property that changes from black to gray to white. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. We study the effects of variations in the reflected light on the perceived lightness of an object.
 
-% Figure 1
+% Figure 1: Introduction
 \begin{figure}[h]
 \centering
 \begin{subfigure}{0.4 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{introSchematic.png}
+        \includegraphics[width=\textwidth]{Figure1/introSchematic.png}
         \caption{}
         \label{fig:introSchematic}
     \end{subfigure}
     \begin{subfigure}{0.45 \textwidth}   
-        \includegraphics[width=\textwidth]{introExampleFigure.jpeg}
+        \includegraphics[width=\textwidth]{Figure1/introExampleFigure.jpeg}
         \caption{}
         \label{fig:introExampleFigure}
     \end{subfigure}
@@ -64,21 +64,21 @@ The factors that lead to variations in the reflected light can broadly be catego
 
 Our approach involves generating a database of multi-spectral images of naturalistic scenes, labeled by the lightness of a specific target object in the scene. The label refers to the perceived lightness of the target object if it were placed under a standard light source ($D_{65}$ daylight spectrum). We generate hundreds of multi-spectral images at several fixed values of the target object standard lightness. At a particular lightness level, we allow variations in the surface reflectance spectra of the objects (both the target and surround) and the illumination spectra of the light sources (Fig. \ref{fig:introExampleFigure}. Here we show the results for three cases resulting from the combination of such spectral variations (Fig.\ref{fig:studiedCases}. These are: 1. Variations in target object spectra (Fig.\ref{fig:targetVarying}) with fixed illumination and background surface reflectance spectra, 2. Variations in target object spectra and the light source spectra, with fixed background surface reflectance spectra (Fig.\ref{fig:targetIlluminantVarying}), and 3. Variations in all spectra (target object, background object and light source) (Fig.\ref{fig:allSpectraVarying}). The effects of other types of spectral variations can be explained in terms of one of these cases (see supplementary information).
 
-% Figure 2
+% Figure 2: Cases Studied
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.33 \textwidth}
-		\includegraphics[width=\textwidth]{targetVarying.jpeg}
+		\includegraphics[width=\textwidth]{Figure2/targetVarying.jpeg}
 		\caption{Case 1}
  		\label{fig:targetVarying}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
-        \includegraphics[width=\textwidth]{targetIlluminantVarying.jpeg}
+        \includegraphics[width=\textwidth]{Figure2/targetIlluminantVarying.jpeg}
         \caption{Case 2}
         \label{fig:targetIlluminantVarying}
     \end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
-        \includegraphics[width=\textwidth]{allSpectraVarying.jpeg}
+        \includegraphics[width=\textwidth]{Figure2/allSpectraVarying.jpeg}
         \caption{Case 3}
         \label{fig:allSpectraVarying}
     \end{subfigure}    
@@ -96,12 +96,12 @@ Finally, we compared the generality of the methods for lightness estimation by c
 \subsection{Image database} \label{method:VirtualWorld}
 In this section we briefly describe our image generation software, that we call Virtual world color constancy (VWCC). The details of the software are provided in the supplementary information section. To generate a virtual scene, we first select a 3D scene, a target object and a light source from the set of predefined scenes and objects of the VWCC software. The target object and the light source are inserted at predefined positions in the 3D scene. Fig.\ref{fig:3DScene} shows a 2D sRGB rendition of the 3D scene with the inserted target object (green sphere in the middle) used in our analysis. (The light source in not visible.) Next, we assign a surface reflectance spectrum and an illumination spectrum to each object and light source in the scene. The surface reflectance of the target object is assigned such that the perceived lightness of the target object under D65 daylight spectrum has a fixed value. Once these spectral properties have been assigned, we render a 320x240 pixel$^2$ 2d multi-spectral images of the scene at 31 frequencies (linearly spaced between 400nm - 700nm) using a graphics rendering system called Mitsuba \cite{jakob2015mitsuba}. We generate hundreds of such scenes and corresponding multi-spectral images for at 10 linearly spaced lightness levels between 0.2 and 0.6. For the images at a fixed lightness level, the reflectance and illumination spectra are assigned according to the spectral variations allowed under each case. Next, we crop a 51x51 pixel$^2$ part of the multi-spectral image containing the target object for further analysis (\ref{fig:croppedImage}). Fig. \ref{fig:studiedCases} shows examples of such cropped image at 3 lightness levels for the three cases considered in this work.
 
-% Figure 3
+% Figure 3: Methods
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.25 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{3DScene.png}
+        \includegraphics[width=\textwidth]{Figure3/3DScene.png}
         \caption{A typical 3D Scene}
         \label{fig:3DScene}
     \end{subfigure}
@@ -109,7 +109,7 @@ In this section we briefly describe our image generation software, that we call 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.19 \textwidth}   
     \hspace{0.1 \textwidth}
-        \includegraphics[width=\textwidth]{croppedImage.png}
+        \includegraphics[width=\textwidth]{Figure3/croppedImage.png}
         \caption{Cropped Image}
         \label{fig:croppedImage}
     \end{subfigure}
@@ -117,13 +117,13 @@ In this section we briefly describe our image generation software, that we call 
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.19 \textwidth}
     \hspace{0.1 \textwidth}
-        \includegraphics[width=\textwidth]{croppedImageWithMosaic.png}
+        \includegraphics[width=\textwidth]{Figure3/croppedImageWithMosaic.png}
         \caption{Optical Image}
         \label{fig:croppedImageWithMosaic}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{coneContrast.png}
+        \includegraphics[width=\textwidth]{Figure3/coneContrast.png}
         \caption{LMS cone contrast}
         \label{fig:coneContrast}
     \end{subfigure}
@@ -152,22 +152,22 @@ In this work we have studied the effects of spectral variations on perceived lig
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{case9SVD.pdf}
+        \includegraphics[width=\textwidth]{Figure4/case9SVD.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case9SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{case9AMA.pdf}
+        \includegraphics[width=\textwidth]{Figure4/case9AMA.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case9AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{case9FiltersResponse.pdf}
+        \includegraphics[width=\textwidth]{Figure4/case9FiltersResponse.pdf}
         \caption{AMA RF Response}
         \label{fig:case9FiltersResponse}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{case9Results.pdf}
+        \includegraphics[width=\textwidth]{Figure4/case9Results.pdf}
         \caption{Lightness Estimates}
         \label{fig:case9Results}
     \end{subfigure}    
@@ -178,7 +178,7 @@ In this work we have studied the effects of spectral variations on perceived lig
 % Figure 5
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{RMSEvsNFilters16.pdf}
+\includegraphics[width=0.3\textwidth]{Figure5/RMSEvsNFilters16.pdf}
 \caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.}
 \label{fig:RMSEvsNFilters}
 \end{figure}
@@ -188,22 +188,22 @@ In this work we have studied the effects of spectral variations on perceived lig
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{case10SVD.pdf}
+        \includegraphics[width=\textwidth]{Figure6/case10SVD.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case10SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{case10AMA.pdf}
+        \includegraphics[width=\textwidth]{Figure6/case10AMA.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case10AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{case10FiltersResponse.pdf}
+        \includegraphics[width=\textwidth]{Figure6/case10FiltersResponse.pdf}
         \caption{AMA RF Response}
         \label{fig:case10FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{case10Results.pdf}
+        \includegraphics[width=\textwidth]{Figure6/case10Results.pdf}
         \caption{Luminance Estimates}
         \label{fig:case10Results}
     \end{subfigure}
@@ -216,22 +216,22 @@ In this work we have studied the effects of spectral variations on perceived lig
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{case12SVD.pdf}
+        \includegraphics[width=\textwidth]{Figure7/case12SVD.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case12SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{case12AMA.pdf}
+        \includegraphics[width=\textwidth]{Figure7/case12AMA.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case12AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{case12FiltersResponse.pdf}
+        \includegraphics[width=\textwidth]{Figure7/case12FiltersResponse.pdf}
         \caption{AMA RF Response}
         \label{fig:case12FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{case12Results.pdf}
+        \includegraphics[width=\textwidth]{Figure7/case12Results.pdf}
         \caption{Luminance Estimates}
         \label{fig:case12Results}
     \end{subfigure}
@@ -245,21 +245,21 @@ In this work we have studied the effects of spectral variations on perceived lig
 \centering
 \begin{subfigure}[b]{0.3 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{case9AcrossCaseComparisonSVD.pdf}
+        \includegraphics[width=\textwidth]{Figure8/case9AcrossCaseComparisonSVD.pdf}
         \caption{SVD RFs of Case 1}
         \label{fig:case9AcrossCaseComparisonSVD}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.3 \textwidth}   
-        \includegraphics[width=\textwidth]{case10AcrossCaseComparisonSVD.pdf}
+        \includegraphics[width=\textwidth]{Figure8/case10AcrossCaseComparisonSVD.pdf}
         \caption{SVD RFs of Case 2}
         \label{fig:case10AcrossCaseComparisonSVD}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{case12AcrossCaseComparisonSVD.pdf}
+        \includegraphics[width=\textwidth]{Figure8/case12AcrossCaseComparisonSVD.pdf}
         \caption{SVD RFs of Case 3}
         \label{fig:case12AcrossCaseComparisonSVD}
     \end{subfigure}
@@ -272,21 +272,21 @@ In this work we have studied the effects of spectral variations on perceived lig
 \centering
 \begin{subfigure}[b]{0.3 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{case9AcrossCaseComparisonAMA.pdf}
+        \includegraphics[width=\textwidth]{Figure9/case9AcrossCaseComparisonAMA.pdf}
         \caption{AMA RFs of Case 1}
         \label{fig:case9AcrossCaseComparisonAMA}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.3 \textwidth}   
-        \includegraphics[width=\textwidth]{case10AcrossCaseComparisonAMA.pdf}
+        \includegraphics[width=\textwidth]{Figure9/case10AcrossCaseComparisonAMA.pdf}
         \caption{AMA RFs of Case 2}
         \label{fig:case10AcrossCaseComparisonAMA}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{case12AcrossCaseComparisonAMA.pdf}
+        \includegraphics[width=\textwidth]{Figure9/case12AcrossCaseComparisonAMA.pdf}
         \caption{AMA RFs of Case 3}
         \label{fig:case12AcrossCaseComparisonAMA}
     \end{subfigure}
@@ -299,21 +299,21 @@ In this work we have studied the effects of spectral variations on perceived lig
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{summaryBarGraph.pdf}
+	\includegraphics[width=\textwidth]{Figure10/summaryBarGraph.pdf}
 	\caption{Performance of methods}
 	\label{fig:summaryBarGraph}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.3 \textwidth}   
-	\includegraphics[width=\textwidth]{SVDSummaryBarGraph.pdf}
+	\includegraphics[width=\textwidth]{Figure10/SVDSummaryBarGraph.pdf}
 	\caption{SVD RF Performance}
 	\label{fig:SVDBAR}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{AMASummaryBarGraph.pdf}
+	\includegraphics[width=\textwidth]{Figure10/AMASummaryBarGraph.pdf}
 	\caption{AMA RF Performance}
 	\label{fig:AMABAR}
     \end{subfigure}
@@ -343,42 +343,43 @@ To overcome this  challenge, we have developed an image rendering software pipel
 
 The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
 
+% Figure 11
 \begin{figure}[t]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneLibrary.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneLibrary.png}
         \caption{Library }
         \label{fig:baseSceneLibrary}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneMill.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneMill.png}
         \caption{Mill}
         \label{fig:baseSceneMill}
     \end{subfigure}    
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneTableChairs.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneTableChairs.png}
         \caption{Table-Chairs}
         \label{fig:baseSceneTableChairs}
     \end{subfigure}
     
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneIndoorPlant.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneIndoorPlant.png}
         \caption{Indoor-plant}
         \label{fig:baseSceneIndoorPlant}
     \end{subfigure}    
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneWarehouse.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneWarehouse.png}
         \caption{Warehouse}
         \label{fig:baseSceneWarehouse}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{baseSceneCheckerBoard.png}
+        \includegraphics[width=\textwidth]{Figure11/baseSceneCheckerBoard.png}
         \caption{Checkerboard}
         \label{fig:baseSceneCheckerBoard}
     \end{subfigure}
@@ -387,42 +388,43 @@ The process of generating an individual virtual scene begins with the selection 
 
 VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted in the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from materials made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library.
 
+% Figure 12
 \begin{figure}[h]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithBigBall.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithBigBall.png}
         \caption{Big-ball}
         \label{fig:libraryWithBigBall}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
 \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithSmallBall.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithSmallBall.png}
         \caption{Small-ball}
         \label{fig:libraryWithSmallBall}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithBarrel.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithBarrel.png}
         \caption{Barrel}
         \label{fig:libraryWithBarrel}
     \end{subfigure}
     
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithXylophone.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithXylophone.png}
         \caption{Xylophone}
         \label{fig:libraryWithXylophone}
     \end{subfigure}
     ~
 	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithRingToy.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithRingToy.png}
         \caption{Ring toy}
         \label{fig:libraryWithRingToy}
     \end{subfigure}
         ~
     	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{libraryWithChampagneBottle.png}
+        \includegraphics[width=\textwidth]{Figure12/libraryWithChampagneBottle.png}
         \caption{Champagne Bottle}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
@@ -434,10 +436,11 @@ The size, position and orientation of the inserted objects and lights may be spe
 Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign the illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
 [GOT TO HERE.  DHB.]
+% Figure13
 \begin{figure}
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{targetVariation.png}
+        \includegraphics[width=\textwidth]{Figure13/targetVariation.png}
         \caption{Target spectra}
         \label{fig:targetVariation}
     \end{subfigure}
@@ -445,7 +448,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{backgroundVariation.png}
+        \includegraphics[width=\textwidth]{Figure13/backgroundVariation.png}
         \caption{Background spectra}
         \label{fig:backGroundVariation}
     \end{subfigure}
@@ -453,7 +456,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{illuminationVariation.png}
+        \includegraphics[width=\textwidth]{Figure13/illuminationVariation.png}
         \caption{Illumination spectra}
         \label{fig:illuminationVariation}
     \end{subfigure}
@@ -461,7 +464,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{targetPosition.png}
+        \includegraphics[width=\textwidth]{Figure13/targetPosition.png}
         \caption{Target position}
         \label{fig:targetPositionVariation}
     \end{subfigure}
@@ -469,7 +472,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{targetSizeOrientation.png}
+        \includegraphics[width=\textwidth]{Figure13/targetSizeOrientation.png}
         \caption{Target Size/Orientation}
         \label{fig:targetSizeOrientation}
     \end{subfigure}
@@ -487,9 +490,10 @@ For the images used in this work, we first selected the ``{\it Library}'' base s
 \subsection{Illumination Spectrum}
 The illumination spectrum is generated through a random statistical sampling of a natural illumination spectrum dataset. First, we decompose the spectra in the database as a linear sum using principle component analysis (PCA) basis vectors. This decomposition is approximated by taking a sum over the PCA basis vectors corresponding to the largest 6 eigenvalues. Random spectra are sampled from this low 6 dimensional PCA space assuming the spectral distribution to be a multivariate gaussian.
 
+% Figure 14
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{illumination.pdf}
+	\includegraphics[width=\textwidth]{Figure14/illumination.pdf}
     \caption{Illumination Generation}
     \label{fig:illuminationGeneration}
 \end{figure}
@@ -518,10 +522,11 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 \end{align}
 Finally $\tilde{I}(\lambda)$ is rescaled by a uniform random number between [0, 300].
 
+% Figure 15
 \subsection{Reflectance Spectrum}
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{reflectance.pdf}
+	\includegraphics[width=\textwidth]{Figure15/reflectance.pdf}
     \caption{Reflectance Generation}
     \label{fig:reflectanceGeneration}
 \end{figure}
@@ -556,9 +561,10 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 such that $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, the new surface reflectance 
 is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.
 
+% Figure 16
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{target.pdf}
+	\includegraphics[width=\textwidth]{Figure16/target.pdf}
     \caption{Target Reflectance Generation}
     \label{fig:targetGeneration}
 \end{figure}
