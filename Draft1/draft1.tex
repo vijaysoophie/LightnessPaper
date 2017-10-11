@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{amsmath}
+\usepackage{bbm}
 \usepackage{amssymb}
 \usepackage{comment}
 
@@ -148,7 +149,19 @@ The three $51 \times 51$ cone response matrix corresponding to each one of the L
 The L, M and S response to the center pixel on the target object is calculate by taking the average of a 3x3 patch of cones near the center of the target.
 
 \subsubsection*{SVD regression}
-This 
+This method is a generalization of principal component analysis for labeled data. Briefly, given a dataset $C_{M \times N}$ and labels $Y_{1\times N}$, the method finds directions along which the projections of the data maximize the separation between the images with different labels, while clustering the images with similar labels together. Mathematically, the method searches for a direction $\hat{u}$ such that the cost function:
+
+\begin{align}
+S = \sum\limits_{j,j'}\left(\hat{u}^\intercal C(:,j) - \hat{u}^\intercal C(:,j')\right)^2 \left(Y(j)-Y(j') \right)^2,
+\end{align} 
+where $C(:,j)$ represents the $j$'th column of the data matrix $C$. The direction of minimum cost is given by the eigenvector corresponding to the largest eigenvalue of the matrix:
+
+\begin{align}
+N C^\intercal Y_D^2 C - 2(Y*\mathbbm{1})C^\intercal Y_D C + (Y*Y^\intercal) (C^\intercal C)
+\end{align} 
+
+
+
 \subsubsection*{Accuracy maximization analysis}
 
 \subsection{Types of spectral variations studied}
@@ -250,7 +263,7 @@ In this work we have studied the effects of spectral variations on perceived lig
     \caption{{\bf Receptive fields and lightness estimates. Case 3:}  Same as Fig. \ref{fig:case9AllResults}.}
 \end{figure}
 
-% Figure 8
+% Figure 8stimulusIntensities(1)-1
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.3 \textwidth}
