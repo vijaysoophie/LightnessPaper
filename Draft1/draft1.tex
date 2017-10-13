@@ -154,18 +154,55 @@ This method is a generalization of principal component analysis for labeled data
 \begin{align}
 S = \sum\limits_{j,j'}\left(\hat{u}^\intercal C(:,j) - \hat{u}^\intercal C(:,j')\right)^2 \left(Y(j)-Y(j') \right)^2,
 \end{align} 
-where $C(:,j)$ represents the $j$'th column of the data matrix $C$. The direction of minimum cost is given by the eigenvector corresponding to the largest eigenvalue of the matrix:
+where $C(:,j)$ represents the $j$'th column (image) of the data matrix $C$. The direction of minimum cost is given by the eigenvector corresponding to the largest eigenvalue of the matrix:
 
 \begin{align}
-N C Y_D^2 C^\intercal - 2(Y*\mathbbm{1})C Y_D C^\intercal + (Y*Y^\intercal) (CC^\intercal)-C Y_{D}^2\mathbbm{1}\mathbbm{1}^\intercal C^\intercal +2 C Y_{D} \mathbbm{1}\mathbbm{1}^\intercal Y_{D} C^\intercal - C \mathbbm{1}\mathbbm{1}^\intercal Y_{D}^2 C^\intercal
-\end{align} 
-
-
+N C Y_D^2 C^\intercal - 2(Y*\mathbbm{1})C Y_D C^\intercal + (Y*Y^\intercal) (CC^\intercal)-C Y_{D}^2\mathbbm{1}\mathbbm{1}^\intercal C^\intercal +2 C Y_{D} \mathbbm{1}\mathbbm{1}^\intercal Y_{D} C^\intercal - C \mathbbm{1}\mathbbm{1}^\intercal Y_{D}^2 C^\intercal.
+\end{align}
+Here, $Y_{D}$ is a diagonal matrix with the elements of the labels vector $Y$ along the diagonal, and $\mathbbm{1}$ is a $N\times 1$ vector of ones.
 
 \subsubsection*{Accuracy maximization analysis}
+AMA \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. It finds the receptive fields that are optimal for performing a well defined behavioral task. Given a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task, which is implicitly defined in terms of the labels. The optimal filters are the ones whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. The filters are learned via gradient descent with the aid of an optimal Bayesian decoder that is matched to the filters throughout the learning process. 
+
+Let us assume that there is a latent variable ($Y$) that takes the values $\{Y_k: k\in[1,N_{\nu}] \}$. The $l$'th stimuli corresponding to the $k$'th category of the latent variable is $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the latent variable ($Y_k$) corresponding to the stimuli $s_{kl}$ as $\hat{Y}_{kl}$. Given this estimate, one can define a cost function $\mathcal{C}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and a mean cost $\bar{\mathcal{C}}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
+
+Accuracy maximization analysis (AMA) finds the set of optimal filters ${\textbf{\textit f}}^{\rm opt}$ that minimize the average cost function over the entire dataset $\{s_{kl}: k\in[1,N_{\nu}, l\in[1,N_k]\}$. $N_{\nu}$ is the total number of labels and $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
+\begin{align}
+{\textbf {\textit f} }^{\rm opt} = \argmin_{\textbf {\textit f} } \sum_{kl} \bar{\mathcal{C}}_{kl}.
+\label{eq:fopt}
+\end{align}
+
+AMA employs the Bayes optimal decoder to estimate the optimal estimate. The Bayesian decoder computes the posterior probability of the latent variable $p(X|{\textbf {\textit R}})$ and reads out the optimal estimate $\hat{Y}^{\rm opt}$ from the posterior as the value that minimizes the cost. By Bayes' theorem, the posterior probability can be written as:
+\begin{align}
+p(Y_k|{\textbf {\textit R} }_{kl}) = \frac{p({\textbf {\textit R} }_{kl}|Y_k)p(Y_k)}{\sum\limits_{i=1}^{N_{\nu}}{p({\textbf {\textit R} }_{kl}|Y_i)p(Y_i)}}.
+\label{eq:posterior}
+\end{align}
+As conditional probability of the filter response is:
+\begin{align}
+p({\textbf {\textit R} }_{kl}|Y_k) = \sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|Y_k),
+\label{eq:condProb}
+\end{align}hat{Y}
+using Eq.\ref{eq:condProb} in Eq.\ref{eq:posterior} we get:
+\begin{align}
+p(Y_k|{\textbf {\textit R} }_{kl}) = \frac{\left[\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|Y_k)\right]p(Y_k)}{\sum\limits_{i=1}^{N_{\nu}}{\left[\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij})p({\textbf {\textit s} }_{kj}|Y_i)\right]p(Y_i)}}
+\label{eq:finalPosterior}
+\end{align}
+Since, $p({\textbf {\textit s} }_{km}|Y_k) = \frac{1}{N_k}$, and $p(Y_k)=\frac{N_k}{N}$, where $N = \sum\limits_{k=1}^{N_{\nu}}N_{k}$ is total number of samples in the training set, Eq.\ref{eq:finalPosterior} simplifies to
+\begin{align}
+p(Y_k|{\textbf {\textit R} }_{kl}) = \frac{\left[\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km}) \frac{1}{N_k}\right]\frac{N_k}{N}}{\sum\limits_{i=1}^{N_{\nu}}{\left[\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij}) \frac{1}{N_i}\right]\frac{N_i}{N}}} = \frac{\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})}{\sum\limits_{i=1}^{N_{\nu}}{\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij})}}.
+\label{eq:simplifiedPosterior}
+\end{align}
+Now if the cost associated with the latent variable $Y_k$ and the estimate $\hat{Y}_k$ is $\gamma (Y_k,\hat{Y}_k)$, we have  
+\begin{align}
+\mathcal{C}_{kl} = \sum\limits_{u=1}^{N_{\nu}}\gamma(X_u,\hat{Y}_u)p(X_u|{\textbf{\textit R}}_{kl}),
+\end{align}
+and the total cost associated with the training set is $\bar{\mathcal{C}} = \frac{1}{N} \sum\limits_{k,l}\bar{\mathcal{C}}_{kl} = \frac{1}{N} \sum\limits_{k,l}\langle \mathcal{C}_{kl}\rangle_{{\textbf{\textit R}}_{kl}}$. The optimal AMA filters are obtained by minimizing $\bar{\mathcal{C}}$ over the filter set ${\textbf {\textit f} }$ (Eq.\ref{eq:fopt}). The filters are obtained using gradient descent.
+
+In this work, we assume the noisy response model to be a multivariate gaussian. For a stimuli $s_{kl}$, the noisy response vector ${\textbf{\textit R}}_{kl} = \left[{\textbf{\textit R}}_{kl,1},{\textbf{\textit R}}_{kl,2},\dots,{\textbf{\textit R}}_{kl,q}\right]$ to the set of filters ${\textbf{\textit f}} = \left[{\textbf{\textit f}}_{kl,1},{\textbf{\textit f}}_{2},\dots,{\textbf{\textit f}}_{q}\right]$ is given by $\mathcal{N}({\textbf{\textit r}}_{kl}, \Sigma)$, with mean response vector ${\textbf{\textit r}}_{kl} = \left[{\textbf{\textit r}}_{kl,1},{\textbf{\textit r}}_{kl,2},\dots,{\textbf{\textit r}}_{kl,q}\right] = \left[{\textbf{\textit f}}_{1}\cdot s_{kl},{\textbf{\textit f}}_{2}\cdot s_{kl}\dots,{\textbf{\textit f}}_{q}\cdot s_{kl}\right]$ and the covariance matrix as the diagonal matrix $\Sigma$ with variances $\left(\sigma_1^2, \sigma_2^2,\dots, \sigma_q^2 \right)$. We assume $\sigma_i^2 = \alpha |r_i| + \sigma_0^2$, $|{\textbf{\textit f}}_{kl,i}|=1$ and $s_{kl}$ to be zero mean contrast normalized, i.e., $\langle{s_{kl}}\rangle = 0$ \& ${|s_{kl}|=1}$.
+
 
 \subsection{Types of spectral variations studied}
-In this work we have studied the effects of spectral variations on perceived lightness. The spectral variations in the scene can be categorized into three types. The variations in the shape of target object reflectance spectra, the variations in the shape of background object reflectance spectra, and the variations in the shape of the spectral power distribution of light sources. Here, we present the results for three cases (fig.\ref{fig:studiedCases}): 1. effects of variations in target object spectra (fig.\ref{fig:targetVarying}), 2. effects of variations in target object spectra and the light source spectra (fig.\ref{fig:targetIlluminantVarying}), and 3. effects of variations in all three spectra (fig.\ref{fig:allSpectraVarying}). The rest of the cases are qualitatively similar to one of the cases discussed here, and are discussed in the supplementary materials. 
+We have studied the effects of spectral variations on perceived lightness. These can be categorized into three types: variations in the shape of target object reflectance spectra, variations in the shape of background object reflectance spectra, and the variations in the shape of the spectral power distribution of light sources. Here, we present the results for three cases (Fig.\ref{fig:studiedCases}): 1. effects of variations in target object spectra (Fig.\ref{fig:targetVarying}), 2. effects of variations in target object spectra and the light source spectra (Fig.\ref{fig:targetIlluminantVarying}), and 3. effects of variations in all three spectra (Fig.\ref{fig:allSpectraVarying}). The cases with other types of variations are qualitatively similar to one of the three cases discussed here (see Discussion).
 
 
 \section{Results}
@@ -546,63 +583,7 @@ perception of brightness. The target reflectance is given by: $\tilde{R}(\lambda
 
 \subsection{Cone response to hyper-spectral images}
 Cone response to the hyper-spectral images are generated
-using \href{https://github.com/isetbio}{ISETBIO}. The model incorporates several critical components of biological vision, including physiological optics, information about cornea, lens, pupil, etc. We simulate a model retinal mosaic with $51\times51$ cones having cone densities in the ratio [l,m,s]=[0.6 0.3 0.1]. The cone wavelength sensitivities are scaled such that the area under the sensitivity curve equals unity. A $51\times51$ pixel$^2$ patch of the image containing the target image is used to calculate the cone responses. The image patch is assumed to cover a $1^{\circ}$ field of view at a distance of 1 m. 
-
-\subsection{Accuracy Maximization Analysis}
-AMA \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. It finds the receptive fields that are optimal for performing a well defined behavioral task. Given a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task, which is implicitly defined in terms of the labels. The optimal filters are the ones whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. The filters are learned via gradient descent with the aid of an optimal Bayesian decoder that is matched to the filters throughout the learning process. 
-
-Let us assume that there is a latent variable ($X$) that takes the values $\{X_k: k\in[1,N_{\nu}] \}$. The $l$'th stimuli corresponding to the the $k$'th category of the latent variable is $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the latent variable ($X_k$) corresponding to the stimuli $s_{kl}$ as $\hat{X}_{kl}$. Given this estimate, one can define a cost function $C_{kl}(X_{kl},\hat{X}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and a mean cost $\bar{C}_{kl}(X_{kl},\hat{X}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
-
-Accuracy maximization analysis (AMA) finds the set of optimal filters ${\textbf{\textit f}}^{\rm opt}$ that minimize the average cost function over the entire dataset $\{s_{kl}: k\in[1,N_{\nu}, l\in[1,N_k]\}$. $N_{\nu}$ is the total number of labels and $N_{k}$ is the number of stimuli corresponding to the label $X_k$. Thus,
-\begin{align}
-{\textbf {\textit f} }^{\rm opt} = \argmin_{\textbf {\textit f} } \sum_{kl} \bar{C}_{kl}.
-\label{eq:fopt}
-\end{align}
-
-AMA employs the Bayes optimal decoder to estimate the optimal estimate. The Bayesian decoder computes the posterior probability of the latent variable $p(X|{\textbf {\textit R}})$ and reads out the optimal estimate $\hat{X}^{\rm opt}$ from the posterior as the value that minimizes the cost. By Bayes' theorem, the posterior probability can be written as:
-\begin{align}
-p(X_k|{\textbf {\textit R} }_{kl}) = \frac{p({\textbf {\textit R} }_{kl}|X_k)p(X_k)}{\sum\limits_{i=1}^{N_{\nu}}{p({\textbf {\textit R} }_{kl}|X_i)p(X_i)}}.
-\label{eq:posterior}
-\end{align}
-As conditional probability of the filter response is:
-\begin{align}
-p({\textbf {\textit R} }_{kl}|X_k) = \sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|X_k),
-\label{eq:condProb}
-\end{align}
-using Eq.\ref{eq:condProb} in Eq.\ref{eq:posterior} we get:
-\begin{align}
-p(X_k|{\textbf {\textit R} }_{kl}) = \frac{\left[\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|X_k)\right]p(X_k)}{\sum\limits_{i=1}^{N_{\nu}}{\left[\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij})p({\textbf {\textit s} }_{kj}|X_i)\right]p(X_i)}}
-\label{eq:finalPosterior}
-\end{align}
-Since, $p({\textbf {\textit s} }_{km}|X_k) = \frac{1}{N_k}$, and $p(X_k)=\frac{N_k}{N}$, where $N = \sum\limits_{k=1}^{N_{\nu}}N_{k}$ is total number of samples in the training set, Eq.\ref{eq:finalPosterior} simplifies to
-\begin{align}
-p(X_k|{\textbf {\textit R} }_{kl}) = \frac{\left[\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km}) \frac{1}{N_k}\right]\frac{N_k}{N}}{\sum\limits_{i=1}^{N_{\nu}}{\left[\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij}) \frac{1}{N_i}\right]\frac{N_i}{N}}} = \frac{\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})}{\sum\limits_{i=1}^{N_{\nu}}{\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij})}}.
-\label{eq:simplifiedPosterior}
-\end{align}
-Now if the cost associated with the latent variable $X_k$ and the estimate $\hat{X}_k$ is $\gamma (X_k,\hat{X}_k)$, we have  
-\begin{align}
-C_{kl} = \sum\limits_{u=1}^{N_{\nu}}\gamma(X_u,\hat{X}_u)p(X_u|{\textbf{\textit R}}_{kl}),
-\end{align}
-and the total cost associated with the training set is $\bar{C} = \frac{1}{N} \sum\limits_{k,l}\bar{C}_{kl} = \frac{1}{N} \sum\limits_{k,l}\langle C_{kl}\rangle_{{\textbf{\textit R}}_{kl}}$. The optimal AMA filters are obtained by minimizing $\bar{C}$ over the filter set ${\textbf {\textit f} }$ (Eq.\ref{eq:fopt}). The filters are obtained using gradient descent.
-
-In this work, we assume the noisy response model to be a multivariate gaussian. For a stimuli $s_{kl}$, the noisy response vector ${\textbf{\textit R}}_{kl} = \left[{\textbf{\textit R}}_{kl,1},{\textbf{\textit R}}_{kl,2},\dots,{\textbf{\textit R}}_{kl,q}\right]$ to the set of filters ${\textbf{\textit f}} = \left[{\textbf{\textit f}}_{kl,1},{\textbf{\textit f}}_{2},\dots,{\textbf{\textit f}}_{q}\right]$ is given by $\mathcal{N}({\textbf{\textit r}}_{kl}, \Sigma)$, with mean response vector ${\textbf{\textit r}}_{kl} = \left[{\textbf{\textit r}}_{kl,1},{\textbf{\textit r}}_{kl,2},\dots,{\textbf{\textit r}}_{kl,q}\right] = \left[{\textbf{\textit f}}_{1}\cdot s_{kl},{\textbf{\textit f}}_{2}\cdot s_{kl}\dots,{\textbf{\textit f}}_{q}\cdot s_{kl}\right]$ and the covariance matrix as the diagonal matrix $\Sigma$ with variances $\left(\sigma_1^2, \sigma_2^2,\dots, \sigma_q^2 \right)$. We assume $\sigma_i^2 = \alpha |r_i| + \sigma_0^2$, $|{\textbf{\textit f}}_{kl,i}|=1$ and $s_{kl}$ to be zero mean contrast normalized, i.e., $\langle{s_{kl}}\rangle = 0$ \& ${|s_{kl}|=1}$.
-
-\subsection{Data Analysis} We generate XX number of images with target objects at 10 standard luminance levels linearly spaced between 0.2 to 0.6. These limits were chosen because the luminance under the standard source ($D_{65}$) of more than $90\%$ of the natural surface reflectance spectra fell between them. Thus we had YY images at each target luminance level. We generated the cone responses to these images using ISETBIO. The cone response ($I$) were first converted in to weber contrast form using the transformation $\left(I \rightarrow I_{\rm web} = \frac{I}{\langle I \rangle}-1\right)$. The weber contrast responses and the target luminance levels were used as the input stimuli and the latent variable, respectively, for AMA. The AMA parameters were: $\alpha = xxx$ and $\sigma_0^2 = yyy$.
-
-
-\subsection{Explanation of the various cases}
-In this work we have labeled the images using the lightness of the target object under  standard daylight spectrum ($D_65$). The images are labeled such that the total light reflected from the target object equals a fixed value. At this fixed value, we generate multiple images with variations in the spectral properties of the objects and the light sources. At fixed target lightness (Y65), spectral variations can result from variations in the shape of: 1. Target surface reflectance spectrum, 2. Background object surface reflectance, and 3. Spectral power distribution of the light source. These give rise to 12 distinct cases (Fig. \ref{fig:caseIcons}). The icons on the left and the top represent the spectrum of the illuminant, the background and the target object. For the illuminant and background, only one curve in the represents fixed spectra from image to image. Two curve imply that the spectra were varied randomly from image to image. For the target object, we show the spectrum at two distinct lightness levels. At a particular level, the meaning of the curves is the same as that of illuminant and background icons. Additionally, same shape of the target reflectance spectrum at both the levels means that Y65 was changed by changing the mean value of the surface reflectance spectrum keeping the same shape.
-
-%\begin{figure}
-%\centering
-%	\includegraphics[width=0.6 \textwidth]{cases.pdf}
-%    \caption{\bf{Spectral variations considered in our analysis.} }
-%    \label{fig:casesIcons}
-% \end{figure}
-
-To illustrate, in case 1 the spectral power distribution of the light source and the surface reflectance of the background objects are fixed from image to image. Further, the shape of the target object surface reflectance also remains the same from to image to image at the same standard lightness level, and only vary in their mean value between standard luminance levels. Thus in case 1, at one standard lightness, all images are identical (Fig. . This is the simplest possible scene variation considered here. Similarly, in the most complex case, case 12, all the spectra are allowed to vary from image to image. 
-
-
+using \href{https://github.com/isetbio}{ISETBIO}. The model incorporates several critical components of biological vision, including physiological optics, information about cornea, lens, pupil, etc. We simulate a model retinal mosaic with $51\times51$ cones having cone densities in the ratio [l,m,s]=[0.6 0.3 0.1]. The cone wavelength sensitivities are scaled such that the area under the sensitivity curve equals unity. A $51\times51$ pixel$^2$ patch of the image containing the target image is used to calculate the cone responses. The image patch is assumed to cover a $1^{\circ}$ field of view at a distance of 1 m.
 
 \bibliography{references}
 \bibliographystyle{jovcite}
