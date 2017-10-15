@@ -23,7 +23,7 @@
 \newlabel{fig:introExampleFigure}{{1b}{2}{\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:introExampleFigure}{{b}{2}{\relax }{figure.caption.2}{}}
 \newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 50}}{2}{Introduction}{figure.caption.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light reflected off an object and incident on our eyes, depends both on the surface reflectance of the object $\left ( R(\lambda ,x) \right )$ and the illumination spectrum of the light source $\left (E(\lambda ,x)\right )$. Additionally, the reflected light also depends on context the object lies in. Thus a variation in the reflected light can result from either a change in the object surface reflectance, or a change in the illumination spectrum of the light source, or change in the context, or all of these. Color constancy refers to the ability of the human visual system to perceive the color of the object stably under variations coming from these factors. (b) {\bf  Lightness Constancy Under Spectral Variations:} In this work we study lightness constancy under variations in the spectra of the light sources and the objects. In Fig.\ref  {fig:introExampleFigure}, we show 5 images generated at three different lightness levels of the target object (spherical object in the center). Along the rows we have fixed the lightness level of the target object, while we vary the spectra of the target object, the background objects and the light sources. (For illustration, in fig.\ref  {fig:introExampleFigure}, We have fixed the shape of the target object reflectance spectra along the column.) Our aim is to identify computations that can recover the target object lightness from such stimuli.\relax }}{2}{figure.caption.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light coming from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda ,x)$, and the illumination spectrum of the light source, $E(\lambda ,x)$. Additionally, it depends on the context in which the object lies. The human visual system has the ability to discard any variations in the captured light due to extrinsic factors, and stably perceive the color of the object. Such invariant color perception is called color constancy. (b) {\bf  Lightness Constancy Under Spectral Variations:} In this work we study lightness estimation. Fig.\ref  {fig:introExampleFigure} shows images of an object (spherical object in the center) at three lightness levels. We show 5 images at each lightness level which vary in the spectra of the target object (sphere), the background objects and the light sources. (For illustration, in fig.\ref  {fig:introExampleFigure}, we have fixed the shape of the target object reflectance spectra along the column.) Our aim is to identify computations that can accurately estimate the object lightness under such variations.\relax }}{2}{figure.caption.2}}
 \citation{jakob2015mitsuba}
 \newlabel{fig:targetVarying}{{2a}{3}{Case 1\relax }{figure.caption.3}{}}
 \newlabel{sub@fig:targetVarying}{{a}{3}{Case 1\relax }{figure.caption.3}{}}
@@ -31,8 +31,11 @@
 \newlabel{sub@fig:targetIlluminantVarying}{{b}{3}{Case 2\relax }{figure.caption.3}{}}
 \newlabel{fig:allSpectraVarying}{{2c}{3}{Case 3\relax }{figure.caption.3}{}}
 \newlabel{sub@fig:allSpectraVarying}{{c}{3}{Case 3\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of images studied in our work. The numbers on the left are the standard lightness level of the target object. We show 5 images for each case at 3 lightness levels. The analysis was performed with images at 10 lightness levels. We studied three types of spectral variations. (a) Case 1: Target reflectance spectra variable, Background reflectance spectra fixed, illuminant spectra fixed (b) Case 2: Target reflectance spectra variable, Background reflectance spectra fixed, illuminant spectra variable (c) Case 3: Target reflectance spectra variable, Background reflectance spectra variable, illuminant spectra variable.\relax }}{3}{figure.caption.3}}
-\newlabel{fig:studiedCases}{{2}{3}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of images studied in our work. The numbers on the left are the standard lightness level of the target object. We show 5 images for each case at 3 lightness levels. The analysis was performed with images at 10 lightness levels. We studied three types of spectral variations. (a) Case 1: Target reflectance spectra variable, Background reflectance spectra fixed, illuminant spectra fixed (b) Case 2: Target reflectance spectra variable, Background reflectance spectra fixed, illuminant spectra variable (c) Case 3: Target reflectance spectra variable, Background reflectance spectra variable, illuminant spectra variable.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of hyper-spectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }}{3}{figure.caption.3}}
+\newlabel{fig:studiedCases}{{2}{3}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of hyper-spectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{Methods}{3}{section*.4}}
+\@writefile{toc}{\contentsline {section}{Image database}{3}{section*.5}}
+\newlabel{method:VirtualWorld}{{}{3}{Image database}{section*.5}{}}
 \newlabel{fig:3DScene}{{3a}{4}{A typical 3D Scene\relax }{figure.caption.6}{}}
 \newlabel{sub@fig:3DScene}{{a}{4}{A typical 3D Scene\relax }{figure.caption.6}{}}
 \newlabel{fig:croppedImage}{{3b}{4}{Cropped Image\relax }{figure.caption.6}{}}
@@ -41,22 +44,22 @@
 \newlabel{sub@fig:croppedImageWithMosaic}{{c}{4}{Optical Image\relax }{figure.caption.6}{}}
 \newlabel{fig:coneContrast}{{3d}{4}{LMS cone contrast\relax }{figure.caption.6}{}}
 \newlabel{sub@fig:coneContrast}{{d}{4}{LMS cone contrast\relax }{figure.caption.6}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 137}}{4}{Image database}{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} We employ a supervised learning approach in our study. We generate a database of visual system response to images labeled with the lightness of the target object. This is done as follows: (a) We define a 3D virtual scene where we can assign the geometrical and spectral properties of the objects. In this 3D scene, we place a target object (here the spherical object) in the camera field of view and assign a fixed reflectance spectrum to the target object. Then we render a hyperspectral image of the scene. (b) A part of the image, containing the target object, is cropped from the image. (c) Using an accurate model of the front end of the visual system, we generate the response of the retinal cones to the cropped image. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) For each cone type, we interpolate the response to get the cone-response of all the three types at each location. These responses are contrast normalized (see text) to the get the input analysis.\relax }}{4}{figure.caption.6}}
-\@writefile{toc}{\contentsline {section}{Methods}{4}{section*.4}}
-\@writefile{toc}{\contentsline {section}{Image database}{4}{section*.5}}
-\newlabel{method:VirtualWorld}{{}{4}{Image database}{section*.5}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 128}}{4}{Image database}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, a target object and a light source is selected from the VWCC library. The target object is placed in the camera field of view and assigned a reflectance spectrum with a specific lightness. After assigning spectra to other objects and lights sources in the scene, a hyper-spectral image of the scene is rendered using Mitsuba graphics rendering software. (b) A part of the image, containing the target object, is cropped from the image. (c) The response of the retinal cones to the cropped image is simulated using a model of the visual system. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) The cone response are interpolated to get the response of all the three types at each location (demosaicing). Finally, the demosaic response is contrast normalized (see text).\relax }}{4}{figure.caption.6}}
 \@writefile{toc}{\contentsline {section}{Model of Visual System}{4}{section*.7}}
 \newlabel{method:Isetbio}{{}{4}{Model of Visual System}{section*.7}{}}
+\@writefile{toc}{\contentsline {section}{Supervised Learning methods}{4}{section*.8}}
+\newlabel{method:SupervisedLearning}{{}{4}{Supervised Learning methods}{section*.8}{}}
 \citation{geisler2009optimal}
 \citation{burge2017accuracy}
-\@writefile{toc}{\contentsline {section}{Supervised Learning methods}{5}{section*.8}}
-\newlabel{method:SupervisedLearning}{{}{5}{Supervised Learning methods}{section*.8}{}}
-\newlabel{eq:fopt}{{3}{6}{Accuracy maximization analysis}{equation.0.3}{}}
-\newlabel{eq:posterior}{{4}{6}{Accuracy maximization analysis}{equation.0.4}{}}
+\newlabel{eq:fopt}{{3}{5}{Accuracy maximization analysis}{equation.0.3}{}}
+\newlabel{eq:posterior}{{4}{5}{Accuracy maximization analysis}{equation.0.4}{}}
 \newlabel{eq:condProb}{{5}{6}{Accuracy maximization analysis}{equation.0.5}{}}
 \newlabel{eq:finalPosterior}{{6}{6}{Accuracy maximization analysis}{equation.0.6}{}}
 \newlabel{eq:simplifiedPosterior}{{7}{6}{Accuracy maximization analysis}{equation.0.7}{}}
+\@writefile{toc}{\contentsline {section}{Types of spectral variations studied}{6}{section*.12}}
+\@writefile{toc}{\contentsline {section}{Results}{6}{section*.13}}
+\@writefile{toc}{\contentsline {section}{Case 1}{6}{section*.14}}
 \newlabel{fig:case9SVD}{{4a}{7}{SVD First 2 RFs\relax }{figure.caption.15}{}}
 \newlabel{sub@fig:case9SVD}{{a}{7}{SVD First 2 RFs\relax }{figure.caption.15}{}}
 \newlabel{fig:case9AMA}{{4b}{7}{AMA First 2 RFs\relax }{figure.caption.15}{}}
@@ -67,11 +70,8 @@
 \newlabel{sub@fig:case9Results}{{d}{7}{Lightness Estimates\relax }{figure.caption.15}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 1:} (a) First two receptive fields produced by the SVD method. Along the row we show the filters corresponding to the L cones, M cones and Scones (left to right). (c) First two receptive fields produced by the SVD method. (c) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response separate out quite well in this case, making the estimation easy (d) The estimates of the target object standard lightness. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.\relax }}{7}{figure.caption.15}}
 \newlabel{fig:case9AllResults}{{4}{7}{{\bf Receptive fields and lightness estimates. Case 1:} (a) First two receptive fields produced by the SVD method. Along the row we show the filters corresponding to the L cones, M cones and Scones (left to right). (c) First two receptive fields produced by the SVD method. (c) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response separate out quite well in this case, making the estimation easy (d) The estimates of the target object standard lightness. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.\relax }{figure.caption.15}{}}
-\@writefile{toc}{\contentsline {section}{Types of spectral variations studied}{7}{section*.12}}
-\@writefile{toc}{\contentsline {section}{Results}{7}{section*.13}}
-\@writefile{toc}{\contentsline {section}{Case 1}{7}{section*.14}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.\relax }}{8}{figure.caption.16}}
-\newlabel{fig:RMSEvsNFilters}{{5}{8}{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.\relax }}{7}{figure.caption.16}}
+\newlabel{fig:RMSEvsNFilters}{{5}{7}{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.\relax }{figure.caption.16}{}}
 \newlabel{fig:case10SVD}{{6a}{8}{SVD First 2 RFs\relax }{figure.caption.17}{}}
 \newlabel{sub@fig:case10SVD}{{a}{8}{SVD First 2 RFs\relax }{figure.caption.17}{}}
 \newlabel{fig:case10AMA}{{6b}{8}{AMA First 2 RFs\relax }{figure.caption.17}{}}
@@ -80,7 +80,7 @@
 \newlabel{sub@fig:case10FiltersResponse}{{c}{8}{AMA RF Response\relax }{figure.caption.17}{}}
 \newlabel{fig:case10Results}{{6d}{8}{Luminance Estimates\relax }{figure.caption.17}{}}
 \newlabel{sub@fig:case10Results}{{d}{8}{Luminance Estimates\relax }{figure.caption.17}{}}
-\newlabel{fig:case10AllResults}{{\caption@xref {fig:case10AllResults}{ on input line 272}}{8}{Case 1}{figure.caption.17}{}}
+\newlabel{fig:case10AllResults}{{\caption@xref {fig:case10AllResults}{ on input line 263}}{8}{Case 1}{figure.caption.17}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{8}{figure.caption.17}}
 \newlabel{fig:case12SVD}{{7a}{8}{SVD First 2 RFs\relax }{figure.caption.18}{}}
 \newlabel{sub@fig:case12SVD}{{a}{8}{SVD First 2 RFs\relax }{figure.caption.18}{}}
@@ -90,18 +90,18 @@
 \newlabel{sub@fig:case12FiltersResponse}{{c}{8}{AMA RF Response\relax }{figure.caption.18}{}}
 \newlabel{fig:case12Results}{{7d}{8}{Luminance Estimates\relax }{figure.caption.18}{}}
 \newlabel{sub@fig:case12Results}{{d}{8}{Luminance Estimates\relax }{figure.caption.18}{}}
-\newlabel{fig:case12AllResults}{{\caption@xref {fig:case12AllResults}{ on input line 300}}{8}{Case 1}{figure.caption.18}{}}
+\newlabel{fig:case12AllResults}{{\caption@xref {fig:case12AllResults}{ on input line 291}}{8}{Case 1}{figure.caption.18}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 3:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{8}{figure.caption.18}}
+\newlabel{fig:summaryBarGraph}{{8a}{8}{Performance of methods\relax }{figure.caption.19}{}}
+\newlabel{sub@fig:summaryBarGraph}{{a}{8}{Performance of methods\relax }{figure.caption.19}{}}
+\newlabel{fig:SVDBAR}{{8b}{8}{SVD RF Performance\relax }{figure.caption.19}{}}
+\newlabel{sub@fig:SVDBAR}{{b}{8}{SVD RF Performance\relax }{figure.caption.19}{}}
+\newlabel{fig:AMABAR}{{8c}{8}{AMA RF Performance\relax }{figure.caption.19}{}}
+\newlabel{sub@fig:AMABAR}{{c}{8}{AMA RF Performance\relax }{figure.caption.19}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it  fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref  {fig:SVDBAR} for AMA RFs.\relax }}{8}{figure.caption.19}}
+\newlabel{fig:barGraphs}{{8}{8}{{\bf Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref {fig:SVDBAR} for AMA RFs.\relax }{figure.caption.19}{}}
 \citation{heasly2014rendertoolbox3}
 \citation{jakob2015mitsuba}
-\newlabel{fig:summaryBarGraph}{{8a}{9}{Performance of methods\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:summaryBarGraph}{{a}{9}{Performance of methods\relax }{figure.caption.19}{}}
-\newlabel{fig:SVDBAR}{{8b}{9}{SVD RF Performance\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:SVDBAR}{{b}{9}{SVD RF Performance\relax }{figure.caption.19}{}}
-\newlabel{fig:AMABAR}{{8c}{9}{AMA RF Performance\relax }{figure.caption.19}{}}
-\newlabel{sub@fig:AMABAR}{{c}{9}{AMA RF Performance\relax }{figure.caption.19}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it  fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref  {fig:SVDBAR} for AMA RFs.\relax }}{9}{figure.caption.19}}
-\newlabel{fig:barGraphs}{{8}{9}{{\bf Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref {fig:SVDBAR} for AMA RFs.\relax }{figure.caption.19}{}}
 \@writefile{toc}{\contentsline {section}{Explain the filters}{9}{section*.20}}
 \@writefile{toc}{\contentsline {section}{Methods}{9}{section*.21}}
 \@writefile{toc}{\contentsline {section}{Generating Virtual Images}{9}{section*.22}}
@@ -119,6 +119,7 @@
 \newlabel{sub@fig:baseSceneCheckerBoard}{{f}{10}{Checkerboard\relax }{figure.caption.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of base scenes.\relax }}{10}{figure.caption.23}}
 \newlabel{fig:baseScenes}{{9}{10}{Example of base scenes.\relax }{figure.caption.23}{}}
+\citation{peyvandi2016colorimetric}
 \newlabel{fig:libraryWithBigBall}{{10a}{11}{Big-ball\relax }{figure.caption.24}{}}
 \newlabel{sub@fig:libraryWithBigBall}{{a}{11}{Big-ball\relax }{figure.caption.24}{}}
 \newlabel{fig:libraryWithSmallBall}{{10b}{11}{Small-ball\relax }{figure.caption.24}{}}
@@ -133,7 +134,7 @@
 \newlabel{sub@fig:libraryWithChampagneBottle}{{f}{11}{Champagne Bottle\relax }{figure.caption.24}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Base scenes with inserted objects.\relax }}{11}{figure.caption.24}}
 \newlabel{fig:libraryWithTarget}{{10}{11}{Base scenes with inserted objects.\relax }{figure.caption.24}{}}
-\citation{peyvandi2016colorimetric}
+\@writefile{toc}{\contentsline {section}{Illumination Spectrum}{11}{section*.26}}
 \newlabel{fig:targetVariation}{{11a}{12}{Target spectra\relax }{figure.caption.25}{}}
 \newlabel{sub@fig:targetVariation}{{a}{12}{Target spectra\relax }{figure.caption.25}{}}
 \newlabel{fig:backGroundVariation}{{11b}{12}{Background spectra\relax }{figure.caption.25}{}}
@@ -146,7 +147,8 @@
 \newlabel{sub@fig:targetSizeOrientation}{{e}{12}{Target Size/Orientation\relax }{figure.caption.25}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }}{12}{figure.caption.25}}
 \newlabel{fig:spectralTransformations}{{11}{12}{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {section}{Illumination Spectrum}{12}{section*.26}}
+\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{12}{section*.28}}
+\@writefile{toc}{\contentsline {section}{Cone response to hyper-spectral images}{12}{section*.31}}
 \@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Illumination Generation\relax }}{13}{figure.caption.27}}
 \newlabel{fig:illuminationGeneration}{{12}{13}{Illumination Generation\relax }{figure.caption.27}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Reflectance Generation\relax }}{13}{figure.caption.29}}
@@ -154,10 +156,6 @@
 \bibdata{references}
 \bibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
 \APACbibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Target Reflectance Generation\relax }}{14}{figure.caption.30}}
-\newlabel{fig:targetGeneration}{{14}{14}{Target Reflectance Generation\relax }{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{14}{section*.28}}
-\@writefile{toc}{\contentsline {section}{Cone response to hyper-spectral images}{14}{section*.31}}
 \bibcite{geisler2009optimal}{\citeauthoryear {Geisler, Najemnik,{}\ \BBA{} Ing}{Geisler\ \BOthers {.}}{{\APACyear {2009}}}}
 \APACbibcite{geisler2009optimal}{\citeauthoryear {Geisler, Najemnik,{}\ \BBA{} Ing}{Geisler\ \BOthers {.}}{{\APACyear {2009}}}}
 \bibcite{heasly2014rendertoolbox3}{\citeauthoryear {Heasly, Cottaris, Lichtman, Xiao,{}\ \BBA{} Brainard}{Heasly\ \BOthers {.}}{{\APACyear {2014}}}}
@@ -167,4 +165,6 @@
 \bibcite{peyvandi2016colorimetric}{\citeauthoryear {Peyvandi, Hern{\'a}ndez-Andr{\'e}s, Olmo, Nieves,{}\ \BBA{} Romero}{Peyvandi\ \BOthers {.}}{{\APACyear {2016}}}}
 \APACbibcite{peyvandi2016colorimetric}{\citeauthoryear {Peyvandi, Hern{\'a}ndez-Andr{\'e}s, Olmo, Nieves,{}\ \BBA{} Romero}{Peyvandi\ \BOthers {.}}{{\APACyear {2016}}}}
 \bibstyle{jovcite}
-\@writefile{toc}{\contentsline {section}{References}{15}{section*.32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Target Reflectance Generation\relax }}{14}{figure.caption.30}}
+\newlabel{fig:targetGeneration}{{14}{14}{Target Reflectance Generation\relax }{figure.caption.30}{}}
+\@writefile{toc}{\contentsline {section}{References}{14}{section*.32}}
