@@ -138,4 +138,26 @@ Peyvandi, S.%
 \APACjournalVolNumPages{JOSA A}{33}{6}{1049--1059}.
 \PrintBackRefs{\CurrentBib}
 
+\bibitem[\protect\citeauthoryear{%
+Rangan%
+}{%
+Rangan%
+}{%
+{\protect\APACyear{2016}}%
+}]{%
+ranganNotes}%
+\APACinsertmetastar{%
+ranganNotes}%
+Rangan, A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{From Regression to the Singular Value Decomposition}{From
+  regression to the singular value decomposition}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{(Personal communication)}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
 \end{thebibliography}
