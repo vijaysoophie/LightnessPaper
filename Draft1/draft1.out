@@ -4,11 +4,12 @@
 \BOOKMARK [1][-]{section*.7}{Model of Visual System}{}% 4
 \BOOKMARK [1][-]{section*.8}{Supervised Learning methods}{}% 5
 \BOOKMARK [1][-]{section*.12}{Results}{}% 6
-\BOOKMARK [1][-]{section*.13}{Case 1}{}% 7
-\BOOKMARK [1][-]{section*.19}{Explain the filters}{}% 8
-\BOOKMARK [1][-]{section*.20}{Methods}{}% 9
-\BOOKMARK [1][-]{section*.21}{Generating Virtual Images}{}% 10
-\BOOKMARK [1][-]{section*.25}{Illumination Spectrum}{}% 11
-\BOOKMARK [1][-]{section*.27}{Reflectance Spectrum}{}% 12
-\BOOKMARK [1][-]{section*.30}{Cone response to hyper-spectral images}{}% 13
-\BOOKMARK [1][-]{section*.31}{References}{}% 14
+\BOOKMARK [1][-]{section*.13}{Optimal receptive fields show a center surround structure}{}% 7
+\BOOKMARK [1][-]{section*.17}{Lightness can be well estimated using a bayesian decoder with gaussian priors.}{}% 8
+\BOOKMARK [1][-]{section*.19}{The RFs of complex case perform well on simpler cases}{}% 9
+\BOOKMARK [1][-]{section*.21}{Supplementary Information}{}% 10
+\BOOKMARK [1][-]{section*.22}{Generating Virtual Images}{}% 11
+\BOOKMARK [1][-]{section*.26}{Illumination Spectrum}{}% 12
+\BOOKMARK [1][-]{section*.28}{Reflectance Spectrum}{}% 13
+\BOOKMARK [1][-]{section*.31}{Cone response to hyper-spectral images}{}% 14
+\BOOKMARK [1][-]{section*.32}{References}{}% 15

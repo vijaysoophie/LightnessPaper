@@ -138,7 +138,7 @@ The three $51 \times 51$ cone response matrix corresponding to L, M and S cones 
 \subsubsection*{Linear Regression} For linear regression, we solve the equation $A_{(1,3)}*C_{(3,N)} = Y_{(1,N)}$ for the regression parameters $A_{(1,3)}$. Here, $C_{(3,N)}$ has the contrast normalized matrix of LMS cone responses of the center pixel. Each column corresponds to the N images in the dataset. The rows correspond to the contrast normalized L, M and S cones response of the center pixel for each image. The L, M and S response to the center pixel on the target object is calculated by taking the average of a 3x3 patch of cones near the center of the target.The (unknown) regression parameters $A$ are obtained using Matlab linear regression function. 
 
 \subsubsection*{SVD regression}
-SVD regression is a generalization of principal component analysis for labeled data \cite{ranganNotes}. Briefly, given an image dataset $C_{M \times N}$ and labels $Y_{1\times N}$, the method finds directions that maximize the separation of the images with different labels, while clustering the images with similar labels together. Mathematically, the method searches for a direction $\hat{u}$ such that minimize the cost function:
+SVD regression is a generalization of principal component analysis for labeled data \cite{ranganNotes}. Briefly, given an image dataset matrix $C_{M \times N}$ and labels $Y_{1\times N}$, the method finds unit vectors such that the projection of the data along this vector maximizes the separation of the images with different labels, while clustering the images with similar labels together. Mathematically, the method searches for a direction $\hat{u}$ such that minimize the cost function:
 \begin{align}
 S = \sum\limits_{j,j'}\left(\hat{u}^\intercal C(:,j) - \hat{u}^\intercal C(:,j')\right)^2 \left(Y(j)-Y(j') \right)^2,
 \end{align} 
@@ -149,9 +149,9 @@ N C Y_D^2 C^\intercal - 2(Y*\mathbbm{1})C Y_D C^\intercal + (Y*Y^\intercal) (CC^
 Here, $Y_{D}$ is a diagonal matrix with the elements of the labels vector $Y$ along the diagonal, and $\mathbbm{1}$ is a $N\times 1$ vector of ones.
 
 \subsubsection*{Accuracy maximization analysis}
-AMA \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. Given a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task. The task is implicitly defined in terms of the labels. The optimal filters are the ones whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. The filters are learned via gradient descent with the aid of an optimal Bayesian decoder that is matched to the filters throughout the learning process. 
+ \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. Given a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task. The task is implicitly defined in terms of the labels. The optimal filters are the ones whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. 
 
-Let us assume that there is a latent variable ($Y$) that takes one of the $N_{\nu}$ possible values $\{Y_k: k\in[1,N_{\nu}] \}$. Let's represent the $l$'th stimuli corresponding to the $k$'th category of the latent variable as $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the latent variable ($Y_k$) corresponding to the stimuli $s_{kl}$ as $\hat{Y}_{kl}$. Given this estimate, one can define a cost function $\mathcal{C}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and a mean cost $\bar{\mathcal{C}}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
+Let us assume that the labels ($Y$) take one of the $N_{\nu}$ possible values $\{Y_k: k\in[1,N_{\nu}] \}$ and the $l$'th stimuli corresponding to the $k$'th category of the labels is represented as $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the latent variable ($Y_k$) corresponding to the stimuli $s_{kl}$ as $\hat{Y}_{kl}$. Given this estimate, one can define a cost function $\mathcal{C}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and a mean cost $\bar{\mathcal{C}}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
 
 Accuracy maximization analysis (AMA) finds the set of optimal filters ${\textbf{\textit f}}^{\rm opt}$ that minimize the average cost function over the entire dataset $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$. $N_{\nu}$ is the total number of labels and $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
 \begin{align}
@@ -159,17 +159,17 @@ Accuracy maximization analysis (AMA) finds the set of optimal filters ${\textbf{
 \label{eq:fopt}
 \end{align}
 
-AMA employs the Bayes optimal decoder to estimate the optimal estimate. The Bayesian decoder computes the posterior probability of the latent variable $p(X|{\textbf {\textit R}})$ and reads out the optimal estimate $\hat{Y}^{\rm opt}$ from the posterior as the value that minimizes the cost. By Bayes' theorem, the posterior probability can be written as:
+AMA employs the Bayes optimal decoder ($g$) to estimate the optimal estimate. The Bayesian decoder computes the posterior probability of the latent variable $p(X|{\textbf {\textit R}})$ and reads out the optimal estimate $\hat{Y}^{\rm opt}$ from the posterior as the value that minimizes the cost. By Bayes' theorem, the posterior probability can be written as:
 \begin{align}
 p(Y_k|{\textbf {\textit R} }_{kl}) = \frac{p({\textbf {\textit R} }_{kl}|Y_k)p(Y_k)}{\sum\limits_{i=1}^{N_{\nu}}{p({\textbf {\textit R} }_{kl}|Y_i)p(Y_i)}}.
 \label{eq:posterior}
 \end{align}
-As conditional probability of the filter response is:
+As the conditional probability of the filter response is:
 \begin{align}
 p({\textbf {\textit R} }_{kl}|Y_k) = \sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|Y_k),
 \label{eq:condProb}
 \end{align}
-using Eq.\ref{eq:condProb} in Eq.\ref{eq:posterior} we get:
+using Eq.~\ref{eq:condProb} in Eq.~\ref{eq:posterior} we get:
 \begin{align}
 p(Y_k|{\textbf {\textit R} }_{kl}) = \frac{\left[\sum\limits_{m=1}^{N_k}p({\textbf {\textit R} }_{kl}|{\textbf {\textit s} }_{km})p({\textbf {\textit s} }_{km}|Y_k)\right]p(Y_k)}{\sum\limits_{i=1}^{N_{\nu}}{\left[\sum\limits_{j=1}^{N_j}p({\textbf {\textit R} }_{il}|{\textbf {\textit s} }_{ij})p({\textbf {\textit s} }_{kj}|Y_i)\right]p(Y_i)}}
 \label{eq:finalPosterior}
@@ -183,13 +183,15 @@ Now if the cost associated with the latent variable $Y_k$ and the estimate $\hat
 \begin{align}
 \mathcal{C}_{kl} = \sum\limits_{u=1}^{N_{\nu}}\gamma(X_u,\hat{Y}_u)p(X_u|{\textbf{\textit R}}_{kl}),
 \end{align}
-and the total cost associated with the training set is $\bar{\mathcal{C}} = \frac{1}{N} \sum\limits_{k,l}\bar{\mathcal{C}}_{kl} = \frac{1}{N} \sum\limits_{k,l}\langle \mathcal{C}_{kl}\rangle_{{\textbf{\textit R}}_{kl}}$. The optimal AMA filters are obtained by minimizing $\bar{\mathcal{C}}$ over the filter set ${\textbf {\textit f} }$ (Eq.\ref{eq:fopt}). The filters are obtained using gradient descent.
+and the mean cost associated with the training set is $\bar{\mathcal{C}} = \frac{1}{N} \sum\limits_{k,l}\bar{\mathcal{C}}_{kl} = \frac{1}{N} \sum\limits_{k,l}\langle \mathcal{C}_{kl}\rangle_{{\textbf{\textit R}}_{kl}}$. The optimal AMA filters are obtained by minimizing $\bar{\mathcal{C}}$ over the filter set ${\textbf {\textit f} }$ (Eq.\ref{eq:fopt}). The filters are obtained using gradient descent.
 
 In this work, we assume the noisy response model to be a multivariate gaussian. For a stimuli $s_{kl}$, the noisy response vector ${\textbf{\textit R}}_{kl} = \left[{\textbf{\textit R}}_{kl,1},{\textbf{\textit R}}_{kl,2},\dots,{\textbf{\textit R}}_{kl,q}\right]$ to the set of filters ${\textbf{\textit f}} = \left[{\textbf{\textit f}}_{kl,1},{\textbf{\textit f}}_{2},\dots,{\textbf{\textit f}}_{q}\right]$ is given by $\mathcal{N}({\textbf{\textit r}}_{kl}, \Sigma)$, with mean response vector ${\textbf{\textit r}}_{kl} = \left[{\textbf{\textit r}}_{kl,1},{\textbf{\textit r}}_{kl,2},\dots,{\textbf{\textit r}}_{kl,q}\right] = \left[{\textbf{\textit f}}_{1}\cdot s_{kl},{\textbf{\textit f}}_{2}\cdot s_{kl}\dots,{\textbf{\textit f}}_{q}\cdot s_{kl}\right]$ and the covariance matrix as the diagonal matrix $\Sigma$ with variances $\left(\sigma_1^2, \sigma_2^2,\dots, \sigma_q^2 \right)$. We assume $\sigma_i^2 = \alpha |r_i| + \sigma_0^2$, $|{\textbf{\textit f}}_{kl,i}|=1$ and $s_{kl}$ to be zero mean contrast normalized, i.e., $\langle{s_{kl}}\rangle = 0$ \& ${|s_{kl}|=1}$.
 
 \section{Results}
-\subsection{Case 1}
-Fig.~\ref{fig:case9AllResults} shows the receptive fields and the the AMA lightness estimates for the three cases discussed above. We show the target object lightness estimates for there different methods: linear regression on center pixel, SVD regression and AMA. As is expected, when only the target object reflectance varies, it is easy to estimate the target object lightness. For case 2, where the light source spectra are allowed to vary, although the light captured by the cones vary from image to image, the contrast between the target and the background remains fixed and can be used to estimate the target object lightness. Thus, the SVD-LDA and AMA still provide good estimates of the target object lightness. In case 3, the most challenging case where all the spectra are allowed to change, AMA still does a reasonable job of estimating the target object lightness. AMA mean estimates lie close to the diagonal x=y line.
+\subsection{Optimal receptive fields show a center surround structure}
+Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the RFs, the linear response of these RFs training dataset and the lightness estimates of the test data for the three cases described above. We show the first two RFs for SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
+
+For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the lightness can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see SI). For case 3, has a similar center surround structure with more prominent features of the background as we also vary the spectra of the background objects. Again, the spatial features are a result of the stereotypical geometry of the images.
 
 % Figure 4
 \begin{figure}
@@ -222,14 +224,6 @@ Fig.~\ref{fig:case9AllResults} shows the receptive fields and the the AMA lightn
 % Figure 5
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure5/Figure5.pdf}
-\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs in our analysis.}
-\label{fig:RMSEvsNFilters}
-\end{figure}
-
-% Figure 6
-\begin{figure}
-\centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
         \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_a.pdf}
@@ -251,11 +245,11 @@ Fig.~\ref{fig:case9AllResults} shows the receptive fields and the the AMA lightn
         \caption{Luminance Estimates}
         \label{fig:case10Results}
     \end{subfigure}
-    \label{fig:case10AllResults}
     \caption{{\bf Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref{fig:case9AllResults}.}
+    \label{fig:case10AllResults}
 \end{figure}
 
-% Figure 7
+% Figure 6
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
@@ -279,28 +273,48 @@ Fig.~\ref{fig:case9AllResults} shows the receptive fields and the the AMA lightn
         \caption{Luminance Estimates}
         \label{fig:case12Results}
     \end{subfigure}
-    \label{fig:case12AllResults}
     \caption{{\bf Receptive fields and lightness estimates. Case 3:}  Same as Fig. \ref{fig:case9AllResults}.}
+    \label{fig:case12AllResults}
 \end{figure}
 
+\subsection{Lightness can be well estimated using a bayesian decoder with gaussian priors.}
+We estimate the lightness of the target object in the images using the receptive field response of the corresponding contrast normalized cone responses. Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(c) shows the response of the first two RFs to the stimuli set for the three cases. For the training images at each lightness level, we approximate the receptive response of the contrast normalized cone responses by a multivariate gaussian. The target object lightness of an image in the test set is estimated using Bayesian decoder. We measure the estimation performance in terms of the relative root mean square ($E_{\rm rel}$) defined as:
+\begin{align}
+E_{\rm rel} = \sqrt{\left\langle\left(\frac{\hat{Y}-Y}{Y}\right)^2\right\rangle},
+\end{align}
+where $\hat{Y}$ corresponds to the estimated lightness and $Y$ to the assigned lightness. We use the first 8 RFs for lightness estimation ( see Fig.~\ref{fig:RMSEvsNFilters}).
+
+% Figure 7
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../Figures/Figure5/Figure5.pdf}
+\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.}
+\label{fig:RMSEvsNFilters}
+\end{figure}
+
+Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(d) shows the lightness estimates and the RMSE for the three methods (Linear regression on center pixel, AMA and SVD). Additionally we show the estimate of a naive model that reports the mean value of the lightness labels used in the dataset. The diagonal x=y line is shown for reference. The shaded regions show $E_{\rm rel}$ for each method.
+
+(Fig.~\ref{fig:summaryBarGraph}) compares the $E_{\rm rel}$ for the different methods for the three cases. Both AMA and SVD methods, which use the information from the entire image estimate the lightness better compared to linear regression which only uses the information from the center pixel. This shows the importance of context information for lightness estimation.
+
+\subsection{The RFs of complex case perform well on simpler cases}
 % Figure 8stimulusIntensities(1)-1
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.3 \textwidth}
+\begin{subfigure}{0.3 \textwidth}
 	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_a.pdf}
 	\caption{Performance of methods}
 	\label{fig:summaryBarGraph}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3 \textwidth}   
+    \begin{subfigure}{0.3 \textwidth}   
 	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_b.pdf}
 	\caption{SVD RF Performance}
 	\label{fig:SVDBAR}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
-        \begin{subfigure}[b]{0.3 \textwidth}
+        \begin{subfigure}{0.3 \textwidth}
 	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_c.pdf}
 	\caption{AMA RF Performance}
 	\label{fig:AMABAR}
@@ -308,19 +322,9 @@ Fig.~\ref{fig:case9AllResults} shows the receptive fields and the the AMA lightn
 \caption{{\bf Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref{fig:SVDBAR} for AMA RFs.}
  \label{fig:barGraphs}
 \end{figure}
+Fig.~\ref{fig:SVDBAR} and Fig~\ref{fig:AMABAR} show the performance of the receptive fields learnt using the stimuli of one case on the stimuli of other cases. The RFs of case 3, (the most complex case) perform well on stimuli of case 1 and case 2.  Similarly, the RFs of case 2 performs well on the stimuli of case 1. Thus, the receptive fields leant on the complex case generalize for lightness estimation of stimuli for simpler cases.
 
-
-We compare the performance of these models using the relative root mean square estimator ($E_{\rm rel}$) defined as:
-
-\begin{align}
-E_{\rm rel} = \sqrt{\left\langle\left(\frac{Y_{\rm Est}-Y_{\rm Act}}{Y_{\rm Act}}\right)^2\right\rangle}
-\end{align}
-
-Fig. ZZZ shows $E_{\rm rel}$ for the various estimators used here.
-
-\subsection{Explain the filters}
-
-\section{Methods}
+\section{Supplementary Information}
 \subsection{Generating Virtual Images}
 The light that reflects off an object and reaches our eyes depends on many factors. These factors include: the surface reflectance of the object, the surface reflectance, texture, material and geometry of the objects in its surround, the spectrum of the sources of light illuminating the object, and the position of the observer. In natural scenes, these spectral and geometrical factors vary considerably. To study the effect of these factors on color perception, we need a system that can generate natural scenes with precise control over all such factors. We need a system that can produce natural scenes at a fixed perceived color of a target object, while having a representative, but precisely quantified, sampling of the variations in the scene. Under natural conditions it is difficult to control and quantify every such parameter in a scene. Thus generating such a dataset, with a representative sampling of natural variations, is considerably time and labor intensive.
 
