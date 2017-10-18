@@ -31,8 +31,8 @@
 \newlabel{sub@fig:targetIlluminantVarying}{{b}{3}{Case 2\relax }{figure.caption.3}{}}
 \newlabel{fig:allSpectraVarying}{{2c}{3}{Case 3\relax }{figure.caption.3}{}}
 \newlabel{sub@fig:allSpectraVarying}{{c}{3}{Case 3\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of hyper-spectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }}{3}{figure.caption.3}}
-\newlabel{fig:studiedCases}{{2}{3}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of hyper-spectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }}{3}{figure.caption.3}}
+\newlabel{fig:studiedCases}{{2}{3}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{Methods}{3}{section*.4}}
 \@writefile{toc}{\contentsline {section}{Image database}{3}{section*.5}}
 \newlabel{method:VirtualWorld}{{}{3}{Image database}{section*.5}{}}
@@ -46,7 +46,7 @@
 \newlabel{fig:coneContrast}{{3d}{4}{LMS cone contrast\relax }{figure.caption.6}{}}
 \newlabel{sub@fig:coneContrast}{{d}{4}{LMS cone contrast\relax }{figure.caption.6}{}}
 \newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 128}}{4}{Image database}{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, a target object and a light source is selected from the VWCC library. The target object is placed in the camera field of view and assigned a reflectance spectrum with a specific lightness. After assigning spectra to other objects and lights sources in the scene, a hyper-spectral image of the scene is rendered using Mitsuba graphics rendering software. (b) A part of the image, containing the target object, is cropped from the image. (c) The response of the retinal cones to the cropped image is simulated using a model of the visual system. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) The cone response are interpolated to get the response of all the three types at each location (demosaicing). Finally, the demosaic response is contrast normalized (see text).\relax }}{4}{figure.caption.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, a target object and a light source is selected from the VWCC library. The target object is placed in the camera field of view and assigned a reflectance spectrum with a specific lightness. After assigning spectra to other objects and lights sources in the scene, a multispectral image of the scene is rendered using Mitsuba graphics rendering software. (b) A part of the image, containing the target object, is cropped from the image. (c) The response of the retinal cones to the cropped image is simulated using a model of the visual system. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) The cone response are interpolated to get the response of all the three types at each location (demosaicing). Finally, the demosaic response is contrast normalized (see text).\relax }}{4}{figure.caption.6}}
 \@writefile{toc}{\contentsline {section}{Model of Visual System}{4}{section*.7}}
 \newlabel{method:Isetbio}{{}{4}{Model of Visual System}{section*.7}{}}
 \@writefile{toc}{\contentsline {section}{Supervised Learning methods}{4}{section*.8}}
@@ -95,9 +95,10 @@
 \citation{jakob2015mitsuba}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }}{8}{figure.caption.18}}
 \newlabel{fig:RMSEvsNFilters}{{7}{8}{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }{figure.caption.18}{}}
-\@writefile{toc}{\contentsline {section}{The RFs of complex case perform well on simpler cases}{8}{section*.19}}
-\@writefile{toc}{\contentsline {section}{Supplementary Information}{8}{section*.21}}
-\@writefile{toc}{\contentsline {section}{Generating Virtual Images}{8}{section*.22}}
+\@writefile{toc}{\contentsline {section}{The RFs of complex case generalize on simpler cases}{8}{section*.19}}
+\@writefile{toc}{\contentsline {section}{Discussion}{8}{section*.21}}
+\@writefile{toc}{\contentsline {section}{Supplementary Information}{8}{section*.22}}
+\@writefile{toc}{\contentsline {section}{Virtual World Color Constancy}{8}{section*.23}}
 \newlabel{fig:summaryBarGraph}{{8a}{9}{Performance of methods\relax }{figure.caption.20}{}}
 \newlabel{sub@fig:summaryBarGraph}{{a}{9}{Performance of methods\relax }{figure.caption.20}{}}
 \newlabel{fig:SVDBAR}{{8b}{9}{SVD RF Performance\relax }{figure.caption.20}{}}
@@ -106,53 +107,54 @@
 \newlabel{sub@fig:AMABAR}{{c}{9}{AMA RF Performance\relax }{figure.caption.20}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it  fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref  {fig:SVDBAR} for AMA RFs.\relax }}{9}{figure.caption.20}}
 \newlabel{fig:barGraphs}{{8}{9}{{\bf Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref {fig:SVDBAR} for AMA RFs.\relax }{figure.caption.20}{}}
-\newlabel{fig:baseSceneLibrary}{{9a}{10}{Library \relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneLibrary}{{a}{10}{Library \relax }{figure.caption.23}{}}
-\newlabel{fig:baseSceneMill}{{9b}{10}{Mill\relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneMill}{{b}{10}{Mill\relax }{figure.caption.23}{}}
-\newlabel{fig:baseSceneTableChairs}{{9c}{10}{Table-Chairs\relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneTableChairs}{{c}{10}{Table-Chairs\relax }{figure.caption.23}{}}
-\newlabel{fig:baseSceneIndoorPlant}{{9d}{10}{Indoor-plant\relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneIndoorPlant}{{d}{10}{Indoor-plant\relax }{figure.caption.23}{}}
-\newlabel{fig:baseSceneWarehouse}{{9e}{10}{Warehouse\relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneWarehouse}{{e}{10}{Warehouse\relax }{figure.caption.23}{}}
-\newlabel{fig:baseSceneCheckerBoard}{{9f}{10}{Checkerboard\relax }{figure.caption.23}{}}
-\newlabel{sub@fig:baseSceneCheckerBoard}{{f}{10}{Checkerboard\relax }{figure.caption.23}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of base scenes.\relax }}{10}{figure.caption.23}}
-\newlabel{fig:baseScenes}{{9}{10}{Example of base scenes.\relax }{figure.caption.23}{}}
-\newlabel{fig:libraryWithBigBall}{{10a}{10}{Big-ball\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithBigBall}{{a}{10}{Big-ball\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithSmallBall}{{10b}{10}{Small-ball\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithSmallBall}{{b}{10}{Small-ball\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithBarrel}{{10c}{10}{Barrel\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithBarrel}{{c}{10}{Barrel\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithXylophone}{{10d}{10}{Xylophone\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithXylophone}{{d}{10}{Xylophone\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithRingToy}{{10e}{10}{Ring toy\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithRingToy}{{e}{10}{Ring toy\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithChampagneBottle}{{10f}{10}{Champagne Bottle\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:libraryWithChampagneBottle}{{f}{10}{Champagne Bottle\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Base scenes with inserted objects.\relax }}{10}{figure.caption.24}}
-\newlabel{fig:libraryWithTarget}{{10}{10}{Base scenes with inserted objects.\relax }{figure.caption.24}{}}
-\newlabel{fig:targetVariation}{{11a}{11}{Target spectra\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:targetVariation}{{a}{11}{Target spectra\relax }{figure.caption.25}{}}
-\newlabel{fig:backGroundVariation}{{11b}{11}{Background spectra\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:backGroundVariation}{{b}{11}{Background spectra\relax }{figure.caption.25}{}}
-\newlabel{fig:illuminationVariation}{{11c}{11}{Illumination spectra\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:illuminationVariation}{{c}{11}{Illumination spectra\relax }{figure.caption.25}{}}
-\newlabel{fig:targetPositionVariation}{{11d}{11}{Target position\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:targetPositionVariation}{{d}{11}{Target position\relax }{figure.caption.25}{}}
-\newlabel{fig:targetSizeOrientation}{{11e}{11}{Target Size/Orientation\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:targetSizeOrientation}{{e}{11}{Target Size/Orientation\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }}{11}{figure.caption.25}}
-\newlabel{fig:spectralTransformations}{{11}{11}{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }{figure.caption.25}{}}
+\newlabel{fig:baseSceneLibrary}{{9a}{10}{Library \relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneLibrary}{{a}{10}{Library \relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneMill}{{9b}{10}{Mill\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneMill}{{b}{10}{Mill\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneTableChairs}{{9c}{10}{Table-Chairs\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneTableChairs}{{c}{10}{Table-Chairs\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneIndoorPlant}{{9d}{10}{Indoor-plant\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneIndoorPlant}{{d}{10}{Indoor-plant\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneWarehouse}{{9e}{10}{Warehouse\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneWarehouse}{{e}{10}{Warehouse\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneCheckerBoard}{{9f}{10}{Checkerboard\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneCheckerBoard}{{f}{10}{Checkerboard\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of base scenes.\relax }}{10}{figure.caption.24}}
+\newlabel{fig:baseScenes}{{9}{10}{Example of base scenes.\relax }{figure.caption.24}{}}
+\newlabel{fig:libraryWithBigBall}{{10a}{10}{Big-ball\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithBigBall}{{a}{10}{Big-ball\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithSmallBall}{{10b}{10}{Small-ball\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithSmallBall}{{b}{10}{Small-ball\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithBarrel}{{10c}{10}{Barrel\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithBarrel}{{c}{10}{Barrel\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithXylophone}{{10d}{10}{Xylophone\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithXylophone}{{d}{10}{Xylophone\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithRingToy}{{10e}{10}{Ring toy\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithRingToy}{{e}{10}{Ring toy\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithChampagneBottle}{{10f}{10}{Champagne Bottle\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithChampagneBottle}{{f}{10}{Champagne Bottle\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Base scenes with inserted objects.\relax }}{10}{figure.caption.25}}
+\newlabel{fig:libraryWithTarget}{{10}{10}{Base scenes with inserted objects.\relax }{figure.caption.25}{}}
+\newlabel{fig:targetVariation}{{11a}{11}{Target spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetVariation}{{a}{11}{Target spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:backGroundVariation}{{11b}{11}{Background spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:backGroundVariation}{{b}{11}{Background spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:illuminationVariation}{{11c}{11}{Illumination spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:illuminationVariation}{{c}{11}{Illumination spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:targetPositionVariation}{{11d}{11}{Target position\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetPositionVariation}{{d}{11}{Target position\relax }{figure.caption.26}{}}
+\newlabel{fig:targetSizeOrientation}{{11e}{11}{Target Size/Orientation\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetSizeOrientation}{{e}{11}{Target Size/Orientation\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }}{11}{figure.caption.26}}
+\newlabel{fig:spectralTransformations}{{11}{11}{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }{figure.caption.26}{}}
 \citation{peyvandi2016colorimetric}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Illumination Generation\relax }}{12}{figure.caption.27}}
-\newlabel{fig:illuminationGeneration}{{12}{12}{Illumination Generation\relax }{figure.caption.27}{}}
-\@writefile{toc}{\contentsline {section}{Illumination Spectrum}{12}{section*.26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Reflectance Generation\relax }}{13}{figure.caption.29}}
-\newlabel{fig:reflectanceGeneration}{{13}{13}{Reflectance Generation\relax }{figure.caption.29}{}}
-\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{13}{section*.28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces Illumination Generation\relax }}{12}{figure.caption.29}}
+\newlabel{fig:illuminationGeneration}{{12}{12}{Illumination Generation\relax }{figure.caption.29}{}}
+\@writefile{toc}{\contentsline {section}{Generating Spectrum for VWCC}{12}{section*.27}}
+\@writefile{toc}{\contentsline {section}{Illumination Spectrum}{12}{section*.28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces Reflectance Generation\relax }}{13}{figure.caption.31}}
+\newlabel{fig:reflectanceGeneration}{{13}{13}{Reflectance Generation\relax }{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{13}{section*.30}}
 \bibdata{references}
 \bibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
 \APACbibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
@@ -167,7 +169,7 @@
 \bibcite{ranganNotes}{\citeauthoryear {Rangan}{Rangan}{{\APACyear {2016}}}}
 \APACbibcite{ranganNotes}{\citeauthoryear {Rangan}{Rangan}{{\APACyear {2016}}}}
 \bibstyle{jovcite}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Target Reflectance Generation\relax }}{14}{figure.caption.30}}
-\newlabel{fig:targetGeneration}{{14}{14}{Target Reflectance Generation\relax }{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {section}{Cone response to hyper-spectral images}{14}{section*.31}}
-\@writefile{toc}{\contentsline {section}{References}{14}{section*.32}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces Target Reflectance Generation\relax }}{14}{figure.caption.32}}
+\newlabel{fig:targetGeneration}{{14}{14}{Target Reflectance Generation\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {section}{Cone response to multispectral images}{14}{section*.33}}
+\@writefile{toc}{\contentsline {section}{References}{14}{section*.34}}

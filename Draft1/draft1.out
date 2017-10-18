@@ -6,10 +6,12 @@
 \BOOKMARK [1][-]{section*.12}{Results}{}% 6
 \BOOKMARK [1][-]{section*.13}{Optimal receptive fields show a center surround structure}{}% 7
 \BOOKMARK [1][-]{section*.17}{Lightness can be well estimated using a bayesian decoder with gaussian priors.}{}% 8
-\BOOKMARK [1][-]{section*.19}{The RFs of complex case perform well on simpler cases}{}% 9
-\BOOKMARK [1][-]{section*.21}{Supplementary Information}{}% 10
-\BOOKMARK [1][-]{section*.22}{Generating Virtual Images}{}% 11
-\BOOKMARK [1][-]{section*.26}{Illumination Spectrum}{}% 12
-\BOOKMARK [1][-]{section*.28}{Reflectance Spectrum}{}% 13
-\BOOKMARK [1][-]{section*.31}{Cone response to hyper-spectral images}{}% 14
-\BOOKMARK [1][-]{section*.32}{References}{}% 15
+\BOOKMARK [1][-]{section*.19}{The RFs of complex case generalize on simpler cases}{}% 9
+\BOOKMARK [1][-]{section*.21}{Discussion}{}% 10
+\BOOKMARK [1][-]{section*.22}{Supplementary Information}{}% 11
+\BOOKMARK [1][-]{section*.23}{Virtual World Color Constancy}{}% 12
+\BOOKMARK [1][-]{section*.27}{Generating Spectrum for VWCC}{}% 13
+\BOOKMARK [1][-]{section*.28}{Illumination Spectrum}{}% 14
+\BOOKMARK [1][-]{section*.30}{Reflectance Spectrum}{}% 15
+\BOOKMARK [1][-]{section*.33}{Cone response to multispectral images}{}% 16
+\BOOKMARK [1][-]{section*.34}{References}{}% 17
