@@ -63,14 +63,14 @@ l10AMA = plot([1:nEigVecs],results10AMA.error(1:nEigVecs),color10AMA,'linewidth'
 l12AMA = plot([1:nEigVecs],results12AMA.error(1:nEigVecs),color12AMA,'linewidth',2);
 
 xlim([1 nEigVecs])
-xlabel('N Filters Used');
-ylabel('Relative RMSE');
+xlabel('N RFs Used');
+ylabel('E_{rel}');
 box on;
 
 set(gca, 'fontsize', 20);
 legend([l9SVD l9AMA l10SVD l10AMA l12SVD l12AMA],{'Case 1 SVD', 'Case 2 SVD', 'Case 3 SVD', ...
     'Case 1 AMA', 'Case 2 AMA', 'Case 3 AMA'});
-set(gca,'FontName','TimesNewRoman','FontSize',24);
+set(gca,'FontSize',24);
 
 save2pdf('RMSEvsNEigVals/RMSEvsNFilters16.pdf',fig,600);
 
