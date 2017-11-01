@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 OCT 2017 15:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 NOV 2017 14:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -778,7 +778,7 @@ File: ../Figures/Figure11/Figure11_a.png Graphic file (type png)
 
 <use ../Figures/Figure11/Figure11_a.png>
 Package pdftex.def Info: ../Figures/Figure11/Figure11_a.png used on input line 
-434.
+435.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../Figures/Figure11/Figure11_b.png, id=607, 326.21875pt x 739.76375pt>
@@ -786,7 +786,7 @@ File: ../Figures/Figure11/Figure11_b.png Graphic file (type png)
 
 <use ../Figures/Figure11/Figure11_b.png>
 Package pdftex.def Info: ../Figures/Figure11/Figure11_b.png used on input line 
-442.
+443.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../Figures/Figure11/Figure11_c.png, id=608, 326.21875pt x 739.76375pt>
@@ -794,7 +794,7 @@ File: ../Figures/Figure11/Figure11_c.png Graphic file (type png)
 
 <use ../Figures/Figure11/Figure11_c.png>
 Package pdftex.def Info: ../Figures/Figure11/Figure11_c.png used on input line 
-450.
+451.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../Figures/Figure11/Figure11_d.png, id=609, 326.21875pt x 739.76375pt>
@@ -802,7 +802,7 @@ File: ../Figures/Figure11/Figure11_d.png Graphic file (type png)
 
 <use ../Figures/Figure11/Figure11_d.png>
 Package pdftex.def Info: ../Figures/Figure11/Figure11_d.png used on input line 
-458.
+459.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../Figures/Figure11/Figure11_e.png, id=610, 326.21875pt x 739.76375pt>
@@ -810,58 +810,137 @@ File: ../Figures/Figure11/Figure11_e.png Graphic file (type png)
 
 <use ../Figures/Figure11/Figure11_e.png>
 Package pdftex.def Info: ../Figures/Figure11/Figure11_e.png used on input line 
-466.
+467.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
  [11 <../Figures/Figure11/Figure11_a.png> <../Figures/Figure11/Figure11_b.png> 
 <../Figures/Figure11/Figure11_c.png> <../Figures/Figure11/Figure11_d.png> <../F
 igures/Figure11/Figure11_e.png>]
-<../Figures/Figure12/Figure12.pdf, id=623, 1204.5pt x 803.0pt>
-File: ../Figures/Figure12/Figure12.pdf Graphic file (type pdf)
+<../Figures/Figure12/Figure12_a.pdf, id=623, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
-<use ../Figures/Figure12/Figure12.pdf>
-Package pdftex.def Info: ../Figures/Figure12/Figure12.pdf used on input line 48
-8.
-(pdftex.def)             Requested size: 540.60236pt x 360.41545pt.
- [12 <../Figures/Figure12/Figure12.pdf>]
-<../Figures/Figure13/Figure13.pdf, id=642, 1204.5pt x 401.5pt>
-File: ../Figures/Figure13/Figure13.pdf Graphic file (type pdf)
+<use ../Figures/Figure12/Figure12_a.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_a.pdf used on input line 
+491.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
 
-<use ../Figures/Figure13/Figure13.pdf>
-Package pdftex.def Info: ../Figures/Figure13/Figure13.pdf used on input line 52
-1.
-(pdftex.def)             Requested size: 540.60236pt x 180.20772pt.
+<../Figures/Figure12/Figure12_b.pdf, id=624, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
-<../Figures/Figure14/Figure14.pdf, id=643, 1204.5pt x 401.5pt>
-File: ../Figures/Figure14/Figure14.pdf Graphic file (type pdf)
+<use ../Figures/Figure12/Figure12_b.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_b.pdf used on input line 
+497.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
 
-<use ../Figures/Figure14/Figure14.pdf>
-Package pdftex.def Info: ../Figures/Figure14/Figure14.pdf used on input line 55
-7.
-(pdftex.def)             Requested size: 540.60236pt x 180.20772pt.
- [13 <../Figures/Figure13/Figure13.pdf>]
-(./draft1.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 576.
- [14 <../Figures/Figure14/Figure14.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 576.
+<../Figures/Figure12/Figure12_c.pdf, id=625, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_c.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure12/Figure12_c.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_c.pdf used on input line 
+503.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure12/Figure12_d.pdf, id=626, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_d.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure12/Figure12_d.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_d.pdf used on input line 
+510.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure12/Figure12_e.pdf, id=627, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_e.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure12/Figure12_e.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_e.pdf used on input line 
+516.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure12/Figure12_f.pdf, id=628, 552.0625pt x 501.875pt>
+File: ../Figures/Figure12/Figure12_f.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure12/Figure12_f.pdf>
+Package pdftex.def Info: ../Figures/Figure12/Figure12_f.pdf used on input line 
+522.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure13/Figure13_a.pdf, id=640, 552.0625pt x 501.875pt>
+File: ../Figures/Figure13/Figure13_a.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure13/Figure13_a.pdf>
+Package pdftex.def Info: ../Figures/Figure13/Figure13_a.pdf used on input line 
+560.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure13/Figure13_b.pdf, id=641, 552.0625pt x 501.875pt>
+File: ../Figures/Figure13/Figure13_b.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure13/Figure13_b.pdf>
+Package pdftex.def Info: ../Figures/Figure13/Figure13_b.pdf used on input line 
+566.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure13/Figure13_c.pdf, id=642, 552.0625pt x 501.875pt>
+File: ../Figures/Figure13/Figure13_c.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure13/Figure13_c.pdf>
+Package pdftex.def Info: ../Figures/Figure13/Figure13_c.pdf used on input line 
+572.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure14/Figure14_a.pdf, id=647, 552.0625pt x 501.875pt>
+File: ../Figures/Figure14/Figure14_a.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure14/Figure14_a.pdf>
+Package pdftex.def Info: ../Figures/Figure14/Figure14_a.pdf used on input line 
+613.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure14/Figure14_b.pdf, id=648, 552.0625pt x 501.875pt>
+File: ../Figures/Figure14/Figure14_b.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure14/Figure14_b.pdf>
+Package pdftex.def Info: ../Figures/Figure14/Figure14_b.pdf used on input line 
+619.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+
+<../Figures/Figure14/Figure14_c.pdf, id=649, 552.0625pt x 501.875pt>
+File: ../Figures/Figure14/Figure14_c.pdf Graphic file (type pdf)
+
+<use ../Figures/Figure14/Figure14_c.pdf>
+Package pdftex.def Info: ../Figures/Figure14/Figure14_c.pdf used on input line 
+625.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+ [12] [13 <../Figures/Figure12/Figure12_a.pdf> <../Figures/Figure12/Figure12_b.
+pdf> <../Figures/Figure12/Figure12_c.pdf> <../Figures/Figure12/Figure12_d.pdf> 
+<../Figures/Figure12/Figure12_e.pdf> <../Figures/Figure12/Figure12_f.pdf>] (./d
+raft1.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 647.
+ [14 <../Figures/Figure13/Figure13_a.pdf> <../Figures/Figure13/Figure13_b.pdf> 
+<../Figures/Figure13/Figure13_c.pdf>] [15 <../Figures/Figure14/Figure14_a.pdf> 
+<../Figures/Figure14/Figure14_b.pdf> <../Figures/Figure14/Figure14_c.pdf>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 647.
  (./draft1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 576.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 576.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 647.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 647.
 Package rerunfilecheck Info: File `draft1.out' has not changed.
 (rerunfilecheck)             Checksum: 3A0A31F903BD049426E8CA25B99B5891;1087.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 576.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 647.
  ) 
 Here is how much of TeX's memory you used:
- 8118 strings out of 493014
- 126016 string characters out of 6133351
- 223528 words of memory out of 5000000
- 11402 multiletter control sequences out of 15000+600000
+ 8188 strings out of 493014
+ 128124 string characters out of 6133351
+ 228091 words of memory out of 5000000
+ 11462 multiletter control sequences out of 15000+600000
  37202 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,14n,40p,1933b,482s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,14n,40p,1933b,496s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc} </Users/vsin
 /Library/texlive/2016/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/loc
@@ -886,10 +965,10 @@ w/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/ut
 mbi8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/loc
 al/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft1.pdf (14 pages, 9844063 bytes).
+Output written on draft1.pdf (15 pages, 14478685 bytes).
 PDF statistics:
- 764 PDF objects out of 1000 (max. 8388607)
- 592 compressed objects within 6 object streams
- 66 named destinations out of 1000 (max. 500000)
- 362 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 658 compressed objects within 7 object streams
+ 67 named destinations out of 1000 (max. 500000)
+ 407 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -16,7 +16,7 @@
 \begin{document}
 
 \title{Lightness constancy under fixed geometry}
-\abstract{The light that reflects off an object surface and is captured by our eyes varies significantly with its context. But, the human visual system has the ability stably perceive the object's color invariant of the context. The mechanism of this behaviorally significant invariance detection ability remains largely unknown. To understand the computational principles that lead to such invariant perception, we study the perception of object lightness under spectral variations in 3D scenes. Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the perceived lightness of an object. We have developed a software that generates naturalistic multispectral images of 3D scenes with precise control over the geometrical and spectral properties of the constituents that make a scene. We label these images with the lightness of a specific object in the scene. Next, we simulate the response of the retinal cones to these multispectral images using an accurate model of the early visual system.  Using supervised learning methods on these labeled cone response we identify the computations that lead to accurate lightness estimation. We show that if only target, or background, or illumination spectra are allowed to vary, the standard lightness can be estimated through simple transformations of the cone responses. When all the spectra vary simultaneously, while it is not easy to recover the lightness through simple transformations, a decoding scheme that compares the light from the target and the surround, and properly adds the response of the L,M and S cones can recover the lightness within about 15\% RMSE.}
+\abstract{The light that reflects off an object surface and is captured by our eyes varies significantly with its context. But, the human visual system has the ability to stably perceive the object's color invariant of the context variations. The mechanism of this behaviorally significant invariance detection ability remains largely unknown. To understand the computational principles that lead to such invariant perception, we study the perception of object lightness under spectral variations in 3D scenes. Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the perceived lightness of an object. We have developed a software that generates naturalistic multispectral images of 3D scenes with precise control over the geometrical and spectral properties of the constituents that make a scene. We label these images with the lightness of a specific object in the scene. Next, we simulate the response of the retinal cones to these multispectral images using an accurate model of the early visual system.  Using supervised learning methods on these labeled cone response, we identify the computations that lead to accurate lightness estimation. We show that if only either target, or background, or illumination spectra are allowed to vary, the standard lightness can be estimated through simple transformations of the cone responses. When all the spectra vary simultaneously, while it is not easy to recover the lightness through simple transformations, a decoding scheme that compares the light from the target and the surround, and properly adds the response of the L,M and S cones can recover the lightness within about 15\% RMSE.}
 
 \author{Singh}{Vijay}
  {Computational Neuroscience Initiative}
@@ -29,9 +29,9 @@ lightness}
 \maketitle
 
 \section{Introduction}
-The color of an object has important behavioral implications. This important property of an object is perceived from the light reflected off the object surface. The reflected light depends not just on the properties intrinsic to the object, such as the object's surface reflectance, its texture, material properties and geometry (shape, size, orientation), but also on extrinsic factors that depend on the object's surround (Fig. \ref{fig:introSchematic}). These extrinsic factors, such as the surface reflectance, texture and material properties of the objects in the surround, the illumination spectrum of the sources of light illuminating the object, the geometry, relative position and pose of the objects and light sources in the surround, and the position of the observer, vary considerably from scene to scene. The challenge faced by the visual system is to recover a stable perceptual representation of the object's surface reflectance invariant of the extrinsic factors. The ability of the visual system to extract such a stable representation, its perceived color, is called color constancy. We are interested in identifying the computations that lead to such constancy.
+The color of an object has important behavioral implications. This important property of an object is perceived from the light reflected off its surface. The reflected light depends not just on the properties intrinsic to the object, such as the object's surface reflectance, its texture, material properties and geometry (shape, size, orientation), but also on extrinsic factors that depend on the object's surround (Fig. \ref{fig:introSchematic}). These extrinsic factors, such as the surface reflectance, texture and material properties of the objects in the surround, the illumination spectrum of the sources of light illuminating the object, the geometry, relative position and pose of the objects and light sources in the surround, and the position of the observer, vary considerably from scene to scene. The challenge faced by the visual system is to recover a stable perceptual representation of the object's surface reflectance invariant of the extrinsic factors. The ability of the visual system to extract such a stable representation, its perceived color, is called color constancy. We are interested in identifying the computations that lead to such constancy.
 
-In this work, we study lightness estimation of objects in naturalistic scenes using supervised learning methods. Lightness is the attribute that determines the brightness of a color. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. For achromatic objects, lightness is the property that changes from black to gray to white. Here, we study the effects of variations in the reflected light on the perceived lightness. These variations can result either due to geometrical factors (like shape, size, relative position of objects, etc.) or due to spectral factors (such as the illumination spectra, surface reflectance, diffusivity, etc.). We focus on spectral factors, specifically the effects of variations in the surface reflectance spectra and the illumination spectra (Fig.\ref{fig:introExampleFigure}). Our aim is to identify the computations that lead to accurate lightness estimation.
+In this work, we study lightness estimation of objects in naturalistic scenes using supervised learning methods. Lightness is the attribute that determines the brightness of a color. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. For achromatic objects, lightness is the property that changes from black to gray to white. Here, we study the effects of variations in the reflected light on the perceived lightness. These variations can result both due to geometrical factors (like shape, size, relative position of objects, etc.) or  spectral factors (such as the illumination spectra, surface reflectance, diffusivity, etc.). In this work, we focus on spectral factors, specifically the effects of variations in the surface reflectance spectra and the illumination spectra (Fig.\ref{fig:introExampleFigure}). Our aim is to identify the computations that lead to accurate lightness estimation.
 
 % Figure 1: Introduction
 \begin{figure}
@@ -429,6 +429,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
 [GOT TO HERE.  DHB.]
 % Figure11
 \begin{figure}
+\centering
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.png}
@@ -485,12 +486,49 @@ The illumination spectrum is generated through a random statistical sampling of 
 % Figure 12
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{../Figures/Figure12/Figure12.pdf}
-    \caption{Illumination Generation}
-    \label{fig:illuminationGeneration}
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
+        \caption{Granada natural daylight dataset}
+        \label{fig:granadaSpectra}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
+        \caption{Rescaled Granada dataset}
+        \label{fig:rescaledGranada}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
+        \caption{Randomly generated samples}
+        \label{fig:randomIlluminant}
+    \end{subfigure}
+
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
+        \caption{xy chromaticity diagram}
+        \label{fig:xyDiagram}
+    \end{subfigure}
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_e.pdf}
+        \caption{Normalized PCA eigenvalues}
+        \label{fig:granadaEV}
+    \end{subfigure}
+      	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_f.pdf}
+        \caption{sRGB rendition of samples from Fig.\ref{fig:randomIlluminant}}
+        \label{fig:sRGBIlluminant}
+    \end{subfigure}
+    \caption{{\bf Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref{fig:rescaledGranada}) and the randomly generated samples (Fig.\ref{fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
 \end{figure}
+
 We have used the Granada natural daylight spectrum \href{http://colorimaginglab.ugr.es/pages/Data}{dataset} \cite{peyvandi2016colorimetric} to sample illuminants. Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the distribution varies over multiple order of magnitudes, we rescale each spectrum by dividing by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. These rescaled spectra $(I_i^s(\lambda))$ are then mean centered for PCA by subtracting out the mean 
-rescaled spectra, $\bar{I}^{s}(\lambda)$. The mean is obtainedby taking the sample mean over all spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
+rescaled spectra, $\bar{I}^{s}(\lambda)$. The mean is obtained
+by taking the sample mean over all spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
 The resulting mean subtracted dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$, 
 is decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
 where $\hat{{\bf e}}_j^{PCA}$s are PCA basis vectors obtained using 
@@ -517,10 +555,27 @@ Finally $\tilde{I}(\lambda)$ is rescaled by a random number generated uniformly 
 \subsubsection{Reflectance Spectrum}
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13.pdf}
-    \caption{Reflectance Generation}
-    \label{fig:reflectanceGeneration}
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+        \caption{Natural surface reflectance spectra}
+        \label{fig:naturalSurface}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+        \caption{Randomly generated samples}
+        \label{fig:randomSurface}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+        \caption{sRGB rendition of samples from \ref{fig:randomSurface}}
+        \label{fig:sRGBSurface}
+    \end{subfigure}
+    \caption{{\bf Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref{fig:randomSurface}.}\label{fig:surfaceReflectanceGeneration}
 \end{figure}
+
 
 The reflectance spectrum are generated similar to illumination spectrum. 
 We have used the Munsell {(\it citation)} and vrhel {(\it citation)} surface reflectance 
@@ -553,10 +608,27 @@ is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PC
 % Figure 14
 \begin{figure}
 \centering
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14.pdf}
-    \caption{Target Reflectance Generation}
-    \label{fig:targetGeneration}
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
+        \caption{Natural surface reflectance spectra}
+        \label{fig:naturalSurfaceTarget}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
+        \caption{Randomly generated target samples}
+        \label{fig:randomSurfaceTarget}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
+        \caption{sRGB rendition of samples from Fig.~\ref{fig:randomSurfaceTarget}}
+        \label{fig:sRGBSurfaceTarget}
+    \end{subfigure}
+    \caption{{\bf Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.~\ref{fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.}\label{fig:targetSurfaceReflectance}
 \end{figure}
+
 
 For generating the target object reflectance at a particular lightness $(Y_{\rm T})$, the values in the spectrum are 
 rescaled by a scalar such that the perceived lightness of the 
