@@ -50,11 +50,11 @@ if (~exist('barGraphs','dir'))
 end
 
 % Define the colors to be used for each method
-naiveColor  = 'm';
+naiveColor  = 'g';
 linearColor = 'k';   
 AMAColor1    = 'r';
 AMAColor2    = 'b';
-AMAColor3    = 'g';
+AMAColor3    = 'm';
 
 %% Case 1
 % Plot the bars corresponding to RMSE 
@@ -67,7 +67,7 @@ h2 = bar(1, linearCase9.cNormLinearRMSETest);
 h3 = bar(2, results9AMA.Case9error(8));
 h4 = bar(3, results10AMA.Case9error(8));
 h5 = bar(4, results12AMA.Case9error(8));
-plot([0 5],[naiveRelRMSE naiveRelRMSE],'--m')
+plot([0 5],[naiveRelRMSE naiveRelRMSE],'--g','LineWidth',4)
 
 set(h2,'FaceColor',linearColor);
 set(h3,'FaceColor',AMAColor1);
@@ -80,7 +80,7 @@ ylabel('Relative RMSE');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3'},'TickLabelInterpreter','latex');
 set(gca,'FontSize',20);
-title('Case 1');
+% title('Case 1');
 box on;
 axis square;
 save2pdf('barGraphs/AMAComparisionCase1.pdf',fig2,600);
@@ -97,7 +97,7 @@ h2 = bar(1, linearCase10.cNormLinearRMSETest);
 h3 = bar(2, results9AMA.Case10error(8));
 h4 = bar(3, results10AMA.Case10error(8));
 h5 = bar(4, results12AMA.Case10error(8));
-plot([0 5],[naiveRelRMSE naiveRelRMSE],'--m')
+plot([0 5],[naiveRelRMSE naiveRelRMSE],'--g','LineWidth',4)
 
 set(h2,'FaceColor',linearColor);
 set(h3,'FaceColor',AMAColor1);
@@ -110,7 +110,7 @@ ylabel('Relative RMSE');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3'},'TickLabelInterpreter','latex');
 set(gca,'FontSize',20);
-title('Case 2');
+% title('Case 2');
 box on;
 axis square;
 save2pdf('barGraphs/AMAComparisionCase2.pdf',fig2,600);
@@ -127,7 +127,7 @@ h2 = bar(1, linearCase12.cNormLinearRMSETest);
 h3 = bar(2, results9AMA.Case12error(8));
 h4 = bar(3, results10AMA.Case12error(8));
 h5 = bar(4, results12AMA.Case12error(8));
-plot([0 5],[naiveRelRMSE naiveRelRMSE],'--m')
+plot([0 5],[naiveRelRMSE naiveRelRMSE],'--g','LineWidth',4)
 
 set(h2,'FaceColor',linearColor);
 set(h3,'FaceColor',AMAColor1);
@@ -140,7 +140,7 @@ ylabel('Relative RMSE');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3'},'TickLabelInterpreter','latex');
 set(gca,'FontSize',20);
-title('Case 3');
+% title('Case 3');
 box on;
 axis square;
 save2pdf('barGraphs/AMAComparisionCase3.pdf',fig2,600);
