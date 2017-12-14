@@ -59,16 +59,93 @@ There is a considerable literature on computational color constancy. Seminal wor
 An important insight of this line of research was that to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
 At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image \cite{BrainardWandellRetinex}.
 Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
-Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
+Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).  None-the-less, it is not known how best to estimate stable object descriptors from images of the natural scenes we view in daily life.
+
+The computational work reviewed above is based on formulating an explicit model of the image formation process and the statistical properties of natural images, and leveraging these formulations to obtain an appropriate "inverse optics" algorithm.  An alternative approach, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors.  Along these lines, Barron (REF, that color balancing deep learning paper) recently developed a color balancing algorithm based on training a neural network ... (better go back and re-understand that paper so we can describe it here).  The use of supervised learning to understand human perceptual capabilities has enjoyed success in domains outside of color vision.  Geisler and colleagues, for example, have developed a technique they refer to as accuracy maximization analysis (AMA, REFS), which learns linear filters whose output carries information that is optimized for particular perceptual tasks. This technique has provided computations that efficiently estimate [depth, focus, whatever]  from image patches taken from natural scenes, and that in addition provide excellent models of human's ability to make corresponding estimates from the same stimuli.  In this paper, we apply AMA to a special case of the color constancy problem (lightness constancy) and evaluate how well it performs for naturalistic image input.
+
+A difficulty in using machine learning approaches for color constancy is that these approaches require training sets where images of scenes containing objects with known surface reflectances and/or illuminated with known illuminations.  Such data sets are not readily available. Although there are several databases of calibrated color natural images, these do not generally provide the corresponding information about surface and illuminant ground truth (REFS,  McGill Database, UPENN database, Foster hyperspectal, Chakrabati hyperspectral, Parraga hyperspectral). Generating databases with both the images and the ground truth scene information is not trivial. One approach has been to acquire mages where objects of known reflectance have been inserted into the scene, and to use the image of these reference objects to provide an estimate of the illumination impinging at various scene locations (REFS, Foster).  This is somewhat painstaking, however, and in any case provides information about the illumination only at a small number of selected locations, so that generalizing across the image requires strong assumptions. Some progress is being made on characterizing how illumination varies over space in natural scenes (REF, Pont), which in the longer run may guide how information from reference objects can be used to provide reasonable estimates.  Another approach is to acquire images of posed scenes, where the surface reflectances of objects are measured individually for many of the objects in the scene (REFS, UCSB hyperspectral, Funt, look in Barron paper for more). These data sets have been useful for evaluating computational color constancy algorithms, but the use of posed scenes does not scale well when the need is for large training sets to use with supervised learning. 
+ 
+Because of the difficulty in obtaining large labelled data sets of natural images for use in developing and evaluating computational color constancy algorithms, in this paper we adopt the approach of using high-quality computer graphics to render images of what we refer to as \em{virtual natural scenes}. We describe this approach in detail below, but the key advantage is that we can produce large numbers of naturalistic images where all of the underlying properties are well-specified. This allows us to explore and evaluate computational color constancy with rich stimuli, while retaining the ability to precisely control and manipulate the intrinsic properties of the objects and illuminants that comprise the scene. This general approach has been adopted by other labs for the study of computational estimation of optical flow (REF, Black) and is becoming increasingly popular (OTHER REFS: Cornell graphics person, Gallant, Yamins, Autonomous vehicle work), as well as for the generation of stimuli for the study of human perception (REFS: Many -- go to Boynton lecture slides for some).  Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the discussion.
+
+In this initial work, we do not tackle the full problem of color constancy.  Rather, as a point of departure, we consider the computational problem of estimating a single attribute of object surface reflectance, which we refer to as surface luminance.  We compute object luminance from an object's surface reflectance function as follows.  We compute the light that would be reflected to the eye from a flat matte object with that surface reflectance, when the object is diffusely illuminated by the standard CIE daylight spectrum D65 (REF, CIE).  We then compute the luminance of this reflected light, using the CIE 1931 photopic luminosity function (REF, CIE), and divide this by the luminance of a perfectly reflecting diffuser (surface reflectance of one at all wavelengths) when that is computed in the same way.
+%@techreport{RN1912,
+%   author = {CIE},
+%   title = {Colorimetry, second edition},
+%   institution = {Bureau Central de la CIE},
+%   number = {15.2},
+%   year = {1986},
+%   type = {Report}
+%}
+This procedure allows us to assign to any surface reflectance a single surface luminance value.  Because the perceived lightness of an object is approximately (but by no means exactly, see REF Wyszecki) correlated with surface luminance across a range of viewing conditions, we refer to the computational problem we study as that of lightness constancy.
+%@inbook{RN10709,
+%   author = {Wyszecki, G.},
+%   title = {Color appearance},
+%   booktitle = {Handbook of Perception and Human Performance: Sensory Processes and Perception},
+%   publisher = {John Wiley & Sons},
+%   address = {New York},
+%   pages = {9.1-9.56},
+%   year = {1986},
+%   type = {Book Section}
+%}
+This is a generalization of the way this term is often used, where it refers more specifically to the stability of perceived lightness across images of scenes where all objects and illuminants are achromatic (REF, GILCHRIST BOOK).
+%@book{RN3427,
+%   author = {Gilchrist, A. L.},
+%   title = {Seeing Black and White},
+%   publisher = {Oxford University Press},
+%   address = {Oxford},
+%   year = {2006},
+%   type = {Book}
+%}
+Here, we aim to estimate surface luminance, but do so for images where both the luminance and the chromaticity of the surfaces and illuminants varies (se  Fig.~\ref{fig:introExampleFigure}). A particularly important feature of our treatment is that we consider scene variations where not only the spectrum of the illumination varies, but also the surface reflectance of objects in the scene other than the object whose surface luminance is being estimeted.
+
+The rest of this paper is organized as follows. [WRITE AN OUTLINE HERE.]  We conclude that [GIVE THE RESULT].
+
+%@article{RN130,
+%   author = {Nascimento, S. M. and Amano, K. and Foster, D. H.},
+%   title = {Spatial distributions of local illumination color in natural scenes},
+%   journal = {Vision Res},
+%   volume = {120},
+%   pages = {39-44},
+%   ISSN = {1878-5646 (Electronic)
+%0042-6989 (Linking)},
+%   DOI = {10.1016/j.visres.2015.07.005},
+%   url = {http://www.ncbi.nlm.nih.gov/pubmed/26291072},
+%   year = {2016},
+%   type = {Journal Article}
+%}
+%@inproceedings{RN134,
+%   author = {Chakrabarti, A. and Zickler, T.},
+%   title = {Statistics of real-world hyperspectral images},
+%   booktitle = {Proceedings of the IEEE Computer Society Conference on Computer Vision and Pattern Recognition},
+%   pages = {193-200},
+%   type = {Conference Proceedings}
+%}
+%@article{RN7450,
+%   author = {Parraga, C. A. and Brelstaff, G. and Troscianko, T. and Moorehead, I. R.},
+%   title = {Color and luminance information in natural scenes},
+%   journal = {Journal of The Optical Society of America A},
+%   volume = {15},
+%   pages = {563-569},
+%   year = {1998},
+%   type = {Journal Article}
+%}
+%@article{RN9554,
+%   author = {Tkacik, G. and Garrigan, P. and Ratliff, C. and Milcinski, G. and Klein, J. M. and Sterling, P. and Brainard, D. H. and Balasubramanian, V.},
+%   title = {Natural images from the birthplace of the human eye},
+%   journal = {PLoS ONE},
+%   volume = {6},
+%   number = {6:e20409},
+%   DOI = {doi:10.1371/journal.pone.0020409},
+%   url = {http://www.plosone.org/article/info%3Adoi%2F10.1371%2Fjournal.pone.0020409},
+%   year = {2011},
+%   type = {Journal Article}
+%}
 
 
-% NEED TO MOTIVATE WHAT WE'RE GOING TO DO.  SUPERVISED LEARNING APPROACH USING VIRTUAL WORLD DATA TO GET LABELLED TRAINING DATA.
-
-% IN THIS PAPER, WILL APPLY OUR APPROACH TO A REDUCED VERSION OF THE PROBLEM, AS A FIRST STEP
 
 
 
-In this work, we study lightness estimation of objects in naturalistic scenes using supervised learning methods. Lightness is the attribute that determines the brightness of a color. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. For achromatic objects, lightness is the property that changes from black to gray to white. Here, we study the effects of variations in the reflected light on the perceived lightness. These variations can result both due to geometrical factors (like shape, size, relative position of objects, etc.) or  spectral factors (such as the illumination spectra, surface reflectance, diffusivity, etc.). In this work, we focus on spectral factors, specifically the effects of variations in the surface reflectance spectra and the illumination spectra (Fig.\ref{fig:introExampleFigure}). Our aim is to identify the computations that lead to accurate lightness estimation.
+
 
 \begin{comment}
 \begin{figure}
