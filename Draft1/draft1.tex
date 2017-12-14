@@ -29,170 +29,13 @@ lightness}
 \maketitle
 
 \section{Introduction}
-The perceived color of an object has important behavioral implications, since color helps us to identify objects and their properties (REF Jacobs, Mollon).
-%@article{RN11757,
-%   author = {Mollon, J. D.},
-%   title = {"Tho' she kneel'd in that place where they grew..." The uses and origins of primate colour vision},
-%   journal = {Journal of Experimental Biology},
-%   volume = {146},
-%   pages = {21-38},
-%   url = {http://jeb.biologists.org/content/146/1/21.full.pdf},
-%   year = {1989},
-%   type = {Journal Article}
-%}
-%@book{RN4724,
-%   author = {Jacobs, G. H.},
-%   title = {Comparative Color Vision},
-%   publisher = {Academic Press},
-%   address = {New York},
-%   year = {1981},
-%   type = {Book}
-%}
+The perceived color of an object has important behavioral implications, since color helps us to identify objects and their properties \cite{Mollon89, Jacobs81}.
 Perceived object color is not sensed directly, rather it is computed by the brain starting with the retinal image of light reflected from the object to the eye.
-The challenge of object color perception is that this reflected light depends not just on the intrinsic properties of the object (e.g., its surface reflectance)
-Indeed, the light reflected from an object depends not just on the object's surface reflectance, but also on extrinsic factors such as the illumination, the object's pose,
-and the position of the observer (Fig. \ref{fig:introSchematic}.
+The challenge of object color perception is that this reflected light depends not just on the object's surface reflectance, but also on extrinsic factors such as the illumination, the object's pose,
+and the position of the observer (Fig. \ref{fig:introSchematic}).
 Thus, to produce a stable perceptual representation of an object's surface reflectance in the face of variation in these extrinsic factors, the brain must account for their influence on the reflected light.
-The ability of a visual system to extract such a stable representation is called color constancy. Although human color constancy is by no means perfect, it is often very good (REFS: Foster, Brainard and Radonjic). 
-%@article{RN13987,
-%   author = {Foster, D. H.},
-%   title = {Color constancy},
-%   journal = {Vision Research},
-%   volume = {51},
-%   number = {7},
-%   pages = {674-700},
-%   ISSN = {1878-5646 (Electronic)
-%0042-6989 (Linking)},
-%   DOI = {10.1016/j.visres.2010.09.006},
-%   url = {http://www.ncbi.nlm.nih.gov/pubmed/20849875
-%http://ac.els-cdn.com/S0042698910004402/1-s2.0-S0042698910004402-main.pdf?_tid=9f194810-0789-11e4-8bf9-00000aab0f26&acdnat=1404925019_749d71db2edf9d07b6323195f5a519dc},
-%   year = {2011},
-%   type = {Journal Article}
-%}
-%@inbook{RN14002,
-%   author = {Brainard, D. H. and Radonji?, A.},
-%   title = {Color constancy},
-%   booktitle = {The New Visual Neurosciences},
-%   editor = {Chalupa, L. M. and Werner, J. S.},
-%   publisher = {MIT Press},
-%   address = {Cambridge, MA},
-%   pages = {545-556},
-%   year = {2014},
-%   type = {Book Section}
-%}
+The ability of a visual system to extract such a stable representation is called color constancy. Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is how in principle could a visual system process the light reflected to the eyes to produce percepts well-correlated with object surface reflectance.
-
-There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover either descriptor correlated with object surface reflectance (e.g. REF Land) or explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., REFS Buchsbaum; Maloney and Wandell).
-%@article{RN12797,
-%   author = {Land, E. H.},
-%   title = {The retinex theory of color vision},
-%   journal = {Scientific American},
-%   volume = {237},
-%   number = {6},
-%   pages = {108-128},
-%   ISSN = {0036-8733 (Print)
-%0036-8733 (Linking)},
-%   url = {http://www.ncbi.nlm.nih.gov/pubmed/929159},
-%   year = {1977},
-%   type = {Journal Article}
-%}
-%@article{RN12790,
-%   author = {Buchsbaum, G.},
-%   title = {A spatial processor model for object colour perception},
-%   journal = {Journal of the Franklin Institute},
-%   volume = {310},
-%   number = {1},
-%   pages = {1-26},
-%   ISSN = {0016-0032},
-%   DOI = {Doi 10.1016/0016-0032(80)90058-7},
-%   url = {<Go to ISI>://WOS:A1980KH89600001},
-%   year = {1980},
-%   type = {Journal Article}
-%}
-%@article{RN12792,
-%   author = {Maloney, L.T. and Wandell, B. A.},
-%   title = {Color constancy: a method for recovering surface spectral reflectances},
-%   journal = {Journal of the Optical Society of America A},
-%   volume = {3},
-%   pages = {29-33},
-%   url = {http://www.opticsinfobase.org/DirectPDFAccess/0C84AF25-A90E-B3D5-AED2308AF33196BF_2286/josaa-3-1-29.pdf?da=1&id=2286&seq=0&mobile=no},
-%   year = {1986},
-%   type = {Journal Article}
-%}
-An important insight clarified by this line of research is that to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
-At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image (REF Brainard and Wandell).
-Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
-%@article{RN12810,
-%   author = {Brainard, D. H. and Wandell, B. A.},
-%   title = {Analysis of the retinex theory of color vision},
-%   journal = {Journal of the Optical Society of America A},
-%   volume = {3},
-%   number = {10},
-%   pages = {1651-1661},
-%   ISSN = {0740-3232 (Print)
-%0740-3232 (Linking)},
-%   url = {http://www.opticsinfobase.org/DirectPDFAccess/0D4EF4BB-D483-C92D-5D5F36D660104411_2473/josaa-3-10-1651.pdf?da=1&id=2473&seq=0&mobile=no},
-%   year = {1986},
-%   type = {Journal Article}
-%}
-Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes (REFS Funt and Drew; D'Zmura and Iverson; D'Zmura, Iverson, and Singer; Barron and Malik; Brainard and Freeman; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
-%@inproceedings{RN3265,
-%   author = {Funt, B. V. and Drew, M. S.},
-%   title = {Color constancy computation in near-Mondrian scenes using a finite dimensional linear model},
-%   type = {Conference Proceedings}
-%}
-%@article{RN12796,
-%   author = {D'Zmura, M. and Iverson, G.},
-%   title = {Color constancy . III. General linear recovery of spectral descriptions for lights and surfaces},
-%   journal = {Journal Of The Optical Society Of America A},
-%   volume = {11},
-%   number = {9},
-%   pages = {2389-2400},
-%   ISSN = {1084-7529 (Print)
-%1084-7529 (Linking)},
-%   url = {http://www.opticsinfobase.org/DirectPDFAccess/3991999B-F1A4-66F5-1F0CA009799B4F7B_806/josaa-11-9-2389.pdf?da=1&id=806&seq=0&mobile=no},
-%   year = {1994},
-%   type = {Journal Article}
-%}
-%@inproceedings{RN143,
-%   author = {Barron, J. T. and Malik, J.},
-%   title = {Color constancy, intrinsic images, and shape estimation},
-%   booktitle = {ECCV},
-%   type = {Conference Proceedings}
-%}
-%@inbook{RN2224,
-%   author = {D'Zmura, M. and Iverson, G. and Singer, B.},
-%   title = {Probabilistic color constancy},
-%   booktitle = {Geometric Representations of Perceptual Phenomena: Papers in Honor of Tarow Indow's 70th Birthday},
-%   editor = {Luce, R. D. and D'Zmura, M. and Hoffman, D. and Iverson, G. and Romney, A. K.},
-%   publisher = {Lawrence Erlbaum Associates},
-%   address = {Mahwah, NJ},
-%   pages = {187-202},
-%   year = {1995},
-%   type = {Book Section}
-%}
-%@article{RN12793,
-%   author = {Brainard, D. H. and Freeman, W. T.},
-%   title = {Bayesian color constancy},
-%   journal = {Journal of the Optical Society of America A},
-%   volume = {14},
-%   number = {7},
-%   pages = {1393-1411},
-%   ISSN = {1084-7529 (Print)
-%1084-7529 (Linking)},
-%   url = {http://www.opticsinfobase.org/DirectPDFAccess/0D4A73DE-BFFB-35F6-AA30000149C16461_1807/josaa-14-7-1393.pdf?da=1&id=1807&seq=0&mobile=no},
-%   year = {1997},
-%   type = {Journal Article}
-%}
-
-% NEED TO SAY SOMETHING ABOUT THE LITERATURE ON COMP. COLOR CONSTANCY
-% NEED TO MOTIVATE WHAT WE'RE GOING TO DO.  SUPERVISED LEARNING APPROACH USING VIRTUAL WORLD DATA TO GET LABELLED TRAINING DATA.
-
-% IN THIS PAPER, WILL APPLY OUR APPROACH TO A REDUCED VERSION OF THE PROBLEM, AS A FIRST STEP
-
-
-
-In this work, we study lightness estimation of objects in naturalistic scenes using supervised learning methods. Lightness is the attribute that determines the brightness of a color. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. For achromatic objects, lightness is the property that changes from black to gray to white. Here, we study the effects of variations in the reflected light on the perceived lightness. These variations can result both due to geometrical factors (like shape, size, relative position of objects, etc.) or  spectral factors (such as the illumination spectra, surface reflectance, diffusivity, etc.). In this work, we focus on spectral factors, specifically the effects of variations in the surface reflectance spectra and the illumination spectra (Fig.\ref{fig:introExampleFigure}). Our aim is to identify the computations that lead to accurate lightness estimation.
 
 % Figure 1: Introduction
 \begin{figure}
@@ -211,6 +54,21 @@ In this work, we study lightness estimation of objects in naturalistic scenes us
     \label{introFigure}
     \caption{(a) {\bf Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda,\vec{x})$, and the illumination spectrum of the light source, $E(\lambda,\vec{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf Lightness Constancy Under Spectral Variations:} In this paper we consider the special case of lightness constancy. Fig.~\ref{fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance. Within each row, the surface reflectance of the spheres has the same luminance, when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the lightness of the spheres generally decreases as we move down the rows. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row.  Within each column, this relative surface reflectance is held fixed. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.}
  \end{figure}
+
+There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover a descriptor correlated with object surface reflectance (e.g. \cite{LandRetinex}) or explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
+An important insight of this line of research was that to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
+At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image \cite{BrainardWandellRetinex}.
+Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
+Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
+
+
+% NEED TO MOTIVATE WHAT WE'RE GOING TO DO.  SUPERVISED LEARNING APPROACH USING VIRTUAL WORLD DATA TO GET LABELLED TRAINING DATA.
+
+% IN THIS PAPER, WILL APPLY OUR APPROACH TO A REDUCED VERSION OF THE PROBLEM, AS A FIRST STEP
+
+
+
+In this work, we study lightness estimation of objects in naturalistic scenes using supervised learning methods. Lightness is the attribute that determines the brightness of a color. A color with a low lightness is nearly black, while one with a high lightness is the pure, saturated color. For achromatic objects, lightness is the property that changes from black to gray to white. Here, we study the effects of variations in the reflected light on the perceived lightness. These variations can result both due to geometrical factors (like shape, size, relative position of objects, etc.) or  spectral factors (such as the illumination spectra, surface reflectance, diffusivity, etc.). In this work, we focus on spectral factors, specifically the effects of variations in the surface reflectance spectra and the illumination spectra (Fig.\ref{fig:introExampleFigure}). Our aim is to identify the computations that lead to accurate lightness estimation.
 
 \begin{comment}
 \begin{figure}

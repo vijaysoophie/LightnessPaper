@@ -1,6 +1,152 @@
 \begin{thebibliography}{}
 
 \bibitem[\protect\citeauthoryear{%
+Barron%
+\ \BBA{} Malik%
+}{%
+Barron%
+\ \BBA{} Malik%
+}{%
+{\protect\APACyear{2012}}%
+}]{%
+barron2012color}%
+\APACinsertmetastar{%
+barron2012color}%
+Barron, J\BPBI T.%
+\BCBT{}\ \BBA{} Malik, J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy, intrinsic images, and shape
+  estimation}{Color constancy, intrinsic images, and shape estimation}.\BBCQ{}
+\newblock
+\BIn{} \APACrefbtitle{European Conference on Computer Vision}{European
+  conference on computer vision}\ (\BPGS\ 57--70).
+\newblock
+ \begin{APACrefURL}
+  \url{https://link.springer.com/chapter/10.1007/978-3-642-33765-9_5}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
+\ \BBA{} Freeman%
+}{%
+Brainard%
+\ \BBA{} Freeman%
+}{%
+{\protect\APACyear{1997}}%
+}]{%
+BrainardFreeman}%
+\APACinsertmetastar{%
+BrainardFreeman}%
+Brainard, D\BPBI H.%
+\BCBT{}\ \BBA{} Freeman, W\BPBI T.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1997}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Bayesian color constancy}{Bayesian color
+  constancy}\BBCQ{}\ [Journal Article].
+\newblock
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{14}{7}{1393-1411}.
+\newblock
+ \begin{APACrefURL}
+  \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4A73DE-BFFB-35F6-AA30000149C16461_1807/josaa-14-7-1393.pdf?da=1&id=1807&seq=0&mobile=no}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
+\ \BBA{} Radonjic%
+}{%
+Brainard%
+\ \BBA{} Radonjic%
+}{%
+{\protect\APACyear{2014}}%
+}]{%
+BrainardColorConstancy}%
+\APACinsertmetastar{%
+BrainardColorConstancy}%
+Brainard, D\BPBI H.%
+\BCBT{}\ \BBA{} Radonjic, A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}\BBCQ{}\ [Book Section].
+\newblock
+\BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), \APACrefbtitle{The
+  New Visual Neurosciences}{The new visual neurosciences}\ (\BPG~545-556).
+\newblock
+\APACaddressPublisher{Cambridge, MA}{MIT Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
+\ \BBA{} Wandell%
+}{%
+Brainard%
+\ \BBA{} Wandell%
+}{%
+{\protect\APACyear{1986}}%
+}]{%
+BrainardWandellRetinex}%
+\APACinsertmetastar{%
+BrainardWandellRetinex}%
+Brainard, D\BPBI H.%
+\BCBT{}\ \BBA{} Wandell, B\BPBI A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
+  of the retinex theory of color vision}\BBCQ{}\ [Journal Article].
+\newblock
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{3}{10}{1651-1661}.
+\newblock
+ \begin{APACrefURL}
+  \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4EF4BB-D483-C92D-5D5F36D660104411_2473/josaa-3-10-1651.pdf?da=1&id=2473&seq=0&mobile=no}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Buchsbaum%
+}{%
+Buchsbaum%
+}{%
+{\protect\APACyear{1980}}%
+}]{%
+Buchsbaum80}%
+\APACinsertmetastar{%
+Buchsbaum80}%
+Buchsbaum, G.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1980}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{A spatial processor model for object colour perception}{A
+  spatial processor model for object colour perception}\BBCQ{}\ [Journal
+  Article].
+\newblock
+\APACjournalVolNumPages{Journal of the Franklin Institute}{310}{1}{1-26}.
+\newblock
+ \begin{APACrefURL}
+  \url{https://www.sciencedirect.com/science/article/pii/0016003280900587}
+  \end{APACrefURL}
+\newblock
+, doi:Doi 10.1016/0016-0032(80)90058-7
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Burge%
 \ \BBA{} Jaini%
 }{%
@@ -26,6 +172,126 @@ Burge, J.%
   coding advantages for scaled additive noise}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{PLoS computational biology}{13}{2}{e1005281}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+D'Zmura%
+\ \BBA{} Iverson%
+}{%
+D'Zmura%
+\ \BBA{} Iverson%
+}{%
+{\protect\APACyear{1994}}%
+}]{%
+D'ZmuraConstancy3}%
+\APACinsertmetastar{%
+D'ZmuraConstancy3}%
+D'Zmura, M.%
+\BCBT{}\ \BBA{} Iverson, G.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy . III. General linear recovery of
+  spectral descriptions for lights and surfaces}{Color constancy . iii. general
+  linear recovery of spectral descriptions for lights and surfaces}\BBCQ{}\
+  [Journal Article].
+\newblock
+\APACjournalVolNumPages{Journal Of The Optical Society Of America
+  A}{11}{9}{2389-2400}.
+\newblock
+ \begin{APACrefURL}
+  \url{http://www.opticsinfobase.org/DirectPDFAccess/3991999B-F1A4-66F5-1F0CA009799B4F7B_806/josaa-11-9-2389.pdf?da=1&id=806&seq=0&mobile=no}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+D'Zmura%
+, Iverson%
+\BCBL{}\ \BBA{} Singer%
+}{%
+D'Zmura%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1995}}%
+}]{%
+D'ZmuraIversonSinger}%
+\APACinsertmetastar{%
+D'ZmuraIversonSinger}%
+D'Zmura, M.%
+, Iverson, G.%
+\BCBL{}\ \BBA{} Singer, B.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1995}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Probabilistic color constancy}{Probabilistic color
+  constancy}\BBCQ{}\ [Book Section].
+\newblock
+\BIn{} R\BPBI D.~Luce, M.~D'Zmura, D.~Hoffman, G.~Iverson\BCBL{}\ \BBA{} A\BPBI
+  K.~Romney\ (\BEDS), \APACrefbtitle{Geometric Representations of Perceptual
+  Phenomena: Papers in Honor of Tarow Indow's 70th Birthday}{Geometric
+  representations of perceptual phenomena: Papers in honor of tarow indow's
+  70th birthday}\ (\BPG~187-202).
+\newblock
+\APACaddressPublisher{Mahwah, NJ}{Lawrence Erlbaum Associates}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Foster%
+}{%
+Foster%
+}{%
+{\protect\APACyear{2011}}%
+}]{%
+FosterColorConstancy}%
+\APACinsertmetastar{%
+FosterColorConstancy}%
+Foster, D\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}\BBCQ{}\ [Journal
+  Article].
+\newblock
+\APACjournalVolNumPages{Vision Research}{51}{7}{674-700}.
+\newblock
+ \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/20849875}
+  \end{APACrefURL}
+\newblock
+, doi:10.1016/j.visres.2010.09.006
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Funt%
+\ \BBA{} Drew%
+}{%
+Funt%
+\ \BBA{} Drew%
+}{%
+{\protect\APACyear{1988}}%
+}]{%
+funt1988color}%
+\APACinsertmetastar{%
+funt1988color}%
+Funt, B\BPBI V.%
+\BCBT{}\ \BBA{} Drew, M\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1988}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy computation in near-mondrian scenes using
+  a finite dimensional linear model}{Color constancy computation in
+  near-mondrian scenes using a finite dimensional linear model}.\BBCQ{}
+\newblock
+\BIn{} \APACrefbtitle{Computer Vision and Pattern Recognition, 1988.
+  Proceedings CVPR'88., Computer Society Conference on}{Computer vision and
+  pattern recognition, 1988. proceedings cvpr'88., computer society conference
+  on}\ (\BPGS\ 544--549).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -87,6 +353,27 @@ Heasly, B\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Jacobs%
+}{%
+Jacobs%
+}{%
+{\protect\APACyear{1981}}%
+}]{%
+Jacobs81}%
+\APACinsertmetastar{%
+Jacobs81}%
+Jacobs, G\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYear{1981}.
+\newblock
+\APACrefbtitle{Comparative Color Vision}{Comparative color vision}\ [Book].
+\newblock
+\APACaddressPublisher{New York}{Academic Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Jakob%
 }{%
 Jakob%
@@ -105,6 +392,89 @@ Jakob, W.%
 \BBOQ{}\APACrefatitle{Mitsuba renderer, 2010}{Mitsuba renderer, 2010}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{URL: http://www. mitsuba-renderer. org}{3}{}{10}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Land%
+}{%
+Land%
+}{%
+{\protect\APACyear{1977}}%
+}]{%
+LandRetinex}%
+\APACinsertmetastar{%
+LandRetinex}%
+Land, E\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1977}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{The retinex theory of color vision}{The retinex theory of
+  color vision}\BBCQ{}\ [Journal Article].
+\newblock
+\APACjournalVolNumPages{Scientific American}{237}{6}{108-128}.
+\newblock
+ \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/929159}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Maloney%
+\ \BBA{} Wandell%
+}{%
+Maloney%
+\ \BBA{} Wandell%
+}{%
+{\protect\APACyear{1986}}%
+}]{%
+MaloneyWandell86}%
+\APACinsertmetastar{%
+MaloneyWandell86}%
+Maloney, L.%
+\BCBT{}\ \BBA{} Wandell, B\BPBI A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color constancy: a method for recovering surface spectral
+  reflectances}{Color constancy: a method for recovering surface spectral
+  reflectances}\BBCQ{}\ [Journal Article].
+\newblock
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{3}{}{29-33}.
+\newblock
+ \begin{APACrefURL}
+  \url{http://www.opticsinfobase.org/DirectPDFAccess/0C84AF25-A90E-B3D5-AED2308AF33196BF_2286/josaa-3-1-29.pdf?da=1&id=2286&seq=0&mobile=no}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Mollon%
+}{%
+Mollon%
+}{%
+{\protect\APACyear{1989}}%
+}]{%
+Mollon89}%
+\APACinsertmetastar{%
+Mollon89}%
+Mollon, J\BPBI D.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1989}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{"Tho' she kneel'd in that place where they grew..." The
+  uses and origins of primate colour vision}{"tho' she kneel'd in that place
+  where they grew..." the uses and origins of primate colour vision}\BBCQ{}\
+  [Journal Article].
+\newblock
+\APACjournalVolNumPages{Journal of Experimental Biology}{146}{}{21-38}.
+\newblock
+ \begin{APACrefURL} \url{http://jeb.biologists.org/content/146/1/21.full.pdf}
+  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
