@@ -39,42 +39,39 @@
 \newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 54}}{2}{Introduction}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda ,\mathaccentV {vec}17E{x})$, and the illumination spectrum of the light source, $E(\lambda ,\mathaccentV {vec}17E{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf  Lightness Constancy Under Spectral Variations:} In this paper we consider the special case of lightness constancy. Fig.\nobreakspace  {}\ref  {fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance. Within each row, the surface reflectance of the spheres has the same luminance, when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the lightness of the spheres generally decreases as we move down the rows. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row. Within each column, this relative surface reflectance is held fixed. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.\relax }}{2}{figure.caption.2}}
 \citation{jakob2015mitsuba}
-\newlabel{fig:targetVarying}{{2a}{4}{Case 1\relax }{figure.caption.3}{}}
-\newlabel{sub@fig:targetVarying}{{a}{4}{Case 1\relax }{figure.caption.3}{}}
-\newlabel{fig:targetIlluminantVarying}{{2b}{4}{Case 2\relax }{figure.caption.3}{}}
-\newlabel{sub@fig:targetIlluminantVarying}{{b}{4}{Case 2\relax }{figure.caption.3}{}}
-\newlabel{fig:allSpectraVarying}{{2c}{4}{Case 3\relax }{figure.caption.3}{}}
-\newlabel{sub@fig:allSpectraVarying}{{c}{4}{Case 3\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }}{4}{figure.caption.3}}
-\newlabel{fig:studiedCases}{{2}{4}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: Target reflectance spectrum variable, illumination spectra fixed, background spectra fixed, (b) Case 2: Target spectrum variable, Illumination spectra variable, Background spectra fixed, (c) Case 3: Target spectrum variable, Illumination spectra variable, Background spectra variable.\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{Methods}{4}{section*.4}}
 \@writefile{toc}{\contentsline {section}{Image database}{4}{section*.5}}
 \newlabel{method:VirtualWorld}{{}{4}{Image database}{section*.5}{}}
-\@writefile{toc}{\contentsline {section}{Model of Visual System}{4}{section*.7}}
-\newlabel{method:Isetbio}{{}{4}{Model of Visual System}{section*.7}{}}
+\newlabel{fig:targetVarying}{{2a}{5}{Case 1\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:targetVarying}{{a}{5}{Case 1\relax }{figure.caption.3}{}}
+\newlabel{fig:targetIlluminantVarying}{{2b}{5}{Case 2\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:targetIlluminantVarying}{{b}{5}{Case 2\relax }{figure.caption.3}{}}
+\newlabel{fig:allSpectraVarying}{{2c}{5}{Case 3\relax }{figure.caption.3}{}}
+\newlabel{sub@fig:allSpectraVarying}{{c}{5}{Case 3\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces {\bf  Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (b) Case 2: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. This panel is reproduced from \ref  {fig:introExampleFigure}. As in \ref  {fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance. Moreover, across the three panels of this figure, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall lights source spectra scale factors (see \ref  {Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. [CHECK THAT THIS WORKS FOR A NICE FIGURE]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.\relax }}{5}{figure.caption.3}}
+\newlabel{fig:studiedCases}{{2}{5}{{\bf Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard lightness level of the target object. 5 images are shown at each lightness level. We studied three types of spectral variations. (a) Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (b) Case 2: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. This panel is reproduced from \ref {fig:introExampleFigure}. As in \ref {fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance. Moreover, across the three panels of this figure, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall lights source spectra scale factors (see \ref {Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. [CHECK THAT THIS WORKS FOR A NICE FIGURE]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.\relax }{figure.caption.3}{}}
+\@writefile{toc}{\contentsline {section}{Model of Visual System}{5}{section*.7}}
+\newlabel{method:Isetbio}{{}{5}{Model of Visual System}{section*.7}{}}
 \citation{ranganNotes}
-\newlabel{fig:3DScene}{{3a}{5}{A typical 3D Scene\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:3DScene}{{a}{5}{A typical 3D Scene\relax }{figure.caption.6}{}}
-\newlabel{fig:croppedImage}{{3b}{5}{Cropped Image\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:croppedImage}{{b}{5}{Cropped Image\relax }{figure.caption.6}{}}
-\newlabel{fig:croppedImageWithMosaic}{{3c}{5}{Optical Image\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:croppedImageWithMosaic}{{c}{5}{Optical Image\relax }{figure.caption.6}{}}
-\newlabel{fig:coneContrast}{{3d}{5}{LMS cone contrast\relax }{figure.caption.6}{}}
-\newlabel{sub@fig:coneContrast}{{d}{5}{LMS cone contrast\relax }{figure.caption.6}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 147}}{5}{Image database}{figure.caption.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, a target object and a light source is selected from the VWCC library. The target object is placed in the camera field of view and assigned a reflectance spectrum with a specific lightness. After assigning spectra to other objects and lights sources in the scene, a multispectral image of the scene is rendered using Mitsuba graphics rendering software. (b) A part of the image, containing the target object, is cropped from the image. (c) The response of the retinal cones to the cropped image is simulated using a model of the visual system. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) The cone response are interpolated to get the response of all the three types at each location (demosaicing). Finally, the demosaic response is contrast normalized (see text).\relax }}{5}{figure.caption.6}}
-\@writefile{toc}{\contentsline {section}{Supervised Learning methods}{5}{section*.8}}
-\newlabel{method:SupervisedLearning}{{}{5}{Supervised Learning methods}{section*.8}{}}
 \citation{geisler2009optimal}
 \citation{burge2017accuracy}
-\newlabel{eq:fopt}{{3}{6}{Accuracy maximization analysis}{equation.0.3}{}}
-\newlabel{eq:posterior}{{4}{6}{Accuracy maximization analysis}{equation.0.4}{}}
-\newlabel{eq:condProb}{{5}{6}{Accuracy maximization analysis}{equation.0.5}{}}
-\newlabel{eq:finalPosterior}{{6}{6}{Accuracy maximization analysis}{equation.0.6}{}}
+\newlabel{fig:3DScene}{{3a}{6}{A typical 3D Scene\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:3DScene}{{a}{6}{A typical 3D Scene\relax }{figure.caption.6}{}}
+\newlabel{fig:croppedImage}{{3b}{6}{Cropped Image\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:croppedImage}{{b}{6}{Cropped Image\relax }{figure.caption.6}{}}
+\newlabel{fig:croppedImageWithMosaic}{{3c}{6}{Optical Image\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:croppedImageWithMosaic}{{c}{6}{Optical Image\relax }{figure.caption.6}{}}
+\newlabel{fig:coneContrast}{{3d}{6}{LMS cone contrast\relax }{figure.caption.6}{}}
+\newlabel{sub@fig:coneContrast}{{d}{6}{LMS cone contrast\relax }{figure.caption.6}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 211}}{6}{Image database}{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, a target object and a light source is selected from the VWCC library. The target object is placed in the camera field of view and assigned a reflectance spectrum with a specific lightness. After assigning spectra to other objects and lights sources in the scene, a multispectral image of the scene is rendered using Mitsuba graphics rendering software. (b) A part of the image, containing the target object, is cropped from the image. (c) The response of the retinal cones to the cropped image is simulated using a model of the visual system. Fig.\ref  {fig:croppedImageWithMosaic} shows the optical image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). See text for the details of the model. (d) The cone response are interpolated to get the response of all the three types at each location (demosaicing). Finally, the demosaic response is contrast normalized (see text).\relax }}{6}{figure.caption.6}}
+\@writefile{toc}{\contentsline {section}{Supervised Learning methods}{6}{section*.8}}
+\newlabel{method:SupervisedLearning}{{}{6}{Supervised Learning methods}{section*.8}{}}
+\newlabel{eq:fopt}{{3}{7}{Accuracy maximization analysis}{equation.0.3}{}}
+\newlabel{eq:posterior}{{4}{7}{Accuracy maximization analysis}{equation.0.4}{}}
+\newlabel{eq:condProb}{{5}{7}{Accuracy maximization analysis}{equation.0.5}{}}
+\newlabel{eq:finalPosterior}{{6}{7}{Accuracy maximization analysis}{equation.0.6}{}}
 \newlabel{eq:simplifiedPosterior}{{7}{7}{Accuracy maximization analysis}{equation.0.7}{}}
-\@writefile{toc}{\contentsline {section}{Results}{7}{section*.12}}
-\@writefile{toc}{\contentsline {section}{Optimal receptive fields show a center surround structure}{7}{section*.13}}
-\@writefile{toc}{\contentsline {section}{Lightness can be well estimated using a bayesian decoder with gaussian priors.}{7}{section*.17}}
 \newlabel{fig:case9SVD}{{4a}{8}{SVD First 2 RFs\relax }{figure.caption.14}{}}
 \newlabel{sub@fig:case9SVD}{{a}{8}{SVD First 2 RFs\relax }{figure.caption.14}{}}
 \newlabel{fig:case9AMA}{{4b}{8}{AMA First 2 RFs\relax }{figure.caption.14}{}}
@@ -85,34 +82,32 @@
 \newlabel{sub@fig:case9Results}{{d}{8}{Lightness Estimates\relax }{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 1:} (a) First two receptive fields produced by the SVD method. Along the row we show the filters corresponding to the L cones, M cones and Scones (left to right). (c) First two receptive fields produced by the SVD method. (c) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response separate out quite well in this case, making the estimation easy (d) The estimates of the target object standard lightness. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.\relax }}{8}{figure.caption.14}}
 \newlabel{fig:case9AllResults}{{4}{8}{{\bf Receptive fields and lightness estimates. Case 1:} (a) First two receptive fields produced by the SVD method. Along the row we show the filters corresponding to the L cones, M cones and Scones (left to right). (c) First two receptive fields produced by the SVD method. (c) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response separate out quite well in this case, making the estimation easy (d) The estimates of the target object standard lightness. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.\relax }{figure.caption.14}{}}
-\newlabel{fig:case10SVD}{{5a}{8}{SVD First 2 RFs\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:case10SVD}{{a}{8}{SVD First 2 RFs\relax }{figure.caption.15}{}}
-\newlabel{fig:case10AMA}{{5b}{8}{AMA First 2 RFs\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:case10AMA}{{b}{8}{AMA First 2 RFs\relax }{figure.caption.15}{}}
-\newlabel{fig:case10FiltersResponse}{{5c}{8}{AMA RF Response\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:case10FiltersResponse}{{c}{8}{AMA RF Response\relax }{figure.caption.15}{}}
-\newlabel{fig:case10Results}{{5d}{8}{Luminance Estimates\relax }{figure.caption.15}{}}
-\newlabel{sub@fig:case10Results}{{d}{8}{Luminance Estimates\relax }{figure.caption.15}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{8}{figure.caption.15}}
-\newlabel{fig:case10AllResults}{{5}{8}{{\bf Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref {fig:case9AllResults}.\relax }{figure.caption.15}{}}
-\newlabel{fig:case12SVD}{{6a}{8}{SVD First 2 RFs\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:case12SVD}{{a}{8}{SVD First 2 RFs\relax }{figure.caption.16}{}}
-\newlabel{fig:case12AMA}{{6b}{8}{AMA First 2 RFs\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:case12AMA}{{b}{8}{AMA First 2 RFs\relax }{figure.caption.16}{}}
-\newlabel{fig:case12FiltersResponse}{{6c}{8}{AMA RF Response\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:case12FiltersResponse}{{c}{8}{AMA RF Response\relax }{figure.caption.16}{}}
-\newlabel{fig:case12Results}{{6d}{8}{Luminance Estimates\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:case12Results}{{d}{8}{Luminance Estimates\relax }{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 3:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{8}{figure.caption.16}}
-\newlabel{fig:case12AllResults}{{6}{8}{{\bf Receptive fields and lightness estimates. Case 3:} Same as Fig. \ref {fig:case9AllResults}.\relax }{figure.caption.16}{}}
-\citation{heasly2014rendertoolbox3}
-\citation{jakob2015mitsuba}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }}{9}{figure.caption.18}}
-\newlabel{fig:RMSEvsNFilters}{{7}{9}{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }{figure.caption.18}{}}
+\@writefile{toc}{\contentsline {section}{Results}{8}{section*.12}}
+\@writefile{toc}{\contentsline {section}{Optimal receptive fields show a center surround structure}{8}{section*.13}}
+\@writefile{toc}{\contentsline {section}{Lightness can be well estimated using a bayesian decoder with gaussian priors.}{8}{section*.17}}
+\newlabel{fig:case10SVD}{{5a}{9}{SVD First 2 RFs\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:case10SVD}{{a}{9}{SVD First 2 RFs\relax }{figure.caption.15}{}}
+\newlabel{fig:case10AMA}{{5b}{9}{AMA First 2 RFs\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:case10AMA}{{b}{9}{AMA First 2 RFs\relax }{figure.caption.15}{}}
+\newlabel{fig:case10FiltersResponse}{{5c}{9}{AMA RF Response\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:case10FiltersResponse}{{c}{9}{AMA RF Response\relax }{figure.caption.15}{}}
+\newlabel{fig:case10Results}{{5d}{9}{Luminance Estimates\relax }{figure.caption.15}{}}
+\newlabel{sub@fig:case10Results}{{d}{9}{Luminance Estimates\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{9}{figure.caption.15}}
+\newlabel{fig:case10AllResults}{{5}{9}{{\bf Receptive fields and lightness estimates. Case 2:} Same as Fig. \ref {fig:case9AllResults}.\relax }{figure.caption.15}{}}
+\newlabel{fig:case12SVD}{{6a}{9}{SVD First 2 RFs\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:case12SVD}{{a}{9}{SVD First 2 RFs\relax }{figure.caption.16}{}}
+\newlabel{fig:case12AMA}{{6b}{9}{AMA First 2 RFs\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:case12AMA}{{b}{9}{AMA First 2 RFs\relax }{figure.caption.16}{}}
+\newlabel{fig:case12FiltersResponse}{{6c}{9}{AMA RF Response\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:case12FiltersResponse}{{c}{9}{AMA RF Response\relax }{figure.caption.16}{}}
+\newlabel{fig:case12Results}{{6d}{9}{Luminance Estimates\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:case12Results}{{d}{9}{Luminance Estimates\relax }{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\bf  Receptive fields and lightness estimates. Case 3:} Same as Fig. \ref  {fig:case9AllResults}.\relax }}{9}{figure.caption.16}}
+\newlabel{fig:case12AllResults}{{6}{9}{{\bf Receptive fields and lightness estimates. Case 3:} Same as Fig. \ref {fig:case9AllResults}.\relax }{figure.caption.16}{}}
 \@writefile{toc}{\contentsline {section}{The RFs of complex case generalize on simpler cases}{9}{section*.19}}
-\@writefile{toc}{\contentsline {section}{Discussion}{9}{section*.21}}
-\@writefile{toc}{\contentsline {section}{Supplementary Information}{9}{section*.22}}
-\@writefile{toc}{\contentsline {section}{Virtual World Color Constancy}{9}{section*.23}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }}{10}{figure.caption.18}}
+\newlabel{fig:RMSEvsNFilters}{{7}{10}{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.\relax }{figure.caption.18}{}}
 \newlabel{fig:summaryBarGraph}{{8a}{10}{Performance of methods\relax }{figure.caption.20}{}}
 \newlabel{sub@fig:summaryBarGraph}{{a}{10}{Performance of methods\relax }{figure.caption.20}{}}
 \newlabel{fig:SVDBAR}{{8b}{10}{SVD RF Performance\relax }{figure.caption.20}{}}
@@ -121,64 +116,86 @@
 \newlabel{sub@fig:AMABAR}{{c}{10}{AMA RF Performance\relax }{figure.caption.20}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it  fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref  {fig:SVDBAR} for AMA RFs.\relax }}{10}{figure.caption.20}}
 \newlabel{fig:barGraphs}{{8}{10}{{\bf Model and Filter Performance:} (a) Comparison of various methods on lightness estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the lightness can be estimated well. This is so, because the lightness information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the lightness information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref {fig:SVDBAR} for AMA RFs.\relax }{figure.caption.20}{}}
-\newlabel{fig:baseSceneLibrary}{{9a}{11}{Library \relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneLibrary}{{a}{11}{Library \relax }{figure.caption.24}{}}
-\newlabel{fig:baseSceneMill}{{9b}{11}{Mill\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneMill}{{b}{11}{Mill\relax }{figure.caption.24}{}}
-\newlabel{fig:baseSceneTableChairs}{{9c}{11}{Table-Chairs\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneTableChairs}{{c}{11}{Table-Chairs\relax }{figure.caption.24}{}}
-\newlabel{fig:baseSceneIndoorPlant}{{9d}{11}{Indoor-plant\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneIndoorPlant}{{d}{11}{Indoor-plant\relax }{figure.caption.24}{}}
-\newlabel{fig:baseSceneWarehouse}{{9e}{11}{Warehouse\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneWarehouse}{{e}{11}{Warehouse\relax }{figure.caption.24}{}}
-\newlabel{fig:baseSceneCheckerBoard}{{9f}{11}{Checkerboard\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:baseSceneCheckerBoard}{{f}{11}{Checkerboard\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of base scenes.\relax }}{11}{figure.caption.24}}
-\newlabel{fig:baseScenes}{{9}{11}{Example of base scenes.\relax }{figure.caption.24}{}}
-\newlabel{fig:libraryWithBigBall}{{10a}{11}{Big-ball\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithBigBall}{{a}{11}{Big-ball\relax }{figure.caption.25}{}}
-\newlabel{fig:libraryWithSmallBall}{{10b}{11}{Small-ball\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithSmallBall}{{b}{11}{Small-ball\relax }{figure.caption.25}{}}
-\newlabel{fig:libraryWithBarrel}{{10c}{11}{Barrel\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithBarrel}{{c}{11}{Barrel\relax }{figure.caption.25}{}}
-\newlabel{fig:libraryWithXylophone}{{10d}{11}{Xylophone\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithXylophone}{{d}{11}{Xylophone\relax }{figure.caption.25}{}}
-\newlabel{fig:libraryWithRingToy}{{10e}{11}{Ring toy\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithRingToy}{{e}{11}{Ring toy\relax }{figure.caption.25}{}}
-\newlabel{fig:libraryWithChampagneBottle}{{10f}{11}{Champagne Bottle\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:libraryWithChampagneBottle}{{f}{11}{Champagne Bottle\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Base scenes with inserted objects.\relax }}{11}{figure.caption.25}}
-\newlabel{fig:libraryWithTarget}{{10}{11}{Base scenes with inserted objects.\relax }{figure.caption.25}{}}
-\newlabel{fig:targetVariation}{{11a}{12}{Target spectra\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:targetVariation}{{a}{12}{Target spectra\relax }{figure.caption.26}{}}
-\newlabel{fig:backGroundVariation}{{11b}{12}{Background spectra\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:backGroundVariation}{{b}{12}{Background spectra\relax }{figure.caption.26}{}}
-\newlabel{fig:illuminationVariation}{{11c}{12}{Illumination spectra\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:illuminationVariation}{{c}{12}{Illumination spectra\relax }{figure.caption.26}{}}
-\newlabel{fig:targetPositionVariation}{{11d}{12}{Target position\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:targetPositionVariation}{{d}{12}{Target position\relax }{figure.caption.26}{}}
-\newlabel{fig:targetSizeOrientation}{{11e}{12}{Target Size/Orientation\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:targetSizeOrientation}{{e}{12}{Target Size/Orientation\relax }{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }}{12}{figure.caption.26}}
-\newlabel{fig:spectralTransformations}{{11}{12}{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }{figure.caption.26}{}}
+\citation{heasly2014rendertoolbox3}
+\citation{jakob2015mitsuba}
+\@writefile{toc}{\contentsline {section}{Discussion}{11}{section*.21}}
+\@writefile{toc}{\contentsline {section}{Supplementary Information}{11}{section*.22}}
+\@writefile{toc}{\contentsline {section}{Virtual World Color Constancy}{11}{section*.23}}
+\newlabel{fig:baseSceneLibrary}{{9a}{12}{Library \relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneLibrary}{{a}{12}{Library \relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneMill}{{9b}{12}{Mill\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneMill}{{b}{12}{Mill\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneTableChairs}{{9c}{12}{Table-Chairs\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneTableChairs}{{c}{12}{Table-Chairs\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneIndoorPlant}{{9d}{12}{Indoor-plant\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneIndoorPlant}{{d}{12}{Indoor-plant\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneWarehouse}{{9e}{12}{Warehouse\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneWarehouse}{{e}{12}{Warehouse\relax }{figure.caption.24}{}}
+\newlabel{fig:baseSceneCheckerBoard}{{9f}{12}{Checkerboard\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:baseSceneCheckerBoard}{{f}{12}{Checkerboard\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces Example of base scenes.\relax }}{12}{figure.caption.24}}
+\newlabel{fig:baseScenes}{{9}{12}{Example of base scenes.\relax }{figure.caption.24}{}}
 \citation{peyvandi2016colorimetric}
+\newlabel{fig:libraryWithBigBall}{{10a}{13}{Big-ball\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithBigBall}{{a}{13}{Big-ball\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithSmallBall}{{10b}{13}{Small-ball\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithSmallBall}{{b}{13}{Small-ball\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithBarrel}{{10c}{13}{Barrel\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithBarrel}{{c}{13}{Barrel\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithXylophone}{{10d}{13}{Xylophone\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithXylophone}{{d}{13}{Xylophone\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithRingToy}{{10e}{13}{Ring toy\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithRingToy}{{e}{13}{Ring toy\relax }{figure.caption.25}{}}
+\newlabel{fig:libraryWithChampagneBottle}{{10f}{13}{Champagne Bottle\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:libraryWithChampagneBottle}{{f}{13}{Champagne Bottle\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces Base scenes with inserted objects.\relax }}{13}{figure.caption.25}}
+\newlabel{fig:libraryWithTarget}{{10}{13}{Base scenes with inserted objects.\relax }{figure.caption.25}{}}
 \@writefile{toc}{\contentsline {section}{Generating Spectrum for VWCC}{13}{section*.27}}
 \@writefile{toc}{\contentsline {section}{Illumination Spectrum}{13}{section*.28}}
-\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{13}{section*.30}}
-\newlabel{fig:granadaSpectra}{{12a}{14}{Granada natural daylight dataset\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:granadaSpectra}{{a}{14}{Granada natural daylight dataset\relax }{figure.caption.29}{}}
-\newlabel{fig:rescaledGranada}{{12b}{14}{Rescaled Granada dataset\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:rescaledGranada}{{b}{14}{Rescaled Granada dataset\relax }{figure.caption.29}{}}
-\newlabel{fig:randomIlluminant}{{12c}{14}{Randomly generated samples\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:randomIlluminant}{{c}{14}{Randomly generated samples\relax }{figure.caption.29}{}}
-\newlabel{fig:xyDiagram}{{12d}{14}{xy chromaticity diagram\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:xyDiagram}{{d}{14}{xy chromaticity diagram\relax }{figure.caption.29}{}}
-\newlabel{fig:granadaEV}{{12e}{14}{Normalized PCA eigenvalues\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:granadaEV}{{e}{14}{Normalized PCA eigenvalues\relax }{figure.caption.29}{}}
-\newlabel{fig:sRGBIlluminant}{{12f}{14}{sRGB rendition of samples from Fig.\ref {fig:randomIlluminant}\relax }{figure.caption.29}{}}
-\newlabel{sub@fig:sRGBIlluminant}{{f}{14}{sRGB rendition of samples from Fig.\ref {fig:randomIlluminant}\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref  {fig:rescaledGranada}) and the randomly generated samples (Fig.\ref  {fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref  {fig:randomIlluminant}.\relax }}{14}{figure.caption.29}}
-\newlabel{fig:illluminationGeneration}{{12}{14}{{\bf Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref {fig:rescaledGranada}) and the randomly generated samples (Fig.\ref {fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref {fig:randomIlluminant}.\relax }{figure.caption.29}{}}
+\newlabel{fig:targetVariation}{{11a}{14}{Target spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetVariation}{{a}{14}{Target spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:backGroundVariation}{{11b}{14}{Background spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:backGroundVariation}{{b}{14}{Background spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:illuminationVariation}{{11c}{14}{Illumination spectra\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:illuminationVariation}{{c}{14}{Illumination spectra\relax }{figure.caption.26}{}}
+\newlabel{fig:targetPositionVariation}{{11d}{14}{Target position\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetPositionVariation}{{d}{14}{Target position\relax }{figure.caption.26}{}}
+\newlabel{fig:targetSizeOrientation}{{11e}{14}{Target Size/Orientation\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:targetSizeOrientation}{{e}{14}{Target Size/Orientation\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }}{14}{figure.caption.26}}
+\newlabel{fig:spectralTransformations}{{11}{14}{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{Reflectance Spectrum}{14}{section*.30}}
+\@writefile{toc}{\contentsline {section}{Cone response to multispectral images}{14}{section*.33}}
+\newlabel{fig:granadaSpectra}{{12a}{15}{Granada natural daylight dataset\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:granadaSpectra}{{a}{15}{Granada natural daylight dataset\relax }{figure.caption.29}{}}
+\newlabel{fig:rescaledGranada}{{12b}{15}{Rescaled Granada dataset\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:rescaledGranada}{{b}{15}{Rescaled Granada dataset\relax }{figure.caption.29}{}}
+\newlabel{fig:randomIlluminant}{{12c}{15}{Randomly generated samples\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:randomIlluminant}{{c}{15}{Randomly generated samples\relax }{figure.caption.29}{}}
+\newlabel{fig:xyDiagram}{{12d}{15}{xy chromaticity diagram\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:xyDiagram}{{d}{15}{xy chromaticity diagram\relax }{figure.caption.29}{}}
+\newlabel{fig:granadaEV}{{12e}{15}{Normalized PCA eigenvalues\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:granadaEV}{{e}{15}{Normalized PCA eigenvalues\relax }{figure.caption.29}{}}
+\newlabel{fig:sRGBIlluminant}{{12f}{15}{sRGB rendition of samples from Fig.\ref {fig:randomIlluminant}\relax }{figure.caption.29}{}}
+\newlabel{sub@fig:sRGBIlluminant}{{f}{15}{sRGB rendition of samples from Fig.\ref {fig:randomIlluminant}\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref  {fig:rescaledGranada}) and the randomly generated samples (Fig.\ref  {fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref  {fig:randomIlluminant}.\relax }}{15}{figure.caption.29}}
+\newlabel{fig:illluminationGeneration}{{12}{15}{{\bf Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref {fig:rescaledGranada}) and the randomly generated samples (Fig.\ref {fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref {fig:randomIlluminant}.\relax }{figure.caption.29}{}}
+\newlabel{fig:naturalSurface}{{13a}{16}{Natural surface reflectance spectra\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:naturalSurface}{{a}{16}{Natural surface reflectance spectra\relax }{figure.caption.31}{}}
+\newlabel{fig:randomSurface}{{13b}{16}{Randomly generated samples\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:randomSurface}{{b}{16}{Randomly generated samples\relax }{figure.caption.31}{}}
+\newlabel{fig:sRGBSurface}{{13c}{16}{sRGB rendition of samples from \ref {fig:randomSurface}\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:sRGBSurface}{{c}{16}{sRGB rendition of samples from \ref {fig:randomSurface}\relax }{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref  {fig:randomSurface}.\relax }}{16}{figure.caption.31}}
+\newlabel{fig:surfaceReflectanceGeneration}{{13}{16}{{\bf Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref {fig:randomSurface}.\relax }{figure.caption.31}{}}
+\newlabel{fig:naturalSurfaceTarget}{{14a}{16}{Natural surface reflectance spectra\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:naturalSurfaceTarget}{{a}{16}{Natural surface reflectance spectra\relax }{figure.caption.32}{}}
+\newlabel{fig:randomSurfaceTarget}{{14b}{16}{Randomly generated target samples\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:randomSurfaceTarget}{{b}{16}{Randomly generated target samples\relax }{figure.caption.32}{}}
+\newlabel{fig:sRGBSurfaceTarget}{{14c}{16}{sRGB rendition of samples from Fig.~\ref {fig:randomSurfaceTarget}\relax }{figure.caption.32}{}}
+\newlabel{sub@fig:sRGBSurfaceTarget}{{c}{16}{sRGB rendition of samples from Fig.~\ref {fig:randomSurfaceTarget}\relax }{figure.caption.32}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.\nobreakspace  {}\ref  {fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.\relax }}{16}{figure.caption.32}}
+\newlabel{fig:targetSurfaceReflectance}{{14}{16}{{\bf Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.~\ref {fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.\relax }{figure.caption.32}{}}
 \bibdata{references}
 \bibcite{barron2012color}{\citeauthoryear {Barron\ \BBA{} Malik}{Barron\ \BBA{} Malik}{{\APACyear {2012}}}}
 \APACbibcite{barron2012color}{\citeauthoryear {Barron\ \BBA{} Malik}{Barron\ \BBA{} Malik}{{\APACyear {2012}}}}
@@ -188,16 +205,6 @@
 \APACbibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \bibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}}}
 \APACbibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}}}
-\newlabel{fig:naturalSurface}{{13a}{15}{Natural surface reflectance spectra\relax }{figure.caption.31}{}}
-\newlabel{sub@fig:naturalSurface}{{a}{15}{Natural surface reflectance spectra\relax }{figure.caption.31}{}}
-\newlabel{fig:randomSurface}{{13b}{15}{Randomly generated samples\relax }{figure.caption.31}{}}
-\newlabel{sub@fig:randomSurface}{{b}{15}{Randomly generated samples\relax }{figure.caption.31}{}}
-\newlabel{fig:sRGBSurface}{{13c}{15}{sRGB rendition of samples from \ref {fig:randomSurface}\relax }{figure.caption.31}{}}
-\newlabel{sub@fig:sRGBSurface}{{c}{15}{sRGB rendition of samples from \ref {fig:randomSurface}\relax }{figure.caption.31}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref  {fig:randomSurface}.\relax }}{15}{figure.caption.31}}
-\newlabel{fig:surfaceReflectanceGeneration}{{13}{15}{{\bf Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref {fig:randomSurface}.\relax }{figure.caption.31}{}}
-\@writefile{toc}{\contentsline {section}{Cone response to multispectral images}{15}{section*.33}}
-\@writefile{toc}{\contentsline {section}{References}{15}{section*.34}}
 \bibcite{Buchsbaum80}{\citeauthoryear {Buchsbaum}{Buchsbaum}{{\APACyear {1980}}}}
 \APACbibcite{Buchsbaum80}{\citeauthoryear {Buchsbaum}{Buchsbaum}{{\APACyear {1980}}}}
 \bibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
@@ -222,16 +229,9 @@
 \APACbibcite{LandRetinex}{\citeauthoryear {Land}{Land}{{\APACyear {1977}}}}
 \bibcite{MaloneyWandell86}{\citeauthoryear {Maloney\ \BBA{} Wandell}{Maloney\ \BBA{} Wandell}{{\APACyear {1986}}}}
 \APACbibcite{MaloneyWandell86}{\citeauthoryear {Maloney\ \BBA{} Wandell}{Maloney\ \BBA{} Wandell}{{\APACyear {1986}}}}
-\newlabel{fig:naturalSurfaceTarget}{{14a}{16}{Natural surface reflectance spectra\relax }{figure.caption.32}{}}
-\newlabel{sub@fig:naturalSurfaceTarget}{{a}{16}{Natural surface reflectance spectra\relax }{figure.caption.32}{}}
-\newlabel{fig:randomSurfaceTarget}{{14b}{16}{Randomly generated target samples\relax }{figure.caption.32}{}}
-\newlabel{sub@fig:randomSurfaceTarget}{{b}{16}{Randomly generated target samples\relax }{figure.caption.32}{}}
-\newlabel{fig:sRGBSurfaceTarget}{{14c}{16}{sRGB rendition of samples from Fig.~\ref {fig:randomSurfaceTarget}\relax }{figure.caption.32}{}}
-\newlabel{sub@fig:sRGBSurfaceTarget}{{c}{16}{sRGB rendition of samples from Fig.~\ref {fig:randomSurfaceTarget}\relax }{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.\nobreakspace  {}\ref  {fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.\relax }}{16}{figure.caption.32}}
-\newlabel{fig:targetSurfaceReflectance}{{14}{16}{{\bf Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.~\ref {fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.\relax }{figure.caption.32}{}}
 \bibcite{Mollon89}{\citeauthoryear {Mollon}{Mollon}{{\APACyear {1989}}}}
 \APACbibcite{Mollon89}{\citeauthoryear {Mollon}{Mollon}{{\APACyear {1989}}}}
+\@writefile{toc}{\contentsline {section}{References}{17}{section*.34}}
 \bibcite{peyvandi2016colorimetric}{\citeauthoryear {Peyvandi, Hern{\'a}ndez-Andr{\'e}s, Olmo, Nieves,{}\ \BBA{} Romero}{Peyvandi\ \BOthers {.}}{{\APACyear {2016}}}}
 \APACbibcite{peyvandi2016colorimetric}{\citeauthoryear {Peyvandi, Hern{\'a}ndez-Andr{\'e}s, Olmo, Nieves,{}\ \BBA{} Romero}{Peyvandi\ \BOthers {.}}{{\APACyear {2016}}}}
 \bibcite{ranganNotes}{\citeauthoryear {Rangan}{Rangan}{{\APACyear {2016}}}}
