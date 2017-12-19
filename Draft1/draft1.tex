@@ -102,8 +102,325 @@ Our analysis shows that the optimal receptive fields for estimating the lightnes
 \end{figure}
 
 \section*{Methods} \label{Methods}
-\subsection{Image database} \label{method:VirtualWorld}
-We call our image generation software Virtual world color constancy (VWCC). The details of the software are provided in the supplementary information section. To generate an image, we first select a 3D scene, a target object and a light source from the set of predefined scenes and objects in VWCC. The target object and the light source are inserted in the 3D scene. Fig.\ref{fig:3DScene} shows a 2D sRGB rendition of the 3D scene used in our analysis. The green sphere in the middle is the target object. The light source is not in the camera field of view. Next, we assign a surface reflectance spectrum and an illumination spectrum to each object and light source in the scene. For the target object the surface reflectance is assigned such that the perceived lightness of the target object under D65 daylight spectrum has a fixed value. Now we render a $320\times 240$ pixel$^2$ 2d multispectral images of the scene at 31 frequencies (equal linear spacing between 400 nm - 700 nm) using a graphics rendering system called Mitsuba \cite{jakob2015mitsuba}. For each of the three case, we generate hundreds of such scenes and corresponding multispectral images at 10 linearly spaced lightness levels between 0.2 and 0.6 (see below). We crop a 51x51 pixel$^2$ part of the multispectral image containing the target object for further analysis (\ref{fig:croppedImage}). Fig. \ref{fig:studiedCases} shows examples of such cropped image at 3 lightness levels for the three cases considered in this work.
+\subsection{Overview}
+
+There are four key parts to our methods.  The first is how we generate a labelled set of training data for our supervised learning algorithms.  The second is how we model the transformations applied by the early visual system to generate modeled responses of the cone photoreceptor mosaic.  The third is the details of the supervised learning methods we apply to the labelled training data.  And the fourth is how we evaluate the performance of the algorithms.  We describe each of these in the sections below.
+
+\subsection{Labelled image database} \label{method:VirtualWorld}
+
+\subsubsection{Virtual naturalistic scenes}
+
+The light that reflects off an object and reaches our eyes depends on many factors. These factors include: the surface reflectance of the object, the surface reflectance, texture, material and geometry of the objects in its surround, the spectrum of the sources of light illuminating the object, and the position of the observer. In natural scenes, these spectral and geometrical factors vary considerably. To study the effect of these factors on color perception, we need a system that can generate natural scenes with precise control over all such factors. We need a system that can produce natural scenes at a fixed perceived color of a target object, while having a representative, but precisely quantified, sampling of the variations in the scene. Under natural conditions it is difficult to control and quantify every such parameter in a scene. Thus generating such a dataset, with a representative sampling of natural variations, is considerably time and labor intensive.
+
+To overcome this  challenge, we have developed an image rendering software pipeline that allows us to specify a virtual, but naturalistic, statistical model of visual scenes with parametric control over factors in natural scenes. The software uses a physically-based image rendering system that accurately accounts for the interactions of light with matter in 3D scenes. It then renders a multispectral 2D image of each modeled visual scene. Wherever possible, we have incorporated statistical models of the variation of specific scene parameters based on observed data in natural scenes. In addition, our software simulates the responses of retinal cones to the rendered multispectral images using a realistic model of the early human visual system. Below we provide the details of the software and the choices made to generate ensembles of scenes with corresponding images. Our software, which is written in MATLAB, is freely available through a public respository: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. It builds on several other open source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}. Below we refer to the software pipeline as VWCC (for Virtual World Color Constancy).
+
+The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall spatial scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
+
+% Figure 9
+\begin{figure}[t]
+\centering
+\begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.png}
+        \caption{Library }
+        \label{fig:baseSceneLibrary}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.png}
+        \caption{Mill}
+        \label{fig:baseSceneMill}
+    \end{subfigure}    
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.png}
+        \caption{Table-Chairs}
+        \label{fig:baseSceneTableChairs}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_d.png}
+        \caption{Indoor-plant}
+        \label{fig:baseSceneIndoorPlant}
+    \end{subfigure}    
+    ~
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_e.png}
+        \caption{Warehouse}
+        \label{fig:baseSceneWarehouse}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_f.png}
+        \caption{Checkerboard}
+        \label{fig:baseSceneCheckerBoard}
+    \end{subfigure}
+    \caption{{Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software.  The light source spectra were also assigned randomly to the default light source for each scene. [CHECK THAT THIS IS CORRET] }\label{fig:baseScenes}
+\end{figure}
+
+VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted into the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from object descriptions made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library.
+
+% Figure 10
+\begin{figure}[h]
+\centering
+\begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.png}
+        \caption{Big-ball}
+        \label{fig:libraryWithBigBall}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+\begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.png}
+        \caption{Small-ball}
+        \label{fig:libraryWithSmallBall}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.png}
+        \caption{Barrel}
+        \label{fig:libraryWithBarrel}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_d.png}
+        \caption{Xylophone}
+        \label{fig:libraryWithXylophone}
+    \end{subfigure}
+    ~
+	\begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_e.png}
+        \caption{Ring toy}
+        \label{fig:libraryWithRingToy}
+    \end{subfigure}
+        ~
+    	\begin{subfigure}[b]{0.22 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_f.png}
+        \caption{Champagne Bottle}
+        \label{fig:libraryWithChampagneBottle}
+    \end{subfigure}
+\caption{{Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
+\end{figure}
+
+The size, position and orientation of the inserted objects and lights may be specified programatically (Fig.~\ref{fig:objectTransformations}) or chosen randomly under constraints provided by the base scene meta-data. Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
+
+Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
+
+% Figure11
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.png}
+        \caption{Target spectra}
+        \label{fig:targetVariation}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.png}
+        \caption{Background spectra}
+        \label{fig:backGroundVariation}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.png}
+        \caption{Illumination spectra}
+        \label{fig:illuminationVariation}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_d.png}
+        \caption{Target position}
+        \label{fig:targetPositionVariation}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_e.png}
+        \caption{Target Size/Orientation}
+        \label{fig:targetSizeOrientation}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \caption{{\bf Transformations of the scene.} Each column illustrates transformations of a scene that are under software control. (a-c) Spectral Transformations. (d-e) Geometrical transformations. EXPAND OUT AND SAY WHAT EACH COLUMN IS, INDIVIDUALLY}\label{fig:spectralTransformations}
+\end{figure}
+
+In the present work, we insert one target object and one additional light source into a fixed base scene, and vary reflectance and illuminant spectra. We then insert a camera for rendering at a user specified position and point this camera at the target object. We ensure that a N by N pixel [CHECK ACTUAL SIZE] region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object at its inserted position was not occluded by other objects in the line of sight from camera. For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance. The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
+
+We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
+
+For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel$^2$. A $51 \times 51$ pixel$^2$ patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
+
+[GOT TO HERE]
+\subsubsection{Illumination Spectra}
+The illumination spectrum is generated through a random statistical sampling of a natural illumination spectrum dataset. First, we approximate the spectra in the dataset using principle component analysis (PCA). We decompose the spectra as a linear sum over the PCA basis vectors corresponding to the largest 6 PCA eigenvalues. Next, we sample random spectra from this low 6 dimensional PCA space assuming the spectral distribution to be a multivariate gaussian.
+
+% Figure 12
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
+        \caption{Granada natural daylight dataset}
+        \label{fig:granadaSpectra}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
+        \caption{Rescaled Granada dataset}
+        \label{fig:rescaledGranada}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
+        \caption{Randomly generated samples}
+        \label{fig:randomIlluminant}
+    \end{subfigure}
+
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
+        \caption{xy chromaticity diagram}
+        \label{fig:xyDiagram}
+    \end{subfigure}
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_e.pdf}
+        \caption{Normalized PCA eigenvalues}
+        \label{fig:granadaEV}
+    \end{subfigure}
+      	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_f.pdf}
+        \caption{sRGB rendition of samples from Fig.\ref{fig:randomIlluminant}}
+        \label{fig:sRGBIlluminant}
+    \end{subfigure}
+    \caption{{\bf Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref{fig:rescaledGranada}) and the randomly generated samples (Fig.\ref{fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
+\end{figure}
+
+We have used the Granada natural daylight spectrum \href{http://colorimaginglab.ugr.es/pages/Data}{dataset} \cite{peyvandi2016colorimetric} to sample illuminants. Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the distribution varies over multiple order of magnitudes, we rescale each spectrum by dividing by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. These rescaled spectra $(I_i^s(\lambda))$ are then mean centered for PCA by subtracting out the mean 
+rescaled spectra, $\bar{I}^{s}(\lambda)$. The mean is obtained
+by taking the sample mean over all spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
+The resulting mean subtracted dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$, 
+is decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
+where $\hat{{\bf e}}_j^{PCA}$s are PCA basis vectors obtained using 
+singular value decomposition (SVD). $w_{ij}$'s are the projections 
+of $I_i^{MC}(\lambda)$ along the PCA basis vectors $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. We approximate 
+this decomposition by summing over the basis vectors corresponding to
+the largest six SVD eigenvalues. For the Granada dataset, these six 
+eigenvalues constitute more than $98\%$ of the variance. These steps
+can be summarized as follows:
+\begin{align}
+I^G_i(\lambda) \rightarrow I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)} \rightarrow I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda) \rightarrow I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}
+\end{align}
+
+To generate new illuminants $\tilde{I}_i(\lambda)$, random 
+projection weights ($\tilde{w}_{ij}$) are generated using a multivariate 
+gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the $\tilde{w}_{ij}$ are such that, $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, for all $\lambda$, then the new illuminant spectrum is given as 
+\begin{align}
+\tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
+\end{align}
+Finally $\tilde{I}(\lambda)$ is rescaled by a random number generated uniformly in the range [0, 100].
+
+% Figure 13
+\subsubsection{Reflectance Spectrum}
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+        \caption{Natural surface reflectance spectra}
+        \label{fig:naturalSurface}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+        \caption{Randomly generated samples}
+        \label{fig:randomSurface}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+        \caption{sRGB rendition of samples from \ref{fig:randomSurface}}
+        \label{fig:sRGBSurface}
+    \end{subfigure}
+    \caption{{\bf Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref{fig:randomSurface}.}\label{fig:surfaceReflectanceGeneration}
+\end{figure}
+
+
+The reflectance spectrum are generated similar to illumination spectrum. 
+We have used the Munsell {(\it citation)} and vrhel {(\it citation)} surface reflectance 
+datasets for sampling the reflectance. Let us denote the dataset of natural 
+reflectance spectra as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
+and $M$ is the total number of spectra in the dataset. To generate 
+a random reflectance spectrum $\tilde{R}(\lambda)$, 
+we first mean center the dataset by subtracting out the 
+mean surface reflectance spectrum, $\bar{R}(\lambda)$,
+from each surface reflectance spectrum.
+$\bar{R}(\lambda)$ is obtained by taking the sample 
+mean over all spectra in the dataset, i.e.,
+$\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda)$. 
+Thus we have the mean centered reflectance 
+spectrum dataset as $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
+We decompose this as $R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}}$. Here,
+${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD 
+and $w_{ij}$s are the projections of $R_i^{\rm MC}(\lambda)$ along the PCA eigenvectors 
+$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. The 
+decomposition is approximated by summing over the PCA basis 
+vectors corresponding to the largest six SVD eigenvalues. These six eigenvalues capture 
+more than $92\%$ of the variance in the combined Munsell and vhrel datasets. To generate 
+a new reflectance spectrum, a point is sampled randomly in this 
+six dimensional sub-space using a multivariate normal 
+distribution, with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the randomly sampled projection, $\tilde{w}_{ij}$, is 
+such that $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, the new surface reflectance 
+is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.
+
+% Figure 14
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
+        \caption{Natural surface reflectance spectra}
+        \label{fig:naturalSurfaceTarget}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3\textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
+        \caption{Randomly generated target samples}
+        \label{fig:randomSurfaceTarget}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.3 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
+        \caption{sRGB rendition of samples from Fig.~\ref{fig:randomSurfaceTarget}}
+        \label{fig:sRGBSurfaceTarget}
+    \end{subfigure}
+    \caption{{\bf Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.~\ref{fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.}\label{fig:targetSurfaceReflectance}
+\end{figure}
+
+
+For generating the target object reflectance at a particular lightness $(Y_{\rm T})$, the values in the spectrum are 
+rescaled by a scalar such that the perceived lightness of the 
+target surface under standard daylight illuminant $(D_{65}(\lambda))$ 
+equals a designated value. The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE luminosity (or luminous efficiency) function. 
+$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
+perception of brightness. The target reflectance is given by: $\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right)$.
+
+% NEED TO DECIDE PRECISELY WHERE TO USE THIS PROSE AND  FIGURE
+%Figure~\ref{sceneWithCroppedImage} illustrates the steps in this process for one scene.  We start with how we generate a single labeled set of cone responses
+%We call our image generation software Virtual world color constancy (VWCC). The details of the software are provided in the supplementary information section. To generate an image, we first select a 3D scene, a target object and a light source from the set of predefined scenes and objects in VWCC. The target object and the light source are inserted in the 3D scene. Fig.\ref{fig:3DScene} shows a 2D sRGB rendition of the 3D scene used in our analysis. The green sphere in the middle is the target object. The light source is not in the camera field of view. Next, we assign a surface reflectance spectrum and an illumination spectrum to each object and light source in the scene. For the target object the surface reflectance is assigned such that the perceived lightness of the target object under D65 daylight spectrum has a fixed value. Now we render a $320\times 240$ pixel$^2$ 2d multispectral images of the scene at 31 frequencies (equal linear spacing between 400 nm - 700 nm) using a graphics rendering system called Mitsuba \cite{jakob2015mitsuba}. For each of the three case, we generate hundreds of such scenes and corresponding multispectral images at 10 linearly spaced lightness levels between 0.2 and 0.6 (see below). We crop a 51x51 pixel$^2$ part of the multispectral image containing the target object for further analysis (\ref{fig:croppedImage}). Fig. \ref{fig:studiedCases} shows examples of such cropped image at 3 lightness levels for the three cases considered in this work.
 
 % Figure 3: Methods
 \begin{figure}
@@ -141,6 +458,12 @@ We call our image generation software Virtual world color constancy (VWCC). The 
 \end{figure}
 
 \subsection{Model of Visual System} \label{method:Isetbio}
+
+Finally, these multispectral images are used to simulate retinal cone responses using \href{https://github.com/isetbio}{Isetbio} software.
+
+To generate the retinal response one needs to specify the retinal cone mosaic and the size of the retinal image. The retinal cone mosaic is specified in terms of the total number of cones and the proportion of the long(L), medium(M) and the short(S) cones in the mosaic. With these parameters, the software generates the specified number of LMS cones with random positions on a square grid. The size of the retinal image is specified in terms of the field of view and object distance from the eye. 
+
+
 We simulate visual system response using \href{http://isetbio.org}{Isetbio} software toolbox. Isetbio simulates a model of the visual system accounting for cornea, pupil size, lens and physiological optics. We use the multispectral cropped image (Fig.~\ref{fig:croppedImage}) as the optical stimulus to simulate the response of the cones in the retina. The cropped image patch is assumed to cover a $1^{\circ}$ field of view at a distance of 1 m. The retinal cone mosaic is modeled as a square grid with 51x51 cones in the l:m:s ratio 0.6:0.3:0.1. The response of the cones are measured as the number of isomerizations in the cone segment ({\it over what time ??}). The cone response functions are normalized by the total area under the response curves to model the amplification of the S cone response downstream and thus have comparable number if isomerizations in L, M and S cones. Further, to get the response of each cone class at each position on the retinal mosaic, we interpolate the response of each cone class. Thus we get a $51 \times 51$ cone response image for each cone class.
 
 The three $51 \times 51$ cone response matrix corresponding to L, M and S cones are then reshaped into a $7803 \times 1$ vector. To model the contrast adaptation in the visual system, we perform a contrast normalization of the vector by subtracting and dividing by the mean. We further  rescale the vector to have norm 1. The cone-response vectors corresponding to the N images for each case are concatenated into a column-wise contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
@@ -337,315 +660,7 @@ Fig.~\ref{fig:SVDBAR} and Fig~\ref{fig:AMABAR} show the performance of the recep
 
 \section{Discussion} \label{Discussion}
 \section{Supplementary Information}
-\subsection{Virtual World Color Constancy}
-The light that reflects off an object and reaches our eyes depends on many factors. These factors include: the surface reflectance of the object, the surface reflectance, texture, material and geometry of the objects in its surround, the spectrum of the sources of light illuminating the object, and the position of the observer. In natural scenes, these spectral and geometrical factors vary considerably. To study the effect of these factors on color perception, we need a system that can generate natural scenes with precise control over all such factors. We need a system that can produce natural scenes at a fixed perceived color of a target object, while having a representative, but precisely quantified, sampling of the variations in the scene. Under natural conditions it is difficult to control and quantify every such parameter in a scene. Thus generating such a dataset, with a representative sampling of natural variations, is considerably time and labor intensive.
 
-To overcome this  challenge, we have developed an image rendering software pipeline that allows us to specify a virtual, but naturalistic, statistical model of visual scenes with parametric control over factors in natural scenes. The software uses a physically-based image rendering system that accurately accounts for the interactions of light with matter in 3D scenes. It then renders a multispectral 2D image of each modeled visual scene. Wherever possible, we have incorporated statistical models of the variation of specific scene parameters based on observed data in natural scenes. In addition, our software simulates the responses of retinal cones to the rendered multispectral images using a realistic model of the early human visual system. Below we provide the details of the software and the choices made to generate ensembles of scenes with corresponding images. Our software, which is written in MATLAB, is freely available through a public respository: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. It builds on several other open source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}. Below we refer to the software pipeline as VWCC (for Virtual World Color Constancy).
-
-The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
-
-% Figure 9
-\begin{figure}[t]
-\centering
-\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.png}
-        \caption{Library }
-        \label{fig:baseSceneLibrary}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.png}
-        \caption{Mill}
-        \label{fig:baseSceneMill}
-    \end{subfigure}    
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.png}
-        \caption{Table-Chairs}
-        \label{fig:baseSceneTableChairs}
-    \end{subfigure}
-    
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_d.png}
-        \caption{Indoor-plant}
-        \label{fig:baseSceneIndoorPlant}
-    \end{subfigure}    
-    ~
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_e.png}
-        \caption{Warehouse}
-        \label{fig:baseSceneWarehouse}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_f.png}
-        \caption{Checkerboard}
-        \label{fig:baseSceneCheckerBoard}
-    \end{subfigure}
-    \caption{Example of base scenes.}\label{fig:baseScenes}
-\end{figure}
-
-VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted in the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from materials made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library.
-
-% Figure 10
-\begin{figure}[h]
-\centering
-\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.png}
-        \caption{Big-ball}
-        \label{fig:libraryWithBigBall}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.png}
-        \caption{Small-ball}
-        \label{fig:libraryWithSmallBall}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.png}
-        \caption{Barrel}
-        \label{fig:libraryWithBarrel}
-    \end{subfigure}
-    
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_d.png}
-        \caption{Xylophone}
-        \label{fig:libraryWithXylophone}
-    \end{subfigure}
-    ~
-	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_e.png}
-        \caption{Ring toy}
-        \label{fig:libraryWithRingToy}
-    \end{subfigure}
-        ~
-    	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_f.png}
-        \caption{Champagne Bottle}
-        \label{fig:libraryWithChampagneBottle}
-    \end{subfigure}
-\caption{Base scenes with inserted objects.}\label{fig:libraryWithTarget}
-\end{figure}
-
-The size, position and orientation of the inserted objects and lights may be specified programatically (Fig.~\ref{fig:objectTransformations}) or chosen randomly under constraints provided by the base scene meta-data. As with the base scene library, the object may be drawn at random from the VWCC object library.  Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
-
-Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign the illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
-
-[GOT TO HERE.  DHB.]
-% Figure11
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.png}
-        \caption{Target spectra}
-        \label{fig:targetVariation}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.png}
-        \caption{Background spectra}
-        \label{fig:backGroundVariation}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.png}
-        \caption{Illumination spectra}
-        \label{fig:illuminationVariation}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_d.png}
-        \caption{Target position}
-        \label{fig:targetPositionVariation}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_e.png}
-        \caption{Target Size/Orientation}
-        \label{fig:targetSizeOrientation}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \caption{{\bf Transformations of the scene:} (a-c) Spectral Transformations. (d-e) Geometrical transformations.}\label{fig:spectralTransformations}
-\end{figure}
-
-One of the inserted objects is chosen as the target object in the scene. A camera is inserted at a user specified position and pointed at the target object. We ensure that the target object is not completely occluded by other objects in the line of sight of the camera. A predefined surface reflectance spectrum is assigned to the target object. This target surface reflectance also sets the label for the virtual scene image. The image label is defined as the perceived lightness of a uniform object with the surface reflectance same as that of the the target object when viewed under uniform standard daylight spectrum D65. The scene is rendered using the Mitsuba rendering package. The renderer produces 2D multispectral images of the scene at specified wavelengths. Finally, these multispectral images are used to simulate retinal cone responses using \href{https://github.com/isetbio}{Isetbio} software.
-
-To generate the retinal response one needs to specify the retinal cone mosaic and the size of the retinal image. The retinal cone mosaic is specified in terms of the total number of cones and the proportion of the long(L), medium(M) and the short(S) cones in the mosaic. With these parameters, the software generates the specified number of LMS cones with random positions on a square grid. The size of the retinal image is specified in terms of the field of view and object distance from the eye. 
-
-For the images used in this work, we have used the ``{\it Library}'' base scene from the VWCC  as the and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera was held fixed for all the images analyzed in this work, i.e., the images were identical in their geometry. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel$^2$. A $51 \times 51$ pixel$^2$ patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images.
-
-\subsection{Generating Spectrum for VWCC}
-\subsubsection{Illumination Spectrum}
-The illumination spectrum is generated through a random statistical sampling of a natural illumination spectrum dataset. First, we approximate the spectra in the dataset using principle component analysis (PCA). We decompose the spectra as a linear sum over the PCA basis vectors corresponding to the largest 6 PCA eigenvalues. Next, we sample random spectra from this low 6 dimensional PCA space assuming the spectral distribution to be a multivariate gaussian.
-
-% Figure 12
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
-        \caption{Granada natural daylight dataset}
-        \label{fig:granadaSpectra}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
-        \caption{Rescaled Granada dataset}
-        \label{fig:rescaledGranada}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
-        \caption{Randomly generated samples}
-        \label{fig:randomIlluminant}
-    \end{subfigure}
-
-	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
-        \caption{xy chromaticity diagram}
-        \label{fig:xyDiagram}
-    \end{subfigure}
-	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_e.pdf}
-        \caption{Normalized PCA eigenvalues}
-        \label{fig:granadaEV}
-    \end{subfigure}
-      	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_f.pdf}
-        \caption{sRGB rendition of samples from Fig.\ref{fig:randomIlluminant}}
-        \label{fig:sRGBIlluminant}
-    \end{subfigure}
-    \caption{{\bf Generating random illumination spectrum:} The illumination spectra are generated by random sampling of Granada daylight spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the dataset along PCA directions and taking the mean and covariance of the projections. (a) Granada natural daylight dataset. (b) Rescaled Granada dataset. Each spectra is rescaled by its mean illumination over frequency. (c) Randomly generated samples. (d) xy chromaticity diagram of the rescaled dataset (Fig. \ref{fig:rescaledGranada}) and the randomly generated samples (Fig.\ref{fig:randomIlluminant}). (e) Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line (= 0.9) is for reference. We choose the first six eigenvectors in ur analysis. (f) The sRGB renditions of the random samples generated in \ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
-\end{figure}
-
-We have used the Granada natural daylight spectrum \href{http://colorimaginglab.ugr.es/pages/Data}{dataset} \cite{peyvandi2016colorimetric} to sample illuminants. Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the distribution varies over multiple order of magnitudes, we rescale each spectrum by dividing by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. These rescaled spectra $(I_i^s(\lambda))$ are then mean centered for PCA by subtracting out the mean 
-rescaled spectra, $\bar{I}^{s}(\lambda)$. The mean is obtained
-by taking the sample mean over all spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
-The resulting mean subtracted dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$, 
-is decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
-where $\hat{{\bf e}}_j^{PCA}$s are PCA basis vectors obtained using 
-singular value decomposition (SVD). $w_{ij}$'s are the projections 
-of $I_i^{MC}(\lambda)$ along the PCA basis vectors $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. We approximate 
-this decomposition by summing over the basis vectors corresponding to
-the largest six SVD eigenvalues. For the Granada dataset, these six 
-eigenvalues constitute more than $98\%$ of the variance. These steps
-can be summarized as follows:
-\begin{align}
-I^G_i(\lambda) \rightarrow I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)} \rightarrow I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda) \rightarrow I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}
-\end{align}
-
-To generate new illuminants $\tilde{I}_i(\lambda)$, random 
-projection weights ($\tilde{w}_{ij}$) are generated using a multivariate 
-gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
-and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the $\tilde{w}_{ij}$ are such that, $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, for all $\lambda$, then the new illuminant spectrum is given as 
-\begin{align}
-\tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
-\end{align}
-Finally $\tilde{I}(\lambda)$ is rescaled by a random number generated uniformly in the range [0, 100].
-
-% Figure 13
-\subsubsection{Reflectance Spectrum}
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
-        \caption{Natural surface reflectance spectra}
-        \label{fig:naturalSurface}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
-        \caption{Randomly generated samples}
-        \label{fig:randomSurface}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
-        \caption{sRGB rendition of samples from \ref{fig:randomSurface}}
-        \label{fig:sRGBSurface}
-    \end{subfigure}
-    \caption{{\bf Generating random surface reflectance spectrum:} The surface reflectance spectra are generated by random sampling of natural surface reflectance spectra assuming a multivariate gaussian distribution. The mean and variance of the gaussian are chosen by projecting the natural dataset along PCA directions and taking the mean and covariance of the projections. (a) Natural surface reflectance spectra. (b) Randomly generated samples. (c) The sRGB renditions of the random samples generated in \ref{fig:randomSurface}.}\label{fig:surfaceReflectanceGeneration}
-\end{figure}
-
-
-The reflectance spectrum are generated similar to illumination spectrum. 
-We have used the Munsell {(\it citation)} and vrhel {(\it citation)} surface reflectance 
-datasets for sampling the reflectance. Let us denote the dataset of natural 
-reflectance spectra as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
-and $M$ is the total number of spectra in the dataset. To generate 
-a random reflectance spectrum $\tilde{R}(\lambda)$, 
-we first mean center the dataset by subtracting out the 
-mean surface reflectance spectrum, $\bar{R}(\lambda)$,
-from each surface reflectance spectrum.
-$\bar{R}(\lambda)$ is obtained by taking the sample 
-mean over all spectra in the dataset, i.e.,
-$\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda)$. 
-Thus we have the mean centered reflectance 
-spectrum dataset as $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
-We decompose this as $R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}}$. Here,
-${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD 
-and $w_{ij}$s are the projections of $R_i^{\rm MC}(\lambda)$ along the PCA eigenvectors 
-$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. The 
-decomposition is approximated by summing over the PCA basis 
-vectors corresponding to the largest six SVD eigenvalues. These six eigenvalues capture 
-more than $92\%$ of the variance in the combined Munsell and vhrel datasets. To generate 
-a new reflectance spectrum, a point is sampled randomly in this 
-six dimensional sub-space using a multivariate normal 
-distribution, with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
-and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the randomly sampled projection, $\tilde{w}_{ij}$, is 
-such that $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, the new surface reflectance 
-is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.
-
-% Figure 14
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
-        \caption{Natural surface reflectance spectra}
-        \label{fig:naturalSurfaceTarget}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3\textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
-        \caption{Randomly generated target samples}
-        \label{fig:randomSurfaceTarget}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.3 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
-        \caption{sRGB rendition of samples from Fig.~\ref{fig:randomSurfaceTarget}}
-        \label{fig:sRGBSurfaceTarget}
-    \end{subfigure}
-    \caption{{\bf Target object surface reflectance spectrum:} For getting the target object surface reflectance, we first generate the spectra similar to that of other objects and then rescale them appropriately to get the required perceived lightness. (a) Natural surface reflectance spectra. (b) Randomly generated samples for target reflectance. (c) The sRGB renditions of the random samples generated in Fig.~\ref{fig:randomSurfaceTarget}. We show 10 samples at 1 lightness levels.}\label{fig:targetSurfaceReflectance}
-\end{figure}
-
-
-For generating the target object reflectance at a particular lightness $(Y_{\rm T})$, the values in the spectrum are 
-rescaled by a scalar such that the perceived lightness of the 
-target surface under standard daylight illuminant $(D_{65}(\lambda))$ 
-equals a designated value. The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE luminosity (or luminous efficiency) function. 
-$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
-perception of brightness. The target reflectance is given by: $\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right)$.
 
 \subsection{Cone response to multispectral images}
 Cone response to the multispectral images are generated
