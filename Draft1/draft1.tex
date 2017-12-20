@@ -29,13 +29,19 @@ lightness}
 \maketitle
 
 \section{Introduction}
-The perceived color of an object has important behavioral implications, since color helps us identify objects and their properties \cite{Mollon89, Jacobs81}.
+The perceived color of an object has important behavioral implications, since color helps us to identify objects and their properties \cite{Mollon89, Jacobs81}.
 Perceived object color is not sensed directly, rather it is computed by the brain starting with the retinal image of light reflected from the object to the eye.
 The challenge of object color perception is that this reflected light depends not just on the object's surface reflectance, but also on extrinsic factors such as the illumination, the object's pose,
 and the position of the observer (Fig. \ref{fig:introSchematic}).
 Thus, to produce a stable perceptual representation of an object's surface reflectance in the face of variation in these extrinsic factors, the brain must account for their influence on the reflected light.
 The ability of a visual system to extract such a stable representation is called color constancy. Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eyes to produce percepts well-correlated with object surface reflectance.
+
+There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover a descriptor correlated with object surface reflectance (e.g. \citeNP{LandRetinex}) or explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., \citeNP{LandRetinex,Buchsbaum80,MaloneyWandell86}).
+An important insight of this line of research was that, to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
+At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image \cite{BrainardWandellRetinex}.
+Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
+Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).  None-the-less, it is not known how best to estimate stable object descriptors from images of the natural scenes we view in daily life.
 
 % Figure 1: Introduction
 \begin{figure}
@@ -52,33 +58,13 @@ In this paper, we consider the computational problem of color constancy, that is
         \label{fig:introExampleFigure}
     \end{subfigure}
     \label{introFigure}
-    \caption{(a) {\bf Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda,\vec{x})$, and the illumination spectrum of the light source, $E(\lambda,\vec{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose, as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf Lightness Constancy Under Spectral Variations:} In this paper we consider the special case of lightness constancy. Fig.~\ref{fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance. Within each row, the surface reflectance of the spheres has the same luminance, when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the lightness of the spheres generally decreases as we move down the rows. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row.  Within each column, this relative surface reflectance is held fixed. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.}
+    \caption{(a) {\bf Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda,\vec{x})$, and the illumination spectrum of the light source, $E(\lambda,\vec{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose, as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf Lightness Constancy Under Spectral Variations:} In this paper we consider the special case of lightness constancy. Fig.~\ref{fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance. Within each row, the surface reflectance of the spheres has the same luminance, when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the lightness of the spheres generally decreases as we move down the columns. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row.  Within each column, this relative surface reflectance is held fixed. For illustration, we have kept the light source and the background obejcts fixed across the panels. See Fig.~\ref{fig:studiedCases} for images with such variations. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.}
  \end{figure}
-
-There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover a descriptor correlated with object surface reflectance (e.g. \citeNP{LandRetinex}) or explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., \citeNP{LandRetinex,Buchsbaum80,MaloneyWandell86}).
-An important insight of this line of research was that to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
-At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image \cite{BrainardWandellRetinex}.
-Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
-Subsequent computational constancy work sought to generalize both the image formation model to include richer geometric descriptions and to incorporate probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).  None-the-less, it is not known how best to estimate stable object descriptors from images of the natural scenes we view in daily life.
 
 The computational work reviewed above is based on formulating an explicit model of the image formation process and the statistical properties of natural images, and leveraging these formulations to obtain an appropriate ``inverse optics" algorithm.  An alternative approach, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors.  Along these lines, Barron \cite{barron2015convolutional} recently developed a color balancing algorithm based on training a neural network to detect a uniform illuminant in an image by matching image templates in the chromaticity space. The use of supervised learning to understand human perceptual capabilities has enjoyed success in domains outside of color vision. Geisler and colleagues, for example, have developed a technique they refer to as accuracy maximization analysis (AMA, \citeNP{geisler2009optimal}), which learns linear filters whose output carries information that is optimized for particular perceptual tasks. This technique has provided computations that efficiently estimate speed \cite{burge2015optimal}, focus \cite{burge2011optimal} and disparity \cite{burge2014optimal} from image patches taken from natural scenes, and that in addition provide excellent models of human's ability to make corresponding estimates from the same stimuli.  In this paper, we apply AMA, as well as comparison supervised learning algorithms to a special case of the color constancy problem (lightness constancy) and evaluate how well it performs for naturalistic image input. 
 
-A difficulty in using machine learning approaches for color constancy is that these approaches require large training sets with images of scenes containing objects with known surface reflectances illuminated with known illuminations.  Such data sets are not readily available. Although there are several databases of calibrated color natural images, these do not generally provide the corresponding information about surface and illuminant ground truth \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection},  ( ADD McGill Database). Generating databases with both the images and the ground truth scene information is not trivial. One approach has been to acquire mages where objects of known reflectance have been inserted into the scene, and to use the image of these reference objects to provide an estimate of the illumination impinging at various scene locations (\cite{NascimentoFoster2016}).  This is somewhat painstaking, however, and in any case provides information about the illumination only at a small number of selected locations, so that generalizing across the image requires strong assumptions. Some progress is being made on characterizing how illumination varies over space in natural scenes \cite{mury2007spatial}, which in the longer run may guide how information from reference objects can be used to provide reasonable estimates.  Another approach is to acquire images of posed scenes, where the surface reflectances of objects are measured individually for many of the objects in the scene \cite{funt1988color,ciurea2003large} (ADD UCSB hyperspectral). These data sets have been useful for evaluating computational color constancy algorithms, but the use of posed scenes does not scale well for use with supervised learning methods which needs large training sets. 
+A difficulty in using machine learning approaches for color constancy is that these approaches require large training sets with images of scenes containing objects with known surface reflectances illuminated with known illuminations.  Such data sets are not readily available. Although there are several databases of calibrated color natural images, these do not generally provide the corresponding information about surface and illuminant ground truth \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection},  ( ADD McGill Database). Generating databases with both the images and the ground truth scene information is not trivial. One approach has been to acquire mages where objects of known reflectance have been inserted into the scene, and to use the image of these reference objects to provide an estimate of the illumination impinging at various scene locations \cite{NascimentoFoster2016}.  This is somewhat painstaking, however, and in any case provides information about the illumination only at a small number of selected locations, so that generalizing across the image requires strong assumptions. Some progress is being made on characterizing how illumination varies over space in natural scenes \cite{mury2007spatial}, which in the longer run may guide how information from reference objects can be used to provide reasonable estimates.  Another approach is to acquire images of posed scenes, where the surface reflectances of objects are measured individually for many of the objects in the scene \cite{funt1988color,ciurea2003large} (ADD UCSB hyperspectral). These data sets have been useful for evaluating computational color constancy algorithms, but the use of posed scenes does not scale well for use with supervised learning methods which needs large training sets. 
  
-Because of the difficulty in obtaining large labelled data sets of natural images for use in developing and evaluating computational color constancy algorithms, in this paper we adopt the approach of using high-quality computer graphics to render images of what we refer to as {\em virtual natural scenes}. Here, in addition to employing computer graphics to render the light reaching the eye from specified scenes, we also model the initial steps of the human visual system, so that our supervised learning methods are applied not to image pixels but rather to modeled responses of the foveal cone photoreceptor mosaic. We describe this approach in detail below, but the key advantage is that we can produce large numbers of naturalistic images and the corresponding cone mosaic responses, where all of the underlying scene properties are well-specified. This allows us to explore and evaluate computational color constancy with rich stimuli, while retaining the ability to precisely control and manipulate the intrinsic properties of the objects and illuminants that comprise the scene. This general approach has been adopted by other labs for the study of computational estimation of optical flow \cite{baker2011database} and is becoming increasingly popular (OTHER REFS: Cornell graphics person, Gallant, Yamins, Autonomous vehicle work), as well as for the generation of stimuli for the study of human perception (REFS: Many -- go to Boynton lecture slides for some).  Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the \nameref{Discussion}.
-
-In this initial work, we do not tackle the full problem of color constancy.  Rather, as a point of departure, we consider the computational problem of estimating a single attribute of object surface reflectance, which we refer to as surface luminance.  We compute object luminance from an object's surface reflectance function as follows.  We compute the light that would be reflected to the eye from a flat matte object with that surface reflectance, when the object is diffusely illuminated by the standard CIE daylight spectrum D65 (\cite{CIE86}).  We then compute the luminance of this reflected light, using the CIE 1931 photopic luminosity function (\cite{CIE86}), and divide this by the luminance of a perfectly reflecting diffuser (surface reflectance of one at all wavelengths) when that is computed in the same way. This procedure allows us to assign to any surface reflectance a single surface luminance value.  Because the perceived lightness of an object is approximately (but by no means exactly, see \cite{wyszecki1986color}) correlated with surface luminance across a range of viewing conditions, we refer to the computational problem we study as that of {\em lightness constancy}.
-This is a generalization of the way this term is often used, where it refers more specifically to the stability of perceived lightness across images of scenes where all objects and illuminants are achromatic \cite{gilchrist2006seeing}.
-Here, we aim to estimate surface luminance, but do so for images where both the luminance and the chromaticity of the surfaces and illuminants varies (see  Fig.~\ref{fig:introExampleFigure}). A particularly important feature of our treatment is that we consider scene variations where not only the spectrum of the illumination varies, but also the surface reflectance of objects in the scene other than the object whose surface luminance is being estimated. 
-
-Even within the special case of lightness constancy, there are many scene manipulations that could be considered. The set of manipulations we focus on here are illustrated by the three panels of (Fig.~\ref{fig:studiedCases}). These cases are: 1. variation in target object spectrum (Fig.\ref{fig:targetVarying}) with fixed light source and background objects spectra, 2. variations in both the target object spectrum and the light source spectra, with fixed background object spectra (Fig.\ref{fig:targetIlluminantVarying}), and 3. variations in all three types of spectra (target object, light source, and background objects) (Fig.\ref{fig:allSpectraVarying}). Across real scenes, there will also be variations in the shape of the target object, its pose, eye position, etc. (see \nameref{Methods}). In this paper, we focus on the problem of lightness constancy within scene ensembles where these geometric factors are held fixed.
-
-The rest of this paper is organized as follows. In the \nameref{Methods} section, we first describe the process to generate naturalistic labeled images (\nameref{method:VirtualWorld}). Next, we describe the steps to simulate the response of the retinal cones to these images (\nameref{method:Isetbio}). Finally, we describe the supervised learning methods used in our analysis (\nameref{method:SupervisedLearning}). In the \nameref{Results} section, we show the estimates and performance of the supervised methods for the three cases mentioned above. 
-
-We show that for cases that have spectral variation only in target reflectance or background reflectance or the illuminant the lightness can be estimated by simple transformations of the cone responses. For variations only in target object reflectance spectra (case 1), object lightness can be recovered directly from the light reflected off the target object. For case 2, where both the target object reflectance and light source spectra vary, object lightness can be recovered from the contrast between the target and the background. When all the spectral features in the scene are allowed to change (case 3), the standard lightness can not be recovered simply from the cone response or the contrast. Here, we have used two supervised learning methods with Bayesian estimators to estimate standard lightness of the target object. Using these methods, we can recover the lightness of the target object with $\sim 15\%$ relative root mean square error. 
-
-Our analysis shows that the optimal receptive fields for estimating the lightness of the target object show a center surround structure, supporting a comparison between the light coming from the target object and its surround. Additionally, lightness estimation involves a weighted sum of the L, M and S cone responses where the receptive fields give more weight to the L and M cone responses compared to S cone responses. Comparing the performance of the RFs learnt using  one case on the cone response of other cases shows that the receptive field of the complex cases perform well on images of simpler cases. We discuss the implications of such receptive fields on lightness constancy. 
-
 % Figure 2: Cases Studied
 \begin{figure}
 \centering
@@ -101,119 +87,124 @@ Our analysis shows that the optimal receptive fields for estimating the lightnes
 \label{fig:studiedCases}
 \end{figure}
 
+Because of the difficulty in obtaining large labelled data sets of natural images for use in developing and evaluating computational color constancy algorithms, in this paper we adopt the approach of using high-quality computer graphics to render images of what we refer to as {\em virtual natural scenes}. Here, in addition to employing computer graphics to render the light reaching the eye from specified scenes, we also model the initial steps of the human visual system, so that our supervised learning methods are applied not to image pixels but rather to modeled responses of the foveal cone photoreceptor mosaic. We describe this approach in detail below, but the key advantage is that we can produce large numbers of naturalistic images and the corresponding cone mosaic responses, where all of the underlying scene properties are well-specified. This allows us to explore and evaluate computational color constancy with rich stimuli, while retaining the ability to precisely control and manipulate the intrinsic properties of the objects and illuminants that comprise the scene. This general approach has been adopted by other labs for the study of computational estimation of optical flow \cite{baker2011database} and is becoming increasingly popular (OTHER REFS: Cornell graphics person, Gallant, Yamins, Autonomous vehicle work), as well as for the generation of stimuli for the study of human perception (REFS: Many -- go to Boynton lecture slides for some).  Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the \nameref{Discussion}.
+
+In this initial work, we do not tackle the full problem of color constancy.  Rather, as a point of departure, we consider the computational problem of estimating a single attribute of object surface reflectance, which we refer to as surface luminance.  We compute object luminance from an object's surface reflectance function as follows.  We compute the light that would be reflected to the eye from a flat matte object with that surface reflectance, when the object is diffusely illuminated by the standard CIE daylight spectrum D65 \cite{CIE86}.  We then compute the luminance of this reflected light, using the CIE 1931 photopic luminosity function \cite{CIE86}, and divide this by the luminance of a perfectly reflecting diffuser (surface reflectance of one at all wavelengths) when that is computed in the same way. This procedure allows us to assign to any surface reflectance a single surface luminance value.  Because the perceived lightness of an object is approximately (but by no means exactly, see \citeNP{wyszecki1986color}) correlated with surface luminance across a range of viewing conditions, we refer to the computational problem we study as that of {\em lightness constancy}.
+This is a generalization of the way this term is often used, where it refers more specifically to the stability of perceived lightness across images of scenes where all objects and illuminants are achromatic \cite{gilchrist2006seeing}.
+Here, we aim to estimate surface luminance, but do so for images where both the luminance and the chromaticity of the surfaces and illuminants varies (see  Fig.~\ref{fig:introExampleFigure}). A particularly important feature of our treatment is that we consider scene variations where not only the spectrum of the illumination varies, but also the surface reflectance of objects in the scene other than the object whose surface luminance is being estimated. 
+
+Even within the special case of lightness constancy, there are many scene manipulations that could be considered. The set of manipulations we focus on here are illustrated by the three panels of Fig.~\ref{fig:studiedCases}. These cases are: 1. variation in target object spectrum with fixed light source and background objects spectra (Fig.~\ref{fig:targetVarying}), 2. variations in both the target object spectrum and the light source spectra, with fixed background object spectra (Fig.~\ref{fig:targetIlluminantVarying}), and 3. variations in all three types of spectra (target object, light source, and background objects) (Fig.~\ref{fig:allSpectraVarying}). Across real scenes, there will also be variations in the shape of the target object, its pose, eye position, etc. (see \nameref{Methods}). In this paper, we focus on the problem of lightness constancy within scene ensembles where these geometric factors are held fixed.
+
+We show that for cases that have spectral variation only either in target object surface reflectance or background object surface reflectance or the power spectrum of the light sources, lightness can be estimated by simple transformations of the cone responses. For variations only in target object reflectance spectra (case 1), object lightness can be recovered directly from the light reflected off the target object. For case 2, where both the target object reflectance and light source spectra vary, object lightness can be recovered from the contrast between the target and the background. When all the spectral features in the scene are allowed to change (case 3), the standard lightness can not be recovered simply from the cone response or the contrast. Here, we have used two supervised learning methods with Bayesian estimators to estimate standard lightness of the target object. Using these methods, we can recover the lightness of the target object with $\sim 15\%$ relative root mean square error.  Our analysis shows that the optimal receptive fields for estimating the lightness of the target object show a center surround structure, supporting a comparison between the light coming from the target object and its surround. Additionally, lightness estimation involves a weighted sum of the L, M and S cone responses where the receptive fields give more weight to the L and M cone responses compared to S cone responses. Comparing the performance of the RFs learnt using  one case on the cone response of other cases shows that the receptive field of the complex cases perform well on images of simpler cases. We discuss the implications of such receptive fields on lightness constancy. 
+
+The rest of this paper is organized as follows. In the \nameref{Methods} section, we describe in detail the process to generate naturalistic labeled images (\nameref{method:VirtualWorld}) using our software pipeline {\rm Virtual world color constancy}, the process to simulate the response of retinal cone photoreceptors to these images using a standard model of the early visual system (\nameref{method:Isetbio}) and the supervised learning methods used in our analysis (\nameref{method:SupervisedLearning}). In the \nameref{Results} section, we show the estimates and performance of the supervised methods for the three cases mentioned above. We conclude the paper with the implication of our results in the \nameref{Discussion} section.  
+
 \section*{Methods} \label{Methods}
 \subsection{Overview}
-
 There are four key parts to our methods.  The first is how we generate a labelled set of training data for our supervised learning algorithms.  The second is how we model the transformations applied by the early visual system to generate modeled responses of the cone photoreceptor mosaic.  The third is the details of the supervised learning methods we apply to the labelled training data.  And the fourth is how we evaluate the performance of the algorithms.  We describe each of these in the sections below.
 
 \subsection{Labelled image database} \label{method:VirtualWorld}
 
 \subsubsection{Virtual naturalistic scenes}
-
 The light that reflects off an object and reaches our eyes depends on many factors. These factors include: the surface reflectance of the object, the surface reflectance, texture, material and geometry of the objects in its surround, the spectrum of the sources of light illuminating the object, and the position of the observer. In natural scenes, these spectral and geometrical factors vary considerably. To study the effect of these factors on color perception, we need a system that can generate natural scenes with precise control over all such factors. We need a system that can produce natural scenes at a fixed perceived color of a target object, while having a representative, but precisely quantified, sampling of the variations in the scene. Under natural conditions it is difficult to control and quantify every such parameter in a scene. Thus generating such a dataset, with a representative sampling of natural variations, is considerably time and labor intensive.
 
 To overcome this  challenge, we have developed an image rendering software pipeline that allows us to specify a virtual, but naturalistic, statistical model of visual scenes with parametric control over factors in natural scenes. The software uses a physically-based image rendering system that accurately accounts for the interactions of light with matter in 3D scenes. It then renders a multispectral 2D image of each modeled visual scene. Wherever possible, we have incorporated statistical models of the variation of specific scene parameters based on observed data in natural scenes. In addition, our software simulates the responses of retinal cones to the rendered multispectral images using a realistic model of the early human visual system. Below we provide the details of the software and the choices made to generate ensembles of scenes with corresponding images. Our software, which is written in MATLAB, is freely available through a public respository: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. It builds on several other open source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}. Below we refer to the software pipeline as VWCC (for Virtual World Color Constancy).
 
 The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall spatial scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
 
-% Figure 9
+% Figure 3
 \begin{figure}[t]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_a.png}
         \caption{Library }
         \label{fig:baseSceneLibrary}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_b.png}
         \caption{Mill}
         \label{fig:baseSceneMill}
     \end{subfigure}    
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_c.png}
         \caption{Table-Chairs}
         \label{fig:baseSceneTableChairs}
     \end{subfigure}
     
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_d.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_d.png}
         \caption{Indoor-plant}
         \label{fig:baseSceneIndoorPlant}
     \end{subfigure}    
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_e.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_e.png}
         \caption{Warehouse}
         \label{fig:baseSceneWarehouse}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_f.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_f.png}
         \caption{Checkerboard}
         \label{fig:baseSceneCheckerBoard}
     \end{subfigure}
-    \caption{{Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software.  The light source spectra were also assigned randomly to the default light source for each scene. [CHECK THAT THIS IS CORRET] }\label{fig:baseScenes}
+    \caption{{\bf Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software.  The light source spectra were also assigned randomly to the default and inserted light source.}\label{fig:baseScenes}
 \end{figure}
 
-VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted into the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from object descriptions made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library.
+VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted into the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from object descriptions made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library. The position (Fig.~\ref{fig:targetPositionVariation}), size and orientation (Fig.~\ref{fig:targetSizeOrientation})of the inserted objects and lights may be specified programatically or chosen randomly under constraints provided by the base scene meta-data. Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
 
-% Figure 10
+% Figure 4
 \begin{figure}[h]
 \centering
-\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.png}
+\begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_a.png}
         \caption{Big-ball}
         \label{fig:libraryWithBigBall}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.png}
+\begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_b.png}
         \caption{Small-ball}
         \label{fig:libraryWithSmallBall}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.png}
+    \begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_c.png}
         \caption{Barrel}
         \label{fig:libraryWithBarrel}
     \end{subfigure}
-    
-    \begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_d.png}
+    \begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_d.png}
         \caption{Xylophone}
         \label{fig:libraryWithXylophone}
     \end{subfigure}
     ~
-	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_e.png}
+	\begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_e.png}
         \caption{Ring toy}
         \label{fig:libraryWithRingToy}
     \end{subfigure}
         ~
-    	\begin{subfigure}[b]{0.22 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_f.png}
-        \caption{Champagne Bottle}
+    	\begin{subfigure}[b]{0.14 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_f.png}
+        \caption{Bottle}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
-\caption{{Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
+\caption{{\bf Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
 \end{figure}
 
-The size, position and orientation of the inserted objects and lights may be specified programatically (Fig.~\ref{fig:objectTransformations}) or chosen randomly under constraints provided by the base scene meta-data. Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
-
-Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
-
-% Figure11
+% Figure5
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_a.png}
         \caption{Target spectra}
         \label{fig:targetVariation}
     \end{subfigure}
@@ -221,7 +212,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_b.png}
         \caption{Background spectra}
         \label{fig:backGroundVariation}
     \end{subfigure}
@@ -229,7 +220,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_c.png}
         \caption{Illumination spectra}
         \label{fig:illuminationVariation}
     \end{subfigure}
@@ -237,7 +228,7 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_d.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_d.png}
         \caption{Target position}
         \label{fig:targetPositionVariation}
     \end{subfigure}
@@ -245,16 +236,18 @@ Once a base scene has been chosen and objects and light sources inserted, we ass
       %(or a blank line to force the subfigure onto a new line)
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_e.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_e.png}
         \caption{Target Size/Orientation}
         \label{fig:targetSizeOrientation}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \caption{{\bf Transformations of the scene.} Each column illustrates transformations of a scene that are under software control. (a-c) Spectral Transformations. (d-e) Geometrical transformations. EXPAND OUT AND SAY WHAT EACH COLUMN IS, INDIVIDUALLY}\label{fig:spectralTransformations}
+    \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Spectral (a-c) and Geometrical (d-e). VWCC provides control over such transformation as illustrated by the columns. (a) The target object surface reflectance varies across the three panels of the column. (b) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (c) The power spectrum of the light sources were assigned randomly in the three panels. (d) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. }\label{fig:VWCCTransformations}
 \end{figure}
 
-In the present work, we insert one target object and one additional light source into a fixed base scene, and vary reflectance and illuminant spectra. We then insert a camera for rendering at a user specified position and point this camera at the target object. We ensure that a N by N pixel [CHECK ACTUAL SIZE] region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object at its inserted position was not occluded by other objects in the line of sight from camera. For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance. The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
+Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
+
+In the present work, we insert one target object and one additional light source into a fixed base scene, and vary reflectance and illuminant spectra. We then insert a camera for rendering at a user specified position and point this camera at the target object. We ensure that a 9 pixel by 9 pixel region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object at its inserted position was not occluded by other objects in the line of sight from camera. For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance. The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
 
 We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
 
@@ -264,43 +257,43 @@ For the images used for the primary results reported in this paper, we used the 
 \subsubsection{Illumination Spectra}
 The illumination spectrum is generated through a random statistical sampling of a natural illumination spectrum dataset. First, we approximate the spectra in the dataset using principle component analysis (PCA). We decompose the spectra as a linear sum over the PCA basis vectors corresponding to the largest 6 PCA eigenvalues. Next, we sample random spectra from this low 6 dimensional PCA space assuming the spectral distribution to be a multivariate gaussian.
 
-% Figure 12
+% Figure 6
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_a.pdf}
         \caption{Granada natural daylight dataset}
         \label{fig:granadaSpectra}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_b.pdf}
         \caption{Rescaled Granada dataset}
         \label{fig:rescaledGranada}
     \end{subfigure}
     \begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_c.pdf}
         \caption{Randomly generated samples}
         \label{fig:randomIlluminant}
     \end{subfigure}
 
 	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_d.pdf}
         \caption{xy chromaticity diagram}
         \label{fig:xyDiagram}
     \end{subfigure}
 	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_e.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_e.pdf}
         \caption{Normalized PCA eigenvalues}
         \label{fig:granadaEV}
     \end{subfigure}
       	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_f.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_f.pdf}
         \caption{sRGB rendition of samples from Fig.\ref{fig:randomIlluminant}}
         \label{fig:sRGBIlluminant}
     \end{subfigure}
@@ -332,25 +325,25 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 \end{align}
 Finally $\tilde{I}(\lambda)$ is rescaled by a random number generated uniformly in the range [0, 100].
 
-% Figure 13
+% Figure 7
 \subsubsection{Reflectance Spectrum}
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_a.pdf}
         \caption{Natural surface reflectance spectra}
         \label{fig:naturalSurface}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_b.pdf}
         \caption{Randomly generated samples}
         \label{fig:randomSurface}
     \end{subfigure}
     \begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_c.pdf}
         \caption{sRGB rendition of samples from \ref{fig:randomSurface}}
         \label{fig:sRGBSurface}
     \end{subfigure}
@@ -386,24 +379,24 @@ and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right
 such that $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, the new surface reflectance 
 is given as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.
 
-% Figure 14
+% Figure 8
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_a.pdf}
         \caption{Natural surface reflectance spectra}
         \label{fig:naturalSurfaceTarget}
     \end{subfigure}
     \begin{subfigure}[b]{0.3\textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_b.pdf}
         \caption{Randomly generated target samples}
         \label{fig:randomSurfaceTarget}
     \end{subfigure}
     \begin{subfigure}[b]{0.3 \textwidth}
     \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_c.pdf}
         \caption{sRGB rendition of samples from Fig.~\ref{fig:randomSurfaceTarget}}
         \label{fig:sRGBSurfaceTarget}
     \end{subfigure}
@@ -422,12 +415,12 @@ perception of brightness. The target reflectance is given by: $\tilde{R}^{\rm T}
 %Figure~\ref{sceneWithCroppedImage} illustrates the steps in this process for one scene.  We start with how we generate a single labeled set of cone responses
 %We call our image generation software Virtual world color constancy (VWCC). The details of the software are provided in the supplementary information section. To generate an image, we first select a 3D scene, a target object and a light source from the set of predefined scenes and objects in VWCC. The target object and the light source are inserted in the 3D scene. Fig.\ref{fig:3DScene} shows a 2D sRGB rendition of the 3D scene used in our analysis. The green sphere in the middle is the target object. The light source is not in the camera field of view. Next, we assign a surface reflectance spectrum and an illumination spectrum to each object and light source in the scene. For the target object the surface reflectance is assigned such that the perceived lightness of the target object under D65 daylight spectrum has a fixed value. Now we render a $320\times 240$ pixel$^2$ 2d multispectral images of the scene at 31 frequencies (equal linear spacing between 400 nm - 700 nm) using a graphics rendering system called Mitsuba \cite{jakob2015mitsuba}. For each of the three case, we generate hundreds of such scenes and corresponding multispectral images at 10 linearly spaced lightness levels between 0.2 and 0.6 (see below). We crop a 51x51 pixel$^2$ part of the multispectral image containing the target object for further analysis (\ref{fig:croppedImage}). Fig. \ref{fig:studiedCases} shows examples of such cropped image at 3 lightness levels for the three cases considered in this work.
 
-% Figure 3: Methods
+% Figure 9: Methods
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.25 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_a.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.png}
         \caption{A typical 3D Scene}
         \label{fig:3DScene}
     \end{subfigure}
@@ -435,7 +428,7 @@ perception of brightness. The target reflectance is given by: $\tilde{R}^{\rm T}
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.19 \textwidth}   
     \hspace{0.1 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_b.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.png}
         \caption{Cropped Image}
         \label{fig:croppedImage}
     \end{subfigure}
@@ -443,13 +436,13 @@ perception of brightness. The target reflectance is given by: $\tilde{R}^{\rm T}
     %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}[b]{0.19 \textwidth}
     \hspace{0.1 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_c.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.png}
         \caption{Optical Image}
         \label{fig:croppedImageWithMosaic}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_d.png}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_d.png}
         \caption{LMS cone contrast}
         \label{fig:coneContrast}
     \end{subfigure}
@@ -527,27 +520,27 @@ Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the RFs, the l
 
 For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the lightness can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see SI). For case 3, has a similar center surround structure with more prominent features of the background as we also vary the spectra of the background objects. Again, the spatial features are a result of the stereotypical geometry of the images.
 
-% Figure 4
+%% Figure 10
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case9SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case9AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.pdf}
         \caption{AMA RF Response}
         \label{fig:case9FiltersResponse}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_d.pdf}
         \caption{Lightness Estimates}
         \label{fig:case9Results}
     \end{subfigure}    
@@ -555,27 +548,38 @@ For case 1, since the illuminant and the background are fixed, all the informati
 \label{fig:case9AllResults}
 \end{figure}
 
-% Figure 5
+%% Figure 11
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
+\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.}
+\label{fig:RMSEvsNFilters}
+\end{figure}
+
+
+
+
+% Figure 12
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case10SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case10AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
         \caption{AMA RF Response}
         \label{fig:case10FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
         \caption{Luminance Estimates}
         \label{fig:case10Results}
     \end{subfigure}
@@ -583,27 +587,27 @@ For case 1, since the illuminant and the background are fixed, all the informati
     \label{fig:case10AllResults}
 \end{figure}
 
-% Figure 6
+% Figure 13
 \begin{figure}
 \centering
 \begin{subfigure}[b]{0.27 \textwidth}
 		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
         \caption{SVD First 2 RFs}
         \label{fig:case12SVD}
     \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case12AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
         \caption{AMA RF Response}
         \label{fig:case12FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
         \caption{Luminance Estimates}
         \label{fig:case12Results}
     \end{subfigure}
@@ -618,38 +622,30 @@ E_{\rm rel} = \sqrt{\left\langle\left(\frac{\hat{Y}-Y}{Y}\right)^2\right\rangle}
 \end{align}
 where $\hat{Y}$ corresponds to the estimated lightness and $Y$ to the assigned lightness. We use the first 8 RFs for lightness estimation ( see Fig.~\ref{fig:RMSEvsNFilters}).
 
-% Figure 7
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure5/Figure5.pdf}
-\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the lightness.}
-\label{fig:RMSEvsNFilters}
-\end{figure}
-
 Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(d) shows the lightness estimates and the RMSE for the three methods (Linear regression on center pixel, AMA and SVD). Additionally we show the estimate of a naive model that reports the mean value of the lightness labels used in the dataset. The diagonal x=y line is shown for reference. The shaded regions show $E_{\rm rel}$ for each method.
 
 (Fig.~\ref{fig:summaryBarGraph}) compares the $E_{\rm rel}$ for the different methods for the three cases. Both AMA and SVD methods, which use the information from the entire image estimate the lightness better compared to linear regression which only uses the information from the center pixel. This shows the importance of context information for lightness estimation.
 
 \subsection{The RFs of complex case generalize on simpler cases}
-% Figure 8stimulusIntensities(1)-1
+% Figure 8
 \begin{figure}
 \centering
 \begin{subfigure}{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_a.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
 	\caption{Performance of methods}
 	\label{fig:summaryBarGraph}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
     \begin{subfigure}{0.3 \textwidth}   
-	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_b.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
 	\caption{SVD RF Performance}
 	\label{fig:SVDBAR}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_c.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
 	\caption{AMA RF Performance}
 	\label{fig:AMABAR}
     \end{subfigure}
