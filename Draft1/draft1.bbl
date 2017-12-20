@@ -623,6 +623,33 @@ Jakob, W.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Kelly%
+, Gibson%
+\BCBL{}\ \BBA{} Nickerson%
+}{%
+Kelly%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1943}}%
+}]{%
+kelly1943tristimulus}%
+\APACinsertmetastar{%
+kelly1943tristimulus}%
+Kelly, K\BPBI L.%
+, Gibson, K\BPBI S.%
+\BCBL{}\ \BBA{} Nickerson, D.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1943}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Tristimulus specification of the Munsell Book of Color
+  from spectrophotometric measurements}{Tristimulus specification of the
+  munsell book of color from spectrophotometric measurements}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{JOSA}{33}{7}{355--376}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Land%
 }{%
 Land%
@@ -905,6 +932,32 @@ Tkacik, G.%
   \end{APACrefURL}
 \newblock
 , doi:doi:10.1371/journal.pone.0020409
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Vrhel%
+, Gershon%
+\BCBL{}\ \BBA{} Iwan%
+}{%
+Vrhel%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1994}}%
+}]{%
+vrhel1994measurement}%
+\APACinsertmetastar{%
+vrhel1994measurement}%
+Vrhel, M\BPBI J.%
+, Gershon, R.%
+\BCBL{}\ \BBA{} Iwan, L\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Measurement and analysis of object reflectance
+  spectra}{Measurement and analysis of object reflectance spectra}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Color Research \& Application}{19}{1}{4--9}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
