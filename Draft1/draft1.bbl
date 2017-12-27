@@ -83,6 +83,33 @@ Barron, J\BPBI T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Boyaci%
+, Maloney%
+\BCBL{}\ \BBA{} Hersh%
+}{%
+Boyaci%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2003}}%
+}]{%
+boyaci2003effect}%
+\APACinsertmetastar{%
+boyaci2003effect}%
+Boyaci, H.%
+, Maloney, L\BPBI T.%
+\BCBL{}\ \BBA{} Hersh, S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2003}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{The effect of perceived surface orientation on perceived
+  surface albedo in binocularly viewed scenes}{The effect of perceived surface
+  orientation on perceived surface albedo in binocularly viewed scenes}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of Vision}{3}{8}{2--2}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Brainard%
 \ \BBA{} Freeman%
 }{%
