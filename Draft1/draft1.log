@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  27 DEC 2017 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  28 DEC 2017 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,7 +771,7 @@ File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 491.
 
-[13] [14] <../Figures/Figure10/Figure10_a.pdf, id=556, 501.875pt x 301.125pt>
+[13] [14] <../Figures/Figure10/Figure10_a.pdf, id=557, 501.875pt x 301.125pt>
 File: ../Figures/Figure10/Figure10_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure10/Figure10_a.pdf>
@@ -779,7 +779,7 @@ Package pdftex.def Info: ../Figures/Figure10/Figure10_a.pdf used on input line
 538.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure10/Figure10_b.pdf, id=557, 501.875pt x 301.125pt>
+<../Figures/Figure10/Figure10_b.pdf, id=558, 501.875pt x 301.125pt>
 File: ../Figures/Figure10/Figure10_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure10/Figure10_b.pdf>
@@ -787,7 +787,7 @@ Package pdftex.def Info: ../Figures/Figure10/Figure10_b.pdf used on input line
 543.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure10/Figure10_c.pdf, id=558, 501.875pt x 501.875pt>
+<../Figures/Figure10/Figure10_c.pdf, id=559, 501.875pt x 501.875pt>
 File: ../Figures/Figure10/Figure10_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure10/Figure10_c.pdf>
@@ -795,7 +795,7 @@ Package pdftex.def Info: ../Figures/Figure10/Figure10_c.pdf used on input line
 548.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure10/Figure10_d.pdf, id=559, 501.875pt x 501.875pt>
+<../Figures/Figure10/Figure10_d.pdf, id=560, 501.875pt x 501.875pt>
 File: ../Figures/Figure10/Figure10_d.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure10/Figure10_d.pdf>
@@ -803,7 +803,7 @@ Package pdftex.def Info: ../Figures/Figure10/Figure10_d.pdf used on input line
 553.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure11/Figure11.pdf, id=560, 501.875pt x 501.875pt>
+<../Figures/Figure11/Figure11.pdf, id=561, 501.875pt x 501.875pt>
 File: ../Figures/Figure11/Figure11.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure11/Figure11.pdf>
@@ -811,7 +811,7 @@ Package pdftex.def Info: ../Figures/Figure11/Figure11.pdf used on input line 56
 4.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure12/Figure12_a.pdf, id=561, 501.875pt x 301.125pt>
+<../Figures/Figure12/Figure12_a.pdf, id=562, 501.875pt x 301.125pt>
 File: ../Figures/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_a.pdf>
@@ -819,7 +819,7 @@ Package pdftex.def Info: ../Figures/Figure12/Figure12_a.pdf used on input line
 577.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure12/Figure12_b.pdf, id=562, 501.875pt x 301.125pt>
+<../Figures/Figure12/Figure12_b.pdf, id=563, 501.875pt x 301.125pt>
 File: ../Figures/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_b.pdf>
@@ -827,7 +827,7 @@ Package pdftex.def Info: ../Figures/Figure12/Figure12_b.pdf used on input line
 582.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure12/Figure12_c.pdf, id=563, 501.875pt x 501.875pt>
+<../Figures/Figure12/Figure12_c.pdf, id=564, 501.875pt x 501.875pt>
 File: ../Figures/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_c.pdf>
@@ -835,7 +835,7 @@ Package pdftex.def Info: ../Figures/Figure12/Figure12_c.pdf used on input line
 587.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure12/Figure12_d.pdf, id=564, 501.875pt x 501.875pt>
+<../Figures/Figure12/Figure12_d.pdf, id=565, 501.875pt x 501.875pt>
 File: ../Figures/Figure12/Figure12_d.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_d.pdf>
@@ -843,7 +843,7 @@ Package pdftex.def Info: ../Figures/Figure12/Figure12_d.pdf used on input line
 592.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure13/Figure13_a.pdf, id=567, 501.875pt x 301.125pt>
+<../Figures/Figure13/Figure13_a.pdf, id=568, 501.875pt x 301.125pt>
 File: ../Figures/Figure13/Figure13_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_a.pdf>
@@ -851,7 +851,7 @@ Package pdftex.def Info: ../Figures/Figure13/Figure13_a.pdf used on input line
 605.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure13/Figure13_b.pdf, id=568, 501.875pt x 301.125pt>
+<../Figures/Figure13/Figure13_b.pdf, id=569, 501.875pt x 301.125pt>
 File: ../Figures/Figure13/Figure13_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_b.pdf>
@@ -859,7 +859,7 @@ Package pdftex.def Info: ../Figures/Figure13/Figure13_b.pdf used on input line
 610.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure13/Figure13_c.pdf, id=569, 501.875pt x 501.875pt>
+<../Figures/Figure13/Figure13_c.pdf, id=570, 501.875pt x 501.875pt>
 File: ../Figures/Figure13/Figure13_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_c.pdf>
@@ -867,7 +867,7 @@ Package pdftex.def Info: ../Figures/Figure13/Figure13_c.pdf used on input line
 615.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure13/Figure13_d.pdf, id=570, 501.875pt x 501.875pt>
+<../Figures/Figure13/Figure13_d.pdf, id=571, 501.875pt x 501.875pt>
 File: ../Figures/Figure13/Figure13_d.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_d.pdf>
@@ -877,7 +877,7 @@ Package pdftex.def Info: ../Figures/Figure13/Figure13_d.pdf used on input line
  [15 <../Figures/Figure10/Figure10_a.pdf> <../Figures/Figure10/Figure10_b.pdf> 
 <../Figures/Figure10/Figure10_c.pdf> <../Figures/Figure10/Figure10_d.pdf> <../F
 igures/Figure11/Figure11.pdf>]
-<../Figures/Figure14/Figure14_a.pdf, id=691, 501.875pt x 501.875pt>
+<../Figures/Figure14/Figure14_a.pdf, id=692, 501.875pt x 501.875pt>
 File: ../Figures/Figure14/Figure14_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure14/Figure14_a.pdf>
@@ -885,7 +885,7 @@ Package pdftex.def Info: ../Figures/Figure14/Figure14_a.pdf used on input line
 644.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure14/Figure14_b.pdf, id=692, 501.875pt x 501.875pt>
+<../Figures/Figure14/Figure14_b.pdf, id=693, 501.875pt x 501.875pt>
 File: ../Figures/Figure14/Figure14_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure14/Figure14_b.pdf>
@@ -893,7 +893,7 @@ Package pdftex.def Info: ../Figures/Figure14/Figure14_b.pdf used on input line
 651.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure14/Figure14_c.pdf, id=693, 501.875pt x 501.875pt>
+<../Figures/Figure14/Figure14_c.pdf, id=694, 501.875pt x 501.875pt>
 File: ../Figures/Figure14/Figure14_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure14/Figure14_c.pdf>
@@ -943,7 +943,11 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 675.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 675.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 675.
 Package rerunfilecheck Info: File `draft1.out' has not changed.
-(rerunfilecheck)             Checksum: BF421A1D090E3FB435D6061FBE086C91;904.
+(rerunfilecheck)             Checksum: E0B2B8363EC83E0451557FFB81FADF85;929.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 675.
  ) 
 Here is how much of TeX's memory you used:
@@ -979,10 +983,10 @@ utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pf
 b></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/lo
 cal/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft1.pdf (20 pages, 12977272 bytes).
+Output written on draft1.pdf (20 pages, 12969431 bytes).
 PDF statistics:
- 1065 PDF objects out of 1200 (max. 8388607)
- 822 compressed objects within 9 object streams
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 823 compressed objects within 9 object streams
  100 named destinations out of 1000 (max. 500000)
  383 words of extra memory for PDF output out of 10000 (max. 10000000)
 
