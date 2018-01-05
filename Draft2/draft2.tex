@@ -525,6 +525,19 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 
 {\bf Estimating labels:} The image labels are estimated using the Bayesian decoder as described above. First, we use the AMA optimal filters and the training dataset to find the conditional distribution of the AMA filter response $p({\textbf {\textit R} }|Y_i)$. We then approximate this distribution with multivariate normal distribution $p({\textbf {\textit R} }|Y_i) = \mathcal{N}\left(\mu(Y_i),\Sigma(Y_i) \right)$. To estimate the label of an image from the test set, we use Byes' rule to obtain the posterior distribution $p(Y_i|{\textbf {\textit R} })$. The estimates value is the one that optimizes the cost function.
 
+% THINGS TO THINK ABOUT:
+%  1) Putting error bars on performance.  Particularly want to be sure that Fig 13 feature that Case 3 RFs do better than Case 1 RFs for Case 1 is just statistical sampling.
+%  2) What exactly do we want to run for final version.  How much illuminant intensity variation?  Should we make this match psychophysics so we could imagine these images displayed on a monitor?
+%  3) Do we just want to look at results for contrast normalized, or do we want to pick them off separately for isomerizations, contrast, and contrast normalized?
+%  4) What is driving the response variability in Case 1, where the stimulus is basically deterministic up to noise.  There are three sources of noise: 1) Rendering noise, 2) Isomerization noise, 3) AMA noise introduced for some unknown reason, 4) Variation in target color.
+
+% WHAT STORY DO WE WANT TO TELL ABOUT THE RESULTS
+%  1) Case 0 -- work out effect of sources of internal noise - isomerization and AMA -- without any external "noise", where external "noise" is the effect of variability in object extrinsic scene factors (illumination, surrounding objects). 
+%                      Also establish the rendering noise is einsy relative to whatever else we're doing.
+%  2) Move to Case 1 -- what happens when we introduce color variability into the target.  This may not be of interest to the psychophysics, but none-the-less seems interesting to know as one ponders lightness constancy.
+%  3) On to Case 2 -- here the question is, do we keep varying target color, or do we fix target color and vary illumination?  In any case, this isn't too hard a case if the other objects remain fixed, because then contrast coding basically normalizes out a lot of the variation, and it's only the spectral variation that might screw things up.  But, that's why we run case 3.
+%  4) Do we run a case where the relative spectrum of the illuminant stays fixed and we only vary intensity?
+%  4) On to Case 3 --
 \section{Results} \label{Results}
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
 We used two supervised learning methods to learn the optimal receptive fields (RFs) for luminance estimation for the three types of variations in the spectral properties of the scene as discuss earlier. Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the optimal RFs, the linear response of these RFs to the training dataset, and the estimates of the luminance of the target object in the test dataset for the three cases. We show the first two RFs obtained using the SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
