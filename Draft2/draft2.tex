@@ -531,60 +531,53 @@ We used two supervised learning methods to learn the optimal receptive fields (R
 
 For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). For case 3, has a similar center surround structure with more prominent features of the background, as we also vary the spectra of the background objects. Again, the spatial features are a result of the stereotypical geometry of the images.
 
-%% Figure 10
+%% Figure 9
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case9AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.pdf}
         \caption{AMA RF Response}
         \label{fig:case9FiltersResponse}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.pdf}
         \caption{Luminance Estimates}
         \label{fig:case9Results}
     \end{subfigure}    
-    \caption{{\bf Receptive fields and luminance estimates. Case 1:} (a) First two receptive fields produced by the SVD method. Along the row we show the filters corresponding to the L cones, M cones and S cones (left to right). (b) First two receptive fields produced by the AMA method. (c) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response distributions at each luminance level separate out well in this case, resulting in good estimates of the target object luminance. (d) The estimates of the target object standard luminance. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.}
+    \caption{{\bf Receptive fields and luminance estimates. Case 1:} (a) First two receptive fields produced by the AMA. Along the row we show the filters corresponding to the L cones, M cones and S cones (left to right). (b) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response distributions at each luminance level separate out well in this case, resulting in good estimates of the target object luminance. (c) The estimates of the target object standard luminance. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.}
 \label{fig:case9AllResults}
 \end{figure}
 
-%% Figure 11
+%% Figure 10
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
+\includegraphics[width=0.3\textwidth]{../Figures/Figure10/Figure10.pdf}
 \caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the luminance.}
 \label{fig:RMSEvsNFilters}
 \end{figure}
+% GET RID OF AMA FROM THE CAPTION
 
 
-
-
-% Figure 12
+% Figure 11
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.27 \textwidth}
-		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
-        \caption{SVD First 2 RFs}
-        \label{fig:case10SVD}
-    \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case10AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.pdf}
         \caption{AMA RF Response}
         \label{fig:case10FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.pdf}
         \caption{Luminance Estimates}
         \label{fig:case10Results}
     \end{subfigure}
@@ -592,27 +585,21 @@ For case 1, since the illuminant and the background are fixed, all the informati
     \label{fig:case10AllResults}
 \end{figure}
 
-% Figure 13
+% Figure 12
 \begin{figure}
 \centering
-\begin{subfigure}[b]{0.27 \textwidth}
-		\centering
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
-        \caption{SVD First 2 RFs}
-        \label{fig:case12SVD}
-    \end{subfigure}
     \begin{subfigure}[b]{0.27 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case12AMA}
     \end{subfigure}
         \begin{subfigure}[b]{0.20 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
         \caption{AMA RF Response}
         \label{fig:case12FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.2 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
         \caption{Luminance Estimates}
         \label{fig:case12Results}
     \end{subfigure}
@@ -632,29 +619,27 @@ Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(d) shows the lumina
 (Fig.~\ref{fig:summaryBarGraph}) compares the $E_{\rm rel}$ for the different methods for the three cases. Both AMA and SVD methods, which use the information from the entire image estimate the luminance better compared to linear regression which only uses the information from the center pixel. This shows the importance of context information for luminance estimation.
 
 \subsection{The RFs of complex case generalize on simpler cases}
-% Figure 8
+% Figure 13
 \begin{figure}
 \centering
 \begin{subfigure}{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
-	\caption{Performance of methods}
-	\label{fig:summaryBarGraph}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+	\caption{Case 1}
+	\label{fig:case1Bar}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~ 
     \begin{subfigure}{0.3 \textwidth}   
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
-	\caption{SVD RF Performance}
-	\label{fig:SVDBAR}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+	\caption{Case 2}
+	\label{fig:case2Bar}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
+    ~ 
         \begin{subfigure}{0.3 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
-	\caption{AMA RF Performance}
-	\label{fig:AMABAR}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+	\caption{Case 3}
+	\label{fig:case3Bar}
     \end{subfigure}
-\caption{{\bf Model and Filter Performance:} (a) Comparison of various methods on luminance estimations for the three cases studied here. For simple spectral variations, like where only the target reflectance varies (case 1) or only the target and illumination spectrum varies (Case 2), the luminance can be estimated well. This is so, because the luminance information can be estimated simply from the light reflected of the target( case 1) or from the contrast between the target and the {\it fixed} background (case 2). For more complex case, where the luminance information is confounded due to variations in target, background and illuminant (case 3), the estimation has higher variability. (b) Performance of the SVD receptive fields obtained from one case on the stimuli of others. The RFs obtained from any one of the three cases perform well on the stimuli from case 1. The RF of the most complicated case (case 3), has good performance on the stimuli of lower complexity. (c) Same as Fig.\ref{fig:SVDBAR} for AMA RFs.}
+\caption{{\bf Model and Filter Performance:} Comparison of optimal AMA RFs from one case on the images of other cases. (a) RMSE of luminance estimates on images from the training set of case 1. Each bar represents RMSE of the filter obtained using the optimal RFs corresponding to the model. (b) (c)}
  \label{fig:barGraphs}
 \end{figure}
 Fig.~\ref{fig:SVDBAR} and Fig~\ref{fig:AMABAR} show the performance of the receptive fields learnt using the stimuli of one case on the stimuli of other cases. The RFs of case 3, (the most complex case) perform well on stimuli of case 1 and case 2.  Similarly, the RFs of case 2 performs well on the stimuli of case 1. Thus, the receptive fields leant on the complex case generalize for luminance estimation of stimuli for simpler cases.
