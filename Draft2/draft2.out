@@ -1,0 +1,14 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.5}{Overview}{}% 2
+\BOOKMARK [1][-]{section*.6}{Labelled image database}{}% 3
+\BOOKMARK [1][-]{section*.8}{Virtual naturalistic scenes}{}% 4
+\BOOKMARK [1][-]{section*.11}{Illumination Spectra}{}% 5
+\BOOKMARK [1][-]{section*.13}{Surface Reflectance Spectra}{}% 6
+\BOOKMARK [1][-]{section*.16}{Model of Early Visual System}{}% 7
+\BOOKMARK [1][-]{section*.17}{Supervised Learning methods}{}% 8
+\BOOKMARK [1][-]{section*.20}{Results}{}% 9
+\BOOKMARK [1][-]{section*.21}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 10
+\BOOKMARK [1][-]{section*.26}{Luminance can be well estimated using a bayesian decoder with gaussian priors.}{}% 11
+\BOOKMARK [1][-]{section*.27}{The RFs of complex case generalize on simpler cases}{}% 12
+\BOOKMARK [1][-]{section*.29}{Discussion}{}% 13
+\BOOKMARK [1][-]{section*.30}{References}{}% 14

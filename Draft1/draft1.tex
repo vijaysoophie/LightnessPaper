@@ -510,7 +510,7 @@ we processed the isomerations as follows:
 First, we created a representation for each cone class on the full $51 \times 51$ pixel grid, we interpolated the responses of the cones in each class across the grid, using bilinear interpolation separately for each cone class.
 % DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
 This gives us a $51 \times 51$ cone response image for each cone class.
-The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector (7803 = 51 \times 51 \times 3). To model the contrast coding and contrast adaptation, we convert this vector to a contrast representation by subtracting out the mean and then dividing by it (contrast coding), followed by normalizing the vector to have unit length (contrast normalization).
+The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). To model the contrast coding and contrast adaptation, we convert this vector to a contrast representation by subtracting out the mean and then dividing by it (contrast coding), followed by normalizing the vector to have unit length (contrast normalization).
 The cone-response vectors corresponding to the N images for each case are concatenated column-wise to form a contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
 
 \subsection{Supervised Learning methods} \label{method:SupervisedLearning}
