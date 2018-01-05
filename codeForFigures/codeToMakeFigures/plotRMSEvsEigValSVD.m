@@ -53,12 +53,12 @@ axis square
 
 nEigVecs = 16;
 % SVD Results
-l9SVD = plot([1:nEigVecs],results9SVD.Case9error(1:nEigVecs),color9SVD,'linewidth',2);
-l10SVD = plot([1:nEigVecs],results10SVD.Case10error(1:nEigVecs),color10SVD,'linewidth',2);
-l12SVD = plot([1:nEigVecs],results12SVD.Case12error(1:nEigVecs),color12SVD,'linewidth',2);
+% l9SVD = plot([1:nEigVecs],results9SVD.Case9error(1:nEigVecs),color9SVD,'linewidth',2);
+% l10SVD = plot([1:nEigVecs],results10SVD.Case10error(1:nEigVecs),color10SVD,'linewidth',2);
+% l12SVD = plot([1:nEigVecs],results12SVD.Case12error(1:nEigVecs),color12SVD,'linewidth',2);
 
 % AMA Results
-l9AMA = plot([1:8],results9AMA.error(1:8),color9AMA,'linewidth',2);
+l9AMA = plot([1:nEigVecs],results9AMA.error(1:nEigVecs),color9AMA,'linewidth',2);
 l10AMA = plot([1:nEigVecs],results10AMA.error(1:nEigVecs),color10AMA,'linewidth',2);
 l12AMA = plot([1:nEigVecs],results12AMA.error(1:nEigVecs),color12AMA,'linewidth',2);
 
@@ -68,16 +68,16 @@ ylabel('E_{rel}');
 box on;
 
 set(gca, 'fontsize', 20);
-legend([l9SVD l9AMA l10SVD l10AMA l12SVD l12AMA],{'Case 1 SVD', 'Case 2 SVD', 'Case 3 SVD', ...
+legend([l9AMA l10AMA l12AMA],{ ...
     'Case 1 AMA', 'Case 2 AMA', 'Case 3 AMA'});
 set(gca,'FontSize',24);
 
-save2pdf('RMSEvsNEigVals/RMSEvsNFilters16.pdf',fig,600);
+save2pdf('RMSEvsNEigVals/RMSEvsNFilters16AMA.pdf',fig,600);
 
 %% Figure upto the 8th eigenvalue
 nEigVecs = 8;
 
 xlim([1 nEigVecs])
 
-save2pdf('RMSEvsNEigVals/RMSEvsNFilters8.pdf',fig,600);
+save2pdf('RMSEvsNEigVals/RMSEvsNFilters8AMA.pdf',fig,600);
 close;
