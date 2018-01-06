@@ -17,7 +17,19 @@ if (~exist('filterResponse','dir'))
     mkdir('filterResponse');
 end
 
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1.mat')
+plotFiltersJointResponsesModified(1,[1,2],case1Output.AMA.X,case1Output.AMA.s,case1Output.AMA.f,case1Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case1FiltersResponse.pdf',gcf,600);
 
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case2.mat')
+plotFiltersJointResponsesModified(1,[1,2],case2Output.AMA.X,case2Output.AMA.s,case2Output.AMA.f,case2Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case2FiltersResponse.pdf',gcf,600);
+
+%%
 % Load AMA results struct
 clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9.mat')
