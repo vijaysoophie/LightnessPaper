@@ -19,10 +19,15 @@ end
 
 %% Load AMA results struct
 clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1_NoIsomerizationNoise.mat')
+plotFiltersJointResponsesModified(1,[1,2],case1Output.AMA.X,case1Output.AMA.s,case1Output.AMA.f,case1Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case1FiltersResponse_NoIsomerizationNoise.pdf',gcf,600);
+
+%% Load AMA results struct
+clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1.mat')
 plotFiltersJointResponsesModified(1,[1,2],case1Output.AMA.X,case1Output.AMA.s,case1Output.AMA.f,case1Output.AMA.ctgInd,[],[],[],[1:10])
 % save2pdf('filterResponse/case1FiltersResponse.pdf',gcf,600);
-
 %% Load AMA results struct
 clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case2.mat')
