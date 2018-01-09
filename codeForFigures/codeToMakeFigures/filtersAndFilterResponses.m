@@ -19,9 +19,9 @@ end
 
 %% Load AMA results struct
 clear;
-load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1_NoIsomerizationNoise_AMANoiseTenTimes.mat')
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1_NoIsomerizationNoise_AMANoiseTenTimesLower.mat')
 plotFiltersJointResponsesModified(1,[1,2],case1Output.AMA.X,case1Output.AMA.s,case1Output.AMA.f,case1Output.AMA.ctgInd,[],[],[],[1:10])
-% save2pdf('filterResponse/case1FiltersResponse_NoIsomerizationNoise__AMANoiseTenTimes.pdf',gcf,600);
+% save2pdf('filterResponse/case1FiltersResponse_NoIsomerizationNoise_AMANoiseTenTimesLower.pdf',gcf,600);
 
 %% Load AMA results struct
 clear;
