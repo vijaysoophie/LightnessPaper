@@ -17,6 +17,19 @@ if (~exist('filterResponse','dir'))
     mkdir('filterResponse');
 end
 
+
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case10_AMAIsomerization.mat')
+plotFiltersJointResponsesModified(1,[1,2],case10Output.AMA.X,case10Output.AMA.s,case10Output.AMA.f,case10Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case10FiltersResponse_AMAIsomerization.pdf',gcf,600);
+
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1_NoIsomerizationNoise_AMAIsomerization.mat')
+plotFiltersJointResponsesModified(1,[1,2],case1Output.AMA.X,case1Output.AMA.s,case1Output.AMA.f,case1Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case1FiltersResponse_NoIsomerizationNoise_AMAIsomerization.pdf',gcf,600);
+
 %% Load AMA results struct
 clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case1_NoIsomerizationNoise_AMANoiseTenTimesLower.mat')
