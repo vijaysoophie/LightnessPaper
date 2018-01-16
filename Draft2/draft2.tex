@@ -539,6 +539,20 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 %  4) Do we run a case where the relative spectrum of the illuminant stays fixed and we only vary intensity?
 %  4) On to Case 3 --
 \section{Results} \label{Results}
+\begin{itemize}  
+\item Show the minimal model (to describe the sources and magnitude of error). This can go in supplement.
+\begin{itemize}  
+\item rendering error
+\item isomerization error
+\item ama error
+\end{itemize}
+\item Case 1. Only the target object color changes. AMA on isomerization
+\item Case 2. Background color changes too, AMA on isomerization
+\item Case 3. Background fixed, illuminant changes, AMA on isomerization fails, but the contrast version works
+\item Case 4. Change all three and show that both ismerization fails, constrast does better, but not perfectly better
+
+\end{itemize}
+
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
 We used two supervised learning methods to learn the optimal receptive fields (RFs) for luminance estimation for the three types of variations in the spectral properties of the scene as discuss earlier. Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the optimal RFs, the linear response of these RFs to the training dataset, and the estimates of the luminance of the target object in the test dataset for the three cases. We show the first two RFs obtained using the SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
 
