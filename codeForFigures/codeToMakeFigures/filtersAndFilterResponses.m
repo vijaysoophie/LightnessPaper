@@ -17,6 +17,11 @@ if (~exist('filterResponse','dir'))
     mkdir('filterResponse');
 end
 
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9_AMAIsomerization.mat')
+plotFiltersJointResponsesModified(1,[1,2],case9Output.AMA.X,case9Output.AMA.s,case9Output.AMA.f,case9Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('filterResponse/case9FiltersResponse_AMAIsomerization.pdf',gcf,600);
 
 %% Load AMA results struct
 clear;
