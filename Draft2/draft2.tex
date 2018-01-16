@@ -547,7 +547,7 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 \item ama error
 \end{itemize}
 \item Case 1. Only the target object color changes. AMA on isomerization
-\item Case 2. Background color changes too, AMA on isomerization
+\item Case 2. Background color changes too, AMA on isomerization. (This is not giving good results. The filters are giving weights to the background which they should not. Maybe more samples would help.)
 \item Case 3. Background fixed, illuminant changes, AMA on isomerization fails, but the contrast version works
 \item Case 4. Change all three and show that both ismerization fails, constrast does better, but not perfectly better
 
