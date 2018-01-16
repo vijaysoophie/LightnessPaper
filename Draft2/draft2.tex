@@ -553,6 +553,29 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 
 \end{itemize}
 
+%% Figure Results
+\begin{figure}
+\centering
+    \begin{subfigure}[b]{0.33 \textwidth}   
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/renderingNoise.pdf}
+        \caption{Rendering noise}
+        \label{fig:renderingNoise}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.33 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/renderingAndIsomerization.pdf}
+        \caption{Rendering and isomerization noise}
+        \label{fig:renderingAndIsomerization}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.33 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/renderingIsomerizationTargetColor.pdf}
+        \caption{Target color variation}
+        \label{fig:renderingIsomerizationTargetColor}
+    \end{subfigure}    
+    \caption{Different sources of noise}
+\label{fig:sourcesOfNoise}
+\end{figure}
+
+
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
 We used two supervised learning methods to learn the optimal receptive fields (RFs) for luminance estimation for the three types of variations in the spectral properties of the scene as discuss earlier. Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the optimal RFs, the linear response of these RFs to the training dataset, and the estimates of the luminance of the target object in the test dataset for the three cases. We show the first two RFs obtained using the SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
 
@@ -561,17 +584,17 @@ For case 1, since the illuminant and the background are fixed, all the informati
 %% Figure 9
 \begin{figure}
 \centering
-    \begin{subfigure}[b]{0.27 \textwidth}   
+    \begin{subfigure}[b]{0.4 \textwidth}   
         \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.pdf}
         \caption{AMA First 2 RFs}
         \label{fig:case9AMA}
     \end{subfigure}
-        \begin{subfigure}[b]{0.20 \textwidth}
+        \begin{subfigure}[b]{0.27 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.pdf}
         \caption{AMA RF Response}
         \label{fig:case9FiltersResponse}
     \end{subfigure}
-        \begin{subfigure}[b]{0.20 \textwidth}
+        \begin{subfigure}[b]{0.27 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.pdf}
         \caption{Luminance Estimates}
         \label{fig:case9Results}
@@ -579,6 +602,26 @@ For case 1, since the illuminant and the background are fixed, all the informati
     \caption{{\bf Receptive fields and luminance estimates. Case 1:} (a) First two receptive fields produced by the AMA. Along the row we show the filters corresponding to the L cones, M cones and S cones (left to right). (b) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response distributions at each luminance level separate out well in this case, resulting in good estimates of the target object luminance. (c) The estimates of the target object standard luminance. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.}
 \label{fig:case9AllResults}
 \end{figure}
+
+
+%% Figure Isomerization Fails
+\begin{figure}
+\centering
+    \begin{subfigure}[b]{0.3	 \textwidth}   
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/isomerizationFails.pdf}
+        \caption{AMA on isomerization fails in case of variation in illuminant}
+        \label{fig:isomerizationFails}
+    \end{subfigure}
+    ~
+        \begin{subfigure}[b]{0.3 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/constrastWorks.pdf}
+        \caption{Converting signal to contrast solves the problem}
+        \label{fig:constrastWorks}
+    \end{subfigure}
+    \caption{Need for contrast conversion.}
+\label{fig:importanceOfConstrast}
+\end{figure}
+
 
 %% Figure 10
 \begin{figure}
