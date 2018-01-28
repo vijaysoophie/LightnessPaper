@@ -13,10 +13,14 @@ if (~exist('estimatesVsActualAMA','dir'))
 end
 
 % Choose a case
-for caseNo = [ 9 10 12]
+for caseNo = [10]
 
 % load the files containing the estimates
-loadTheLinearFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/linear/Case',num2str(caseNo),'.mat']);
+if (caseNo==9)
+    loadTheLinearFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/linear/Case',num2str(caseNo),'_AMAIsomerization.mat']);
+else
+    loadTheLinearFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/linear/Case',num2str(caseNo),'.mat']);
+end
 loadTheAMAFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SGD/case',num2str(caseNo),'.mat']);
 loadTheSVDFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SVD/case',num2str(caseNo),'.mat']);
 
@@ -35,9 +39,10 @@ lLinear = plot(unique(loadTheAMAFile.XTest)',loadTheLinearFile.cNormMeanEstimate
 % errorbar(unique(loadTheLinearFile.labelsTest)',loadTheLinearFile.cMeanSvdEstimateTest,loadTheLinearFile.cStdSvdEstimateTest,SVDColor,'linewidth',2);
 xlim([0.15 0.65]);
 ylim([0.15 0.65]);
-xlabel('$Y$','interpreter','latex');
-ylabel('$\hat{Y}$','interpreter','latex');
+xlabel('$Y$','interpreter','latex','FontSize',20);
+ylabel('$\hat{Y}$','interpreter','latex','FontSize',20);
 box on;
+set(gca,'FontSize',22)
 
 %% This part is for AMA SGD
 estimatedL = loadTheAMAFile.XHATi;
@@ -52,8 +57,8 @@ plotfillederror(linspace(0.2,0.6,10),loadTheLinearFile.cNormMeanEstimateTest-loa
 
 lDiagonal = plot([0.15 0.65],[0.15 0.65],'b--','linewidth',2);
 legend([lNaive, lLinear, lAMA, lDiagonal],...
-    {'Naive','Linear Reg.','AMA', 'x=y'}, 'Location','southeast');
- save2pdf(['estimatesVsActualAMA/Case',num2str(caseNo),'Results.pdf'],fig,600);
+    {'Naive','Linear Reg.','AMA', 'x=y'}, 'Location','southeast','FontSize',20);
+save2pdf(['estimatesVsActualAMA/Case',num2str(caseNo),'Results.pdf'],fig,600);
 close;
 
 end

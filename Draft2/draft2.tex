@@ -574,7 +574,7 @@ Any variation resulting from the poisson nature of the photoreceptor response or
 \begin{figure}
 \centering
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/resultsFigure/renderingIsomerizationTargetColor.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.pdf}
         \caption{Target color variation}
         \label{fig:renderingIsomerizationTargetColor}
     \end{subfigure}    
@@ -584,12 +584,12 @@ Any variation resulting from the poisson nature of the photoreceptor response or
 %        \label{fig:renderingNoise}
 %    \end{subfigure}
             \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.pdf}
         \caption{Luminance Estimates}
         \label{fig:case9Results}
     \end{subfigure}    
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/resultsFigure/renderingAndIsomerization.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_c.pdf}
         \caption{Rendering and isomerization noise}
         \label{fig:renderingAndIsomerization}
     \end{subfigure}
@@ -603,24 +603,6 @@ We used two supervised learning methods to learn the optimal receptive fields (R
 For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). For case 3, has a similar center surround structure with more prominent features of the background, as we also vary the spectra of the background objects. Again, the spatial features are a result of the stereotypical geometry of the images.
 
 
-%% Figure 9
-\begin{figure}
-\centering
-    \begin{subfigure}[b]{0.4 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.pdf}
-        \caption{AMA First 2 RFs}
-        \label{fig:case9AMA}
-    \end{subfigure}
-        \begin{subfigure}[b]{0.27 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.pdf}
-        \caption{AMA RF Response}
-        \label{fig:case9FiltersResponse}
-    \end{subfigure}
-    \caption{{\bf Receptive fields and luminance estimates. Case 1:} (a) First two receptive fields produced by the AMA. Along the row we show the filters corresponding to the L cones, M cones and S cones (left to right). (b) The response of the stimuli to the first two AMA filters. The responses are grouped with the label of the stimuli. As is clear, the response distributions at each luminance level separate out well in this case, resulting in good estimates of the target object luminance. (c) The estimates of the target object standard luminance. The naive method produces the mean value of the target luminance used in the analysis. The shaded region corresponds to 1 sigma standard deviation.}
-\label{fig:case9AllResults}
-\end{figure}
-
-
 %% Figure Isomerization Fails
 \begin{figure}
 \centering
@@ -631,9 +613,14 @@ For case 1, since the illuminant and the background are fixed, all the informati
     \end{subfigure}
     ~
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/resultsFigure/constrastWorks.pdf}
+        \includegraphics[width=\textwidth]{../Figures/resultsFigure/contrastWorks.pdf}
         \caption{Converting signal to contrast solves the problem}
         \label{fig:constrastWorks}
+    \end{subfigure}
+            \begin{subfigure}[b]{0.3 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.pdf}
+        \caption{Luminance Estimates}
+        \label{fig:case10Results}
     \end{subfigure}
     \caption{Need for contrast conversion.}
 \label{fig:importanceOfConstrast}
