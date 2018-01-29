@@ -13,7 +13,7 @@ if (~exist('estimatesVsActualAMA','dir'))
 end
 
 % Choose a case
-for caseNo = [10]
+for caseNo = [12]
 
 % load the files containing the estimates
 if (caseNo==9)

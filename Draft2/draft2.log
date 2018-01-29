@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JAN 2018 19:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  28 JAN 2018 21:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -848,122 +848,91 @@ Package pdftex.def Info: ../Figures/Figure10/Figure10.pdf used on input line 63
 3.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure11/Figure11_a.pdf, id=645, 501.875pt x 301.125pt>
-File: ../Figures/Figure11/Figure11_a.pdf Graphic file (type pdf)
-
-<use ../Figures/Figure11/Figure11_a.pdf>
-Package pdftex.def Info: ../Figures/Figure11/Figure11_a.pdf used on input line 
-644.
-(pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
-
-<../Figures/Figure11/Figure11_b.pdf, id=646, 501.875pt x 501.875pt>
-File: ../Figures/Figure11/Figure11_b.pdf Graphic file (type pdf)
-
-<use ../Figures/Figure11/Figure11_b.pdf>
-Package pdftex.def Info: ../Figures/Figure11/Figure11_b.pdf used on input line 
-649.
-(pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
-File: ../Figures/Figure11/Figure11_c.pdf Graphic file (type pdf)
-
-<use ../Figures/Figure11/Figure11_c.pdf>
-Package pdftex.def Info: ../Figures/Figure11/Figure11_c.pdf used on input line 
-654.
-(pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
-
-
-LaTeX Warning: Reference `fig:case9AllResults' on page 16 undefined on input li
-ne 658.
-
-
-LaTeX Warning: Reference `fig:case9AllResults' on page 16 undefined on input li
-ne 658.
-
-<../Figures/Figure12/Figure12_a.pdf, id=647, 501.875pt x 301.125pt>
+<../Figures/Figure12/Figure12_a.pdf, id=645, 501.875pt x 301.125pt>
 File: ../Figures/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_a.pdf>
 Package pdftex.def Info: ../Figures/Figure12/Figure12_a.pdf used on input line 
-666.
+643.
 (pdftex.def)             Requested size: 145.96494pt x 87.58131pt.
 
-<../Figures/Figure12/Figure12_b.pdf, id=648, 501.875pt x 501.875pt>
+<../Figures/Figure12/Figure12_b.pdf, id=646, 501.875pt x 501.875pt>
 File: ../Figures/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_b.pdf>
 Package pdftex.def Info: ../Figures/Figure12/Figure12_b.pdf used on input line 
-671.
+648.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
-<../Figures/Figure12/Figure12_c.pdf, id=649, 501.875pt x 501.875pt>
+<../Figures/Figure12/Figure12_c.pdf, id=647, 501.875pt x 501.875pt>
 File: ../Figures/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure12/Figure12_c.pdf>
 Package pdftex.def Info: ../Figures/Figure12/Figure12_c.pdf used on input line 
-676.
+653.
 (pdftex.def)             Requested size: 108.11882pt x 108.11543pt.
 
 
 LaTeX Warning: Reference `fig:case9AllResults' on page 16 undefined on input li
-ne 680.
+ne 657.
 
 
 LaTeX Warning: Reference `fig:case9AllResults' on page 16 undefined on input li
-ne 680.
+ne 657.
 
 
 LaTeX Warning: Reference `fig:case9AllResults' on page 16 undefined on input li
-ne 685.
+ne 662.
 
 [16 <../Figures/resultsFigure/isomerizationFails.pdf> <../Figures/resultsFigure
 /contrastWorks.pdf> <../Figures/Figure11/Figure11_c.pdf> <../Figures/Figure10/F
 igure10.pdf>]
 
 LaTeX Warning: Reference `fig:case9AllResults' on page 17 undefined on input li
-ne 691.
+ne 668.
 
 
 LaTeX Warning: Reference `fig:summaryBarGraph' on page 17 undefined on input li
-ne 693.
+ne 670.
 
-<../Figures/Figure13/Figure13_a.pdf, id=721, 501.875pt x 501.875pt>
+<../Figures/Figure13/Figure13_a.pdf, id=720, 501.875pt x 501.875pt>
 File: ../Figures/Figure13/Figure13_a.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_a.pdf>
 Package pdftex.def Info: ../Figures/Figure13/Figure13_a.pdf used on input line 
-700.
+677.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure13/Figure13_b.pdf, id=722, 501.875pt x 501.875pt>
+<../Figures/Figure13/Figure13_b.pdf, id=721, 501.875pt x 501.875pt>
 File: ../Figures/Figure13/Figure13_b.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_b.pdf>
 Package pdftex.def Info: ../Figures/Figure13/Figure13_b.pdf used on input line 
-706.
+683.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
-<../Figures/Figure13/Figure13_c.pdf, id=723, 501.875pt x 501.875pt>
+<../Figures/Figure13/Figure13_c.pdf, id=722, 501.875pt x 501.875pt>
 File: ../Figures/Figure13/Figure13_c.pdf Graphic file (type pdf)
 
 <use ../Figures/Figure13/Figure13_c.pdf>
 Package pdftex.def Info: ../Figures/Figure13/Figure13_c.pdf used on input line 
-712.
+689.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
 
-LaTeX Warning: Reference `fig:SVDBAR' on page 17 undefined on input line 719.
+LaTeX Warning: Reference `fig:SVDBAR' on page 17 undefined on input line 696.
 
 
-LaTeX Warning: Reference `fig:AMABAR' on page 17 undefined on input line 719.
+LaTeX Warning: Reference `fig:AMABAR' on page 17 undefined on input line 696.
 
-[17 <../Figures/Figure11/Figure11_a.pdf> <../Figures/Figure11/Figure11_b.pdf> <
-../Figures/Figure12/Figure12_a.pdf> <../Figures/Figure12/Figure12_b.pdf> <../Fi
-gures/Figure12/Figure12_c.pdf>] (./draft2.bbl [18 <../Figures/Figure13/Figure13
-_a.pdf> <../Figures/Figure13/Figure13_b.pdf> <../Figures/Figure13/Figure13_c.pd
-f>]
+[17 <../Figures/Figure12/Figure12_a.pdf> <../Figures/Figure12/Figure12_b.pdf> <
+../Figures/Figure12/Figure12_c.pdf>] (./draft2.bbl
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 28.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
+) [18 <../Figures/Figure13/Figure13_a.pdf> <../Figures/Figure13/Figure13_b.pdf>
+ <../Figures/Figure13/Figure13_c.pdf>]
 Underfull \hbox (badness 1377) in paragraph at lines 475--494
 []\OT1/ptm/m/n/10 D'Zmura, M., & Iver-son, G.  (1994).  Color con-stancy . iii.
  gen-eral lin-ear re-cov-ery of spec-tral de-scrip-tions for lights
@@ -988,59 +957,74 @@ Underfull \hbox (badness 10000) in paragraph at lines 824--842
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
-[20])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 729.
- [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 729.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 706.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 706.
  (./draft2.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 729.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 729.
-Package rerunfilecheck Info: File `draft2.out' has not changed.
-(rerunfilecheck)             Checksum: 0702D8F898DFF10479FC833E7430E0DC;1096.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 706.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 706.
 
+
+Package rerunfilecheck Warning: File `draft2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `draft2.out':
+(rerunfilecheck)             Before: 0702D8F898DFF10479FC833E7430E0DC;1096
+(rerunfilecheck)             After:  40E379B930075224817D5C46C5A3A093;1096.
 
 LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 729.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 706.
  ) 
 Here is how much of TeX's memory you used:
- 8378 strings out of 493089
- 131899 string characters out of 6134842
+ 8369 strings out of 493089
+ 131576 string characters out of 6134842
  239478 words of memory out of 5000000
- 11555 multiletter control sequences out of 15000+600000
+ 11547 multiletter control sequences out of 15000+600000
  37754 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,14n,40p,2011b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive
-/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/h
-elvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic
-/uhvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.p
-fb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft2.pdf (21 pages, 12760779 bytes).
+pdfTeX warning (dest): name{figure.caption.27} has been referenced but does n
+ot exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.32} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.29} has been referenced but does not exist
+, replaced by a fixed one
+
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
+015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/u
+rw/helvetic/uhvbo8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/hel
+vetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/u
+hvro8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on draft2.pdf (20 pages, 12601868 bytes).
 PDF statistics:
- 994 PDF objects out of 1000 (max. 8388607)
- 772 compressed objects within 8 object streams
- 106 named destinations out of 1000 (max. 500000)
- 386 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 974 PDF objects out of 1000 (max. 8388607)
+ 761 compressed objects within 8 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 376 words of extra memory for PDF output out of 10000 (max. 10000000)
 

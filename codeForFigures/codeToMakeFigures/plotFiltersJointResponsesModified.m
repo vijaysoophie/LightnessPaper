@@ -68,7 +68,7 @@ for t = 1:size(fPairs,1)
         if bPLOTellipse
             h(c) = plotEllipse(MU(ctg2plt(c),:),COV(:,:,ctg2plt(c)),90,fPairs(t,:),2,colors(ctg2plt(c),:));
             legendIndicator(c) = h(c);
-            legendName{c} = num2str(X(c),4);
+            legendName{c} = num2str(X(c),2);
         end
         % SCATTER PLOT RESPONSES
         if bPltRsp, 
@@ -106,7 +106,7 @@ end
 set(gca,'FontSize',22)
 xlabel(['RF' num2str(fPairs(t,1)) ' response'],'FontSize',26);
 ylabel(['RF' num2str(fPairs(t,2)) ' response'],'FontSize',26);
-legend(legendIndicator,legendName,'Location','southwest');
+legend(legendIndicator,legendName,'Location','southwest','FontSize',18);
 
 % try   legend(h,legendLabel('Y = ', X(ctg2plt),1,4),'Location','NorthEast');
 % catch legend(legendLabel('X=',X(ctg2plt),1,4),'Location','NorthEast');

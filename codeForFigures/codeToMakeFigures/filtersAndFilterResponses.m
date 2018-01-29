@@ -80,7 +80,7 @@ plotFiltersJointResponsesModified(1,[1,2],case10Output.AMA.X,case10Output.AMA.s,
 clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case12.mat')
 plotFiltersJointResponsesModified(1,[1,2],case12Output.AMA.X,case12Output.AMA.s,case12Output.AMA.f,case12Output.AMA.ctgInd,[],[],[],[1:10]);
-% save2pdf('filterResponse/case12FiltersResponseNoLegend.pdf',gcf,600);
+% save2pdf('/Users/vijaysingh_local/Documents/LightnessPaper/codeForFigures/codeToMakeFigures/filterResponse/case12FiltersResponseNoLegend.pdf',gcf,600);
 %% Plot SVD Filter Response
 % Load SVD results struct
 clear;
