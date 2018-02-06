@@ -106,7 +106,7 @@ save2pdf('filterResponse/case9FiltersResponseSVD.pdf',gcf,600);
 
 %% PLOT AMA first two Filters 
 clear;
-load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9.mat')
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9_AMAIsomerization.mat')
 plotFiltersColor2D(case9Output.AMA.f(:,1:2),[],[],[],1);
 save2pdf('filters/case9AMA.pdf',gcf,600);
 
@@ -115,6 +115,12 @@ clear;
 load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case10.mat')
 plotFiltersColor2D(case10Output.AMA.f(:,1:2),[],[],[],1);
 save2pdf('filters/case10AMA.pdf',gcf,600);
+
+%%
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case11_AMAIsomerization.mat')
+plotFiltersColor2D(case11Output.AMA.f(:,1:2),[],[],[],1);
+save2pdf('filters/case11AMA.pdf',gcf,600);
 
 %%
 clear;
