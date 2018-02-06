@@ -16,7 +16,7 @@
 \begin{document}
 
 \title{Luminance constancy under fixed geometry}
-\abstract{The light that reflects off an object surface and is captured by our eyes varies significantly with its context. But, the human visual system has the ability to stably perceive the object's color invariant of the context variations. The mechanism of this behaviorally significant invariance detection ability remains largely unknown. To understand the computational principles that lead to such invariant perception, we study the perception of object luminance under spectral variations in 3D scenes. Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the perceived luminance of an object. We have developed a software that generates naturalistic multispectral images of 3D scenes with precise control over the geometrical and spectral properties of the constituents that make a scene. We label these images with the luminance of a specific object in the scene. Next, we simulate the response of the retinal cones to these multispectral images using an accurate model of the early visual system.  Using supervised learning methods on these labeled cone response, we identify the computations that lead to accurate luminance estimation. We show that if only either target, or background, or illumination spectra are allowed to vary, the standard luminance can be estimated through simple transformations of the cone responses. When all the spectra vary simultaneously, while it is not easy to recover the luminance through simple transformations, a decoding scheme that compares the light from the target and the surround, and properly adds the response of the L,M and S cones can recover the luminance within about 15\% RMSE.}
+\abstract{The light that reflects off an object surface and is captured by our eyes varies significantly with its context. But, the human visual system has the ability to stably perceive the object's color invariant of the context variations. The mechanism of this behaviorally significant invariance detection ability remains largely unknown. To understand the computational principles that lead to such invariant perception, we study the perception of object luminance under spectral variations in 3D scenes. Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the perceived luminance of an object. We have developed a software that generates naturalistic multispectral images of 3D scenes with precise control over the geometrical and spectral properties of the constituents that make a scene. We label these images with the luminance of a specific object in the scene. Next, we simulate the response of the retinal cones to these multispectral images using an accurate model of the early visual system. We then use supervised learning methods on these labeled cone response to identify the computations that lead to accurate luminance estimation. We show that if only either target, or background, or illumination spectra are allowed to vary, the standard luminance can be estimated through simple transformations of the cone responses. When all the spectra vary simultaneously, while it is not easy to recover the luminance through simple transformations, a decoding scheme that compares the light from the target and the surround, and properly adds the response of the L,M and S cones can recover the luminance within about 15\% RMSE.}
 
 \author{Singh}{Vijay}
  {Computational Neuroscience Initiative}
@@ -37,7 +37,7 @@ Thus, to produce a stable perceptual representation of an object's surface refle
 The ability of a visual system to extract such a stable representation is called color constancy. Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eyes to produce percepts well-correlated with object surface reflectance.
 
-There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover a descriptor correlated with object surface reflectance (e.g. \citeNP{LandRetinex}) or explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., \citeNP{LandRetinex,Buchsbaum80,MaloneyWandell86}).
+There is a considerable literature on computational color constancy. Seminal work considered a reduced scene model in which flat matte surfaces were illuminated by a single spatially diffuse illuminant and explored algorithms that could either recover a descriptor correlated with object surface reflectance (e.g. \citeNP{LandRetinex}) or produce explicit estimates of object surface reflectance and/or illuminant spectral power distribution (e.g., \citeNP{LandRetinex,Buchsbaum80,MaloneyWandell86}).
 An important insight of this line of research was that, to account for variation in illumination, it was necessary to consider the light reflected from the entire scene. That is, although good constancy cannot be achieved in the face of illuminant variation if one considers only the light reflected from a single target object, when one considers the entire image it is possible to use the joint variation in light reflected from many objects to obtain (either implicitly or explicitly) an estimate of the illuminant common across the objects, and in turn to use this estimate to produce a stabilized representation of object color.
 At the same time, this processing introduces an additional dependence.  Although the reflectance of the objects surrounding an object of interest has little direct effect on the light reflected from the object of interest, variation in the reflectance of the surrounding objects can have a large effect on the output of constancy algorithms that process the entire image \cite{BrainardWandellRetinex}.
 Thus, a key aspect evaluating computational constancy algorithms is not only to ask about target object color stability with respect to variation in illumination, but also to ask about target object color stability with respect to the surface reflectance of other objects in the scene.
@@ -58,10 +58,12 @@ Subsequent computational constancy work sought to generalize both the image form
         \label{fig:introExampleFigure}
     \end{subfigure}
     \label{introFigure}
-    \caption{(a) {\bf Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda,\vec{x})$, and the illumination spectrum of the light source, $E(\lambda,\vec{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose, as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf Luminance Constancy Under Spectral Variations:} In this paper we consider the special case of luminance constancy. Fig.~\ref{fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance (indicated on the left). Within each row, the surface reflectance of the spheres has the same luminance, when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the luminance of the spheres generally decreases as we move down the columns. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row.  Within each column, this relative surface reflectance is held fixed. For illustration, we have kept the light source and the background objects fixed across the panels. See Fig.~\ref{fig:studiedCases} for images with such variations. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.}
+    \caption{(a) {\bf Color Constancy:} The light reflected from an object to our eyes depends both on the surface reflectance of the object, $R(\lambda,\vec{x})$, and the illumination spectrum of the light source, $E(\lambda,\vec{x})$. Additionally, it depends on geometric factors, such as the object's shape and pose, as well as the position of the observer. The human visual system is able to account for, at least partially, variations in the reflected light due to such extrinsic factors, and produce a percept of object color that is relatively stable with respect to such variations. Such invariant color perception is called color constancy. (b) {\bf Luminance Constancy Under Spectral Variations:} In this paper we consider the special case of luminance constancy. Fig.~\ref{fig:introExampleFigure} shows images of an object (the sphere in the center of each image) at three levels of object luminance (indicated on the left). Within each row, the surface reflectance of the spheres has the same luminance when illuminated by a standard reference illuminant, CIE D65. The three rows differ in this value, as can be seen by the fact that the luminance of the spheres generally decreases as we move down the columns. Within each row, the relative surface reflectance of the spheres varies, as can be seen by the variation in color appearance across the each row.  Within each column, this relative surface reflectance is held fixed. For illustration, we have kept the light source and the background objects fixed across the panels. See Fig.~\ref{fig:studiedCases} for images with such variations. In this paper, we seek to identify computations that accurately estimate object luminance across variations in relative surface reflectance, variations in illumination, and variation in the reflectance of other objects in the scene.}
  \end{figure}
 
-The computational work reviewed above is based on formulating an explicit model of the image formation process and the statistical properties of natural images, and leveraging these formulations to obtain an appropriate ``inverse optics" algorithm.  An alternative approach, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors.  Along these lines, Barron \cite{barron2015convolutional} recently developed a color balancing algorithm based on training a neural network to detect a uniform illuminant in an image by matching image templates in the chromaticity space. The use of supervised learning to understand human perceptual capabilities has enjoyed success in domains outside of color vision. Geisler and colleagues, for example, have developed a technique they refer to as accuracy maximization analysis (AMA, \citeNP{geisler2009optimal}), which learns linear filters whose output carries information that is optimized for particular perceptual tasks. This technique has provided computations that efficiently estimate speed \cite{burge2015optimal}, focus \cite{burge2011optimal} and disparity \cite{burge2014optimal} from image patches taken from natural scenes, and that in addition provide excellent models of human's ability to make corresponding estimates from the same stimuli.  In this paper, we apply AMA, as well as comparison supervised learning algorithms to a special case of the color constancy problem (luminance constancy) and evaluate how well it performs for naturalistic image input. 
+The computational work reviewed above is based on formulating an explicit model of the image formation process and the statistical properties of natural images, and leveraging these formulations to obtain an appropriate ``inverse optics" algorithm.  An alternative approach, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors.  Along these lines, Barron \cite{barron2015convolutional} recently developed a color balancing algorithm based on training a neural network to detect a uniform illuminant in an image by matching image templates in the chromaticity space. The use of supervised learning to understand human perceptual capabilities has enjoyed success in domains outside of color vision. Geisler and colleagues, for example, have developed a technique they refer to as accuracy maximization analysis (AMA, \citeNP{geisler2009optimal}), which learns linear filters whose output carries information that is optimized for particular perceptual tasks. This technique has provided computations that efficiently estimate speed \cite{burge2015optimal}, focus \cite{burge2011optimal} and disparity \cite{burge2014optimal} 
+% JOHANNES ARE THERE ANY OTHER PAPERS YOU WOULD LIKE TO CITE
+from image patches taken from natural scenes, and that in addition provide excellent models of human's ability to make corresponding estimates from the same stimuli.  In this paper, we apply AMA, as well as comparison supervised learning algorithms to a special case of the color constancy problem (luminance constancy) and evaluate how well it performs for naturalistic image input. 
 
 A difficulty in using machine learning approaches for color constancy is that these approaches require large training sets with images of scenes containing objects with known surface reflectances illuminated with known illuminations.  Such data sets are not readily available. Although there are several databases of calibrated color natural images, these do not generally provide the corresponding information about surface and illuminant ground truth \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. 
 Generating databases with both the images and the ground truth scene information is not trivial. One approach has been to acquire images where objects of known reflectance have been inserted into the scene, and to use the image of these reference objects to provide an estimate of the illumination impinging at various scene locations \cite{NascimentoFoster2016}.  This is somewhat painstaking, however, and in any case provides information about the illumination only at a small number of selected locations, so that generalizing across the image requires strong assumptions. Some progress is being made on characterizing how illumination varies over space in natural scenes \cite{mury2007spatial}, which in the longer run may guide how information from reference objects can be used to provide reasonable estimates.  Another approach is to acquire images of posed scenes, where the surface reflectances of objects are measured individually for many of the objects in the scene \cite{funt1988color,ciurea2003large, davidPennHyperspectral}. 
@@ -86,7 +88,7 @@ These data sets have been useful for evaluating computational color constancy al
         \caption{Case 4}
         \label{fig:allSpectraVarying}
     \end{subfigure}    
-    \caption{{\bf Three types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref{fig:introExampleFigure}). (a) Case 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in \ref{fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the three panels of this figure, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
+    \caption{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref{fig:introExampleFigure}). (a) Case 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in \ref{fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the four panels (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
 \label{fig:studiedCases}
 \end{figure}
 
@@ -103,11 +105,11 @@ Even within the special case of luminance constancy, there are many scene manipu
 
 We show that for cases that have spectral variation only either in target object surface reflectance or background object surface reflectance or the power spectrum of the light sources, luminance can be estimated by simple transformations of the cone responses. For variations only in target object reflectance spectra (case 1) or just the target and background objects reflectance spectra (case 2), object luminance can be recovered directly from the light reflected off the target object. For case 3, where both the target object reflectance and light source spectra vary, object luminance can be recovered from the contrast between the target and the background. When all the spectral features in the scene are allowed to change (case 4), the standard luminance can not be recovered simply from the cone response or the contrast. We have used AMA with a Bayesian estimator to estimate standard luminance of the target object. Using this method, we can recover the luminance of the target object with $\sim 15\%$ relative root mean square error.  Our analysis shows that the optimal receptive fields for estimating the luminance of the target object show a center surround structure, supporting a comparison between the light coming from the target object and its surround. Additionally, luminance estimation involves a weighted sum of the L, M and S cone responses where the receptive fields give more weight to the L and M cone responses compared to S cone responses. Comparing the performance of the RFs learnt using  one case on the cone response of other cases shows that the receptive field of the complex cases perform well on images of simpler cases. We discuss the implications of such receptive fields on luminance constancy. 
 
-The rest of this paper is organized as follows. In the \nameref{Methods} section, we describe in detail the process to generate naturalistic labeled images (\nameref{method:VirtualWorld}) using our software pipeline {\rm Virtual world color constancy}, the process to simulate the response of retinal cone photoreceptors to these images using a standard model of the early visual system (\nameref{method:Isetbio}) and the supervised learning method (AMA) used in our analysis (\nameref{method:SupervisedLearning}). In the \nameref{Results} section, we show the estimates and performance of the supervised methods for the three cases mentioned above. We conclude the paper with the implication of our results in the \nameref{Discussion} section.  
+The rest of this paper is organized as follows. In the \nameref{Methods} section, we describe in detail the process to generate naturalistic labeled images (\nameref{method:VirtualWorld}) using our software pipeline {\rm Virtual world color constancy}, the process to simulate the response of retinal cone photoreceptors to these images using a standard model of the early visual system (\nameref{method:Isetbio}) and the supervised learning method (AMA) used in our analysis (\nameref{method:SupervisedLearning}). In the \nameref{Results} section, we show the estimates and performance of the supervised methods for the four cases mentioned above. We conclude the paper with the implication of our results in the \nameref{Discussion} section.  
 
 \section*{Methods} \label{Methods}
 \subsection{Overview}
-There are four key parts to our methods.  The first is how we generate a labelled set of training data for our supervised learning algorithms.  The second is how we model the transformations applied by the early visual system to generate modeled responses of the cone photoreceptor mosaic.  The third is the details of the supervised learning method (AMA) we apply to the labelled training data.  And the fourth is how we evaluate the performance of the algorithms.  We describe each of these in the sections below.
+There are four key parts to our methods.  The first is how we generate a labelled set of training data for our supervised learning algorithms.  The second is how we model the transformations applied by the early visual system to generate modeled responses of the cone photoreceptor mosaic.  The third is the details of the supervised learning method (AMA) that we apply to the labelled training data.  And the fourth is how we evaluate the performance of the algorithm.  We describe each of these in the sections below.
 
 \subsection{Labelled image database} \label{method:VirtualWorld}
 
@@ -119,15 +121,13 @@ There are four key parts to our methods.  The first is how we generate a labelle
         \caption{Library }
         \label{fig:baseSceneLibrary}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_b.png}
         \caption{Mill}
         \label{fig:baseSceneMill}
     \end{subfigure}    
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
+    ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_c.png}
         \caption{Table-Chairs}
@@ -167,15 +167,13 @@ To overcome this  challenge, we have developed an image rendering software pipel
         \caption{Big-ball}
         \label{fig:libraryWithBigBall}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~ 
 \begin{subfigure}[b]{0.14 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_b.png}
         \caption{Small-ball}
         \label{fig:libraryWithSmallBall}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~ 
     \begin{subfigure}[b]{0.14 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_c.png}
         \caption{Barrel}
@@ -201,7 +199,7 @@ To overcome this  challenge, we have developed an image rendering software pipel
 \caption{{\bf Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
 \end{figure}
 
-The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created de novo using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall spatial scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
+The process of generating an individual virtual scene begins with the selection of a \textit{base scene} (Fig.~\ref{fig:baseScenes}). The base scene is a 3D model that defines a rendering space.  It typically includes the specification of a number of 3D objects and light sources, and is annotated with meta-data that may be used to guide the placement of additional objects and light sources, as well as the specification of camera position. VWCC includes a library of base scenes obtained from materials made available on the Internet under various Creative Commons licenses. We have found that there is sufficient variation in how nominally-standard graphics interchange file formats are used in practice that each base scene obtained from the Internet (which we refer to as \textit{wild scenes}) requires a certain amount of hand editing before it renders properly. We refer to this process, along with adding meta-data about the scene, as \textit{taming} a wild scene. Tame base scenes may also be created {\it de novo} using a 3D modeling software (e.g., \href{https://www.blender.org/}{Blender}).  The overall spatial scale of the base scene may be adjusted under programmatic control or chosen randomly, adding to the available statistical richness. If one chooses to draw entries from the base scene library at random for each virtual scene, the base scene library then provides a simple statistical model of the gross layout of natural scenes. As time progresses, we plan to tame more wild scenes so as to increase the number of entries in the base scene library. Currently the library contains 6 base scenes: Library (Fig.~\ref{fig:baseSceneLibrary}), Mill (Fig.~\ref{fig:baseSceneMill}), Table-Chairs (Fig.~\ref{fig:baseSceneTableChairs}), Indoor plant (Fig.~\ref{fig:baseSceneIndoorPlant}), Checkerboard (Fig.~\ref{fig:baseSceneWarehouse}) and Warehouse (Fig.~\ref{fig:baseSceneCheckerBoard}).
 
 VWCC provides an option for inserting 3D objects and lights sources into the base scene. Fig.~\ref{fig:libraryWithTarget} shows examples of objects inserted into the library base scene. The object shapes may be selected from a VWCC library that, similar to the VWCC library of base scenes, has been tamed from object descriptions made available on the Internet. The light sources may be chosen as point lights, area lights, or as shapes selected from the object library. The position (Fig.~\ref{fig:targetPositionVariation}), size and orientation (Fig.~\ref{fig:targetSizeOrientation})of the inserted objects and lights may be specified programatically or chosen randomly under constraints provided by the base scene meta-data. Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
 
@@ -214,40 +212,35 @@ VWCC provides an option for inserting 3D objects and lights sources into the bas
         \caption{Target spectra}
         \label{fig:targetVariation}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_b.png}
         \caption{Background spectra}
         \label{fig:backGroundVariation}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
+    ~
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_c.png}
         \caption{Illumination spectra}
         \label{fig:illuminationVariation}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_d.png}
         \caption{Target position}
         \label{fig:targetPositionVariation}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_e.png}
         \caption{Target Size/Orientation}
         \label{fig:targetSizeOrientation}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~
     \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Spectral (a-c) and Geometrical (d-e). VWCC provides control over such transformation as illustrated by the columns. (a) The target object surface reflectance varies across the three panels of the column. (b) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (c) The power spectrum of the light sources were assigned randomly in the three panels. (d) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. }\label{fig:VWCCTransformations}
 \end{figure}
 
@@ -257,7 +250,7 @@ In the present work, we insert one target object and one additional light source
 
 We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
 
-For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel. A $51 \times 51$ pixel patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
+For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel. A $51 \times 51$ pixel patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
 
 \subsubsection{Illumination Spectra}
 % Figure 6
@@ -300,7 +293,7 @@ For the images used for the primary results reported in this paper, we used the 
         \caption{sRGB rendition of samples from Fig.~\ref{fig:randomIlluminant}}
         \label{fig:sRGBIlluminant}
     \end{subfigure}
-    \caption{{\bf Generating random illumination spectra:} The illumination spectra are generated by random sampling based on the Granada daylight measurements, assuming a multivariate Gaussian distribution of weights in a 6-dimensional PCA representation. The mean and covariance matrix of the Gaussian are chosen by projecting the dataset along the first six PCA directions and taking the mean and covariance matrix of the resulting basis vector weights. (a) The 2600 spectra from the Granada natural daylight dataset, plotted on a log intensity scale in arbitrary units. (b) Rescaled version of the Granada dataset. Each spectrum is rescaled so that it has a mean value (over wavelength) of one illumination. (c) Randomly samples generated using the rescaled spectra from Fig.~\ref{fig:rescaledGranada}. (d)Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line at 0.9 on the y-axis is for reference. We used the first six eigenvectors in our analysis. (e) CIE xy chromaticity plot of the rescaled dataset (Fig.~\ref{fig:rescaledGranada}) and randomly generated samples from Fig.~\ref{fig:randomIlluminant}. (f) sRGB renditions of the random illuminant samples shown in \ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
+    \caption{{\bf Generating random illumination spectra:} The illumination spectra are generated by random sampling based on the Granada daylight measurements, assuming a multivariate Gaussian distribution of weights in a 6-dimensional PCA representation. The mean and covariance matrix of the Gaussian are chosen by projecting the dataset along the first six PCA directions and taking the mean and covariance matrix of the resulting basis vector weights. (a) The 2600 spectra from the Granada natural daylight dataset, plotted on a log intensity scale in arbitrary units. (b) Rescaled version of the Granada dataset. Each spectrum is rescaled so that it has a mean value (over wavelength) of one illumination. (c) Randomly samples generated using the rescaled spectra from Fig.~\ref{fig:rescaledGranada}. (d)Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line at 0.9 on the y-axis is for reference. We used the eigenvectors corresponding to the first six eigenvalues in our analysis. (e) CIE xy chromaticity plot of the rescaled dataset (in Fig.~\ref{fig:rescaledGranada}) and randomly generated samples from Fig.~\ref{fig:randomIlluminant}. (f) sRGB renditions of the random illuminant samples shown in Fig.~\ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
 \end{figure}
 
 We generate illumination spectra  through random statistical sampling of a dataset of naturally occurring illuminants, the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric}.  These spectra are shown on a log intensity scale in Fig.~\ref{fig:granadaSpectra}, which illustrates that the overall intensity of natural daylights varies over several orders of magnitude, and in normalized format in Fig.~\ref{fig:rescaledGranada}, which illustrates that the relative spectra also vary considerably.  In our procedure, we first approximate the spectra in the dataset using principle component analysis (PCA). We then decompose the spectra in terms of the PCA basis vectors corresponding to the 6 largest PCA eigenvalues. Next, we sample from this low 6 dimensional PCA weight space assuming that the distribution of the basis vector weights is a multivariate gaussian whose mean and covariance matrix match the sample mean and covariance obtained from the daylight dataset. Finallly, we use the sampled weights to reconstruct sampled spectra. This general method for modeling the statistical structure of daylight was introduced by Brainard \& Freeman \cite{BrainardFreeman}. Details of the procedure we used are provided below.
@@ -310,13 +303,13 @@ Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ a
 The rescaled spectra $I_i^s(\lambda)$ were then mean centered for PCA by subtracting out the mean 
 rescaled spectrum, $\bar{I}^{s}(\lambda)$. That mean was obtained
 by taking the sample mean over all rescaled spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
-The resulting mean subtracted dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$
+The resulting mean centered dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$
 was decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
 where the $\hat{{\bf e}}_j^{PCA}$ are the PCA basis vectors obtained using the
 singular value decomposition (SVD) applied to the $I_i^{MC}(\lambda)$ and
 the $w_{ij}$ are the weights obtained by projecting each of $I_i^{MC}(\lambda)$ onto the  $\hat{{\bf e}}_j^{PCA}$ $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$.
 We used the basis vectors corresponding to
-the largest six SVD eigenvalues, so that $\{j \in [16]\}$.
+the largest six SVD eigenvalues, so that $\{j \in [1,6]\}$.
 For the rescaled Granada dataset, these six  eigenvalues account for more than $90\%$ of the variance (Fig.~\ref{fig:granadaEV}).
 These steps
 can be summarized as follows:
@@ -330,7 +323,7 @@ Gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$,
 and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $.
 From these weights, the corresponding spectrum $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right)$ is generated.
 This spectrum can sometimes have values that are less than zero.  In such cases, the weights are discarded and a new draw obtained, until
-the condition $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, for all $\lambda$, is satisifed.
+the condition $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, is satisfied for all $\lambda$.
 The random illuminant spectrum is then given as
 \begin{align}
 \tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
@@ -426,16 +419,14 @@ perception of bruminance. The target reflectance is then given by: $\tilde{R}^{\
         \caption{sRGB rendering of a 3D scene}
         \label{fig:3DScene}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
+    ~ 
     \begin{subfigure}[b]{0.19 \textwidth}   
     \hspace{0.1 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_b.png}
         \caption{Cropped Image}
         \label{fig:croppedImage}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
+    ~ 
     \begin{subfigure}[b]{0.19 \textwidth}
     \hspace{0.1 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_c.png}
@@ -474,20 +465,20 @@ we processed the isomerizations as follows:
 First, we created a representation for each cone class on the full $51 \times 51$ pixel grid, we interpolated the responses of the cones in each class across the grid, using bilinear interpolation separately for each cone class.
 % DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
 This gives us a $51 \times 51$ cone response image for each cone class.
-The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). To model the contrast coding and contrast adaptation, we convert this vector to a contrast representation by subtracting out the mean and then dividing by it (contrast coding), followed by normalizing the vector to have unit length (contrast normalization).
+The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). For case 1 and 3 we used this as the input for the supervised methods. For case 3 and 4, to model the contrast coding and contrast adaptation, we convert this vector to a contrast representation by subtracting out the mean and then dividing by it (contrast coding), followed by normalizing the vector to have unit length (contrast normalization).
 The cone-response vectors corresponding to the N images for each case are concatenated column-wise to form a contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
 
 \subsection{Supervised Learning methods} \label{method:SupervisedLearning}
 We have two supervised learning methods in our work: Linear regression and Accuracy maximization analysis. While, our main focus is on AMA, linear regression provides a baseline performance measure.
 
-\subsubsection*{Linear Regression} For linear regression, we solve the equation $A_{1\times3}*C_{3\times N} = Y_{1\times N}$ for the regression parameters $A_{1\times3}$. Here, $C_{3\times N}$ is a matrix containing the contrast normalized L, M and S cone responses of the central patch of each image, extracted from $C_{7803\times N}$.  The columns corresponds to the N images in the dataset. The rows correspond to the contrast normalized L, M and S cones responses averaged over a 3$\times$3 pixel central region of the image containing the target object.  The (unknown) regression parameters $A$ are obtained using Matlab linear regression function. This model provides a baseline performance measure, which does not take the context in which the target image is seen into account.
+\subsubsection*{Linear Regression} For linear regression, we solve the equation $A_{1\times3}*C_{3\times N} = Y_{1\times N}$ for the regression parameters $A_{1\times3}$. Here, $C_{3\times N}$ is a matrix containing either the L, M and S cone responses (for case 1 and 2) or contrast normalized responses (for case 3 and 4) of the central patch of each image, extracted from $C_{7803\times N}$.  The columns corresponds to the N images in the dataset. The rows correspond to the contrast normalized L, M and S cones responses averaged over a 3$\times$3 pixel central region of the image containing the target object.  The (unknown) regression parameters $A$ are obtained using Matlab linear regression function. This model provides a baseline performance measure, which does not take the context in which the target image is seen into account.
 
 \subsubsection*{Accuracy maximization analysis}
 % MAYBE ADD SOME INTRO TEXT THAT SAYS THAT FIRST ONE FINDS THE FILTERS AND THEN PROJECTS ONTO THEM, THEN DOES BAYESIAN DECODING OF THE RESPONSES.  BREAK INTO TWO SUBSECTIONS FOR CLARITY.
 
-AMA \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. Given a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task. The task is implicitly defined in terms of the labels. The optimal filters that are returned by AMA are the filters whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. Once these filters have been identified, a suitable decoding method (in this case a Bayesian decoding scheme) is used to estimate the label on a test set.
+AMA \cite{geisler2009optimal,burge2017accuracy} is a Bayesian ideal observer model for task specific dimensionality reduction. When provided with a labeled training set, a noisy response model, and a cost function, AMA returns a set of linear receptive fields that are optimal for performing a task. The task is implicitly defined in terms of the labels. The optimal filters that are returned by AMA are the filters whose noisy response to the stimuli, as given by the specified response model, minimizes the cost function over the training set. Once these filters have been identified, a suitable decoding method (in this case a Bayesian decoding scheme) is used to estimate the label on a test set.
 
-{\bf Learning AMA Filters:} Let us assume that there are $N_{\nu}$ possible values of the labels. In our analysis, it means that the luminance level of the target object in an image can take one of the possible $N_{\nu}$ values ($\{Y_k: k\in[1,N_{\nu}] \}$). We represent the $l$'th image corresponding to the $k$'th category of the labels as $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the label ($Y_k$) corresponding to the stimuli $s_{kl}$ as $\hat{Y}_{kl}$. Given this estimate, one can define a cost function $\mathcal{C}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and a mean cost $\bar{\mathcal{C}}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
+{\bf Learning AMA Filters:} Let us assume that there are $N_{\nu}$ possible values of the labels. In our analysis, it means that the luminance level of the target object in an image can take one of the possible $N_{\nu}$ values ($\{Y_k: k\in[1,N_{\nu}] \}$). We represent the $l$'th image corresponding to the $k$'th label as $s_{kl}$. Let us assume that there is a set of linear filters {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Let's say we have a decoder $g$ that takes ${\textbf{\textit R}}_{kl}$ as the input and returns an estimate of the label ($Y_k$) corresponding to the stimuli $s_{kl}$ as $\hat{Y}_{kl}$. Given this estimate, one can define a cost function $\mathcal{C}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to specific response ${\textbf{\textit R}}_{kl}$ and an avearge cost $\bar{\mathcal{C}}_{kl}(Y_{kl},\hat{Y}_{kl})$ corresponding to the average response $r_{kl} = \langle{\textbf{\textit R}}_{kl}\rangle$. 
 
 Accuracy maximization analysis (AMA) finds the set of optimal filters ${\textbf{\textit f}}^{\rm opt}$ that minimize the average cost function over the entire dataset $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$. Here $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
 \begin{align}
@@ -538,20 +529,8 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 %  3) On to Case 2 -- here the question is, do we keep varying target color, or do we fix target color and vary illumination?  In any case, this isn't too hard a case if the other objects remain fixed, because then contrast coding basically normalizes out a lot of the variation, and it's only the spectral variation that might screw things up.  But, that's why we run case 3.
 %  4) Do we run a case where the relative spectrum of the illuminant stays fixed and we only vary intensity?
 %  4) On to Case 3 --
-\section{Results} \label{Results}
-\begin{itemize}
-\item Show the minimal model (to describe the sources and magnitude of error). This can go in supplement.
-\begin{itemize}  
-\item rendering error
-\item isomerization error
-\item ama error
-\end{itemize}
-\item Case 1. Only the target object color changes. AMA on isomerization
-\item Case 2. Background color changes too, AMA on isomerization. (This is not giving good results. The filters are giving weights to the background which they should not. Maybe more samples would help.)
-\item Case 3. Background fixed, illuminant changes, AMA on isomerization fails, but the contrast version works
-\item Case 4. Change all three and show that both ismerization fails, constrast does better, but not perfectly better
-\end{itemize}
 
+\section{Results} \label{Results}
 \subsection{Case 1: Target luminance can be estimated directly from the photoreceptor response}
 We used AMA to learn a set of linear receptive fields that are optimal for estimating target object luminance using stimuli in the training set of case 1. 
 Fig.~\ref{fig:case1RFResponse} shows the projection of the photoreceptor response along the first two AMA receptive fields. 
@@ -565,9 +544,7 @@ Each cloud in Fig.~\ref{fig:case1RFResponse} corresponds to the photoreceptor re
 The variation within the cloud, between images that have the target object at same luminance values, results due to the difference in the relative shape of the target object reflectance spectra (difference in hue and saturation). 
 The resulting variation dominates any variation coming from the noise in photoreceptor response or the noisy rendering of the images by the software.
 Fig.~\ref{fig:case0RFResponse} shows the projection of photoreceptor response corresponding to 1000 images where, in addition to the illumination and background spectra, we also fixed the relative shape of the target object surface reflectance. 
-Any variation resulting from the poisson nature of the photoreceptor response or due the image rendering software is negligible, and can be ignored.
-
-(DO WE WANT TO GET AN ESTIMATE OF THE CLOUD SIZE FROM THE ALLOWED VARIATION IN THE SPECTRAL SHAPE?)
+The variation resulting from the poisson nature of the photoreceptor response or due the image rendering software is small and can be ignored.
 
 %% Figure 9
 \begin{figure}
@@ -596,32 +573,33 @@ Any variation resulting from the poisson nature of the photoreceptor response or
 \label{fig:sourcesOfNoise}
 \end{figure}
 
-\subsection{Case 1a: This will be the case of background variation with fixed luminance}
+\subsection{Case 2}
+Fig.~{\ref{fig:case2RFResponse}} shows the projection of the photoreceptor response for case 2 along the first two AMA receptive fields. The naive expectation would be that variations in background objects surface reflectance would have minimal effect on the isomerizations of the cones corresponding to the target object. Hence, the luminance can be estimated directly from the isomerization of these cones. But projection of the cone response along the AMA RFs shows that the background variation has significant effect on the cone isomerizations. The response clouds at different luminance levels along the first two receptive fields do not separate as well compared to case 1. The overlap is lower if the projection is considered in subspaces that have more AMA receptive fields. Fig.~\ref{fig:ErrorVsNFilters} shows the relative error of luminance estimate as a function of the number of AMA receptive fields used for luminance estimation. As expected, the relative error decreases with the number of receptive fields and converges to the minimum value around 8 receptive fields. Fig.~\ref{fig:case2Estimates} shows the luminance estimates for the learning methods used in this work. The mean estimates fall along the diagonal x=y line. The variance in the estimates increases with assigned luminance. This is because the isomerization noise is directly proportional to the light reflected from the target object and is higher at higher values of the target object luminance.
 
 %% Figure Case 2
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.3	 \textwidth}   
         \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.pdf}
-        \caption{RFs learnt using photoreceptor response}
-        \label{fig:isomerizationFails}
+        \caption{RF response Case 2}
+        \label{fig:case2RFResponse}
     \end{subfigure}
         \begin{subfigure}[b]{0.3 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.pdf}
-        \caption{RFs learnt using contrast signal}
-        \label{fig:constrastWorks}
+        \caption{Luminance Estimates}
+        \label{fig:case2Estimates}
     \end{subfigure}
             \begin{subfigure}[b]{0.3 \textwidth}
         \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.pdf}
-        \caption{Luminance estimates}
-        \label{fig:case10Results}
+        \caption{Error v/s number of RFs}
+        \label{fig:ErrorVsNFilters}
     \end{subfigure}
-    \caption{{\bf Case 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
-\label{fig:importanceOfConstrast}
+    \caption{{\bf Case 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. (c) Relative error as a function of number of AMA receptive fields used for luminance estimation. The relative error reduces if more receptive fields are used for estimation.}
+\label{fig:case2Results}
 \end{figure}
 
-\subsection{Case 2: Luminance can be estimated from contrast between target and background}
-The AMA receptive fields learnt using the photoreceptor response does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}) for images of case 2. 
+\subsection{Case 3: Luminance can be estimated from contrast between target and background}
+For images of case 2, the AMA receptive fields learnt using the photoreceptor response does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}). 
 This is because, since the illuminant spectra varies in this case, the photoreceptor response is not directly proportional to the target object surface anymore. 
 But, since the background surfaces are fixed in this case, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target object luminance. 
 This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
@@ -652,9 +630,7 @@ The predictions are much better compared to that of a linear model that only con
 \label{fig:importanceOfConstrast}
 \end{figure}
 
-While, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}), the stimuli are better separated if the projection is considered within a subspace that has more receptive fields. 
-Fig.~\ref{fig:RMSEvsNFilters} shows the relative error (Methods) of estimates as a function of the of the number of receptive fields considered for luminance estimation for the cases considered in this work. 
-As expected, relative error reduces with increasing number of receptive fields. 
+Again, similar to case 2, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}). But, the stimuli are better separated if the projection is considered within a subspace that has more receptive fields (Fig.~\ref{fig:ErrorVsNFilters}).
 
 %%% Figure 11
 %\begin{figure}
@@ -684,9 +660,9 @@ As expected, relative error reduces with increasing number of receptive fields.
 \end{figure}
 
 Fig.~\ref{fig:case12AllResults} shows the AMA receptive field response and the luminance estimates for the images in case 3. 
-We have used the first 8 receptive fields to estimate the luminance in this case (see Fig.\ref{fig:RMSEvsNFilters}). 
+We have used the first 8 receptive fields to estimate the luminance in this case (see Fig.\ref{fig:ErrorVsNFilters}). 
 The AMA receptive fields do an excellent job of predicting the target object luminance. The estimates are unbiased with the mean estimates lying close the diagonal unit slope line (Fig.~\ref{fig:case12Results}). 
-The relative error of estimation is ~17\%, which low compared to that of the naive model (~42\%) or the linear model on center pixel (~21\%).
+The relative error of estimation is ~15\%, which low compared to that of the naive model (~42\%) or the linear model on center pixel (~21\%).
 
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
 We used two supervised learning methods to learn the optimal receptive fields (RFs) for luminance estimation for the three types of variations in the spectral properties of the scene as discuss earlier. Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the optimal RFs, the linear response of these RFs to the training dataset, and the estimates of the luminance of the target object in the test dataset for the three cases. We show the first two RFs obtained using the SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
@@ -726,16 +702,10 @@ Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the targe
  \label{fig:barGraphs}
 \end{figure}
 
-\subsection{Luminance can be well estimated using a bayesian decoder with gaussian priors.}
-We estimate the luminance of the target object in the images using the receptive field response of the corresponding contrast normalized cone responses. Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(c) shows the response of the first two RFs to the stimuli set for the three cases. For the training images at each luminance level, we approximate the receptive response of the contrast normalized cone responses by a multivariate gaussian. The target object luminance of an image in the test set is estimated using Bayesian decoder. We measure the estimation performance in terms of the relative root mean square ($E_{\rm rel}$) defined as:
 \begin{align}
 E_{\rm rel} = \sqrt{\left\langle\left(\frac{\hat{Y}-Y}{Y}\right)^2\right\rangle},
 \end{align}
 where $\hat{Y}$ corresponds to the estimated luminance and $Y$ to the assigned luminance. We use the first 8 RFs for luminance estimation ( see Fig.~\ref{fig:RMSEvsNFilters}).
-
-Fig.~ (\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(d) shows the luminance estimates and the RMSE for the three methods (Linear regression on center pixel, AMA and SVD). Additionally we show the estimate of a naive model that reports the mean value of the luminance labels used in the dataset. The diagonal x=y line is shown for reference. The shaded regions show $E_{\rm rel}$ for each method.
-
-(Fig.~\ref{fig:summaryBarGraph}) compares the $E_{\rm rel}$ for the different methods for the three cases. Both AMA and SVD methods, which use the information from the entire image estimate the luminance better compared to linear regression which only uses the information from the center pixel. This shows the importance of context information for luminance estimation.
 
 \section{Discussion} \label{Discussion}
 In this paper, we studied luminance constancy using naturalistic images. We generated a dataset of multispectral images labeled by the reflectance of a target object in each image. These images were generated by a software pipeline developed for this work, that we call Virtual world color constancy (VWCC). This software creates 3D scene descriptors based on programatic information provided by the user. Such information include the shape of the 3D rendering space, the shape, size, position and material properties of the objects and light sources in the scene, the location of the observer, etc. We assign these geometrical and spectral properties (the power spectrum of the light sources and the surface reflectance of the objects) using random sampling from available databases of naturally occurring objects, light sources and surface reflectances. Thus, we generate a large database of labeled hyper-spectral images, with naturalistic scene properties, but with the information about the surface reflectance and illumination at every pixel in the image. Such databases are near to be impossible to generate using other means as it is very hard to measure the surface reflectance of every object and the illumination at every point, even for well controlled scenes in a lab.
