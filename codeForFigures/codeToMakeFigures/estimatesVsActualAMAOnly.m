@@ -13,16 +13,17 @@ if (~exist('estimatesVsActualAMA','dir'))
 end
 
 % Choose a case
-for caseNo = [12]
+for caseNo = [9]
 
 % load the files containing the estimates
-if (caseNo==9)
+if (caseNo==9 || caseNo==11)
     loadTheLinearFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/linear/Case',num2str(caseNo),'_AMAIsomerization.mat']);
+    loadTheAMAFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SGD/case',num2str(caseNo),'_AMAIsomerization.mat']);
 else
     loadTheLinearFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/linear/Case',num2str(caseNo),'.mat']);
+    loadTheAMAFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SGD/case',num2str(caseNo),'.mat']);
 end
-loadTheAMAFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SGD/case',num2str(caseNo),'.mat']);
-loadTheSVDFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SVD/case',num2str(caseNo),'.mat']);
+% loadTheSVDFile = load(['/Users/vijaysingh_local/Dropbox (Personal)/dataForPoster/SVD/case',num2str(caseNo),'.mat']);
 
 % Define the colors to be used for each method
 naiveColor  = 'g';

@@ -19,13 +19,19 @@ end
 
 %% Load AMA results struct
 clear;
-load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9_AMAIsomerization.mat')
-plotFiltersJointResponsesModified(1,[1,2],case9Output.AMA.X,case9Output.AMA.s,case9Output.AMA.f,case9Output.AMA.ctgInd,[],[],[],[1:10])
-% save2pdf('/Users/vijaysingh_local/Documents/LightnessPaper/codeForFigures/codeToMakeFigures/filterResponse/case9FiltersResponse_AMAIsomerization.pdf',gcf,600);
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case11_AMAIsomerization.mat')
+plotFiltersJointResponsesModified(1,[1,2],case11Output.AMA.X,case11Output.AMA.s,case11Output.AMA.f,case11Output.AMA.ctgInd,[],[],[],[1:10])
+% save2pdf('/Users/vijaysingh_local/Documents/LightnessPaper/codeForFigures/codeToMakeFigures/filterResponse/case11FiltersResponse_AMAIsomerization.pdf',gcf,600);
 
 %% Load AMA results struct
 clear;
-load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case10_AMAIsomerization.mat')
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case9_AMAIsomerization.mat')
+plotFiltersJointResponsesModified(1,[1,2],case9Output.AMA.X,case9Output.AMA.s,case9Output.AMA.f,case9Output.AMA.ctgInd,[],[],[],[1:10])
+% Case11_AMAIsomerization
+
+%% Load AMA results struct
+clear;
+load('/Users/vijaysingh_local/Desktop/codesAndData/Color/AMAOutputs/SGD/Case10_contrast.mat')
 plotFiltersJointResponsesModified(1,[1,2],case10Output.AMA.X,case10Output.AMA.s,case10Output.AMA.f,case10Output.AMA.ctgInd,[],[],[],[1:10])
 % save2pdf('/Users/vijaysingh_local/Documents/LightnessPaper/codeForFigures/codeToMakeFigures/filterResponse/case10FiltersResponse_AMAIsomerization.pdf',gcf,600);
 

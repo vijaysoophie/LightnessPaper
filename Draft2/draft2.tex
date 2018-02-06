@@ -598,17 +598,7 @@ Any variation resulting from the poisson nature of the photoreceptor response or
 
 \subsection{Case 1a: This will be the case of background variation with fixed luminance}
 
-\subsection{Case 2: Luminance can be estimated from contrast between target and background}
-The AMA receptive fields learnt using the photoreceptor response does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}) for images of case 2. 
-This is because, since the illuminant spectra varies in this case, the photoreceptor response is not directly proportional to the target object surface anymore. 
-But, since the background surfaces are fixed in this case, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target object luminance. 
-This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
-Thus, the AMA receptive fields learnt on the contrast normalized photoreceptor response (see Methods) can be used to predicts the target object luminance (Fig.~\ref{fig:constrastWorks}). 
-Fig.~\ref{fig:case10Results} shows the estimated target object luminance v/s the assigned luminance for the images in case 2 obtained using the contrast normalized representation. 
-AMA receptive fields provide excellent predictions of the target object luminance. 
-The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
-
-%% Figure Isomerization Fails
+%% Figure Case 2
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.3	 \textwidth}   
@@ -630,20 +620,52 @@ The predictions are much better compared to that of a linear model that only con
 \label{fig:importanceOfConstrast}
 \end{figure}
 
+\subsection{Case 2: Luminance can be estimated from contrast between target and background}
+The AMA receptive fields learnt using the photoreceptor response does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}) for images of case 2. 
+This is because, since the illuminant spectra varies in this case, the photoreceptor response is not directly proportional to the target object surface anymore. 
+But, since the background surfaces are fixed in this case, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target object luminance. 
+This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
+Thus, the AMA receptive fields learnt on the contrast normalized photoreceptor response (see Methods) can be used to predicts the target object luminance (Fig.~\ref{fig:constrastWorks}). 
+Fig.~\ref{fig:case10Results} shows the estimated target object luminance v/s the assigned luminance for the images in case 2 obtained using the contrast normalized representation. 
+AMA receptive fields provide excellent predictions of the target object luminance. 
+The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
+
+%% Figure Isomerization Fails
+\begin{figure}
+\centering
+    \begin{subfigure}[b]{0.3	 \textwidth}   
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.pdf}
+        \caption{RFs learnt using photoreceptor response}
+        \label{fig:isomerizationFails}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.3 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.pdf}
+        \caption{RFs learnt using contrast signal}
+        \label{fig:constrastWorks}
+    \end{subfigure}
+            \begin{subfigure}[b]{0.3 \textwidth}
+        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.pdf}
+        \caption{Luminance estimates}
+        \label{fig:case10Results}
+    \end{subfigure}
+    \caption{{\bf Case 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
+\label{fig:importanceOfConstrast}
+\end{figure}
+
 While, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}), the stimuli are better separated if the projection is considered within a subspace that has more receptive fields. 
 Fig.~\ref{fig:RMSEvsNFilters} shows the relative error (Methods) of estimates as a function of the of the number of receptive fields considered for luminance estimation for the cases considered in this work. 
 As expected, relative error reduces with increasing number of receptive fields. 
 
-%% Figure 11
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
-\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the luminance.}
-\label{fig:RMSEvsNFilters}
-\end{figure}
+%%% Figure 11
+%\begin{figure}
+%\centering
+%\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
+%\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the luminance.}
+%\label{fig:RMSEvsNFilters}
+%\end{figure}
 % GET RID OF AMA FROM THE CAPTION
 
-\subsection{Case 3}
+\subsection{Case 4}
 % Figure 12
 \begin{figure}
 \centering
@@ -677,22 +699,28 @@ Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the targe
 % Figure 13
 \begin{figure}
 \centering
-\begin{subfigure}{0.3 \textwidth}
+\begin{subfigure}{0.22 \textwidth}
 	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
 	\caption{Case 1}
 	\label{fig:case1Bar}
     \end{subfigure}
     ~ 
-    \begin{subfigure}{0.3 \textwidth}   
+    \begin{subfigure}{0.22 \textwidth}   
 	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
 	\caption{Case 2}
 	\label{fig:case2Bar}
     \end{subfigure}
     ~ 
-        \begin{subfigure}{0.3 \textwidth}
+        \begin{subfigure}{0.22 \textwidth}
 	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
 	\caption{Case 3}
 	\label{fig:case3Bar}
+    \end{subfigure}
+    ~ 
+        \begin{subfigure}{0.22 \textwidth}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
+	\caption{Case 4}
+	\label{fig:case4Bar}
     \end{subfigure}
 \caption{{\bf Error comparison across models:} Comparison of optimal AMA receptive fields from one case on the images of other cases. (a) Relative error of the estimates obtained using the linear model and AMA. The AMA receptive fields of case 1, 2 and 3 are used to estimate the target object luminance of the test images from case 1. The AMA receptive fields from all three cases perform well in this case. (b) Relative error for images of case 2. As expected, the error of the linear model on the center pixel is higher than AMA. AMA receptive fields from case 1 do worse than the receptive fields from case 2 and 3. (c) Relative error for images of case 3. The best predictions are from the receptive learnt using the images of case 3.}
  \label{fig:barGraphs}
