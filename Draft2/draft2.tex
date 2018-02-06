@@ -516,6 +516,14 @@ In this work, we assume the noisy response model to be a multivariate gaussian. 
 
 {\bf Estimating labels:} The image labels are estimated using the Bayesian decoder as described above. First, we use the AMA optimal filters and the training dataset to find the conditional distribution of the AMA filter response $p({\textbf {\textit R} }|Y_i)$. We then approximate this distribution with multivariate normal distribution $p({\textbf {\textit R} }|Y_i) = \mathcal{N}\left(\mu(Y_i),\Sigma(Y_i) \right)$. To estimate the label of an image from the test set, we use Byes' rule to obtain the posterior distribution $p(Y_i|{\textbf {\textit R} })$. The estimates value is the one that optimizes the cost function.
 
+{\bf Error estimation:}
+The error of the luminance estimates are quantified in terms of the relative error ($E_{\rm rel}$), defined as follows:
+\begin{align}
+E_{\rm rel} = \sqrt{\left\langle\left(\frac{\hat{Y}-Y}{Y}\right)^2\right\rangle},
+\end{align}
+where $\hat{Y}$ corresponds to the estimated luminance and $Y$ to the assigned luminance.
+
+
 % THINGS TO THINK ABOUT:
 %  1) Putting error bars on performance.  Particularly want to be sure that Fig 13 feature that Case 3 RFs do better than Case 1 RFs for Case 1 is just statistical sampling.
 %  2) What exactly do we want to run for final version.  How much illuminant intensity variation?  Should we make this match psychophysics so we could imagine these images displayed on a monitor?
@@ -665,47 +673,72 @@ The AMA receptive fields do an excellent job of predicting the target object lum
 The relative error of estimation is ~15\%, which low compared to that of the naive model (~42\%) or the linear model on center pixel (~21\%).
 
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
-We used two supervised learning methods to learn the optimal receptive fields (RFs) for luminance estimation for the three types of variations in the spectral properties of the scene as discuss earlier. Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults}) shows the optimal RFs, the linear response of these RFs to the training dataset, and the estimates of the luminance of the target object in the test dataset for the three cases. We show the first two RFs obtained using the SVD and AMA methods (Fig.~(\ref{fig:case9AllResults}-\ref{fig:case12AllResults})(a-b)). The RFs are ranked in ascending order of the value of the cost function. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
+% Figure 14
+\begin{figure}
+\centering
+\begin{subfigure}{0.21 \textwidth}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+	\caption{Case 1}
+	\label{fig:case1Filter}
+    \end{subfigure}
+    ~ ~ ~
+    \begin{subfigure}{0.21 \textwidth}   
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+	\caption{Case 2}
+	\label{fig:case2Filter}
+    \end{subfigure}
+    ~ ~ ~
+        \begin{subfigure}{0.21 \textwidth}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+	\caption{Case 3}
+	\label{fig:case3Filter}
+    \end{subfigure}
+    ~ ~ ~
+        \begin{subfigure}{0.21 \textwidth}
+	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
+	\caption{Case 4}
+	\label{fig:case4Filter}
+    \end{subfigure}
+\caption{{\bf AMA receptive fields:} The first two AMA receptive fields for the four cases studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of case 4 is due to the fixed geometry of the images.}
+ \label{fig:AMAFilters}
+\end{figure}
 
-For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). For case 3, has a similar center surround structure with more prominent features of the background, as we also vary the spectra of the background objects. Again, the spatial features are a result of the stereotypical geometry of the images.
+Fig.~{fig:AMAFilters} shows the first two AMA receptive fields that are optimal for luminance estimation for the spectral variations studied in this work. The receptive fields are ranked in ascending order of the value of the cost function associated with them. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
+
+For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, where the target and the background spectra varies, most of the luminance information is still concentrated around the central target object. For case 3, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). Case 4 has a similar center surround structure, but with more prominent features of the background since the spectra of the background objects are also varying. Again, the spatial features are a result of the stereotypical geometry of the images.
 
 \subsection{The RFs of complex case generalize on simpler cases}
 Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the target object luminance obtained using the linear model and AMA. We show the relative error of the estimates obtained using the AMA receptive fields from all cases. The receptive fields from a more complex case perform at par on the stimuli from a simpler case. The optimal AMA estimates are better than that of the linear model.
 
-% Figure 13
+% Figure 14
 \begin{figure}
 \centering
 \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
 	\caption{Case 1}
 	\label{fig:case1Bar}
     \end{subfigure}
     ~ 
     \begin{subfigure}{0.22 \textwidth}   
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
 	\caption{Case 2}
 	\label{fig:case2Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
 	\caption{Case 3}
 	\label{fig:case3Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_d.pdf}
 	\caption{Case 4}
 	\label{fig:case4Bar}
     \end{subfigure}
 \caption{{\bf Error comparison across models:} Comparison of optimal AMA receptive fields from one case on the images of other cases. (a) Relative error of the estimates obtained using the linear model and AMA. The AMA receptive fields of case 1, 2 and 3 are used to estimate the target object luminance of the test images from case 1. The AMA receptive fields from all three cases perform well in this case. (b) Relative error for images of case 2. As expected, the error of the linear model on the center pixel is higher than AMA. AMA receptive fields from case 1 do worse than the receptive fields from case 2 and 3. (c) Relative error for images of case 3. The best predictions are from the receptive learnt using the images of case 3.}
  \label{fig:barGraphs}
 \end{figure}
-
-\begin{align}
-E_{\rm rel} = \sqrt{\left\langle\left(\frac{\hat{Y}-Y}{Y}\right)^2\right\rangle},
-\end{align}
-where $\hat{Y}$ corresponds to the estimated luminance and $Y$ to the assigned luminance. We use the first 8 RFs for luminance estimation ( see Fig.~\ref{fig:RMSEvsNFilters}).
 
 \section{Discussion} \label{Discussion}
 In this paper, we studied luminance constancy using naturalistic images. We generated a dataset of multispectral images labeled by the reflectance of a target object in each image. These images were generated by a software pipeline developed for this work, that we call Virtual world color constancy (VWCC). This software creates 3D scene descriptors based on programatic information provided by the user. Such information include the shape of the 3D rendering space, the shape, size, position and material properties of the objects and light sources in the scene, the location of the observer, etc. We assign these geometrical and spectral properties (the power spectrum of the light sources and the surface reflectance of the objects) using random sampling from available databases of naturally occurring objects, light sources and surface reflectances. Thus, we generate a large database of labeled hyper-spectral images, with naturalistic scene properties, but with the information about the surface reflectance and illumination at every pixel in the image. Such databases are near to be impossible to generate using other means as it is very hard to measure the surface reflectance of every object and the illumination at every point, even for well controlled scenes in a lab.
