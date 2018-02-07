@@ -6,12 +6,13 @@
 \BOOKMARK [1][-]{section*.13}{Surface Reflectance Spectra}{}% 6
 \BOOKMARK [1][-]{section*.16}{Model of Early Visual System}{}% 7
 \BOOKMARK [1][-]{section*.17}{Supervised Learning methods}{}% 8
-\BOOKMARK [1][-]{section*.20}{Results}{}% 9
-\BOOKMARK [1][-]{section*.21}{Case 1: Target luminance can be estimated directly from the photoreceptor response}{}% 10
-\BOOKMARK [1][-]{section*.23}{Case 2}{}% 11
-\BOOKMARK [1][-]{section*.25}{Case 3: Luminance can be estimated from contrast between target and background}{}% 12
-\BOOKMARK [1][-]{section*.27}{Case 4}{}% 13
-\BOOKMARK [1][-]{section*.29}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 14
-\BOOKMARK [1][-]{section*.31}{The RFs of complex case generalize on simpler cases}{}% 15
-\BOOKMARK [1][-]{section*.33}{Discussion}{}% 16
-\BOOKMARK [1][-]{section*.34}{References}{}% 17
+\BOOKMARK [1][-]{section*.20}{Error estimation}{}% 9
+\BOOKMARK [1][-]{section*.21}{Results}{}% 10
+\BOOKMARK [1][-]{section*.22}{Case 1: Target luminance can be estimated directly from the photoreceptor response}{}% 11
+\BOOKMARK [1][-]{section*.24}{Case 2}{}% 12
+\BOOKMARK [1][-]{section*.26}{Case 3: Luminance can be estimated from contrast between target and background}{}% 13
+\BOOKMARK [1][-]{section*.28}{Case 4}{}% 14
+\BOOKMARK [1][-]{section*.30}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 15
+\BOOKMARK [1][-]{section*.32}{The RFs of complex case generalize on simpler cases}{}% 16
+\BOOKMARK [1][-]{section*.34}{Discussion}{}% 17
+\BOOKMARK [1][-]{section*.35}{References}{}% 18
