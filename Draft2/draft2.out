@@ -8,11 +8,12 @@
 \BOOKMARK [1][-]{section*.17}{Supervised Learning methods}{}% 8
 \BOOKMARK [1][-]{section*.20}{Error estimation}{}% 9
 \BOOKMARK [1][-]{section*.21}{Results}{}% 10
-\BOOKMARK [1][-]{section*.22}{Case 1: Target luminance can be estimated directly from the photoreceptor response}{}% 11
-\BOOKMARK [1][-]{section*.24}{Case 2}{}% 12
-\BOOKMARK [1][-]{section*.26}{Case 3: Luminance can be estimated from contrast between target and background}{}% 13
-\BOOKMARK [1][-]{section*.28}{Case 4}{}% 14
-\BOOKMARK [1][-]{section*.30}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 15
-\BOOKMARK [1][-]{section*.32}{The RFs of complex case generalize on simpler cases}{}% 16
-\BOOKMARK [1][-]{section*.34}{Discussion}{}% 17
-\BOOKMARK [1][-]{section*.35}{References}{}% 18
+\BOOKMARK [1][-]{section*.22}{Luminance estimates for each spectral case}{}% 11
+\BOOKMARK [1][-]{section*.23}{Case 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}{}% 12
+\BOOKMARK [1][-]{section*.25}{Case 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}{}% 13
+\BOOKMARK [1][-]{section*.27}{Case 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}{}% 14
+\BOOKMARK [1][-]{section*.29}{Case 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}{}% 15
+\BOOKMARK [1][-]{section*.31}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 16
+\BOOKMARK [1][-]{section*.33}{The receptive fields of complex case generalize on simpler cases}{}% 17
+\BOOKMARK [1][-]{section*.35}{Discussion}{}% 18
+\BOOKMARK [1][-]{section*.36}{References}{}% 19
