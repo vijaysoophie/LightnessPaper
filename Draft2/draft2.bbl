@@ -1,6 +1,32 @@
 \begin{thebibliography}{}
 
 \bibitem[\protect\citeauthoryear{%
+Albrecht%
+\ \BBA{} Geisler%
+}{%
+Albrecht%
+\ \BBA{} Geisler%
+}{%
+{\protect\APACyear{1991}}%
+}]{%
+albrecht1991motion}%
+\APACinsertmetastar{%
+albrecht1991motion}%
+Albrecht, D\BPBI G.%
+\BCBT{}\ \BBA{} Geisler, W\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1991}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Motion selectivity and the contrast-response function of
+  simple cells in the visual cortex}{Motion selectivity and the
+  contrast-response function of simple cells in the visual cortex}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Visual neuroscience}{7}{6}{531--546}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Arend%
 \ \BBA{} Reeves%
 }{%
@@ -385,6 +411,31 @@ Burge, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Carandini%
+\ \BBA{} Heeger%
+}{%
+Carandini%
+\ \BBA{} Heeger%
+}{%
+{\protect\APACyear{2012}}%
+}]{%
+carandini2012normalization}%
+\APACinsertmetastar{%
+carandini2012normalization}%
+Carandini, M.%
+\BCBT{}\ \BBA{} Heeger, D\BPBI J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Normalization as a canonical neural
+  computation}{Normalization as a canonical neural computation}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Nature Reviews Neuroscience}{13}{1}{51}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Chakrabarti%
 \ \BBA{} Zickler%
 }{%
@@ -662,6 +713,28 @@ Heasly, B\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Heeger%
+}{%
+Heeger%
+}{%
+{\protect\APACyear{1992}}%
+}]{%
+heeger1992normalization}%
+\APACinsertmetastar{%
+heeger1992normalization}%
+Heeger, D\BPBI J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1992}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Normalization of cell responses in cat striate
+  cortex}{Normalization of cell responses in cat striate cortex}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Visual neuroscience}{9}{2}{181--197}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Jacobs%
 }{%
 Jacobs%
@@ -680,6 +753,32 @@ Jacobs, G\BPBI H.%
 \APACrefbtitle{Comparative Color Vision}{Comparative color vision}\ [Book].
 \newblock
 \APACaddressPublisher{New York}{Academic Press}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Jaini%
+\ \BBA{} Burge%
+}{%
+Jaini%
+\ \BBA{} Burge%
+}{%
+{\protect\APACyear{2017}}%
+}]{%
+jaini2017linking}%
+\APACinsertmetastar{%
+jaini2017linking}%
+Jaini, P.%
+\BCBT{}\ \BBA{} Burge, J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Linking normative models of natural tasks to descriptive
+  models of neural response}{Linking normative models of natural tasks to
+  descriptive models of neural response}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of vision}{17}{12}{16--16}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%

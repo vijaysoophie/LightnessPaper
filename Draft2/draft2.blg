@@ -45,45 +45,45 @@ Warning--No publisher in skauli2013collection
 Warning--No address in skauli2013collection
 `articleurl' is a missing field, not a string, for entry TkacikUpennHypersepctralData
 while executing---line 5275 of file jovcite.bst
-You've used 42 entries,
+You've used 46 entries,
             6399 wiz_defined-function locations,
-            1491 strings with 18249 characters,
-and the built_in function-call counts, 78625 in all, are:
-= -- 9805
-> -- 725
-< -- 3426
-+ -- 3650
-- -- 86
-* -- 5069
-:= -- 13666
-add.period$ -- 188
-call.type$ -- 42
-change.case$ -- 218
+            1513 strings with 18856 characters,
+and the built_in function-call counts, 85803 in all, are:
+= -- 10679
+> -- 777
+< -- 3787
++ -- 4019
+- -- 94
+* -- 5554
+:= -- 15053
+add.period$ -- 204
+call.type$ -- 46
+change.case$ -- 238
 chr.to.int$ -- 0
-cite$ -- 100
-duplicate$ -- 2223
-empty$ -- 3290
-format.name$ -- 1129
-if$ -- 15281
+cite$ -- 108
+duplicate$ -- 2398
+empty$ -- 3582
+format.name$ -- 1215
+if$ -- 16627
 int.to.chr$ -- 0
-int.to.str$ -- 84
+int.to.str$ -- 92
 missing$ -- 0
-newline$ -- 1048
-num.names$ -- 340
-pop$ -- 1359
+newline$ -- 1141
+num.names$ -- 372
+pop$ -- 1453
 preamble$ -- 1
-purify$ -- 166
+purify$ -- 182
 quote$ -- 0
-skip$ -- 5193
+skip$ -- 5659
 stack$ -- 0
-substring$ -- 4219
-swap$ -- 1433
-text.length$ -- 157
+substring$ -- 4626
+swap$ -- 1545
+text.length$ -- 165
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4000
+type$ -- 4320
 warning$ -- 16
-while$ -- 389
+while$ -- 415
 width$ -- 0
-write$ -- 1321
+write$ -- 1434
 (There were 7 error messages)

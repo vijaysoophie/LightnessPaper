@@ -109,7 +109,6 @@ The rest of this paper is organized as follows. In the \nameref{Methods} section
 There are four key parts to our methods.  The first is how we generate a labelled set of training data for our supervised learning algorithms.  The second is how we model the transformations applied by the early visual system to generate modeled responses of the cone photoreceptor mosaic.  The third is the details of the supervised learning method (AMA) that we apply to the labelled training data.  And the fourth is how we evaluate the performance of the algorithm.  We describe each of these in the sections below.
 
 \subsection{Labelled image database} \label{method:VirtualWorld}
-
 % Figure 3
 \begin{figure}[t]
 \centering
@@ -334,7 +333,6 @@ In most of our calculations, we set $I_{min} = 1$ and $I_{max} = 300$.
 % GRANADA MEASUREMENTS.
 
 \subsubsection{Surface Reflectance Spectra}
-
 % Figure 7
 \begin{figure}
 \centering
@@ -455,9 +453,7 @@ The cone response functions are normalized by the total area under the response 
 % NEED TO UNDERSTAND THIS.  WHEN WAS THE GAIN, BEFORE OR AFTER NOISE ADDED, AND LET'S REMEMBER WHY WE DID IT.  
 % First we add noise, then we do the scaling. The reason this was done is to make sure that in the normalization process each of the cone class have the same contribution. Otherwise, the S cone contribution would be very low.
 
-The cone isomerizations represent the first step of visual processing.  To capture key properties of post-receptoral processing, such as contrast normalization (REFS),
-% Heeger 1992, Albrecht and Geisler 1991 (contrast normalization)
-% Carindini Heeger 2012 (Review on contrast norm)
+The cone isomerizations represent the first step of visual processing.  To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
 we processed the isomerizations as follows:
 First, we created a representation for each cone class on the full $51 \times 51$ pixel grid, we interpolated the responses of the cones in each class across the grid, using bilinear interpolation separately for each cone class.
 % DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
@@ -473,12 +469,10 @@ We have two supervised learning methods in our work: Linear regression and Accur
 \subsubsection*{Accuracy maximization analysis}
 We perform two steps to decode the luminance of the target object from the cone isomerization. First, we use AMA to learn the linear filters that are optimal for estimating the target object luminance. Second, we determine how to optimally decode the luminance from the response of these filters to arbitrary stimuli.
 
-{\bf Learning optimal filters using AMA:} AMA \cite{geisler2009optimal,burge2017accuracy}
-% add Jaini burge 2017
+{\bf Learning optimal filters using AMA:} AMA \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
 is a task specific Bayesian method for dimensionality reduction. When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns the linear receptive fields (in rank order) that are optimal for performing a task. The optimal receptive fields that are returned by AMA are those whose responses to the stimuli minimizes the cost function over the training set when optimally decoded. 
 
-More concretely, let us assume that there are $N_{\nu}$ possible values of the target object luminance levels ($\{Y_k: k\in[1,N_{\nu}] \}$) and the $l$'th image corresponding to the $k$'th luminance level is represented as $s_{kl}$. Also, assume that there is a set of linear receptive fields {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Also assume there is a decoder $g$, with the knowledge of the response model and of every stimulus in the training set, that returns the Bayes' optimal estimate of the luminance level ($\hat{Y}_k$) of the target object in each stimulus $s_{kl}$. The crux computation for obtaining this estimate is the computation of the posterior probability of the luminance given an observed response, $P(Y|\textbf{R}_{kl})$ \cite{geisler2009optimal,burge2017accuracy}
-% add Jaini burge 2017
+More concretely, let us assume that there are $N_{\nu}$ possible values of the target object luminance levels ($\{Y_k: k\in[1,N_{\nu}] \}$) and the $l$'th image corresponding to the $k$'th luminance level is represented as $s_{kl}$. Also, assume that there is a set of linear receptive fields {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Also assume there is a decoder $g$, with the knowledge of the response model and of every stimulus in the training set, that returns the Bayes' optimal estimate of the luminance level ($\hat{Y}_k$) of the target object in each stimulus $s_{kl}$. The crux computation for obtaining this estimate is the computation of the posterior probability of the luminance given an observed response, $P(Y|\textbf{R}_{kl})$ \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
 . With this luminance estimate, we calculate the cost given the cost function $\mathcal{C}_{kl} = \gamma(Y_{kl},\hat{Y}_{kl})$. Finally, AMA searches for the set of optimal receptive fields ${\textbf{\textit f}}^{\rm opt}$ that minimize the cost over the entire training set $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$ where $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
 \begin{align}
 {\textbf {\textit f} }^{\rm opt} = \argmin_{\textbf {\textit f} } \sum_{k=1}^{N_{\nu}}  \sum_{l=1}^{N_k} {\mathcal{C}}_{kl}.
@@ -500,35 +494,24 @@ If $\hat{Y}$ is the estimated luminance corresponding to the assigned luminance 
 
 % THINGS TO THINK ABOUT:
 %  1) Putting error bars on performance.  Particularly want to be sure that Fig 13 feature that Case 3 RFs do better than Case 1 RFs for Case 1 is just statistical sampling.
-%  2) What exactly do we want to run for final version.  How much illuminant intensity variation?  Should we make this match psychophysics so we could imagine these images displayed on a monitor?
-%  3) Do we just want to look at results for contrast normalized, or do we want to pick them off separately for isomerizations, contrast, and contrast normalized?
-%  4) What is driving the response variability in Case 1, where the stimulus is basically deterministic up to noise.  There are three sources of noise: 1) Rendering noise, 2) Isomerization noise, 3) AMA noise introduced for some unknown reason, 4) Variation in target color.
-
-% WHAT STORY DO WE WANT TO TELL ABOUT THE RESULTS
-%  1) Case 0 -- work out effect of sources of internal noise - isomerization and AMA -- without any external "noise", where external "noise" is the effect of variability in object extrinsic scene factors (illumination, surrounding objects). 
-%                      Also establish the rendering noise is einsy relative to whatever else we're doing.
-%  2) Move to Case 1 -- what happens when we introduce color variability into the target.  This may not be of interest to the psychophysics, but none-the-less seems interesting to know as one ponders lightness constancy.
-%  3) On to Case 2 -- here the question is, do we keep varying target color, or do we fix target color and vary illumination?  In any case, this isn't too hard a case if the other objects remain fixed, because then contrast coding basically normalizes out a lot of the variation, and it's only the spectral variation that might screw things up.  But, that's why we run case 3.
-%  4) Do we run a case where the relative spectrum of the illuminant stays fixed and we only vary intensity?
-%  4) On to Case 3 --
 
 \section{Results} \label{Results}
 In this section, we discuss the results of supervised learning to estimate the luminance of the target object on the the various cases we described previously. We describe the computations that need to be performed on the cone photoreceptor responses to estimate the luminance. We start with case 1, where only the reflectance spectrum of the target object is allowed to vary, and show that in this case the luminance can be estimated directly from the photoreceptor response. We then progressively increase the complexity of the spectral conditions and explain the correspondingly complex computations that are required to estimate the target object luminance. Next, we show the optimal AMA receptive fields for each one of the spectral cases discussed in this work. We show that the optimal receptive fields for target luminance estimation have a center surround structure and they give more weights to the response of L and M cones than S cones. We finally show that, as expected, the receptive fields for the complex spectral cases generalize to the simple cases. Hence, one requires only one set of optimal receptive fields for estimating the target luminance, not separate receptive fields for each spectral case.
 
 \subsection{Luminance estimates for each spectral case}
 \subsubsection{Case 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}
-We started our analysis with the simplest case, where only the target object relative spectrum is allowed to change. 
-We used AMA to learn a set of linear receptive fields that are optimal for estimating target object luminance for the stimuli in this case. 
+We start with the results of the simplest type of spectral variation where only the target object relative surface reflectance spectrum is allowed to change. 
+We used AMA to learn a set of linear receptive fields that are optimal for estimating target object luminance from the model cone photoreceptor response to the images from this case.
 Fig.~\ref{fig:case1RFResponse} shows the projection of the photoreceptor response along the first two optimal AMA receptive fields. 
 Clearly, there exists a subspace along which the photoreceptor response separates according to the luminance level assigned to the target object. 
-Thus, the target object luminance can be obtained by projecting photoreceptor responses along these AMA receptive fields. 
-We used such projections and a generalized decoder Bayes' decoder (see methods) to estimate the luminance of the target objects in the test set stimuli.
-Fig.~\ref{fig:case9Results} shows the estimated luminance v/s the actual luminance assigned to the target object for the test stimulus in case 1. 
+Thus, the target object luminance can be obtained by projecting the photoreceptor response along these AMA receptive fields. 
+We used such projections and a generalized Bayes' decoder (see methods) to estimate the luminance of the target objects in the test set stimuli. 
+Fig.~\ref{fig:case9Results} shows the estimated luminance v/s the actual luminance assigned to the target object for the test stimuli in case 1. 
 We show the estimates obtained by AMA and two null models: a naive method that assigns the average target object luminance across the training set to all images, and a linear model based on the photoreceptors corresponding to the center pixel on the target object (see Methods). 
 As expected, in the absence of any external source of variation, the photoreceptor response is proportional to the luminance of the target object, and hence can be easily estimated by both AMA and linear regression.
 
 Each cloud in Fig.~\ref{fig:case1RFResponse} corresponds to the photoreceptor response to the images with target luminance level at a fixed value. 
-The variation within the cloud, between images that have the target object at same luminance values, results due to the difference in the relative shape of the target object reflectance spectra (difference in hue and saturation). 
+The variation within the cloud, between images that have the target object at same luminance values, is due to the difference in the relative shape of the target object reflectance spectra (difference in hue and saturation). 
 The resulting variation dominates any variation coming from the noise in photoreceptor response or the noisy rendering of the images by the software.
 Fig.~\ref{fig:case0RFResponse} shows the projection of photoreceptor response corresponding to 1000 images where, in addition to the illumination and background spectra, we also fixed the relative shape of the target object surface reflectance. 
 The variation resulting from the poisson nature of the photoreceptor response or due the image rendering software is small and can be ignored.
@@ -561,7 +544,19 @@ The variation resulting from the poisson nature of the photoreceptor response or
 \end{figure}
 
 \subsubsection{Case 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}
-Fig.~{\ref{fig:case2RFResponse}} shows the projection of the photoreceptor response for case 2 along the first two AMA receptive fields. The naive expectation would be that variations in background objects surface reflectance would have minimal effect on the isomerizations of the cones corresponding to the target object. Hence, the luminance can be estimated directly from the isomerization of these cones. But projection of the cone response along the AMA RFs shows that the background variation has significant effect on the cone isomerizations. The response clouds at different luminance levels along the first two receptive fields do not separate as well compared to case 1. The overlap is lower if the projection is considered in subspaces that have more AMA receptive fields. Fig.~\ref{fig:ErrorVsNFilters} shows the relative error of luminance estimate as a function of the number of AMA receptive fields used for luminance estimation. As expected, the relative error decreases with the number of receptive fields and converges to the minimum value around 8 receptive fields. Fig.~\ref{fig:case2Estimates} shows the luminance estimates for the learning methods used in this work. The mean estimates fall along the diagonal x=y line. The variance in the estimates increases with assigned luminance. This is because the isomerization noise is directly proportional to the light reflected from the target object and is higher at higher values of the target object luminance.
+When the light source emission spectrum is fixed, the naive expectation would be that the luminance of the target object would depend only on the surface reflectance of the target object. 
+Indeed, it is believed that the variation in the surface reflectance of the background has little effect on the reflected light from the target object  \cite{BrainardWandellRetinex}. 
+But our analysis shows that the secondary reflections from the target object, of the light coming indirectly after being reflected from the background objects, have a significant effect on the response of the photoreceptors corresponding to the target object. 
+Fig.~{\ref{fig:case2RFResponse}} shows the projection of the photoreceptor response for the stimuli in case 2 along the first two AMA receptive fields. 
+These receptive fields were learnt using the stimuli from the same case 2. 
+The response projected along the first two optimal receptive fields do not separate as well compared to case 1. 
+But the overlap is lower if the projection is considered in subspaces that have more AMA receptive fields. 
+Fig.~\ref{fig:ErrorVsNFilters} shows the relative error of luminance estimate as a function of the number of AMA receptive fields used for luminance estimation. 
+As expected, the relative error decreases with the number of receptive fields and converges to the minimum value around 8 receptive fields. 
+Fig.~\ref{fig:case2Estimates} shows the luminance estimates for the learning methods used in this work. 
+The mean estimates fall along the diagonal x=y line. 
+The variance in the estimates increases with assigned luminance. 
+This is because the isomerization noise is directly proportional to the light reflected from the target object and is higher at higher values of the target object luminance.
 
 %% Figure Case 2
 \begin{figure}
@@ -585,15 +580,13 @@ Fig.~{\ref{fig:case2RFResponse}} shows the projection of the photoreceptor respo
 \label{fig:case2Results}
 \end{figure}
 
-It has previously been assumed that the surface reflectance spectra of the background objects have no direct effect on the light reflected by the target object \cite{BrainardWandellRetinex}. This would suggest that the response of the photoreceptors corresponding to the target object would only depend on the surface reflectance spectrum of the target object. But our results show that the effects of change in background object surface reflectances are significant. The secondary reflections from the target object, of the light coming indirectly after being reflected from the background objects, contribute to response of the photoreceptors corresponding to the target object.
-
 \subsubsection{Case 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}
-For images of case 3, the AMA receptive fields learnt using the photoreceptor response does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}). 
+For the spectral variations of case 3, the AMA receptive fields learnt on the photoreceptor response to the images does a very poor job in predicting the target object luminance (Fig.~\ref{fig:isomerizationFails}). 
 This is because, since the illuminant spectra varies in this case, the photoreceptor response is not directly proportional to the target object surface anymore. 
 But, since the background surfaces are fixed in this case, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target object luminance. 
 This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
-Thus, the AMA receptive fields learnt on the contrast normalized photoreceptor response (see Methods) can be used to predicts the target object luminance (Fig.~\ref{fig:constrastWorks}). 
-Fig.~\ref{fig:case10Results} shows the estimated target object luminance v/s the assigned luminance for the images in case 2 obtained using the contrast normalized representation. 
+Thus, the AMA receptive fields learnt on the contrast normalized photoreceptor response (see Methods) can be used to predict the target object luminance (Fig.~\ref{fig:constrastWorks}). 
+Fig.~\ref{fig:case10Results} shows the estimated target object luminance v/s the assigned luminance for the images in case 3 obtained using the contrast normalized representation. 
 AMA receptive fields provide excellent predictions of the target object luminance. 
 The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
 
@@ -615,7 +608,7 @@ The predictions are much better compared to that of a linear model that only con
         \caption{Luminance estimates}
         \label{fig:case10Results}
     \end{subfigure}
-    \caption{{\bf Case 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
+    \caption{{\bf Case 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target object luminance for the image in case 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
 \label{fig:importanceOfConstrast}
 \end{figure}
 
@@ -648,9 +641,10 @@ Again, similar to case 2, the projection along the first two receptive fields sh
     \label{fig:case12AllResults}
 \end{figure}
 
-Fig.~\ref{fig:case12AllResults} shows the AMA receptive field response and the luminance estimates for the images in case 4. 
+Case 4 is the most complex type of variation that we consider in this work. Here we allow all three types of spectra to change from image to image. In this case, neither the photoreceptor response (as in Case 1 and 2), nor any simple transformation of the response (case 3) can provide the target object luminance.We used AMA to learn the receptive fields using the contrast normalized cone photoreceptor response from stimuli in case 4. Fig.~\ref{fig:case12AllResults} shows the AMA receptive field response and the luminance estimates for the images in case 4. 
 We have used the first 8 receptive fields to estimate the luminance in this case (see Fig.\ref{fig:ErrorVsNFilters}). 
-The AMA receptive fields do an excellent job of predicting the target object luminance. The estimates are unbiased with the mean estimates lying close the diagonal unit slope line (Fig.~\ref{fig:case12Results}). 
+The AMA receptive fields do an excellent job of predicting the target object luminance. 
+The estimates are unbiased with the mean estimates lying close the diagonal unit slope line (Fig.~\ref{fig:case12Results}). 
 The relative error of estimation is $\sim15\%$, which low compared to that of the naive model ($\sim42\%$) or the linear model on center pixel ($\sim21\%$).
 
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
@@ -684,7 +678,7 @@ The relative error of estimation is $\sim15\%$, which low compared to that of th
  \label{fig:AMAFilters}
 \end{figure}
 
-Fig.~\ref{fig:AMAFilters} shows the first two AMA receptive fields that are optimal for luminance estimation for the spectral variations studied in this work. The receptive fields are ranked in ascending order of the value of the cost function associated with them. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
+Fig.~\ref{fig:AMAFilters} shows the first two AMA receptive fields that are optimal for estimating the target object luminance for the four types of spectral variations studied in this work. The receptive fields are ranked in ascending order of the value of the cost function associated with them. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
 
 For case 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For case 2, where the target and the background spectra varies, most of the luminance information is still concentrated around the central target object. For case 3, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to case 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). Case 4 has a similar center surround structure, but with more prominent features of the background since the spectra of the background objects are also varying. Again, the spatial features are a result of the stereotypical geometry of the images.
 
