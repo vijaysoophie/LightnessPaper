@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  12 FEB 2018 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 FEB 2018 14:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -999,10 +999,10 @@ fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texl
 ive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/local/texlive/2016/
 texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft2.pdf (22 pages, 13742894 bytes).
+Output written on draft2.pdf (22 pages, 13748868 bytes).
 PDF statistics:
- 1223 PDF objects out of 1440 (max. 8388607)
- 945 compressed objects within 10 object streams
+ 1222 PDF objects out of 1440 (max. 8388607)
+ 944 compressed objects within 10 object streams
  108 named destinations out of 1000 (max. 500000)
  438 words of extra memory for PDF output out of 10000 (max. 10000000)
 
