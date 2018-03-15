@@ -82,12 +82,12 @@ set(h5,'FaceColor',AMAColor3);
 set(h6,'FaceColor',AMAColor4);
 
 ylim([0 0.5]);
-xlim([0.5 5.5]);
+xlim([1.5 5.5]);
 ylabel('$E_{\rm rel}$','interpreter','latex');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4 5],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3', 'Case 4'},'TickLabelInterpreter','latex');
-set(gca,'FontSize',20);
-% title('Case 1');
+set(gca,'FontSize',25);
+% title('Images of case 1');
 box on;
 axis square;
 save2pdf('barGraphs2/AMAComparisionCase1.pdf',fig2,600);
@@ -114,11 +114,11 @@ set(h5,'FaceColor',AMAColor3);
 set(h6,'FaceColor',AMAColor4);
 
 ylim([0 0.5]);
-xlim([0.5 5.5]);
+xlim([1.5 5.5]);
 ylabel('$E_{\rm rel}$','interpreter','latex');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4 5],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3', 'Case 4'},'TickLabelInterpreter','latex');
-set(gca,'FontSize',20);
+set(gca,'FontSize',25);
 % title('Case 1');
 box on;
 axis square;
@@ -146,11 +146,11 @@ set(h5,'FaceColor',AMAColor3);
 set(h6,'FaceColor',AMAColor4);
 
 ylim([0 0.5]);
-xlim([0.5 5.5]);
+xlim([1.5 5.5]);
 ylabel('$E_{\rm rel}$','interpreter','latex');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4 5],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3', 'Case 4'},'TickLabelInterpreter','latex');
-set(gca,'FontSize',20);
+set(gca,'FontSize',25);
 % title('Case 1');
 box on;
 
@@ -179,11 +179,11 @@ set(h5,'FaceColor',AMAColor3);
 set(h6,'FaceColor',AMAColor4);
 
 ylim([0 0.5]);
-xlim([0.5 5.5]);
+xlim([1.5 5.5]);
 ylabel('$E_{\rm rel}$','interpreter','latex');
 % set(gca, 'XTick',[1 2 3 4],'XTickLabels', {'Naive', 'Linear Regression Center Pixel', 'SVD-LDA', 'AMA'},'TickLabelInterpreter','latex');
 set(gca, 'XTick',[1 2 3 4 5],'XTickLabels', {'Linear', 'Case 1', 'Case 2', 'Case 3', 'Case 4'},'TickLabelInterpreter','latex');
-set(gca,'FontSize',20);
+set(gca,'FontSize',25);
 % title('Case 1');
 box on;
 

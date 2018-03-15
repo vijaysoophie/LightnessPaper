@@ -13,7 +13,7 @@ if (~exist('estimatesVsActualAMA','dir'))
 end
 
 % Choose a case
-for caseNo = [9]
+for caseNo = [12]
 
 % load the files containing the estimates
 if (caseNo==9 || caseNo==11)
@@ -35,8 +35,13 @@ fig = figure;
 set(fig,'units','pixels', 'Position', [1 1 500 500]);
 hold on;
 % plot the linear and svd response
+lDiagonal = plot([0.15 0.65],[0.15 0.65],'b:','linewidth',1);
 lNaive = plot(unique(loadTheAMAFile.XTest)',0.4*ones(size(unique(loadTheAMAFile.XTest)')),naiveColor,'linewidth',2);
-lLinear = plot(unique(loadTheAMAFile.XTest)',loadTheLinearFile.cNormMeanEstimateTest,linearColor,'linewidth',2);
+if (caseNo==9 || caseNo==11)
+    lLinear = plot(unique(loadTheAMAFile.XTest)',loadTheLinearFile.MeanEstimateTest,linearColor,'linewidth',2);
+else
+    lLinear = plot(unique(loadTheAMAFile.XTest)',loadTheLinearFile.cNormMeanEstimateTest,linearColor,'linewidth',2);
+end
 % errorbar(unique(loadTheLinearFile.labelsTest)',loadTheLinearFile.cMeanSvdEstimateTest,loadTheLinearFile.cStdSvdEstimateTest,SVDColor,'linewidth',2);
 xlim([0.15 0.65]);
 ylim([0.15 0.65]);
@@ -53,12 +58,17 @@ stdEstimatedL = std(estimatedL);
 lAMA = plot(linspace(0.2,0.6,10),meanEstimatedL,AMAColor,'linewidth',2);
 axis square;
 plotfillederror(linspace(0.2,0.6,10),meanEstimatedL-stdEstimatedL,meanEstimatedL+stdEstimatedL,AMAColor);
-plotfillederror(linspace(0.2,0.6,10),loadTheLinearFile.cNormMeanEstimateTest-loadTheLinearFile.cNormStdEstimateTest,...
-    loadTheLinearFile.cNormMeanEstimateTest+loadTheLinearFile.cNormStdEstimateTest,linearColor);
+if (caseNo==9 || caseNo==11)
+    plotfillederror(linspace(0.2,0.6,10),loadTheLinearFile.MeanEstimateTest-loadTheLinearFile.StdEstimateTest,...
+        loadTheLinearFile.MeanEstimateTest+loadTheLinearFile.StdEstimateTest,linearColor);
+else
+    plotfillederror(linspace(0.2,0.6,10),loadTheLinearFile.cNormMeanEstimateTest-loadTheLinearFile.cNormStdEstimateTest,...
+        loadTheLinearFile.cNormMeanEstimateTest+loadTheLinearFile.cNormStdEstimateTest,linearColor);
+end
 
-lDiagonal = plot([0.15 0.65],[0.15 0.65],'b--','linewidth',2);
-legend([lNaive, lLinear, lAMA, lDiagonal],...
-    {'Naive','Linear Reg.','AMA', 'x=y'}, 'Location','southeast','FontSize',20);
+
+legend([lNaive, lLinear, lAMA],...
+    {'Naive Model','Linear Model','AMA'}, 'Location','southeast','FontSize',20);
 save2pdf(['estimatesVsActualAMA/Case',num2str(caseNo),'Results.pdf'],fig,600);
 close;
 

@@ -549,7 +549,7 @@ The variation resulting from the poisson nature of the photoreceptor response or
         \caption{Images with fixed relative spectrum}
         \label{fig:case0RFResponse}
     \end{subfigure}
-    \caption{{\bf Case 1: RF response and luminance estimates:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of case 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multinormal Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope line for both linear regression and AMA. The standard deviations are too small to be visible. (c) Photoreceptor response for images with fixed relative shape of the target object reflectance spectrum projected along the first two case 1 AMA receptive fields. The variation coming from the poisson nature of the photoreceptor isomerization is small compared to the variation due to shape of target object reflectance spectrum.}
+    \caption{{\bf Case 1: RF response and luminance estimates:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of case 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multinormal Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible. (c) Photoreceptor response for images with fixed relative shape of the target object reflectance spectrum projected along the first two case 1 AMA receptive fields. The variation coming from the poisson nature of the photoreceptor isomerization is small compared to the variation due to shape of target object reflectance spectrum.}
 \label{fig:sourcesOfNoise}
 \end{figure}
 
@@ -581,13 +581,16 @@ This is because the isomerization noise is directly proportional to the light re
         \caption{Luminance Estimates}
         \label{fig:case2Estimates}
     \end{subfigure}
-            \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_c.pdf}
-        \caption{Error v/s number of RFs}
-        \label{fig:ErrorVsNFilters}
-    \end{subfigure}
-    \caption{{\bf Case 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. (c) Relative error as a function of number of AMA receptive fields used for luminance estimation. The relative error reduces if more receptive fields are used for estimation.}
+    \caption{{\bf Case 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target object luminance for the image in case 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation.}
 \label{fig:case2Results}
+\end{figure}
+
+%%% Figure 11: RMSE vs N Filters
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
+\caption{{\bf Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.}
+\label{fig:ErrorVsNFilters}
 \end{figure}
 
 \subsubsection{Case 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}
@@ -600,21 +603,21 @@ Fig.~\ref{fig:case10Results} shows the estimated target object luminance v/s the
 AMA receptive fields provide excellent predictions of the target object luminance. 
 The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
 
-%% Figure Isomerization Fails
+%% Figure Case 3: Isomerization Fails
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.3	 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
         \caption{RFs learnt using photoreceptor response}
         \label{fig:isomerizationFails}
     \end{subfigure}
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
         \caption{RFs learnt using contrast signal}
         \label{fig:constrastWorks}
     \end{subfigure}
             \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure11/Figure11_c.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
         \caption{Luminance estimates}
         \label{fig:case10Results}
     \end{subfigure}
@@ -624,26 +627,17 @@ The predictions are much better compared to that of a linear model that only con
 
 Again, similar to case 2, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}). But, the stimuli are better separated if the projection is considered within a subspace that has more receptive fields (Fig.~\ref{fig:ErrorVsNFilters}).
 
-%%% Figure 11
-%\begin{figure}
-%\centering
-%\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
-%\caption{{\bf Performance with number of RFs used for estimation:} Most of the information is captured by the first two filters. We have used the first 8 RFs for estimating the luminance.}
-%\label{fig:RMSEvsNFilters}
-%\end{figure}
-% GET RID OF AMA FROM THE CAPTION
-
 \subsubsection{Case 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}
-% Figure 12
+% Figure Case 4
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.3 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
         \caption{AMA RF Response}
         \label{fig:case12FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.3 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
+        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
         \caption{Luminance Estimates}
         \label{fig:case12Results}
     \end{subfigure}
@@ -658,29 +652,29 @@ The estimates are unbiased with the mean estimates lying close the diagonal unit
 The relative error of estimation is $\sim15\%$, which low compared to that of the naive model ($\sim42\%$) or the linear model on center pixel ($\sim21\%$).
 
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
-% Figure 14
+% Figure RFs 
 \begin{figure}
 \centering
 \begin{subfigure}{0.21 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
 	\caption{Case 1}
 	\label{fig:case1Filter}
     \end{subfigure}
     ~ ~ ~
     \begin{subfigure}{0.21 \textwidth}   
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
 	\caption{Case 2}
 	\label{fig:case2Filter}
     \end{subfigure}
     ~ ~ ~
         \begin{subfigure}{0.21 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_c.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
 	\caption{Case 3}
 	\label{fig:case3Filter}
     \end{subfigure}
     ~ ~ ~
         \begin{subfigure}{0.21 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_d.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_d.pdf}
 	\caption{Case 4}
 	\label{fig:case4Filter}
     \end{subfigure}
@@ -695,33 +689,33 @@ For case 1, since the illuminant and the background are fixed, all the informati
 \subsection{The receptive fields of complex case generalize on simpler cases}
 Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the target object luminance obtained using the linear model and AMA. We show the relative error of the estimates obtained using the AMA receptive fields from all cases. The receptive fields from a more complex case perform at par on the stimuli from a simpler case. The optimal AMA estimates are better than that of the linear model.
 
-% Figure 14
+% Figure Error Bar Graphs
 \begin{figure}
 \centering
 \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_a.pdf}
 	\caption{Case 1}
 	\label{fig:case1Bar}
     \end{subfigure}
     ~ 
     \begin{subfigure}{0.22 \textwidth}   
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_b.pdf}
 	\caption{Case 2}
 	\label{fig:case2Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_c.pdf}
 	\caption{Case 3}
 	\label{fig:case3Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_d.pdf}
+	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_d.pdf}
 	\caption{Case 4}
 	\label{fig:case4Bar}
     \end{subfigure}
-\caption{{\bf Error comparison across models:} Comparison of optimal AMA receptive fields from one case on the images of other cases. Each panel shows the relative error of the estimates obtained using the linear model and the AMA receptive fields of case 1-4. (a) Relative error of estimates of the target object luminance of images from case 1. The AMA receptive fields from all three cases perform well in this case. (b) Relative error for images of case 2. As expected, the error of the linear model on the center pixel is higher than AMA. As expected, the best estimates are provided by the receptive fields of case 2. (c) Relative error for images of case 3. (d) Relative error for test images of case 4.}
+\caption{{\bf Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one case on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (case 1-4). (a) Error estimates for images of case 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of case 2. As expected, the best estimates are provided by the receptive fields of case 2. (c) Error estimates for images of case 3. (d) Error estimates for images of case 4.}
  \label{fig:barGraphs}
 \end{figure}
 
