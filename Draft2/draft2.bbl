@@ -27,65 +27,6 @@ Albrecht, D\BPBI G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
-Arend%
-\ \BBA{} Reeves%
-}{%
-Arend%
-\ \BBA{} Reeves%
-}{%
-{\protect\APACyear{1986}}%
-}]{%
-arend1986Simultaneous}%
-\APACinsertmetastar{%
-arend1986Simultaneous}%
-Arend, L.%
-\BCBT{}\ \BBA{} Reeves, A.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1986}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Simultaneous color constancy}{Simultaneous color
-  constancy}\BBCQ{}\ [Journal Article].
-\newblock
-\APACjournalVolNumPages{Journal Of The Optical Society Of America
-  A}{3}{10}{1743-1751}.
-\newblock
- \begin{APACrefURL} \url{http://josaa.osa.org/abstract.cfm?URI=josaa-3-10-1743}
-  \end{APACrefURL}
-\newblock
-, doi:10.1364/josaa.3.001743
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Baker%
-\ \protect\BOthers{.}}{%
-Baker%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2011}}%
-}]{%
-baker2011database}%
-\APACinsertmetastar{%
-baker2011database}%
-Baker, S.%
-, Scharstein, D.%
-, Lewis, J.%
-, Roth, S.%
-, Black, M\BPBI J.%
-\BCBL{}\ \BBA{} Szeliski, R.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2011}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{A database and evaluation methodology for optical flow}{A
-  database and evaluation methodology for optical flow}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{International Journal of Computer
-  Vision}{92}{1}{1--31}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
 Barron%
 }{%
 Barron%
@@ -137,33 +78,6 @@ Barron, J\BPBI T.%
  \begin{APACrefURL}
   \url{https://link.springer.com/chapter/10.1007/978-3-642-33765-9_5}
   \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Boyaci%
-, Maloney%
-\BCBL{}\ \BBA{} Hersh%
-}{%
-Boyaci%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2003}}%
-}]{%
-boyaci2003effect}%
-\APACinsertmetastar{%
-boyaci2003effect}%
-Boyaci, H.%
-, Maloney, L\BPBI T.%
-\BCBL{}\ \BBA{} Hersh, S.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2003}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{The effect of perceived surface orientation on perceived
-  surface albedo in binocularly viewed scenes}{The effect of perceived surface
-  orientation on perceived surface albedo in binocularly viewed scenes}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Journal of Vision}{3}{8}{2--2}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -803,32 +717,6 @@ Jakob, W.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
-Johnston%
-, Cumming%
-\BCBL{}\ \BBA{} Parker%
-}{%
-Johnston%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{1993}}%
-}]{%
-johnston1993integration}%
-\APACinsertmetastar{%
-johnston1993integration}%
-Johnston, E\BPBI B.%
-, Cumming, B\BPBI G.%
-\BCBL{}\ \BBA{} Parker, A\BPBI J.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1993}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Integration of depth modules: Stereopsis and
-  texture}{Integration of depth modules: Stereopsis and texture}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Vision research}{33}{5}{813--826}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
 Kelly%
 , Gibson%
 \BCBL{}\ \BBA{} Nickerson%
@@ -853,34 +741,6 @@ Kelly, K\BPBI L.%
   munsell book of color from spectrophotometric measurements}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{JOSA}{33}{7}{355--376}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Kovacs%
-, Bell%
-, Snavely%
-\BCBL{}\ \BBA{} Bala%
-}{%
-Kovacs%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2017}}%
-}]{%
-kovacs17shading}%
-\APACinsertmetastar{%
-kovacs17shading}%
-Kovacs, B.%
-, Bell, S.%
-, Snavely, N.%
-\BCBL{}\ \BBA{} Bala, K.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Shading Annotations in the Wild}{Shading annotations in
-  the wild}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Computer Vision and Pattern Recognition (CVPR)}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -964,34 +824,6 @@ Mollon, J\BPBI D.%
 \newblock
  \begin{APACrefURL} \url{http://jeb.biologists.org/content/146/1/21.full.pdf}
   \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Mury%
-, Pont%
-\BCBL{}\ \BBA{} Koenderink%
-}{%
-Mury%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2007}}%
-}]{%
-mury2007spatial}%
-\APACinsertmetastar{%
-mury2007spatial}%
-Mury, A\BPBI A.%
-, Pont, S\BPBI C.%
-\BCBL{}\ \BBA{} Koenderink, J\BPBI J.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2007}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Spatial properties of light fields in natural
-  scenes}{Spatial properties of light fields in natural scenes}.\BBCQ{}
-\newblock
-\BIn{} \APACrefbtitle{Proceedings of the 4th symposium on Applied perception in
-  graphics and visualization}{Proceedings of the 4th symposium on applied
-  perception in graphics and visualization}\ (\BPGS\ 140--140).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1170,33 +1002,6 @@ Tkacik, G.%
   \end{APACrefURL}
 \newblock
 , doi:doi:10.1371/journal.pone.0020409
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Todd%
-\ \BBA{} Mingolla%
-}{%
-Todd%
-\ \BBA{} Mingolla%
-}{%
-{\protect\APACyear{1983}}%
-}]{%
-todd1983perception}%
-\APACinsertmetastar{%
-todd1983perception}%
-Todd, J\BPBI T.%
-\BCBT{}\ \BBA{} Mingolla, E.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1983}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Perception of surface curvature and direction of
-  illumination from patterns of shading.}{Perception of surface curvature and
-  direction of illumination from patterns of shading.}\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Journal of Experimental Psychology: Human perception
-  and performance}{9}{4}{583}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%

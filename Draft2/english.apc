@@ -67,7 +67,7 @@
 \renewcommand{\bibprogramminglanguage}{Programming language}%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Other labels
-\renewcommand{\bibnodate}{n.d.\hbox{}}%   % ``no date''
+\renewcommand{\bibnodate}{}%   % ``no date''
 \renewcommand{\BBAB}{and}%                % between authors in text
 \renewcommand{\BOthers}[1]{et al.\hbox{}}%
 \renewcommand{\BOthersPeriod}[1]{et al.\hbox{}}%

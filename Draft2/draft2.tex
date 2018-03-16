@@ -35,7 +35,7 @@ To produce a stable perceptual representation correlated with an object's surfac
 The ability of a visual system to extract such a stable representation is called color constancy. Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eye to produce percepts well-correlated with object surface reflectance.
 
-Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \citeNP{LandRetinex,Buchsbaum80,MaloneyWandell86}). Subsequent computational considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
+Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}. Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}; LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
 A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.  But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
 As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant. Thus evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
 
@@ -48,8 +48,8 @@ As a consequence, the performance of color constancy algorithms will be affected
         \caption{}
         \label{fig:introSchematic}
     \end{subfigure}
-    \begin{subfigure}{0.45 \textwidth}   
-        \includegraphics[width=\textwidth]{../Figures/Figure1/Figure1_b.jpeg}
+    \begin{subfigure}{0.55 \textwidth}   
+        \includegraphics[width=\textwidth]{../Figures/Figure1/Figure1_b.png}
         \caption{}
         \label{fig:introExampleFigure}
     \end{subfigure}
@@ -57,33 +57,30 @@ As a consequence, the performance of color constancy algorithms will be affected
     \caption{(a) {\bf Color Constancy:} The light reflected from an object to the eye depends both on the object's surface reflectance of the object and the illumination. It also depends on geometric factors, such as the object's shape, pose, and position relative to the observer. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable, an ability called color constancy. (b) {\bf Luminance Constancy:} Images of a sphere under a fixed illuminant.  Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance spectrum held fixed.  The relative spectrum (shape of reflectance spectrum) varies across each row.
 Within each row, the object luminance of the spheres is constant; we define object luminance as the luminance of the light that would be reflected by the object's surface under standard illuminant CIE D65.  The values on the left of each row provide the corresponding object luminance. We cast the problem of computational luminance constancy to be that of estimating object luminance from the image, across variation in other scene factors: variation in relative surface reflectance, variation in illumination, and variation in the reflectance of the other objects in the scene.}
  \end{figure}
- % REMOVE EQUATION FROM 1a. IT'S NOT DOING ANY WORK AND IT ISN'T ACCURATE IN 3D WHERE EVERYTHING IS MORE COMPLICATED.
- % MOVE (a) and (b) to upper left of each panel.
- % DELETE NUMBERS 1 to 5 at bottom of each row.
 
-An alternative approach to computational color constancy, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors \cite{barron2015convolutional}. The use of supervised learning to understand perceptual capabilities for natural stimuli has enjoyed success in domains outside of color vision. For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \citeNP{geisler2009optimal}. It has been used to develop ideal observers for speed, focus error, and disparity estimation that provide excellent models of human performance \cite{burge2015optimal, burge2011optimal, burge2014optimal}. In this paper, we apply AMA to a special case of computational color constancy. 
+An alternative approach to computational color constancy, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors \cite{barron2015convolutional}. The use of supervised learning to understand perceptual capabilities for natural stimuli has enjoyed success in domains outside of color vision. For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for speed, focus error, and disparity estimation that provide excellent models of human performance \cite{burge2011optimal, burge2014optimal, burge2015optimal}. In this paper, we apply AMA to a special case of computational color constancy. 
 
-Supervised learning requires large labelled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are some smaller databases consisting of images of posed scenes where object surface reflectances are measured individually \cite{funt1988color,ciurea2003large, davidPennHyperspectral}, but these are not large enough to drive supervised learning.
+Supervised learning requires large labelled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are some smaller databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}; \citeauthor{davidPennHyperspectral}), but these are not large enough to drive supervised learning.
  
 % Figure 2: Cases Studied
 \begin{figure}
 \centering
 	\begin{subfigure}[b]{0.33 \textwidth}
-		\includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_a.jpeg}
+		\includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_a.png}
 		\caption{Case 2}
  		\label{fig:backgroundVarying}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_b.jpeg}
+        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_b.png}
         \caption{Case 3}
         \label{fig:targetIlluminantVarying}
     \end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
-        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_c.jpeg}
+        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_c.png}
         \caption{Case 4}
         \label{fig:allSpectraVarying}
     \end{subfigure}    
-    \caption{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref{fig:introExampleFigure}). (a) Case 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in \ref{fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the four panels (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
+    \caption{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Case 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref{fig:introExampleFigure}). (a) Case 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Case 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Case 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in Fig.~\ref{fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the four panels (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
 \label{fig:studiedCases}
 \end{figure}
 

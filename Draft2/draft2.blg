@@ -15,8 +15,6 @@ Repeated entry---line 272 of file references.bib
  :                            ,
 I'm skipping whatever remains of this entry
 apacite.bst [2007/09/03 v4.00 APA bibliography style]
-`articleurl' is a missing field, not a string, for entry arend1986Simultaneous
-while executing---line 5275 of file jovcite.bst
 Warning--No publisher in barron2015convolutional
 Warning--No address in barron2015convolutional
 Warning--No publisher in barron2012color
@@ -37,53 +35,51 @@ Warning--No address in ciurea2003large
 while executing---line 5275 of file jovcite.bst
 Warning--No publisher in funt1988color
 Warning--No address in funt1988color
-Warning--No publisher in mury2007spatial
-Warning--No address in mury2007spatial
 `articleurl' is a missing field, not a string, for entry NascimentoFoster2016
 while executing---line 5275 of file jovcite.bst
 Warning--No publisher in skauli2013collection
 Warning--No address in skauli2013collection
 `articleurl' is a missing field, not a string, for entry TkacikUpennHypersepctralData
 while executing---line 5275 of file jovcite.bst
-You've used 46 entries,
+You've used 39 entries,
             6399 wiz_defined-function locations,
-            1513 strings with 18856 characters,
-and the built_in function-call counts, 85803 in all, are:
-= -- 10679
-> -- 777
-< -- 3787
-+ -- 4019
-- -- 94
-* -- 5554
-:= -- 15053
-add.period$ -- 204
-call.type$ -- 46
-change.case$ -- 238
+            1469 strings with 17463 characters,
+and the built_in function-call counts, 72081 in all, are:
+= -- 9014
+> -- 637
+< -- 3156
++ -- 3337
+- -- 80
+* -- 4650
+:= -- 12641
+add.period$ -- 174
+call.type$ -- 39
+change.case$ -- 202
 chr.to.int$ -- 0
-cite$ -- 108
-duplicate$ -- 2398
-empty$ -- 3582
-format.name$ -- 1215
-if$ -- 16627
+cite$ -- 92
+duplicate$ -- 1981
+empty$ -- 3022
+format.name$ -- 976
+if$ -- 14010
 int.to.chr$ -- 0
-int.to.str$ -- 92
+int.to.str$ -- 78
 missing$ -- 0
-newline$ -- 1141
-num.names$ -- 372
-pop$ -- 1453
+newline$ -- 961
+num.names$ -- 316
+pop$ -- 1236
 preamble$ -- 1
-purify$ -- 182
+purify$ -- 154
 quote$ -- 0
-skip$ -- 5659
+skip$ -- 4782
 stack$ -- 0
-substring$ -- 4626
-swap$ -- 1545
-text.length$ -- 165
+substring$ -- 3865
+swap$ -- 1296
+text.length$ -- 145
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4320
-warning$ -- 16
-while$ -- 415
+type$ -- 3696
+warning$ -- 14
+while$ -- 333
 width$ -- 0
-write$ -- 1434
-(There were 7 error messages)
+write$ -- 1192
+(There were 6 error messages)
