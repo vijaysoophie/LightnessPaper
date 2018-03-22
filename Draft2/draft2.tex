@@ -87,6 +87,14 @@ Supervised learning requires large labeled data sets.  Such data sets are not re
 In this paper, we use high-quality computer graphics to generate large data sets of naturalistic images where the surface reflectance and illumination corresponding to each image pixel are known. 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. Here, we use this approach to tackle luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
 
+We define the computational problem of luminance constancy as that of estimating what we call surface luminance. 
+Surface luminance is a measure of the overall amount of light that a surface reflects.
+We define 
+
+A surface' luminance is the luminance of the light that would be reflected to the eye from a flat matte object with that surface reflectance, when the object is diffusely illuminated by the standard CIE daylight spectrum D65 \cite{CIE86}.  We then compute the luminance of this reflected light, using the CIE 1931 photopic luminosity function \cite{CIE86}, and divide this by the luminance of a perfectly reflecting diffuser (surface reflectance of one at all wavelengths) when that is computed in the same way. This procedure allows us to assign to any surface reflectance a single surface luminance value.  Because the perceived luminance of an object is approximately (but by no means exactly, see \citeNP{wyszecki1986color}) correlated with surface luminance across a range of viewing conditions, we refer to the computational problem we study as that of {\em luminance constancy}.
+This is a generalization of the way this term is often used, where it refers more specifically to the stability of perceived luminance across images of scenes where all objects and illuminants are achromatic \cite{gilchrist2006seeing}.
+Here, we aim to estimate surface luminance, but do so for images where both the luminance and the chromaticity of the surfaces and illuminants varies (see  Fig.~\ref{fig:introExampleFigure}). A particularly important feature of our treatment is that we consider scene variations where not only the spectrum of the illumination varies, but also the surface reflectance of objects in the scene other than the object whose surface luminance is being estimated. 
+
 % MOVE ALL THIS TO DICUSSION
 %This general approach has been adopted by other labs for the study of computational estimation of optical flow (Baker et al., 2011) and is becoming increasingly popular (Kovacs, Bell, Snavely, & Bala, 2017), as well as for the generation of stimuli for the study of human perception (e.g., Boyaci, Maloney, & Hersh, 2003; Todd & Mingolla, 1983; Arend & Reeves, 1986; Johnston, Cumming, & Parker, 1993). Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the Discussion.
 % \cite{baker2011database}  \cite{kovacs17shading} \citeNP{boyaci2003effect, todd1983perception, arend1986Simultaneous, johnston1993integration}
@@ -101,9 +109,7 @@ This approach allows us to investigate computational color constancy with natura
 
 
 
-In this initial work, we do not tackle the full problem of color constancy.  Rather, as a point of departure, we consider the computational problem of estimating a single attribute of object surface reflectance, which we refer to as surface luminance.  We compute object luminance from an object's surface reflectance function as follows.  We compute the light that would be reflected to the eye from a flat matte object with that surface reflectance, when the object is diffusely illuminated by the standard CIE daylight spectrum D65 \cite{CIE86}.  We then compute the luminance of this reflected light, using the CIE 1931 photopic luminosity function \cite{CIE86}, and divide this by the luminance of a perfectly reflecting diffuser (surface reflectance of one at all wavelengths) when that is computed in the same way. This procedure allows us to assign to any surface reflectance a single surface luminance value.  Because the perceived luminance of an object is approximately (but by no means exactly, see \citeNP{wyszecki1986color}) correlated with surface luminance across a range of viewing conditions, we refer to the computational problem we study as that of {\em luminance constancy}.
-This is a generalization of the way this term is often used, where it refers more specifically to the stability of perceived luminance across images of scenes where all objects and illuminants are achromatic \cite{gilchrist2006seeing}.
-Here, we aim to estimate surface luminance, but do so for images where both the luminance and the chromaticity of the surfaces and illuminants varies (see  Fig.~\ref{fig:introExampleFigure}). A particularly important feature of our treatment is that we consider scene variations where not only the spectrum of the illumination varies, but also the surface reflectance of objects in the scene other than the object whose surface luminance is being estimated. 
+
 
 Even within the special case of luminance constancy, there are many scene manipulations that could be considered. The set of manipulations we focus on here are illustrated by Fig.~\ref{fig:introExampleFigure} and the three panels of Fig.~\ref{fig:studiedCases}. These cases are: 1. variation in target object spectrum with fixed light source and background objects spectra (Fig.~\ref{fig:introExampleFigure}), 2. variation in target object spectrum and background objects spectra, with fixed light source  (Fig.~\ref{fig:backgroundVarying}), 3. variations in both the target object spectrum and the light source spectra, with fixed background object spectra (Fig.~\ref{fig:targetIlluminantVarying}), and 3. variations in all three types of spectra (target object, light source, and background objects) (Fig.~\ref{fig:allSpectraVarying}). Across real scenes, there will also be variations in the shape of the target object, its pose, eye position, etc. (see \nameref{Methods}). In this paper, we focus on the problem of luminance constancy within scene ensembles where these geometric factors are held fixed.
 
@@ -158,12 +164,13 @@ There are four key parts to our methods.  First we generate a labeled set of tra
 \end{figure}
 
 \subsubsection{Virtual naturalistic scenes}
-The light that reflects from objects to the eyes depends on many factors. These include the surface reflectance, texture, material and geometry of the objects, the spectra of the illuminants, and the position of the observer.
-We developed a rendering pipeline that allows us to specify models of naturalistic scenes. The pipeline harnesses computer graphics to render, for each scene, a corresponding image.  The renderer traces the flow of light through the scene as it interacts with object surfaces, so that the images are physically accurate.
-Because each image is rendered from a known scene description, each image pixel can be labeled with the surface reflectance of the corresponding scene object.
-By incorporating statistical models of the variation of object surface reflectance and daylight illumination, the pipeline allows us to produce large labeled sets of images that capture much of the task-relevant statistical structure of natural scenes.
 
-We refer to the software pipeline as Virtual World Color Constancy (VWCC). It is written in Matlab and is freely available: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. VWCC builds on other open-source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}.
+The light that reflects from objects to the eyes depends on many factors.
+These include the surface reflectance, texture, material and geometry of the objects, the spectra of the illuminants, and the position of the observer.
+We developed a rendering package that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
+The package harnesses an open-source computer graphics renderer  \cite{jakob2015mitsuba} to produce physically-accurate images from the scene models.
+Because each image is rendered from a known scene model, each image pixel can be labeled with the surface reflectance of the corresponding scene object.
+By incorporating statistical models of the variation of object surface reflectance and daylight illumination, the pipeline allows us to produce large labeled sets of images that capture much of the task-relevant statistical structure of natural scenes.
 
 % Figure 4
 \begin{figure}
@@ -205,17 +212,35 @@ We refer to the software pipeline as Virtual World Color Constancy (VWCC). It is
 \caption{{\bf Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
 \end{figure}
 
-The purpose of VWCC is to allow us to specify and render a large set of diverse scenes.
-
-VWCC includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
-Base scenes specify an arrangment of objects and light sources, and provide a starting point for constructing more complex scenes via the placement of additional objects and light sources. To guide where to put such additional objects and light sources, base scenes are annotated with meta data. To render an image of a scene, it is necessary to specify a viewpoint. The meta data also includes information to guide selection of the viewpoint.
-
-VWCC contains a collection of objects that may be inserted into base scenes (Fig.~\ref{fig:libraryWithTarget}).
-It also allows positioning of additional point and area lights.
-In addition, VWCC provides the user with control over key scene properties. These include the position, size and pose of inserted objects, the reflectance of surfaces, and the spectra of illuminants (Fig.~\ref{fig:targetPositionVariation}).
+Our software package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
+Base scenes specify an arrangement of objects and light sources.
+Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}).
+Once the position, size and pose of the inserted objects has been set, our package allows the assignment of a surface reflectance function to each object in the scene and a spectral power distribution to each light source (Fig.~\ref{fig:VWCCTransformations}).
+This provides a complete scene model which can be rendered from any specified viewpoint.
 % REORDER FIGURE 5 COLUMNS d -> e -> a -> b -> c.
 
-Thus, along with distributions that characterize parameters such as the number, size, shape and orientation of the inserted objects and light sources, we have a simple statistical model of the object and light source geometry of natural scenes. 
+In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
+We used one fixed base scene and inserted a target object of fixed shape and size into this scene.
+Across scenes, we systematically varied the reflectance of the target object, and randomly varied the reflectance of the other objects and the spectral power distributions of the light sources.
+
+
+
+The variation within our datasets captures the essence of the computational problem of lightness constancy.
+
+ fixed target object, but varied the surface reflectance of the objects in the scene and the spectra of the light sources.
+The target object 
+
+In the present work, we insert one target object and one additional light source into a fixed base scene, and vary object reflectance and illuminant spectra.
+We then insert a camera for rendering at a user specified position and point this camera at the target object.
+We ensure that a 9 pixel by 9 pixel region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object is not occluded along the camera's line of sight.
+For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance.
+The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
+
+We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
+
+For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel. A $51 \times 51$ pixel patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
+
+It is written in Matlab and is freely available: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. VWCC builds on other open-source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}.
 
 % Figure5
 \begin{figure}
@@ -255,16 +280,11 @@ Thus, along with distributions that characterize parameters such as the number, 
         \label{fig:targetSizeOrientation}
     \end{subfigure}
     ~
-    \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Spectral (a-c) and Geometrical (d-e). VWCC provides control over such transformation as illustrated by the columns. (a) The target object surface reflectance varies across the three panels of the column. (b) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (c) The power spectrum of the light sources were assigned randomly in the three panels. (d) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. }\label{fig:VWCCTransformations}
+    \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Spectral (a-c) and Geometrical (d-e). VWCC provides control over such transformation as illustrated by the columns. (a) The target object surface reflectance varies across the three panels of the column. (b) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (c) The power spectrum of the light sources were assigned randomly in the three panels. (d) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel.
+\label{fig:VWCCTransformations}}
 \end{figure}
 
-Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
-
-In the present work, we insert one target object and one additional light source into a fixed base scene, and vary reflectance and illuminant spectra. We then insert a camera for rendering at a user specified position and point this camera at the target object. We ensure that a 9 pixel by 9 pixel region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object at its inserted position was not occluded by other objects in the line of sight from camera. For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance. The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
-
-We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
-
-For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel. A $51 \times 51$ pixel patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
+%Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
 \subsubsection{Illumination Spectra}
 % Figure 6
