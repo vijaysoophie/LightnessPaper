@@ -109,7 +109,7 @@ LRVs are typically expressed in percent, so that they range from 0 to 100.
 
 \section*{Methods} \label{Methods}
 \subsection{Overview}
-There are four key parts to our methods.  First we generate a labeled set of training images.  Second we model the responses of the cone photoreceptor mosaic to the labeled images. Third we apply AMA to the cone responses to learn task-optimal receptive fields (RFs).  Fourth we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
+There are four key parts to our methods.  First we generate a labeled set of training images.  Second we use a model of the early visual system the compute the responses of the cone photoreceptor mosaic to the labeled images. Third we apply AMA to the cone responses to learn task-optimal receptive fields (RFs). Fourth we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
 
 \subsection{Labeled training data} \label{method:VirtualWorld}
 % Figure 3
@@ -161,6 +161,9 @@ We developed a rendering package that allows us to construct models of naturalis
 The package harnesses an open-source computer graphics renderer  \cite{jakob2015mitsuba} to produce physically-accurate images from the scene models.
 Because each image is rendered from a known scene model, each image pixel can be labeled with the surface reflectance of the corresponding scene object.
 By incorporating statistical models of the variation of object surface reflectance and daylight illumination, the pipeline allows us to produce large labeled sets of images that capture much of the task-relevant statistical structure of natural scenes.
+% Reference RTB and VWCC where we say "We developed a rendering package".
+% \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}.
+%\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}
 
 % Figure 4
 \begin{figure}
@@ -199,10 +202,10 @@ By incorporating statistical models of the variation of object surface reflectan
         \caption{Bottle}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
-\caption{{\bf Library base scene with inserted objects.} The VWCC software was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
+\caption{{\bf Library base scene with inserted objects.} The rendering package was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
 \end{figure}
 
-Our software package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
+Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
 Base scenes specify an arrangement of objects and light sources.
 Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}).
 Once the position, size and pose of the inserted objects has been set, our package allows the assignment of a surface reflectance function to each object in the scene and a spectral power distribution to each light source (Fig.~\ref{fig:VWCCTransformations}).
@@ -211,54 +214,39 @@ This provides a complete scene model which can be rendered from any specified vi
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a target object of fixed shape and size into this scene.
-Across scenes, we systematically varied the reflectance of the target object, and randomly varied the reflectance of the other objects and the spectral power distributions of the light sources.
-We generated five distinct datasets.
-Across these datasets, the luminance constancy problem is progressively more difficult (Fig.~\ref{fig:studiedCases}).
-In the first dataset (Condition 0), the only source of stimulus variation was in the task relevant quantity, the LRV.
-Here, we fixed the relative reflectance spectrum of the target object, the reflectance spectra of the other objects in the scene, and the spectral power distribution of the light sources fixed.
+We generated five distinct datasets: Conditions 0 through 4.
+Across these datasets the luminance constancy problem, estimating the target object LRV,
+becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
+
+In Condition 0, the only source of stimulus variation was in the task relevant quantity, the target object LRV.
+Here, we fixed target object color (i.e. the relative reflectance spectrum of the target object),
+the reflectance spectra of the background objects, and the spectral power distributions of the light sources.
 We used 10 LRV values, equally spaced between 20 and 60.
-Condition 0 provides a baseline. 
+Condition 0 defines a baseline. In this condition, all images with the the same value of the LRV are identical.
 
-In the remaining conditions, we systematically introduced variation in scene factors other than the LRV.
+In the remaining conditions, we systematically introduced variation in scene factors other than the target object LRV.
+In Condition 1, we introduced variation in target object color but held the other factors fixed.
 
-In the second dataset (Condition 1), we introduced variation in the relative reflectance spectrum of the target object.
-In essence, this condition introduces color variation across target objects that have the same LRV.
-
-Conditions 2 and 3 each increase the variation relative to Condition 1.
-
-In Condition 2, in addition to the relative reflectance spectrum of the target
-we varied the reflectance spectra of the background objects,
+Conditions 2, 3 and 4 each increase the variation relative to Condition 1.
+In Condition 2, in addition to the color of the target object,
+we varied the reflectance spectra of the background objects
 while holding the the spectral power distribution of the light sources
 constant.
-
-In Condition 3, in addition to the relative reflectance spectrum of the target
-we varied the spectral power distribution of the light sources,
+In Condition 3, in addition to the color of the target object,
+we varied the spectral power distribution of the light sources
 while holding the reflectance spectra of the background objects constant.
-
-Finally, in Condition 4 we varied all three factors (relative reflectance spectrum,
+Finally, in Condition 4 we varied all three factors (target object color,
 reflectance spectra of the background objects, spectral power distribution of the light sources).
+The variation within our datasets captures the essence of the computational problem of lightness constancy
+up to effects of scene geometry, an additional richness that we do not address in this paper.
 
+%Condition 0: Baseline
+%Condition 1: Target Color Only Variation
+%Condition 2: Target Color and Background
+%Condition 3: Target Color and Illuminant
+%Condition 4: Everything
 
-Condition 0: Baseline
-Condition 1: Target Color Only
-Condition 2: Target Color and Background
-
-The variation within our datasets captures the essence of the computational problem of lightness constancy.
-
- fixed target object, but varied the surface reflectance of the objects in the scene and the spectra of the light sources.
-The target object 
-
-In the present work, we insert one target object and one additional light source into a fixed base scene, and vary object reflectance and illuminant spectra.
-We then insert a camera for rendering at a user specified position and point this camera at the target object.
-We ensure that a 9 pixel by 9 pixel region at the center of the image corresponds to light reflected from the target object, which amounts to verifying that the target object is not occluded along the camera's line of sight.
-For each rendered scene, we specify the surface reflectance of the target object, which allows us to control both its surface luminance as well as its relative surface reflectance.
-The specified surface luminance provides the requisite label for the scene and resultant cone mosaic responses.
-
-We render scenes using the \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba} rendering package, driven by our \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3} rendering pipeline.
-
-For the images used for the primary results reported in this paper, we used the ``{\it Library}'' base scene from the VWCC  and the ``{\it Big Ball}'' object as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position, and size of the inserted object, light source and the camera were held fixed for all the images analyzed in this work, i.e., the scene geometry did not vary. Next, we assigned illumination and surface reflectance spectra to the lights and objects in the scene. The spectral manipulations for the various cases studied in this work have been described in the main text (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}). 2D multispectral images were rendered at 31 wavelengths from $400$nm to $700$nm spaced $10$nm apart at an image size $320\times 240$ pixel. A $51 \times 51$ pixel patch of the multispectral image was cropped around the target object and cone responses were calculated to these cropped images. 
-
-It is written in Matlab and is freely available: \href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}. VWCC builds on other open-source projects, including \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}, \href{http://isetbio.org}{Isetbio} and \href{https://www.mitsuba-renderer.org}{Mitsuba} \cite{jakob2015mitsuba}.
+For the primary results we used the ``{\it Library}'' base scene and a sphere as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position and size of the inserted object, light source and the camera were held fixed. Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra. We describe these models below. Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm. A $51 \times 51$ pixel patch was cropped around the target object for further analysis. This corresponded to $1 \times 1$ degrees of visual angle for the model of the early visual system, also described below.
 
 % Figure5
 \begin{figure}
@@ -348,7 +336,17 @@ It is written in Matlab and is freely available: \href{https://github.com/Braina
     \caption{{\bf Generating random illumination spectra:} The illumination spectra are generated by random sampling based on the Granada daylight measurements, assuming a multivariate Gaussian distribution of weights in a 6-dimensional PCA representation. The mean and covariance matrix of the Gaussian are chosen by projecting the dataset along the first six PCA directions and taking the mean and covariance matrix of the resulting basis vector weights. (a) The 2600 spectra from the Granada natural daylight dataset, plotted on a log intensity scale in arbitrary units. (b) Rescaled version of the Granada dataset. Each spectrum is rescaled so that it has a mean value (over wavelength) of one illumination. (c) Randomly samples generated using the rescaled spectra from Fig.~\ref{fig:rescaledGranada}. (d)Normalized PCA eigenvalues and cumulative sum of the normalized eigenvalues. The eigenvalues have been normalized by the sum over all eigenvalues. The dotted line at 0.9 on the y-axis is for reference. We used the eigenvectors corresponding to the first six eigenvalues in our analysis. (e) CIE xy chromaticity plot of the rescaled dataset (in Fig.~\ref{fig:rescaledGranada}) and randomly generated samples from Fig.~\ref{fig:randomIlluminant}. (f) sRGB renditions of the random illuminant samples shown in Fig.~\ref{fig:randomIlluminant}.}\label{fig:illluminationGeneration}
 \end{figure}
 
-We generate illumination spectra  through random statistical sampling of a dataset of naturally occurring illuminants, the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric}.  These spectra are shown on a log intensity scale in Fig.~\ref{fig:granadaSpectra}, which illustrates that the overall intensity of natural daylights varies over several orders of magnitude, and in normalized format in Fig.~\ref{fig:rescaledGranada}, which illustrates that the relative spectra also vary considerably.  In our procedure, we first approximate the spectra in the dataset using principle component analysis (PCA). We then decompose the spectra in terms of the PCA basis vectors corresponding to the 6 largest PCA eigenvalues. Next, we sample from this low 6 dimensional PCA weight space assuming that the distribution of the basis vector weights is a multivariate gaussian whose mean and covariance matrix match the sample mean and covariance obtained from the daylight dataset. Finallly, we use the sampled weights to reconstruct sampled spectra. This general method for modeling the statistical structure of daylight was introduced by Brainard \& Freeman \cite{BrainardFreeman}. Details of the procedure we used are provided below.
+To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric} and sample randomly from the model.
+The overall intensity of the measurements spans approximately three orders of magnitude.
+Figure~\ref{fig:rescaledGranada} plots the measurements in normalized form to make apparent the variation in the relative spectra.
+
+Our statistical model approximates these normalized shapes using their first 6 principle components, and models the variation in these components with
+a 6-dimensional Gaussian whose mean and covariance matrix match the dataset's sample mean and covariance of the weights on these components.
+To generate a random relative illuminant spectrum, we take a draw from this Gaussian to obtain weights and generate the corresponding spectrum.
+Figure~ref{ENTER REF} .....
+and reconstruct t
+obtained from the daylight dataset.
+ In our procedure, we first approximate the spectra in the dataset using principle component analysis (PCA). We then decompose the spectra in terms of the PCA basis vectors corresponding to the 6 largest PCA eigenvalues. Next, we sample from this low 6 dimensional PCA weight space assuming that the distribution of the basis vector weights is a  Finallly, we use the sampled weights to reconstruct sampled spectra. This general method for modeling the statistical structure of daylight was introduced by Brainard \& Freeman \cite{BrainardFreeman}. Details of the procedure we used are provided below.
 
 Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the measured spectra vary over several orders of magnitude in overall intensity, we rescale each spectrum by dividing it by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. For simplicity of notation, we denote wavelength $\lambda$ as a continuous variable; in the actual calculations wavelength is discretely sampled and integrals are approximated by sums.  The Granada dataset was measured at 5 nm sampling intervals between 300 and 1100 nm.  We subsampled the spectra to the 400-700 nm interval, 10 nm spacing representation used for rendering, and performed our calculations at this sampling.
 
