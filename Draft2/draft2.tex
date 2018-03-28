@@ -157,13 +157,10 @@ There are four key parts to our methods.  First we generate a labeled set of tra
 
 The light that reflects from objects to the eyes depends on many factors.
 These include the surface reflectance, texture, material and geometry of the objects, the spectra of the illuminants, and the position of the observer.
-We developed a rendering package that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
+We developed a rendering package (\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}, \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}) that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
 The package harnesses an open-source computer graphics renderer  \cite{jakob2015mitsuba} to produce physically-accurate images from the scene models.
 Because each image is rendered from a known scene model, each image pixel can be labeled with the surface reflectance of the corresponding scene object.
 By incorporating statistical models of the variation of object surface reflectance and daylight illumination, the pipeline allows us to produce large labeled sets of images that capture much of the task-relevant statistical structure of natural scenes.
-% Reference RTB and VWCC where we say "We developed a rendering package".
-% \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}.
-%\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}
 
 % Figure 4
 \begin{figure}
@@ -210,7 +207,47 @@ Base scenes specify an arrangement of objects and light sources.
 Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}).
 Once the position, size and pose of the inserted objects has been set, our package allows the assignment of a surface reflectance function to each object in the scene and a spectral power distribution to each light source (Fig.~\ref{fig:VWCCTransformations}).
 This provides a complete scene model which can be rendered from any specified viewpoint.
-% REORDER FIGURE 5 COLUMNS d -> e -> a -> b -> c.
+
+% Figure5
+\begin{figure}
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_d.png}
+        \caption{Target position}
+        \label{fig:targetPositionVariation}
+    \end{subfigure}
+    ~
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_e.png}
+        \caption{Target Size/Orientation}
+        \label{fig:targetSizeOrientation}
+    \end{subfigure}
+~
+\centering
+	\begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_a.png}
+        \caption{Target spectra}
+        \label{fig:targetVariation}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_b.png}
+        \caption{Background spectra}
+        \label{fig:backGroundVariation}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_c.png}
+        \caption{Illumination spectra}
+        \label{fig:illuminationVariation}
+    \end{subfigure}
+    \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Geometrical (a-b) and Spectral (c-e). VWCC provides control over such transformation as illustrated by the columns. (a) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. (b) The target object in the three panels are at different orientations. (c) The target object surface reflectance varies across the three panels of the column. (d) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (e) The power spectrum of the light sources were assigned randomly in the three panels. 
+\label{fig:VWCCTransformations}}
+\end{figure}
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a target object of fixed shape and size into this scene.
@@ -247,48 +284,6 @@ up to effects of scene geometry, an additional richness that we do not address i
 %Condition 4: Everything
 
 For the primary results we used the ``{\it Library}'' base scene and a sphere as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position and size of the inserted object, light source and the camera were held fixed. Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra. We describe these models below. Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm. A $51 \times 51$ pixel patch was cropped around the target object for further analysis. This corresponded to $1 \times 1$ degrees of visual angle for the model of the early visual system, also described below.
-
-% Figure5
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_a.png}
-        \caption{Target spectra}
-        \label{fig:targetVariation}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_b.png}
-        \caption{Background spectra}
-        \label{fig:backGroundVariation}
-    \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_c.png}
-        \caption{Illumination spectra}
-        \label{fig:illuminationVariation}
-    \end{subfigure}
-    ~
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_d.png}
-        \caption{Target position}
-        \label{fig:targetPositionVariation}
-    \end{subfigure}
-    ~
-	\begin{subfigure}[b]{0.18 \textwidth}
-    \centering
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_e.png}
-        \caption{Target Size/Orientation}
-        \label{fig:targetSizeOrientation}
-    \end{subfigure}
-    ~
-    \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Spectral (a-c) and Geometrical (d-e). VWCC provides control over such transformation as illustrated by the columns. (a) The target object surface reflectance varies across the three panels of the column. (b) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (c) The power spectrum of the light sources were assigned randomly in the three panels. (d) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel.
-\label{fig:VWCCTransformations}}
-\end{figure}
 
 %Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
