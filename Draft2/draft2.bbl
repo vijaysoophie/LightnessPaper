@@ -27,6 +27,31 @@ Albrecht, D\BPBI G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+ASTM%
+}{%
+ASTM%
+}{%
+{\protect\APACyear{{\protect\bibnodate{}}}}%
+}]{%
+astm1121477}%
+\APACinsertmetastar{%
+astm1121477}%
+ASTM, E.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{\bibnodate{}}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{1477 Standard Test Method for Luminous Reflectance Factor
+  of Acoustical Materials by Use of Integrating-Sphere Reflectometers}{1477
+  standard test method for luminous reflectance factor of acoustical materials
+  by use of integrating-sphere reflectometers}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Renovations of Center for Historic
+  Preservation}{112}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Barron%
 }{%
 Barron%
@@ -574,27 +599,6 @@ Geisler, W\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
-Gilchrist%
-}{%
-Gilchrist%
-}{%
-{\protect\APACyear{2006}}%
-}]{%
-gilchrist2006seeing}%
-\APACinsertmetastar{%
-gilchrist2006seeing}%
-Gilchrist, A\BPBI L.%
-%
-\unskip\
-\newblock
-\APACrefYear{2006}.
-\newblock
-\APACrefbtitle{Seeing Black and White}{Seeing black and white}\ [Book].
-\newblock
-\APACaddressPublisher{Oxford}{Oxford University Press}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
 Heasly%
 , Cottaris%
 , Lichtman%
@@ -1028,32 +1032,6 @@ Vrhel, M\BPBI J.%
   spectra}{Measurement and analysis of object reflectance spectra}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Color Research \& Application}{19}{1}{4--9}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Wyszecki%
-}{%
-Wyszecki%
-}{%
-{\protect\APACyear{1986}}%
-}]{%
-wyszecki1986color}%
-\APACinsertmetastar{%
-wyszecki1986color}%
-Wyszecki, G.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1986}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Color appearance}{Color appearance}\BBCQ{}\ [Book
-  Section].
-\newblock
-\BIn{} \APACrefbtitle{Handbook of Perception and Human Performance: Sensory
-  Processes and Perception}{Handbook of perception and human performance:
-  Sensory processes and perception}\ (\BPG~9.1-9.56).
-\newblock
-\APACaddressPublisher{New York}{John Wiley and Sons}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

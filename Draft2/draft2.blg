@@ -1,0 +1,85 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft2.aux
+The style file: jovcite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: references.bib
+Repeated entry---line 272 of file references.bib
+ : @article{geisler2009optimal
+ :                            ,
+I'm skipping whatever remains of this entry
+apacite.bst [2007/09/03 v4.00 APA bibliography style]
+Warning--No publisher in barron2015convolutional
+Warning--No address in barron2015convolutional
+Warning--No publisher in barron2012color
+Warning--No address in barron2012color
+Warning--No journal in davidPennHyperspectral
+ptr=1, stack=
+
+---the literal stack isn't empty for entry davidPennHyperspectral
+while executing---line 5275 of file jovcite.bst
+`articleurl' is a missing field, not a string, for entry Buchsbaum80
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in ChakrabartiHyperspectral
+Warning--No address in ChakrabartiHyperspectral
+Warning--No address in CIE86
+Warning--No publisher in ciurea2003large
+Warning--No address in ciurea2003large
+`articleurl' is a missing field, not a string, for entry FosterColorConstancy
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in funt1988color
+Warning--No address in funt1988color
+`articleurl' is a missing field, not a string, for entry NascimentoFoster2016
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in skauli2013collection
+Warning--No address in skauli2013collection
+`articleurl' is a missing field, not a string, for entry TkacikUpennHypersepctralData
+while executing---line 5275 of file jovcite.bst
+You've used 38 entries,
+            6399 wiz_defined-function locations,
+            1462 strings with 17416 characters,
+and the built_in function-call counts, 71272 in all, are:
+= -- 8864
+> -- 619
+< -- 3218
++ -- 3401
+- -- 78
+* -- 4661
+:= -- 12714
+add.period$ -- 168
+call.type$ -- 38
+change.case$ -- 195
+chr.to.int$ -- 0
+cite$ -- 90
+duplicate$ -- 1933
+empty$ -- 2942
+format.name$ -- 962
+if$ -- 13723
+int.to.chr$ -- 0
+int.to.str$ -- 76
+missing$ -- 0
+newline$ -- 938
+num.names$ -- 308
+pop$ -- 1168
+preamble$ -- 1
+purify$ -- 149
+quote$ -- 0
+skip$ -- 4673
+stack$ -- 0
+substring$ -- 3900
+swap$ -- 1259
+text.length$ -- 134
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 3552
+warning$ -- 14
+while$ -- 326
+width$ -- 0
+write$ -- 1167
+(There were 6 error messages)
