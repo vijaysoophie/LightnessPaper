@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.5}{Overview}{}% 2
+\BOOKMARK [1][-]{section*.6}{Labeled training data}{}% 3
+\BOOKMARK [1][-]{section*.8}{Virtual naturalistic scenes}{}% 4
+\BOOKMARK [1][-]{section*.11}{Illumination Spectra}{}% 5
+\BOOKMARK [1][-]{section*.13}{Surface Reflectance Spectra}{}% 6
+\BOOKMARK [1][-]{section*.16}{Model of Early Visual System}{}% 7
+\BOOKMARK [1][-]{section*.17}{Supervised Learning methods}{}% 8
+\BOOKMARK [1][-]{section*.20}{Error estimation}{}% 9
+\BOOKMARK [1][-]{section*.21}{Results}{}% 10
+\BOOKMARK [1][-]{section*.22}{Luminance estimates for each spectral condition}{}% 11
+\BOOKMARK [1][-]{section*.23}{Condition 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}{}% 12
+\BOOKMARK [1][-]{section*.25}{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}{}% 13
+\BOOKMARK [1][-]{section*.28}{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}{}% 14
+\BOOKMARK [1][-]{section*.30}{Condition 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}{}% 15
+\BOOKMARK [1][-]{section*.32}{Optimal receptive fields for luminance estimation have a center surround structure}{}% 16
+\BOOKMARK [1][-]{section*.34}{The receptive fields of complex condition generalize on simpler conditions}{}% 17
+\BOOKMARK [1][-]{section*.36}{Discussion}{}% 18
+\BOOKMARK [1][-]{section*.37}{References}{}% 19
