@@ -317,93 +317,73 @@ For the primary results we used the ``{\it Library}'' base scene and a sphere as
     \centering
         \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_d.pdf}
-        \label{fig:sRGBIlluminant}
+        \label{fig:sRGBIlluminantScaled}
     \end{subfigure}
-    \caption{{\bf Illumination spectra:} (a) Mean scaled Granada dataset (red, 2600 samples) and 100 randomly generated samples using the rescaled spectra (black). (b) CIE xy chromaticity diagram of the mean scaled dataset and the random samples. (c) sRGB renditions of 100 random samples before scaling. (d) sRGB renditions of the samples after scaling.}
+    \caption{{\bf Illumination spectra:} (a) Normalized Granada dataset (red, 2600 samples of Granada dataset) and 100 randomly generated samples using the rescaled spectra (black). (b) CIE xy chromaticity diagram of the normalized dataset and the random samples. (c) sRGB renditions of 100 random samples before scaling. (d) sRGB renditions of the samples after scaling.}
+\label{fig:illuminant}
 \end{figure}
 
 To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric} and sample randomly from the model.
 The overall intensity of the measurements spans approximately three orders of magnitude.
-Figure~\ref{fig:rescaledGranada} plots the measurements in normalized form to make apparent the variation in the relative spectra.
+Figure~\ref{fig:illuminantSpectra} plots the measurements in normalized form (red) to make apparent the variation in the relative spectra. The spectra are normalized by their mean over wavelength.
 
 Our statistical model approximates these normalized shapes using their first 6 principle components, and models the variation in these components with
 a 6-dimensional Gaussian whose mean and covariance matrix match the dataset's sample mean and covariance of the weights on these components \cite{BrainardFreeman}.
 To generate a random relative illuminant spectrum, we take a draw from this Gaussian to obtain weights and generate the corresponding spectrum.
-Figure~ref{fig:illuminantSpectra} illustrates the relative spectra of draws obtained using this procedure.
+Figure~\ref{fig:illuminantSpectra} also illustrates the relative spectra of draws obtained using this procedure (black).
 Details of the statistical model for illumination are provided in the appendix.
 
 Because our multivariate Gaussian model is based on the rescaled spectra, it does not embody the large variation in overall intensity of natural daylights.
 To obtain illuminant spectra with intensity variation similar to the Granada dataset, we scaled each randomly generated relative spectrum.
-We obtained each scale factor by randomly sampling (with replacement) a spectrum from the Granda dataset and taking its mean.
+We obtained each scale factor by randomly sampling (with replacement) a spectrum from the Granda dataset and taking its mean. 
+Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:illuminant}.
 
 \subsubsection{Surface Reflectance Spectra}
 % Figure 7
 \begin{figure}
 \centering
-	\begin{subfigure}[b]{0.24 \textwidth}
+	\begin{subfigure}{0.24 \textwidth}
     \centering
             \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_a.pdf}
-        \label{fig:naturalSurface}
+        \label{fig:reflectanceSpectra}
     \end{subfigure}
-    \begin{subfigure}[b]{0.24 \textwidth}
+    \begin{subfigure}{0.24 \textwidth}
     \centering
         \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_b.pdf}
-        \label{fig:randomSurface}
+        \label{fig:xyChroReflectance}
     \end{subfigure}
-    \begin{subfigure}[b]{0.24 \textwidth}
+    \begin{subfigure}{0.24 \textwidth}
     \centering
     \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_c.pdf}
-        \label{fig:sRGBSurface}
+        \label{fig:backgroundSwatches}
     \end{subfigure}    
     \centering
-	\begin{subfigure}[b]{0.24 \textwidth}
+	\begin{subfigure}{0.24 \textwidth}
     \centering
         \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure8.pdf}
-        \label{fig:naturalSurfaceTarget}
+        \label{fig:targetSwatches}
     \end{subfigure}
-    \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets (red, 632 samples) and randomly generated samples for background objects (black, 100 samples). (b) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (red) and a representative sample of 100 background object surface reflectances (black) and 100 target object surface reflectances (green). (c) sRGB renditions of the 100 random samples of background object surface reflectance. (d) sRGB renditions of the target object surface reflectance. random samples after rescaling. The figure shows 10 randomly generated samples at 10 levels of the target object LRV. The LRV range of [0.2, 0.6], captures more than 90\% of the natural surface reflectances.}
+    \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets (red, 632 samples), representative samples of background object surface reflectances (black, 100 samples) and target object surface reflectances (green, 100 samples). (b) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (red) and randomly generated samples of surface reflectances for background objects (black) and target objects (green). (c) sRGB renditions of the 100 random samples of background object surface reflectance. (d) sRGB renditions of the target object surface reflectance. The figure shows 10 randomly generated samples at 10 levels of the target object LRV. The LRV range of [0.2, 0.6], captures more than 90\% of the natural surface reflectances.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
 
 We generated random reflectance spectra using the same principles we applied to generate random illuminant spectra.
 We combined the Munsell \cite{kelly1943tristimulus} and Vrhel \cite{vrhel1994measurement} surface reflectance 
-measurements to create a database containing 632 reflectance spectra.
+measurements to create a database containing 632 reflectance spectra Figure~\ref{fig:reflectanceSpectra}.
 The Munsell database contains 462 spectra each measured at 5nm sampling intervals between 380nm and 780nm.
 The Vrhel dataset contains 170 spectra measured at 2nm sampling between 390nm and 730 nm.
 We resampled these spectra to 31 evenly-spaced wavelengths between $400$nm and $700$nm.
-Figure~ref{ENTER REF FIG} illustrates the spectra of draws obtained using this procedure.
+Figure~\ref{fig:reflectanceSpectra} illustrates the spectra of draws obtained using this procedure.
 Details of the statistical model for surface reflectance spectra are provided in the appendix. 
-
-% THIS GOES TO THE SAME APPENDIX AS THE ILLUMINANT MATH.
-%Let us denote the reflectance dataset as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
-%and $M$ is the total number of spectra in the dataset. 
-%We calculated the mean reflectance spectrum,
-%$\bar{R}(\lambda)$, by taking the sample mean over all spectra in the dataset, i.e.,
-%$\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda)$. Then, we mean centered 
-%the reflectance dataset by subtracting the mean spectrum, $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
-%We decomposed this mean centered dataset as $R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}}$, where
-%the ${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD applied to $R_i^{\rm MC}(\lambda)$
-%and the $w_{ij}$ are the weights obtained by projecting each of $R_i^{\rm MC}(\lambda)$ onto the basis vectors ${\bf \hat{e}}_j^{\rm PCA}$ 
-%$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. 
-%We used the basis vectors corresponding to the largest six SVD eigenvalues. 
-%For the combined Munsell and Vrhel datasets, these six eigenvalues account for 
-%more than $90\%$ of the variance. 
-%To generate random reflectance spectra, we generate samples of weights ($\tilde{w}_{ij}$) drawn from the multivariate Gaussian 
-%distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
-%and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the randomly sampled weights satisfy the condition $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, we use them to give the random reflectance spectrum as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.  Otherwise the draw is discarded and a new set of weights is drawn.
 
 % MAKE TARGET SWATCHES ITS OWN FIGURE.
 For generating the target object reflectance at a particular luminance $(Y_{\rm T})$, the values in a generated spectrum were 
 scaled such that the LRV had the desired value (see appendix).
-Figure \ref{TARGET FIG} shows color swatches of target reflectance spectra rendered under CIE illuminant D65, for evenly spaced LRV values.
-
-%The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE photopic luminosity (or luminous efficiency) function. 
-%$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
-%perception of bruminance. The target reflectance is then given by: $\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right)$.
+Figure \ref{fig:targetSwatches} shows color swatches of target reflectance spectra rendered under CIE illuminant D65, for evenly spaced LRV values.
 
 % Figure 8: Methods
 \begin{figure}
