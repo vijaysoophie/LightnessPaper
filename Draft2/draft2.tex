@@ -254,6 +254,7 @@ We used one fixed base scene and inserted a target object of fixed shape and siz
 We generated five distinct datasets: Conditions 0 through 4.
 Across these datasets the luminance constancy problem, estimating the target object LRV,
 becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
+Each dataset consisted of 1000 scenes and corresponding images.
 
 In Condition 0, the only source of stimulus variation was in the task relevant quantity, the target object LRV.
 Here, we fixed target object color (i.e. the relative reflectance spectrum of the target object),
@@ -277,16 +278,19 @@ reflectance spectra of the background objects, spectral power distribution of th
 The variation within our datasets captures the essence of the computational problem of lightness constancy
 up to effects of scene geometry, an additional richness that we do not address in this paper.
 
+% 1000 each case
 %Condition 0: Baseline
 %Condition 1: Target Color Only Variation
 %Condition 2: Target Color and Background
 %Condition 3: Target Color and Illuminant
+%Condition 3a: Target Color and Relative Illuminant
 %Condition 4: Everything
 
 For the primary results we used the ``{\it Library}'' base scene and a sphere as the target object. We also inserted a spherical light source with the same ``{\it Big Ball}'' shape. The position and size of the inserted object, light source and the camera were held fixed. Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra. We describe these models below. Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm. A $51 \times 51$ pixel patch was cropped around the target object for further analysis. This corresponded to $1 \times 1$ degrees of visual angle for the model of the early visual system, also described below.
 
 %Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
+% REMOVE PANELS A AND D AND FIX CAPTION AND REFERENCES TO THIS FIGURE.
 \subsubsection{Illumination Spectra}
 % Figure 6
 \begin{figure}
@@ -336,50 +340,47 @@ The overall intensity of the measurements spans approximately three orders of ma
 Figure~\ref{fig:rescaledGranada} plots the measurements in normalized form to make apparent the variation in the relative spectra.
 
 Our statistical model approximates these normalized shapes using their first 6 principle components, and models the variation in these components with
-a 6-dimensional Gaussian whose mean and covariance matrix match the dataset's sample mean and covariance of the weights on these components.
+a 6-dimensional Gaussian whose mean and covariance matrix match the dataset's sample mean and covariance of the weights on these components \cite{BrainardFreeman}.
 To generate a random relative illuminant spectrum, we take a draw from this Gaussian to obtain weights and generate the corresponding spectrum.
-Figure~ref{ENTER REF} .....
-and reconstruct t
-obtained from the daylight dataset.
- In our procedure, we first approximate the spectra in the dataset using principle component analysis (PCA). We then decompose the spectra in terms of the PCA basis vectors corresponding to the 6 largest PCA eigenvalues. Next, we sample from this low 6 dimensional PCA weight space assuming that the distribution of the basis vector weights is a  Finallly, we use the sampled weights to reconstruct sampled spectra. This general method for modeling the statistical structure of daylight was introduced by Brainard \& Freeman \cite{BrainardFreeman}. Details of the procedure we used are provided below.
-
-Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the measured spectra vary over several orders of magnitude in overall intensity, we rescale each spectrum by dividing it by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. For simplicity of notation, we denote wavelength $\lambda$ as a continuous variable; in the actual calculations wavelength is discretely sampled and integrals are approximated by sums.  The Granada dataset was measured at 5 nm sampling intervals between 300 and 1100 nm.  We subsampled the spectra to the 400-700 nm interval, 10 nm spacing representation used for rendering, and performed our calculations at this sampling.
-
-The rescaled spectra $I_i^s(\lambda)$ were then mean centered for PCA by subtracting out the mean 
-rescaled spectrum, $\bar{I}^{s}(\lambda)$. That mean was obtained
-by taking the sample mean over all rescaled spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
-The resulting mean centered dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$
-was decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
-where the $\hat{{\bf e}}_j^{PCA}$ are the PCA basis vectors obtained using the
-singular value decomposition (SVD) applied to the $I_i^{MC}(\lambda)$ and
-the $w_{ij}$ are the weights obtained by projecting each of $I_i^{MC}(\lambda)$ onto the  $\hat{{\bf e}}_j^{PCA}$ $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$.
-We used the basis vectors corresponding to
-the largest six SVD eigenvalues, so that $\{j \in [1,6]\}$.
-For the rescaled Granada dataset, these six  eigenvalues account for more than $90\%$ of the variance (Fig.~\ref{fig:granadaEV}).
-These steps
-can be summarized as follows:
-\begin{align}
-I^G_i(\lambda) \rightarrow I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)} \rightarrow I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda) \rightarrow I_i^{MC}(\lambda) \approx \sum_{j = 1}^6 w_{ij}\hat{{\bf e}}_j^{PCA}.
-\end{align}
-
-To generate random illuminant spectra $\tilde{I}_i(\lambda)$, we generate weights $\tilde{w}_{ij}$ drawn from random 
-the multivariate 
-Gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
-and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $.
-From these weights, the corresponding spectrum $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right)$ is generated.
-This spectrum can sometimes have values that are less than zero.  In such cases, the weights are discarded and a new draw obtained, until
-the condition $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, is satisfied for all $\lambda$.
-The random illuminant spectrum is then given as
-\begin{align}
-\tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
-\end{align}
-Fig.~\ref{fig:randomIlluminant} shows a set of 100 spectra sampled in this manner, and may be compared with Fig.~\ref{fig:rescaledGranada}.  Fig.~\ref{fig:xyDiagram} shows the CIE xy chromaticities of these samples and compares these with the chromaticities in the Granada dataset.  Finally, Fig.~\ref{fig:sRGBIlluminant} provides an sRGB rendering of each spectrum in Fig.~\ref{fig:rescaledGranada}, to provide a visual sense of the chromatic variation in the sampled spectra.
+Figure~ref{ENTER REF FIG} illustrates the relative spectra of draws obtained using this procedure.
+Details of the statistical model for illumination are provided in the appendix.
 
 Because our multivariate Gaussian model is based on the rescaled spectra, it does not embody the large variation in overall intensity of natural daylights.
-To get a scaling similar to the original Granada spectrum set, we multiply the randomly sampled spectrum with a random number generated uniformly from the interval [0, $\bar{I}_{\rm max}$], where $\bar{I}_{\rm max}$ is the maximum of the 2600 mean values obtained from the Granada spectra. Finally, to model the fact that illumination spectra can vary in overall intensity, we draw a random number distributed logarithmically in the range [$I_{min}$ and $I_{max}$] and scale the generated spectrum by this number.
-In most of our calculations, we set $I_{min} = 1$ and $I_{max} = 300$.
-% WE NEED TO RETHINK THIS SCALING.  CERTAINLY SHOULD JUST BE ONE STEP.  ONE APPROACH WOULD BE TO DRAW UNIFORMLY FROM THE DISTRIBUTION OF SCALE FACTORS OBTAINED FROM THE 2600 
-% GRANADA MEASUREMENTS.
+To obtain illuminant spectra with intensity variation similar to the Granada dataset, we scaled each randomly generated relative spectrum.
+We obtained each scale factor by randomly sampling (with replacement) a spectrum from the Granda dataset and taking its mean.
+
+% MOVE THIS TO AN APPENDEX.
+%Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the measured spectra vary over several orders of magnitude in overall intensity, we rescale each spectrum by dividing it by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. For simplicity of notation, we denote wavelength $\lambda$ as a continuous variable; in the actual calculations wavelength is discretely sampled and integrals are approximated by sums.  The Granada dataset was measured at 5 nm sampling intervals between 300 and 1100 nm.  We subsampled the spectra to the 400-700 nm interval, 10 nm spacing representation used for rendering, and performed our calculations at this sampling.
+%
+%The rescaled spectra $I_i^s(\lambda)$ were then mean centered for PCA by subtracting out the mean 
+%rescaled spectrum, $\bar{I}^{s}(\lambda)$. That mean was obtained
+%by taking the sample mean over all rescaled spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
+%The resulting mean centered dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$
+%was decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
+%where the $\hat{{\bf e}}_j^{PCA}$ are the PCA basis vectors obtained using the
+%singular value decomposition (SVD) applied to the $I_i^{MC}(\lambda)$ and
+%the $w_{ij}$ are the weights obtained by projecting each of $I_i^{MC}(\lambda)$ onto the  $\hat{{\bf e}}_j^{PCA}$ $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$.
+%We used the basis vectors corresponding to
+%the largest six SVD eigenvalues, so that $\{j \in [1,6]\}$.
+%For the rescaled Granada dataset, these six  eigenvalues account for more than $90\%$ of the variance (Fig.~\ref{fig:granadaEV}).
+%These steps
+%can be summarized as follows:
+%\begin{align}
+%I^G_i(\lambda) \rightarrow I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)} \rightarrow I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda) \rightarrow I_i^{MC}(\lambda) \approx \sum_{j = 1}^6 w_{ij}\hat{{\bf e}}_j^{PCA}.
+%\end{align}
+%
+%To generate random illuminant spectra $\tilde{I}_i(\lambda)$, we generate weights $\tilde{w}_{ij}$ drawn from random 
+%the multivariate 
+%Gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+%and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $.
+%From these weights, the corresponding spectrum $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right)$ is generated.
+%This spectrum can sometimes have values that are less than zero.  In such cases, the weights are discarded and a new draw obtained, until
+%the condition $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, is satisfied for all $\lambda$.
+%The random illuminant spectrum is then given as
+%\begin{align}
+%\tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
+%\end{align}
+%Fig.~\ref{fig:randomIlluminant} shows a set of 100 spectra sampled in this manner, and may be compared with Fig.~\ref{fig:rescaledGranada}.  Fig.~\ref{fig:xyDiagram} shows the CIE xy chromaticities of these samples and compares these with the chromaticities in the Granada dataset.  Finally, Fig.~\ref{fig:sRGBIlluminant} provides an sRGB rendering of each spectrum in Fig.~\ref{fig:rescaledGranada}, to provide a visual sense of the chromatic variation in the sampled spectra.
 
 \subsubsection{Surface Reflectance Spectra}
 % Figure 7
@@ -429,30 +430,39 @@ In most of our calculations, we set $I_{min} = 1$ and $I_{max} = 300$.
 
 We generated random reflectance spectra using the same principles we applied to generate random illuminant spectra.
 We combined the Munsell \cite{kelly1943tristimulus} and Vrhel \cite{vrhel1994measurement} surface reflectance 
-measurements to create a reflectance database containing 632 reflectances. The Munsell database contains 462 samples of surface reflectance spectra each measured at 5nm sampling intervals between 380nm and 780nm. The Vrhel dataset has 170 samples measured at 2nm sampling between 390nm and 730 nm. We subsampled these spectra in the 400-700nm interval, 10 nm apart, for rendering images used in this work.
+measurements to create a database containing 632 reflectance spectra.
+The Munsell database contains 462 spectra each measured at 5nm sampling intervals between 380nm and 780nm.
+The Vrhel dataset contains 170 spectra measured at 2nm sampling between 390nm and 730 nm.
+We resampled these spectra to 31 evenly-spaced wavelengths between $400$nm and $700$nm.
+Figure~ref{ENTER REF FIG} illustrates the spectra of draws obtained using this procedure.
+Details of the statistical model for surface reflectance spectra are provided in the appendix. 
 
-Let us denote the reflectance dataset as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
-and $M$ is the total number of spectra in the dataset. 
-We calculated the mean reflectance spectrum,
-$\bar{R}(\lambda)$, by taking the sample mean over all spectra in the dataset, i.e.,
-$\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda)$. Then, we mean centered 
-the reflectance dataset by subtracting the mean spectrum, $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
-We decomposed this mean centered dataset as $R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}}$, where
-the ${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD applied to $R_i^{\rm MC}(\lambda)$
-and the $w_{ij}$ are the weights obtained by projecting each of $R_i^{\rm MC}(\lambda)$ onto the basis vectors ${\bf \hat{e}}_j^{\rm PCA}$ 
-$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. 
-We used the basis vectors corresponding to the largest six SVD eigenvalues. 
-For the combined Munsell and Vrhel datasets, these six eigenvalues account for 
-more than $90\%$ of the variance. 
-To generate random reflectance spectra, we generate samples of weights ($\tilde{w}_{ij}$) drawn from the multivariate Gaussian 
-distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
-and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the randomly sampled weights satisfy the condition $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, we use them to give the random reflectance spectrum as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.  Otherwise the draw is discarded and a new set of weights is drawn.
+% THIS GOES TO THE SAME APPENDIX AS THE ILLUMINANT MATH.
+%Let us denote the reflectance dataset as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
+%and $M$ is the total number of spectra in the dataset. 
+%We calculated the mean reflectance spectrum,
+%$\bar{R}(\lambda)$, by taking the sample mean over all spectra in the dataset, i.e.,
+%$\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda)$. Then, we mean centered 
+%the reflectance dataset by subtracting the mean spectrum, $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
+%We decomposed this mean centered dataset as $R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}}$, where
+%the ${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD applied to $R_i^{\rm MC}(\lambda)$
+%and the $w_{ij}$ are the weights obtained by projecting each of $R_i^{\rm MC}(\lambda)$ onto the basis vectors ${\bf \hat{e}}_j^{\rm PCA}$ 
+%$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. 
+%We used the basis vectors corresponding to the largest six SVD eigenvalues. 
+%For the combined Munsell and Vrhel datasets, these six eigenvalues account for 
+%more than $90\%$ of the variance. 
+%To generate random reflectance spectra, we generate samples of weights ($\tilde{w}_{ij}$) drawn from the multivariate Gaussian 
+%distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+%and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. If the randomly sampled weights satisfy the condition $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, we use them to give the random reflectance spectrum as: $\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)$.  Otherwise the draw is discarded and a new set of weights is drawn.
 
+% MAKE TARGET SWATCHES ITS OWN FIGURE.
 For generating the target object reflectance at a particular luminance $(Y_{\rm T})$, the values in a generated spectrum were 
-rescaled such that the surface luminance (as defined above) had the desired value.
-The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE photopic luminosity (or luminous efficiency) function. 
-$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
-perception of bruminance. The target reflectance is then given by: $\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right)$.
+scaled such that the LRV had the desired value (see appendix).
+Figure \ref{TARGET FIG} shows color swatches of target reflectance spectra rendered under CIE illuminant D65, for evenly spaced LRV values.
+
+%The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE photopic luminosity (or luminous efficiency) function. 
+%$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
+%perception of bruminance. The target reflectance is then given by: $\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right)$.
 
 % Figure 8: Methods
 \begin{figure}
