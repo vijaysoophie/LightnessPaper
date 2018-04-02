@@ -360,24 +360,32 @@ Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:ill
     \centering
         \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_b.pdf}
-        \label{fig:xyChroReflectance}
+        \label{fig:reflectanceSamples}
     \end{subfigure}
     \begin{subfigure}{0.24 \textwidth}
     \centering
     \caption{}
         \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_c.pdf}
-        \label{fig:backgroundSwatches}
+        \label{fig:xyChroReflectance}
     \end{subfigure}    
     \centering
 	\begin{subfigure}{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure8.pdf}
-        \label{fig:targetSwatches}
+        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_d.pdf}
+        \label{fig:backgroundSwatches}
     \end{subfigure}
-    \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets (red, 632 samples), representative samples of background object surface reflectances (black, 100 samples) and target object surface reflectances (green, 100 samples). (b) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (red) and randomly generated samples of surface reflectances for background objects (black) and target objects (green). (c) sRGB renditions of the 100 random samples of background object surface reflectance. (d) sRGB renditions of the target object surface reflectance. The figure shows 10 randomly generated samples at 10 levels of the target object LRV. The LRV range of [0.2, 0.6], captures more than 90\% of the natural surface reflectances.}
+    \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../Figures/Figure7/Figure8.pdf}
+\caption{{\bf Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. This range captures more than 90\% of the natural surface reflectances.}
+\label{fig:targetSwatches}
+\end{figure}
+
 
 We generated random reflectance spectra using the same principles we applied to generate random illuminant spectra.
 We combined the Munsell \cite{kelly1943tristimulus} and Vrhel \cite{vrhel1994measurement} surface reflectance 
