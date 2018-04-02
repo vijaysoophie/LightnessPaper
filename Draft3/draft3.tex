@@ -288,7 +288,13 @@ up to effects of scene geometry, an additional richness that we do not address i
 %Condition 4a: Target Color, Background and Relative Illuminant
 %Condition 4: Everything
 
-For the primary results, we used the ``{\it Library}'' base scene and the spherical ``{\it Big Ball}'' shape as the target object. We also inserted an additional spherical light source with the same ``{\it Big Ball}'' shape. The position and size of the inserted object, light source and the camera were held fixed. Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra. We describe these models below. Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm. A $51 \times 51$ pixel patch was cropped around the target object for further analysis. This corresponded to $1 \times 1$ degrees of visual angle for the model of the early visual system, also described below.
+For the primary results, we used the ``{\it Library}'' base scene and a spherical target object .
+The library base scene contains X area lights. We inserted one additional spherical spherical light source into the scene.
+The position and size of the inserted object, inserted light source and viewpoint were held fixed across all scenes in the database,
+as shown in Figure (REF 8a).
+Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra.
+We describe these models below.
+Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm.
 
 %Once a base scene has been chosen and objects and light sources inserted, we assign spectral surface reflectance, texture, and material property to each object surface in the scene. We also assign an illuminant spectral power distribution to each light source in the scene. Objects in the VWCC library may contain more than one distinct surface, each of which may be assigned a different surface reflectance. As with object position, these may be specified programatically. In the present work, we use simple choices for texture (all surfaces spatially uniform) and material property (all surfaces matte) and focus on variation in surface spectral reflectance. 
 
@@ -419,31 +425,51 @@ Figure \ref{fig:targetSwatches} shows color swatches of target reflectance spect
         \label{fig:coneContrast}
     \end{subfigure}
     \label{fig:sceneWithCroppedImage}
-    \caption{{\bf Generating labeled dataset for computational analysis:}  For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The response of retinal cones to the cropped image is simulated using the isetbio software package to model early vision. The software models optical blurring and foveal spatial sampling by the trichromatic cone mosaic. Fig.~\ref{fig:croppedImageWithMosaic} shows the retinal image incident on the cone mosaic and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue).  (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
+    \caption{{\bf Generating labeled dataset for computational analysis:}  For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The retinal image incident on the cone mosaic after optical blurring and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue).  (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
 \end{figure}
 
 \subsection{Model of Early Visual System} \label{method:Isetbio}
 
-The sampling and rendering steps described above allow us to generate images from scenes that contain an image of a target object of known surface luminance at the center pixel, and where the illuminant spectra and spectra of the other surfaces in the scene are drawn randomly from models of naturally occurring spectra.  One such image is shown in Fig.~\ref{fig:3DScene}, where the green sphere in the middle is the target object and the light sources are not within the camera field of view. We model the encoding of such images by the early visual system, to generate {\em neural images} that provide an abstracted representation of the information available to the brain for producing perceptual representations of the external world. For each image, it is this information together with the known surface luminance of the corresponding target object that we will provide to our supervised learning algorithms.  Our training datasets correspond to ... % SAY WHAT WE DID ONCE WE FINISH EVERYTHING OFF.
+The light entering the eye is blurred by the eye's optics.
+The resulting retinal image is sampled by a mosaic of cone photoreceptors.
+The responses of these photoreceptors provide the information about the scene that is available to the neural visual system for further processing.
+Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone responses
+to our scenes using a model of the early visual system.
 
-In this work, we are interested in how well luminance constancy may be achieved using information that is local to the image region containing the target object. 
-To analyze the local image information, we cropped and processed the image in the immediate neighborhood of the target object such that each patch represented a one degree of visual angle, approximately the size of a receptive field in early visual cortex (\ref{fig:croppedImage}).
-Fig. \ref{fig:studiedCases} shows examples of such cropped image at 3 luminance levels for the three conditions considered in this paper.
-Next, the cropped multispectral images are used to simulate retinal cone responses using \href{https://github.com/isetbio}{Isetbio} software. The key steps we model are the size of the pupil, optical blurring (including axial chromatic aberration) in the formation of the retinal image, spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones, and the Poisson nature of photopigment isomerization.
-We use the multispectral cropped image (Fig.~\ref{fig:croppedImage}) as the optical stimulus to simulate the response of the cones in the retina. The cropped image patch is assumed to cover a $1^{\circ}$ field of view at a distance of 1 m. The retinal cone mosaic is modeled as a square grid with $51 \times 51$ cones in the L:M:S ratio 0.6:0.3:0.1. The response of the cones are taken as the number of isomerizations in the cone segment ({\it over what time ??}).
+We focussed our analysis on regions of the image local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; REF 8b).
+This choice is motivated by the observation that neural receptive fields early in the visual pathways (e.g., retina, primary visual cortex) pool information locally.
+In foveal primary visual cortex, receptive fields have a spatial extent of approximately 1 degree of visual angle (REFS).
+% Johannes to provide his favorite citation or two.  Some review.
+
+We modeled a visual system with a pupil diameter of XX mm, optical blurring (including axial chromatic aberration) in the formation of the retinal image (REF whatever optics model), spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (Brainard mosaic review; Fig.~\ref{fig:croppedImageWithMosaic}). The cone mosaic contained  L:M:S cones in the ratio 0.6:0.3:0.1 and with spectral sensitivities derived from the CIE physiological stanard (REF).
+Cone isomerizations were computed assuming an integration time of XX msec, and we modeled the Poisson nature of photopigment isomerization (REF Hecht et al). This modeling was implemented using the software infratstructure provided by ISETBio (REF).
+
+The cone isomerizations represent the first step of visual processing.
+To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
+we processed the isomerizations as follows:
+First, we generated a response for each cone class at the each pixel in the sampled retinal image, using bilinear interpolation separately for each cone class.
+This step does not add information.
+% DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
+This gives us a cone response image for each cone class.
+We then convert each cone image to a contrast representation by subtracting and dividing by the mean.
+Finally  followed by normalizing the vector to have unit length (contrast normalization).
+
+
+The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). For Condition 1 and 3 we used this as the input for the supervised methods. For Condition 3 and 4, 
+The cone-response vectors corresponding to the N images for each condition are concatenated column-wise to form a contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
+
+
+%The sampling and rendering steps described above allow us to generate images from scenes that contain an image of a target object of known surface luminance at the center pixel, and where the illuminant spectra and spectra of the other surfaces in the scene are drawn randomly from models of naturally occurring spectra.  One such image is shown in Fig.~\ref{fig:3DScene}, where the green sphere in the middle is the target object and the light sources are not within the camera field of view. We model the encoding of such images by the early visual system, to generate {\em neural images} that provide an abstracted representation of the information available to the brain for producing perceptual representations of the external world. For each image, it is this information together with the known surface luminance of the corresponding target object that we will provide to our supervised learning algorithms.  Our training datasets correspond to ... % SAY WHAT WE DID ONCE WE FINISH EVERYTHING OFF.
+
+The key steps we model are the size of the pupil, optical blurring (including axial chromatic aberration) in the formation of the retinal image, spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones, and the Poisson nature of photopigment isomerization.
+We use the multispectral cropped image (Fig.~\ref{fig:croppedImage}) as the optical stimulus to simulate the response of the cones in the retina. The cropped image patch is assumed to cover a $1^{\circ}$ field of view at a distance of 1 m. The retinal cone mosaic is modeled as a square grid with $51 \times 51$ cones in the. The response of the cones are taken as the number of isomerizations in the cone segment ({\it over what time ??}).
 
 % NEED TO WRITE IN THE KEY PARAMETERS USED. PROBABLY MARIMONT AND WANDELL OPTICS, STOCKMAN-SHARPE LMS CONE SPECTRAL SENSITIVITIES, THE L, M, S CONE RATIO IN THE MOSAIC, RECTANGULAR AND REGULAR CONE PACKING, SOME IMPLIED SPATIAL SCALE, AND SOME OVERALL SCALING THAT DRIVES THE MEAN LUMINANCE OF THE RETINAL IMAGES AND THUS THE AMOUNT OF POISSON NOISE. ALSO INTEGRATION TIME.
 The cone response functions are normalized by the total area under the response curves to model the amplification of the S cone response downstream and thus have comparable number if isomerizations in L, M and S cones. 
 % NEED TO UNDERSTAND THIS.  WHEN WAS THE GAIN, BEFORE OR AFTER NOISE ADDED, AND LET'S REMEMBER WHY WE DID IT.  
 % First we add noise, then we do the scaling. The reason this was done is to make sure that in the normalization process each of the cone class have the same contribution. Otherwise, the S cone contribution would be very low.
 
-The cone isomerizations represent the first step of visual processing.  To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
-we processed the isomerizations as follows:
-First, we created a representation for each cone class on the full $51 \times 51$ pixel grid, we interpolated the responses of the cones in each class across the grid, using bilinear interpolation separately for each cone class.
-% DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
-This gives us a $51 \times 51$ cone response image for each cone class.
-The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). For Condition 1 and 3 we used this as the input for the supervised methods. For Condition 3 and 4, to model the contrast coding and contrast adaptation, we convert this vector to a contrast representation by subtracting out the mean and then dividing by it (contrast coding), followed by normalizing the vector to have unit length (contrast normalization).
-The cone-response vectors corresponding to the N images for each condition are concatenated column-wise to form a contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
+
 
 \subsection{Supervised Learning methods} \label{method:SupervisedLearning}
 We have used two supervised learning methods in our work: Linear regression and Accuracy maximization analysis. While, our main focus is on AMA, linear regression provides a baseline performance measure.
