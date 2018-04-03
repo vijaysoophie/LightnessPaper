@@ -149,7 +149,7 @@
 \newlabel{sub@fig:croppedImageWithMosaic}{{c}{8}{Optical Image\relax }{figure.caption.16}{}}
 \newlabel{fig:coneContrast}{{9d}{8}{LMS cone contrast\relax }{figure.caption.16}{}}
 \newlabel{sub@fig:coneContrast}{{d}{8}{LMS cone contrast\relax }{figure.caption.16}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 435}}{8}{Surface Reflectance Spectra}{figure.caption.16}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 438}}{8}{Surface Reflectance Spectra}{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The retinal image incident on the cone mosaic after optical blurring and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.\relax }}{8}{figure.caption.16}}
 \@writefile{toc}{\contentsline {section}{Model of Early Visual System}{8}{section*.17}}
 \newlabel{method:Isetbio}{{}{8}{Model of Early Visual System}{section*.17}{}}
@@ -159,72 +159,72 @@
 \citation{geisler2009optimal}
 \citation{burge2017accuracy}
 \citation{jaini2017linking}
-\@writefile{toc}{\contentsline {section}{Supervised Learning methods}{9}{section*.18}}
-\newlabel{method:SupervisedLearning}{{}{9}{Supervised Learning methods}{section*.18}{}}
-\newlabel{eq:fopt}{{1}{9}{Accuracy maximization analysis}{equation.0.1}{}}
-\@writefile{toc}{\contentsline {section}{Error estimation}{10}{section*.21}}
-\@writefile{toc}{\contentsline {section}{Results}{10}{section*.22}}
-\newlabel{Results}{{}{10}{Results}{section*.22}{}}
-\@writefile{toc}{\contentsline {section}{Luminance estimates for each spectral condition}{10}{section*.23}}
-\@writefile{toc}{\contentsline {section}{Condition 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}{10}{section*.24}}
+\@writefile{toc}{\contentsline {section}{Computational luminance constancy}{9}{section*.18}}
+\newlabel{method:SupervisedLearning}{{}{9}{Computational luminance constancy}{section*.18}{}}
+\newlabel{eq:fopt}{{1}{9}{Learning optimal filters}{equation.0.1}{}}
 \citation{BrainardWandellRetinex}
-\newlabel{fig:case0RFResponse}{{10a}{11}{RF response condition 0\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case0RFResponse}{{a}{11}{RF response condition 0\relax }{figure.caption.25}{}}
-\newlabel{fig:case1RFResponse}{{10b}{11}{RF response condition 1\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case1RFResponse}{{b}{11}{RF response condition 1\relax }{figure.caption.25}{}}
-\newlabel{fig:case9Results}{{10c}{11}{Luminance Estimates\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case9Results}{{c}{11}{Luminance Estimates\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces {\bf  RF response and luminance estimates for condition 0 (baseline) and condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 0. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Photoreceptor response for images of condition 1. (c) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible.\relax }}{11}{figure.caption.25}}
-\newlabel{fig:sourcesOfNoise}{{10}{11}{{\bf RF response and luminance estimates for condition 0 (baseline) and condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 0. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Photoreceptor response for images of condition 1. (c) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible.\relax }{figure.caption.25}{}}
-\@writefile{toc}{\contentsline {section}{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}{11}{section*.26}}
-\newlabel{fig:case2RFResponse}{{11a}{12}{RF response condition 2\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case2RFResponse}{{a}{12}{RF response condition 2\relax }{figure.caption.27}{}}
-\newlabel{fig:case2Estimates}{{11b}{12}{Luminance Estimates\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case2Estimates}{{b}{12}{Luminance Estimates\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Condition 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target LRV for the image in condition 2. Solid lines show the mean estimate, the filled region in light color shows one standard deviation.\relax }}{12}{figure.caption.27}}
-\newlabel{fig:case2Results}{{11}{12}{{\bf Condition 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target LRV for the image in condition 2. Solid lines show the mean estimate, the filled region in light color shows one standard deviation.\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.\relax }}{12}{figure.caption.28}}
-\newlabel{fig:ErrorVsNFilters}{{12}{12}{{\bf Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.\relax }{figure.caption.28}{}}
-\newlabel{fig:isomerizationFails}{{13a}{13}{RFs learnt using photoreceptor response\relax }{figure.caption.30}{}}
-\newlabel{sub@fig:isomerizationFails}{{a}{13}{RFs learnt using photoreceptor response\relax }{figure.caption.30}{}}
-\newlabel{fig:constrastWorks}{{13b}{13}{RFs learnt using contrast signal\relax }{figure.caption.30}{}}
-\newlabel{sub@fig:constrastWorks}{{b}{13}{RFs learnt using contrast signal\relax }{figure.caption.30}{}}
-\newlabel{fig:case10Results}{{13c}{13}{Luminance estimates\relax }{figure.caption.30}{}}
-\newlabel{sub@fig:case10Results}{{c}{13}{Luminance estimates\relax }{figure.caption.30}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Condition 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color shows one standard deviation. AMA estimates are much better compared to the null models.\relax }}{13}{figure.caption.30}}
-\newlabel{fig:importanceOfConstrast}{{13}{13}{{\bf Condition 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color shows one standard deviation. AMA estimates are much better compared to the null models.\relax }{figure.caption.30}{}}
-\@writefile{toc}{\contentsline {section}{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}{13}{section*.29}}
-\@writefile{toc}{\contentsline {section}{Condition 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}{13}{section*.31}}
-\newlabel{fig:case12FiltersResponse}{{14a}{14}{AMA RF Response\relax }{figure.caption.32}{}}
-\newlabel{sub@fig:case12FiltersResponse}{{a}{14}{AMA RF Response\relax }{figure.caption.32}{}}
-\newlabel{fig:case12Results}{{14b}{14}{Luminance Estimates\relax }{figure.caption.32}{}}
-\newlabel{sub@fig:case12Results}{{b}{14}{Luminance Estimates\relax }{figure.caption.32}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.\relax }}{14}{figure.caption.32}}
-\newlabel{fig:case12AllResults}{{14}{14}{{\bf Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.\relax }{figure.caption.32}{}}
-\newlabel{fig:case1Filter}{{15a}{14}{Condition 1\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:case1Filter}{{a}{14}{Condition 1\relax }{figure.caption.34}{}}
-\newlabel{fig:case2Filter}{{15b}{14}{Condition 2\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:case2Filter}{{b}{14}{Condition 2\relax }{figure.caption.34}{}}
-\newlabel{fig:case3Filter}{{15c}{14}{Condition 3\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:case3Filter}{{c}{14}{Condition 3\relax }{figure.caption.34}{}}
-\newlabel{fig:case4Filter}{{15d}{14}{Condition 4\relax }{figure.caption.34}{}}
-\newlabel{sub@fig:case4Filter}{{d}{14}{Condition 4\relax }{figure.caption.34}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces {\bf  AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.\relax }}{14}{figure.caption.34}}
-\newlabel{fig:AMAFilters}{{15}{14}{{\bf AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.\relax }{figure.caption.34}{}}
-\@writefile{toc}{\contentsline {section}{Optimal receptive fields for luminance estimation have a center surround structure}{14}{section*.33}}
-\newlabel{fig:case1Bar}{{16a}{15}{Condition 1\relax }{figure.caption.36}{}}
-\newlabel{sub@fig:case1Bar}{{a}{15}{Condition 1\relax }{figure.caption.36}{}}
-\newlabel{fig:case2Bar}{{16b}{15}{Condition 2\relax }{figure.caption.36}{}}
-\newlabel{sub@fig:case2Bar}{{b}{15}{Condition 2\relax }{figure.caption.36}{}}
-\newlabel{fig:case3Bar}{{16c}{15}{Condition 3\relax }{figure.caption.36}{}}
-\newlabel{sub@fig:case3Bar}{{c}{15}{Condition 3\relax }{figure.caption.36}{}}
-\newlabel{fig:case4Bar}{{16d}{15}{Condition 4\relax }{figure.caption.36}{}}
-\newlabel{sub@fig:case4Bar}{{d}{15}{Condition 4\relax }{figure.caption.36}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces {\bf  Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one condition on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (condition 1-4). (a) Error estimates for images of condition 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of condition 2. As expected, the best estimates are provided by the receptive fields of condition 2. (c) Error estimates for images of condition 3. (d) Error estimates for images of condition 4.\relax }}{15}{figure.caption.36}}
-\newlabel{fig:barGraphs}{{16}{15}{{\bf Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one condition on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (condition 1-4). (a) Error estimates for images of condition 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of condition 2. As expected, the best estimates are provided by the receptive fields of condition 2. (c) Error estimates for images of condition 3. (d) Error estimates for images of condition 4.\relax }{figure.caption.36}{}}
-\@writefile{toc}{\contentsline {section}{The receptive fields of complex condition generalize on simpler conditions}{15}{section*.35}}
-\@writefile{toc}{\contentsline {section}{Discussion}{15}{section*.37}}
-\newlabel{Discussion}{{}{15}{Discussion}{section*.37}{}}
+\@writefile{toc}{\contentsline {section}{Performance metric}{10}{section*.22}}
+\@writefile{toc}{\contentsline {section}{Results}{10}{section*.23}}
+\newlabel{Results}{{}{10}{Results}{section*.23}{}}
+\@writefile{toc}{\contentsline {section}{Luminance estimates for each spectral condition}{10}{section*.24}}
+\@writefile{toc}{\contentsline {section}{Condition 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}{10}{section*.25}}
+\newlabel{fig:case0RFResponse}{{10a}{11}{RF response condition 0\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:case0RFResponse}{{a}{11}{RF response condition 0\relax }{figure.caption.26}{}}
+\newlabel{fig:case1RFResponse}{{10b}{11}{RF response condition 1\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:case1RFResponse}{{b}{11}{RF response condition 1\relax }{figure.caption.26}{}}
+\newlabel{fig:case9Results}{{10c}{11}{Luminance Estimates\relax }{figure.caption.26}{}}
+\newlabel{sub@fig:case9Results}{{c}{11}{Luminance Estimates\relax }{figure.caption.26}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces {\bf  RF response and luminance estimates for condition 0 (baseline) and condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 0. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Photoreceptor response for images of condition 1. (c) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible.\relax }}{11}{figure.caption.26}}
+\newlabel{fig:sourcesOfNoise}{{10}{11}{{\bf RF response and luminance estimates for condition 0 (baseline) and condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 0. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Photoreceptor response for images of condition 1. (c) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible.\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}{11}{section*.27}}
+\@writefile{toc}{\contentsline {section}{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}{11}{section*.30}}
+\newlabel{fig:case2RFResponse}{{11a}{12}{RF response condition 2\relax }{figure.caption.28}{}}
+\newlabel{sub@fig:case2RFResponse}{{a}{12}{RF response condition 2\relax }{figure.caption.28}{}}
+\newlabel{fig:case2Estimates}{{11b}{12}{Luminance Estimates\relax }{figure.caption.28}{}}
+\newlabel{sub@fig:case2Estimates}{{b}{12}{Luminance Estimates\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Condition 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target LRV for the image in condition 2. Solid lines show the mean estimate, the filled region in light color shows one standard deviation.\relax }}{12}{figure.caption.28}}
+\newlabel{fig:case2Results}{{11}{12}{{\bf Condition 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target LRV for the image in condition 2. Solid lines show the mean estimate, the filled region in light color shows one standard deviation.\relax }{figure.caption.28}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.\relax }}{12}{figure.caption.29}}
+\newlabel{fig:ErrorVsNFilters}{{12}{12}{{\bf Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.\relax }{figure.caption.29}{}}
+\newlabel{fig:isomerizationFails}{{13a}{13}{RFs learnt using photoreceptor response\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:isomerizationFails}{{a}{13}{RFs learnt using photoreceptor response\relax }{figure.caption.31}{}}
+\newlabel{fig:constrastWorks}{{13b}{13}{RFs learnt using contrast signal\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:constrastWorks}{{b}{13}{RFs learnt using contrast signal\relax }{figure.caption.31}{}}
+\newlabel{fig:case10Results}{{13c}{13}{Luminance estimates\relax }{figure.caption.31}{}}
+\newlabel{sub@fig:case10Results}{{c}{13}{Luminance estimates\relax }{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Condition 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color shows one standard deviation. AMA estimates are much better compared to the null models.\relax }}{13}{figure.caption.31}}
+\newlabel{fig:importanceOfConstrast}{{13}{13}{{\bf Condition 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color shows one standard deviation. AMA estimates are much better compared to the null models.\relax }{figure.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{Condition 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}{13}{section*.32}}
+\newlabel{fig:case12FiltersResponse}{{14a}{14}{AMA RF Response\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:case12FiltersResponse}{{a}{14}{AMA RF Response\relax }{figure.caption.33}{}}
+\newlabel{fig:case12Results}{{14b}{14}{Luminance Estimates\relax }{figure.caption.33}{}}
+\newlabel{sub@fig:case12Results}{{b}{14}{Luminance Estimates\relax }{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.\relax }}{14}{figure.caption.33}}
+\newlabel{fig:case12AllResults}{{14}{14}{{\bf Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.\relax }{figure.caption.33}{}}
+\newlabel{fig:case1Filter}{{15a}{14}{Condition 1\relax }{figure.caption.35}{}}
+\newlabel{sub@fig:case1Filter}{{a}{14}{Condition 1\relax }{figure.caption.35}{}}
+\newlabel{fig:case2Filter}{{15b}{14}{Condition 2\relax }{figure.caption.35}{}}
+\newlabel{sub@fig:case2Filter}{{b}{14}{Condition 2\relax }{figure.caption.35}{}}
+\newlabel{fig:case3Filter}{{15c}{14}{Condition 3\relax }{figure.caption.35}{}}
+\newlabel{sub@fig:case3Filter}{{c}{14}{Condition 3\relax }{figure.caption.35}{}}
+\newlabel{fig:case4Filter}{{15d}{14}{Condition 4\relax }{figure.caption.35}{}}
+\newlabel{sub@fig:case4Filter}{{d}{14}{Condition 4\relax }{figure.caption.35}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces {\bf  AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.\relax }}{14}{figure.caption.35}}
+\newlabel{fig:AMAFilters}{{15}{14}{{\bf AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {section}{Optimal receptive fields for luminance estimation have a center surround structure}{14}{section*.34}}
+\newlabel{fig:case1Bar}{{16a}{15}{Condition 1\relax }{figure.caption.37}{}}
+\newlabel{sub@fig:case1Bar}{{a}{15}{Condition 1\relax }{figure.caption.37}{}}
+\newlabel{fig:case2Bar}{{16b}{15}{Condition 2\relax }{figure.caption.37}{}}
+\newlabel{sub@fig:case2Bar}{{b}{15}{Condition 2\relax }{figure.caption.37}{}}
+\newlabel{fig:case3Bar}{{16c}{15}{Condition 3\relax }{figure.caption.37}{}}
+\newlabel{sub@fig:case3Bar}{{c}{15}{Condition 3\relax }{figure.caption.37}{}}
+\newlabel{fig:case4Bar}{{16d}{15}{Condition 4\relax }{figure.caption.37}{}}
+\newlabel{sub@fig:case4Bar}{{d}{15}{Condition 4\relax }{figure.caption.37}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {16}{\ignorespaces {\bf  Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one condition on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (condition 1-4). (a) Error estimates for images of condition 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of condition 2. As expected, the best estimates are provided by the receptive fields of condition 2. (c) Error estimates for images of condition 3. (d) Error estimates for images of condition 4.\relax }}{15}{figure.caption.37}}
+\newlabel{fig:barGraphs}{{16}{15}{{\bf Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one condition on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (condition 1-4). (a) Error estimates for images of condition 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of condition 2. As expected, the best estimates are provided by the receptive fields of condition 2. (c) Error estimates for images of condition 3. (d) Error estimates for images of condition 4.\relax }{figure.caption.37}{}}
+\@writefile{toc}{\contentsline {section}{The receptive fields of complex condition generalize on simpler conditions}{15}{section*.36}}
+\@writefile{toc}{\contentsline {section}{Discussion}{15}{section*.38}}
+\newlabel{Discussion}{{}{15}{Discussion}{section*.38}{}}
 \bibdata{references}
 \bibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
 \APACbibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
@@ -254,13 +254,13 @@
 \APACbibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}
 \bibcite{carandini2012normalization}{\citeauthoryear {Carandini\ \BBA{} Heeger}{Carandini\ \BBA{} Heeger}{{\APACyear {2012}}}}
 \APACbibcite{carandini2012normalization}{\citeauthoryear {Carandini\ \BBA{} Heeger}{Carandini\ \BBA{} Heeger}{{\APACyear {2012}}}}
-\@writefile{toc}{\contentsline {section}{References}{16}{section*.38}}
 \bibcite{ChakrabartiHyperspectral}{\citeauthoryear {Chakrabarti\ \BBA{} Zickler}{Chakrabarti\ \BBA{} Zickler}{{\APACyear {{\bibnodate {}}}}}}
 \APACbibcite{ChakrabartiHyperspectral}{\citeauthoryear {Chakrabarti\ \BBA{} Zickler}{Chakrabarti\ \BBA{} Zickler}{{\APACyear {{\bibnodate {}}}}}}
 \bibcite{CIE86}{\citeauthoryear {CIE}{CIE}{{\APACyear {1986}}}}
 \APACbibcite{CIE86}{\citeauthoryear {CIE}{CIE}{{\APACyear {1986}}}}
 \bibcite{ciurea2003large}{\citeauthoryear {Ciurea\ \BBA{} Funt}{Ciurea\ \BBA{} Funt}{{\APACyear {2003}}}}
 \APACbibcite{ciurea2003large}{\citeauthoryear {Ciurea\ \BBA{} Funt}{Ciurea\ \BBA{} Funt}{{\APACyear {2003}}}}
+\@writefile{toc}{\contentsline {section}{References}{16}{section*.39}}
 \bibcite{D'ZmuraConstancy3}{\citeauthoryear {D'Zmura\ \BBA{} Iverson}{D'Zmura\ \BBA{} Iverson}{{\APACyear {1994}}}}
 \APACbibcite{D'ZmuraConstancy3}{\citeauthoryear {D'Zmura\ \BBA{} Iverson}{D'Zmura\ \BBA{} Iverson}{{\APACyear {1994}}}}
 \bibcite{D'ZmuraIversonSinger}{\citeauthoryear {D'Zmura, Iverson,{}\ \BBA{} Singer}{D'Zmura\ \BOthers {.}}{{\APACyear {1995}}}}

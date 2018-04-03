@@ -330,6 +330,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
     \caption{{\bf Illumination spectra:} (a) Normalized Granada dataset (red, 2600 samples of Granada dataset) and 100 randomly generated samples using the rescaled spectra (black). (b) CIE xy chromaticity diagram of the normalized dataset and the random samples. (c) sRGB renditions of 100 random samples before scaling. (d) sRGB renditions of the samples after scaling.}
 \label{fig:illuminant}
 \end{figure}
+% Axis labels: Normalized Irradiance, Wavelength (nm), CIE x chromaticity, CIE y chromaticity.  In caption, make sure a, b, c are right.  Add titles on a, b: Granada Data, Statistical Model
 
 To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric} and sample randomly from the model.
 The overall intensity of the measurements spans approximately three orders of magnitude.
@@ -346,6 +347,7 @@ To obtain illuminant spectra with intensity variation similar to the Granada dat
 We obtained each scale factor by randomly sampling (with replacement) a spectrum from the Granda dataset and taking its mean. 
 Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:illuminant}.
 
+% Fix case in headers to sentence style, here and elsewhere
 \subsubsection{Surface Reflectance Spectra}
 % Figure 7
 \begin{figure}
@@ -378,6 +380,7 @@ Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:ill
     \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
+% Axis labels etc as with illumination
 
 \begin{figure}
 \centering
@@ -385,7 +388,7 @@ Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:ill
 \caption{{\bf Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. This range captures more than 90\% of the natural surface reflectances.}
 \label{fig:targetSwatches}
 \end{figure}
-
+% Y axis label LRV.  x axis, maybe "Example Number"  Expand caption.
 
 We generated random reflectance spectra using the same principles we applied to generate random illuminant spectra.
 We combined the Munsell \cite{kelly1943tristimulus} and Vrhel \cite{vrhel1994measurement} surface reflectance 
@@ -451,45 +454,41 @@ In foveal primary visual cortex, receptive fields have a spatial extent of appro
 
 We modeled a visual system with a pupil diameter of 3 mm, optical blurring (including axial chromatic aberration) in the formation of the retinal image (REF whatever optics model), spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (Brainard mosaic review; Fig.~\ref{fig:croppedImageWithMosaic}). The cone mosaic contained  L:M:S cones in the ratio 0.6:0.3:0.1 and with spectral sensitivities derived from the CIE physiological standard (REF).
 Cone isomerizations were computed assuming an integration time of 5 msec, and we modeled the Poisson nature of photopigment isomerization (REF Hecht et al). This modeling was implemented using the software infrastructure provided by ISETBio (REF).
+% Add in Nicolas REFS on some details.
 
 The cone isomerizations represent the first step of visual processing.
 To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
 we processed the isomerizations as follows:
-First, we generated a response for each cone class at the each pixel in the sampled retinal image, using bilinear interpolation separately for each cone class.
-This step does not add information.
-% DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
+First, we generated a response for each cone class at each pixel in the sampled retinal image, using bilinear interpolation separately for each cone class.
 This gives us a cone response image for each cone class.
-We then convert each cone image to a contrast representation by subtracting and dividing by the mean.
-Finally  followed by normalizing the vector to have unit length (contrast normalization).
+We also normalized each cone response image by the total area under the corresponding cone spectral sensitivity.
+This makes the magnitude of the cone response images similar across cone classes.
+These two processing steps do not alter the information in the cone response images. 
+% DOUBLE CHECK THAT THIS WAS DONE WITH SOMETHING LIKE INTERP2 WITH THE LINEAR OPTION.
 
-
-The three $51 \times 51$ sets of cone responses corresponding to the L, M and S cones were then reshaped into a single $7803 \times 1$ vector ($7803 = 51 \times 51 \times 3$). For Condition 1 and 3 we used this as the input for the supervised methods. For Condition 3 and 4, 
-The cone-response vectors corresponding to the N images for each condition are concatenated column-wise to form a contrast normalized matrix $C_{7803\times N}$. The corresponding labels are represented by the row vector $Y_{1\times N}$.
-
+To model contrast coding, we converted each cone response image to a corresponding cone contrast image.
+This was accomplished by computing the mean response over the three cone contrast images, and then subtracting off and dividing by this mean.
+To model contrast normalization, we divided by the sum of squared contrasts over image pixels and cone classes.
 
 %The sampling and rendering steps described above allow us to generate images from scenes that contain an image of a target object of known surface luminance at the center pixel, and where the illuminant spectra and spectra of the other surfaces in the scene are drawn randomly from models of naturally occurring spectra.  One such image is shown in Fig.~\ref{fig:3DScene}, where the green sphere in the middle is the target object and the light sources are not within the camera field of view. We model the encoding of such images by the early visual system, to generate {\em neural images} that provide an abstracted representation of the information available to the brain for producing perceptual representations of the external world. For each image, it is this information together with the known surface luminance of the corresponding target object that we will provide to our supervised learning algorithms.  Our training datasets correspond to ... % SAY WHAT WE DID ONCE WE FINISH EVERYTHING OFF.
 
-
 % NEED TO WRITE IN THE KEY PARAMETERS USED. PROBABLY MARIMONT AND WANDELL OPTICS, STOCKMAN-SHARPE LMS CONE SPECTRAL SENSITIVITIES, THE L, M, S CONE RATIO IN THE MOSAIC, RECTANGULAR AND REGULAR CONE PACKING, SOME IMPLIED SPATIAL SCALE, AND SOME OVERALL SCALING THAT DRIVES THE MEAN LUMINANCE OF THE RETINAL IMAGES AND THUS THE AMOUNT OF POISSON NOISE. ALSO INTEGRATION TIME.
 
-The cone response functions are normalized by the total area under the response curves to model the amplification of the S cone response downstream and thus have comparable number if isomerizations in L, M and S cones. 
 % NEED TO UNDERSTAND THIS.  WHEN WAS THE GAIN, BEFORE OR AFTER NOISE ADDED, AND LET'S REMEMBER WHY WE DID IT.  
 % First we add noise, then we do the scaling. The reason this was done is to make sure that in the normalization process each of the cone class have the same contribution. Otherwise, the S cone contribution would be very low.
 
+\subsection{Computational luminance constancy} \label{method:SupervisedLearning}
+We used our datasets to determine how well target object LRV can be estimated from cone responses and from normalized cone contrasts.
+Studying both representations allows us to understand how early contrast coding and normalization affect how well luminance constancy can be achieved.
+We applied accuracy maximization analysis (AMA) to learn the optimal receptive fields for estimating LRV,
+and evaluated the performance obtained when the output of these filters was optimally decoded.
 
+\subsubsection*{Learning optimal filters}
 
-\subsection{Supervised Learning methods} \label{method:SupervisedLearning}
-We have used two supervised learning methods in our work: Linear regression and Accuracy maximization analysis. While, our main focus is on AMA, linear regression provides a baseline performance measure.
-
-\subsubsection*{Linear Regression} Linear regression gives us a baseline estimate of the performance. We use this method to estimate the target object LRV using cone responses corresponding to the central pixel of the cropped image. Thus, getting an estimate for a condition that does not take into account the context in the scene. 
-
-For for linear regression, we solve the set of linear equations given by $A_{1\times3}*C_{3\times N} = Y_{1\times N}$ for the regression parameters $A_{1\times3}$. Here, $C_{3\times N}$ is a matrix containing the average L, M and S stimulus of a central  3$\times$3 pixel patch of the image. We use Matlab to obtain the (unknown) regression parameters $A$.
-
-\subsubsection*{Accuracy maximization analysis}
-We perform two steps to decode the luminance of the target object from the cone isomerization. First, we use AMA to learn the linear filters that are optimal for estimating the target LRV. Second, we determine how to optimally decode the luminance from the response of these filters to arbitrary stimuli.
-
-{\bf Learning optimal filters using AMA:} AMA \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
-is a task specific Bayesian method for dimensionality reduction. When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns the linear receptive fields (in rank order) that are optimal for performing a task. The optimal receptive fields that are returned by AMA are those whose responses to the stimuli minimizes the cost function over the training set when optimally decoded. 
+AMA \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
+is a task specific Bayesian method for dimensionality reduction.
+When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns a set of linear receptive fields.
+These receptive fields have the property that the  expected estimation cost is minimized when their responses are optimally decoded.
 
 More concretely, let us assume that there are $N_{\nu}$ possible values of the target LRV levels ($\{Y_k: k\in[1,N_{\nu}] \}$) and the $l$'th image corresponding to the $k$'th luminance level is represented as $s_{kl}$. Also, assume that there is a set of linear receptive fields {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Also assume there is a decoder $g$, with the knowledge of the response model and of every stimulus in the training set, that returns the Bayes' optimal estimate of the luminance level ($\hat{Y}_k$) of the target object in each stimulus $s_{kl}$. The crux computation for obtaining this estimate is the computation of the posterior probability of the luminance given an observed response, $P(Y|\textbf{R}_{kl})$ \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
 . With this luminance estimate, we calculate the cost given the cost function $\mathcal{C}_{kl} = \gamma(Y_{kl},\hat{Y}_{kl})$. Finally, AMA searches for the set of optimal receptive fields ${\textbf{\textit f}}^{\rm opt}$ that minimize the cost over the entire training set $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$ where $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
@@ -498,10 +497,19 @@ More concretely, let us assume that there are $N_{\nu}$ possible values of the t
 \label{eq:fopt}
 \end{align}
 
-{\bf Estimating luminance:} 
+\subsubsection*{Decoding optimal filters}
+
 Once the optimal receptive fields have been learned, a general decoder must be used to estimate the luminance. Recall that the decoder used to learn the receptive fields required the knowledge of every stimulus in the training set. To obtain the general decoder, first we use the AMA optimal receptive fields and the training dataset to find the conditional distributions of the AMA receptive field responses $P({\textbf {\textit R} }|Y_i)$. Then, we approximate these with multivariate Gaussian distributions $P({\textbf {\textit R} }|Y_i) = \mathcal{N}\left(\mu(Y_i),\Sigma(Y_i) \right)$. To estimate the luminance of the target object in the test stimulus, we use Bayes' rule to obtain the posterior distribution $P(Y|{\textbf {\textit R} })$. The optimal estimate is the luminance value that minimizes the cost function.
 
-\subsection{Error estimation}
+\subsubsection*{Baseline performance measure}
+
+We used linear regression to provide a baseline performance measure.
+
+Linear regression gives us a baseline estimate of the performance. We use this method to estimate the target object LRV using cone responses corresponding to the central pixel of the cropped image. Thus, getting an estimate for a condition that does not take into account the context in the scene. 
+
+For for linear regression, we solve the set of linear equations given by $A_{1\times3}*C_{3\times N} = Y_{1\times N}$ for the regression parameters $A_{1\times3}$. Here, $C_{3\times N}$ is a matrix containing the average L, M and S stimulus of a central  3$\times$3 pixel patch of the image. We use Matlab to obtain the (unknown) regression parameters $A$.
+
+\subsection{Performance metric}
 If $\hat{Y}$ is the estimated luminance corresponding to the assigned luminance $Y$, the error of the luminance estimates is quantified as the relative error ($E_{\rm rel}$) defined as: $E_{\rm rel}^2 = \left\langle\left((\hat{Y}-Y)/Y\right)^2\right\rangle$.
 
 
