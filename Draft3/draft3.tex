@@ -542,17 +542,28 @@ and evaluated the performance obtained when the output of these filters was opti
 
 \subsubsection*{Learning optimal filters}
 
-AMA \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
+AMA 
 is a task specific Bayesian method for dimensionality reduction.
 When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns a set of linear receptive fields.
-These receptive fields have the property that the  expected estimation cost is minimized when their responses are optimally decoded.
+Given a set of linear receptive fields and an explicit cost function, it is possible to determine the minimum-expected-cost estimator that maps responses to stimulus labels given the training set and the 
+assumption that all images in the training set are equally likely.
+Moreover, the corresponding expected estimation cost may be explicitly computed.
+AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
+Here we used squared error as the cost function and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
+Details of how AMA learns filters and the filter responses are optimally decoded are provided in previously published work \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}.
 
-More concretely, let us assume that there are $N_{\nu}$ possible values of the target LRV levels ($\{Y_k: k\in[1,N_{\nu}] \}$) and the $l$'th image corresponding to the $k$'th luminance level is represented as $s_{kl}$. Also, assume that there is a set of linear receptive fields {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Also assume there is a decoder $g$, with the knowledge of the response model and of every stimulus in the training set, that returns the Bayes' optimal estimate of the luminance level ($\hat{Y}_k$) of the target object in each stimulus $s_{kl}$. The crux computation for obtaining this estimate is the computation of the posterior probability of the luminance given an observed response, $P(Y|\textbf{R}_{kl})$ \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
-. With this luminance estimate, we calculate the cost given the cost function $\mathcal{C}_{kl} = \gamma(Y_{kl},\hat{Y}_{kl})$. Finally, AMA searches for the set of optimal receptive fields ${\textbf{\textit f}}^{\rm opt}$ that minimize the cost over the entire training set $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$ where $N_{k}$ is the number of stimuli corresponding to the label $Y_k$. Thus,
-\begin{align}
-{\textbf {\textit f} }^{\rm opt} = \argmin_{\textbf {\textit f} } \sum_{k=1}^{N_{\nu}}  \sum_{l=1}^{N_k} {\mathcal{C}}_{kl}.
-\label{eq:fopt}
-\end{align}
+% VIJAY make this work
+%Let a set of linear receptive fields be represented by the matrix $\textbf{f} = [\textbf{f_1} \hdots \textbf{f_N}]$, where each $\textbf{f_q}$ is a column vector providing the weights defining a single filter's receptive field.
+%Once we have a set of receptive fields and a labelled training set, we can find the decoder that minimizes the expected estimation cost on the assumption that all images in the training set are equally likely to occur.
+%
+%The learning goal is to find a set of receptive fields ${\textbf{f}}^{\rm opt}$ that have the following property.
+%Represent a set of linear receptive fields by a matrix 
+%Assume that there are $n_{\nu}$ possible values of the target LRV levels ($\{y_k: k\in[1,n_{\nu}] \}$) and the $l$'th image corresponding to the $k$'th luminance level is represented as $s_{kl}$. Also, assume that there is a set of linear receptive fields {\textbf{\textit f}} which when acting on $s_{kl}$ gives the response ${\textbf{\textit R}}_{kl}$. Also assume there is a decoder $g$, with the knowledge of the response model and of every stimulus in the training set, that returns the Bayes' optimal estimate of the luminance level ($\hat{y}_k$) of the target object in each stimulus $s_{kl}$. The crux computation for obtaining this estimate is the computation of the posterior probability of the luminance given an observed response, $P(Y|\textbf{R}_{kl})$ \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}
+%. With this luminance estimate, we calculate the cost given the cost function $\mathcal{C}_{kl} = \gamma(y_{kl},\hat{y}_{kl})$. Finally, AMA searches for the set of optimal receptive fields ${\textbf{\textit f}}^{\rm opt}$ that minimize the cost over the entire training set $\{s_{kl}: k\in[1,N_{\nu}], l\in[1,N_k]\}$ where $N_{k}$ is the number of stimuli corresponding to the label $y_k$. Thus,
+%\begin{align}
+%{\textbf {\textit f} }^{\rm opt} = \argmin_{\textbf {\textit f} } \sum_{k=1}^{N_{\nu}}  \sum_{l=1}^{N_k} {\mathcal{C}}_{kl}.
+%\label{eq:fopt}
+%\end{align}
 
 \subsubsection*{Decoding optimal filters}
 
