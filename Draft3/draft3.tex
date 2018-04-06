@@ -567,25 +567,42 @@ Details of how AMA learns filters and the filter responses are optimally decoded
 
 \subsubsection*{Decoding optimal filters}
 
-Once the optimal receptive fields have been learned, a general decoder must be used to estimate the luminance. Recall that the decoder used to learn the receptive fields required the knowledge of every stimulus in the training set. To obtain the general decoder, first we use the AMA optimal receptive fields and the training dataset to find the conditional distributions of the AMA receptive field responses $P({\textbf {\textit R} }|Y_i)$. Then, we approximate these with multivariate Gaussian distributions $P({\textbf {\textit R} }|Y_i) = \mathcal{N}\left(\mu(Y_i),\Sigma(Y_i) \right)$. To estimate the luminance of the target object in the test stimulus, we use Bayes' rule to obtain the posterior distribution $P(Y|{\textbf {\textit R} })$. The optimal estimate is the luminance value that minimizes the cost function.
+Once the optimal receptive fields have been learned, we need to develop a general decoder that can be applied to arbitrary test stimuli.
+A general decoder is necessary because the decoder used to learn the receptive fields requires the response mean and response variance of the filters to every labelled stimulus in the training set \cite{geisler2009optimal,burge2017accuracy}.
+To proceed, first we use the AMA optimal receptive fields and the training dataset to find the conditional distributions of the receptive field responses, conditioned on the labelled target object LRVs.
+Then, we approximate these with multivariate Gaussian distributions.
+With the Gaussian approximation in hand, 
+to estimate the LRV of the target object in a test image, we use Bayes' rule to obtain the posterior distribution over LRV values given the filter responses.
+The optimal estimate is the LRV value that minimizes the expected value of the cost function, where the expectation is taken over the posterior.
 
-\subsubsection*{Baseline performance measure}
+\subsubsection*{Baseline methods}
 
-We used linear regression to provide a baseline performance measure.
+To provide baselines for evaluation of the estimation method described above, we used linear regression.
+First, we solved for the weights on the average L, M and S cone responses target object that best predicted the target LRV values.
+We took the average cone respones from a $3 \times 3$ region at the center of the target object.
+This baseline method disregards information carried the image regions corresponding to the background objects.
+We also performed regression on the contrast normalized version of the cone responses.
+This baseline method indirectly incorporates information carried the image regions corresponding to the background objects,
+through their effect on the contrast normalized responses from the target object. 
+We also evaluated the performance of a naive model that estimate the mean of the LRV values in the training set, irrespective
+of the image data.
 
-Linear regression gives us a baseline estimate of the performance. We use this method to estimate the target object LRV using cone responses corresponding to the central pixel of the cropped image. Thus, getting an estimate for a condition that does not take into account the context in the scene. 
-
-For for linear regression, we solve the set of linear equations given by $A_{1\times3}*C_{3\times N} = Y_{1\times N}$ for the regression parameters $A_{1\times3}$. Here, $C_{3\times N}$ is a matrix containing the average L, M and S stimulus of a central  3$\times$3 pixel patch of the image. We use Matlab to obtain the (unknown) regression parameters $A$.
-
-\subsection{Performance metric}
-If $\hat{Y}$ is the estimated luminance corresponding to the assigned luminance $Y$, the error of the luminance estimates is quantified as the relative error ($E_{\rm rel}$) defined as: $E_{\rm rel}^2 = \left\langle\left((\hat{Y}-Y)/Y\right)^2\right\rangle$.
-
+%\subsection{Performance evaluation}
+%
+%To evaluate the performance of our luminance constancy methods, we generated test sets as new random draws from our statistical models.
+%For each test image, we quant we summarized performance as the relative mean squared estimation error.
+%If $\hat{Y}$ is the estimated luminance corresponding to the assigned luminance $Y$, the error of the luminance estimates is quantified as the relative error ($E_{\rm rel}$) defined as: $E_{\rm rel}^2 = \left\langle\left((\hat{Y}-Y)/Y\right)^2\right\rangle$.
 
 % THINGS TO THINK ABOUT:
 %  1) Putting error bars on performance.  Particularly want to be sure that Fig 13 feature that Condition 3 RFs do better than Condition 1 RFs for Condition 1 is just statistical sampling.
 
 \section{Results} \label{Results}
-In this section, we discuss the results of supervised learning to estimate the luminance of the target object on the conditions we described previously. We describe the computations that need to be performed on the cone photoreceptor responses to estimate the luminance. We start with condition 1, where only the reflectance spectrum of the target object is allowed to vary, and show that in this condition the luminance can be estimated directly from the photoreceptor response. We then progressively increase the complexity of the spectral conditions and explain the correspondingly complex computations that are required to estimate the target LRV. Next, we show the optimal AMA receptive fields for each one of the spectral conditions discussed in this work. We show that the optimal receptive fields for target luminance estimation have a center surround structure and they give more weights to the response of L and M cones than S cones. We finally show that, as expected, the receptive fields for the complex spectral conditions generalize to the simple conditions. Hence, one requires only one set of optimal receptive fields for estimating the target luminance, not separate receptive fields for each spectral condition.
+
+%We start with Condition 1, where only the reflectance spectrum of the target object is allowed to vary, and show that in this condition the luminance can be estimated directly from the photoreceptor response. We then progressively increase the complexity of the spectral conditions and explain the correspondingly complex computations that are required to estimate the target LRV. Next, we show the optimal AMA receptive fields for each one of the spectral conditions discussed in this work. We show that the optimal receptive fields for target luminance estimation have a center surround structure and they give more weights to the response of L and M cones than S cones. We finally show that, as expected, the receptive fields for the complex spectral conditions generalize to the simple conditions. Hence, one requires only one set of optimal receptive fields for estimating the target luminance, not separate receptive fields for each spectral condition.
+
+We first learned filters for Condition 0, where the only scene variation was in the target object LRV.  Performance in this condition is limited by response noise.
+
+Figure ~\ref{fig:case1RFResponse} (ADD A) 
 
 \subsection{Luminance estimates for each spectral condition}
 \subsubsection{Condition 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}
