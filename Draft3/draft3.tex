@@ -598,15 +598,53 @@ of the image data.
 
 \section{Results} \label{Results}
 
-%We start with Condition 1, where only the reflectance spectrum of the target object is allowed to vary, and show that in this condition the luminance can be estimated directly from the photoreceptor response. We then progressively increase the complexity of the spectral conditions and explain the correspondingly complex computations that are required to estimate the target LRV. Next, we show the optimal AMA receptive fields for each one of the spectral conditions discussed in this work. We show that the optimal receptive fields for target luminance estimation have a center surround structure and they give more weights to the response of L and M cones than S cones. We finally show that, as expected, the receptive fields for the complex spectral conditions generalize to the simple conditions. Hence, one requires only one set of optimal receptive fields for estimating the target luminance, not separate receptive fields for each spectral condition.
+We start with Condition 1, where only the LRV and relative reflectance spectrum of the target object vary across scenes.
+For this condition, estimating LRV should be easy because the variation in target object reflectance that we introduced
+preserved LRV (which is calculated using a CIE D65 as the illumination.
+This in turn means that for fixed scene illuminants similar to D65, the luminance of the light reflected from the target object will
+vary minimally.
+In Condition 1, we used an illumination draw form our daylight sample and thus expect a reasonable degree of similarity to D65.
 
-We first learned filters for Condition 0, where the only scene variation was in the target object LRV.  Performance in this condition is limited by response noise.
+We used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
+For this condition, we trained and evaluated AMA on the cone responses to the image patches.
+Fig.~\ref{fig:case1RFResponse} shows the responses of the first two receptive fields to all the image patches in the training set.
+Each individual point represents the receptive field responses to a single image patch.
+Each point is color coded according to the LRV corresponding to the target object in the patch.
+The responses segregate according to the target LRV.
+This means that the responses may be used to accurately decode LRV, confirming the intuition that computational
+luminance constancy is readily achieved for Condition 1.
 
-Figure ~\ref{fig:case1RFResponse} (ADD A) 
+Decoding performance for the test set is shown in Figure (WHATSI).
+As expected, the LRV estimates obtained by decoding the AMA receptive field responses are veridical.
+Figure (WHATSI) also shows the performance of the baseline linear regression method, again trained
+on the training set and evaluated on the test set.
+For this condition, linear regression on the target object cone responses also leads to veridical LRV estimates.
+
+%ont along the first two optimal AMA receptive fields. 
+%Clearly, there exists a subspace along which the photoreceptor response separates according to the luminance level assigned to the target object. 
+%Thus, the target LRV can be obtained by projecting the photoreceptor response along these AMA receptive fields. 
+%We used such projections and a generalized Bayes' decoder (see methods) to estimate the luminance of the target objects in the test set stimuli. 
+% shows the estimated luminance v/s the actual luminance assigned to the target object for the test stimuli in condition 1. 
+%We show the estimates obtained by AMA and two null models: a naive method that assigns the average target LRV across the training set to all images, and a linear model based on the photoreceptors corresponding to the center pixel on the target object (see Methods). 
+%As expected, in the absence of any external source of variation, the photoreceptor response is proportional to the luminance of the target object, and hence can be easily estimated by both AMA and linear regression.
+%Figure (WHATSI)  and it provides a use and thus it illustrates how AMA op
+%
+% because (as we will see below) the only source of variation other
+%than the LRV does not have a large effect on cone responses to the target object.  there is just one source of variation.
+%
+%This is an instructive case to begin with, because it allows us to illustrate the action of AMA 
+
+
+%, and show that in this condition the luminance can be estimated directly from the photoreceptor response. We then progressively increase the complexity of the spectral conditions and explain the correspondingly complex computations that are required to estimate the target LRV. Next, we show the optimal AMA receptive fields for each one of the spectral conditions discussed in this work. We show that the optimal receptive fields for target luminance estimation have a center surround structure and they give more weights to the response of L and M cones than S cones. We finally show that, as expected, the receptive fields for the complex spectral conditions generalize to the simple conditions. Hence, one requires only one set of optimal receptive fields for estimating the target luminance, not separate receptive fields for each spectral condition.
+%
+%We first learned filters for Condition 0, where the only scene variation was in the target object LRV.  Performance in this condition is limited by response noise.
+
+%Figure ~\ref{fig:case1RFResponse} (ADD A) 
 
 \subsection{Luminance estimates for each spectral condition}
 \subsubsection{Condition 1: Target object relative surface reflectance spectrum variable, light source and background object spectra fixed}
 We start with the results of the simplest type of spectral variation where only the target object relative surface reflectance spectrum is allowed to change. 
+
 We used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV from the model cone photoreceptor response to the images from this condition.
 Fig.~\ref{fig:case1RFResponse} shows the projection of the photoreceptor response along the first two optimal AMA receptive fields. 
 Clearly, there exists a subspace along which the photoreceptor response separates according to the luminance level assigned to the target object. 
