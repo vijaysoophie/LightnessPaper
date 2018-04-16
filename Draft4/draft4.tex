@@ -564,9 +564,8 @@ of the image data.
 
 We start with Condition 1, where only the LRV and relative reflectance spectrum of the target object vary across scenes.
 For this condition, estimating LRV should be easy because the variation in target object reflectance that we introduced
-preserved LRV (which is calculated using a CIE D65 as the illumination.
-This in turn means that for fixed scene illuminants similar to D65, the luminance of the light reflected from the target object will
-vary minimally.
+preserved LRV (which is calculated using a CIE D65 as the illumination).
+This in turn means that for fixed scene illuminants similar to D65, the luminance of the light reflected from the target object will vary minimally.
 In Condition 1, we used an illumination draw form our daylight sample and thus expect a reasonable degree of similarity to D65.
 
 We used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
@@ -601,13 +600,19 @@ For this condition, linear regression on the target object cone responses also l
 \label{fig:Condition1}
 \end{figure}
 
-\subsubsection{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}
-For the spectral variations of condition 2, the AMA receptive fields learnt on the photoreceptor response to the images does a very poor job in predicting the target LRV (Fig.~\ref{fig:isomerizationFails}). 
+Next, we discuss Condition 2, where we varied the spectral power distribution function of the light sources in addition to the target object LRV and relative spectrum. 
+This is a more realistic condition, where the spectra of light sources change while the objects remain fixed, as in a naturalistic scene. 
+Similar to condition 1, we used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
+First we trained and evaluated AMA on the cone responses to the image patches.
+Figure~\ref{fig:isomerizationFails} shows the responses of the first two receptive fields to all the image patches in the training set.
+For the spectral variations of condition 2, the AMA receptive fields learnt on the cone response to the images does a very poor job in predicting the target LRV.
 This is because, since the illuminant spectra varies in this condition, the photoreceptor response is not directly proportional to the target object surface anymore. 
-But, since the background surfaces are fixed in this condition, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target LRV. 
+The decoding performance using these receptive fields for the test set is shown in Figure~\ref{fig:IsomerizationResults}.
+
+On the other hand, since the background surfaces are fixed in this condition, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target LRV. 
 This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
-Thus, the AMA receptive fields learnt on the contrast normalized photoreceptor response (see Methods) can be used to predict the target LRV (Fig.~\ref{fig:constrastWorks}). 
-Fig.~\ref{fig:case10Results} shows the estimated target LRV v/s the assigned luminance for the images in condition 3 obtained using the contrast normalized representation. 
+Thus, the AMA receptive fields learnt on the contrast normalized cone response (see Methods) can be used to predict the target LRV (Fig.~\ref{fig:contrastWorks}). 
+Fig.~\ref{fig:contrastResults} shows the decoding performance for the test set in condition 2 obtained using the contrast normalized representation.
 AMA receptive fields provide excellent predictions of the target LRV. 
 The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
 
@@ -632,29 +637,27 @@ The predictions are much better compared to that of a linear model that only con
             \begin{subfigure}[b]{0.22 \textwidth}
         \caption{LRV estimates (Contrast)}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_d.pdf}
-        \label{fig:constrstResults}
+        \label{fig:contrastResults}
     \end{subfigure}
     \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
 \label{fig:importanceOfConstrast}
 \end{figure}
 
-Again, similar to condition 2, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}). But, the stimuli are better separated if the projection is considered within a subspace that has more receptive fields (Fig.~\ref{fig:ErrorVsNFilters}).
+Finally, we discuss Condition 3, where the spectral power distribution function of the light sources, the reflectance spectra of the background objects and the target object LRV and relative spectrum are allowed to vary. 
+This is the most interesting and difficult condition.
+For this condition, we used AMA to learn a set of linear receptive fields using the contrast normalized cone response. 
+Fig.~\ref{fig:contrastResults} shows the decoding performance for the test set in condition 3 obtained using the contrast normalized representation.
 
 \subsubsection{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}
 % Figure condition 3
 \begin{figure}
 \centering
-    \begin{subfigure}[b]{0.3 \textwidth}   
-        \caption{RF response}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12_a.pdf}
-        \label{fig:case12FiltersResponse}
-    \end{subfigure}    
         \begin{subfigure}[b]{0.3 \textwidth}
         \caption{LRV estimates}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12_b.pdf}
         \label{fig:case12Results}
     \end{subfigure}
-    \caption{{\bf Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.}
+    \caption{{\bf Condition 3:} (a) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.}
     \label{fig:case12AllResults}
 \end{figure}
 
