@@ -47,12 +47,12 @@ As a consequence, the performance of color constancy algorithms will be affected
 \begin{subfigure}{0.4 \textwidth}
 	\centering
 	\caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure1/Figure1_a.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure1/Figure1_a.png}
         \label{fig:introSchematic}
     \end{subfigure}
     \begin{subfigure}{0.55 \textwidth}   
         \caption{}    
-        \includegraphics[width=\textwidth]{../Figures/Figure1/Figure1_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure1/Figure1_b.png}
         \label{fig:introExampleFigure}
     \end{subfigure}
     \label{introFigure}
@@ -69,17 +69,17 @@ Supervised learning requires large labeled data sets.  Such data sets are not re
 \centering
 	\begin{subfigure}[b]{0.33 \textwidth}
 		\caption{Condition 2}
-		\includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_a.png}
+		\includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_a.png}
  		\label{fig:backgroundVarying}
 	\end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
         \caption{Condition 3}	
-        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_b.png}
         \label{fig:targetIlluminantVarying}
     \end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
 	\caption{Condition 4}	
-        \includegraphics[width=\textwidth]{../Figures/Figure2/Figure2_c.png}        
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_c.png}        
         \label{fig:allSpectraVarying}
     \end{subfigure}    
     \caption{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref{fig:introExampleFigure}). (a) Condition 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Condition 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Condition 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in Fig.~\ref{fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the four panels (Fig.~\ref{fig:introExampleFigure} \& Fig.~\ref{fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
@@ -107,37 +107,37 @@ There are four key parts to our methods.  First we generate a labeled set of tra
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Library }
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_a.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_a.png}
         \label{fig:baseSceneLibrary}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Mill}    
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_b.png}
         \label{fig:baseSceneMill}
     \end{subfigure}    
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Table-Chairs}    
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_c.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_c.png}
         \label{fig:baseSceneTableChairs}
     \end{subfigure}
     
     \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Indoor-plant}    
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_d.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_d.png}
         \label{fig:baseSceneIndoorPlant}
     \end{subfigure}    
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Warehouse}    
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_e.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_e.png}
         \label{fig:baseSceneWarehouse}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Checkerboard}    
-        \includegraphics[width=\textwidth]{../Figures/Figure3/Figure3_f.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_f.png}
         \label{fig:baseSceneCheckerBoard}
     \end{subfigure}
     \caption{{\bf Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software.  The light source spectra were also assigned randomly to the default and inserted light source.}\label{fig:baseScenes}
@@ -157,36 +157,36 @@ By incorporating statistical models of the variation of object surface reflectan
 \centering
 \begin{subfigure}[b]{0.14 \textwidth}
         \caption{Big-ball}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_a.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_a.png}
         \label{fig:libraryWithBigBall}
     \end{subfigure}
     ~ 
 \begin{subfigure}[b]{0.14 \textwidth}
         \caption{Small-ball}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_b.png}
         \label{fig:libraryWithSmallBall}
     \end{subfigure}
     ~ 
     \begin{subfigure}[b]{0.14 \textwidth}
         \caption{Barrel}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_c.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_c.png}
         \label{fig:libraryWithBarrel}
     \end{subfigure}
     \begin{subfigure}[b]{0.14 \textwidth}
         \caption{Xylophone}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_d.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_d.png}
         \label{fig:libraryWithXylophone}
     \end{subfigure}
     ~
 	\begin{subfigure}[b]{0.14 \textwidth}
         \caption{Ring toy}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_e.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_e.png}
         \label{fig:libraryWithRingToy}
     \end{subfigure}
         ~
     	\begin{subfigure}[b]{0.14 \textwidth}
         \caption{Bottle}
-        \includegraphics[width=\textwidth]{../Figures/Figure4/Figure4_f.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_f.png}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
 \caption{{\bf Library base scene with inserted objects.} The rendering package was used to insert different objects into the library base scene, with each panel showing a different object. The objects were inserted at a location in the image and then the camera was pointed at the object, so that the object's image is at the center of the rendered image.  In the figure panels, the full rendered image is cropped so that the inserted object is more visually salient. We use this capability of our software pipeline to insert target objects into scenes.}\label{fig:libraryWithTarget}
@@ -203,14 +203,14 @@ This provides a complete scene model which can be rendered from any specified vi
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \caption{Target position}
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_d.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_d.png}
         \label{fig:targetPositionVariation}
     \end{subfigure}
     ~
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \caption{Target Size/Orientation}
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_e.png}
+        \caption{Target size/Orientation}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_e.png}
         \label{fig:targetSizeOrientation}
     \end{subfigure}
 ~
@@ -218,21 +218,21 @@ This provides a complete scene model which can be rendered from any specified vi
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \caption{Target spectra}
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_a.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_a.png}
         \label{fig:targetVariation}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \caption{Background spectra}
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_b.png}
         \label{fig:backGroundVariation}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
         \caption{Illumination spectra}
-        \includegraphics[width=\textwidth]{../Figures/Figure5/Figure5_c.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_c.png}
         \label{fig:illuminationVariation}
     \end{subfigure}
     \caption{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Geometrical (a-b) and Spectral (c-e). VWCC provides control over such transformation as illustrated by the columns. (a) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. (b) The target object in the three panels are at different orientations. (c) The target object surface reflectance varies across the three panels of the column. (d) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (e) The power spectrum of the light sources were assigned randomly in the three panels. 
@@ -284,6 +284,8 @@ Surface and illuminant spectra were drawn according to statistical models of nat
 We describe these models below.
 Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm.
 
+
+%% Fix the title capitalization in a and b
 \subsubsection{Illumination spectra}
 % Figure 6
 \begin{figure}
@@ -291,25 +293,25 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
     \begin{subfigure}[b]{0.24 \textwidth}
     \centering
 	\caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_a.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure6/Figure6_a.pdf}
         \label{fig:granadaData}
     \end{subfigure}
 	\begin{subfigure}[b]{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_b.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure6/Figure6_b.pdf}
         \label{fig:illuminantSamples}
     \end{subfigure}
       	\begin{subfigure}[b]{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_c.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure6/Figure6_c.pdf}
         \label{fig:xyDiagram}
         \end{subfigure}
       	\begin{subfigure}[b]{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure6/Figure6_d.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure6/Figure6_d.pdf}
         \label{fig:sRGBIlluminant}
     \end{subfigure}
     \caption{{\bf Illumination spectra:} (a) Granada dataset. The spectra are normalized by the mean over wavelength. (b) A representative sample of spectra generated using normalized Granada dataset. (c) CIE xy chromaticity diagram of the normalized dataset and the random samples. (d) sRGB renditions of the samples from Figure~\ref{fig:illuminantSamples}.}
@@ -332,41 +334,43 @@ We obtained each scale factor by randomly sampling (with replacement) a spectrum
 Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:sRGBIlluminant}.
 
 \subsubsection{Surface reflectance spectra}
-% Figure 7
+%% Fix the title capitalization in a and b
+% Figure 7 Surface Reflectance Data and Model
 \begin{figure}
 \centering
 	\begin{subfigure}{0.24 \textwidth}
     \centering
             \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_a.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure7/Figure7_a.pdf}
         \label{fig:reflectanceSpectra}
     \end{subfigure}
     \begin{subfigure}{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_b.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure7/Figure7_b.pdf}
         \label{fig:reflectanceSamples}
     \end{subfigure}
     \begin{subfigure}{0.24 \textwidth}
     \centering
     \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_c.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure7/Figure7_c.pdf}
         \label{fig:xyChroReflectance}
     \end{subfigure}    
     \centering
 	\begin{subfigure}{0.24 \textwidth}
     \centering
         \caption{}
-        \includegraphics[width=\textwidth]{../Figures/Figure7/Figure7_d.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure7/Figure7_d.pdf}
         \label{fig:backgroundSwatches}
     \end{subfigure}
     \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance under CIE D65 daylight.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
 
+%Figure 8 Target Surface Reflectance Samples
 \begin{figure}
 \centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure7/Figure8.pdf}
+\includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure8/Figure8.pdf}
 \caption{{\bf Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. This range captures more than 90\% of the natural surface reflectances. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.}
 \label{fig:targetSwatches}
 \end{figure}
@@ -391,29 +395,29 @@ Figure \ref{fig:targetSwatches} shows color swatches of target reflectance spect
 \begin{subfigure}[b]{0.25 \textwidth}
 		\centering
         \caption{sRGB rendering of a 3D scene}
-        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_a.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_a.png}
         \label{fig:3DScene}
     \end{subfigure}
     ~ 
     \begin{subfigure}[b]{0.19 \textwidth}   
     \hspace{0.1 \textwidth}
-        \caption{Cropped Image}
+        \caption{Cropped image}
         \vspace{1.5mm}
-        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_b.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_b.png}
         \label{fig:croppedImage}
     \end{subfigure}
     ~ 
     \begin{subfigure}[b]{0.19 \textwidth}
     \hspace{0.1 \textwidth}
-        \caption{Optical Image}
+        \caption{Optical image}
         \vspace{1.5mm}
-        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_c.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_c.png}
         \label{fig:croppedImageWithMosaic}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.2 \textwidth}
         \caption{LMS cone contrast}
-        \includegraphics[width=\textwidth]{../Figures/Figure8/Figure8_d.png}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_d.png}
         \label{fig:coneContrast}
     \end{subfigure}
     \label{fig:sceneWithCroppedImage}
@@ -580,65 +584,25 @@ Figure~\ref{fig:case1Results} also shows the performance of the baseline linear 
 on the training set and evaluated on the test set.
 For this condition, linear regression on the target object cone responses also leads to veridical LRV estimates.
 
-%% Figure 9
+%% Figure 10: Results for Condition 1
 \begin{figure}
 \centering
         \begin{subfigure}[b]{0.3 \textwidth}
         \caption{RF response condition 1}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_a.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure10/Figure10_a.pdf}
         \label{fig:case1RFResponse}
     \end{subfigure}    
             \begin{subfigure}[b]{0.3 \textwidth}
-        \caption{Luminance Estimates}
-        \includegraphics[width=\textwidth]{../Figures/Figure9/Figure9_b.pdf}
+        \caption{LRV estimates}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure10/Figure10_b.pdf}
         \label{fig:case1Results}
     \end{subfigure}    
-    \caption{{\bf RF response and luminance estimates for condition 0 (baseline) and condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible. The relative error of estimation is XX (AMA) and YY(Linear regression).}
+    \caption{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible. The relative error of estimation is XX (AMA) and YY(Linear regression).}
 \label{fig:Condition1}
 \end{figure}
 
-\subsubsection{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable}
-When the light source emission spectrum is fixed, the naive expectation would be that the luminance of the target object would depend only on the surface reflectance of the target object. 
-Indeed, it is believed that the variation in the surface reflectance of the background has little effect on the reflected light from the target object  \cite{BrainardWandellRetinex}. 
-But our analysis shows that the secondary reflections from the target object, of the light coming indirectly after being reflected from the background objects, have a significant effect on the response of the photoreceptors corresponding to the target object. 
-Fig.~{\ref{fig:case2RFResponse}} shows the projection of the photoreceptor response for the stimuli in condition 2 along the first two AMA receptive fields. 
-These receptive fields were learnt using the stimuli from the same condition (Condition 2). 
-The response projected along the first two optimal receptive fields do not separate as well compared to condition 1. 
-But the overlap is lower if the projection is considered in subspaces that have more AMA receptive fields. 
-Fig.~\ref{fig:ErrorVsNFilters} shows the relative error of luminance estimate as a function of the number of AMA receptive fields used for luminance estimation. 
-As expected, the relative error decreases with the number of receptive fields and converges to the minimum value around 8 receptive fields. 
-Fig.~\ref{fig:case2Estimates} shows the luminance estimates for the learning methods used in this work. 
-The mean estimates fall along the diagonal x=y line. 
-The variance in the estimates increases with assigned luminance. 
-This is because the isomerization noise is directly proportional to the light reflected from the target object and is higher at higher values of the target LRV.
-
-%% Figure condition 2
-\begin{figure}
-\centering
-    \begin{subfigure}[b]{0.3	 \textwidth}   
-        \caption{RF response condition 2}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_a.pdf}
-        \label{fig:case2RFResponse}
-    \end{subfigure}
-        \begin{subfigure}[b]{0.3 \textwidth}
-        \caption{Luminance Estimates}
-        \includegraphics[width=\textwidth]{../Figures/Figure10/Figure10_b.pdf}
-        \label{fig:case2Estimates}
-    \end{subfigure}
-    \caption{{\bf Condition 2:} (a) Photoreceptor response projected along the first two AMA receptive fields. (b) Estimated v/s assigned target LRV for the image in condition 2. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation.}
-\label{fig:case2Results}
-\end{figure}
-
-%%% Figure 11: RMSE vs N Filters
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{../Figures/Figure11/Figure11.pdf}
-\caption{{\bf Performance with number of RFs used for estimation:} Relative error as a function of number of AMA receptive fields used for luminance estimation. While most of the information is captured by the first two filters, the relative error reduces as the number of receptive fields used for luminance estimation are increased. We have used the first 8 RFs for estimating the luminance.}
-\label{fig:ErrorVsNFilters}
-\end{figure}
-
-\subsubsection{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}
-For the spectral variations of condition 3, the AMA receptive fields learnt on the photoreceptor response to the images does a very poor job in predicting the target LRV (Fig.~\ref{fig:isomerizationFails}). 
+\subsubsection{Condition 2: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed}
+For the spectral variations of condition 2, the AMA receptive fields learnt on the photoreceptor response to the images does a very poor job in predicting the target LRV (Fig.~\ref{fig:isomerizationFails}). 
 This is because, since the illuminant spectra varies in this condition, the photoreceptor response is not directly proportional to the target object surface anymore. 
 But, since the background surfaces are fixed in this condition, the ratio between the response of  photoreceptors corresponding to the target object and the background remains proportional to the target LRV. 
 This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
@@ -647,42 +611,47 @@ Fig.~\ref{fig:case10Results} shows the estimated target LRV v/s the assigned lum
 AMA receptive fields provide excellent predictions of the target LRV. 
 The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
 
-%% Figure condition 3: Isomerization Fails
+%% Figure condition 2: Isomerization Fails
 \begin{figure}
 \centering
-    \begin{subfigure}[b]{0.3	 \textwidth}   
-        \caption{RFs learnt using photoreceptor response}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_a.pdf}
+    \begin{subfigure}[b]{0.22	 \textwidth}   
+        \caption{RF response (Isomerization)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_a.pdf}
         \label{fig:isomerizationFails}
     \end{subfigure}
-        \begin{subfigure}[b]{0.3 \textwidth}
-        \caption{RFs learnt using contrast signal}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_b.pdf}
-        \label{fig:constrastWorks}
+        \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{LRV estimates (Isomerization)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_b.pdf}
+        \label{fig:IsomerizationResults}
     \end{subfigure}
-            \begin{subfigure}[b]{0.3 \textwidth}
-        \caption{Luminance estimates}
-        \includegraphics[width=\textwidth]{../Figures/Figure12/Figure12_c.pdf}
-        \label{fig:case10Results}
+            \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{RF response (Contrast)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_c.pdf}
+        \label{fig:contrastWorks}
     \end{subfigure}
-    \caption{{\bf Condition 3: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
+            \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{LRV estimates (Contrast)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_d.pdf}
+        \label{fig:constrstResults}
+    \end{subfigure}
+    \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
 \label{fig:importanceOfConstrast}
 \end{figure}
 
 Again, similar to condition 2, the projection along the first two receptive fields shows an overlap between the stimuli at higher luminance values (Fig.~\ref{fig:constrastWorks}). But, the stimuli are better separated if the projection is considered within a subspace that has more receptive fields (Fig.~\ref{fig:ErrorVsNFilters}).
 
-\subsubsection{Condition 4: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}
-% Figure condition 4
+\subsubsection{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}
+% Figure condition 3
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.3 \textwidth}   
-        \caption{AMA RF Response}
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_a.pdf}
+        \caption{RF response}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12_a.pdf}
         \label{fig:case12FiltersResponse}
     \end{subfigure}    
         \begin{subfigure}[b]{0.3 \textwidth}
-        \caption{Luminance Estimates}
-        \includegraphics[width=\textwidth]{../Figures/Figure13/Figure13_b.pdf}
+        \caption{LRV estimates}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12_b.pdf}
         \label{fig:case12Results}
     \end{subfigure}
     \caption{{\bf Condition 3:} (a) Contrast normalized photoreceptor response projected along the first two AMA receptive fields. (b) Target LRV estimates v/s assigned luminance for images in condition 3. The AMA estimates are unbiased and have smaller relative error compared to linear model.}
@@ -701,25 +670,25 @@ The relative error of estimation is $\sim15\%$, which low compared to that of th
 \centering
 \begin{subfigure}{0.21 \textwidth}
 	\caption{Condition 1}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_a.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_a.pdf}
 	\label{fig:case1Filter}
     \end{subfigure}
     ~ ~ ~
     \begin{subfigure}{0.21 \textwidth}   
 	\caption{Condition 2}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_b.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_b.pdf}
 	\label{fig:case2Filter}
     \end{subfigure}
     ~ ~ ~
         \begin{subfigure}{0.21 \textwidth}
 	\caption{Condition 3}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_c.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_c.pdf}
 	\label{fig:case3Filter}
     \end{subfigure}
     ~ ~ ~
         \begin{subfigure}{0.21 \textwidth}
 	\caption{Condition 4}
-	\includegraphics[width=\textwidth]{../Figures/Figure14/Figure14_d.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_d.pdf}
 	\label{fig:case4Filter}
     \end{subfigure}
 \caption{{\bf AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.}
@@ -738,25 +707,25 @@ Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the targe
 \centering
 \begin{subfigure}{0.22 \textwidth}
 	\caption{Condition 1}
-	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_a.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure15/Figure15_a.pdf}
 	\label{fig:case1Bar}
     \end{subfigure}
     ~ 
     \begin{subfigure}{0.22 \textwidth}   
 	\caption{Condition 2}
-	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_b.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure15/Figure15_b.pdf}
 	\label{fig:case2Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
 	\caption{Condition 3}
-	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_c.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure15/Figure15_c.pdf}
 	\label{fig:case3Bar}
     \end{subfigure}
     ~ 
         \begin{subfigure}{0.22 \textwidth}
 	\caption{Condition 4}
-	\includegraphics[width=\textwidth]{../Figures/Figure15/Figure15_d.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure15/Figure15_d.pdf}
 	\label{fig:case4Bar}
     \end{subfigure}
 \caption{{\bf Comparison of optimal RFs across cases:} Comparison of optimal AMA receptive fields from one condition on the images of other cases. Each panel shows the relative error estimates on the same set of images obtained using the receptive fields of the four cases (condition 1-4). (a) Error estimates for images of condition 1. The AMA receptive fields from all three cases perform well in this case. (b) Error estimates for images of condition 2. As expected, the best estimates are provided by the receptive fields of condition 2. (c) Error estimates for images of condition 3. (d) Error estimates for images of condition 4.}
