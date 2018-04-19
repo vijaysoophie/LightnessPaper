@@ -10,11 +10,11 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: references.bib
-Repeated entry---line 272 of file references.bib
+Repeated entry---line 282 of file references.bib
  : @article{geisler2009optimal
  :                            ,
 I'm skipping whatever remains of this entry
-You're missing a field name---line 484 of file references.bib
+You're missing a field name---line 494 of file references.bib
  : 
  : %    year={2017?},
 (Error may have been on previous line)
@@ -48,43 +48,43 @@ Warning--No address in skauli2013collection
 while executing---line 5275 of file jovcite.bst
 You've used 38 entries,
             6399 wiz_defined-function locations,
-            1462 strings with 17416 characters,
-and the built_in function-call counts, 71272 in all, are:
-= -- 8864
-> -- 619
-< -- 3218
-+ -- 3401
+            1464 strings with 17367 characters,
+and the built_in function-call counts, 70935 in all, are:
+= -- 8836
+> -- 615
+< -- 3184
++ -- 3369
 - -- 78
-* -- 4661
-:= -- 12714
+* -- 4624
+:= -- 12615
 add.period$ -- 168
 call.type$ -- 38
 change.case$ -- 195
 chr.to.int$ -- 0
 cite$ -- 90
-duplicate$ -- 1933
-empty$ -- 2942
-format.name$ -- 962
-if$ -- 13723
+duplicate$ -- 1927
+empty$ -- 2938
+format.name$ -- 953
+if$ -- 13685
 int.to.chr$ -- 0
 int.to.str$ -- 76
 missing$ -- 0
-newline$ -- 938
+newline$ -- 936
 num.names$ -- 308
-pop$ -- 1168
+pop$ -- 1167
 preamble$ -- 1
 purify$ -- 149
 quote$ -- 0
-skip$ -- 4673
+skip$ -- 4669
 stack$ -- 0
-substring$ -- 3900
-swap$ -- 1259
+substring$ -- 3871
+swap$ -- 1255
 text.length$ -- 134
 text.prefix$ -- 0
 top$ -- 1
 type$ -- 3552
 warning$ -- 14
-while$ -- 326
+while$ -- 324
 width$ -- 0
-write$ -- 1167
+write$ -- 1163
 (There were 7 error messages)

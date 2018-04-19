@@ -318,7 +318,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
 \label{fig:illuminant}
 \end{figure}
 
-To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{peyvandi2016colorimetric} and sample randomly from the model.
+To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{hernandez2001color} and sample randomly from the model.
 The overall intensity of the measurements spans approximately three orders of magnitude.
 Figure~\ref{fig:granadaData} plots the measurements in normalized form to make apparent the variation in the relative spectra. The spectra are normalized by their mean over wavelength.
 
@@ -642,6 +642,33 @@ The predictions are much better compared to that of a linear model that only con
     \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
 \label{fig:importanceOfConstrast}
 \end{figure}
+
+\begin{figure}
+\centering
+    \begin{subfigure}[b]{0.22	 \textwidth}   
+        \caption{RF response (Isomerization)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_e.pdf}
+        \label{fig:isomerizationFails}
+    \end{subfigure}
+        \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{LRV estimates (Isomerization)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_f.pdf}
+        \label{fig:IsomerizationResults}
+    \end{subfigure}
+            \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{RF response (Contrast)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_g.pdf}
+        \label{fig:contrastWorks}
+    \end{subfigure}
+            \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{LRV estimates (Contrast)}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_h.pdf}
+        \label{fig:contrastResults}
+    \end{subfigure}
+    \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
+\label{fig:importanceOfConstrast}
+\end{figure}
+
 
 Finally, we discuss Condition 3, where the spectral power distribution function of the light sources, the reflectance spectra of the background objects and the target object LRV and relative spectrum are allowed to vary. 
 This is the most interesting and difficult condition.
