@@ -521,9 +521,7 @@ We applied accuracy maximization analysis (AMA) to learn the optimal receptive f
 and evaluated the performance obtained when the output of these filters was optimally decoded.
 
 \subsubsection*{Learning optimal filters}
-
-AMA 
-is a task specific Bayesian method for dimensionality reduction.
+AMA is a task specific Bayesian method for dimensionality reduction.
 When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns a set of linear receptive fields.
 Given a set of linear receptive fields and an explicit cost function, it is possible to determine the minimum-expected-cost estimator that maps responses to stimulus labels given the training set and the 
 assumption that all images in the training set are equally likely.
@@ -596,7 +594,7 @@ For this condition, linear regression on the target object cone responses also l
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure10/Figure10_b.pdf}
         \label{fig:case1Results}
     \end{subfigure}    
-    \caption{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one luminance level. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Mean luminance estimates and standard deviations for the images in the test set obtained using the naive method, linear regression and AMA. The estimates fall along the diagonal unit slope (blue dotted) line for both linear regression and AMA. The standard deviations are too small to be visible. The relative error of estimation is 1.1\% (AMA) and 0.8\% (Linear regression).}
+    \caption{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b)  Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm$ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible. }
 \label{fig:Condition1}
 \end{figure}
 
@@ -639,33 +637,7 @@ The predictions are much better compared to that of a linear model that only con
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_d.pdf}
         \label{fig:contrastResults}
     \end{subfigure}
-    \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
-\label{fig:importanceOfConstrast}
-\end{figure}
-
-\begin{figure}
-\centering
-    \begin{subfigure}[b]{0.22	 \textwidth}   
-        \caption{RF response (Isomerization)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_e.pdf}
-        \label{fig:isomerizationFails}
-    \end{subfigure}
-        \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{LRV estimates (Isomerization)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_f.pdf}
-        \label{fig:IsomerizationResults}
-    \end{subfigure}
-            \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{RF response (Contrast)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_g.pdf}
-        \label{fig:contrastWorks}
-    \end{subfigure}
-            \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{LRV estimates (Contrast)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_h.pdf}
-        \label{fig:contrastResults}
-    \end{subfigure}
-    \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (c) Estimated v/s assigned target LRV for the image in condition 3. Solid lines show the mean estimate, the filled region in light color  shows one standard deviation. AMA estimates are much better compared to the null models.}
+    \caption{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) Mean LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA. The relative error of estimation is 41.4\% (Linear regression) and 31.3\% (AMA). (c) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (d) Estimated v/s assigned target LRV for the image in condition 2. The relative error of estimation is 9.3\% (Linear regression) and 1.1\% (AMA).}
 \label{fig:importanceOfConstrast}
 \end{figure}
 
