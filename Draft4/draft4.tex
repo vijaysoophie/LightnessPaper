@@ -641,29 +641,22 @@ The predictions are much better compared to that of a linear model that only con
 \label{fig:importanceOfConstrast}
 \end{figure}
 
-Finally, we discuss Condition 3, where the spectral power distribution function of the light sources, the reflectance spectra of the background objects and the target object LRV and relative spectrum are allowed to vary. 
-This is the most interesting and difficult condition.
-For this condition, we used AMA to learn a set of linear receptive fields using the contrast normalized cone response. 
-Fig.~\ref{fig:contrastResults} shows the decoding performance for the test set in condition 3 obtained using the contrast normalized representation.
-
-\subsubsection{Condition 3: Target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable}
 % Figure condition 3
 \begin{figure}
 \centering
         \begin{subfigure}[b]{0.3 \textwidth}
         \caption{LRV estimates}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12_a.pdf}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure12/Figure12.pdf}
         \label{fig:case12Results}
     \end{subfigure}
     \caption{{\bf Condition 3:} Target LRV estimates v/s assigned luminance for images in test set of condition 3. The LRV estimates have been obtained using RFs learnt on contrast normalized images. The relative error of estimation is 22.9\%  for linear regression and 13.0\% for AMA.}
     \label{fig:case12AllResults}
 \end{figure}
 
-Condition 4 is the most complex type of variation that we consider in this work. Here we allow all three types of spectra to change from image to image. In this condition, neither the photoreceptor response (as in condition 1 and 2), nor any simple transformation of the response (condition 3) can provide the target LRV.We used AMA to learn the receptive fields using the contrast normalized cone photoreceptor response from stimuli in condition 4. Fig.~\ref{fig:case12AllResults} shows the AMA receptive field response and the luminance estimates for the images in condition 4. 
-We have used the first 8 receptive fields to estimate the luminance in this condition (see Fig.\ref{fig:ErrorVsNFilters}). 
-The AMA receptive fields do an excellent job of predicting the target LRV. 
-The estimates are unbiased with the mean estimates lying close the diagonal unit slope line (Fig.~\ref{fig:case12Results}). 
-The relative error of estimation is $\sim15\%$, which low compared to that of the naive model ($\sim42\%$) or the linear model on center pixel ($\sim21\%$).
+Finally, we discuss Condition 3, where the spectral power distribution function of the light sources, the reflectance spectra of the background objects and the target object LRV and relative spectrum are allowed to vary. 
+This is the most interesting and difficult condition.
+For this condition, we used AMA to learn a set of linear receptive fields using the contrast normalized cone response. 
+Fig.~\ref{fig:case12AllResults} shows the decoding performance for the test set in condition 3 obtained using the contrast normalized representation.
 
 \subsection{Optimal receptive fields for luminance estimation have a center surround structure}
 % Figure RFs 
@@ -671,34 +664,46 @@ The relative error of estimation is $\sim15\%$, which low compared to that of th
 \centering
 \begin{subfigure}{0.21 \textwidth}
 	\caption{Condition 1}
-	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_a.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure13/Figure13_a.pdf}
 	\label{fig:case1Filter}
     \end{subfigure}
     ~ ~ ~
     \begin{subfigure}{0.21 \textwidth}   
-	\caption{Condition 2}
-	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_b.pdf}
-	\label{fig:case2Filter}
+	\caption{Condition 2 isomerization}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure13/Figure13_b.pdf}
+	\label{fig:case2FilterI}
+    \end{subfigure}
+    ~ ~ ~
+        \begin{subfigure}{0.21 \textwidth}
+	\caption{Condition 2 contrast}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure13/Figure13_c.pdf}
+	\label{fig:case2FilterC}
     \end{subfigure}
     ~ ~ ~
         \begin{subfigure}{0.21 \textwidth}
 	\caption{Condition 3}
-	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_c.pdf}
+	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure13/Figure13_d.pdf}
 	\label{fig:case3Filter}
     \end{subfigure}
-    ~ ~ ~
-        \begin{subfigure}{0.21 \textwidth}
-	\caption{Condition 4}
-	\includegraphics[width=\textwidth]{../FiguresDraft4/Figure14/Figure14_d.pdf}
-	\label{fig:case4Filter}
-    \end{subfigure}
-\caption{{\bf AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 4 is due to the fixed geometry of the images.}
+\caption{{\bf AMA receptive fields:} The first two AMA receptive fields for the four conditions studied in this work. The receptive fields show a center surround structure. The L and M filters have larger weight as luminance is essentially a function of the L and M cone isomerizations. The stereotypical pattern in the receptive fields of condition 3 is due to the fixed geometry of the images.}
  \label{fig:AMAFilters}
 \end{figure}
 
-Fig.~\ref{fig:AMAFilters} shows the first two AMA receptive fields that are optimal for estimating the target LRV for the four types of spectral variations studied in this work. The receptive fields are ranked in ascending order of the value of the cost function associated with them. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs and the higher weights of the L and M cones, compared to the S cones. 
+Fig.~\ref{fig:AMAFilters} shows the first two AMA receptive fields that are optimal for estimating the target LRV for the four types of spectral variations studied in this work. The receptive fields are ranked in ascending order of the value of the cost function associated with them. Thus the first RF corresponds to the direction along which the projection of the data gives the minimum cost. The L, M and S components give the weights for the linear sum of the cone responses for the three cone types. The salient features are: the center surround structure of the RFs, and the higher weights of the L and M cones, compared to the S cones. 
 
-For condition 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. Thus, the RFs weights are mostly concentrated around the center. For condition 2, where the target and the background spectra varies, most of the luminance information is still concentrated around the central target object. For condition 3, while the target and the illuminant spectra varies, the background object spectra is fixed. Hence, the luminance can be estimated by simply from the contrast between the response of the cones corresponding to the target and the background. Thus, while the RFs show a trend of weights concentrated at the center similar to condition 1, there is large negative contribution from the surround. The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). Condition 4 has a similar center surround structure, but with more prominent features of the background since the spectra of the background objects are also varying. Again, the spatial features are a result of the stereotypical geometry of the images.
+For condition 1, since the illuminant and the background are fixed, all the information is in the central target object reflectance. 
+Thus, the receptive fields weights are mostly concentrated around the center (Figure~\ref{fig:case1Filter}). 
+For condition 2, the illuminant spectra varies over several order of magnitude. 
+As a result the photoreceptor isomerizations vary wildly. 
+Thus, AMA receptive fields learnt on isomerizations do not show any clear pattern (Figure~\ref{fig:case2FilterI}). 
+But, since the background object spectra is fixed, the contrast between the response 
+of the cones corresponding to the target and the background carries the information about 
+the target object LRV. 
+The receptive fields learnt on the contrast signal shows this a trend. 
+The receptive field weights are concentrated at the center similar to condition 1, there is large negative contribution from the surround (Figure~\ref{fig:case2FilterC}).
+The spatial features of the RFs are due the stereotypical geometry of the images (see \nameref{Methods}). 
+Condition 3 has a similar center surround structure, but with more prominent features of the background, since the spectra of the background objects are also varying (Figure~\ref{fig:case3Filter}). 
+Again, the spatial features are a result of the stereotypical geometry of the images.
 
 \subsection{The receptive fields of complex condition generalize on simpler conditions}
 Fig.~\ref{fig:barGraphs} shows the relative error for the estimates of the target LRV obtained using the linear model and AMA. We show the relative error of the estimates obtained using the AMA receptive fields from all conditions. The receptive fields from a more complex condition perform at par on the stimuli from a simpler condition. The optimal AMA estimates are better than that of the linear model.
