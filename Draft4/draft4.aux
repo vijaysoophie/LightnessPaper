@@ -46,6 +46,8 @@
 \citation{funt1988color}
 \citation{ciurea2003large}
 \citation{davidPennHyperspectral}
+\citation{astm1121477}
+\citation{CIE86}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:introSchematic}{{1a}{2}{\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:introSchematic}{{a}{2}{\relax }{figure.caption.2}{}}
@@ -53,8 +55,6 @@
 \newlabel{sub@fig:introExampleFigure}{{b}{2}{\relax }{figure.caption.2}{}}
 \newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 58}}{2}{Introduction}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light reflected from an object to the eye depends both on the object's surface reflectance of the object and the illumination. It also depends on geometric factors, such as the object's shape, pose, and position relative to the observer. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable, an ability called color constancy. (b) {\bf  Luminance Constancy:} Images of a sphere under a fixed illuminant. Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance spectrum held fixed. The relative spectrum (shape of reflectance spectrum) varies across each row. Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating LRV from the image, across variation in other scene factors: variation in relative surface reflectance, variation in illumination, and variation in the reflectance of the other objects in the scene.\relax }}{2}{figure.caption.2}}
-\citation{astm1121477}
-\citation{CIE86}
 \citation{heasly2014rendertoolbox3}
 \citation{jakob2015mitsuba}
 \newlabel{fig:backgroundVarying}{{2a}{3}{Condition 2\relax }{figure.caption.3}{}}
@@ -67,6 +67,9 @@
 \newlabel{fig:studiedCases}{{2}{3}{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref {fig:introExampleFigure}). (a) Condition 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Condition 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Condition 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in Fig.~\ref {fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance. Moreover, across the four panels (Fig.~\ref {fig:introExampleFigure} \& Fig.~\ref {fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref {Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.\relax }{figure.caption.3}{}}
 \newlabel{Methods}{{}{3}{Methods}{section*.4}{}}
 \@writefile{toc}{\contentsline {section}{Overview}{3}{section*.5}}
+\@writefile{toc}{\contentsline {section}{Labeled training data}{3}{section*.6}}
+\newlabel{method:VirtualWorld}{{}{3}{Labeled training data}{section*.6}{}}
+\@writefile{toc}{\contentsline {section}{Virtual naturalistic scenes}{3}{section*.8}}
 \newlabel{fig:baseSceneLibrary}{{3a}{4}{Library \relax }{figure.caption.7}{}}
 \newlabel{sub@fig:baseSceneLibrary}{{a}{4}{Library \relax }{figure.caption.7}{}}
 \newlabel{fig:baseSceneMill}{{3b}{4}{Mill\relax }{figure.caption.7}{}}
@@ -81,9 +84,6 @@
 \newlabel{sub@fig:baseSceneCheckerBoard}{{f}{4}{Checkerboard\relax }{figure.caption.7}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces {\bf  Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted. The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software. The light source spectra were also assigned randomly to the default and inserted light source.\relax }}{4}{figure.caption.7}}
 \newlabel{fig:baseScenes}{{3}{4}{{\bf Example of base scenes form the VWCC library.} Each panel shows a rendering of one tamed base scene without additional objects inserted. The reflectance spectra of the distinct surfaces in each scene has been assigned randomly (see below) using the VWCC software. The light source spectra were also assigned randomly to the default and inserted light source.\relax }{figure.caption.7}{}}
-\@writefile{toc}{\contentsline {section}{Labeled training data}{4}{section*.6}}
-\newlabel{method:VirtualWorld}{{}{4}{Labeled training data}{section*.6}{}}
-\@writefile{toc}{\contentsline {section}{Virtual naturalistic scenes}{4}{section*.8}}
 \newlabel{fig:libraryWithBigBall}{{4a}{5}{Big-ball\relax }{figure.caption.9}{}}
 \newlabel{sub@fig:libraryWithBigBall}{{a}{5}{Big-ball\relax }{figure.caption.9}{}}
 \newlabel{fig:libraryWithSmallBall}{{4b}{5}{Small-ball\relax }{figure.caption.9}{}}
@@ -160,14 +160,14 @@
 \citation{burge2017accuracy}
 \@writefile{toc}{\contentsline {section}{Computational luminance constancy}{9}{section*.18}}
 \newlabel{method:SupervisedLearning}{{}{9}{Computational luminance constancy}{section*.18}{}}
+\@writefile{toc}{\contentsline {section}{Results}{9}{section*.22}}
+\newlabel{Results}{{}{9}{Results}{section*.22}{}}
 \newlabel{fig:case1RFResponse}{{10a}{10}{RF response condition 1\relax }{figure.caption.23}{}}
 \newlabel{sub@fig:case1RFResponse}{{a}{10}{RF response condition 1\relax }{figure.caption.23}{}}
 \newlabel{fig:case1Results}{{10b}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \newlabel{sub@fig:case1Results}{{b}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces {\bf  RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible. \relax }}{10}{figure.caption.23}}
 \newlabel{fig:Condition1}{{10}{10}{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible. \relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{Results}{10}{section*.22}}
-\newlabel{Results}{{}{10}{Results}{section*.22}{}}
 \newlabel{fig:isomerizationFails}{{11a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
 \newlabel{sub@fig:isomerizationFails}{{a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
 \newlabel{fig:IsomerizationResults}{{11b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.24}{}}

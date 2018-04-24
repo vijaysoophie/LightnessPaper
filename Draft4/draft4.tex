@@ -581,6 +581,14 @@ Figure~\ref{fig:case1Results} also shows the performance of the baseline linear 
 on the training set and evaluated on the test set.
 For this condition, linear regression on the target object cone responses also leads to veridical LRV estimates.
 
+Figure Blah [c] shows the first two AMA receptive fields.
+Each of these, in essence, takes a weighted sum of the L and M cone isomerizations at the target object location.
+The isomerizations in the background regions and the S cone isomerizations are largely ignored.
+These receptive fields make sense.
+For this condition, the background regions provide very little task relevant information: their only relevant effect is
+through light scattered from them onto the target.
+In addition, luminance is primarily determined by L and M cone isomerizations.
+
 %% Figure 10: Results for Condition 1
 \begin{figure}
 \centering
@@ -594,25 +602,61 @@ For this condition, linear regression on the target object cone responses also l
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure10/Figure10_b.pdf}
         \label{fig:case1Results}
     \end{subfigure}    
-    \caption{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b)  Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm$ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible. }
+    \caption{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b)  Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm$ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.}
 \label{fig:Condition1}
 \end{figure}
 
-Next we discuss Condition 2, where the spectral power distribution function of the light sources and the target object LRV and relative spectrum varies. 
-This is a more naturalistic condition compared to condition 1.
-Again, similar to condition 1, we used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
-First we trained and evaluated AMA on the cone responses to the image patches.
-Figure~\ref{fig:isomerizationFails} shows the responses of the first two receptive fields to all the image patches in the training set.
-For the spectral variations of condition 2, the AMA receptive fields learnt on the cone response to the images does a very poor job in predicting the target LRV.
-This is because, since the illuminant spectra varies in this condition, the photoreceptor response is not directly proportional to the target object surface anymore. 
-The decoding performance using these receptive fields for the test set is shown in Figure~\ref{fig:IsomerizationResults}.
+Next we discuss Condition 2, where we introduce variation in the spectral power distribution function of the light sources.
+This variation makes the task more difficult, because it causes more variation in cone isomerizations due to factors other than the target object LRV.
+%This is a more naturalistic condition compared to condition 1.
+%Again, similar to condition 1, we used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
+%First we trained and evaluated AMA on the cone responses to the image patches.
+Figure~\ref{fig:isomerizationFails} [a and b] show the results when we learned and evaluated the performance of AMA on the cone isomerizations.
+Performance is poor.
+Indeed, on average the estimates track deviate considerably from the true LRV, as seen by the fact that the mean estimate
+(red line) does not lie along the positive diagonal and by the fact that there is large estimation variability for each
+value of the true LRV (asindicated by the width of the shaded red region).
+For this case, linear regression is also very poor. Indeed, the linear regression estimates are essentially the same as would be obtained
+by simply guessing the mean LRV of the training set (0.4).
 
-On the other hand, since the background surfaces are fixed in this condition, the ratio between the response of photoreceptors corresponding to the target object and the background remains proportional to the target LRV. 
-This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
-Thus, the AMA receptive fields learnt on the contrast normalized cone response (see Methods) can be used to predict the target LRV (Fig.~\ref{fig:contrastWorks}). 
-Fig.~\ref{fig:contrastResults} shows the decoding performance for the test set in condition 2 obtained using the contrast normalized representation.
-AMA receptive fields provide excellent predictions of the target LRV. 
-The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
+Recall that there are two qualitatively distinct aspects to the variation in light source spectra.
+One is a variation in relative spectral power distribution and the
+other is a variation in overall intensity.
+To separate the effect of these two aspects, we trained and evaluated AMA on the contrast normalized cone isomerizations.
+Figure~\ref{fig:IsomerizationResults} [c and d] shows that performance improves greatly, and indeed is essentially perfect.
+This observation is consistent with a large literature on computational color constancy that shows that when only illumination spectra are varied,
+contrast-based representations provide an effective vehicle for achieving color constancy (REFS).
+That same literature, however, shows that
+contrast-based representations are less effective at supporting constancy when the spectra of background objects in the scene vary.
+
+In Condition 3, we introduced variation in the reflectance spectra of the background objects.
+This condition models the full real-world spectral variation that is most relevant for the computational problem of luminance constancy.
+We again trained and evaluated AMA for labeled images patches in this condition using the contrast-normalized cone isomerizations.
+Figure~\ref{fig:IsomerizationResults} [a] shows the results.
+The LRV estimates obtained via AMA are more variable and less accurate than for the previous conditions.
+None-the-less, the estimates provide useful information about the target LRV.
+Indeed, on average the estimates track the true LRV, as seen by the fact that the mean estimate
+(red line) tracks the positive diagonal.
+The increased estimation variability is indicated by the width of the shaded red region.
+Performance of baseline linear regression method (also for the contrast normalized isomerizations) is worse than that of the AMA-based estimates.
+
+Figure~\ref{fig:IsomerizationResults} [b] shows the responses of the first two AMA linear receptive fields for test [or training] stimuli.
+Here, there is considerable overlap in the receptive field responses for stimuli having different LRV values.
+Recall, however, that performance is based on six rather than two receptive fields.
+Inclusion of more receptive fields reduces the ambiguity visible in the responses of just the first two.
+
+%This is because, since the illuminant spectra varies in this condition, the photoreceptor response is not directly proportional to the target object surface anymore. 
+%
+%responses of the first two receptive fields to all the image patches in the training set.
+%For the spectral variations of condition 2, the AMA receptive fields learnt on the cone response to the images does a very poor job in predicting the target LRV.
+%The decoding performance using these receptive fields for the test set is shown in .
+%
+%On the other hand, since the background surfaces are fixed in this condition, the ratio between the response of photoreceptors corresponding to the target object and the background remains proportional to the target LRV. 
+%This is because a change in illuminant spectra produces the same effect in both the target object and the background object. 
+%Thus, the AMA receptive fields learnt on the contrast normalized cone response (see Methods) can be used to predict the target LRV (. 
+%Fig.~\ref{fig:contrastResults} shows the decoding performance for the test set in condition 2 obtained using the contrast normalized representation.
+%AMA receptive fields provide excellent predictions of the target LRV. 
+%The predictions are much better compared to that of a linear model that only considers the (contrast normalized) response of the photoreceptors corresponding to the center pixel of the target object.
 
 %% Figure condition 2: Isomerization Fails
 \begin{figure}
