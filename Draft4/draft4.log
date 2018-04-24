@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 APR 2018 16:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  23 APR 2018 22:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -788,17 +788,17 @@ Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_d.pdf used on input
  line 637.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
-<../FiguresDraft4/Figure12/Figure12_b.pdf, id=1369, 501.875pt x 501.875pt>
-File: ../FiguresDraft4/Figure12/Figure12_b.pdf Graphic file (type pdf)
+<../FiguresDraft4/Figure12/Figure12_a.pdf, id=1369, 501.875pt x 501.875pt>
+File: ../FiguresDraft4/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
-<use ../FiguresDraft4/Figure12/Figure12_b.pdf>
-Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_b.pdf used on input
- line 656.
+<use ../FiguresDraft4/Figure12/Figure12_a.pdf>
+Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_a.pdf used on input
+ line 655.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
 
 
 LaTeX Warning: Reference `fig:ErrorVsNFilters' on page 11 undefined on input li
-ne 664.
+ne 663.
 
 [11 <../FiguresDraft4/Figure11/Figure11_a.pdf> <../FiguresDraft4/Figure11/Figur
 e11_b.pdf> <../FiguresDraft4/Figure11/Figure11_c.pdf> <../FiguresDraft4/Figure1
@@ -808,7 +808,7 @@ File: ../FiguresDraft4/Figure14/Figure14_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure14/Figure14_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure14/Figure14_a.pdf used on input
- line 675.
+ line 674.
 (pdftex.def)             Requested size: 113.53012pt x 80.58205pt.
 
 <../FiguresDraft4/Figure14/Figure14_b.pdf, id=1465, 392.44508pt x 278.00922pt>
@@ -816,7 +816,7 @@ File: ../FiguresDraft4/Figure14/Figure14_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure14/Figure14_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure14/Figure14_b.pdf used on input
- line 681.
+ line 680.
 (pdftex.def)             Requested size: 113.53012pt x 80.42546pt.
 
 <../FiguresDraft4/Figure14/Figure14_c.pdf, id=1466, 392.91315pt x 276.38144pt>
@@ -824,7 +824,7 @@ File: ../FiguresDraft4/Figure14/Figure14_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure14/Figure14_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure14/Figure14_c.pdf used on input
- line 687.
+ line 686.
 (pdftex.def)             Requested size: 113.53012pt x 79.85756pt.
 
 <../FiguresDraft4/Figure14/Figure14_d.pdf, id=1467, 391.36067pt x 277.64001pt>
@@ -832,41 +832,41 @@ File: ../FiguresDraft4/Figure14/Figure14_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure14/Figure14_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure14/Figure14_d.pdf used on input
- line 693.
+ line 692.
 (pdftex.def)             Requested size: 113.53012pt x 80.53896pt.
- [12 <../FiguresDraft4/Figure12/Figure12_b.pdf> <../FiguresDraft4/Figure14/Figu
+ [12 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure14/Figu
 re14_a.pdf> <../FiguresDraft4/Figure14/Figure14_b.pdf> <../FiguresDraft4/Figure
 14/Figure14_c.pdf> <../FiguresDraft4/Figure14/Figure14_d.pdf>]
-<../FiguresDraft4/Figure15/Figure15_a.pdf, id=1621, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure15/Figure15_a.pdf, id=1603, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure15/Figure15_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure15/Figure15_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure15/Figure15_a.pdf used on input
- line 712.
+ line 711.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
-<../FiguresDraft4/Figure15/Figure15_b.pdf, id=1622, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure15/Figure15_b.pdf, id=1604, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure15/Figure15_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure15/Figure15_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure15/Figure15_b.pdf used on input
- line 718.
+ line 717.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
-<../FiguresDraft4/Figure15/Figure15_c.pdf, id=1623, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure15/Figure15_c.pdf, id=1605, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure15/Figure15_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure15/Figure15_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure15/Figure15_c.pdf used on input
- line 724.
+ line 723.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
-<../FiguresDraft4/Figure15/Figure15_d.pdf, id=1624, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure15/Figure15_d.pdf, id=1606, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure15/Figure15_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure15/Figure15_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure15/Figure15_d.pdf used on input
- line 730.
+ line 729.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
  [13 <../FiguresDraft4/Figure15/Figure15_a.pdf> <../FiguresDraft4/Figure15/Figu
 re15_b.pdf> <../FiguresDraft4/Figure15/Figure15_c.pdf> <../FiguresDraft4/Figure
@@ -901,24 +901,24 @@ BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
 [15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 765.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 765.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
  (./draft4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 765.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 765.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
 Package rerunfilecheck Info: File `draft4.out' has not changed.
 (rerunfilecheck)             Checksum: 096D1898374C3F5BF72B450943D07497;1018.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 765.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 764.
  ) 
 Here is how much of TeX's memory you used:
  8299 strings out of 493014
  131512 string characters out of 6133351
- 236241 words of memory out of 5000000
+ 236328 words of memory out of 5000000
  11565 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -937,10 +937,10 @@ w/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft4.pdf (16 pages, 14562150 bytes).
+Output written on draft4.pdf (16 pages, 14564145 bytes).
 PDF statistics:
- 1812 PDF objects out of 2073 (max. 8388607)
- 1570 compressed objects within 16 object streams
+ 1794 PDF objects out of 2073 (max. 8388607)
+ 1558 compressed objects within 16 object streams
  87 named destinations out of 1000 (max. 500000)
  363 words of extra memory for PDF output out of 10000 (max. 10000000)
 
