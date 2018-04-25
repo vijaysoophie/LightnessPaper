@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  24 APR 2018 13:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 APR 2018 09:54
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **draft4.tex
 (./draft4.tex
@@ -782,7 +781,7 @@ File: ../FiguresDraft4/Figure10/Figure10_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_a.pdf used on input
- line 567.
+ line 561.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure10/Figure10_b.pdf, id=1289, 501.875pt x 501.875pt>
@@ -790,7 +789,7 @@ File: ../FiguresDraft4/Figure10/Figure10_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_b.pdf used on input
- line 572.
+ line 566.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 
 <../FiguresDraft4/Figure10/Figure10_c.pdf, id=1291, 387.7619pt x 276.80263pt>
@@ -798,10 +797,10 @@ File: ../FiguresDraft4/Figure10/Figure10_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_c.pdf used on input
- line 578.
+ line 572.
 (pdftex.def)             Requested size: 161.96486pt x 126.31468pt.
 
-Overfull \hbox (10.59686pt too wide) in paragraph at lines 578--580
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 572--574
 [][]
  []
 
@@ -809,7 +808,7 @@ Overfull \hbox (10.59686pt too wide) in paragraph at lines 578--580
 File: ../FiguresDraft4/Figure10/Figure10_a.pdf Graphic file (type pdf)
  <use ../FiguresDraft4/Figure10/Figure10_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_a.pdf used on input
- line 589.
+ line 583.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure10/Figure10_d.pdf, id=1303, 501.875pt x 501.875pt>
@@ -817,16 +816,16 @@ File: ../FiguresDraft4/Figure10/Figure10_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_d.pdf used on input
- line 594.
+ line 588.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 File: ../FiguresDraft4/Figure10/Figure10_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_c.pdf used on input
- line 600.
+ line 594.
 (pdftex.def)             Requested size: 161.96486pt x 126.31468pt.
 
-Overfull \hbox (10.59686pt too wide) in paragraph at lines 600--602
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 594--596
 [][]
  []
 
@@ -835,10 +834,10 @@ File: ../FiguresDraft4/Figure11/Figure11_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_a.pdf used on input
- line 641.
+ line 635.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
-Underfull \hbox (badness 1259) in paragraph at lines 645--645
+Underfull \hbox (badness 1259) in paragraph at lines 639--639
 []\OT1/ptm/m/n/9 (b) |LRV es-ti-mates (Iso-mer-iza-
  []
 
@@ -847,7 +846,7 @@ File: ../FiguresDraft4/Figure11/Figure11_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_b.pdf used on input
- line 646.
+ line 640.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
 <../FiguresDraft4/Figure11/Figure11_c.pdf, id=1311, 501.875pt x 501.875pt>
@@ -855,7 +854,7 @@ File: ../FiguresDraft4/Figure11/Figure11_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_c.pdf used on input
- line 651.
+ line 645.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
 
 <../FiguresDraft4/Figure11/Figure11_d.pdf, id=1312, 501.875pt x 501.875pt>
@@ -863,7 +862,7 @@ File: ../FiguresDraft4/Figure11/Figure11_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_d.pdf used on input
- line 656.
+ line 650.
 (pdftex.def)             Requested size: 118.93317pt x 118.92851pt.
  [10 <../FiguresDraft4/Figure10/Figure10_a.pdf> <../FiguresDraft4/Figure10/Figu
 re10_b.pdf> <../FiguresDraft4/Figure10/Figure10_c.pdf>] [11 <../FiguresDraft4/F
@@ -875,7 +874,7 @@ File: ../FiguresDraft4/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_a.pdf used on input
- line 688.
+ line 682.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure12/Figure12_b.pdf, id=1483, 501.875pt x 501.875pt>
@@ -883,7 +882,7 @@ File: ../FiguresDraft4/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_b.pdf used on input
- line 693.
+ line 687.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 
 <../FiguresDraft4/Figure12/Figure12_c.pdf, id=1485, 390.27792pt x 273.88683pt>
@@ -891,17 +890,17 @@ File: ../FiguresDraft4/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_c.pdf used on input
- line 699.
+ line 693.
 (pdftex.def)             Requested size: 161.96486pt x 126.65405pt.
 
-Overfull \hbox (10.59686pt too wide) in paragraph at lines 699--701
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 693--695
 [][]
  []
 
 File: ../FiguresDraft4/Figure12/Figure12_a.pdf Graphic file (type pdf)
 <use ../FiguresDraft4/Figure12/Figure12_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_a.pdf used on input
- line 710.
+ line 704.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure12/Figure12_d.pdf, id=1487, 501.875pt x 501.875pt>
@@ -909,36 +908,36 @@ File: ../FiguresDraft4/Figure12/Figure12_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_d.pdf used on input
- line 715.
+ line 709.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 File: ../FiguresDraft4/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_c.pdf used on input
- line 721.
+ line 715.
 (pdftex.def)             Requested size: 161.96486pt x 126.65405pt.
 
-Overfull \hbox (10.59686pt too wide) in paragraph at lines 721--723
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 715--717
 [][]
  []
 
 [12 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure12/Figur
 e12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>]
-<../FiguresDraft4/Figure13/Figure13_a.pdf, id=1562, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure13/Figure13_a.pdf, id=1563, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure13/Figure13_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure13/Figure13_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure13/Figure13_a.pdf used on input
- line 747.
+ line 760.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
- [13 <../FiguresDraft4/Figure12/Figure12_d.pdf> <../FiguresDraft4/Figure13/Figu
-re13_a.pdf>] (./draft4.bbl
+ [13 <../FiguresDraft4/Figure12/Figure12_d.pdf>] (./draft4.bbl [14 <../FiguresD
+raft4/Figure13/Figure13_a.pdf>]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [14]
+)
 Underfull \hbox (badness 1377) in paragraph at lines 465--484
 []\OT1/ptm/m/n/10 D'Zmura, M., & Iver-son, G.  (1994).  Color con-stancy . iii.
  gen-eral lin-ear re-cov-ery of spec-tral de-scrip-tions for lights
@@ -957,53 +956,54 @@ Underfull \hbox (badness 10000) in paragraph at lines 465--484
 / 3991999B [] -F1A4 [] -66F5 [] -1F0CA009799B4F7B [] []806 /
  []
 
-
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 815--833
 \OT1/pcr/m/n/10 DirectPDFAccess / 0C84AF25 [] -A90E [] -B3D5 [] -AED2308AF33196
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
-[15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 780.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 802.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 780.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 802.
  (./draft4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 780.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 780.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 802.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 802.
 Package rerunfilecheck Info: File `draft4.out' has not changed.
 (rerunfilecheck)             Checksum: B01EF88B5DA7F46F3E66768E8FC798F6;608.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 780.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 802.
  ) 
 Here is how much of TeX's memory you used:
  8271 strings out of 493014
  130881 string characters out of 6133351
- 235525 words of memory out of 5000000
+ 236524 words of memory out of 5000000
  11542 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,40p,1771b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/20
-16/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/f
-onts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/t
-ype1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/ur
-w/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/time
-s/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.p
-fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/
-local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft4.pdf (16 pages, 14099112 bytes).
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texli
+ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw
+/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times
+/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pf
+b></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on draft4.pdf (16 pages, 14105622 bytes).
 PDF statistics:
- 1680 PDF objects out of 1728 (max. 8388607)
- 1479 compressed objects within 15 object streams
+ 1684 PDF objects out of 1728 (max. 8388607)
+ 1482 compressed objects within 15 object streams
  85 named destinations out of 1000 (max. 500000)
  377 words of extra memory for PDF output out of 10000 (max. 10000000)
 

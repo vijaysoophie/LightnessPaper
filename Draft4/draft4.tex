@@ -552,12 +552,6 @@ through their effect on the contrast normalized responses from the target object
 We also evaluated the performance of a naive model that estimate the mean of the LRV values in the training set, irrespective
 of the image data.
 
-%\subsection{Performance evaluation}
-%
-%To evaluate the performance of our luminance constancy methods, we generated test sets as new random draws from our statistical models.
-%For each test image, we quant we summarized performance as the relative mean squared estimation error.
-%If $\hat{Y}$ is the estimated luminance corresponding to the assigned luminance $Y$, the error of the luminance estimates is quantified as the relative error ($E_{\rm rel}$) defined as: $E_{\rm rel}^2 = \left\langle\left((\hat{Y}-Y)/Y\right)^2\right\rangle$.
-
 \section{Results} \label{Results}
 %% Figure 10: Results for Condition 1
 \begin{figure}
@@ -740,6 +734,25 @@ Here, there is considerable overlap in the receptive field responses for stimuli
 Recall, however, that performance is based on six rather than two receptive fields.
 Inclusion of more receptive fields reduces the ambiguity visible in the responses of just the first two.
 
+Figure~\ref{fig:barGraphs} summarizes luminance constancy performance across the conditions, for both AMA and linear regression. 
+We quantified overall performance in terms of overall relative root mean squared estimation error (relative RMSE) for the test set.
+If $\hat{Y}$ is the estimated LRV and $Y$ is the true LRV, the relative RMSE is ($E_{\rm rel}$) defined as $E_{\rm rel} = \sqrt{\left\langle\left((\hat{Y}-Y)/Y\right)^2\right\rangle}$,
+where the expectation is taken over all test stimuli at all LRVs.
+The height of each bar gives the relative RMSE for each method and condition.
+Note first that AMA improves upon linear regression for all conditions but the first, where performance for both methods is essentially perfect.
+This is expected since AMA makes optimal use of the stimulus information under a wider range
+of conditions than linear regression.
+Moreover, the linear regression method we use as a baseline here
+only has access to cone isomerizations at image locations corresponding to the target object, while AMA has access to isomerizations from the entire image patch.
+Second, the fact that performance for Condition 2 is very poor tells us that that when there is substantial intensity variation in the illuminant, achieving luminance constancy
+directly from the cone isomerizations is difficult.
+Performance improves greatly when we consider the same condition but when the cone isomerizations are contrast normalized. 
+Indeed, AMA performance for this case is, as in Condition 1, essentially perfect.
+Note, however, that Condition 2 does not include variation in the background surface reflectances.
+Such reflectances vary scene to scene in natural viewing.
+The results for Condition 3 show performance when we add such variation into the training and test sets.
+The error here represents the overall level of luminance constancy that our methods achieve for the
+most realistic condition that we tested.
 
 % Figure Error Bar Graphs
 \begin{figure}
@@ -750,7 +763,16 @@ Inclusion of more receptive fields reduces the ambiguity visible in the response
 \end{figure}
 
 \section{Discussion} \label{Discussion}
-In this paper, we studied luminance constancy using naturalistic images. We used a software pipeline called  Virtual world color constancy (VWCC), which was developed for this work, to generate datasets of multispectral images labeled by the luminance of a target object in each image. VWCC creates 2D multispectral images of 3D scenes based on information provided by the user. Such information include the shape of the 3D space, the shape, size, position and material properties of the objects and light sources in the scene. In our work, we assigned these geometrical and spectral properties using random sampling from available databases of natural objects and light sources. Thus, we generated a large database of labeled hyper-spectral images, with naturalistic scene properties, where we have the ground truth information about every surface and light source. Such databases, of even a few images, are nearly impossible to obtain for natural scenes. This is because it is very hard to measure the surface reflectance and the illumination spectrum at every point in a scene, even for well controlled lab environments. 
+In this paper, we studied luminance constancy using naturalistic images.
+We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
+Because we rendered the images, we were able to labeled each image by the luminance reflectance value (LRV) of a target object
+Across images, we varied the LRV of the target object and its relative surface reflectance spectrum, the spectral power distributions of the light sources, and the reflectance
+spectra of the background objects in the scene.
+This variation was based on statistical models of natural surface reflectance and illumination spectra.
+We used the labeled datasets to learn estimators for target object LRV.
+We studied the performance of these estimators as we systematically manipulated the spectral variations in the datasets.
+
+ima labeled by the luminance of a target object in each image. VWCC creates 2D multispectral images of 3D scenes based on information provided by the user. Such information include the shape of the 3D space, the shape, size, position and material properties of the objects and light sources in the scene. In our work, we assigned these geometrical and spectral properties using random sampling from available databases of natural objects and light sources. Thus, we generated a large database of labeled hyper-spectral images, with naturalistic scene properties, where we have the ground truth information about every surface and light source. Such databases, of even a few images, are nearly impossible to obtain for natural scenes. This is because it is very hard to measure the surface reflectance and the illumination spectrum at every point in a scene, even for well controlled lab environments. 
 
 We used the software generated labeled images in a supervised manner to understand luminance constancy under four types of spectral manipulations (Fig.~\ref{fig:introExampleFigure}-Fig.~\ref{fig:studiedCases}). We found that target LRV can be recovered through simple manipulation of the retinal cone responses for cases where the spectral manipulations are restricted to at most two of the three possible sources of manipulations: the target object surface reflectance, the background object surface reflectances, or the light source illumination spectra. When variations are allowed only in the target object surface reflectance spectrum, or only the target object and the background objects surface reflectance spectra, the luminance can be estimated directly from the response of retinal cone photoreceptors. If the background spectra is fixed, but the target object reflectance spectrum and the light source illumination spectra are varying, the luminance can be obtained from the contrast between the cone response corresponding to the target and the background. When all three spectral variations are allowed simultaneously, one needs additional information to obtain the target LRV. 
 
