@@ -241,30 +241,25 @@ This provides a complete scene model which can be rendered from any specified vi
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a target object of fixed shape and size into this scene.
-We generated five distinct datasets: Conditions 0 through 4.
+We generated three distinct datasets: Conditions 1-3.
 Across these datasets the luminance constancy problem, estimating the target object LRV,
 becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
 Each dataset consisted of 1000 scenes and corresponding images.
 
-In Condition 0, the only source of stimulus variation was in the task relevant quantity, the target object LRV.
-Here, we fixed target object color (i.e. the relative reflectance spectrum of the target object),
-the reflectance spectra of the background objects, and the spectral power distributions of the light sources.
-We used 10 LRV values, equally spaced between 20 and 60.
-Condition 0 defines a baseline. In this condition, all images with the the same value of the LRV are identical.
+%In Condition 0, the only source of stimulus variation was in the task relevant quantity, the target object LRV.
+%Here, we fixed target object color (i.e. the relative reflectance spectrum of the target object),
+%the reflectance spectra of the background objects, and the spectral power distributions of the light sources.
+% Condition 0 defines a baseline. In this condition, all images with the same value of the LRV are identical.
 
-In the remaining conditions, we systematically introduced variation in scene factors other than the target object LRV.
-In Condition 1, we introduced variation in target object color but held the other factors fixed.
-
-Conditions 2, 3 and 4 each increase the variation relative to Condition 1.
-In Condition 2, in addition to the color of the target object,
-we varied the reflectance spectra of the background objects
-while holding the the spectral power distribution of the light sources
-constant.
-In Condition 3, in addition to the color of the target object,
-we varied the spectral power distribution of the light sources
-while holding the reflectance spectra of the background objects constant.
-Finally, in Condition 4 we varied all three factors (target object color,
-reflectance spectra of the background objects, spectral power distribution of the light sources).
+In Condition 1, we only varied the surface reflectance spectrum of the target object.
+The reflectance spectra of the background objects, and the spectral power distributions of the light sources were kept fixed.
+In Condition 2, in addition to the reflectance spectrum of the target object,
+we also varied the spectral power distribution of the light sources.
+Finally, in Condition 3 we varied all three factors (target object surface 
+reflectance spectrum, reflectance spectra of the background objects, 
+spectral power distribution of the light sources).
+We used 10 LRV values, equally spaced between 20 and 60 and generated 100 target surface reflectance spectra at these values. 
+The surface reflectance spectra at the same LRV could differ in their relative shape.
 The variation within our datasets captures the essence of the computational problem of lightness constancy
 up to effects of scene geometry, an additional richness that we do not address in this paper.
 
