@@ -51,12 +51,10 @@
 \newlabel{sub@fig:introSchematic}{{a}{2}{\relax }{figure.caption.2}{}}
 \newlabel{fig:introExampleFigure}{{1b}{2}{\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:introExampleFigure}{{b}{2}{\relax }{figure.caption.2}{}}
-\newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 58}}{2}{Introduction}{figure.caption.2}{}}
+\newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 75}}{2}{Introduction}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light reflected from an object to the eye depends both on the object's surface reflectance of the object and the illumination. It also depends on geometric factors, such as the object's shape, pose, and position relative to the observer. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable, an ability called color constancy. (b) {\bf  Luminance Constancy:} Images of a sphere under a fixed illuminant. Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance spectrum held fixed. The relative spectrum (shape of reflectance spectrum) varies across each row. Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating LRV from the image, across variation in other scene factors: variation in relative surface reflectance, variation in illumination, and variation in the reflectance of the other objects in the scene.\relax }}{2}{figure.caption.2}}
 \citation{astm1121477}
 \citation{CIE86}
-\citation{heasly2014rendertoolbox3}
-\citation{jakob2015mitsuba}
 \newlabel{fig:backgroundVarying}{{2a}{3}{Condition 2\relax }{figure.caption.3}{}}
 \newlabel{sub@fig:backgroundVarying}{{a}{3}{Condition 2\relax }{figure.caption.3}{}}
 \newlabel{fig:targetIlluminantVarying}{{2b}{3}{Condition 3\relax }{figure.caption.3}{}}
@@ -67,6 +65,8 @@
 \newlabel{fig:studiedCases}{{2}{3}{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied four types of spectral variations. Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed, (Fig.~\ref {fig:introExampleFigure}). (a) Condition 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, (b) Condition 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Condition 4: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. As in Fig.~\ref {fig:introExampleFigure}, the spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance. Moreover, across the four panels (Fig.~\ref {fig:introExampleFigure} \& Fig.~\ref {fig:studiedCases}), spheres in corresponding locations have the same surface reflectance. In all four panels, the overall lights source spectra scale factors (see \nameref {Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.\relax }{figure.caption.3}{}}
 \newlabel{Methods}{{}{3}{Methods}{section*.4}{}}
 \@writefile{toc}{\contentsline {section}{Overview}{3}{section*.5}}
+\citation{heasly2014rendertoolbox3}
+\citation{jakob2015mitsuba}
 \newlabel{fig:baseSceneLibrary}{{3a}{4}{Library \relax }{figure.caption.7}{}}
 \newlabel{sub@fig:baseSceneLibrary}{{a}{4}{Library \relax }{figure.caption.7}{}}
 \newlabel{fig:baseSceneMill}{{3b}{4}{Mill\relax }{figure.caption.7}{}}
@@ -112,27 +112,27 @@
 \newlabel{fig:VWCCTransformations}{{5}{5}{{\bf Transformations of the scene.} The possible transformations of the properties of a scene can broadly be classified into two groups: Geometrical (a-b) and Spectral (c-e). VWCC provides control over such transformation as illustrated by the columns. (a) The three panels in the column have the target object at three different positions. The camera points to the center of the pixel. (b) The target object in the three panels are at different orientations. (c) The target object surface reflectance varies across the three panels of the column. (d) The surface reflectance of the background objects varies across the three panels. In each panel, the reflectances were assigned randomly. (e) The power spectrum of the light sources were assigned randomly in the three panels. \relax }{figure.caption.10}{}}
 \citation{hernandez2001color}
 \citation{BrainardFreeman}
-\newlabel{fig:granadaData}{{6a}{6}{\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:granadaData}{{a}{6}{\relax }{figure.caption.12}{}}
-\newlabel{fig:illuminantSamples}{{6b}{6}{\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:illuminantSamples}{{b}{6}{\relax }{figure.caption.12}{}}
-\newlabel{fig:xyDiagram}{{6c}{6}{\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:xyDiagram}{{c}{6}{\relax }{figure.caption.12}{}}
-\newlabel{fig:sRGBIlluminant}{{6d}{6}{\relax }{figure.caption.12}{}}
-\newlabel{sub@fig:sRGBIlluminant}{{d}{6}{\relax }{figure.caption.12}{}}
+\newlabel{fig:granadaData}{{6a}{6}{Granada dataset\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:granadaData}{{a}{6}{Granada dataset\relax }{figure.caption.12}{}}
+\newlabel{fig:illuminantSamples}{{6b}{6}{Statistical model\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:illuminantSamples}{{b}{6}{Statistical model\relax }{figure.caption.12}{}}
+\newlabel{fig:xyDiagram}{{6c}{6}{CIE xy chromaticity\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:xyDiagram}{{c}{6}{CIE xy chromaticity\relax }{figure.caption.12}{}}
+\newlabel{fig:sRGBIlluminant}{{6d}{6}{Color swatches\relax }{figure.caption.12}{}}
+\newlabel{sub@fig:sRGBIlluminant}{{d}{6}{Color swatches\relax }{figure.caption.12}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\bf  Illumination spectra:} (a) Granada dataset. The spectra are normalized by the mean over wavelength. (b) A representative sample of spectra generated using normalized Granada dataset. (c) CIE xy chromaticity diagram of the normalized dataset and the random samples. (d) sRGB renditions of the samples from Figure\nobreakspace  {}\ref  {fig:illuminantSamples}.\relax }}{6}{figure.caption.12}}
 \newlabel{fig:illuminant}{{6}{6}{{\bf Illumination spectra:} (a) Granada dataset. The spectra are normalized by the mean over wavelength. (b) A representative sample of spectra generated using normalized Granada dataset. (c) CIE xy chromaticity diagram of the normalized dataset and the random samples. (d) sRGB renditions of the samples from Figure~\ref {fig:illuminantSamples}.\relax }{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {section}{Illumination spectra}{6}{section*.11}}
 \citation{kelly1943tristimulus}
 \citation{vrhel1994measurement}
-\newlabel{fig:reflectanceSpectra}{{7a}{7}{\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:reflectanceSpectra}{{a}{7}{\relax }{figure.caption.14}{}}
-\newlabel{fig:reflectanceSamples}{{7b}{7}{\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:reflectanceSamples}{{b}{7}{\relax }{figure.caption.14}{}}
-\newlabel{fig:xyChroReflectance}{{7c}{7}{\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:xyChroReflectance}{{c}{7}{\relax }{figure.caption.14}{}}
-\newlabel{fig:backgroundSwatches}{{7d}{7}{\relax }{figure.caption.14}{}}
-\newlabel{sub@fig:backgroundSwatches}{{d}{7}{\relax }{figure.caption.14}{}}
+\newlabel{fig:reflectanceSpectra}{{7a}{7}{Munsell and Vrhel dataset\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:reflectanceSpectra}{{a}{7}{Munsell and Vrhel dataset\relax }{figure.caption.14}{}}
+\newlabel{fig:reflectanceSamples}{{7b}{7}{Statistical model\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:reflectanceSamples}{{b}{7}{Statistical model\relax }{figure.caption.14}{}}
+\newlabel{fig:xyChroReflectance}{{7c}{7}{CIE xy chromaticity\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:xyChroReflectance}{{c}{7}{CIE xy chromaticity\relax }{figure.caption.14}{}}
+\newlabel{fig:backgroundSwatches}{{7d}{7}{Color swatches\relax }{figure.caption.14}{}}
+\newlabel{sub@fig:backgroundSwatches}{{d}{7}{Color swatches\relax }{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces {\bf  Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance under CIE D65 daylight.\relax }}{7}{figure.caption.14}}
 \newlabel{fig:surfaceReflectanceGeneration}{{7}{7}{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance under CIE D65 daylight.\relax }{figure.caption.14}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. This range captures more than 90\% of the natural surface reflectances. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.\relax }}{7}{figure.caption.15}}
@@ -149,7 +149,7 @@
 \newlabel{sub@fig:croppedImageWithMosaic}{{c}{8}{Optical image\relax }{figure.caption.16}{}}
 \newlabel{fig:coneContrast}{{9d}{8}{LMS cone contrast\relax }{figure.caption.16}{}}
 \newlabel{sub@fig:coneContrast}{{d}{8}{LMS cone contrast\relax }{figure.caption.16}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 423}}{8}{Surface reflectance spectra}{figure.caption.16}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 435}}{8}{Surface reflectance spectra}{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The retinal image incident on the cone mosaic after optical blurring and the location and the identity of the cones (L cones: Red, M cones: Green, S cones: Blue). (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.\relax }}{8}{figure.caption.16}}
 \@writefile{toc}{\contentsline {section}{Model of early visual system}{8}{section*.17}}
 \newlabel{method:Isetbio}{{}{8}{Model of early visual system}{section*.17}{}}
@@ -160,6 +160,8 @@
 \citation{burge2017accuracy}
 \@writefile{toc}{\contentsline {section}{Computational luminance constancy}{9}{section*.18}}
 \newlabel{method:SupervisedLearning}{{}{9}{Computational luminance constancy}{section*.18}{}}
+\@writefile{toc}{\contentsline {section}{Results}{9}{section*.22}}
+\newlabel{Results}{{}{9}{Results}{section*.22}{}}
 \newlabel{fig:case1Estimates}{{10a}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \newlabel{sub@fig:case1Estimates}{{a}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \newlabel{fig:case1RFResponse}{{10b}{10}{Receptive field response\relax }{figure.caption.23}{}}
@@ -168,52 +170,32 @@
 \newlabel{sub@fig:case1RFs}{{c}{10}{AMA receptive fields\relax }{figure.caption.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces {\bf  RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }}{10}{figure.caption.23}}
 \newlabel{fig:Condition1}{{10}{10}{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{Results}{10}{section*.22}}
-\newlabel{Results}{{}{10}{Results}{section*.22}{}}
-\newlabel{fig:case1Estimates}{{11a}{11}{LRV estimates\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:case1Estimates}{{a}{11}{LRV estimates\relax }{figure.caption.24}{}}
-\newlabel{fig:case1RFResponse}{{11b}{11}{Receptive field response\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:case1RFResponse}{{b}{11}{Receptive field response\relax }{figure.caption.24}{}}
-\newlabel{fig:case1RFs}{{11c}{11}{AMA receptive fields\relax }{figure.caption.24}{}}
-\newlabel{sub@fig:case1RFs}{{c}{11}{AMA receptive fields\relax }{figure.caption.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }}{11}{figure.caption.24}}
-\newlabel{fig:Condition1}{{11}{11}{{\bf RF response and luminance estimates for condition 1:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. Relative error of estimation is 0.8\% (Linear regression) and 1.1\% (AMA) . The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }{figure.caption.24}{}}
-\newlabel{fig:case2IsomerizationEstimates}{{12a}{11}{RF response (Isomerization)\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case2IsomerizationEstimates}{{a}{11}{RF response (Isomerization)\relax }{figure.caption.25}{}}
-\newlabel{fig:case2RFResponseIsomer}{{12b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case2RFResponseIsomer}{{b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.25}{}}
-\newlabel{fig:case2ContrastEstimates}{{12c}{11}{RF response (Contrast)\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case2ContrastEstimates}{{c}{11}{RF response (Contrast)\relax }{figure.caption.25}{}}
-\newlabel{fig:case2RFResponseContrast}{{12d}{11}{LRV estimates (Contrast)\relax }{figure.caption.25}{}}
-\newlabel{sub@fig:case2RFResponseContrast}{{d}{11}{LRV estimates (Contrast)\relax }{figure.caption.25}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA. The relative error of estimation is 41.4\% (Linear regression) and 31.3\% (AMA). (c) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (d) Estimated v/s assigned target LRV for the image in condition 2. The relative error of estimation is 9.3\% (Linear regression) and 1.1\% (AMA).\relax }}{11}{figure.caption.25}}
-\newlabel{fig:Condition2}{{12}{11}{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA. The relative error of estimation is 41.4\% (Linear regression) and 31.3\% (AMA). (c) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (d) Estimated v/s assigned target LRV for the image in condition 2. The relative error of estimation is 9.3\% (Linear regression) and 1.1\% (AMA).\relax }{figure.caption.25}{}}
-\newlabel{fig:case3Estimates}{{13a}{12}{LRV estimates\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:case3Estimates}{{a}{12}{LRV estimates\relax }{figure.caption.26}{}}
-\newlabel{fig:case3RFResponse}{{13b}{12}{Receptive field response\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:case3RFResponse}{{b}{12}{Receptive field response\relax }{figure.caption.26}{}}
-\newlabel{fig:case3RFs}{{13c}{12}{AMA receptive fields\relax }{figure.caption.26}{}}
-\newlabel{sub@fig:case3RFs}{{c}{12}{AMA receptive fields\relax }{figure.caption.26}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }}{12}{figure.caption.26}}
-\newlabel{fig:Condition3}{{13}{12}{{\bf RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }{figure.caption.26}{}}
-\newlabel{fig:case3Estimates}{{14a}{13}{LRV estimates\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3Estimates}{{a}{13}{LRV estimates\relax }{figure.caption.27}{}}
-\newlabel{fig:case3RFResponse}{{14b}{13}{Receptive field response\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3RFResponse}{{b}{13}{Receptive field response\relax }{figure.caption.27}{}}
-\newlabel{fig:case3RFs}{{14c}{13}{AMA receptive fields\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3RFs}{{c}{13}{AMA receptive fields\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }}{13}{figure.caption.27}}
-\newlabel{fig:Condition3}{{14}{13}{{\bf RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }{figure.caption.27}{}}
-\@writefile{toc}{\contentsline {section}{Discussion}{13}{section*.29}}
-\newlabel{Discussion}{{}{13}{Discussion}{section*.29}{}}
+\newlabel{fig:case2IsomerizationEstimates}{{11a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:case2IsomerizationEstimates}{{a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
+\newlabel{fig:case2RFResponseIsomer}{{11b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:case2RFResponseIsomer}{{b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.24}{}}
+\newlabel{fig:case2ContrastEstimates}{{11c}{11}{RF response (Contrast)\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:case2ContrastEstimates}{{c}{11}{RF response (Contrast)\relax }{figure.caption.24}{}}
+\newlabel{fig:case2RFResponseContrast}{{11d}{11}{LRV estimates (Contrast)\relax }{figure.caption.24}{}}
+\newlabel{sub@fig:case2RFResponseContrast}{{d}{11}{LRV estimates (Contrast)\relax }{figure.caption.24}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA. The relative error of estimation is 41.4\% (Linear regression) and 31.3\% (AMA). (c) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (d) Estimated v/s assigned target LRV for the image in condition 2. The relative error of estimation is 9.3\% (Linear regression) and 1.1\% (AMA).\relax }}{11}{figure.caption.24}}
+\newlabel{fig:Condition2}{{11}{11}{{\bf Condition 2: Luminance can be estimated using the contrast signal:} (a) Photoreceptor response projected on AMA receptive fields calculated using photoreceptor response. (b) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA. The relative error of estimation is 41.4\% (Linear regression) and 31.3\% (AMA). (c) The contrast normalized photoreceptor response projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized stimuli. The response at each luminance level separates much better in this representation. (d) Estimated v/s assigned target LRV for the image in condition 2. The relative error of estimation is 9.3\% (Linear regression) and 1.1\% (AMA).\relax }{figure.caption.24}{}}
+\newlabel{fig:case3Estimates}{{12a}{12}{LRV estimates\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:case3Estimates}{{a}{12}{LRV estimates\relax }{figure.caption.25}{}}
+\newlabel{fig:case3RFResponse}{{12b}{12}{Receptive field response\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:case3RFResponse}{{b}{12}{Receptive field response\relax }{figure.caption.25}{}}
+\newlabel{fig:case3RFs}{{12c}{12}{AMA receptive fields\relax }{figure.caption.25}{}}
+\newlabel{sub@fig:case3RFs}{{c}{12}{AMA receptive fields\relax }{figure.caption.25}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }}{12}{figure.caption.25}}
+\newlabel{fig:Condition3}{{12}{12}{{\bf RF response and luminance estimates for condition 3:} (a) Photoreceptor response projected along the first two AMA receptive fields for images of condition 1. We show the response for the images in the training set. Each response cloud represents the response of images corresponding to one LRV. The response clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (b) Estimated v/s assigned target LRV for the image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The relative error of estimation is 22.9\% for linear regression and 13.0\% for AMA. The diagonal unit slope (blue dotted) line is for reference. The standard deviations are too small to be visible.\relax }{figure.caption.25}{}}
+\newlabel{eq:relRMSe}{{1}{12}{Results}{equation.0.1}{}}
+\@writefile{toc}{\contentsline {section}{Discussion}{12}{section*.27}}
+\newlabel{Discussion}{{}{12}{Discussion}{section*.27}{}}
 \bibdata{references}
 \bibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
 \APACbibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
 \bibcite{astm1121477}{\citeauthoryear {ASTM}{ASTM}{{\APACyear {{\bibnodate {}}}}}}
 \APACbibcite{astm1121477}{\citeauthoryear {ASTM}{ASTM}{{\APACyear {{\bibnodate {}}}}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {15}{\ignorespaces {\bf  Comparison of LRV estimates:} Error estimates\relax }}{14}{figure.caption.28}}
-\newlabel{fig:barGraphs}{{15}{14}{{\bf Comparison of LRV estimates:} Error estimates\relax }{figure.caption.28}{}}
-\@writefile{toc}{\contentsline {section}{References}{14}{section*.30}}
 \bibcite{barron2015convolutional}{\citeauthoryear {Barron}{Barron}{{\APACyear {2015}}}}
 \APACbibcite{barron2015convolutional}{\citeauthoryear {Barron}{Barron}{{\APACyear {2015}}}}
 \bibcite{barron2012color}{\citeauthoryear {Barron\ \BBA{} Malik}{Barron\ \BBA{} Malik}{{\APACyear {2012}}}}
@@ -222,6 +204,9 @@
 \APACbibcite{davidPennHyperspectral}{\citeauthoryear {Brainard}{Brainard}{{\APACyear {{\bibnodate {}}}}}}
 \bibcite{BrainardFreeman}{\citeauthoryear {Brainard\ \BBA{} Freeman}{Brainard\ \BBA{} Freeman}{{\APACyear {1997}}}}
 \APACbibcite{BrainardFreeman}{\citeauthoryear {Brainard\ \BBA{} Freeman}{Brainard\ \BBA{} Freeman}{{\APACyear {1997}}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Comparison of LRV estimates:} Error estimates\relax }}{13}{figure.caption.26}}
+\newlabel{fig:barGraphs}{{13}{13}{{\bf Comparison of LRV estimates:} Error estimates\relax }{figure.caption.26}{}}
+\@writefile{toc}{\contentsline {section}{References}{13}{section*.28}}
 \bibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \APACbibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \bibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}}}
