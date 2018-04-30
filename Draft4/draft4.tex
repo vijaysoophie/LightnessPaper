@@ -736,7 +736,7 @@ most realistic condition that we tested.
 \section{Discussion} \label{Discussion}
 In this paper, we studied luminance constancy using naturalistic images.
 We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
-Because we rendered the images, we were able to labeled each image by the luminance reflectance value (LRV) of a target object.
+Because we rendered the images, we were able to label each image by the luminance reflectance value (LRV) of a target object.
 Across images, we varied the LRV of the target object, its relative surface reflectance spectrum, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
 These variations were based on statistical models of natural surface reflectance and illumination spectra.
@@ -747,24 +747,22 @@ We show that the target object LRV can be recovered almost perfectly if only the
 object spectrum or the target object spectrum and the illuminant spectra varies.
 In the first case, the LRV can be estimated from the cone isomerizations and in the second case 
 from the cone isomerization contrast between the target and the background objects.
-If, in addition, the background object spectra also vary, the cone contrast no longer 
+If, in addition, the background object spectra also vary, the cone contrast is no longer 
 proportional to the target object LRV.
-In this case, the estimators can predict the LRV with relative RMSE ~13\%.
+In this case, the AMA estimator we used in this work can predict the LRV to within ~13\% (relative RMSE).
 
-The variability in the final condition results from changes in background object spectra.
-Change in background object spectra can affect the estimation in two ways.
-First, it will effect the estimation of average background isomerization in the contrast estimation.
-Second, it can also effect the total isomerization in cones corresponding to the target object through 
-secondary reflections from the background objects.
-While the first effect can be minimized by a better sampling of the background, 
+The variability in the final condition results from changes in background object spectra, which affects the estimation in two ways.
+First, it effects the estimation of cone contrast due to the variability in the background.
+Second, it also effects the cone isomerizations corresponding to the target object through 
+variability in secondary reflections from the background objects.
+While the first effect can be minimized by a representative sampling of the background, 
 the effect of secondary reflections can not be removed through simple manipulations.
 This effect has largely been ignored in the field. 
 We show that such effects are significant.
 
-A major reason that such effects have been ignored in the study of color constancy is that we have 
-lacked tools through which their effects could be quantified.
-In this regard, a major contribution of this work has been to develop a computational package that
-produces naturalistic images with precise control over all factors that define the scene in the image.
+The reason such effects have been ignored is that we have lacked tools to quantify their effects.
+In this regard, a major contribution of this work is the development of a computational package to
+produce naturalistic images with precise control over factors defining the scene.
 With this software we can systematically vary these factors and precisely quantify their effects on constancy.
 
 
