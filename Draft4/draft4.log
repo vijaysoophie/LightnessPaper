@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 MAY 2018 08:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  1 MAY 2018 09:42
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **draft4.tex
 (./draft4.tex
@@ -832,12 +831,12 @@ Overfull \hbox (10.59686pt too wide) in paragraph at lines 683--685
 [11 <../FiguresDraft4/Figure11/Figure11_a.pdf> <../FiguresDraft4/Figure11/Figur
 e11_b.pdf> <../FiguresDraft4/Figure11/Figure11_c.pdf> <../FiguresDraft4/Figure1
 1/Figure11_d.pdf>]
-<../FiguresDraft4/Figure13/Figure13_a.pdf, id=1480, 501.875pt x 501.875pt>
+<../FiguresDraft4/Figure13/Figure13_a.pdf, id=1479, 501.875pt x 501.875pt>
 File: ../FiguresDraft4/Figure13/Figure13_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure13/Figure13_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure13/Figure13_a.pdf used on input
- line 731.
+ line 736.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
  [12 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure12/Figu
 re12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>] (./draft4.bbl
@@ -865,28 +864,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 465--484
 / 3991999B [] -F1A4 [] -66F5 [] -1F0CA009799B4F7B [] []806 /
  []
 
-[14]
+
 Underfull \hbox (badness 10000) in paragraph at lines 815--833
 \OT1/pcr/m/n/10 DirectPDFAccess / 0C84AF25 [] -A90E [] -B3D5 [] -AED2308AF33196
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 777.
+[14])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 764.
  [15]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 777.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 764.
  (./draft4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 777.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 777.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 764.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 764.
 Package rerunfilecheck Info: File `draft4.out' has not changed.
-(rerunfilecheck)             Checksum: 77F2EA8429AA13D76BC44B4D11E6F39C;608.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 777.
+(rerunfilecheck)             Checksum: F0F4EED8AD59EBB4C1931434A9E493E8;608.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 764.
  ) 
 Here is how much of TeX's memory you used:
- 8259 strings out of 493014
- 130466 string characters out of 6133351
- 236977 words of memory out of 5000000
- 11535 multiletter control sequences out of 15000+600000
+ 8258 strings out of 493014
+ 130454 string characters out of 6133351
+ 236942 words of memory out of 5000000
+ 11534 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,40p,1760b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -904,7 +907,7 @@ w/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/time
 s/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/
 local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft4.pdf (15 pages, 14032572 bytes).
+Output written on draft4.pdf (15 pages, 14015251 bytes).
 PDF statistics:
  1654 PDF objects out of 1728 (max. 8388607)
  1460 compressed objects within 15 object streams

@@ -702,57 +702,61 @@ Here, there is considerable overlap in the receptive field responses for stimuli
 Recall, however, that performance is based on six rather than two receptive fields.
 Inclusion of more receptive fields reduces the ambiguity visible in the responses of just the first two.
 
-Figure~\ref{fig:barGraphs} summarizes luminance constancy performance across the conditions, for both AMA and linear regression. 
-We quantified overall performance in terms of overall relative root mean squared estimation error (relative RMSE) for the test set. The relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.
-%\begin{align}
-%E_{\rm rel} = \sqrt{\left\langle\left(\frac{\rm{LRV_{Estimated}-LRV_{True}}}{\rm{LRV_{True}}}\right)^2\right\rangle}
-%\label{eq:relRMSe}
-%\end{align}
-%where the expectation is taken over all test stimuli at all LRVs.
-The height of each bar gives the relative RMSE for each method and condition.
-Note first that AMA improves upon linear regression for all conditions but the first, where performance for both methods is essentially perfect.
-This is expected since AMA makes optimal use of the stimulus information under a wider range
-of conditions than linear regression.
-Moreover, the linear regression method we use as a baseline here
-only has access to cone isomerizations at image locations corresponding to the target object, while AMA has access to isomerizations from the entire image patch.
-Second, the fact that performance for Condition 2 is very poor tells us that that when there is substantial intensity variation in the illuminant, achieving luminance constancy
-directly from the cone isomerizations is difficult.
-Performance improves greatly when we consider the same condition but when the cone isomerizations are contrast normalized. 
-Indeed, AMA performance for this case is, as in Condition 1, essentially perfect.
-Note, however, that Condition 2 does not include variation in the background surface reflectances.
-Such reflectances vary scene to scene in natural viewing.
-The results for Condition 3 show performance when we add such variation into the training and test sets.
-The error here represents the overall level of luminance constancy that our methods achieve for the
-most realistic condition that we tested.
-
-% Figure Error Bar Graphs
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure13/Figure13_a.pdf}
-\caption{{\bf Comparison of LRV estimates:} Error estimates}
- \label{fig:barGraphs}
-\end{figure}
-
 \section{Discussion} \label{Discussion}
+
+\subsection{Summary}
+
 In this paper, we studied luminance constancy using naturalistic images.
 We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
 Because we rendered the images, we were able to label each image by the luminance reflectance value (LRV) of a target object.
 Across images, we varied the LRV of the target object, its relative surface reflectance spectrum, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
 These variations were based on statistical models of natural surface reflectance and illumination spectra.
-We used the labeled datasets to learn estimators for target object LRV.
+We used the labeled datasets to learn estimators for the target object LRV.
 We studied the performance of these estimators as we systematically manipulated the 
 spectral variations in the datasets.
-We show that the target object LRV can be recovered almost perfectly if only the target 
-object spectrum or the target object spectrum and the illuminant spectra varies.
-In the first case, the LRV can be estimated from the cone isomerizations and in the second case 
-from the cone isomerization contrast between the target and the background objects.
-If, in addition, the background object spectra also vary, the cone contrast is no longer 
-proportional to the target object LRV.
-In this case, the AMA estimator we used in this work can predict the LRV to within ~13\% (relative RMSE).
+
+Figure~\ref{fig:barGraphs} summarizes our main findings by plotting the overall relative root mean squared estimation error (relative RMSE) for each condition. 
+In Condition 1, where only the relative target object spectrum varies, luminance constancy is an easy problem and performance is essentially perfect for both the baseline linear regression and AMA methods.
+In Condition 2, where the spectral power distribution of the illumination also varies, the problem of luminance constancy is more difficult.
+Indeed, neither of our methods performs well when they directly process the cone isomerizations.
+Performance with both methods improves greatly when the cone isomerizations are contrast normalized. 
+Indeed, AMA performance for this case is, as in Condition 1, essentially perfect.
+Linear regression does less well, in part because it only has access to cone isomerizations at image locations
+corresponding to the target object.
+In addition, AMA makes optimal use of the stimulus information across a wider range
+of conditions than linear regression.
+Condition 2, however, does not include scene to scene variation in the background surface reflectances
+as occurs in natural viewing.
+The results for Condition 3 show performance when we add such variation.
+Performance here represents the overall level of luminance constancy that our methods achieve for the
+most realistic condition that we tested.
+In this case, AMA-based estimates of target object LRV are, on average, within 13\% (relative RMSE) of the true value.
+
+% Figure Error Bar Graphs
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure13/Figure13_a.pdf}
+\caption{{\bf Summary of luminance constancy performance:} The plot shows the relative RMSE estimation error for each method and condition.The relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.}
+ \label{fig:barGraphs}
+\end{figure}
+
+\subsection{Importance of Background Variation}
+
+\subsection{Use of Virtual Scenes}
+
+\subsection{Limitations Future Directions}
+Geometric variations
+Material and texture variation
+Other dimensions of color space
+
+\subsection{Linking to Human Performance}
+Constancy indices
+Weber fractions
+Experiments with virtual scenes
 
 The variability in the final condition results from changes in background object spectra, which affects the estimation in two ways.
-First, it effects the estimation of cone contrast due to the variability in the background.
+First, it affects the estimation of cone contrast due to the variability in the background.
 Second, it also effects the cone isomerizations corresponding to the target object through 
 variability in secondary reflections from the background objects.
 While the first effect can be minimized by a representative sampling of the background, 
