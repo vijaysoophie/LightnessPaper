@@ -716,6 +716,14 @@ We used the labeled datasets to learn estimators for the target object LRV.
 We studied the performance of these estimators as we systematically manipulated the 
 spectral variations in the datasets.
 
+% Figure Error Bar Graphs
+\begin{figure}
+\centering
+\includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure13/Figure13_a.pdf}
+\caption{{\bf Summary of luminance constancy performance:} The plot shows the relative RMSE estimation error for each method and condition.The relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.}
+ \label{fig:barGraphs}
+\end{figure}
+
 Figure~\ref{fig:barGraphs} summarizes our main findings by plotting the overall relative root mean squared estimation error (relative RMSE) for each condition. 
 In Condition 1, where only the relative target object spectrum varies, luminance constancy is an easy problem and performance is essentially perfect for both the baseline linear regression and AMA methods.
 In Condition 2, where the spectral power distribution of the illumination also varies, the problem of luminance constancy is more difficult.
@@ -732,14 +740,6 @@ The results for Condition 3 show performance when we add such variation.
 Performance here represents the overall level of luminance constancy that our methods achieve for the
 most realistic condition that we tested.
 In this case, AMA-based estimates of target object LRV are, on average, within 13\% (relative RMSE) of the true value.
-
-% Figure Error Bar Graphs
-\begin{figure}
-\centering
-\includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure13/Figure13_a.pdf}
-\caption{{\bf Summary of luminance constancy performance:} The plot shows the relative RMSE estimation error for each method and condition.The relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.}
- \label{fig:barGraphs}
-\end{figure}
 
 \subsection{Importance of Background Variation}
 
@@ -762,7 +762,7 @@ variability in secondary reflections from the background objects.
 While the first effect can be minimized by a representative sampling of the background, 
 the effect of secondary reflections can not be removed through simple manipulations.
 This effect has largely been ignored in the field. 
-We show that such effects are significant.
+Our work shows that such effects are significant.
 
 The reason such effects have been ignored is that we have lacked tools to quantify their effects.
 In this regard, a major contribution of this work is the development of a computational package to
