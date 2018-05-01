@@ -703,12 +703,12 @@ Recall, however, that performance is based on six rather than two receptive fiel
 Inclusion of more receptive fields reduces the ambiguity visible in the responses of just the first two.
 
 Figure~\ref{fig:barGraphs} summarizes luminance constancy performance across the conditions, for both AMA and linear regression. 
-We quantified overall performance in terms of overall relative root mean squared estimation error (relative RMSE) for the test set defined as:
-\begin{align}
-E_{\rm rel} = \sqrt{\left\langle\left(\frac{\rm{LRV_{Estimated}-LRV_{True}}}{\rm{LRV_{True}}}\right)^2\right\rangle}
-\label{eq:relRMSe}
-\end{align}
-where the expectation is taken over all test stimuli at all LRVs.
+We quantified overall performance in terms of overall relative root mean squared estimation error (relative RMSE) for the test set. The relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.
+%\begin{align}
+%E_{\rm rel} = \sqrt{\left\langle\left(\frac{\rm{LRV_{Estimated}-LRV_{True}}}{\rm{LRV_{True}}}\right)^2\right\rangle}
+%\label{eq:relRMSe}
+%\end{align}
+%where the expectation is taken over all test stimuli at all LRVs.
 The height of each bar gives the relative RMSE for each method and condition.
 Note first that AMA improves upon linear regression for all conditions but the first, where performance for both methods is essentially perfect.
 This is expected since AMA makes optimal use of the stimulus information under a wider range
