@@ -740,35 +740,74 @@ The results for Condition 3 show performance when we add such variation.
 Performance here represents the overall level of luminance constancy that our methods achieve for the
 most realistic condition that we tested.
 In this case, AMA-based estimates of target object LRV are, on average, within 13\% (relative RMSE) of the true value.
+Note that introduction of variation in the background surfaces makes the luminance constancy problem substantially harder,
+because variation in the background surfaces reduces the reliability of the light reflected from these
+surfaces.
+%% READ THIS PART
 
-\subsection{Importance of Background Variation}
+%\subsection{Importance of Background Variation}
+%
+%
+%The variability in the final condition results from changes in background object spectra, which affects the estimation in two ways.
+%First, it affects the estimation of cone contrast due to the variability in the background.
+%Second, it also effects the cone isomerizations corresponding to the target object through 
+%variability in secondary reflections from the background objects.
+%While the first effect can be minimized by a representative sampling of the background, 
+%the effect of secondary reflections can not be removed through simple manipulations.
+%This effect has largely been ignored in the field. 
+%Our work shows that such effects are significant.
+%
+%The reason such effects have been ignored is that we have lacked tools to quantify their effects.
+%In this regard, a major contribution of this work is the development of a computational package to
+%produce naturalistic images with precise control over factors defining the scene.
+%With this software we can systematically vary these factors and precisely quantify their effects on constancy.
 
 \subsection{Use of Virtual Scenes}
 
-\subsection{Limitations Future Directions}
-Geometric variations
-Material and texture variation
-Other dimensions of color space
+\subsection{Future Directions}
+
+In the work presented here, we incorporated spectral variation into our statistical model
+of naturalistic scenes.
+It is natural to begin with spectral variation, because this variation is at the heart of
+what makes luminance constancy a rich computational problem.
+In natural scenes, however, there are other sources of variation that add additional
+richness.
+These include variation in non-spectral properties of objects and lighting in the scene, including
+object texture, material, and shape as well as lighting geometry.
+The methods we developed here may be generalized to study the effects of variation
+in these factors.
+The basic approach would be to incorporate the variation into the generation of the
+scenes and again learn estimators from the corresponding labeled images.
+A challenge for this approach will be to thoughtfully control the increase in problem
+complexity both to keep compute time feasible and to ensure that it is possible to
+extract meaningful insight from the results.
+
+Luminance constancy is a special case of the more general problem of color constancy.
+The approach we developed here could easily be generalized to the estimation of additional
+surface reflectance descriptors, such as object hue or chroma.
+As with LRV these descriptors would be defined by the light reflected from an object 
+under a standard illuminant.
+A further advance would be to develop methods for learning receptive fields that are
+optimal for multivariate estimation problems.
+With such methods one could directly estimate three-dimensional color descriptors.
 
 \subsection{Linking to Human Performance}
-Constancy indices
-Weber fractions
-Experiments with virtual scenes
 
-The variability in the final condition results from changes in background object spectra, which affects the estimation in two ways.
-First, it affects the estimation of cone contrast due to the variability in the background.
-Second, it also effects the cone isomerizations corresponding to the target object through 
-variability in secondary reflections from the background objects.
-While the first effect can be minimized by a representative sampling of the background, 
-the effect of secondary reflections can not be removed through simple manipulations.
-This effect has largely been ignored in the field. 
-Our work shows that such effects are significant.
-
-The reason such effects have been ignored is that we have lacked tools to quantify their effects.
-In this regard, a major contribution of this work is the development of a computational package to
-produce naturalistic images with precise control over factors defining the scene.
-With this software we can systematically vary these factors and precisely quantify their effects on constancy.
-
+An important motivation for studying the computational problem of luminance constancy
+is to gain insight about human vision.
+The approach we developed can be used to make predictions of how humans would
+perform in a psychophysical task that probes the visual representation of object LRV.
+For example, one could study discrimination thresholds for target LRV using the
+stimuli that were generated with the methods used
+here.
+For example, we could ask how LRV discrimination thresholds are impacted by 
+spectral variation in the illuminant, the background objects, and in the target object itself.
+Comparing human thresholds with the precision of AMA-based estimates would then
+allow inferences about how well human observers make use of the information available
+in the images for performing the LRV discrimination task.
+We think experiments and analyses along these lines represent an important future direction.
+By coupling the experiments and analyses, we hope to advance our understanding
+of how we see objects in the real world in a principled and controlled manner.
 
 % MOVE THIS TO DISCUSSION
 %This general approach has been adopted by other labs for the study of computational estimation of optical flow (Baker et al., 2011) and is becoming increasingly popular (Kovacs, Bell, Snavely, & Bala, 2017), as well as for the generation of stimuli for the study of human perception (e.g., Boyaci, Maloney, & Hersh, 2003; Todd & Mingolla, 1983; Arend & Reeves, 1986; Johnston, Cumming, & Parker, 1993). Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the Discussion.
