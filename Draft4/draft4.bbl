@@ -130,6 +130,28 @@ Brainard, D\BPBI H.%
 
 \bibitem[\protect\citeauthoryear{%
 Brainard%
+}{%
+Brainard%
+}{%
+{\protect\APACyear{2015}}%
+}]{%
+brainard2015color}%
+\APACinsertmetastar{%
+brainard2015color}%
+Brainard, D\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color and the cone mosaic}{Color and the cone
+  mosaic}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Annual review of vision science}{1}{}{519--546}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
 \ \BBA{} Freeman%
 }{%
 Brainard%
@@ -156,6 +178,34 @@ Brainard, D\BPBI H.%
  \begin{APACrefURL}
   \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4A73DE-BFFB-35F6-AA30000149C16461_1807/josaa-14-7-1393.pdf?da=1&id=1807&seq=0&mobile=no}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
+\ \protect\BOthers{.}}{%
+Brainard%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2015}}%
+}]{%
+brainard2015isetbio}%
+\APACinsertmetastar{%
+brainard2015isetbio}%
+Brainard, D\BPBI H.%
+, Jiang, H.%
+, Cottaris, N\BPBI P.%
+, Rieke, F.%
+, Chichilnisky, E.%
+, Farrell, J\BPBI E.%
+\BCBL{}\ \BOthersPeriod{.}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Isetbio: Computational tools for modeling early human
+  vision}{Isetbio: Computational tools for modeling early human vision}.\BBCQ{}
+\newblock
+\BIn{} \APACrefbtitle{Imaging Systems and Applications}{Imaging systems and
+  applications}\ (\BPGS\ IT4A--4).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -631,6 +681,32 @@ Heasly, B\BPBI S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Hecht%
+, Shlaer%
+\BCBL{}\ \BBA{} Pirenne%
+}{%
+Hecht%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1942}}%
+}]{%
+hecht1942energy}%
+\APACinsertmetastar{%
+hecht1942energy}%
+Hecht, S.%
+, Shlaer, S.%
+\BCBL{}\ \BBA{} Pirenne, M\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1942}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Energy, quanta, and vision}{Energy, quanta, and
+  vision}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{The Journal of general physiology}{25}{6}{819--840}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Heeger%
 }{%
 Heeger%
@@ -829,6 +905,32 @@ Maloney, L.%
  \begin{APACrefURL}
   \url{http://www.opticsinfobase.org/DirectPDFAccess/0C84AF25-A90E-B3D5-AED2308AF33196BF_2286/josaa-3-1-29.pdf?da=1&id=2286&seq=0&mobile=no}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Marimont%
+\ \BBA{} Wandell%
+}{%
+Marimont%
+\ \BBA{} Wandell%
+}{%
+{\protect\APACyear{1994}}%
+}]{%
+marimont1994matching}%
+\APACinsertmetastar{%
+marimont1994matching}%
+Marimont, D\BPBI H.%
+\BCBT{}\ \BBA{} Wandell, B\BPBI A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1994}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Matching color images: the effects of axial chromatic
+  aberration}{Matching color images: the effects of axial chromatic
+  aberration}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{JOSA A}{11}{12}{3113--3122}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
