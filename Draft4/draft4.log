@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  3 MAY 2018 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 MAY 2018 13:46
 entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **draft4.tex
 (./draft4.tex
@@ -837,13 +836,15 @@ Package pdftex.def Info: ../FiguresDraft4/Figure13/Figure13_a.pdf used on input
  line 719.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
  [12 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure12/Figu
-re12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>] (./draft4.bbl [13 <../F
-iguresDraft4/Figure13/Figure13_a.pdf>]
+re12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>] [13 <../FiguresDraft4/F
+igure13/Figure13_a.pdf>]
+(./draft4.bbl
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
 
  (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+[14]
 Underfull \hbox (badness 1377) in paragraph at lines 515--534
 []\OT1/ptm/m/n/10 D'Zmura, M., & Iver-son, G.  (1994).  Color con-stancy . iii.
  gen-eral lin-ear re-cov-ery of spec-tral de-scrip-tions for lights
@@ -862,27 +863,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 515--534
 / 3991999B [] -F1A4 [] -66F5 [] -1F0CA009799B4F7B [] []806 /
  []
 
-[14]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 891--909
 \OT1/pcr/m/n/10 DirectPDFAccess / 0C84AF25 [] -A90E [] -B3D5 [] -AED2308AF33196
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
-[15])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 798.
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 848.
  [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 798.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 848.
  (./draft4.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 798.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 798.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 848.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 848.
 Package rerunfilecheck Info: File `draft4.out' has not changed.
 (rerunfilecheck)             Checksum: A746B981A35D4C1F9587FB54EB007EE7;833.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 798.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 848.
  ) 
 Here is how much of TeX's memory you used:
  8280 strings out of 493014
  130768 string characters out of 6133351
- 230305 words of memory out of 5000000
+ 230304 words of memory out of 5000000
  11548 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -899,7 +900,7 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft4.pdf (16 pages, 13823730 bytes).
+Output written on draft4.pdf (16 pages, 13826282 bytes).
 PDF statistics:
  1671 PDF objects out of 1728 (max. 8388607)
  1482 compressed objects within 15 object streams

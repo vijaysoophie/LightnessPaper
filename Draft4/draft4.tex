@@ -741,7 +741,57 @@ Note that introduction of variation in the background surfaces makes the luminan
 because variation in the background surfaces reduces the reliability of the light reflected from these
 surfaces.
 %% READ THIS PART
+
 \subsection{Use of Virtual Scenes}
+
+AMA has been used in conjunction with database of labeled natural images to analyze the estimation of defocus blur,
+binocular disparity and retinal image motion (refs).
+Here we used labeled images rendered from virtual scene descriptions.
+The use of rendered images has advantages and disadvantages.
+
+As we noted in the introduction, supervised learning requires large labeled datasets and these are not readily available 
+for the study of how to estimate correlates of object surface reflectance.
+In particular, to obtain ground truth information about the reflectance of objects in a natural image, it is necessary to
+make an independent of the illumination impinging on each object.
+This can be done by inserting a small number of discretely spaced reflectance standards into the scene, but 
+interpolating to locations between such standards requires strong assumptions.
+The use of rendered images allows us to work with large numbers of labeled images where the reflectance
+and impinging illumination are known precisely at every pixel.
+
+A second advantage of using rendered images is that we can control the variation in distinct
+scene factors that might affect the difficulty of the estimation problem.
+This allows study of the individual effect of each factor as well as their joint effect.
+Here, we exploited this advantage to systematically introduce variation in the relative target object reflectance
+spectrum, the spectrum of the illumination, and the reflectance spectrum of the background objects.
+This allowed us to quantify how each of these variations limits LRV estimation.
+We believe this basic approach can be extended to include parametric control over the amount
+of variation of different factors as well as to include variation in additional factors (see below).
+
+At the same time, it is important to recognize that limitations of the approach.
+Virtual rendered scenes are not guaranteed to capture all of the task relevant
+variation that occurs in real scenes.
+Indeed, even casual inspection of our images reveals that they are rendered and
+not real.
+Computer graphics is getting better, however, and we expect that the gap between
+virtual and natural image databases will steadily close.
+Indeed, carefully constructed graphics images are now quite difficult to differentiate
+from real images.
+
+Our use of virtual images relies on datasets that characterize the statistical variation
+in object reflectance and natural illumination spectra.
+We believe these datasets provide reasonable approximations.
+None-the-less, they can be extended and improved.
+For example, the dataset of illuminations does not include the artificial illuminations
+that we now live much of our lives under.
+The surface reflectance datasets captures constraints on naturally occurring reflectance
+functions, but did not sample the environment in a manner that was intended to 
+characterize the relative frequency of occurrence of different reflectance spectra.
+Future work with virtual image datasets will benefit from targeted efforts to characterize
+the natural statistics of the scene components that are varied.
+Under the assumption that combination of different scene factors (e.g. surface reflectances
+and illuminations) is independent, the virtual image approach modularizes the study
+of variation in natural scenes.
+%Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are some smaller databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}; \citeauthor{davidPennHyperspectral}), but these are not large enough to drive supervised learning.
 
 \subsection{Future Directions}
 In the work presented here, we incorporated spectral variation into our statistical model
