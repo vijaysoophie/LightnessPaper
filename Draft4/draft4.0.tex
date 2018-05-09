@@ -39,26 +39,6 @@ S cones can recover the luminance within about 13\% RMSE.}
  {Computational Neuroscience Initiative}
  {and Department of Physics, University of Pennsylvania, PA, USA}
  {}{vsin@sas.upenn.edu}
- 
- \author{Cottaris}{Nicolas P.}
- {}
- {Department of Psychology, University of Pennsylvania, PA, USA}
- {}{cottaris@sas.upenn.edu}
- 
- \author{Heasly}{Benjamin S.}
- {}
- {Department of Psychology, University of Pennsylvania, PA, USA}
- {}{benjamin.heasly@gmail.com}
- 
- \author{Brainard}{David H.}
- {}
- {Department of Psychology, University of Pennsylvania, PA, USA}
- {}{brainard@psych.upenn.edu}
- 
- \author{Burge}{Johannes}
- {}
- {Department of Psychology, University of Pennsylvania, PA, USA}
- {}{jburge@psych.upenn.edu}
 
 \keywords{color constancy, luminance constancy, supervised learning}
 
@@ -66,18 +46,18 @@ S cones can recover the luminance within about 13\% RMSE.}
 
 \section{Introduction}
 The perceived color of an object has important behavioral implications, since color helps to identify objects and their properties \cite{Mollon89, Jacobs81}.
-%The perceived color depends on the surface reflectance of the object, but it is not sensed directly. 
-%Rather, it is computed by the brain starting with the retinal image of the light reflected from an object to the eye.
-The computational challenge underlying object color perception is that the light reflected from an object depends not just on its surface reflectance, but also on object-extrinsic factors such as the illumination, the object's pose, and the position of the observer (Fig.~\ref{fig:introSchematic}).
-To compute a perceptual representation of object color that is correlated with the object's physical surface reflectance, the brain must account for these object-extrinsic factors.
-The ability of a visual system to compute a representation of object color that is stable against variation in object-extrinsic scene factors is called color constancy. 
-Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
+The perceived color depends on the surface reflectance of the object, but it is not sensed directly. 
+Rather, it is computed by the brain starting with the retinal image of the light reflected from an object to the eye.
+The computational challenge underlying object color perception is that this reflected light depends not just on the object's surface reflectance, but also on extrinsic factors such as the illumination, the object's pose, and the position of the observer (Fig.~\ref{fig:introSchematic}).
+To produce a stable perceptual representation correlated with an object's surface reflectance the brain must account for these intrinsic factors on the reflected light.
+The ability of a visual system to extract such a stable representation is called color constancy. 
+%Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eye to produce percepts well-correlated with object surface reflectance.
 
 Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}. Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
 %LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
 A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.  But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
-As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant; evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
+As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant. Thus evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
 
 % Figure 1: Introduction
 \begin{figure}
@@ -94,29 +74,53 @@ As a consequence, the performance of color constancy algorithms will be affected
         \label{fig:introExampleFigure}
     \end{subfigure}
     \label{introFigure}
-    \caption{(a) {\bf Color Constancy:} The light reflected from an object to the eye depends both on the surface reflectance of the object and on the illumination. Additionally, the reflected light also depends on geometric factors, such as the object's shape, pose, and position. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable across such variations, an ability called color constancy. (b) {\bf Luminance Constancy:} Images of a sphere under a fixed illuminant.  Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance function is held fixed.  The relative reflectance function (i.e. the shape of the spectral reflectance function) varies across each row.
-Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.}
+    \caption{(a) {\bf Color Constancy:} The light reflected from an object to the eye depends both on the surface reflectance of the object and the illumination under which it lies. Additionally, it also depends on geometric factors, such as the object's shape, pose, and position relative to the observer. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable, an ability called color constancy. (b) {\bf Luminance Constancy:} Images of a sphere under a fixed illuminant.  Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance spectrum held fixed.  The relative spectrum (shape of reflectance spectrum) varies across each row.
+Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating LRV from the image, across variation in other scene factors: variation in relative surface reflectance, variation in illumination, and variation in the reflectance of the other objects in the scene.}
  \end{figure}
 
-An alternative approach to computational color constancy, which has been less-well explored, is to use supervised machine learning to develop mappings between input images and stable color descriptors \cite{barron2015convolutional}. The use of supervised learning to understand perceptual capabilities for natural stimuli has enjoyed success in domains outside of color vision. For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for speed, focus error, and disparity estimation that provide excellent models of human performance \cite{burge2011optimal, burge2014optimal, burge2015optimal}. In this paper, we apply AMA to a special case of computational color constancy. 
+An alternative approach to computational color constancy, which has been less-well explored, is to use supervised machine learning techniques to develop mappings between input images and stable color descriptors \cite{barron2015convolutional}. The use of supervised learning to understand perceptual capabilities for natural stimuli has enjoyed success in domains outside of color vision. For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for speed, focus error, and disparity estimation that provide excellent models of human performance \cite{burge2011optimal, burge2014optimal, burge2015optimal}. In this paper, we apply AMA to a special case of computational color constancy. 
 
-Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}), but these are not large enough to drive supervised learning.
+Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are some smaller databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}; \citeauthor{davidPennHyperspectral}), but these are not large enough to drive supervised learning.
  
-In this paper, we use high-quality computer graphics to generate large data sets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
-This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. More specifically, we use this approach to tackle luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
+% Figure 2: Conditions Studied
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.33 \textwidth}
+		\caption{Condition 1}
+%		\includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_a.png}
+		\includegraphics[width=\textwidth]{../FiguresDraft4/Figure1/Figure1_b.png}
+ 		\label{fig:backgroundVarying}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.33 \textwidth}
+        \caption{Condition 2}	
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_b.png}
+        \label{fig:targetIlluminantVarying}
+    \end{subfigure}
+	\begin{subfigure}[b]{0.33 \textwidth}
+	\caption{Condition 3}	
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_c.png}        
+        \label{fig:allSpectraVarying}
+    \end{subfigure}    
+    \caption{{\bf Types of spectral variations studied in this work:} sRGB rendition of multispectral images similar to ones studied in our work. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied three types of spectral variations. (a) Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed (same as Fig.~\ref{fig:introExampleFigure}).
+%Condition 2: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra variable, 
+(b) Condition 2: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Condition 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. The spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Moreover, across the three panels, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
+\label{fig:studiedCases}
+\end{figure}
 
-We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of a target object's surface reflectance function.
+In this paper, we use high-quality computer graphics to generate large data sets of naturalistic images where the surface reflectance and illumination corresponding to each image pixel are known. 
+This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. Here, we use this approach to tackle luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
+
+We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of an object's surface reflectance function.
 The LRV is a measure of the overall amount of light reflected by a surface (\citeauthor{astm1121477}).
 More precisely, the LRV is the luminance of the light that would be reflected to the eye from an object with the 
 specified surface reflectance function when the object is illuminated by a reference illuminant,
 normalized by the luminance of the reference illuminant itself.
-Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
-LRVs range from 0 to 1.
-%% DHB: The ASTM citation is not formatting well.  It should give a year.
+Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function \cite{CIE86}.
+LRVs are typically expressed in percent, so that they range from 0 to 100.
 
 \section*{Methods} \label{Methods}
 \subsection{Overview}
-There are four key parts to our methods.  First we generate a labeled set of training images.  Second we use a model of the early visual system to compute the responses of the cone photoreceptor mosaic to the labeled images. Third we apply AMA to the cone responses, as well as to a contrast normalized version of the cone responses, to learn task-optimal receptive fields (RFs). Fourth we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
+There are four key parts to our methods.  First we generate a labeled set of training images.  Second we use a model of the early visual system to compute the responses of the cone photoreceptor mosaic to the labeled images. Third we apply AMA to the cone responses to learn task-optimal receptive fields (RFs). Fourth we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
 
 \subsection{Labeled training data} \label{method:VirtualWorld}
 \subsubsection{Virtual naturalistic scenes}
@@ -124,20 +128,17 @@ The light that reflects from objects to the eyes depends on many factors.
 These include the surface reflectance, texture, material and geometry of the objects, 
 the spectral power distribution function of the illuminants, and the position of the observer.
 We have developed a rendering package 
-(\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{https://github.com/BrainardLab/VirtualWorldColorConstancy}) 
+(\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{Virtual World Color Constancy}, \href{http://rendertoolbox.org}{RenderToolbox4} \cite{heasly2014rendertoolbox3}) 
 that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
-The package builds on our RenderToolblox4 package (\href{http://rendertoolbox.org}{http://rendertoolbox.org}) \cite{heasly2014rendertoolbox3},
-and harnesses the open-source computer graphics renderer Mitsuba (\href{https://www.mitsuba-renderer.org}{https://www.mitsuba-renderer.org})
+The package harnesses an open-source computer graphics renderer 
 \cite{jakob2015mitsuba} to produce physically-accurate images from the scene models.
 Because each image is rendered from a known scene model, each image pixel can be labeled with 
 the surface reflectance of the corresponding scene object.
 By incorporating statistical models of the variation of object surface reflectance and daylight illumination, 
-the pipeline allows us to produce large labeled sets of images that capture key aspects of the task-relevant 
+the pipeline allows us to produce large labeled sets of images that capture much of the task-relevant 
 statistical structure of natural scenes.
-%% DHB: Need to fix up citations in this paragraph. The URLs for RTB and Mitsuba should be inside the same paranetheses as the citations that
-% follow.
 
-% Figure 2
+% Figure 3
 \begin{figure}[t]
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
@@ -157,24 +158,52 @@ statistical structure of natural scenes.
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_c.png}
         \label{fig:baseSceneTableChairs}
     \end{subfigure}
-    \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
+    
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{Indoor-plant}    
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_d.png}
+        \label{fig:baseSceneIndoorPlant}
+    \end{subfigure}    
+    ~
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{Warehouse}    
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_e.png}
+        \label{fig:baseSceneWarehouse}
+    \end{subfigure}
+    ~
+    \begin{subfigure}[b]{0.22 \textwidth}
+        \caption{Checkerboard}    
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_f.png}
+        \label{fig:baseSceneCheckerBoard}
+    \end{subfigure}
+    \caption{{\bf Base scenes from the Virtual World Color Constancy (VWCC) library.} Each panel shows a rendering of one tamed base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces and the spectral power distribution function of the light sources in each scene have been assigned randomly (see text).}\label{fig:baseScenes}
 \end{figure}
-%% DHB: We need to think about how to scale the images for display.  The Library scene is too dark.
 
-% Figure 3
+% Figure 4
 \begin{figure}
 \centering
-    \begin{subfigure}[b]{0.14 \textwidth}
+\begin{subfigure}[b]{0.14 \textwidth}
         \caption{Big-ball}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_a.png}
         \label{fig:libraryWithBigBall}
     \end{subfigure}
-     ~ 
+    ~ 
+\begin{subfigure}[b]{0.14 \textwidth}
+        \caption{Small-ball}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_b.png}
+        \label{fig:libraryWithSmallBall}
+    \end{subfigure}
+    ~ 
     \begin{subfigure}[b]{0.14 \textwidth}
         \caption{Barrel}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_c.png}
         \label{fig:libraryWithBarrel}
-         \end{subfigure}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.14 \textwidth}
+        \caption{Xylophone}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_d.png}
+        \label{fig:libraryWithXylophone}
+    \end{subfigure}
     ~
 	\begin{subfigure}[b]{0.14 \textwidth}
         \caption{Ring toy}
@@ -187,11 +216,10 @@ statistical structure of natural scenes.
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_f.png}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
-\caption{{\bf The library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. The panels show different objects inserted in the library base scene. The objects were inserted at a user defined location in the image. Then the rendering viewpoint was set so that the object is at the center of the rendered image. In these panels, the full rendered image has been cropped so that the inserted object is more visually salient.}\label{fig:libraryWithTarget}
+\caption{{\bf The library base scene with inserted objects.} The rendering package can be used to insert objects into the base scenes. The panels show different objects inserted in the library base scene. The objects were inserted at a user defined location in the image and then the camera was pointed at the object so that the object is at the center of the rendered image. In these panels, the full rendered image has been cropped so that the inserted object is more visually salient.}\label{fig:libraryWithTarget}
 \end{figure}
-%% DHB: Can we render these examples at higher resolution, so that they look nicer?  The blurriness is distracting in the images.
 
-% Figure 4
+% Figure5
 \begin{figure}
 	\begin{subfigure}[b]{0.18 \textwidth}
     \centering
@@ -217,47 +245,20 @@ statistical structure of natural scenes.
     ~
     \begin{subfigure}[b]{0.18 \textwidth}
     \centering
-        \caption{Illumination spectra}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_c.png}
-        \label{fig:illuminationVariation}
-    \end{subfigure}
-          ~  
-    \begin{subfigure}[b]{0.18 \textwidth}
-    \centering
         \caption{Background spectra}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_b.png}
         \label{fig:backGroundVariation}
     \end{subfigure}
-
-    \caption{{\bf Transformations of the scene.} The properties of a visual scene can broadly be classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over the properties illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects.
+    ~
+    \begin{subfigure}[b]{0.18 \textwidth}
+    \centering
+        \caption{Illumination spectra}
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure5/Figure5_c.png}
+        \label{fig:illuminationVariation}
+    \end{subfigure}
+    \caption{{\bf Transformations of the scene.} The properties of a visual scene can broadly be classified into two groups: Geometrical (a-b) and Spectral (c-e). VWCC provides control over such properties as illustrated by the columns. (a) Variation in inserted object positions. (b) Variation in orientations. (c) Variation is the surface reflectance of the target object. (d) Variation in surface reflectance of the background objects. The reflectances were assigned randomly in each panel. (e) Variation in the spectral power distribution function of the light sources. 
 \label{fig:VWCCTransformations}}
 \end{figure}
-%% DHB: These are too dark in a printout.  Let's review how they are scaled.  Need to make sure we can see an effect of changing the illumination, might want to hand pick the illuminants used here to illustrate the effect.
-
-% Figure 5: Conditions Studied
-\begin{figure}
-\centering
-	\begin{subfigure}[b]{0.33 \textwidth}
-		\caption{Condition 1}
-%		\includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_a.png}
-		\includegraphics[width=\textwidth]{../FiguresDraft4/Figure1/Figure1_b.png}
- 		\label{fig:backgroundVarying}
-	\end{subfigure}
-	\begin{subfigure}[b]{0.33 \textwidth}
-        \caption{Condition 2}	
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_b.png}
-        \label{fig:targetIlluminantVarying}
-    \end{subfigure}
-	\begin{subfigure}[b]{0.33 \textwidth}
-	\caption{Condition 3}	
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_c.png}        
-        \label{fig:allSpectraVarying}
-    \end{subfigure}    
-    \caption{{\bf Illustration of Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2 and 3. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied three types of spectral variations. (a) Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed (same as Fig.~\ref{fig:introExampleFigure}).
-(b) Condition 2: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra fixed, (c) Condition 3: target object relative surface reflectance spectrum variable, light source spectra variable, background object spectra variable. The spheres in each row of each panel have the same surface luminance, while the spheres in each column of each panel have the same relative surface reflectance.  Across the three panels, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. This smaller than the variation we studied, but allows us to show the variation within the dynamic range available for the figure. The sRGB values for all three panels were normalized using a common scale factor prior to gamma correction.} 
-\label{fig:studiedCases}
-\end{figure}
-%% DHB: May also want to render these examples at a higher resolution
 
 Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
 Base scenes specify an arrangement of objects and light sources.
@@ -268,12 +269,11 @@ and a spectral power distribution function to each light source (Fig.~\ref{fig:V
 This provides a complete scene model which can be rendered from any specified viewpoint.
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
-We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
-We generated three distinct datasets, which we refer to as Conditions 1-3 and describe below.
+We used one fixed base scene and inserted a target object of fixed shape and size into this scene.
+We generated three distinct datasets: Conditions 1-3.
 Across these datasets the luminance constancy problem, estimating the target object LRV,
 becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
 Each dataset consisted of 1000 scenes and corresponding images.
-%% DHB Need to decide how many images we really want for final version of the work.
 
 In Condition 1, we only varied the surface reflectance spectrum of the target object.
 The reflectance spectra of the background objects, and the spectral power distributions of the light sources were kept fixed.
@@ -282,7 +282,7 @@ we also varied the spectral power distribution of the light sources.
 Finally, in Condition 3 we varied all three factors (target object surface 
 reflectance spectrum, reflectance spectra of the background objects, 
 spectral power distribution of the light sources).
-We used 10 LRV values, equally spaced between 0.2 and 0.6 and generated 100 target surface reflectance spectra at each of these values. 
+We used 10 LRV values, equally spaced between 20 and 60 and generated 100 target surface reflectance spectra at these values. 
 The surface reflectance spectra at the same LRV could differ in their relative shape.
 The variation within our datasets captures the essence of the computational problem of lightness constancy
 up to effects of scene geometry, an additional richness that we do not address in this paper.
@@ -291,8 +291,8 @@ For the primary results, we used the ``{\it Library}'' base scene and a spherica
 The library base scene contains 2 area lights. 
 We inserted one additional spherical spherical light source into the scene.
 The position and size of the inserted object, inserted light source and viewpoint were held fixed across all 
-scenes in the database. The geometry is shown in Figure~\ref{fig:3DScene}.
-Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra, as described below.
+scenes in the database, as shown in Figure~\ref{fig:3DScene}.
+Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra as described below.
 Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced wavelengths between $400$nm and $700$nm.
 \subsubsection{Illumination spectra}
 % Figure 6
@@ -322,27 +322,25 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure6/Figure6_d.pdf}
         \label{fig:sRGBIlluminant}
     \end{subfigure}
-    \caption{{\bf Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean (with mean taken over wavelength). (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in b (red). F(d) sRGB renditions of the samples shown in b.}
+    \caption{{\bf Illumination spectra:} (a) Granada dataset. The spectra are normalized by the mean over wavelength. (b) A representative sample of spectra generated using normalized Granada dataset. (c) CIE xy chromaticity diagram of the normalized dataset and the random samples. (d) sRGB renditions of the samples from Figure~\ref{fig:illuminantSamples}.}
 \label{fig:illuminant}
 \end{figure}
-%% DHB: The chromaticities in c and renderings in d are for the spectra in b, right?  I wrote the caption to say so, just checking.
 
-To generate illumination spectra, we developed a statistical model of the Granda daylight measurements (\href{http://colorimaginglab.ugr.es/pages/Data}{http://colorimaginglab.ugr.es/pages/Data}) \cite{hernandez2001color} and sampled randomly from the model (see appendix).
+To generate illumination spectra, we developed a statistical model of the \href{http://colorimaginglab.ugr.es/pages/Data}{Granada daylight measurements} \cite{hernandez2001color} and sampled randomly from the model (see appendix).
 The overall intensity of the measurements spans approximately three orders of magnitude.
-Figure~\ref{fig:granadaData} plots the measurements in normalized form to make apparent the variation in the relative spectra.
+Figure~\ref{fig:granadaData} plots the measurements in normalized form to make apparent the variation in the relative spectra. The spectra are normalized by their mean over wavelength.
 
-Our statistical model approximates the normalized Granda spectra using their first 6 principle components.
+Our statistical model approximates these normalized shapes using their first 6 principle components.
 The variation in these components is modeled with a 6-dimensional Gaussian whose mean and covariance matrix 
-match the sample mean and covariance of the weights on these components obtained from the normalized Granada spectra \cite{BrainardFreeman}.
-To generate a random relative illuminant spectrum, we take a draw from this Gaussian to obtain weights and then use the weights to generate the corresponding spectrum.
+match the dataset's sample mean and covariance of the weights on these components \cite{BrainardFreeman}.
+To generate a random relative illuminant spectrum, we take a draw from this Gaussian to obtain weights and generate the corresponding spectrum.
 Figure~\ref{fig:illuminantSamples} illustrates the relative spectra of draws obtained using this procedure.
 Details of the statistical model for illumination are provided in the appendix.
-Chromaticities and rendered color renditions of these draws are shown in Figures~\ref{fig:xyDiagram} and ~\ref{fig:sRGBIlluminant}.
 
-Because our multivariate Gaussian model is based on normalized spectra, it does not embody the large variation in overall intensity of natural daylights.
+Because our multivariate Gaussian model is based on the rescaled spectra, it does not embody the large variation in overall intensity of natural daylights.
 To obtain illuminant spectra with intensity variation similar to the Granada dataset, we scaled each randomly generated relative spectrum.
-The scale factors were sampled uniformly from range 0.15 and 150.
-%% DHB: Check that these values are right.  Linear spacing or log spacing?
+The scale factors we sampled at random in the range 0.15 and 150.
+Color swatches of samples of illuminant spectra are shown in Figure~\ref{fig:sRGBIlluminant}.
 
 \subsubsection{Surface reflectance spectra}
 % Figure 7 Surface Reflectance Data and Model
@@ -373,32 +371,30 @@ The scale factors were sampled uniformly from range 0.15 and 150.
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure7/Figure7_d.pdf}
         \label{fig:backgroundSwatches}
     \end{subfigure}
-    \caption{{\bf Statistical model of surface reflectance:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets. (b) Sample spectra generated using the surface reflectance statistical model. (c) CIE xy chromaticity diagram of the Munsell and Vrhel reflectances and samples shown in b (red). (d) sRGB renditions of the samples shown in b, rendered under the CIE D65 daylight.}
+    \caption{{\bf Surface reflectance spectra:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets.(b) Representative samples of randomly generated object surface reflectances. (c) CIE xy chromaticity diagram of the Munsell and Vrhel datasets (black) and samples of surface reflectances (red). (d) sRGB renditions of the samples of object surface reflectance under CIE D65 daylight.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
-%% DHB: The chromaticities in c and renderings in d are for the spectra in b, right?  I wrote the caption to say so, just checking.
 
 %Figure 8 Target Surface Reflectance Samples
 \begin{figure}
 \centering
 \includegraphics[width=0.3\textwidth]{../FiguresDraft4/Figure8/Figure8.pdf}
-\caption{{\bf Target object surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.}
+\caption{{\bf Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.}
 \label{fig:targetSwatches}
 \end{figure}
 
-We generated random reflectance spectra using the same principles we used to model illuminant spectral power distributions.
+We generated random reflectance spectra using the same principles we applied to generate random illuminant spectra.
 We combined the Munsell \cite{kelly1943tristimulus} and Vrhel \cite{vrhel1994measurement} surface reflectance 
 measurements to create a database containing 632 reflectance spectra (Figure~\ref{fig:reflectanceSpectra}).
 The Munsell database contains 462 spectra each measured at 5 nm sampling intervals between 380nm and 780nm.
 The Vrhel dataset contains 170 spectra measured at 2 nm sampling between 390 nm and 730 nm.
-We resampled these spectra to 31 evenly-spaced wavelengths between 400 nm and 700 nm (Figure~\ref{fig:reflectanceSpectra}).
+We resampled these spectra to 31 evenly-spaced wavelengths between 400 nm and 700 nm.
+Figure~\ref{fig:reflectanceSpectra} illustrates the spectra of draws obtained using this procedure.
 Details of the statistical model for surface reflectance spectra are provided in the appendix. 
-Figures~\ref{fig:reflectanceSamples},~\ref{fig:xyChroReflectance}, and~\ref{fig:backgroundSwatches} illustrate reflectance draws obtained using the model. 
 
 For generating the target object reflectance at a particular luminance, the values in a generated spectrum were 
 scaled such that the LRV had the desired value (see appendix).
-Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spectra under CIE illuminant D65, for the evenly spaced LRV values we studied.
-%% DHB: Note that this procedure is different than conditioning the statistical model on the target LRV.  We could switch to the latter if we wished.
+Figure \ref{fig:targetSwatches} shows color swatches of target reflectance spectra rendered under CIE illuminant D65, for evenly spaced LRV values.
 
 % Figure 8: Methods
 \begin{figure}
