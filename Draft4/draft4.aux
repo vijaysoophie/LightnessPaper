@@ -52,7 +52,7 @@
 \newlabel{sub@fig:introSchematic}{{a}{3}{\relax }{figure.caption.2}{}}
 \newlabel{fig:introExampleFigure}{{1b}{3}{\relax }{figure.caption.2}{}}
 \newlabel{sub@fig:introExampleFigure}{{b}{3}{\relax }{figure.caption.2}{}}
-\newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 96}}{3}{Introduction}{figure.caption.2}{}}
+\newlabel{introFigure}{{\caption@xref {introFigure}{ on input line 98}}{3}{Introduction}{figure.caption.2}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces (a) {\bf  Color Constancy:} The light reflected from an object to the eye depends both on the surface reflectance of the object and on the illumination. Additionally, the reflected light also depends on geometric factors, such as the object's shape, pose, and position. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable across such variations, an ability called color constancy. (b) {\bf  Luminance Constancy:} Images of a sphere under a fixed illuminant. Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance function is held fixed. The relative reflectance function (i.e. the shape of the spectral reflectance function) varies across each row. Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.\relax }}{3}{figure.caption.2}}
 \citation{heasly2014rendertoolbox3}
 \citation{jakob2015mitsuba}
@@ -129,31 +129,30 @@
 \citation{brainard2015color}
 \citation{CIE86}
 \citation{hecht1942energy}
-\citation{brainard2015isetbio}
 \citation{heeger1992normalization}
 \citation{albrecht1991motion}
 \citation{carandini2012normalization}
-\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.\relax }}{8}{figure.caption.15}}
-\newlabel{fig:targetSwatches}{{8}{8}{{\bf Target surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.\relax }{figure.caption.15}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces {\bf  Target object surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.\relax }}{8}{figure.caption.15}}
+\newlabel{fig:targetSwatches}{{8}{8}{{\bf Target object surface reflectance spectra:} sRGB renditions of the target object surface reflectance rendered under CIE D65 daylight spectrum. The figure shows 10 random samples at 10 equally spaced LRV levels in the range [0.2, 0.6]. Each row contains 10 random samples of reflectance spectra generated at the LRV shown on the left.\relax }{figure.caption.15}{}}
 \@writefile{toc}{\contentsline {section}{Model of early visual system}{8}{section*.17}}
 \newlabel{method:Isetbio}{{}{8}{Model of early visual system}{section*.17}{}}
 \citation{geisler2009optimal}
 \citation{burge2017accuracy}
 \citation{jaini2017linking}
-\citation{geisler2009optimal}
-\citation{burge2017accuracy}
 \newlabel{fig:3DScene}{{9a}{9}{sRGB rendering of a 3D scene\relax }{figure.caption.16}{}}
 \newlabel{sub@fig:3DScene}{{a}{9}{sRGB rendering of a 3D scene\relax }{figure.caption.16}{}}
 \newlabel{fig:croppedImage}{{9b}{9}{Cropped image\relax }{figure.caption.16}{}}
 \newlabel{sub@fig:croppedImage}{{b}{9}{Cropped image\relax }{figure.caption.16}{}}
-\newlabel{fig:croppedImageWithMosaic}{{9c}{9}{Optical image\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:croppedImageWithMosaic}{{c}{9}{Optical image\relax }{figure.caption.16}{}}
-\newlabel{fig:coneContrast}{{9d}{9}{LMS cone contrast\relax }{figure.caption.16}{}}
-\newlabel{sub@fig:coneContrast}{{d}{9}{LMS cone contrast\relax }{figure.caption.16}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 433}}{9}{Surface reflectance spectra}{figure.caption.16}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Generating labeled dataset for computational analysis:} For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The response of the cones in the retina are simulated using the retinal image incident on the cone mosaic. The figure shows the retinal image after optical blurring and the location and identity of the cones in the retinal mosaic (L cones: Red, M cones: Green, S cones: Blue). (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.\relax }}{9}{figure.caption.16}}
+\newlabel{fig:croppedImageWithMosaic}{{9c}{9}{Retinal image\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:croppedImageWithMosaic}{{c}{9}{Retinal image\relax }{figure.caption.16}{}}
+\newlabel{fig:coneContrast}{{9d}{9}{LMS normalized cone contrast\relax }{figure.caption.16}{}}
+\newlabel{sub@fig:coneContrast}{{d}{9}{LMS normalized cone contrast\relax }{figure.caption.16}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 436}}{9}{Surface reflectance spectra}{figure.caption.16}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Pipeline for generating labeled datasets:} For the supervised learning approach employed in this work, labeled images are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image, which contains the target object, is cropped. (c) The retinal image corresponding to the rendered image is computed, and this is used in turn to compute the excitations of the cone photoreceptors. The figure shows the a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue). (d) The cone excitations are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.\relax }}{9}{figure.caption.16}}
 \@writefile{toc}{\contentsline {section}{Computational luminance constancy}{9}{section*.18}}
 \newlabel{method:SupervisedLearning}{{}{9}{Computational luminance constancy}{section*.18}{}}
+\citation{geisler2009optimal}
+\citation{burge2017accuracy}
 \newlabel{fig:case1Estimates}{{10a}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \newlabel{sub@fig:case1Estimates}{{a}{10}{LRV estimates\relax }{figure.caption.23}{}}
 \newlabel{fig:case1RFResponse}{{10b}{10}{Receptive field response\relax }{figure.caption.23}{}}
@@ -162,8 +161,6 @@
 \newlabel{sub@fig:case1RFs}{{c}{10}{AMA receptive fields\relax }{figure.caption.23}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces {\bf  Luminance estimates, receptive fields and RF response for condition 1:} (a) Estimated v/s assigned target LRV for the test image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The diagonal unit slope (dotted blue) line is for reference. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref  {fig:barGraphs}) is 0.8\% for linear regression and 1.1\% for AMA based estimation. (b) Cone isomerizations projected along the first two AMA receptive fields for training images of condition 1. Each cloud represents the image patches corresponding to one LRV. The clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (c) The first two AMA receptive fields learnt using the cone responses of stimuli in the training set.\relax }}{10}{figure.caption.23}}
 \newlabel{fig:Condition1}{{10}{10}{{\bf Luminance estimates, receptive fields and RF response for condition 1:} (a) Estimated v/s assigned target LRV for the test image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm $ 1 standard deviation. The diagonal unit slope (dotted blue) line is for reference. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref {fig:barGraphs}) is 0.8\% for linear regression and 1.1\% for AMA based estimation. (b) Cone isomerizations projected along the first two AMA receptive fields for training images of condition 1. Each cloud represents the image patches corresponding to one LRV. The clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (c) The first two AMA receptive fields learnt using the cone responses of stimuli in the training set.\relax }{figure.caption.23}{}}
-\@writefile{toc}{\contentsline {section}{Results}{10}{section*.22}}
-\newlabel{Results}{{}{10}{Results}{section*.22}{}}
 \newlabel{fig:case2IsomerizationEstimates}{{11a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
 \newlabel{sub@fig:case2IsomerizationEstimates}{{a}{11}{RF response (Isomerization)\relax }{figure.caption.24}{}}
 \newlabel{fig:case2RFResponseIsomer}{{11b}{11}{LRV estimates (Isomerization)\relax }{figure.caption.24}{}}
@@ -174,6 +171,8 @@
 \newlabel{sub@fig:case2RFResponseContrast}{{d}{11}{LRV estimates (Contrast)\relax }{figure.caption.24}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Condition 2:} (a) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA based estimators on the cone response. The relative RMSE is high (41.4\% for Linear regression and 31.3\% for AMA based estimation). (b) Cone isomerizations projected on AMA receptive fields calculated using photoreceptor response. (c) Estimated v/s assigned target LRV for the image in condition 2 learnt and evaluated on contrast normalized cone isomerizations. The relative RMSE of estimation is 9.3\% for linear regression and 1.1\% for AMA based estimator. (d) The contrast normalized cone isomerizations projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized cone isomerizations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better in this representation.\relax }}{11}{figure.caption.24}}
 \newlabel{fig:Condition2}{{11}{11}{{\bf Condition 2:} (a) Mean LRV $\pm $ 1 standard deviation for images in the test set obtained using linear regression and AMA based estimators on the cone response. The relative RMSE is high (41.4\% for Linear regression and 31.3\% for AMA based estimation). (b) Cone isomerizations projected on AMA receptive fields calculated using photoreceptor response. (c) Estimated v/s assigned target LRV for the image in condition 2 learnt and evaluated on contrast normalized cone isomerizations. The relative RMSE of estimation is 9.3\% for linear regression and 1.1\% for AMA based estimator. (d) The contrast normalized cone isomerizations projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized cone isomerizations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better in this representation.\relax }{figure.caption.24}{}}
+\@writefile{toc}{\contentsline {section}{Results}{11}{section*.22}}
+\newlabel{Results}{{}{11}{Results}{section*.22}{}}
 \newlabel{fig:case3Estimates}{{12a}{12}{LRV estimates\relax }{figure.caption.25}{}}
 \newlabel{sub@fig:case3Estimates}{{a}{12}{LRV estimates\relax }{figure.caption.25}{}}
 \newlabel{fig:case3RFResponse}{{12b}{12}{Receptive field response\relax }{figure.caption.25}{}}

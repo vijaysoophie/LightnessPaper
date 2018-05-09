@@ -74,9 +74,11 @@ The ability of a visual system to compute a representation of object color that 
 Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eye to produce percepts well-correlated with object surface reflectance.
 
-Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}. Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
+Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
+Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
 %LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
-A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.  But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
+A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.
+But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
 As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant; evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
 
 % Figure 1: Introduction
@@ -134,7 +136,7 @@ the surface reflectance of the corresponding scene object.
 By incorporating statistical models of the variation of object surface reflectance and daylight illumination, 
 the pipeline allows us to produce large labeled sets of images that capture key aspects of the task-relevant 
 statistical structure of natural scenes.
-%% DHB: Need to fix up citations in this paragraph. The URLs for RTB and Mitsuba should be inside the same paranetheses as the citations that
+%% DHB: Need to fix up citations in this paragraph. The URLs for RTB and Mitsuba should be inside the same paraneheses as the citations that
 % follow.
 
 % Figure 2
@@ -159,7 +161,7 @@ statistical structure of natural scenes.
     \end{subfigure}
     \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
 \end{figure}
-%% DHB: We need to think about how to scale the images for display.  The Library scene is too dark.
+%% DHB: We need to think about how to scale the images for display.  The Library scene is too dark, at least when printed.
 
 % Figure 3
 \begin{figure}
@@ -420,114 +422,114 @@ Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spe
     ~ 
     \begin{subfigure}[b]{0.19 \textwidth}
     \hspace{0.1 \textwidth}
-        \caption{Optical image}
+        \caption{Retinal image}
         \vspace{1.5mm}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_c.png}
         \label{fig:croppedImageWithMosaic}
     \end{subfigure}
     ~
     \begin{subfigure}[b]{0.2 \textwidth}
-        \caption{LMS cone contrast}
+        \caption{LMS normalized cone contrast}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure9/Figure9_d.png}
         \label{fig:coneContrast}
     \end{subfigure}
     \label{fig:sceneWithCroppedImage}
-    \caption{{\bf Generating labeled dataset for computational analysis:}  For the supervised approach employed in this work, the labeled database is generated as follows: (a) A 3D virtual scene, containing a target object of known surface luminance is created. The target object is placed in the camera field of view. After assigning spectra to the light sources and other objects in the scene, a multispectral image of the scene is rendered using the Mitsuba software package. (b) The central portion of the rendered image, which contains the target object, is cropped from the image. (c) The response of the cones in the retina are simulated using the retinal image incident on the cone mosaic. The figure shows the retinal image after optical blurring and the location and identity of the cones in the retinal mosaic (L cones: Red, M cones: Green, S cones: Blue).  (d) The cone responses are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
+    \caption{{\bf Pipeline for generating labeled datasets:}  For the supervised learning approach employed in this work, labeled images are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image, which contains the target object, is cropped. (c) The retinal image corresponding to the rendered image is computed, and this is used in turn to compute the excitations of the cone photoreceptors. The figure shows the a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue).  (d) The cone excitations are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
 \end{figure}
 
 \subsection{Model of early visual system} \label{method:Isetbio}
 The light entering the eye is blurred by the eye's optics.
 The resulting retinal image is sampled by a mosaic of cone photoreceptors.
-The responses of these photoreceptors provide the information about the scene that is available to the neural visual system for further processing.
-Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone responses
+The excitations of these photoreceptors provide the information about the scene that is available to the neural visual system for further processing.
+Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone excitations
 to our scenes using a model of the early visual system.
 
 We focussed our analysis on regions of the image local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}).
 This choice is motivated by the observation that neural receptive fields in the early visual pathways (e.g., retina, primary visual cortex) pool information locally.
 In foveal primary visual cortex, receptive fields have a spatial extent of approximately 1 degree of visual angle (REFS).
-% Johannes to provide his favorite citation or two.  Some review.
+%% DHB: Johannes to provide his favorite citation or two.  Some review.
 
-We modeled a visual system with a pupil diameter of 3 mm, optical blurring (including axial chromatic aberration) in the formation of the retinal image \cite{marimont1994matching}, spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (\citeNP{brainard2015color}; Fig.~\ref{fig:croppedImageWithMosaic}). 
+We modeled a visual system with a pupil diameter of 3 mm, optical blurring (including axial chromatic aberration) in the formation of the retinal image \cite{marimont1994matching}, and spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (\citeNP{brainard2015color}; Fig.~\ref{fig:croppedImageWithMosaic}). 
 The cone mosaic contained L:M:S cones in the ratio 0.6:0.3:0.1 and with spectral sensitivities derived from the CIE physiological standard \cite{CIE86}.
-Cone isomerizations were computed assuming an integration time of 100 msec, and we modeled the Poisson nature of photopigment isomerization \cite{hecht1942energy}. 
-This modeling was implemented using the software infrastructure provided by ISETBio \cite{brainard2015isetbio}.
+Cone excitations were taken as isomerizations assuming an integration time of 100 msec, and we modeled the Poisson nature of photopigment isomerization \cite{hecht1942energy}. 
+This modeling was implemented using the software infrastructure provided by ISETBio (\href{https://isetbio.org}{https://isetbio.org}).
 
-% Details from Nicolas (TEXT IN CAPS IS FROM VIJAY)
-% Scene: 
-%- the default mean luminance was set to 200, but there is a key-value param that could have overriden this value. 
-%  I do not know if this were the case.
+%% Details on ISETBIO computations from Nicolas (TEXT IN CAPS IS FROM VIJAY)
+%% Scene: 
+%%- the default mean luminance was set to 200, but there is a key-value param that could have overriden this value. 
+%%  I do not know if this were the case.
+%%
+%% % MEAN LUMINANCE = 0, NO SCALING
 %
-% % MEAN LUMINANCE = 0, NO SCALING
-
-%- The default FOV was 1 deg, but there is a key-value param that could have overriden this value.
-%  I do not know if this were the case.
-%
-% % HORIZONTAL FOV = 1
-
-%- Distance default is 1 meter, but there is  a key-value param that could have overriden this value.
-%  I do not know if this were the case.
-%
-%% DISTANCE 1M
-
-%
-%Optics: 
-%- 3 mm pupil, 17 mm focal length, with a spectro-spatial OTF described in  
-%  (Marimont & Wandell (1994) J. Opt. Soc. Amer. A,  v. 11, p. 3113-3122), 
-%   which includes axial chromatic aberration. However, there is key-value param o skip the OTF. 
-%   Not sure if this was used.  It it was used, the optics was set to diffraction limited.
-%
-% % SKIP OTF OFF:  'skipOTF', false ...  
-
-%
-%Lens: 
-%- not sure if the optical density is from Wyszecki&Stiles or from Stockman-Sharpe. 
-%  The isetbio file commend only says it is from PTB. David do you know, or should I check
-%  the data?
-%
-%Cone Mosaic: 
-%- rectangular cone mosaic with 0.6:0.3:0.1 LMS densities
-%- FOV was a key-value param, so I do not know what was used.
-%- Also the mosaic was subsampled  according to a cone-stride param, with a default of 15 cones
-%but there is a key-value param that could have overriden this value. I do not know what that parameter value was.
-%
-% CONE STRIDE = 3 'coneStride', 3, ... 
-
-%
-%- There is a key-value pair to also low-pass the optical image with default value to not do so.
-%  If that was user-overriden the OI was lowpass filtered using a Gaussian whose sigma was dependent on the cone-stride param.
-%
-% LOW PASS FILTER = MATCH CONE STRIDE : lowPassFilter = 'matchConeStride';      
-
-%- IntegrationTime was not specified, so it was the default which is 5 msec.
-%  The cone isomerization maps were also demosaiced using linear interpolation.
-%- The default isomerization noise was set to none, but there is a key-value parameter
-%  that can override it. I do not know what the value of that was.
-%
-% ISOMERIZATION NOISE = FROZEN, 'isomerizationNoise', 'frozen'
-
-%-  Finally, there is a key-value param named 'coneEfficiencyBasedReponseScaling', which by default is set to 'none'
-%   But if it was user-set to non 'none' the code scaled the responses to simulate equal quantal efficiencies 
-%   for L , M and S coneEfficiencyBasedReponseScaling by undoing filtering by the lens and the macular pigment.
-%   I do not know if this was used.
-% 
-% coneEfficiencyBasedReponseScaling = 'area'
+%%- The default FOV was 1 deg, but there is a key-value param that could have overriden this value.
+%%  I do not know if this were the case.
+%%
+%% % HORIZONTAL FOV = 1
+%%
+%%- Distance default is 1 meter, but there is  a key-value param that could have overriden this value.
+%%  I do not know if this were the case.
+%%
+%%% DISTANCE 1M
+%%
+%%Optics: 
+%%- 3 mm pupil, 17 mm focal length, with a spectro-spatial OTF described in  
+%%  (Marimont & Wandell (1994) J. Opt. Soc. Amer. A,  v. 11, p. 3113-3122), 
+%%   which includes axial chromatic aberration. However, there is key-value param o skip the OTF. 
+%%   Not sure if this was used.  It it was used, the optics was set to diffraction limited.
+%%
+%% % SKIP OTF OFF:  'skipOTF', false ...  
+%%
+%%Lens: 
+%%- not sure if the optical density is from Wyszecki&Stiles or from Stockman-Sharpe. 
+%%  The isetbio file commend only says it is from PTB. David do you know, or should I check
+%%  the data?
+%%
+%%Cone Mosaic: 
+%%- rectangular cone mosaic with 0.6:0.3:0.1 LMS densities
+%%- FOV was a key-value param, so I do not know what was used.
+%%- Also the mosaic was subsampled  according to a cone-stride param, with a default of 15 cones
+%%but there is a key-value param that could have overriden this value. I do not know what that parameter value was.
+%%
+%% CONE STRIDE = 3 'coneStride', 3, ... 
+%%
+%%
+%%- There is a key-value pair to also low-pass the optical image with default value to not do so.
+%%  If that was user-overriden the OI was lowpass filtered using a Gaussian whose sigma was dependent on the cone-stride param.
+%%
+%% LOW PASS FILTER = MATCH CONE STRIDE : lowPassFilter = 'matchConeStride';      
+%%
+%%- IntegrationTime was not specified, so it was the default which is 5 msec.
+%%  The cone isomerization maps were also demosaiced using linear interpolation.
+%%- The default isomerization noise was set to none, but there is a key-value parameter
+%%  that can override it. I do not know what the value of that was.
+%%
+%% ISOMERIZATION NOISE = FROZEN, 'isomerizationNoise', 'frozen'
+%%
+%%-  Finally, there is a key-value param named 'coneEfficiencyBasedReponseScaling', which by default is set to 'none'
+%%   But if it was user-set to non 'none' the code scaled the responses to simulate equal quantal efficiencies 
+%%   for L , M and S coneEfficiencyBasedReponseScaling by undoing filtering by the lens and the macular pigment.
+%%   I do not know if this was used.
+%% 
+%% coneEfficiencyBasedReponseScaling = 'area'
 
 
-The cone isomerizations represent the first step of visual processing.
+The cone excitations represent the first step of visual processing.
 To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
-we processed the isomerizations as follows:
+we processed the excitations as follows:
 First, we generated a response for each cone class at each pixel in the sampled retinal image, using linear interpolation separately for each cone class.
-This gives us a cone response image for each cone class.
-We also normalized each cone response image by the total area under the corresponding cone spectral sensitivity.
-This makes the magnitude of the cone response images similar across cone classes.
-These two processing steps do not alter the information in the cone response images. 
+This gives us a cone excitation image for each cone class.
+We also normalized each cone excitation image by the total area under the corresponding cone spectral sensitivity.
+This makes the magnitude of the cone excitation images similar across cone classes.
+These two processing steps do not alter the information in the cone excitation images. 
 
-To model contrast coding, we converted each cone response image to a corresponding cone contrast image.
-This was accomplished by computing the mean response over the three cone contrast images, and then subtracting off and dividing by this mean.
-To model contrast normalization, we divided by the sum of squared contrasts over image pixels and cone classes.
+To model contrast coding, we converted each cone excitation image to a corresponding cone contrast image.
+This was accomplished by computing the mean response over the three cone excitation images, and then subtracting off and dividing by this mean.
+To model contrast normalization, we divided the contrast images by the sum of squared contrasts taken over image pixels and cone classes.
+
+%% DHB: We meed to figure out and say something about how we scaled image intensities into a reasonable range.
 
 \subsection{Computational luminance constancy} \label{method:SupervisedLearning}
-We used our datasets to determine how well target object LRV can be estimated from cone responses and from normalized cone contrasts.
+We used our datasets to determine how well target object LRV can be estimated from cone excitations and from normalized cone contrasts.
 Studying both representations allows us to understand how early contrast coding and normalization affect how well luminance constancy can be achieved.
 We applied accuracy maximization analysis (AMA) to learn the optimal receptive fields for estimating LRV,
 and evaluated the performance obtained when the output of these filters was optimally decoded.
@@ -548,20 +550,21 @@ Once the optimal receptive fields have been learned, we need to develop a genera
 A general decoder is necessary because the decoder used to learn the receptive fields requires the response mean and response variance of the filters to every labelled stimulus in the training set \cite{geisler2009optimal,burge2017accuracy}.
 To proceed, first we use the AMA optimal receptive fields and the training dataset to find the conditional distributions of the receptive field responses, conditioned on the labelled target object LRVs.
 Then, we approximate these with multivariate Gaussian distributions.
-With the Gaussian approximation in hand, 
-to estimate the LRV of the target object in a test image, we use Bayes' rule to obtain the posterior distribution over LRV values given the filter responses.
+To estimate the LRV of the target object in a test image, we use Bayes' rule together with the Gaussian conditional distributions and a uniform prior to obtain the posterior distribution over LRV values given the filter responses.
 The optimal estimate is the LRV value that minimizes the expected value of the cost function, where the expectation is taken over the posterior.
+Here we use a squared error cost function, so that the optimal estimator is the posterior mean.
+%% DHB: Uniform prior, right? And posterior mean?  If not, correct prose above.
 
 \subsubsection*{Baseline methods}
 
 To provide baselines for evaluation of the estimation method described above, we used linear regression.
-First, we solved for the weights on the average L, M and S cone responses target object that best predicted the target LRV values.
-We took the average cone respones from a $3 \times 3$ region at the center of the target object.
+First, we solved for the weights on the average L, M and S cone excitations corresponding to the target object that best predicted the target LRV values.
+We took the average cone responses from a $3 \times 3$ region at the center of the target object.
 This baseline method disregards information carried the image regions corresponding to the background objects.
 We also performed regression on the contrast normalized version of the cone responses.
-This baseline method indirectly incorporates information carried the image regions corresponding to the background objects,
-through their effect on the contrast normalized responses from the target object. 
-We also evaluated the performance of a naive model that estimate the mean of the LRV values in the training set, irrespective
+This second baseline method indirectly incorporates information carried in the image regions corresponding to the background objects,
+through their effect on the contrast normalized responses at the center of the target object. 
+We also evaluated the performance of a naive model that estimates the mean of the LRV values in the training set, irrespective
 of the image data.
 
 \section{Results} \label{Results}
