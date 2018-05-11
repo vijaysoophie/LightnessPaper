@@ -434,7 +434,7 @@ Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spe
         \label{fig:coneContrast}
     \end{subfigure}
     \label{fig:sceneWithCroppedImage}
-    \caption{{\bf Pipeline for generating labeled datasets:}  For the supervised learning approach employed in this work, labeled images are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image, which contains the target object, is cropped. (c) The retinal image corresponding to the rendered image is computed, and this is used in turn to compute the excitations of the cone photoreceptors. The figure shows the a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue).  (d) The cone excitations are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
+    \caption{{\bf Pipeline for generating labeled datasets:}  For the supervised learning approach employed in this work, labeled images are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image, which contains the target object, is cropped. (c) The retinal image corresponding to the rendered image is computed, and this is used in turn to compute the excitations (taken as the number of photopigment isomerizations) of the cone photoreceptors. The figure shows the a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue).  (d) The cone excitations are interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized separately for each cone type.}
 \end{figure}
 
 \subsection{Model of early visual system} \label{method:Isetbio}
@@ -451,7 +451,7 @@ In foveal primary visual cortex, receptive fields have a spatial extent of appro
 
 We modeled a visual system with a pupil diameter of 3 mm, optical blurring (including axial chromatic aberration) in the formation of the retinal image \cite{marimont1994matching}, and spatial sampling by an interleaved mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (\citeNP{brainard2015color}; Fig.~\ref{fig:croppedImageWithMosaic}). 
 The cone mosaic contained L:M:S cones in the ratio 0.6:0.3:0.1 and with spectral sensitivities derived from the CIE physiological standard \cite{CIE86}.
-Cone excitations were taken as isomerizations assuming an integration time of 100 msec, and we modeled the Poisson nature of photopigment isomerization \cite{hecht1942energy}. 
+Cone excitations were taken as the number of photopigment isomerizations, assuming an integration time of 100 msec, and we modeled the Poisson nature of photopigment isomerization \cite{hecht1942energy}. 
 This modeling was implemented using the software infrastructure provided by ISETBio (\href{https://isetbio.org}{https://isetbio.org}).
 
 %% Details on ISETBIO computations from Nicolas (TEXT IN CAPS IS FROM VIJAY)
@@ -511,7 +511,6 @@ This modeling was implemented using the software infrastructure provided by ISET
 %%   I do not know if this was used.
 %% 
 %% coneEfficiencyBasedReponseScaling = 'area'
-
 
 The cone excitations represent the first step of visual processing.
 To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization},
@@ -577,7 +576,7 @@ of the image data.
         \label{fig:case1Estimates}
     \end{subfigure} 
         \begin{subfigure}[b]{0.26 \textwidth}
-        \caption{Receptive field response}
+        \caption{RF responses}
         \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft4/Figure10/Figure10_b.pdf}
         \label{fig:case1RFResponse}
     \end{subfigure}
@@ -587,69 +586,78 @@ of the image data.
 	\includegraphics[width=1.07\textwidth, trim={0 -0.6cm 0 -0.3cm}]{../FiguresDraft4/Figure10/Figure10_c.pdf}
 	\label{fig:case1RFs}
     \end{subfigure}   
-    \caption{{\bf Luminance estimates, receptive fields and RF response for condition 1:} (a) Estimated v/s assigned target LRV for the test image in condition 1. Solid lines show the mean estimate, the filled region in light color shows $\pm$ 1 standard deviation. The diagonal unit slope (dotted blue) line is for reference. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.8\% for linear regression and 1.1\%  for AMA based estimation. (b) Cone isomerizations projected along the first two AMA receptive fields for training images of condition 1. Each cloud represents the image patches corresponding to one LRV. The clouds are approximated by a multivariate Gaussian whose mean and variance are approximated by the ellipses shown in the figure. (c) The first two AMA receptive fields learnt using the cone responses of stimuli in the training set.}
+    \caption{{\bf Condition 1 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.8\% for linear regression and 1.1\%  for AMA based estimation. (b) Cone excitations projected along the first two AMA receptive fields for training images of Condition 1. Each cloud represents the image patches corresponding to one LRV. The clouds are approximated by a multivariate Gaussians whose means and variances are approximated by the ellipses shown in the figure. (c) The first two AMA receptive fields learnt using the cone excitations of stimuli in the training set.}
 \label{fig:Condition1}
 \end{figure}
+
+\subsection{Condition 1}
 
 We start with Condition 1, where only the LRV and relative reflectance spectrum of the target object vary across scenes.
 For this condition, estimating LRV should be easy because the variation in target object reflectance that we introduced
 preserved LRV (which is calculated using a CIE D65 as the illumination).
 This in turn means that for fixed scene illuminants similar to D65, the luminance of the light reflected from the target object will vary minimally.
 In Condition 1, we used an illumination drawn form our daylight sample and thus expect a reasonable degree of similarity to D65.
+%% DHB: We need to say something about how similar.  Might explore different illuminants to dissect how sensitive the estimation
+% is to whether the fixed illuminant is D65 or something else.  Probably not very, but this is an example of something we can exploit
+% our graphics approach to understand, and we want to build up examples.
 
 We used AMA to learn a set of linear receptive fields that are optimal for estimating target LRV for this condition.
-For this condition, we trained and evaluated AMA on the cone responses to the image patches.
-Figure~\ref{fig:case1RFResponse} shows the responses of the first two receptive fields to all the image patches in the training set.
-Each individual point represents the receptive field responses to a single image patch.
-Each point is color coded according to the LRV corresponding to the target object in the patch.
-The responses segregate according to the target LRV.
-This means that the responses may be used to accurately decode LRV, confirming the intuition that computational
-luminance constancy is readily achieved for Condition 1.
-
+We trained and evaluated AMA on the cone excitations to the image patches.
 Decoding performance for the test set is shown in Figure~\ref{fig:case1Estimates}.
-As expected, the LRV estimates obtained by decoding the AMA receptive field responses are veridical.
+As expected, the LRV estimates obtained by decoding the AMA receptive field responses are essentially perfect.
 Figure~\ref{fig:case1Estimates} also shows the performance of the baseline linear regression method, again trained
 on the training set and evaluated on the test set.
 For this condition, linear regression on the target object cone responses also leads to veridical LRV estimates.
 
+Figure~\ref{fig:case1RFResponse} shows the responses of the first two receptive fields to all the image patches in the training set.
+Each individual point represents the receptive field responses to a single image patch.
+Each point is color coded according to the LRV corresponding to the target object in the patch.
+The responses segregate according to the target LRV, which is the feature required to support the high level 
+of estimation performance shown in Figure~\ref{fig:case1Estimates}.
+
 Figure~\ref{fig:case1RFs} shows the first two AMA receptive fields.
-Each of these, in essence, takes a weighted sum of the L and M cone isomerizations at the target object location.
-The isomerizations in the background regions and the S cone isomerizations are largely ignored.
+Each of these, in essence, takes a weighted sum of the L and M cone excitations at the target object location.
+The cone excitations in the background regions and the S cone excitations are largely ignored.
 These receptive fields make sense.
 For this condition, the background regions provide very little task relevant information: their only relevant effect is
 through light scattered from them onto the target.
-In addition, luminance is primarily determined by L and M cone isomerizations.
+In addition, luminance is primarily determined by L and M cone s, so the S cones should make little
+contribution.
+%% DHB: Can we add a color scale bar to the plots?
 
-%% Figure condition 2: Isomerization Fails
+%% Figure condition 2: Excitations Fail
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.22\textwidth}   
-        \caption{RF response (Isomerization)}
+        \caption{LRV estimates (excitations)}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_a.pdf}
         \label{fig:case2IsomerizationEstimates}
     \end{subfigure}
         \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{LRV estimates (Isomerization)}
+        \caption{RF responses (excitations)}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_b.pdf}
         \label{fig:case2RFResponseIsomer}
     \end{subfigure}
             \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{RF response (Contrast)}
+        \caption{LRV estimates (Normalized contrast)}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_c.pdf}
         \label{fig:case2ContrastEstimates}
     \end{subfigure}
             \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{LRV estimates (Contrast)}
+        \caption{RF responses (Normalized contrast)}
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_d.pdf}
         \label{fig:case2RFResponseContrast}
     \end{subfigure}
-    \caption{{\bf Condition 2:} (a) Mean LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA based estimators on the cone response. The relative RMSE is high (41.4\% for Linear regression and 31.3\% for AMA based estimation). (b) Cone isomerizations projected on AMA receptive fields calculated using photoreceptor response. (c) Estimated v/s assigned target LRV for the image in condition 2 learnt and evaluated on contrast normalized cone isomerizations. The relative RMSE of estimation is 9.3\% for linear regression and 1.1\% for AMA based estimator. (d) The contrast normalized cone isomerizations projected along the first two AMA receptive fields. The receptive fields were calculated using the contrast normalized cone isomerizations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better in this representation.}
+    \caption{{\bf Condition 2 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the cone excitations. The relative RMSE is high (41.4\% for linear regression and 31.3\% for AMA based estimation). (b) Cone isomerizations projected on AMA receptive fields calculated using cone excitations. (c) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the contrast normalized cone excitations. The relative RMSE of estimation is 9.3\% for linear regression and 1.1\% for AMA based estimator. (d) The contrast normalized cone excitations projected along the first two AMA receptive fields. The receptive fields were learned using AMA and the contrast normalized cone excitations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better when the input is contrast normalized cone excitations rather than the cone excitations themselves.}
 \label{fig:Condition2}
 \end{figure}
+%% DHB: The labels above each panel wrap in unfortunate ways. Fix.
 
-Next we discuss Condition 2, where we introduce variation in the spectral power distribution function of the light sources.
-This variation makes the task more difficult, because it causes more variation in cone isomerizations due to factors other than the target object LRV.
-Figure~\ref{fig:Condition2}(a, b) show the results when we learned and evaluated the performance of AMA on the cone isomerizations.
+\subsection{Condition 2}
+
+Condition 2 introduces variation in the spectral power distribution of the light sources.
+This variation makes the task more difficult, because it causes more variation in cone excitations due to factors other than the target object LRV.
+Figure~\ref{fig:Condition2}a and b show the results when we learned and evaluated the performance of AMA on the cone excitations.
 Performance is poor.
 Indeed, on average the estimates deviate considerably from the true LRV, as seen by the fact that the mean estimate
 (red line) does not lie along the positive diagonal and by the fact that there is large estimation variability for each
@@ -660,12 +668,13 @@ by simply guessing the mean LRV of the training set (0.4).
 Recall that there are two qualitatively distinct aspects to the variation in light source spectra.
 One is a variation in relative spectral power distribution and the
 other is a variation in overall intensity.
-To separate the effect of these two aspects, we trained and evaluated AMA on the contrast normalized cone isomerizations.
-Figure~\ref{fig:Condition2}(c, d) shows that performance improves greatly, and indeed is essentially perfect.
+To separate the effect of these two aspects, we trained and evaluated AMA on the contrast normalized cone excitations.
+Figure~\ref{fig:Condition2}(c, d) shows that performance improves greatly, and AMA performance is essentially perfect.
 This observation is consistent with a large literature on computational color constancy that shows that when only illumination spectra are varied,
 contrast-based representations provide an effective vehicle for achieving color constancy (REFS).
 That same literature, however, shows that
 contrast-based representations are less effective at supporting constancy when the spectra of background objects in the scene vary.
+%% DHB: Need to add REFS in paragraph above.
 
 %% Figure 12: Results for Condition 3
 \begin{figure}
@@ -686,25 +695,37 @@ contrast-based representations are less effective at supporting constancy when t
 	\includegraphics[width=1.07\textwidth, trim={0 -0.6cm 0 -0.5cm}]{../FiguresDraft4/Figure12/Figure12_c.pdf}
 	\label{fig:case3RFs}
     \end{subfigure}
-    \caption{{\bf Condition 3:} (a) Estimated v/s assigned target LRV for the test images in Condition 3. The relative error of estimation is 22.9\%  for linear regression and 13.0\% for AMA. (b) Contrast normalized cone isomerizations projected along the first two AMA receptive fields. The receptive fields we learnt on the contrast normalized cone isomerizations corresponding to the image patches in the training set. (c) First two AMA receptive fields learnt using the contrast normalized cone isomerizations.}
+    \caption{{\bf Condition 3 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the contrast normalized cone excitations. The relative RMSE is 22.9\%  for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected along the first two AMA receptive fields. (c) First two AMA receptive fields learnt using the contrast normalized cone excitations.}
 \label{fig:Condition3}
 \end{figure}
+%% Panel b shows training set projections, right?
 
-In Condition 3, we introduced variation in the reflectance spectra of the background objects.
+\subsection{Condition 3}
+
+Condition 3 introduces variation in the reflectance spectra of the background objects.
 This condition models the full real-world spectral variation that is most relevant for the computational problem of luminance constancy.
-We again trained and evaluated AMA for labeled images patches in this condition using the contrast-normalized cone isomerizations 
-(Figure~\ref{fig:case3Estimates}).
-The LRV estimates obtained via AMA are more variable and less accurate than for the previous conditions.
+We again trained and evaluated AMA for labeled images patches, using the contrast normalized cone excitations.
+The LRV estimates obtained via AMA are more variable and less accurate than for the previous conditions (Figure~\ref{fig:case3Estimates}).
 None-the-less, the estimates provide useful information about the target LRV.
 Indeed, on average the estimates track the true LRV, as seen by the fact that the mean estimate
-(red line) tracks the positive diagonal.
-The increased estimation variability is indicated by the width of the shaded red region.
-Performance of baseline linear regression method (also evaluated using contrast normalized cone isomerizations) is worse than that of the AMA-based estimates.
+(red line) lies along the positive diagonal.
+The increased estimation variability is indicated by the increased width of the shaded red region, relative to its width for the Condition 1 and 2 results.
+Performance of the baseline linear regression method (also evaluated using contrast normalized cone excitations) is worse than that of the AMA-based estimates.
 
 Figure~\ref{fig:case3RFResponse} shows the responses of the first two AMA linear receptive fields for training stimuli.
-Here, there is considerable overlap in the receptive field responses for stimuli having different LRV values.
+Although the responses vary systematically with target object LRV, there is considerable overlap in the receptive field responses for stimuli having different LRV values.
+This overlap is the combined effect of the variation in the illumination and background surface spectra.
 Recall, however, that performance is based on six rather than two receptive fields.
-Inclusion of more receptive fields reduces the ambiguity visible in the responses of just the first two.
+Inclusion of more receptive fields reduces the ambiguity that is seen when we visualize the responses of just the first two receptive fields.
+%% DHB: It might be natural here to show a plot of relative RMSE versus number of receptive fields, and for the best number of receptive
+% fields of relative RMSE versus size of training set.  We want to persuade the reader that we are at asymptote.
+
+Figure~\ref{fig:case3RFs} shows the first two receptive fields learned for Condition 3.
+%% DHB: We need to write something interpretive about the RF structure shown in panel c.
+
+%% DHB; We were going to vary the number of secondary reflections modeled in the rendering for one of the conditions, to
+% separate the two possible sources of influence of the background surfaces.
+
 
 \section{Discussion} \label{Discussion}
 
@@ -713,12 +734,12 @@ Inclusion of more receptive fields reduces the ambiguity visible in the response
 In this paper, we studied luminance constancy using naturalistic images.
 We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
 Because we rendered the images, we were able to label each image by the luminance reflectance value (LRV) of a target object.
-Across images, we varied the LRV of the target object, its relative surface reflectance spectrum, 
+Across scenes, we varied the LRV of the target object, its relative surface reflectance spectrum, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
 These variations were based on statistical models of natural surface reflectance and illumination spectra.
 We used the labeled datasets to learn estimators for the target object LRV.
 We studied the performance of these estimators as we systematically manipulated the 
-spectral variations in the datasets.
+spectral variation in the datasets.
 
 % Figure Error Bar Graphs
 \begin{figure}
@@ -728,17 +749,17 @@ spectral variations in the datasets.
  \label{fig:barGraphs}
 \end{figure}
 
-Figure~\ref{fig:barGraphs} summarizes our main findings by plotting the overall relative root mean squared estimation error (relative RMSE) for each condition (defined in Figure~\ref{fig:barGraphs}). 
-In Condition 1, where only the relative target object spectrum varies, luminance constancy is an easy problem and performance is essentially perfect for both the baseline linear regression and AMA methods.
+Figure~\ref{fig:barGraphs} summarizes our main findings.
+It plots the overall relative root mean squared estimation error (relative RMSE) for each condition. 
+In Condition 1, where only the relative target object spectrum varies, luminance constancy poses an easy computationsl problem,
+and performance is essentially perfect for both the baseline linear regression and AMA methods.
 In Condition 2, where the spectral power distribution of the illumination also varies, the problem of luminance constancy is more difficult.
-Indeed, neither of our methods performs well when they directly process the cone isomerizations.
-Performance with both methods improves greatly when the cone isomerizations are contrast normalized. 
+Indeed, neither of our methods performs well when they directly act on the cone excitations.
+Performance with both methods improves greatly when the cone excitations are contrast normalized. 
 Indeed, AMA performance for this case is, as in Condition 1, essentially perfect.
-Linear regression does less well, in part because it only has access to cone isomerizations at image locations
+Linear regression does less well, in part because it only has access to cone excitations at image locations
 corresponding to the target object.
-In addition, AMA makes optimal use of the stimulus information across a wider range
-of conditions than linear regression.
-Condition 2, however, does not include scene to scene variation in the background surface reflectances
+Condition 2, however, does not include scene-to-scene variation in the background surface reflectances,
 as occurs in natural viewing.
 The results for Condition 3 show performance when we add such variation.
 Performance here represents the overall level of luminance constancy that our methods achieve for the
@@ -746,8 +767,7 @@ most realistic condition that we tested.
 In this case, AMA-based estimates of target object LRV are, on average, within 13\% (relative RMSE) of the true value.
 Note that introduction of variation in the background surfaces makes the luminance constancy problem substantially harder,
 because variation in the background surfaces reduces the reliability of the light reflected from these
-surfaces.
-%% READ THIS PART
+surfaces as a cue to the spectral power distribution of the illuminant.
 
 \subsection{Use of Virtual Scenes}
 
