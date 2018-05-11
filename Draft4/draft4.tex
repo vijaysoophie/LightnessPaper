@@ -751,7 +751,7 @@ spectral variation in the datasets.
 
 Figure~\ref{fig:barGraphs} summarizes our main findings.
 It plots the overall relative root mean squared estimation error (relative RMSE) for each condition. 
-In Condition 1, where only the relative target object spectrum varies, luminance constancy poses an easy computationsl problem,
+In Condition 1, where only the relative target object spectrum varies, luminance constancy poses an easy computational problem,
 and performance is essentially perfect for both the baseline linear regression and AMA methods.
 In Condition 2, where the spectral power distribution of the illumination also varies, the problem of luminance constancy is more difficult.
 Indeed, neither of our methods performs well when they directly act on the cone excitations.
@@ -776,33 +776,34 @@ binocular disparity and retinal image motion (refs).
 Here we used labeled images rendered from virtual scene descriptions.
 The use of rendered images has advantages and disadvantages.
 
-As we noted in the introduction, supervised learning requires large labeled datasets and these are not readily available 
-for the study of how to estimate correlates of object surface reflectance.
+As we noted in the introduction, supervised learning requires large labeled datasets.
+These are not readily available  for the study of how to estimate correlates of object surface reflectance.
 In particular, to obtain ground truth information about the reflectance of objects in a natural image, it is necessary to
 make an independent of the illumination impinging on each object.
-This can be done by inserting a small number of discretely spaced reflectance standards into the scene, but 
+Although this can be done by inserting a small number of discretely spaced reflectance standards into the scene, 
 interpolating to locations between such standards requires strong assumptions.
-The use of rendered images allows us to work with large numbers of labeled images where the reflectance
-and impinging illumination are known precisely at every pixel.
+The use of rendered images allows us to work with large numbers of labeled images where object reflectance
+is precisely known at each pixel.
 
 A second advantage of using rendered images is that we can control the variation in distinct
 scene factors that might affect the difficulty of the estimation problem.
-This allows study of the individual effect of each factor as well as their joint effect.
-Here, we exploited this advantage to systematically introduce variation in the relative target object reflectance
+This allows study of the individual effect of each factor as well as their combined effect.
+Here, we exploited this to systematically introduce variation in the relative target object reflectance
 spectrum, the spectrum of the illumination, and the reflectance spectrum of the background objects.
 This allowed us to quantify how each of these variations limits LRV estimation.
-We believe this basic approach can be extended to include parametric control over the amount
+We believe the basic approach can be extended to include parametric control over the amount
 of variation of different factors as well as to include variation in additional factors (see below).
+%% DHB: Update if we add additional analyses as per some of the comments above.
 
-At the same time, it is important to recognize that limitations of the approach.
+At the same time, it is important to recognize limitations of the rendered image approach.
 Virtual rendered scenes are not guaranteed to capture all of the task relevant
 variation that occurs in real scenes.
-Indeed, even casual inspection of our images reveals that they are rendered and
-not real.
+Indeed, even casual inspection of our images reveals that they are rendered and not real.
 Computer graphics is getting better, however, and we expect that the gap between
 virtual and natural image databases will steadily close.
 Indeed, carefully constructed graphics images are now quite difficult to differentiate
 from real images.
+%% DHB: Might be able to reference Farid's recent book on this point.
 
 Our use of virtual images relies on datasets that characterize the statistical variation
 in object reflectance and natural illumination spectra.
@@ -810,9 +811,9 @@ We believe these datasets provide reasonable approximations.
 None-the-less, they can be extended and improved.
 For example, the dataset of illuminations does not include the artificial illuminations
 that we now live much of our lives under.
-The surface reflectance datasets captures constraints on naturally occurring reflectance
-functions, but did not sample the environment in a manner that was intended to 
-characterize the relative frequency of occurrence of different reflectance spectra.
+The surface reflectance datasets capture constraints on naturally occurring reflectance
+functions, but the surfaces in the datasets were not sample the environment in a manner that
+characterizes the relative frequency of different reflectance spectra in natural viewing.
 Future work with virtual image datasets will benefit from targeted efforts to characterize
 the natural statistics of the scene components that are varied.
 Under the assumption that combination of different scene factors (e.g. surface reflectances
@@ -834,14 +835,14 @@ in these factors.
 The basic approach would be to incorporate the variation into the generation of the
 scenes and again learn estimators from the corresponding labeled images.
 A challenge for this approach will be to thoughtfully control the increase in problem
-complexity both to keep compute time feasible and to ensure that it is possible to
+complexity, both to keep compute time feasible and to ensure that it is possible to
 extract meaningful insight from the results.
 
 Luminance constancy is a special case of the more general problem of color constancy.
-The approach we developed here could easily be generalized to the estimation of additional
+The approach we developed here could be generalized to the estimation of additional
 surface reflectance descriptors, such as object hue or chroma.
-As with LRV, these descriptors would be defined by the light reflected from an object 
-under a standard illuminant.
+As with LRV, these descriptors would be defined by the light reflected from an object's
+surface   under a standard illuminant.
 A further advance would be to develop methods for learning receptive fields that are
 optimal for multivariate estimation problems.
 With such methods one could directly estimate three-dimensional color descriptors.
@@ -853,16 +854,15 @@ is to gain insight about human vision.
 The approach we developed can be used to make predictions of how humans would
 perform in a psychophysical task that probes the visual representation of object LRV.
 For example, one could study discrimination thresholds for target LRV using the
-stimuli that were generated with the methods used
-here.
-We could ask how LRV discrimination thresholds are impacted by 
+stimuli that were generated with the methods used here.
+More specfically, we could ask how LRV discrimination thresholds are impacted by 
 spectral variation in the illuminant, the background objects, and in the target object itself.
 Comparing human thresholds with the precision of AMA-based estimates would then
 allow inferences about how well human observers make use of the information available
-in the images for performing the LRV discrimination task.
+in the images for performing LRV discrimination.
 We think experiments and analyses along these lines represent an important future direction.
-By coupling the experiments and analyses, we hope to advance our understanding
-of how we see objects in the real world in a principled and controlled manner.
+By coupling the experiments and analyses we hope to advance, in a principled and controlled manner,
+our understanding of how we see objects in the real world .
 
 % MOVE THIS TO DISCUSSION
 %This general approach has been adopted by other labs for the study of computational estimation of optical flow (Baker et al., 2011) and is becoming increasingly popular (Kovacs, Bell, Snavely, & Bala, 2017), as well as for the generation of stimuli for the study of human perception (e.g., Boyaci, Maloney, & Hersh, 2003; Todd & Mingolla, 1983; Arend & Reeves, 1986; Johnston, Cumming, & Parker, 1993). Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the Discussion.
