@@ -76,7 +76,6 @@ In this paper, we consider the computational problem of color constancy, that is
 
 Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
 Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
-%LET'S SEE IF WE CAN FIND SOME RECENT REVIEWS).
 A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.
 But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
 As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant; evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
@@ -114,7 +113,7 @@ specified surface reflectance function when the object is illuminated by a refer
 normalized by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
 LRVs range from 0 to 1.
-%% DHB: The ASTM citation is not formatting well.  It should give a year.
+%% DHB: The ASTM citation is not formatting well. It should give a year.
 
 \section*{Methods} \label{Methods}
 \subsection{Overview}
@@ -129,15 +128,13 @@ We have developed a rendering package
 (\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{https://github.com/BrainardLab/VirtualWorldColorConstancy}) 
 that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
 The package builds on our RenderToolblox4 package (\href{http://rendertoolbox.org}{http://rendertoolbox.org}) \cite{heasly2014rendertoolbox3},
-and harnesses the open-source computer graphics renderer Mitsuba (\href{https://www.mitsuba-renderer.org}{https://www.mitsuba-renderer.org})
-\cite{jakob2015mitsuba} to produce physically-accurate images from the scene models.
+and harnesses the open-source computer graphics renderer Mitsuba (\href{https://www.mitsuba-renderer.org}{https://www.mitsuba-renderer.org}, 
+\citeNP{jakob2015mitsuba}) to produce physically-accurate images from the scene models.
 Because each image is rendered from a known scene model, each image pixel can be labeled with 
 the surface reflectance of the corresponding scene object.
 By incorporating statistical models of the variation of object surface reflectance and daylight illumination, 
 the pipeline allows us to produce large labeled sets of images that capture key aspects of the task-relevant 
 statistical structure of natural scenes.
-%% DHB: Need to fix up citations in this paragraph. The URLs for RTB and Mitsuba should be inside the same paraneheses as the citations that
-% follow.
 
 % Figure 2
 \begin{figure}[t]
@@ -328,6 +325,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
 \label{fig:illuminant}
 \end{figure}
 %% DHB: The chromaticities in c and renderings in d are for the spectra in b, right?  I wrote the caption to say so, just checking.
+%% VS: Yes
 
 To generate illumination spectra, we developed a statistical model of the Granda daylight measurements (\href{http://colorimaginglab.ugr.es/pages/Data}{http://colorimaginglab.ugr.es/pages/Data}) \cite{hernandez2001color} and sampled randomly from the model (see appendix).
 The overall intensity of the measurements spans approximately three orders of magnitude.
@@ -343,8 +341,9 @@ Chromaticities and rendered color renditions of these draws are shown in Figures
 
 Because our multivariate Gaussian model is based on normalized spectra, it does not embody the large variation in overall intensity of natural daylights.
 To obtain illuminant spectra with intensity variation similar to the Granada dataset, we scaled each randomly generated relative spectrum.
-The scale factors were sampled uniformly from range 0.15 and 150.
+The scale factors were sampled randomly on a log-uniform scale in the range [0.15, 150].
 %% DHB: Check that these values are right.  Linear spacing or log spacing?
+%% VS: Yes, log spacing, I have updated the text.
 
 \subsubsection{Surface reflectance spectra}
 % Figure 7 Surface Reflectance Data and Model
@@ -379,6 +378,7 @@ The scale factors were sampled uniformly from range 0.15 and 150.
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
 %% DHB: The chromaticities in c and renderings in d are for the spectra in b, right?  I wrote the caption to say so, just checking.
+%% VS: Yes
 
 %Figure 8 Target Surface Reflectance Samples
 \begin{figure}
@@ -401,6 +401,7 @@ For generating the target object reflectance at a particular luminance, the valu
 scaled such that the LRV had the desired value (see appendix).
 Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spectra under CIE illuminant D65, for the evenly spaced LRV values we studied.
 %% DHB: Note that this procedure is different than conditioning the statistical model on the target LRV.  We could switch to the latter if we wished.
+%% VS: I don't think it matters if we care about keeping only one color co-ordinate fixed.
 
 % Figure 8: Methods
 \begin{figure}
@@ -629,35 +630,34 @@ contribution.
 \begin{figure}
 \centering
     \begin{subfigure}[b]{0.22\textwidth}   
-        \caption{LRV estimates (excitations)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_a.pdf}
+        \caption{\centering{LRV estimates} \newline\centering{(Excitations)}}
+        \includegraphics[width=\textwidth, trim={0 0 0 1.5cm},clip]{../FiguresDraft4/Figure11/Figure11_a.pdf}
         \label{fig:case2IsomerizationEstimates}
     \end{subfigure}
         \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{RF responses (excitations)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_b.pdf}
+        \caption{\centering{RF responses} \newline\centering{(Excitations)}}
+        \includegraphics[width=\textwidth, trim={0 0 0 1.5cm},clip]{../FiguresDraft4/Figure11/Figure11_b.pdf}
         \label{fig:case2RFResponseIsomer}
     \end{subfigure}
             \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{LRV estimates (Normalized contrast)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_c.pdf}
+        \caption{\centering{LRV estimates}  \newline \centering{(Normalized contrast)}}
+        \includegraphics[width=\textwidth, trim={0 0 0 1.5cm},clip]{../FiguresDraft4/Figure11/Figure11_c.pdf}
         \label{fig:case2ContrastEstimates}
     \end{subfigure}
             \begin{subfigure}[b]{0.22 \textwidth}
-        \caption{RF responses (Normalized contrast)}
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure11/Figure11_d.pdf}
+        \caption{\centering{RF responses}  \newline \centering{(Normalized contrast)}}
+        \includegraphics[width=\textwidth, trim={0 0 0 1.5cm},clip]{../FiguresDraft4/Figure11/Figure11_d.pdf}
         \label{fig:case2RFResponseContrast}
     \end{subfigure}
     \caption{{\bf Condition 2 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the cone excitations. The relative RMSE is high (41.4\% for linear regression and 31.3\% for AMA based estimation). (b) Cone isomerizations projected on AMA receptive fields calculated using cone excitations. (c) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the contrast normalized cone excitations. The relative RMSE of estimation is 9.3\% for linear regression and 1.1\% for AMA based estimator. (d) The contrast normalized cone excitations projected along the first two AMA receptive fields. The receptive fields were learned using AMA and the contrast normalized cone excitations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better when the input is contrast normalized cone excitations rather than the cone excitations themselves.}
 \label{fig:Condition2}
 \end{figure}
-%% DHB: The labels above each panel wrap in unfortunate ways. Fix.
 
 \subsection{Condition 2}
 
 Condition 2 introduces variation in the spectral power distribution of the light sources.
 This variation makes the task more difficult, because it causes more variation in cone excitations due to factors other than the target object LRV.
-Figure~\ref{fig:Condition2}a and b show the results when we learned and evaluated the performance of AMA on the cone excitations.
+Figure~\ref{fig:Condition2}(a,b) show the results when we learned and evaluated the performance of AMA on the cone excitations.
 Performance is poor.
 Indeed, on average the estimates deviate considerably from the true LRV, as seen by the fact that the mean estimate
 (red line) does not lie along the positive diagonal and by the fact that there is large estimation variability for each
@@ -669,7 +669,7 @@ Recall that there are two qualitatively distinct aspects to the variation in lig
 One is a variation in relative spectral power distribution and the
 other is a variation in overall intensity.
 To separate the effect of these two aspects, we trained and evaluated AMA on the contrast normalized cone excitations.
-Figure~\ref{fig:Condition2}(c, d) shows that performance improves greatly, and AMA performance is essentially perfect.
+Figure~\ref{fig:Condition2}(c,d) shows that performance improves greatly, and AMA performance is essentially perfect.
 This observation is consistent with a large literature on computational color constancy that shows that when only illumination spectra are varied,
 contrast-based representations provide an effective vehicle for achieving color constancy (REFS).
 That same literature, however, shows that
@@ -699,6 +699,7 @@ contrast-based representations are less effective at supporting constancy when t
 \label{fig:Condition3}
 \end{figure}
 %% Panel b shows training set projections, right?
+%% VS: Yes
 
 \subsection{Condition 3}
 
@@ -725,7 +726,6 @@ Figure~\ref{fig:case3RFs} shows the first two receptive fields learned for Condi
 
 %% DHB; We were going to vary the number of secondary reflections modeled in the rendering for one of the conditions, to
 % separate the two possible sources of influence of the background surfaces.
-
 
 \section{Discussion} \label{Discussion}
 
@@ -819,7 +819,6 @@ the natural statistics of the scene components that are varied.
 Under the assumption that combination of different scene factors (e.g. surface reflectances
 and illuminations) is independent, the virtual image approach modularizes the study
 of variation in natural scenes.
-%Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are some smaller databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}; \citeauthor{davidPennHyperspectral}), but these are not large enough to drive supervised learning.
 
 \subsection{Future Directions}
 In the work presented here, we incorporated spectral variation into our statistical model
@@ -863,11 +862,6 @@ in the images for performing LRV discrimination.
 We think experiments and analyses along these lines represent an important future direction.
 By coupling the experiments and analyses we hope to advance, in a principled and controlled manner,
 our understanding of how we see objects in the real world .
-
-% MOVE THIS TO DISCUSSION
-%This general approach has been adopted by other labs for the study of computational estimation of optical flow (Baker et al., 2011) and is becoming increasingly popular (Kovacs, Bell, Snavely, & Bala, 2017), as well as for the generation of stimuli for the study of human perception (e.g., Boyaci, Maloney, & Hersh, 2003; Todd & Mingolla, 1983; Arend & Reeves, 1986; Johnston, Cumming, & Parker, 1993). Of course, success within the domain of graphics images does not guarantee smooth generalization to real natural images, a point we return to in the Discussion.
-% \cite{baker2011database}  \cite{kovacs17shading} \citeNP{boyaci2003effect, todd1983perception, arend1986Simultaneous, johnston1993integration}
-% Autonmous vehicle work - ask BAW 
 
 \bibliography{references}
 \bibliographystyle{jovcite}
