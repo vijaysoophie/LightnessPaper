@@ -107,13 +107,12 @@ In this paper, we use high-quality computer graphics to generate large data sets
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. More specifically, we use this approach to tackle luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
 
 We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of a target object's surface reflectance function.
-The LRV is a measure of the overall amount of light reflected by a surface (\citeauthor{astm1121477}).
+The LRV is a measure of the overall amount of light reflected by a surface \cite{astm1121477}.
 More precisely, the LRV is the luminance of the light that would be reflected to the eye from an object with the 
 specified surface reflectance function when the object is illuminated by a reference illuminant,
 normalized by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
 LRVs range from 0 to 1.
-%% DHB: The ASTM citation is not formatting well. It should give a year.
 
 \section*{Methods} \label{Methods}
 \subsection{Overview}
@@ -156,7 +155,7 @@ statistical structure of natural scenes.
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure3/Figure3_c.png}
         \label{fig:baseSceneTableChairs}
     \end{subfigure}
-    \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional objects inserted.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
+    \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional inserted objects.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
 \end{figure}
 %% DHB: We need to think about how to scale the images for display.  The Library scene is too dark, at least when printed.
 
@@ -186,7 +185,7 @@ statistical structure of natural scenes.
         \includegraphics[width=\textwidth]{../FiguresDraft4/Figure4/Figure4_f.png}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
-\caption{{\b fLibrary base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. The panels show different objects inserted in the library base scene. The objects were inserted at a user defined location in the image. Then the rendering viewpoint was set so that the object is at the center of the rendered image. In these panels, the full rendered image has been cropped so that the inserted object is more visually salient.}\label{fig:libraryWithTarget}
+\caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. The panels show different objects inserted in the library base scene. The objects were inserted at a user defined location in the image. Then the rendering viewpoint was set so that the object is at the center of the rendered image. In these panels, the full rendered image has been cropped so that the inserted object is more visually salient.}\label{fig:libraryWithTarget}
 \end{figure}
 %% DHB: Can we render these examples at higher resolution, so that they look nicer?  The blurriness is distracting in the images.
 

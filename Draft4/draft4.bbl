@@ -31,21 +31,21 @@ ASTM%
 }{%
 ASTM%
 }{%
-{\protect\APACyear{{\protect\bibnodate{}}}}%
+{\protect\APACyear{2017}}%
 }]{%
 astm1121477}%
 \APACinsertmetastar{%
 astm1121477}%
-ASTM, E.%
+ASTM.%
 %
 \unskip\
 \newblock
-\APACrefYearMonthDay{\bibnodate{}}{}{}.
+\APACrefYearMonthDay{2017}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{1477 Standard Test Method for Luminous Reflectance Factor
-  of Acoustical Materials by Use of Integrating-Sphere Reflectometers}{1477
-  standard test method for luminous reflectance factor of acoustical materials
-  by use of integrating-sphere reflectometers}.\BBCQ{}
+\BBOQ{}\APACrefatitle{Standard Test Method for Luminous Reflectance Factor of
+  Acoustical Materials by Use of Integrating-Sphere Reflectometers}{Standard
+  test method for luminous reflectance factor of acoustical materials by use of
+  integrating-sphere reflectometers}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Renovations of Center for Historic
   Preservation}{112}{}{}.
@@ -110,29 +110,6 @@ Brainard%
 }{%
 Brainard%
 }{%
-{\protect\APACyear{{\protect\bibnodate{}}}}%
-}]{%
-davidPennHyperspectral}%
-\APACinsertmetastar{%
-davidPennHyperspectral}%
-Brainard, D\BPBI H.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{\bibnodate{}}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Hyperspectral Image Data}{Hyperspectral image
-  data}.\BBCQ{}
-\newblock
- \begin{APACrefURL} \url{http://color.psych.upenn.edu//hyperspectral/}
-  \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Brainard%
-}{%
-Brainard%
-}{%
 {\protect\APACyear{2015}}%
 }]{%
 brainard2015color}%
@@ -178,34 +155,6 @@ Brainard, D\BPBI H.%
  \begin{APACrefURL}
   \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4A73DE-BFFB-35F6-AA30000149C16461_1807/josaa-14-7-1393.pdf?da=1&id=1807&seq=0&mobile=no}
   \end{APACrefURL}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Brainard%
-\ \protect\BOthers{.}}{%
-Brainard%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2015}}%
-}]{%
-brainard2015isetbio}%
-\APACinsertmetastar{%
-brainard2015isetbio}%
-Brainard, D\BPBI H.%
-, Jiang, H.%
-, Cottaris, N\BPBI P.%
-, Rieke, F.%
-, Chichilnisky, E.%
-, Farrell, J\BPBI E.%
-\BCBL{}\ \BOthersPeriod{.}%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2015}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Isetbio: Computational tools for modeling early human
-  vision}{Isetbio: Computational tools for modeling early human vision}.\BBCQ{}
-\newblock
-\BIn{} \APACrefbtitle{Imaging Systems and Applications}{Imaging systems and
-  applications}\ (\BPGS\ IT4A--4).
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
