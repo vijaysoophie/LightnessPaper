@@ -332,7 +332,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
 %% DHB: The chromaticities in c and renderings in d are for the spectra in b, right?  I wrote the caption to say so, just checking.
 %% VS: Yes
 
-To generate illumination spectra, we developed a statistical model of the Granda daylight measurements (\href{http://colorimaginglab.ugr.es/pages/Data}{http://colorimaginglab.ugr.es/pages/Data}) \cite{hernandez2001color} and sampled randomly from the model (see appendix).
+To generate illumination spectra, we developed a statistical model of the Granda daylight measurements (\citeNP{hernandez2001color}, \href{http://colorimaginglab.ugr.es/pages/Data}{http://colorimaginglab.ugr.es/pages/Data}) and sampled randomly from the model (see appendix).
 The overall intensity of the measurements spans approximately three orders of magnitude.
 Figure~\ref{fig:granadaData} plots the measurements in normalized form to make apparent the variation in the relative spectra.
 
@@ -586,10 +586,9 @@ of the image data.
         \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft4/Figure10/Figure10_b.pdf}
         \label{fig:case1RFResponse}
     \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.28 \textwidth}
+    \begin{subfigure}[b]{0.4 \textwidth}
 	\caption{AMA receptive fields}
-	\includegraphics[width=1.07\textwidth, trim={0 -0.6cm 0 -0.3cm}]{../FiguresDraft4/Figure10/Figure10_c.pdf}
+	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft4/Figure10/Figure10_c.pdf}
 	\label{fig:case1RFs}
     \end{subfigure}   
     \caption{{\bf Condition 1 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.8\% for linear regression and 1.1\%  for AMA based estimation. (b) Cone excitations projected along the first two AMA receptive fields for training images of Condition 1. Each cloud represents the image patches corresponding to one LRV. The clouds are approximated by a multivariate Gaussians whose means and variances are approximated by the ellipses shown in the figure. (c) The first two AMA receptive fields learnt using the cone excitations of stimuli in the training set.}
@@ -694,10 +693,9 @@ contrast-based representations are less effective at supporting constancy when t
         \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft4/Figure12/Figure12_b.pdf}
         \label{fig:case3RFResponse}
     \end{subfigure}
-    ~
-    \begin{subfigure}[b]{0.28 \textwidth}
+    \begin{subfigure}[b]{0.4 \textwidth}
 	\caption{AMA receptive fields}
-	\includegraphics[width=1.07\textwidth, trim={0 -0.6cm 0 -0.5cm}]{../FiguresDraft4/Figure12/Figure12_c.pdf}
+	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft4/Figure12/Figure12_c.pdf}
 	\label{fig:case3RFs}
     \end{subfigure}
     \caption{{\bf Condition 3 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using linear regression and AMA estimators, based on the contrast normalized cone excitations. The relative RMSE is 22.9\%  for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected along the first two AMA receptive fields. (c) First two AMA receptive fields learnt using the contrast normalized cone excitations.}
