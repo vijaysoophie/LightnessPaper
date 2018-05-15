@@ -557,7 +557,7 @@ To proceed, first we use the AMA optimal receptive fields and the training datas
 Then, we approximate these with multivariate Gaussian distributions.
 To estimate the LRV of the target object in a test image, we use Bayes' rule together with the Gaussian conditional distributions and a uniform prior to obtain the posterior distribution over LRV values given the filter responses.
 The optimal estimate is the LRV value that minimizes the expected value of the cost function, where the expectation is taken over the posterior.
-Here we use a squared error cost function, so that the optimal estimator is the posterior mean.
+Here we use a Kullback-Leibler divergence cost function, so that the optimal estimator is the maximum a posteriori estimate.
 %% DHB: Uniform prior, right? And posterior mean?  If not, correct prose above.
 
 \subsubsection*{Baseline methods}
