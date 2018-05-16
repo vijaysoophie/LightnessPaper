@@ -380,7 +380,7 @@ Chakrabarti%
 Chakrabarti%
 \ \BBA{} Zickler%
 }{%
-{\protect\APACyear{{\protect\bibnodate{}}}}%
+{\protect\APACyear{2011}}%
 }]{%
 ChakrabartiHyperspectral}%
 \APACinsertmetastar{%
@@ -390,7 +390,7 @@ Chakrabarti, A.%
 %
 \unskip\
 \newblock
-\APACrefYearMonthDay{\bibnodate{}}{}{}.
+\APACrefYearMonthDay{2011}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Statistics of real-world hyperspectral images}{Statistics
   of real-world hyperspectral images}\BBCQ{}\ [Conference Proceedings].
