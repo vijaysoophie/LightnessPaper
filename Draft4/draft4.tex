@@ -74,12 +74,6 @@ The ability of a visual system to compute a representation of object color that 
 Although human color constancy is by no means perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 In this paper, we consider the computational problem of color constancy, that is, how in principle could a visual system process the light reflected to the eye to produce percepts well-correlated with object surface reflectance.
 
-Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
-Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
-A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.
-But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
-As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant; evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
-
 % Figure 1: Introduction
 \begin{figure}
 \centering
@@ -99,6 +93,12 @@ As a consequence, the performance of color constancy algorithms will be affected
 Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.}
  \end{figure}
 
+Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
+Subsequent computational work considered more complex geometries and incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{funt1988color, D'ZmuraConstancy3, barron2012color, D'ZmuraIversonSinger,BrainardFreeman}.
+A key insight from this computational work is that stable color descriptors of a target object cannot be obtained from the light reflected from the target object alone.
+But, it is possible to obtain such descriptors by analyzing jointly the light reflected from all of the objects in the scene.
+As a consequence, the performance of color constancy algorithms will be affected by variation in the surface reflectance of all of the objects in the scene \cite{BrainardWandellRetinex}, not just by variation in the illuminant; evaluation of constancy algorithms must include assessment of their performance with respect to both variation in the illumination and the surface reflectance of all of the scene objects \cite{BrainardWandellRetinex,BrainardFreeman}. 
+
 An alternative approach to computational color constancy, which has been less-well explored, is to use supervised machine learning to develop mappings between input images and stable color descriptors \cite{barron2015convolutional}. The use of supervised learning to understand perceptual capabilities for natural stimuli has enjoyed success in domains outside of color vision. For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for speed, focus error, and disparity estimation that provide excellent models of human performance \cite{burge2011optimal, burge2014optimal, burge2015optimal}. In this paper, we apply AMA to a special case of computational color constancy. 
 
 Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are databases of calibrated color images, these do not provide ground truth information about surface reflectance and illuminantion at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}), but these are not large enough to drive supervised learning.
@@ -117,23 +117,6 @@ LRVs range from 0 to 1.
 \section*{Methods} \label{Methods}
 \subsection{Overview}
 There are four key parts to our methods.  First we generate a labeled set of training images.  Second we use a model of the early visual system to compute the responses of the cone photoreceptor mosaic to the labeled images. Third we apply AMA to the cone responses, as well as to a contrast normalized version of the cone responses, to learn task-optimal receptive fields (RFs). Fourth we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
-
-\subsection{Labeled training data} \label{method:VirtualWorld}
-\subsubsection{Virtual naturalistic scenes}
-The light that reflects from objects to the eyes depends on many factors.
-These include the surface reflectance, texture, material and geometry of the objects, 
-the spectral power distribution function of the illuminants, and the position of the observer.
-We have developed a rendering package 
-(\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{https://github.com/BrainardLab/VirtualWorldColorConstancy}) 
-that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
-The package builds on our RenderToolblox4 package (\href{http://rendertoolbox.org}{http://rendertoolbox.org}) \cite{heasly2014rendertoolbox3},
-and harnesses the open-source computer graphics renderer Mitsuba (\href{https://www.mitsuba-renderer.org}{https://www.mitsuba-renderer.org}, 
-\citeNP{jakob2015mitsuba}) to produce physically-accurate images from the scene models.
-Because each image is rendered from a known scene model, each image pixel can be labeled with 
-the surface reflectance of the corresponding scene object.
-By incorporating statistical models of the variation of object surface reflectance and daylight illumination, 
-the pipeline allows us to produce large labeled sets of images that capture key aspects of the task-relevant 
-statistical structure of natural scenes.
 
 % Figure 2
 \begin{figure}[t]
@@ -158,6 +141,23 @@ statistical structure of natural scenes.
     \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional inserted objects.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
 \end{figure}
 %% DHB: We need to think about how to scale the images for display.  The Library scene is too dark, at least when printed.
+
+\subsection{Labeled training data} \label{method:VirtualWorld}
+\subsubsection{Virtual naturalistic scenes}
+The light that reflects from objects to the eyes depends on many factors.
+These include the surface reflectance, texture, material and geometry of the objects, 
+the spectral power distribution function of the illuminants, and the position of the observer.
+We have developed a rendering package 
+(\href{https://github.com/BrainardLab/VirtualWorldColorConstancy}{https://github.com/BrainardLab/VirtualWorldColorConstancy}) 
+that allows us to construct models of naturalistic scenes, with key scene factors under programmatic control.
+The package builds on our RenderToolblox4 package (\href{http://rendertoolbox.org}{http://rendertoolbox.org}) \cite{heasly2014rendertoolbox3},
+and harnesses the open-source computer graphics renderer Mitsuba (\href{https://www.mitsuba-renderer.org}{https://www.mitsuba-renderer.org}, 
+\citeNP{jakob2015mitsuba}) to produce physically-accurate images from the scene models.
+Because each image is rendered from a known scene model, each image pixel can be labeled with 
+the surface reflectance of the corresponding scene object.
+By incorporating statistical models of the variation of object surface reflectance and daylight illumination, 
+the pipeline allows us to produce large labeled sets of images that capture key aspects of the task-relevant 
+statistical structure of natural scenes.
 
 % Figure 3
 \begin{figure}
@@ -254,7 +254,7 @@ statistical structure of natural scenes.
     \end{subfigure}
 	\begin{subfigure}[b]{0.33 \textwidth}
 	\caption{Condition 3}	
-        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_c.png}        
+        \includegraphics[width=\textwidth]{../FiguresDraft4/Figure2/Figure2_c.pdf}        
         \label{fig:allSpectraVarying}
     \end{subfigure}    
     \caption{{\bf Dataset Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2 and 3. The numbers on the left indicate the standard luminance level of the target object. 5 images are shown at each luminance level. We studied three types of spectral variations. (a) Condition 1: target object relative surface reflectance spectrum variable, light source spectra fixed, background object spectra fixed (same as Fig.~\ref{fig:introExampleFigure}).
