@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  15 MAY 2018 21:17
+=======
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  16 MAY 2018 08:31
+>>>>>>> Stashed changes
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -453,12 +457,12 @@ Overfull \hbox (37.6846pt too wide) in paragraph at lines 65--65
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 76.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 78.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 76.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
  [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
@@ -467,12 +471,17 @@ File: ../FiguresDraft4/Figure1/Figure1_a.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure1/Figure1_a.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure1/Figure1_a.png used on input l
+<<<<<<< Updated upstream
 ine 83.
+=======
+ine 94.
+>>>>>>> Stashed changes
 (pdftex.def)             Requested size: 216.23764pt x 162.17188pt.
 
 <../FiguresDraft4/Figure1/Figure1_b.pdf, id=106, 492.84125pt x 303.1325pt>
 File: ../FiguresDraft4/Figure1/Figure1_b.pdf Graphic file (type pdf)
 
+<<<<<<< Updated upstream
 <use ../FiguresDraft4/Figure1/Figure1_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure1/Figure1_b.pdf used on input l
 ine 88.
@@ -481,42 +490,82 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 93.
  [2 <../FiguresDraft4/Figure1/Figure1_a.png> <../FiguresDraft4/Figure1/Figure1_
 b.pdf>]
+=======
+<use ../FiguresDraft4/Figure1/Figure1_b.png>
+Package pdftex.def Info: ../FiguresDraft4/Figure1/Figure1_b.png used on input l
+ine 99.
+(pdftex.def)             Requested size: 297.33293pt x 171.3125pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 104.
+>>>>>>> Stashed changes
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 127.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
+<<<<<<< Updated upstream
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 118.
 
 <../FiguresDraft4/Figure3/Figure3_a.png, id=196, 321.2pt x 240.9pt>
+=======
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 127.
+ [2] [3 <../FiguresDraft4/Figure1/Figure1_a.png> <../FiguresDraft4/Figure1/Figu
+re1_b.png>]
+LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <10> not available
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 131.
+
+<../FiguresDraft4/Figure3/Figure3_a.png, id=204, 321.2pt x 240.9pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure3/Figure3_a.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure3/Figure3_a.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure3/Figure3_a.png used on input l
+<<<<<<< Updated upstream
 ine 126.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
 <../FiguresDraft4/Figure3/Figure3_b.png, id=197, 321.2pt x 240.9pt>
+=======
+ine 151.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<../FiguresDraft4/Figure3/Figure3_b.png, id=205, 321.2pt x 240.9pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure3/Figure3_b.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure3/Figure3_b.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure3/Figure3_b.png used on input l
+<<<<<<< Updated upstream
 ine 132.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 
 <../FiguresDraft4/Figure3/Figure3_c.png, id=198, 321.2pt x 240.9pt>
+=======
+ine 157.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<../FiguresDraft4/Figure3/Figure3_c.png, id=206, 321.2pt x 240.9pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure3/Figure3_c.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure3/Figure3_c.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure3/Figure3_c.png used on input l
+<<<<<<< Updated upstream
 ine 138.
 (pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <10> not available
 (Font)              Font shape `OT1/phv/b/sl' tried instead on input line 146.
  [3]
 <../FiguresDraft4/Figure4/Figure4_a.png, id=232, 230.8625pt x 230.8625pt>
+=======
+ine 163.
+(pdftex.def)             Requested size: 118.93317pt x 89.19775pt.
+
+<../FiguresDraft4/Figure4/Figure4_a.png, id=207, 82.3075pt x 82.3075pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure4/Figure4_a.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure4/Figure4_a.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure4/Figure4_a.png used on input l
+<<<<<<< Updated upstream
 ine 167.
 (pdftex.def)             Requested size: 75.68399pt x 75.68463pt.
 
@@ -529,10 +578,17 @@ ine 173.
 (pdftex.def)             Requested size: 75.68399pt x 75.68463pt.
 
 <../FiguresDraft4/Figure4/Figure4_c.png, id=234, 230.8625pt x 230.8625pt>
+=======
+ine 175.
+(pdftex.def)             Requested size: 75.68399pt x 75.68613pt.
+
+<../FiguresDraft4/Figure4/Figure4_c.png, id=208, 82.3075pt x 82.3075pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure4/Figure4_c.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure4/Figure4_c.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure4/Figure4_c.png used on input l
+<<<<<<< Updated upstream
 ine 179.
 (pdftex.def)             Requested size: 75.68399pt x 75.68463pt.
 
@@ -545,54 +601,108 @@ ine 185.
 (pdftex.def)             Requested size: 75.68399pt x 75.68463pt.
 
 <../FiguresDraft4/Figure4/Figure4_e.png, id=236, 230.8625pt x 230.8625pt>
+=======
+ine 181.
+(pdftex.def)             Requested size: 75.68399pt x 75.68613pt.
+
+<../FiguresDraft4/Figure4/Figure4_e.png, id=209, 82.3075pt x 82.3075pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure4/Figure4_e.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure4/Figure4_e.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure4/Figure4_e.png used on input l
+<<<<<<< Updated upstream
 ine 191.
 (pdftex.def)             Requested size: 75.68399pt x 75.68463pt.
 
 <../FiguresDraft4/Figure5/Figure5_d.png, id=237, 326.21875pt x 739.76375pt>
+=======
+ine 187.
+(pdftex.def)             Requested size: 75.68399pt x 75.68613pt.
+
+<../FiguresDraft4/Figure4/Figure4_f.png, id=210, 82.3075pt x 82.3075pt>
+File: ../FiguresDraft4/Figure4/Figure4_f.png Graphic file (type png)
+
+<use ../FiguresDraft4/Figure4/Figure4_f.png>
+Package pdftex.def Info: ../FiguresDraft4/Figure4/Figure4_f.png used on input l
+ine 193.
+(pdftex.def)             Requested size: 75.68399pt x 75.68613pt.
+
+<../FiguresDraft4/Figure5/Figure5_d.png, id=211, 326.21875pt x 739.76375pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure5/Figure5_d.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure5/Figure5_d.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure5/Figure5_d.png used on input l
+<<<<<<< Updated upstream
 ine 203.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../FiguresDraft4/Figure5/Figure5_e.png, id=238, 326.21875pt x 739.76375pt>
+=======
+ine 205.
+(pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
+
+<../FiguresDraft4/Figure5/Figure5_e.png, id=212, 326.21875pt x 739.76375pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure5/Figure5_e.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure5/Figure5_e.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure5/Figure5_e.png used on input l
+<<<<<<< Updated upstream
 ine 210.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../FiguresDraft4/Figure5/Figure5_a.png, id=239, 326.21875pt x 739.76375pt>
+=======
+ine 212.
+(pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
+
+<../FiguresDraft4/Figure5/Figure5_a.png, id=213, 326.21875pt x 739.76375pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure5/Figure5_a.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure5/Figure5_a.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure5/Figure5_a.png used on input l
+<<<<<<< Updated upstream
 ine 218.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../FiguresDraft4/Figure5/Figure5_c.png, id=240, 326.21875pt x 739.76375pt>
+=======
+ine 220.
+(pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
+
+<../FiguresDraft4/Figure5/Figure5_c.png, id=214, 326.21875pt x 739.76375pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure5/Figure5_c.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure5/Figure5_c.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure5/Figure5_c.png used on input l
+<<<<<<< Updated upstream
 ine 225.
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 
 <../FiguresDraft4/Figure5/Figure5_b.png, id=241, 326.21875pt x 739.76375pt>
+=======
+ine 227.
+(pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
+
+<../FiguresDraft4/Figure5/Figure5_b.png, id=215, 326.21875pt x 739.76375pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure5/Figure5_b.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure5/Figure5_b.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure5/Figure5_b.png used on input l
+<<<<<<< Updated upstream
 ine 232.
+=======
+ine 234.
+>>>>>>> Stashed changes
 (pdftex.def)             Requested size: 97.30446pt x 220.6553pt.
 File: ../FiguresDraft4/Figure1/Figure1_b.pdf Graphic file (type pdf)
 
+<<<<<<< Updated upstream
 <use ../FiguresDraft4/Figure1/Figure1_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure1/Figure1_b.pdf used on input l
 ine 247.
@@ -623,74 +733,169 @@ e5/Figure5_a.png> <../FiguresDraft4/Figure5/Figure5_c.png> <../FiguresDraft4/Fi
 gure5/Figure5_b.png>] [6 <../FiguresDraft4/Figure2/Figure2_b.pdf> <../FiguresDr
 aft4/Figure2/Figure2_c.pdf>]
 <../FiguresDraft4/Figure6/Figure6_a.pdf, id=320, 552.0625pt x 501.875pt>
+=======
+<use ../FiguresDraft4/Figure1/Figure1_b.png>
+Package pdftex.def Info: ../FiguresDraft4/Figure1/Figure1_b.png used on input l
+ine 249.
+(pdftex.def)             Requested size: 178.39977pt x 102.7893pt.
+
+<../FiguresDraft4/Figure2/Figure2_b.png, id=216, 1026.83624pt x 592.2125pt>
+File: ../FiguresDraft4/Figure2/Figure2_b.png Graphic file (type png)
+
+<use ../FiguresDraft4/Figure2/Figure2_b.png>
+Package pdftex.def Info: ../FiguresDraft4/Figure2/Figure2_b.png used on input l
+ine 254.
+(pdftex.def)             Requested size: 178.39977pt x 102.8887pt.
+
+<../FiguresDraft4/Figure2/Figure2_c.png, id=217, 1027.84pt x 592.2125pt>
+File: ../FiguresDraft4/Figure2/Figure2_c.png Graphic file (type png)
+
+<use ../FiguresDraft4/Figure2/Figure2_c.png>
+Package pdftex.def Info: ../FiguresDraft4/Figure2/Figure2_c.png used on input l
+ine 259.
+(pdftex.def)             Requested size: 178.39977pt x 102.7893pt.
+ [4 <../FiguresDraft4/Figure3/Figure3_a.png (PNG copy)> <../FiguresDraft4/Figur
+e3/Figure3_b.png (PNG copy)> <../FiguresDraft4/Figure3/Figure3_c.png (PNG copy)
+>] [5 <../FiguresDraft4/Figure4/Figure4_a.png> <../FiguresDraft4/Figure4/Figure
+4_c.png> <../FiguresDraft4/Figure4/Figure4_e.png> <../FiguresDraft4/Figure4/Fig
+ure4_f.png> <../FiguresDraft4/Figure5/Figure5_d.png> <../FiguresDraft4/Figure5/
+Figure5_e.png> <../FiguresDraft4/Figure5/Figure5_a.png> <../FiguresDraft4/Figur
+e5/Figure5_c.png> <../FiguresDraft4/Figure5/Figure5_b.png>]
+<../FiguresDraft4/Figure6/Figure6_a.pdf, id=252, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure6/Figure6_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure6/Figure6_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure6/Figure6_a.pdf used on input l
+<<<<<<< Updated upstream
 ine 308.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure6/Figure6_b.pdf, id=321, 552.0625pt x 501.875pt>
+=======
+ine 315.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure6/Figure6_b.pdf, id=253, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure6/Figure6_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure6/Figure6_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure6/Figure6_b.pdf used on input l
+<<<<<<< Updated upstream
 ine 314.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure6/Figure6_c.pdf, id=322, 552.0625pt x 501.875pt>
+=======
+ine 321.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure6/Figure6_c.pdf, id=254, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure6/Figure6_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure6/Figure6_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure6/Figure6_c.pdf used on input l
+<<<<<<< Updated upstream
 ine 320.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure6/Figure6_d.pdf, id=323, 552.0625pt x 501.875pt>
+=======
+ine 327.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure6/Figure6_d.pdf, id=255, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure6/Figure6_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure6/Figure6_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure6/Figure6_d.pdf used on input l
+<<<<<<< Updated upstream
 ine 326.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure7/Figure7_a.pdf, id=333, 552.0625pt x 501.875pt>
+=======
+ine 333.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+Overfull \hbox (80.40756pt too wide) in paragraph at lines 342--345
+[]\OT1/ptm/m/n/10 To gen-er-ate il-lu-mi-na-tion spec-tra, we first de-vel-oped
+ a sta-tis-ti-cal model of the Granada day-light mea-sure-ments ([][]http://col
+orimaginglab.ugr.es/pages/Data[][])
+ []
+
+[6 <../FiguresDraft4/Figure2/Figure2_b.png> <../FiguresDraft4/Figure2/Figure2_c
+.png>]
+<../FiguresDraft4/Figure7/Figure7_a.pdf, id=277, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure7/Figure7_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure7/Figure7_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure7/Figure7_a.pdf used on input l
+<<<<<<< Updated upstream
 ine 360.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure7/Figure7_b.pdf, id=334, 552.0625pt x 501.875pt>
+=======
+ine 368.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure7/Figure7_b.pdf, id=278, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure7/Figure7_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure7/Figure7_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure7/Figure7_b.pdf used on input l
+<<<<<<< Updated upstream
 ine 366.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure7/Figure7_c.pdf, id=335, 552.0625pt x 501.875pt>
+=======
+ine 374.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure7/Figure7_c.pdf, id=279, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure7/Figure7_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure7/Figure7_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure7/Figure7_c.pdf used on input l
+<<<<<<< Updated upstream
 ine 372.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure7/Figure7_d.pdf, id=336, 552.0625pt x 501.875pt>
+=======
+ine 380.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure7/Figure7_d.pdf, id=280, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure7/Figure7_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure7/Figure7_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure7/Figure7_d.pdf used on input l
+<<<<<<< Updated upstream
 ine 379.
 (pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
 
 <../FiguresDraft4/Figure8/Figure8.pdf, id=337, 552.0625pt x 501.875pt>
+=======
+ine 387.
+(pdftex.def)             Requested size: 129.74753pt x 117.94829pt.
+
+<../FiguresDraft4/Figure8/Figure8.pdf, id=281, 552.0625pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure8/Figure8.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure8/Figure8.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure8/Figure8.pdf used on input lin
+<<<<<<< Updated upstream
 e 391.
 (pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
  [7 <../FiguresDraft4/Figure6/Figure6_a.pdf> <../FiguresDraft4/Figure6/Figure6_
@@ -699,26 +904,51 @@ e6_d.pdf>] [8 <../FiguresDraft4/Figure7/Figure7_a.pdf> <../FiguresDraft4/Figure
 7/Figure7_b.pdf> <../FiguresDraft4/Figure7/Figure7_c.pdf> <../FiguresDraft4/Fig
 ure7/Figure7_d.pdf> <../FiguresDraft4/Figure8/Figure8.pdf>]
 <../FiguresDraft4/Figure9/Figure9_a.png, id=1331, 1027.84pt x 770.88pt>
+=======
+e 399.
+(pdftex.def)             Requested size: 162.18234pt x 147.4392pt.
+ [7 <../FiguresDraft4/Figure6/Figure6_a.pdf> <../FiguresDraft4/Figure6/Figure6_
+b.pdf> <../FiguresDraft4/Figure6/Figure6_c.pdf> <../FiguresDraft4/Figure6/Figur
+e6_d.pdf> <../FiguresDraft4/Figure7/Figure7_a.pdf> <../FiguresDraft4/Figure7/Fi
+gure7_b.pdf> <../FiguresDraft4/Figure7/Figure7_c.pdf> <../FiguresDraft4/Figure7
+/Figure7_d.pdf>]
+<../FiguresDraft4/Figure9/Figure9_a.png, id=1257, 1027.84pt x 770.88pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure9/Figure9_a.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure9/Figure9_a.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure9/Figure9_a.png used on input l
+<<<<<<< Updated upstream
 ine 417.
 (pdftex.def)             Requested size: 135.15059pt x 101.35889pt.
 
 <../FiguresDraft4/Figure9/Figure9_b.png, id=1332, 770.88pt x 770.88pt>
+=======
+ine 428.
+(pdftex.def)             Requested size: 135.15059pt x 101.35889pt.
+
+<../FiguresDraft4/Figure9/Figure9_b.png, id=1258, 770.88pt x 770.88pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure9/Figure9_b.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure9/Figure9_b.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure9/Figure9_b.png used on input l
+<<<<<<< Updated upstream
 ine 425.
 (pdftex.def)             Requested size: 102.71576pt x 102.7116pt.
 
 <../FiguresDraft4/Figure9/Figure9_c.png, id=1333, 766.865pt x 770.88pt>
+=======
+ine 436.
+(pdftex.def)             Requested size: 102.71576pt x 102.7116pt.
+
+<../FiguresDraft4/Figure9/Figure9_c.png, id=1259, 766.865pt x 770.88pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure9/Figure9_c.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure9/Figure9_c.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure9/Figure9_c.png used on input l
+<<<<<<< Updated upstream
 ine 433.
 (pdftex.def)             Requested size: 102.71576pt x 103.25269pt.
 
@@ -727,113 +957,227 @@ Underfull \hbox (badness 4967) in paragraph at lines 438--438
  []
 
 <../FiguresDraft4/Figure9/Figure9_d.png, id=1334, 798.985pt x 764.8575pt>
+=======
+ine 444.
+(pdftex.def)             Requested size: 102.71576pt x 103.25269pt.
+
+Underfull \hbox (badness 4967) in paragraph at lines 449--449
+[]\OT1/ptm/m/n/9 (d) |LMS nor-mal-ized cone
+ []
+
+<../FiguresDraft4/Figure9/Figure9_d.png, id=1260, 798.985pt x 764.8575pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure9/Figure9_d.png Graphic file (type png)
 
 <use ../FiguresDraft4/Figure9/Figure9_d.png>
 Package pdftex.def Info: ../FiguresDraft4/Figure9/Figure9_d.png used on input l
+<<<<<<< Updated upstream
 ine 439.
 (pdftex.def)             Requested size: 108.11882pt x 103.49638pt.
  [9 <../FiguresDraft4/Figure9/Figure9_a.png> <../FiguresDraft4/Figure9/Figure9_
 b.png> <../FiguresDraft4/Figure9/Figure9_c.png> <../FiguresDraft4/Figure9/Figur
 e9_d.png>] [10]
 <../FiguresDraft4/Figure10/Figure10_a.pdf, id=1387, 501.875pt x 501.875pt>
+=======
+ine 450.
+(pdftex.def)             Requested size: 108.11882pt x 103.49638pt.
+ [8 <../FiguresDraft4/Figure8/Figure8.pdf>] [9 <../FiguresDraft4/Figure9/Figure
+9_a.png> <../FiguresDraft4/Figure9/Figure9_b.png> <../FiguresDraft4/Figure9/Fig
+ure9_c.png> <../FiguresDraft4/Figure9/Figure9_d.png>]
+<../FiguresDraft4/Figure10/Figure10_a.pdf, id=1315, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure10/Figure10_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_a.pdf used on input
+<<<<<<< Updated upstream
  line 581.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure10/Figure10_b.pdf, id=1389, 501.875pt x 501.875pt>
+=======
+ line 593.
+(pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
+
+<../FiguresDraft4/Figure10/Figure10_b.pdf, id=1317, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure10/Figure10_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_b.pdf used on input
+<<<<<<< Updated upstream
  line 586.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 
 <../FiguresDraft4/Figure10/Figure10_c.pdf, id=1391, 501.875pt x 301.125pt>
+=======
+ line 598.
+(pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
+
+<../FiguresDraft4/Figure10/Figure10_c.pdf, id=1319, 387.7619pt x 276.80263pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure10/Figure10_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure10/Figure10_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure10/Figure10_c.pdf used on input
+<<<<<<< Updated upstream
  line 591.
 (pdftex.def)             Requested size: 216.23764pt x 127.51184pt.
  [11 <../FiguresDraft4/Figure10/Figure10_a.pdf> <../FiguresDraft4/Figure10/Figu
 re10_b.pdf> <../FiguresDraft4/Figure10/Figure10_c.pdf>]
 <../FiguresDraft4/Figure11/Figure11_a.pdf, id=1470, 501.875pt x 501.875pt>
+=======
+ line 604.
+(pdftex.def)             Requested size: 161.96486pt x 126.31468pt.
+
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 604--606
+[][]
+ []
+
+[10]
+<../FiguresDraft4/Figure11/Figure11_a.pdf, id=1337, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure11/Figure11_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_a.pdf used on input
+<<<<<<< Updated upstream
  line 638.
 (pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
 
 <../FiguresDraft4/Figure11/Figure11_b.pdf, id=1472, 501.875pt x 501.875pt>
+=======
+ line 651.
+(pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
+
+<../FiguresDraft4/Figure11/Figure11_b.pdf, id=1339, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure11/Figure11_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_b.pdf used on input
+<<<<<<< Updated upstream
  line 643.
 (pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
 
 <../FiguresDraft4/Figure11/Figure11_c.pdf, id=1474, 501.875pt x 501.875pt>
+=======
+ line 656.
+(pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
+
+<../FiguresDraft4/Figure11/Figure11_c.pdf, id=1341, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure11/Figure11_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_c.pdf used on input
+<<<<<<< Updated upstream
  line 648.
 (pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
 
 <../FiguresDraft4/Figure11/Figure11_d.pdf, id=1476, 501.875pt x 501.875pt>
+=======
+ line 661.
+(pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
+
+<../FiguresDraft4/Figure11/Figure11_d.pdf, id=1343, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure11/Figure11_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure11/Figure11_d.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure11/Figure11_d.pdf used on input
+<<<<<<< Updated upstream
  line 653.
 (pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
  [12 <../FiguresDraft4/Figure11/Figure11_a.pdf> <../FiguresDraft4/Figure11/Figu
 re11_b.pdf> <../FiguresDraft4/Figure11/Figure11_c.pdf> <../FiguresDraft4/Figure
 11/Figure11_d.pdf>]
 <../FiguresDraft4/Figure12/Figure12_a.pdf, id=1575, 501.875pt x 501.875pt>
+=======
+ line 666.
+(pdftex.def)             Requested size: 118.93317pt x 108.81491pt.
+
+<../FiguresDraft4/Figure12/Figure12_a.pdf, id=1347, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_a.pdf used on input
+<<<<<<< Updated upstream
  line 688.
 (pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
 
 <../FiguresDraft4/Figure12/Figure12_b.pdf, id=1577, 501.875pt x 501.875pt>
+=======
+ line 701.
+(pdftex.def)             Requested size: 135.15059pt x 125.18759pt.
+
+<../FiguresDraft4/Figure12/Figure12_b.pdf, id=1349, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_b.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_b.pdf used on input
+<<<<<<< Updated upstream
  line 693.
 (pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
 
 <../FiguresDraft4/Figure12/Figure12_c.pdf, id=1579, 501.875pt x 301.125pt>
+=======
+ line 706.
+(pdftex.def)             Requested size: 140.55363pt x 126.21147pt.
+
+<../FiguresDraft4/Figure12/Figure12_c.pdf, id=1351, 390.27792pt x 273.88683pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure12/Figure12_c.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure12/Figure12_c.pdf used on input
+<<<<<<< Updated upstream
  line 698.
 (pdftex.def)             Requested size: 216.23764pt x 127.51184pt.
  [13 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure12/Figu
 re12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>]
 <../FiguresDraft4/Figure13/Figure13_a.pdf, id=1654, 501.875pt x 501.875pt>
+=======
+ line 712.
+(pdftex.def)             Requested size: 161.96486pt x 126.65405pt.
+
+Overfull \hbox (10.59686pt too wide) in paragraph at lines 712--714
+[][]
+ []
+
+[11 <../FiguresDraft4/Figure10/Figure10_a.pdf> <../FiguresDraft4/Figure10/Figur
+e10_b.pdf> <../FiguresDraft4/Figure10/Figure10_c.pdf>] [12 <../FiguresDraft4/Fi
+gure11/Figure11_a.pdf> <../FiguresDraft4/Figure11/Figure11_b.pdf> <../FiguresDr
+aft4/Figure11/Figure11_c.pdf> <../FiguresDraft4/Figure11/Figure11_d.pdf>]
+<../FiguresDraft4/Figure13/Figure13_a.pdf, id=1520, 501.875pt x 501.875pt>
+>>>>>>> Stashed changes
 File: ../FiguresDraft4/Figure13/Figure13_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft4/Figure13/Figure13_a.pdf>
 Package pdftex.def Info: ../FiguresDraft4/Figure13/Figure13_a.pdf used on input
+<<<<<<< Updated upstream
  line 750.
 (pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
  [14 <../FiguresDraft4/Figure13/Figure13_a.pdf>] [15] (./draft4.bbl
+=======
+ line 764.
+(pdftex.def)             Requested size: 162.18234pt x 162.18082pt.
+ [13 <../FiguresDraft4/Figure12/Figure12_a.pdf> <../FiguresDraft4/Figure12/Figu
+re12_b.pdf> <../FiguresDraft4/Figure12/Figure12_c.pdf>] [14 <../FiguresDraft4/F
+igure13/Figure13_a.pdf>]
+(./draft4.bbl
+>>>>>>> Stashed changes
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
 
-
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+<<<<<<< Updated upstream
+=======
+[15]
+>>>>>>> Stashed changes
 Underfull \hbox (badness 1377) in paragraph at lines 464--483
 []\OT1/ptm/m/n/10 D'Zmura, M., & Iver-son, G.  (1994).  Color con-stancy . iii.
  gen-eral lin-ear re-cov-ery of spec-tral de-scrip-tions for lights
@@ -858,6 +1202,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 840--858
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
  []
 
+<<<<<<< Updated upstream
 [17])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 872.
  [18]
@@ -911,4 +1256,43 @@ PDF statistics:
  1524 compressed objects within 16 object streams
  96 named destinations out of 1000 (max. 500000)
  398 words of extra memory for PDF output out of 10000 (max. 10000000)
+=======
+)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 886.
+ [17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 886.
+ (./draft4.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 886.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 886.
+Package rerunfilecheck Info: File `draft4.out' has not changed.
+(rerunfilecheck)             Checksum: 45FB12381260474AFA82A0AD260C5FBA;980.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 886.
+ ) 
+Here is how much of TeX's memory you used:
+ 8244 strings out of 493014
+ 129450 string characters out of 6133351
+ 239065 words of memory out of 5000000
+ 11515 multiletter control sequences out of 15000+600000
+ 30984 words of font info for 61 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 42i,10n,40p,1572b,480s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-di
+st/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/local/texlive/2016/texmf-dist/fon
+ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
+1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/
+times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
+8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on draft4.pdf (17 pages, 13596673 bytes).
+PDF statistics:
+ 1695 PDF objects out of 1728 (max. 8388607)
+ 1508 compressed objects within 16 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 393 words of extra memory for PDF output out of 10000 (max. 10000000)
+>>>>>>> Stashed changes
 
