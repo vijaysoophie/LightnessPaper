@@ -1,0 +1,113 @@
+\documentclass[10pt,english]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage[T1]{fontenc}
+\usepackage[latin9]{inputenc}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{mathtools}
+%\usepackage{subfigure}
+\usepackage{subcaption}
+
+   \usepackage{multirow}
+   \topmargin 0.0cm
+   \oddsidemargin 0.5cm
+   \evensidemargin 0.5cm
+   \textwidth 16cm 
+   \textheight 21cm
+
+
+\begin{document}
+\title{Appendix: Luminance constancy under fixed geometry}
+
+\author{Vijay Singh, Benjamin Heasly, Nicolas Cottaris, David Brainard, Johannes Burge}
+\maketitle
+
+\date
+\begin{abstract}
+\end{abstract}
+
+\section{Illumination Spectra}
+Let us denote the Granada dataset as $I^G_i(\lambda)$, where $\{i \in [1,M]\}$ and $M$ is the total number of spectra in the dataset. Since the measured spectra vary over several orders of magnitude in overall intensity, we normalize each spectrum by dividing it by its mean $I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)}$. For simplicity of notation, we denote wavelength $\lambda$ as a continuous variable; in the actual calculations wavelength is discretely sampled and integrals are approximated by sums.  The Granada dataset was measured at 5 nm sampling intervals between 300 and 1100 nm.  We subsampled the spectra to the 400-700 nm interval, 10 nm spacing representation used for rendering, and performed our calculations at this sampling.
+
+The rescaled spectra $I_i^s(\lambda)$ were then mean centered for PCA by subtracting out the mean 
+rescaled spectrum, $\bar{I}^{s}(\lambda)$. That mean was obtained
+by taking the sample mean over all rescaled spectra in the dataset, $\bar{I}^{s}(\lambda) = \frac{1}{M}\sum_i{I_i^s(\lambda)}$. 
+The resulting mean centered dataset, $I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda)$
+was decomposed as $I_i^{MC}(\lambda) = \sum_j w_{ij}\hat{{\bf e}}_j^{PCA}$, 
+where the $\hat{{\bf e}}_j^{PCA}$ are the PCA basis vectors obtained using the
+singular value decomposition (SVD) applied to the $I_i^{MC}(\lambda)$ and
+the $w_{ij}$ are the weights obtained by projecting each of $I_i^{MC}(\lambda)$ onto the  $\hat{{\bf e}}_j^{PCA}$ $\left( w_{ij} = I_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$.
+We used the basis vectors corresponding to
+the largest six SVD eigenvalues, so that $\{j \in [1,6]\}$.
+For the rescaled Granada dataset, these six  eigenvalues account for more than $90\%$ of the variance.
+These steps
+can be summarized as follows:
+\begin{align}
+I^G_i(\lambda) \rightarrow I_i^s(\lambda) = \frac{I^G_i(\lambda)}{\int d\lambda I^G_i(\lambda)} \rightarrow I_i^{MC}(\lambda) = I_{s}(\lambda) - \bar{I}_{s}(\lambda) \rightarrow I_i^{MC}(\lambda) \approx \sum_{j = 1}^6 w_{ij}\hat{{\bf e}}_j^{PCA}.
+\end{align}
+
+To generate random illuminant spectra $\tilde{I}_i(\lambda)$, we generate weights $\tilde{w}_{ij}$ drawn from random 
+the multivariate 
+Gaussian distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+and co-variance $\Sigma$ given as:
+\begin{align}
+\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right).
+\end{align}
+From these weights, the corresponding spectrum $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right)$ is generated.
+This spectrum can sometimes have values that are less than zero.  In such cases, the weights are discarded and a new draw obtained, until
+the condition $\left( \sum_j \tilde{w}_{ij} \hat{{\bf e}}_j^{PCA} +  \bar{I}_{s} (\lambda)\right) > 0$, is satisfied for all $\lambda$.
+The random illuminant spectrum is then given as
+\begin{align}
+\tilde{I}(\lambda) = \left( \tilde{I}_{MC}(\lambda) + \bar{I}_{s}(\lambda)\right).
+\end{align}
+
+\section{Surface Reflectance Spectra}
+Let us denote the reflectance dataset as $R_i(\lambda)$, where $\{i \in [1,M]\}$ 
+and $M$ is the total number of spectra in the dataset. 
+We first calculated the mean reflectance spectrum,
+$\bar{R}(\lambda)$, by taking the sample mean over all spectra in the dataset, i.e.,
+\begin{align}
+\bar{R}(\lambda) = \frac{1}{M} \sum_{i=1}^M R_i(\lambda).\end{align} 
+The reflectance dataset is mean centered by subtracting the mean spectrum, $R_i^{\rm MC}(\lambda) =  R_i(\lambda)-\bar{R}(\lambda)$. 
+This mean centered dataset as:
+\begin{align}
+R_i^{\rm MC}(\lambda) = \sum_j{w_{ij} \; {\bf \hat{e}}_j^{\rm PCA}},
+\end{align} 
+where the ${\bf \hat{e}}_j^{\rm PCA}$s are PCA basis vectors obtained using SVD applied to $R_i^{\rm MC}(\lambda)$
+and the $w_{ij}$ are the weights obtained by projecting each of $R_i^{\rm MC}(\lambda)$ onto the basis vectors ${\bf \hat{e}}_j^{\rm PCA}$ 
+$\left( w_{ij} = R_i^{\rm MC}(\lambda)\cdot {\bf \hat{e}}_j^{\rm PCA}\right)$. 
+
+We used the basis vectors corresponding to the largest six SVD eigenvalues. 
+For the combined Munsell and Vrhel datasets, these six eigenvalues account for 
+more than $90\%$ of the variance. 
+To generate random reflectance spectra, we generate samples of weights ($\tilde{w}_{ij}$) drawn from the multivariate Gaussian 
+distribution with mean $\bar{w}_j = \frac{1}{M}\sum_i w_{ij}$, 
+and co-variance $\Sigma_{jj'} = \frac{1}{M} \sum_i \left(w_{ij} -\bar{w}_j\right)\left(w_{ij'} -\bar{w}_{j'}\right) $. 
+
+If the randomly sampled weights satisfy the condition $\left( 0 < \sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda)<1\right) $ at every $\lambda$, we use them to give the random reflectance spectrum as: 
+\begin{align}
+\tilde{R}_i(\lambda) =\sum_j \tilde{w}_{ij}{\bf \hat{e}}_j^{\rm PCA} + \bar{R}(\lambda).
+\end{align}
+Otherwise the draw is discarded and a new set of weights is drawn.
+
+For generating the target object reflectance at a particular luminance $(Y_{\rm T})$, the values in a generated spectrum were 
+scaled such that the LRV had the desired value.
+The scaling equals $\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}$, with $\bar{y}(\lambda)$ being the CIE photopic luminosity (or luminous efficiency) function. 
+$\bar{y}(\lambda)$ describes the average spectral sensitivity of human visual 
+perception of bruminance. The target reflectance is then given by: 
+\begin{align}
+\tilde{R}^{\rm T}_i(\lambda) =\tilde{R}_i(\lambda) \cdot\left(\frac{Y_{\rm T}}{\int d\lambda \tilde{R}(\lambda) D_{65}(\lambda) \bar{y}(\lambda)}\right).
+\end{align}
+
+
+
+
+\bibliography{references}
+
+\end{document}
