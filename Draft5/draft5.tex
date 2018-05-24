@@ -1,9 +1,5 @@
-%% Copyright (C) 2009 by Tobias Elze
-%% Journal of Vision LaTeX template version 1.0
-%% This document may be used freely for your own submissions.
-
 \documentclass{jov}
-\usepackage{graphicx} % needed for figures
+\usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{hyperref}
 \usepackage{amsmath}
@@ -22,10 +18,10 @@ While this invariance detection ability is behaviorally very significant, its me
 To understand the computational principles that lead to invariant color perception, 
 here we study the perception of object light reflectance value (LRV) under variations in naturalistic scenes. 
 Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the 
-perceived LRV of a target object. 
-We have developed a software that renders naturalistic multispectral images of 3D scenes.
-The software provides precise control over the geometrical and spectral factors that make a scene. 
-We label the rendered images with the luminance of a specific object in the scene. 
+perceived LRV of an object. 
+To do this, we have developed a software that renders naturalistic multispectral images of 3D scenes with 
+precise control over the geometrical and spectral factors that make a scene. 
+We label these images with the LRV of a specific object in the scene. 
 Next, we simulate the response of the retinal cones to these multispectral images using 
 an accurate model of the early visual system. 
 We then use supervised learning methods on these labeled cone responses to 
@@ -76,7 +72,7 @@ Specifically, we ask how a visual system should process the light entering the e
 
 Early work on computational color constancy considered a simplified case with multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
 Subsequent work incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{D'ZmuraConstancy3, D'ZmuraIversonSinger,BrainardFreeman}.
-A key insight from this computational work is that stable color descriptors of a target object cannot be obtained soley from the light reflected from that target object.
+A key insight from this computational work is that stable color descriptors of a target object cannot be obtained solely from the light reflected from that target object.
 But it is possible to obtain such descriptors by jointly analyzing the light reflected from multiple objects in the scene.
 As a consequence, the performance of color constancy algorithms will be affected both by variation in the illumination and in the surface reflectance of other objects in the scene and should therefore be evaluated with respect to both of these factors \cite{BrainardWandellRetinex,BrainardFreeman}. 
 There has also been work that generalizes to more complex viewing geometries \cite{funt1988color, barron2012color}.
@@ -96,14 +92,22 @@ There has also been work that generalizes to more complex viewing geometries \ci
         \label{fig:introExampleFigure}
     \end{subfigure}
     \label{introFigure}
-    \caption{{\bf Color and luminance constancy:} (a)  The light reflected from an object to the eye depends both on the surface reflectance of the object and on the illumination. Additionally, the reflected light also depends on geometric factors, such as the object's shape, pose, and position. The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable across such variations, an ability called color constancy. (b) Images of a sphere under a fixed illuminant.  Down each column, the reflectance function of the sphere varies only by a scale factor; the relative reflectance function is held fixed.  The relative reflectance function (i.e. the shape of the spectral reflectance function) varies across each row.
-Within each row, the light reflectance value (LRV) of the spheres is constant. The values on the left of each row provide the corresponding LRV. We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.}
+    \caption{{\bf Color and luminance constancy:} (a)  The light reflected from an object to the eye depends both on the surface reflectance of the object and on the illumination. 
+Additionally, the reflected light also depends on geometric factors, such as the object's shape, pose, and position. 
+The human visual system is able to account for variations in the reflected light due to object-extrinsic factors and produce a percept of object color that is relatively stable across such variations, an ability called color constancy. 
+(b) Images of a sphere under a fixed illuminant.  
+Down each column, the reflectance function of the sphere varies only by a scale factor; the shape of the reflectance spectrum is held fixed.  
+The shape of the reflectance spectrum varies across each row.
+Within each row, the light reflectance value (LRV) of the spheres is constant. 
+The values on the left of each row provide the corresponding LRV. 
+We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. 
+Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.}
  \end{figure}
 
 Recently, supervised statistical learning methods have been applied to the computational problem of color constancy.
 These methods use the joint statistics of labeled images and scene variables to learn mappings that extract stable surface color descriptors from image input \cite{barron2015convolutional}.
-This general statistical learning approach has been useful for other perceptual problems in early and mid-level vison. domains of vision. 
-For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for focus error, binocular disparity, and retinal motion estimation with natural stimuli that provide excellent predictions of neural and human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
+This general statistical learning approach has been useful for other perceptual problems in early and mid-level vision. domains of vision. 
+For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for defocus blur, binocular disparity, and retinal motion estimation with natural stimuli that provide excellent predictions of neural and human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
 In this paper, we apply AMA to a special case of computational color constancy. 
 
 
@@ -126,7 +130,7 @@ Here we express LRVs as proportion, so that they take on values between 0 and 1.
 There are four key parts to our methods.  First, we generate a labeled set of training images.  Second, we use a model of the early visual system to compute the responses of the cone photoreceptor mosaic to the labeled images. Third, we apply AMA to the cone responses, as well as to a contrast normalized version of the cone responses, to learn task-optimal receptive fields (RFs). Fourth, we evaluate how well the responses of the RFs may be decoded to achieve luminance constancy.
 
 % Figure 2
-\begin{figure}[t]
+\begin{figure}
 \centering
 \begin{subfigure}[b]{0.22 \textwidth}
         \caption{Library }
@@ -148,6 +152,7 @@ There are four key parts to our methods.  First, we generate a labeled set of tr
     \caption{{\bf Base scenes.} Each panel shows a rendering of one base scene without additional inserted objects.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from models of naturally occurring spectra (see text).}\label{fig:baseScenes}
 \end{figure}
 %% DHB: We need to think about how to scale the images for display.  The Library scene is too dark, at least when printed.
+% % VS: Is it still dark?
 
 \subsection{Labeled training data} \label{method:VirtualWorld}
 \subsubsection{Virtual naturalistic scenes}
@@ -200,7 +205,6 @@ statistical structure of natural scenes.
     \end{subfigure}
 \caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. The panels show different objects inserted in the library base scene. The objects were inserted at a user defined location in the image. Then the rendering viewpoint was set so that the object is at the center of the rendered image. In these panels, the full rendered image has been cropped so that the inserted object is visually salient.}\label{fig:libraryWithTarget}
 \end{figure}
-%% DHB: Can we render these examples at higher resolution, so that they look nicer?  The blurriness is distracting in the images.
 
 % Figure 4
 \begin{figure}
@@ -245,6 +249,29 @@ statistical structure of natural scenes.
 \end{figure}
 %% DHB: These are too dark in a printout.  Let's review how they are scaled.  Need to make sure we can see an effect of changing the illumination, might want to hand pick the illuminants used here to illustrate the effect.
 
+Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
+Base scenes specify an arrangement of objects and light sources.
+Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}), and additional light sources.
+Once the position, size and pose of the inserted objects and light sources have been set, 
+a surface reflectance function can be assigned to each object in the scene, and a spectral power distribution function can be assigned to each light source (Fig.~\ref{fig:VWCCTransformations}). The resulting scene model can then be rendered from any specified viewpoint.
+
+In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
+We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
+We generated three distinct datasets, which we refer to as Conditions 1-3 and describe below.
+Across these datasets the luminance constancy problem (i.e. estimating the target object LRV)
+becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
+
+The variation within our datasets captures the essence of the computational problem of lightness constancy
+up to effects of scene geometry, an additional richness that we do not address in this paper.
+In Condition 1, the surface reflectance spectrum of the target object was the only source of scene variation other than the target object LRV.
+The reflectance spectra of the background objects, and the spectral power distributions of the light sources were kept fixed.
+In Condition 2, the spectral power distribution of the light sources varied in addition to the reflectance spectrum of the target object,
+Finally, in Condition 3 three distinct scene factors--target object surface 
+reflectance spectrum, reflectance spectra of the background objects, and
+spectral power distribution of the light sources--varied in addition to the target object LRV.
+Each condition had a corresponding dataset of 1000 scenes and images, 100 for each of 10 target object LRV values. The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the shape of the target object surface reflectance spectra could differ.
+%% DHB Need to decide how many images we really want for final version of the work.
+
 % Figure 5: Conditions Studied
 \begin{figure}
 \centering
@@ -269,29 +296,6 @@ statistical structure of natural scenes.
 \label{fig:studiedCases}
 \end{figure}
 
-Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
-Base scenes specify an arrangement of objects and light sources.
-Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}), and additional light sources.
-Once the position, size and pose of the inserted objects and lightsources have been set, 
-a surface reflectance function can be assigned to each object in the scene, and a spectral power distribution function can be assigned to each light source (Fig.~\ref{fig:VWCCTransformations}). The resulting scene model can then be rendered from any specified viewpoint.
-
-In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
-We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
-We generated three distinct datasets, which we refer to as Conditions 1-3 and describe below.
-Across these datasets the luminance constancy problem (i.e. estimating the target object LRV)
-becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
-%Each dataset consisted of 1000 scenes and corresponding images, 100 for each of 10 LRV values.
-%% DHB Need to decide how many images we really want for final version of the work.
-
-The variation within our datasets captures the essence of the computational problem of lightness constancy
-up to effects of scene geometry, an additional richness that we do not address in this paper.
-In Condition 1, the surface reflectance spectrum of the target object was the only source of scene variation other than the target object LRV..
-The reflectance spectra of the background objects, and the spectral power distributions of the light sources were kept fixed.
-In Condition 2, the spectral power distribution of the light sources varied in addition to the reflectance spectrum of the target object,
-Finally, in Condition 3 three distinct scene factors--target object surface 
-reflectance spectrum, reflectance spectra of the background objects, and
-spectral power distribution of the light sources--varied in addition to the target object LRV.
-Each condition had a corresponding dataset of 1000 scenes and images, 100 for each of 10 target object LRV values. The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the shape of the target object surface reflectance spectra could differ.
 
 For the primary results, we used the ``{\it Library}'' base scene and a spherical target object.
 The library base scene contains 2 area lights. 
@@ -328,7 +332,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
         \includegraphics[width=\textwidth]{../FiguresDraft5/Figure6/Figure6_d.pdf}
         \label{fig:sRGBIlluminant}
     \end{subfigure}
-    \caption{{\bf Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean (with mean taken over wavelength). (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in b (red). (d) sRGB renditions of the samples shown in b.}
+    \caption{{\bf Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean power. (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in b (red). (d) sRGB renditions of the samples shown in b.}
 \label{fig:illuminant}
 \end{figure}
 
@@ -343,7 +347,7 @@ To normalize the spectra, we divided each spectrum by its mean power.
 Our statistical model approximates the normalized Granada spectra using the first 6 principle components.
 The variation in the weights on these components is modeled with a 6-dimensional Gaussian.
 The mean and covariance matrix of the Gaussian match the sample mean and covariance of the weights \cite{BrainardFreeman}. 
-To generate a random relative illuminant spectrum, we sample weights randomly from this Gaussian and then perform a weighted sum of the components to generate the corresponding spectrum.
+To generate a random shape of the illuminant spectrum, we sample weights randomly from this Gaussian and then perform a weighted sum of the components to generate the corresponding spectrum.
 Figure~\ref{fig:illuminantSamples} illustrates the relative spectra of draws obtained using this procedure.
 Details of the statistical model for illumination are provided in the appendix.
 Chromaticities and rendered color renditions of these draws are shown in Figures~\ref{fig:xyDiagram} and ~\ref{fig:sRGBIlluminant}.
@@ -447,6 +451,7 @@ Because we are interested in how well luminance constancy may be achieved by the
 to our scenes using a model of the early visual system.
 
 We focussed our analysis on image regions local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}). In foveal primary visual cortex, receptive fields have a spatial extent of approximately 1 degree of visual angle (REFS). 
+%% VS: Needed a reference
 The local analysis is thus motivated by the fact that neural receptive fields early in the visual pathways (e.g., retina, primary visual cortex) pool information locally.
 %% DHB: Johannes to provide his favorite citation or two.  Some review.
 
@@ -533,6 +538,7 @@ To model contrast normalization, we divided the contrast images by the sum of sq
 \subsection{Computational luminance constancy} \label{method:SupervisedLearning}
 We used our datasets to determine how well target object LRV can be estimated from cone excitations and from normalized cone contrasts.
 Studying both representations allows us to understand how early contrast coding and normalization affect how well luminance constancy can be achieved.
+%% VS: This sentence does not read well.
 We applied accuracy maximization analysis (AMA) to learn the optimal receptive fields for estimating LRV,
 and evaluated the performance obtained when the output of these filters was optimally decoded.
 
@@ -541,9 +547,10 @@ AMA is a task-specific Bayesian method for dimensionality reduction.
 When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns a set of linear receptive fields.
 Given a set of linear receptive fields and an explicit cost function, it is possible to determine the minimum-expected-cost estimator that maps responses to stimulus labels given the training set and the 
 assumption that all images in the training set are equally likely.
+% VS: This is not very clear.
 Moreover, the corresponding expected estimation cost may be explicitly computed.
 AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
-Here we used squared error as the cost function and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
+Here we used Kullback-Leibler divergence cost function and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
 Details of how AMA learns filters and the filter responses are optimally decoded are provided in previously published work \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}.
 
 \subsubsection*{Decoding optimal filters}
@@ -563,7 +570,7 @@ Here we use a Kullback-Leibler divergence cost function, so that the optimal est
 To provide baselines for evaluation of the estimation method described above, we used linear regression.
 First, we solved for the weights on the average L, M and S cone excitations corresponding to the target object that best predicted the target LRV values.
 We took the average cone responses from a $3 \times 3$ region at the center of the target object.
-This baseline method disregards information carried the image regions corresponding to the background objects.
+This baseline method disregards information carried by the image regions corresponding to the background objects.
 We also performed regression on the contrast normalized version of the cone responses.
 This second baseline method indirectly incorporates information carried in the image regions corresponding to the background objects,
 through their effect on the contrast normalized responses at the center of the target object. 
@@ -595,11 +602,11 @@ of the image data.
 
 \subsection{Condition 1}
 
-In Condition 1, only the LRV and relative reflectance spectrum of the target object vary across scenes.
+In Condition 1, only the LRV and the shape of the reflectance spectrum of the target object vary across scenes.
 For this condition, LRV estimation should be easy because the variation in target object reflectance that we introduced
 preserved LRV (which is calculated using a CIE D65 as the illumination).
 % JDB: Isn't this true of all conditions? LRV is preserved for each set of images with the same LRV label for all conditions.
-% VS: We should say, the only source of variation that we have introduced preserved LRV
+% VS: We should say, "the variation that we introduced preserved LRV"
 Thus, for fixed scene illuminants similar to D65, the luminance of the light reflected from the target object will vary minimally.
 In Condition 1, we used an illumination randomly sampled from our model of daylight illumination spectra (see Methods) and thus expect a reasonable degree of similarity to D65.
 %% DHB: We need to say something about how similar.  Might explore different illuminants to dissect how sensitive the estimation
@@ -631,7 +638,6 @@ They are useful only because some light is scattered from them onto the target, 
 % JDB: Double check vice versa.
 In addition, luminance is primarily determined by L and M cones, so the S cones should make little
 contribution.
-%% DHB: Can we add a color scale bar to the plots?
 
 %% Figure condition 2: Excitations Fail
 \begin{figure}
@@ -663,10 +669,8 @@ contribution.
 \subsection{Condition 2}
 
 Condition 2 includes variation in the spectral power distribution of the light sources, in addition to the variation present in Condition 1. 
-This illumination variation makes the task more difficult because it causes additional variation in the cone excitations that is not due to target object LRV.
 This illumination variation makes the task more difficult because it causes additional variation in the cone excitations that is not due to target object LRV. 
-We learned AMA receptive fields on the cone excitations to the images in this new condition, and again evaluated decoding performance (Fig. ~\ref{fig:Condition2}(a,b)). 
-%Figure~\ref{fig:Condition2}(a,b) show the results when we learned and evaluated the performance of AMA on the cone excitations.
+We learned AMA receptive fields on the cone excitations to the images in this new condition, and again evaluated decoding performance (Fig.~\ref{fig:Condition2}(a,b)). 
 Performance is poor.
 Indeed, the estimates deviate considerably from the true LRV, as seen by the fact that the mean estimate
 (red line) does not lie on the positive diagonal and by the fact that there is large estimation variability for each
@@ -722,18 +726,30 @@ Performance of the baseline linear regression method (also evaluated using contr
 Figure~\ref{fig:case3RFResponse} shows the responses of the first two AMA receptive fields to the training stimuli.
 Although the responses vary systematically with target object LRV, there is considerable overlap in the receptive field responses for stimuli having different LRV values.
 This overlap is due to the combined effect of the variation in the illumination and background surface spectra.
-Recall, however, that performance is based on six rather than two receptive fields.
+However, performance is based on six rather than two receptive fields.
 % JDB: Have we said previously that performance is based on six RFs.
+% VS: No
 Inclusion of more receptive fields reduces the ambiguity that is seen when we visualize the responses of just the first two receptive fields.
 %% DHB: It might be natural here to show a plot of relative RMSE versus number of receptive fields, and for the best number of receptive
 % fields of relative RMSE versus size of training set.  We want to persuade the reader that we are at asymptote.
 % JDB: If we do this, it is probably best to put the evidence in the appendix. Otherwise, it will require a detour paragraph and figure subpanel.
 
 Figure~\ref{fig:case3RFs} shows the first two receptive fields learned for Condition 3.
+Similar to Condition 1, the L and M cone excitations receive large weights, while the S cone excitations are largely ignored. 
+Additionally, the cone excitations at the target have opposite sign compared to background object locations.
+This make sense.
+As discussed earlier, luminance is primarily determined by L and M cones, so the S cones should make little
+contribution.
+Additionally, for this condition, the cone contrast needs to be compared across the target and background regions. 
+A center-surround receptive field facilitates such comparison.
+However, one should not interpret too much into the features that arise due to the specific geometry of the scene.
+
 %% DHB: We need to write something interpretive about the RF structure shown in panel c.
 
 %% DHB; We were going to vary the number of secondary reflections modeled in the rendering for one of the conditions, to
 % separate the two possible sources of influence of the background surfaces.
+% % VS: On switching off secondary reflections, the performance (rel RMSE) remains essentially the same. Which means that this is not the primary source of variation.
+% % VS: To ensure that secondary reflections were switched off, I checked that the multispectral values of the central patch of the rendered image and the corresponding cone isoemrizations were the same for images that were generated with the same target and illuminant but different backgrounds. Then I performed the training and test as usual.
 
 \section{Discussion} \label{Discussion}
 
@@ -743,7 +759,7 @@ In this paper, we studied luminance constancy using naturalistic images.
 We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
 Because we rendered the images, we could label each image in the dataset by the luminance reflectance value (LRV) of the target object.
 We used the labeled datasets to learn estimators for the target object LRV.
-Across scenes, we varied the LRV of the target object, the relative surface reflectance spectrum of the target object, 
+Across scenes, we varied the LRV of the target object, the shape of the reflectance spectrum of the target object, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
 These spectral variations were based on statistical models of natural surface reflectance spectra and natural illumination spectra.
 We studied the how the performance of the learned estimators changed with systematic manipulation of the spectral variation in the datasets.
@@ -757,11 +773,12 @@ We studied the how the performance of the learned estimators changed with system
  \label{fig:barGraphs}
 \end{figure}
 
-Figure~\ref{fig:barGraphs} summarizes our main findings, by showing the overall relative root mean squared estimation error (relative RMSE; see Methods) for each condition. 
-In Condition 1, where only the relative target object spectrum varies, luminance constancy is an easy computational problem,
+Figure~\ref{fig:barGraphs} summarizes our main findings, by showing the overall relative root mean squared estimation error (relative RMSE; see Figure~\ref{fig:barGraphs} caption) for each condition. 
+In Condition 1, where only the shape of the reflectance spectrum of the target object varies, 
+luminance constancy is an easy computational problem,
 and performance is essentially perfect for both the baseline linear regression and AMA methods.
 In Condition 2, where the spectral power distribution of the illumination also varies, the problem of luminance constancy is more difficult.
-Indeed, neither of our methods performs well when they operate directly on the cone excitations.
+Indeed, neither of our methods perform well when they operate directly on the cone excitations.
 Performance with both methods improves greatly when the cone excitations are contrast normalized. 
 Indeed, AMA performance for Condition 2 is essentially perfect, as it is in Condition 1.
 Linear regression does less well, in part because it only has access to cone excitations at image locations
@@ -773,15 +790,18 @@ Performance here represents the overall level of luminance constancy that our me
 most realistic condition that we tested.
 In this case, AMA-based estimates of target object LRV are, on average, within 13\% (relative RMSE) of the true value.
 % JDB: Are we going to add in a constancy index, as we discussed doing a few meetings ago?
-Introducing variation in the surface reflectance spectra of the background objects makes the luminance constancy problem substantially more difficult. 
-Variation in the reflectance spectra of the background objects surfaces reduces how reliably light reflected from those objects can be used a cue to estimate the spectral power distribution of the illuminant.
+Introducing variation in the surface reflectance spectra of the background objects makes 
+the luminance constancy problem substantially more difficult. 
+Variation in the reflectance spectra of the background objects surfaces reduces how 
+reliably light reflected from those objects can be used as a cue to estimate the spectral power distribution of the illuminant.
 % JDB: Original concluding sentence very hard to read. I split into two and tried to simplify. Still not completely happy with it...
 
 \subsection{Images of Virtual vs. Real Scenes}
 % JDB: Completely rearranged opening of section. Previous version had a choppy opening paragraph that did not flow into second paragraph. Please see what you think.
 As noted in the introduction, supervised learning requires large labeled datasets. Large labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
 Unfortunately, large labeled datasets that are useful studying how to estimate correlates of object surface reflectance are not readily available.
-To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make an independent of the illumination impinging on each object.
+To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 
+an independent measurement of the illumination impinging on each object.
 Although this can be done by inserting a small number of discretely spaced reflectance standards into the scene, 
 interpolating to locations between such standards requires strong assumptions.
 
@@ -790,15 +810,14 @@ There are many advantages to using rendered images.
 One advantage is that they allow us to work with large numbers of labeled images where object reflectance is precisely known at each pixel.
 A second advantage is that we can control the variation in distinct scene factors that might affect the difficulty of the estimation problem.
 This flexibility allows study of the individual effect of each factor as well as their combined effects.
-Here, we exploited this flexibility to quantify how variation in the relative target object reflectance
-spectrum, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation..
+Here, we exploited this flexibility to quantify how variation in the shape of the reflectance spectrum of the target object, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation..
 We believe this basic approach can be extended to include parametric control over the amount of variation of different factors as well as to include variation in additional factors (see below).
 %% DHB: Update if we add additional analyses as per some of the comments above.
 % % JDB: I don't understand what the the concluding sentence above is saying.
 
 There are also disadvantages associated with using rendered images. 
 Virtual rendered scenes are not guaranteed to capture all of the task relevant variation that occurs in real scenes.
-Casual inspection of our images reveals that they are rendered and not real.
+Casual inspection of our images reveals that they are rendered, and not real.
 Computer graphics is getting better, however, and we expect that the gap between virtual and natural image databases will steadily close.
 Indeed, carefully constructed graphics images are now quite difficult to differentiate from real images.
 %% DHB: Might be able to reference Farid's recent book on this point.
