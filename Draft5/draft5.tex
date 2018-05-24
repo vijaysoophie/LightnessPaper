@@ -798,8 +798,8 @@ reliably light reflected from those objects can be used as a cue to estimate the
 
 \subsection{Images of Virtual vs. Real Scenes}
 % JDB: Completely rearranged opening of section. Previous version had a choppy opening paragraph that did not flow into second paragraph. Please see what you think.
-As noted in the introduction, supervised learning requires large labeled datasets. Large labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
-Unfortunately, large labeled datasets that are useful studying how to estimate correlates of object surface reflectance are not readily available.
+As noted in the introduction, supervised learning requires large labeled datasets. Such datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
+Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
 To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 
 an independent measurement of the illumination impinging on each object.
 Although this can be done by inserting a small number of discretely spaced reflectance standards into the scene, 
@@ -809,7 +809,7 @@ Here we used labeled images rendered from virtual scene descriptions.
 There are many advantages to using rendered images.
 One advantage is that they allow us to work with large numbers of labeled images where object reflectance is precisely known at each pixel.
 A second advantage is that we can control the variation in distinct scene factors that might affect the difficulty of the estimation problem.
-This flexibility allows study of the individual effect of each factor as well as their combined effects.
+This flexibility allows the study of individual scene factors as well as their combined effects.
 Here, we exploited this flexibility to quantify how variation in the shape of the reflectance spectrum of the target object, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation..
 We believe this basic approach can be extended to include parametric control over the amount of variation of different factors as well as to include variation in additional factors (see below).
 %% DHB: Update if we add additional analyses as per some of the comments above.
@@ -818,7 +818,7 @@ We believe this basic approach can be extended to include parametric control ove
 There are also disadvantages associated with using rendered images. 
 Virtual rendered scenes are not guaranteed to capture all of the task relevant variation that occurs in real scenes.
 Casual inspection of our images reveals that they are rendered, and not real.
-Computer graphics is getting better, however, and we expect that the gap between virtual and natural image databases will steadily close.
+However, computer graphics is getting better and we expect that the gap between virtual and natural image databases will steadily close.
 Indeed, carefully constructed graphics images are now quite difficult to differentiate from real images.
 %% DHB: Might be able to reference Farid's recent book on this point.
 
@@ -845,8 +845,6 @@ A challenge for this approach will be to thoughtfully control the increase in pr
 
 Luminance constancy is a special case of the more general problem of color constancy.
 The approach we developed here could be generalized to the estimation of additional surface reflectance descriptors, such as object hue or chroma.
-As with LRV, these descriptors would be defined by the light reflected from an object's surface under a standard illuminant.
-% JDB: Cut previous sentence. Seems like a niggly detail this close to the conclusion.
 A further advance would be to develop methods for learning receptive fields that are optimal for multivariate estimation problems. 
 % JDB: The right student could engage in this programming project.
 With such methods one could directly estimate three-dimensional color descriptors.
