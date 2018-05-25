@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  30 MAR 2018 16:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  25 MAY 2018 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -366,46 +366,54 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 29.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+Overfull \hbox (19.8087pt too wide) in paragraph at lines 29--29
+ [][] 
+ []
+
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 36.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 36.
- [1
+[1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (4.30223pt too wide) in paragraph at lines 100--104
+\T1/lmr/m/n/10 ate Gaus-sian dis-tri-bu-tion with mean $[] \OT1/lmr/m/n/10 = []
+ [][] \OML/lmm/m/it/10 w[]$\T1/lmr/m/n/10 , and co-variance $\OT1/lmr/m/n/10 ^^
+F[] = [] [][] [] []$\T1/lmr/m/n/10 .
+ []
+
 No file appendix.bbl.
 [2] (./appendix.aux) ) 
 Here is how much of TeX's memory you used:
- 4825 strings out of 493014
- 71764 string characters out of 6133351
- 141500 words of memory out of 5000000
- 8259 multiletter control sequences out of 15000+600000
- 58509 words of font info for 56 fonts, out of 8000000 for 9000
+ 4821 strings out of 493014
+ 71724 string characters out of 6133351
+ 142499 words of memory out of 5000000
+ 8257 multiletter control sequences out of 15000+600000
+ 52516 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,40p,801b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,11n,40p,262b,201s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm
--rm.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/
+-mathsy.enc}{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/
 usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/
 texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/20
 16/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2016/texmf-dist/
 fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 1/public/lm/lmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/l
-m/lmbx9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmex10.pf
-b></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi5.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2016/texmf
--dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts
-/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publ
-ic/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr5.
-pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/lo
-cal/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texliv
-e/2016/texmf-dist/fonts/type1/public/lm/lmsy5.pfb>
-Output written on appendix.pdf (2 pages, 225594 bytes).
+m/lmex10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi10.p
+fb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2016/texmf-dist/fonts
+/type1/public/lm/lmr7.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/publi
+c/lm/lmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy5
+.pfb>
+Output written on appendix.pdf (2 pages, 177647 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
+ 62 PDF objects out of 1000 (max. 8388607)
+ 46 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
