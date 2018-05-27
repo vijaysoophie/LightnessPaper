@@ -16,19 +16,21 @@
 %% Learned luminance constancy: something
 %% 
 
-\abstract{The light that reflects off an object surface and is captured by our eyes varies significantly with its context. 
-But, the human visual system has the ability to stably perceive the object's color invariant of the context variations. 
-While this invariance detection ability is behaviorally very significant, its mechanism remains largely unknown. 
-To understand the computational principles that lead to invariant color perception, 
-here we study the perception of object light reflectance value (LRV) under variations in naturalistic scenes. 
-Specifically, we study the effects of variations in reflectance and illumination spectra in a scene on the 
-perceived LRV of an object. 
-To do this, we have developed a software that renders naturalistic multispectral images of 3D scenes with 
+\abstract{
+% JDB commented out: The light that reflects off an object surface and is captured by our eyes varies significantly with its context. 
+ % JDB addition:
+ The human visual system supports stable percepts of object color even though the light that reflects off object surfaces varies significantly with context.
+% JDB commented out: But, the human visual system has the ability to stably perceive the object's color invariant of the context variations. 
+% JDB commented out: While this invariance detection ability is behaviorally very significant, its mechanism remains largely unknown. 
+To understand the computations that support invariant color perception, 
+we study how the estimation of object light reflectance value (LRV) depends on variation in key properties of naturalistic scenes. 
+Specifically, we study how variation in target object reflectance, background object reflectance, and illumination spectra in a scene impact estimates of LRV. 
+To do this, we developed a software pipeline that renders naturalistic multispectral images of 3D scenes with 
 precise control over the geometrical and spectral factors that make a scene. 
 We label these images with the LRV of a specific object in the scene. 
 Next, we simulate the response of the retinal cones to these multispectral images using 
 an accurate model of the early visual system. 
-We then use supervised learning methods on these labeled cone responses to 
+We then use a supervised statistical learning methods on these labeled cone responses to 
 identify the computations that lead to accurate LRV estimation under changes in spectral condition. 
 We show that if only either target or target and illumination spectra are allowed to vary, the standard luminance can be estimated through simple transformations of the cone responses. 
 When all the spectra vary simultaneously, while it is not easy to recover the luminance through simple transformations, 
@@ -100,7 +102,7 @@ There has also been work that generalizes to more complex viewing geometries \ci
 The reflected light also depends on geometric factors, such as the object's shape, pose, and position. 
 The human visual system accounts for variations in the reflected light due to object-extrinsic factors and produces a percept of object color that is relatively stable across such variations, an ability called color constancy. 
 (b) Images of a sphere under a fixed illuminant.  
-Down each column, the sphere's luminance reflectance value (LRV) varies, but the shape of the reflectance spectrum is held fixed.
+Down each column, the sphere's light reflectance value (LRV) varies, but the shape of the reflectance spectrum is held fixed.
 Across each row, the shape of the reflectance spectrum varies, but the LRV is held fixed.
 We cast the problem of computational luminance constancy to be that of estimating the LRV of a target object from the image, across variation in other scene factors. 
 Specifically, we study variation in target object relative surface reflectance, variation in illumination spectrum, and variation in the surface reflectance of the other objects in the scene.}
@@ -294,11 +296,11 @@ Each condition had a corresponding dataset of 1000 scenes and images, 100 for ea
         \includegraphics[width=\textwidth]{../FiguresDraft5/Figure5/Figure5_c.pdf}        
         \label{fig:allSpectraVarying}
     \end{subfigure}    
-    \caption{{\bf Dataset Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2, and 3. Five images are shown for each luminance reflectance value (LRV). Each dataset had at least 100 images for each LRV. We studied three types of spectral variations. (a) Condition 1: variable target object relative surface reflectance spectrum, fixed light source spectra, fixed background object spectra (same as Fig.~\ref{fig:introExampleFigure}).
+    \caption{{\bf Dataset Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2, and 3. Five images are shown for each light reflectance value (LRV). Each dataset had at least 100 images for each LRV. We studied three types of spectral variations. (a) Condition 1: variable target object relative surface reflectance spectrum, fixed light source spectra, fixed background object spectra (same as Fig.~\ref{fig:introExampleFigure}).
 (b) Condition 2: variable target object relative surface reflectance spectrum, variable light source spectra, fixed background object spectra, (c) Condition 3: variable target object relative surface reflectance spectrum, variable light source spectra, variable background object spectra. The spheres in each row of subplots have the same LRV, while the spheres in each column of each subplot have the same relative surface reflectance.  Across the three sets of subplots, spheres in corresponding locations have the same surface reflectance. In all three subplots, the overall lights source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. This is smaller than the variation we studied, but allows us to show the variation within the dynamic range available for computer monitors and printed figures. The sRGB values for all three subplots were normalized using a common scale factor prior to gamma correction.} 
 \label{fig:studiedCases}
 \end{figure}
-%%JDB: ADD "Luminance Reflectance Value (LRV) label to the left-most y-axis.
+%%JDB: ADD "light reflectance value (LRV) label to the left-most y-axis.
 %%JDB: DOUBLE CHECK FIRST SENTENCE ON SECOND LINE OF CAPTION: "Each dataset had at least 100 images for each LRV."
 %% JDB: "relative surface reflectance" AFTER CONDITION 3 IS DESCRIBED... CHANGE TO WHATEVER OUR STANDARD TERM IS... "shape of reflectance spectra"?
 %% JDB: I changed: "Across the subplots" to "Across the three sets of subplots"... DOUBLE CHECK THAT THE LANGUAGE IS CORRECT.
@@ -772,7 +774,7 @@ However, one should not interpret too much into the features that arise due to t
 
 In this paper, we studied luminance constancy using naturalistic images.
 We used a software pipeline, which was developed for this work, to render datasets of multispectral images from scene descriptions.
-Because we rendered the images, we could label each image in the dataset by the luminance reflectance value (LRV) of the target object.
+Because we rendered the images, we could label each image in the dataset by the light reflectance value (LRV) of the target object.
 We used the labeled datasets to learn estimators for the target object LRV.
 Across scenes, we varied the LRV of the target object, the shape of the reflectance spectrum of the target object, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
