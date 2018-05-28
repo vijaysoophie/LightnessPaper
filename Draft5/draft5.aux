@@ -116,7 +116,6 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces {\bf  Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean power. (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in b (red). (d) sRGB renditions of the samples shown in b.\relax }}{7}{figure.caption.12}}
 \newlabel{fig:illuminant}{{6}{7}{{\bf Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean power. (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in b (red). (d) sRGB renditions of the samples shown in b.\relax }{figure.caption.12}{}}
 \@writefile{toc}{\contentsline {section}{Illumination spectra}{7}{section*.11}}
-\@writefile{toc}{\contentsline {section}{Surface reflectance spectra}{7}{section*.13}}
 \newlabel{fig:reflectanceSpectra}{{7a}{8}{Munsell and Vrhel dataset\relax }{figure.caption.14}{}}
 \newlabel{sub@fig:reflectanceSpectra}{{a}{8}{Munsell and Vrhel dataset\relax }{figure.caption.14}{}}
 \newlabel{fig:reflectanceSamples}{{7b}{8}{Statistical model\relax }{figure.caption.14}{}}
@@ -143,6 +142,7 @@
 \newlabel{sub@fig:coneContrast}{{d}{9}{Normalized cone contrast\relax }{figure.caption.16}{}}
 \newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 452}}{9}{Surface reflectance spectra}{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Pipeline for generating labeled datasets:} The labeled images used in this paper are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image is cropped around the target object. (c) The retinal image corresponding to the rendered image is computed, which is then used to compute the number of photopigment isomerizations in the cone photoreceptors. The figure shows a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue). (d) The cone excitations are linearly interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized.\relax }}{9}{figure.caption.16}}
+\@writefile{toc}{\contentsline {section}{Surface reflectance spectra}{9}{section*.13}}
 \@writefile{toc}{\contentsline {section}{Model of early visual system}{9}{section*.17}}
 \newlabel{method:Isetbio}{{}{9}{Model of early visual system}{section*.17}{}}
 \citation{heeger1992normalization}
@@ -188,8 +188,6 @@
 \@writefile{toc}{\contentsline {section}{Condition 3}{13}{section*.28}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. (b) Change of relative RMSE with the number of receptive fields. Performance converges around 6 RFs\relax }}{14}{figure.caption.29}}
 \newlabel{fig:barGraphs}{{13}{14}{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. (b) Change of relative RMSE with the number of receptive fields. Performance converges around 6 RFs\relax }{figure.caption.29}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }}{14}{figure.caption.32}}
-\newlabel{fig:barGraphs}{{14}{14}{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }{figure.caption.32}{}}
 \@writefile{toc}{\contentsline {section}{Discussion}{14}{section*.30}}
 \newlabel{Discussion}{{}{14}{Discussion}{section*.30}{}}
 \@writefile{toc}{\contentsline {section}{Summary}{14}{section*.31}}
@@ -198,6 +196,8 @@
 \citation{burge2014optimal}
 \citation{burge2015optimal}
 \citation{kim2018lawful}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }}{15}{figure.caption.32}}
+\newlabel{fig:barGraphs}{{14}{15}{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }{figure.caption.32}{}}
 \@writefile{toc}{\contentsline {section}{Images of Virtual vs. Real Scenes}{15}{section*.33}}
 \bibdata{references}
 \bibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
@@ -212,13 +212,13 @@
 \APACbibcite{brainard2015color}{\citeauthoryear {Brainard}{Brainard}{{\APACyear {2015}}}}
 \bibcite{BrainardFreeman}{\citeauthoryear {Brainard\ \BBA{} Freeman}{Brainard\ \BBA{} Freeman}{{\APACyear {1997}}}}
 \APACbibcite{BrainardFreeman}{\citeauthoryear {Brainard\ \BBA{} Freeman}{Brainard\ \BBA{} Freeman}{{\APACyear {1997}}}}
+\@writefile{toc}{\contentsline {section}{Future Directions}{16}{section*.34}}
+\@writefile{toc}{\contentsline {section}{Linking to Human Performance}{16}{section*.35}}
+\@writefile{toc}{\contentsline {section}{References}{16}{section*.36}}
 \bibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \APACbibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \bibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}}}
 \APACbibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}}}
-\@writefile{toc}{\contentsline {section}{Future Directions}{16}{section*.34}}
-\@writefile{toc}{\contentsline {section}{Linking to Human Performance}{16}{section*.35}}
-\@writefile{toc}{\contentsline {section}{References}{16}{section*.36}}
 \bibcite{Buchsbaum80}{\citeauthoryear {Buchsbaum}{Buchsbaum}{{\APACyear {1980}}}}
 \APACbibcite{Buchsbaum80}{\citeauthoryear {Buchsbaum}{Buchsbaum}{{\APACyear {1980}}}}
 \bibcite{burge2011optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2011}}}}
