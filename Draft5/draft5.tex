@@ -103,7 +103,7 @@ Specifically, we study variation in target object relative surface reflectance, 
 
 Recently, supervised statistical learning methods have been applied to the computational problem of color constancy.
 These methods use the joint statistics of labeled images and scene variables to learn mappings that extract stable surface color descriptors from image input \cite{barron2015convolutional}.
-This general statistical learning approach has been useful for other perceptual problems in early and mid-level vision. domains of vision. 
+This general statistical learning approach has been useful for other perceptual problems in early and mid-level vision.
 For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}. It has been used to develop ideal observers for defocus blur, binocular disparity, and retinal motion estimation with natural stimuli that provide excellent predictions of neural and human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
 In this paper, we apply AMA to a special case of computational color constancy. 
 
@@ -202,6 +202,12 @@ statistical structure of natural scenes.
 \caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. Each image (a-e) shows a different object inserted into a user specified location in the library base scene. The rendering viewpoint was set so that the object was at the center of the rendered image. The full rendered image has been cropped here so that the inserted object is easily visible.}\label{fig:libraryWithTarget}
 \end{figure}
 
+Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
+Base scenes specify an arrangement of objects and light sources.
+Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}), and additional light sources.
+Once the position, size and pose of the inserted objects and light sources have been set, 
+a surface reflectance function can be assigned to each object in the scene, and a spectral power distribution function can be assigned to each light source (Fig.~\ref{fig:VWCCTransformations}). The resulting scene model can then be rendered from any specified viewpoint.
+
 % Figure 4
 \begin{figure}
 	\begin{subfigure}[b]{0.18 \textwidth}
@@ -240,16 +246,10 @@ statistical structure of natural scenes.
         \label{fig:backGroundVariation}
     \end{subfigure}
 
-    \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over the properties illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects.
+    \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over the properties illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects. All panels in the figure have a common scale factor and tone mapping.
 \label{fig:VWCCTransformations}}
 \end{figure}
 %% DHB: Need to generate these so that we display them all with a common scale factor and tone mapping. Then say so in the caption once it is done.
-
-Our rendering package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
-Base scenes specify an arrangement of objects and light sources.
-Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}), and additional light sources.
-Once the position, size and pose of the inserted objects and light sources have been set, 
-a surface reflectance function can be assigned to each object in the scene, and a spectral power distribution function can be assigned to each light source (Fig.~\ref{fig:VWCCTransformations}). The resulting scene model can then be rendered from any specified viewpoint.
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
@@ -259,15 +259,14 @@ becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
 
 The variation within our datasets captures the essence of the computational problem of lightness constancy
 up to effects of scene geometry, an additional richness that we do not address in this paper.
-In Condition 1, the surface reflectance spectrum of the target object was the only source of scene variation other than the target object LRV.
+In Condition 1, the relative reflectance spectrum of the target object was the only source of scene variation other than the target object LRV.
 The reflectance spectra of the background objects, and the spectral power distributions of the light sources were kept fixed.
-In Condition 2, the spectral power distribution of the light sources varied in addition to the reflectance spectrum of the target object,
-Finally, in Condition 3 three distinct scene factors--target object surface 
-reflectance spectrum, reflectance spectra of the background objects, and
+In Condition 2, the spectral power distribution of the light sources varied in addition to the relative reflectance spectrum of the target object,
+Finally, in Condition 3 three distinct scene factors--target object relative reflectance spectrum, reflectance spectra of the background objects, and
 spectral power distribution of the light sources--varied in addition to the target object LRV.
 Conditions 1 and 2 had datasets consisting of 1000 scenes and images, 100 for each of 10 target object LRV values. 
 Condition 3 had a dataset consisting of 3000 scenes and images, 300 each for the 10 target LRV values.
-The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the shape of the target object surface reflectance spectra could differ.
+The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the relative reflectance spectrum of the target object could differ.
 
 % Figure 5: Conditions Studied
 \begin{figure}
@@ -288,14 +287,14 @@ The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a di
         \includegraphics[width=\textwidth]{../FiguresDraft5/Figure5/Figure5_c.pdf}        
         \label{fig:allSpectraVarying}
     \end{subfigure}    
-    \caption{{\bf Dataset Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2, and 3. Five images are shown for each light reflectance value (LRV). We studied three types of spectral variations. (a) Condition 1: variable shape of the target object reflectance spectrum, fixed light source spectra, fixed background object spectra (same as Fig.~\ref{fig:introExampleFigure}). 
-(b) Condition 2: variable shape of the target object reflectance spectrum, variable light source spectra, fixed background object spectra. (c) Condition 3: variable shape of the target object reflectance spectrum, variable light source spectra, variable background object spectra. The spheres in each row of each panel have the same LRV, while the spheres in each column of each panel have the same relative surface reflectance.  Across panels a-c, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall light source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. This is smaller than the variation we studied, but allows us to show the variation within the dynamic range available for display in publication. The sRGB values for all three subplots were normalized using a common scale factor prior to gamma correction.} 
+    \caption{{\bf Dataset Conditions 1-3:} sRGB renderings of illustrative images from the datasets for Conditions 1, 2, and 3. Five images are shown for each light reflectance value (LRV). We studied three types of spectral variations. (a) Condition 1: variable target object relative reflectance spectrum, fixed light source spectra, fixed background object spectra (same as Fig.~\ref{fig:introExampleFigure}). 
+(b) Condition 2: variable target object relative reflectance spectrum, variable light source spectra, fixed background object spectra. (c) Condition 3: variable target object relative reflectance spectrum, variable light source spectra, variable background object spectra. The spheres in each row of each panel have the same LRV, while the spheres in each column of each panel have the same relative surface reflectance.  Across panels a-c, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall light source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. This is smaller than the variation we studied, but allows us to show the variation within the dynamic range available for display in publication. The sRGB values for all three subplots were normalized using a common scale factor prior to gamma correction.} 
 \label{fig:studiedCases}
 \end{figure}
 
 For the primary results, we used the ``{\it Library}'' base scene and a spherical target object.
 The library base scene contains 2 area lights. 
-We inserted one additional spherical spherical light source into the scene.
+We inserted one additional spherical light source into the scene.
 The position and size of the inserted object, inserted light source and viewpoint were held fixed across all 
 scenes in the database. The geometry is shown in Figure~\ref{fig:3DScene}.
 Surface and illuminant spectra were drawn according to statistical models of naturally occurring spectra, as described below.
@@ -353,7 +352,6 @@ To obtain illuminant spectra with intensity variation similar to the Granada dat
 This procedure restores the three-order of magnitude intensity variation present in the original dataset.
 We chose the particular scale factor range so that the mean number of cone isomerizations from the target object ranged from approximately 100 to 100,000 for the 100 msec cone integration time we used (see below).
 This range corresponds approximately to that for natural viewing.
-
 
 \subsubsection{Surface reflectance spectra}
 % Figure 7 Surface Reflectance Data and Model
@@ -443,7 +441,7 @@ Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spe
 \end{figure}
 
 \subsection{Model of early visual system} \label{method:Isetbio}
-The light entering the eye is blurred by the eye's optics.
+The light entering the eye is blurred by the optics of the eye.
 The resulting retinal image is sampled by a mosaic of cone photoreceptors.
 The excitations of these photoreceptors provide the information about the scene that is available to the neural visual system for further processing.
 Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone excitations
@@ -564,6 +562,8 @@ Estimation performance was evaluated using a test set consisting of the 10\% of 
 For our primary results, estimation was based on 6 receptive fields.
 %% JDB: I thought we were using a squared error cost function. See above?
 %% DHB: Wouldn't it make more sense to use MSE and posterior mean for both learning and decoding, since we are reporting relative RMSE as our performance measure?
+%% VS: The results are similar for both cost function. MSE estimates are biased at the ends.
+%% VS: For case 1 and 2, the first two RFs contain all the information and the performance is based on these two RFs.
 
 \subsubsection*{Baseline methods}
 
@@ -602,7 +602,7 @@ of the image data.
 
 \subsection{Condition 1}
 
-In Condition 1, only the LRV and the shape of the reflectance spectrum of the target object vary across scenes.
+In Condition 1, only the LRV and the relative reflectance spectrum of the target object vary across scenes.
 We used accuracy maximization analysis (AMA) to learn a set of linear receptive fields that are optimal for estimating target LRV from the cone excitations to the image patches in this condition. 
 Decoding performance for the test set is shown in Figure~\ref{fig:case1Estimates}. 
 Figure~\ref{fig:case1Estimates} also shows the performance of the baseline linear regression method. 
@@ -688,13 +688,8 @@ Figure~\ref{fig:Condition2}(c,d) shows that performance improves greatly with co
 Estimates obtained from the AMA receptive field responses are essentially perfect. 
 Estimates obtained from linear regression are substantially improved.
 This observation is consistent with previous results on computational color constancy that show that 
-contrast-based representations are effective for supporting color constancy when only illumination spectra vary (e.g. REFS 1).
-However, contrast-based representations are less effective at supporting constancy when the spectra of background objects in the scene vary (e.g. REFS 2).
-%% REFS 1:
-% [1] Land, E.H. 1986 An alternative technique for the computation of the designator in the retinex theory of color vision. Proc. Natl. Acad. Sci. 83, 3078-3080.
-%
-% REFS 2:
-% [1] Brainard, D.H. & Wandell, B.A. 1986 Analysis of the retinex theory of color vision. Journal of the Optical Society of America A 3, 1651-1661.
+contrast-based representations are effective for supporting color constancy when only illumination spectra vary (e.g. \citeNP{land1986alternative}).
+However, contrast-based representations are less effective at supporting constancy when the spectra of background objects in the scene vary (e.g. \citeNP{brainard1986analysis}).
 
 %% Figure 12: Results for Condition 3
 \begin{figure}
@@ -735,18 +730,19 @@ This overlap is due to the combined effect of the variation in the illumination 
 Recall, however, that the performance shown Figure~\ref{fig:case3Estimates} is based on six rather than two receptive fields;
 so that there is likely to be less overlap in the full six-dimensional response space.
 That is, inclusion of more receptive fields will in general reduce the ambiguity that is seen when we visualize the responses of just the first two receptive fields.
-This effect is shown the right panel of Figure REF, which also illustrates the effect of training set size on estimation performance. 
+This effect is shown the right panel of Figure~\ref{fig:RMSEvsRF}, which also illustrates the effect of training set size on estimation performance. 
 %% DHB: Check rewrite of last two sentences: OK?
 %% VS to add REF to last sentence above.
 
-% Figure Error Bar Graphs
+% Figure RMSE vs N RFs
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{../FiguresDraft5/Figure13/Figure13.pdf}
 \caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in a, but plotted as a function of number of receptive fields. Performance converges around 6 RFs.}
- \label{fig:barGraphs}
+ \label{fig:RMSEvsRF}
 \end{figure}
-%% DHB: Vijay to fix figure label
+
+%% DHB: We need to write something interpretive about the RF structure shown in panel c.
 
 Figure~\ref{fig:case3RFs} shows the first two receptive fields learned for Condition 3.
 Similar to Condition 1, the L and M cone excitations receive large weights, while the S cone excitations are largely ignored. 
@@ -757,8 +753,6 @@ contribution.
 Additionally, for this condition, the cone contrast needs to be compared across the target and background regions. 
 A center-surround receptive field facilitates such comparison.
 However, one should not interpret too much into the features that arise due to the specific geometry of the scene.
-
-%% DHB: We need to write something interpretive about the RF structure shown in panel c.
 
 %% DHB; We were going to vary the number of secondary reflections modeled in the rendering for one of the conditions, to
 % separate the two possible sources of influence of the background surfaces.
@@ -812,11 +806,7 @@ reliably light reflected from those objects can be used as a cue to estimate the
 
 \subsection{Images of Virtual vs. Real Scenes}
 % JDB: Completely rearranged opening of section. Previous version had a choppy opening paragraph that did not flow into second paragraph. Please see what you think.
-As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
-%% JDB: ADD REFERENCE TO Burge, Fowlkes, Banks (2010). ?Natural scene statistics predict how the figure-ground cue of convexity affects human depth perception?. Journal of Neuroscience, 30(21): 7269-7280.
-% JDB: ADD REFERENCE TO Girshick, Landy, Simoncelli (2011). Cardinal rules: visual orientation perception reflects knowledge of environmental statistics. Nature Neuroscience, 14(7), 926-932. 
-%% JDB: ADD REFERENCE TO Burge, McCann, Geisler (2016). Estimating 3D tilt from local image cues in natural scenes. Journal of Vision, 16(13):2, 1?25.
-%% JDB: ADD REFERNECE TO Goncalves & Welchman (2017).  "What Not?? Detectors Help the Brain See in Depth. Current Biology, 27, 1-10
+As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful, burge2010natural, girshick2011cardinal, burge2016estimating, goncalves2017not}. 
 
 Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
 To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 

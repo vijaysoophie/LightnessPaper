@@ -192,7 +192,7 @@ Brainard%
 \ \BBA{} Wandell%
 }{%
 {\protect\APACyear{1986}}%
-}]{%
+{\protect\APACexlab{{\protect\BCnt{1}}}}}]{%
 BrainardWandellRetinex}%
 \APACinsertmetastar{%
 BrainardWandellRetinex}%
@@ -201,7 +201,7 @@ Brainard, D\BPBI H.%
 %
 \unskip\
 \newblock
-\APACrefYearMonthDay{1986}{}{}.
+\APACrefYearMonthDay{1986{\protect\BCnt{1}}}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
   of the retinex theory of color vision}\BBCQ{}\ [Journal Article].
@@ -212,6 +212,31 @@ Brainard, D\BPBI H.%
  \begin{APACrefURL}
   \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4EF4BB-D483-C92D-5D5F36D660104411_2473/josaa-3-10-1651.pdf?da=1&id=2473&seq=0&mobile=no}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Brainard%
+\ \BBA{} Wandell%
+}{%
+Brainard%
+\ \BBA{} Wandell%
+}{%
+{\protect\APACyear{1986}}%
+{\protect\APACexlab{{\protect\BCnt{2}}}}}]{%
+brainard1986analysis}%
+\APACinsertmetastar{%
+brainard1986analysis}%
+Brainard, D\BPBI H.%
+\BCBT{}\ \BBA{} Wandell, B\BPBI A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986{\protect\BCnt{2}}}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
+  of the retinex theory of color vision}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{JOSA A}{3}{10}{1651--1661}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -241,6 +266,34 @@ Buchsbaum, G.%
   \end{APACrefURL}
 \newblock
 , doi:Doi 10.1016/0016-0032(80)90058-7
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Burge%
+, Fowlkes%
+\BCBL{}\ \BBA{} Banks%
+}{%
+Burge%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2010}}%
+}]{%
+burge2010natural}%
+\APACinsertmetastar{%
+burge2010natural}%
+Burge, J.%
+, Fowlkes, C\BPBI C.%
+\BCBL{}\ \BBA{} Banks, M\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Natural-scene statistics predict how the figure--ground
+  cue of convexity affects human depth perception}{Natural-scene statistics
+  predict how the figure--ground cue of convexity affects human depth
+  perception}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of Neuroscience}{30}{21}{7269--7280}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -373,6 +426,32 @@ Burge, J.%
   coding advantages for scaled additive noise}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{PLoS computational biology}{13}{2}{e1005281}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Burge%
+, McCann%
+\BCBL{}\ \BBA{} Geisler%
+}{%
+Burge%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2016}}%
+}]{%
+burge2016estimating}%
+\APACinsertmetastar{%
+burge2016estimating}%
+Burge, J.%
+, McCann, B\BPBI C.%
+\BCBL{}\ \BBA{} Geisler, W\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Estimating 3D tilt from local image cues in natural
+  scenes}{Estimating 3d tilt from local image cues in natural scenes}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of vision}{16}{13}{2--2}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -622,6 +701,58 @@ Geisler, W\BPBI S.%
   stimulus encoders for natural tasks}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of vision}{9}{13}{17--17}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Girshick%
+, Landy%
+\BCBL{}\ \BBA{} Simoncelli%
+}{%
+Girshick%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2011}}%
+}]{%
+girshick2011cardinal}%
+\APACinsertmetastar{%
+girshick2011cardinal}%
+Girshick, A\BPBI R.%
+, Landy, M\BPBI S.%
+\BCBL{}\ \BBA{} Simoncelli, E\BPBI P.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Cardinal rules: visual orientation perception reflects
+  knowledge of environmental statistics}{Cardinal rules: visual orientation
+  perception reflects knowledge of environmental statistics}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Nature neuroscience}{14}{7}{926}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Goncalves%
+\ \BBA{} Welchman%
+}{%
+Goncalves%
+\ \BBA{} Welchman%
+}{%
+{\protect\APACyear{2017}}%
+}]{%
+goncalves2017not}%
+\APACinsertmetastar{%
+goncalves2017not}%
+Goncalves, N\BPBI R.%
+\BCBT{}\ \BBA{} Welchman, A\BPBI E.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{?What not? detectors help the brain see in depth}{?what
+  not? detectors help the brain see in depth}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Current Biology}{27}{10}{1403--1412}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -876,6 +1007,31 @@ Land, E\BPBI H.%
 \newblock
  \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/929159}
   \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Land%
+}{%
+Land%
+}{%
+{\protect\APACyear{1986}}%
+}]{%
+land1986alternative}%
+\APACinsertmetastar{%
+land1986alternative}%
+Land, E\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{An alternative technique for the computation of the
+  designator in the retinex theory of color vision}{An alternative technique
+  for the computation of the designator in the retinex theory of color
+  vision}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Proceedings of the national academy of
+  sciences}{83}{10}{3078--3080}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
