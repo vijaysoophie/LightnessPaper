@@ -104,7 +104,7 @@ Specifically, we study variation in target object relative surface reflectance, 
 Recently, supervised statistical learning methods have been applied to the computational problem of color constancy.
 These methods use the joint statistics of labeled images and scene variables to learn mappings that extract stable surface color descriptors from image input \cite{barron2015convolutional}.
 This general statistical learning approach has been useful for other perceptual problems in early and mid-level vision. domains of vision. 
-For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal}. It has been used to develop ideal observers for defocus blur, binocular disparity, and retinal motion estimation with natural stimuli that provide excellent predictions of neural and human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
+For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear filters optimized for particular perceptual tasks \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}. It has been used to develop ideal observers for defocus blur, binocular disparity, and retinal motion estimation with natural stimuli that provide excellent predictions of neural and human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
 In this paper, we apply AMA to a special case of computational color constancy. 
 
 Supervised learning requires large labeled data sets.  Such data sets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these datasets do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where object surface reflectances are measured individually (\citeNP{funt1988color,ciurea2003large}), but these are not large enough to drive supervised learning.
@@ -812,7 +812,12 @@ reliably light reflected from those objects can be used as a cue to estimate the
 
 \subsection{Images of Virtual vs. Real Scenes}
 % JDB: Completely rearranged opening of section. Previous version had a choppy opening paragraph that did not flow into second paragraph. Please see what you think.
-As noted in the introduction, supervised learning requires large labeled datasets. Such datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
+As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful}. 
+%% JDB: ADD REFERENCE TO Burge, Fowlkes, Banks (2010). ?Natural scene statistics predict how the figure-ground cue of convexity affects human depth perception?. Journal of Neuroscience, 30(21): 7269-7280.
+% JDB: ADD REFERENCE TO Girshick, Landy, Simoncelli (2011). Cardinal rules: visual orientation perception reflects knowledge of environmental statistics. Nature Neuroscience, 14(7), 926-932. 
+%% JDB: ADD REFERENCE TO Burge, McCann, Geisler (2016). Estimating 3D tilt from local image cues in natural scenes. Journal of Vision, 16(13):2, 1?25.
+%% JDB: ADD REFERNECE TO Goncalves & Welchman (2017).  "What Not?? Detectors Help the Brain See in Depth. Current Biology, 27, 1-10
+
 Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
 To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 
 an independent measurement of the illumination impinging on each object.
