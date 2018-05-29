@@ -1,0 +1,82 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft5.aux
+The style file: jovcite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: references.bib
+Repeated entry---line 265 of file references.bib
+ : @article{geisler2009optimal
+ :                            ,
+I'm skipping whatever remains of this entry
+apacite.bst [2007/09/03 v4.00 APA bibliography style]
+Warning--No publisher in barron2015convolutional
+Warning--No address in barron2015convolutional
+Warning--No publisher in barron2012color
+Warning--No address in barron2012color
+`articleurl' is a missing field, not a string, for entry Buchsbaum80
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in burge2012optimal
+Warning--No address in burge2012optimal
+Warning--No publisher in ChakrabartiHyperspectral
+Warning--No address in ChakrabartiHyperspectral
+Warning--No address in CIE86
+Warning--No publisher in ciurea2003large
+Warning--No address in ciurea2003large
+`articleurl' is a missing field, not a string, for entry FosterColorConstancy
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in funt1988color
+Warning--No address in funt1988color
+`articleurl' is a missing field, not a string, for entry NascimentoFoster2016
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in skauli2013collection
+Warning--No address in skauli2013collection
+`articleurl' is a missing field, not a string, for entry TkacikUpennHypersepctralData
+while executing---line 5275 of file jovcite.bst
+You've used 48 entries,
+            6399 wiz_defined-function locations,
+            1520 strings with 18890 characters,
+and the built_in function-call counts, 90442 in all, are:
+= -- 11290
+> -- 782
+< -- 4159
++ -- 4393
+- -- 101
+* -- 5879
+:= -- 16247
+add.period$ -- 210
+call.type$ -- 48
+change.case$ -- 249
+chr.to.int$ -- 0
+cite$ -- 111
+duplicate$ -- 2413
+empty$ -- 3667
+format.name$ -- 1215
+if$ -- 17389
+int.to.chr$ -- 0
+int.to.str$ -- 100
+missing$ -- 0
+newline$ -- 1177
+num.names$ -- 388
+pop$ -- 1538
+preamble$ -- 1
+purify$ -- 192
+quote$ -- 0
+skip$ -- 5893
+stack$ -- 0
+substring$ -- 5025
+swap$ -- 1485
+text.length$ -- 169
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 4416
+warning$ -- 15
+while$ -- 417
+width$ -- 0
+write$ -- 1472
+(There were 5 error messages)

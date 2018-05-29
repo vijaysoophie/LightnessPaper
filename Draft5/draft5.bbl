@@ -147,7 +147,7 @@ Brainard, D\BPBI H.%
 \APACrefYearMonthDay{1997}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Bayesian color constancy}{Bayesian color
-  constancy}\BBCQ{}\ [Journal Article].
+  constancy}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{14}{7}{1393-1411}.
@@ -176,7 +176,7 @@ Brainard, D\BPBI H.%
 \newblock
 \APACrefYearMonthDay{2014}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}\BBCQ{}\ [Book Section].
+\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
 \BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), \APACrefbtitle{The
   New Visual Neurosciences}{The new visual neurosciences}\ (\BPG~545-556).
@@ -204,7 +204,7 @@ Brainard, D\BPBI H.%
 \APACrefYearMonthDay{1986{\protect\BCnt{1}}}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
-  of the retinex theory of color vision}\BBCQ{}\ [Journal Article].
+  of the retinex theory of color vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{3}{10}{1651-1661}.
@@ -256,8 +256,7 @@ Buchsbaum, G.%
 \APACrefYearMonthDay{1980}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{A spatial processor model for object colour perception}{A
-  spatial processor model for object colour perception}\BBCQ{}\ [Journal
-  Article].
+  spatial processor model for object colour perception}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Franklin Institute}{310}{1}{1-26}.
 \newblock
@@ -265,7 +264,7 @@ Buchsbaum, G.%
   \url{https://www.sciencedirect.com/science/article/pii/0016003280900587}
   \end{APACrefURL}
 \newblock
-, doi:Doi 10.1016/0016-0032(80)90058-7
+, doi:10.1016/0016-0032(80)90058-7
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -499,7 +498,7 @@ Chakrabarti, A.%
 \APACrefYearMonthDay{2011}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Statistics of real-world hyperspectral images}{Statistics
-  of real-world hyperspectral images}\BBCQ{}\ [Conference Proceedings].
+  of real-world hyperspectral images}.\BBCQ{}
 \newblock
 \BIn{} \APACrefbtitle{Proceedings of the IEEE Computer Society Conference on
   Computer Vision and Pattern Recognition}{Proceedings of the ieee computer
@@ -524,7 +523,7 @@ CIE.%
 \APACrefYearMonthDay{1986}{}{}.
 \newblock
 \APACrefbtitle{Colorimetry, second edition}{Colorimetry, second edition}\
-  \APACbVolEdTR{}{Report\ \BNUM\ 15.2}.
+  \APACbVolEdTR{}{\BTR{}\ \BNUM\ 15.2}.
 \newblock
 \APACaddressInstitution{}{Bureau Central de la CIE}.
 \PrintBackRefs{\CurrentBib}
@@ -576,8 +575,7 @@ D'Zmura, M.%
 \newblock
 \BBOQ{}\APACrefatitle{Color constancy . III. General linear recovery of
   spectral descriptions for lights and surfaces}{Color constancy . iii. general
-  linear recovery of spectral descriptions for lights and surfaces}\BBCQ{}\
-  [Journal Article].
+  linear recovery of spectral descriptions for lights and surfaces}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal Of The Optical Society Of America
   A}{11}{9}{2389-2400}.
@@ -608,7 +606,7 @@ D'Zmura, M.%
 \APACrefYearMonthDay{1995}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Probabilistic color constancy}{Probabilistic color
-  constancy}\BBCQ{}\ [Book Section].
+  constancy}.\BBCQ{}
 \newblock
 \BIn{} R\BPBI D.~Luce, M.~D'Zmura, D.~Hoffman, G.~Iverson\BCBL{}\ \BBA{} A\BPBI
   K.~Romney\ (\BEDS), \APACrefbtitle{Geometric Representations of Perceptual
@@ -635,8 +633,7 @@ Foster, D\BPBI H.%
 \newblock
 \APACrefYearMonthDay{2011}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}\BBCQ{}\ [Journal
-  Article].
+\BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Vision Research}{51}{7}{674-700}.
 \newblock
@@ -879,7 +876,7 @@ Jacobs, G\BPBI H.%
 \newblock
 \APACrefYear{1981}.
 \newblock
-\APACrefbtitle{Comparative Color Vision}{Comparative color vision}\ [Book].
+\APACrefbtitle{Comparative Color Vision}{Comparative color vision}.
 \newblock
 \APACaddressPublisher{New York}{Academic Press}.
 \PrintBackRefs{\CurrentBib}
@@ -1001,7 +998,7 @@ Land, E\BPBI H.%
 \APACrefYearMonthDay{1977}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{The retinex theory of color vision}{The retinex theory of
-  color vision}\BBCQ{}\ [Journal Article].
+  color vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Scientific American}{237}{6}{108-128}.
 \newblock
@@ -1055,7 +1052,7 @@ Maloney, L.%
 \newblock
 \BBOQ{}\APACrefatitle{Color constancy: a method for recovering surface spectral
   reflectances}{Color constancy: a method for recovering surface spectral
-  reflectances}\BBCQ{}\ [Journal Article].
+  reflectances}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{3}{}{29-33}.
@@ -1109,8 +1106,7 @@ Mollon, J\BPBI D.%
 \newblock
 \BBOQ{}\APACrefatitle{"Tho' she kneel'd in that place where they grew..." The
   uses and origins of primate colour vision}{"tho' she kneel'd in that place
-  where they grew..." the uses and origins of primate colour vision}\BBCQ{}\
-  [Journal Article].
+  where they grew..." the uses and origins of primate colour vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Experimental Biology}{146}{}{21-38}.
 \newblock
@@ -1140,7 +1136,7 @@ Nascimento, S\BPBI M.%
 \newblock
 \BBOQ{}\APACrefatitle{Spatial distributions of local illumination color in
   natural scenes}{Spatial distributions of local illumination color in natural
-  scenes}\BBCQ{}\ [Journal Article].
+  scenes}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Vision Res}{120}{}{39-44}.
 \newblock
@@ -1199,7 +1195,7 @@ Parraga, C\BPBI A.%
 \APACrefYearMonthDay{1998}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Color and luminance information in natural scenes}{Color
-  and luminance information in natural scenes}\BBCQ{}\ [Journal Article].
+  and luminance information in natural scenes}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of The Optical Society of America
   A}{15}{}{563-569}.
@@ -1253,8 +1249,7 @@ Tkacik, G.%
 \APACrefYearMonthDay{2011}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Natural images from the birthplace of the human
-  eye}{Natural images from the birthplace of the human eye}\BBCQ{}\ [Journal
-  Article].
+  eye}{Natural images from the birthplace of the human eye}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{PLoS ONE}{6}{6:e20409}{}.
 \newblock
@@ -1262,7 +1257,7 @@ Tkacik, G.%
   \url{http://www.plosone.org/article/info\%3Adoi\%2F10.1371\%2Fjournal.pone.0020409}
   \end{APACrefURL}
 \newblock
-, doi:doi:10.1371/journal.pone.0020409
+, doi:10.1371/journal.pone.0020409
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 MAY 2018 14:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  29 MAY 2018 14:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -838,32 +838,19 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [16]
-Underfull \hbox (badness 1377) in paragraph at lines 570--589
-[]\OT1/ptm/m/n/10 D'Zmura, M., & Iver-son, G.  (1994).  Color con-stancy . iii.
- gen-eral lin-ear re-cov-ery of spec-tral de-scrip-tions for lights
- []
-
-
-Underfull \hbox (badness 1221) in paragraph at lines 570--589
-\OT1/ptm/m/n/10 and sur-faces [Jour-nal Ar-ti-cle].  \OT1/ptm/m/it/10 Jour-nal 
-Of The Op-ti-cal So-ci-ety Of Amer-ica A\OT1/ptm/m/n/10 , \OT1/ptm/m/it/10 11\O
-T1/ptm/m/n/10 (9), 2389-2400.  Avail-able from
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 570--589
-[][]$\OT1/pcr/m/n/10 http :// www [] .opticsinfobase [] .org / DirectPDFAccess 
-/ 3991999B [] -F1A4 [] -66F5 [] -1F0CA009799B4F7B [] []806 /
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 1049--1067
-\OT1/pcr/m/n/10 DirectPDFAccess / 0C84AF25 [] -A90E [] -B3D5 [] -AED2308AF33196
-BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da = 1&id =
- []
-
 )
+Underfull \hbox (badness 1584) in paragraph at lines 142--159
+[]\OT1/ptm/m/n/10 Brainard, D. H., & Free-man, W. T.  (1997).  Bayesian color c
+on-stancy.  \OT1/ptm/m/it/10 Jour-nal of the Op-ti-cal So-ci-ety of Amer-ica
+ []
+
+[16]
+Underfull \hbox (badness 10000) in paragraph at lines 569--587
+\OT1/pcr/m/n/10 DirectPDFAccess / 3991999B [] -F1A4 [] -66F5 [] -1F0CA009799B4F
+7B [] []806 / josaa [] -11 [] -9 [] -2389 [] .pdf [] ?da = 1&id =
+ []
+
+[17])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 874.
  [18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 874.
@@ -872,10 +859,6 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 874.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 874.
 Package rerunfilecheck Info: File `draft5.out' has not changed.
 (rerunfilecheck)             Checksum: EAA1D1638C6DB57621383D2B638F0C89;992.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 874.
  ) 
 Here is how much of TeX's memory you used:
@@ -898,7 +881,7 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft5.pdf (18 pages, 12055844 bytes).
+Output written on draft5.pdf (18 pages, 12062876 bytes).
 PDF statistics:
  1828 PDF objects out of 2073 (max. 8388607)
  1575 compressed objects within 16 object streams
