@@ -151,7 +151,7 @@
 \newlabel{sub@fig:croppedImageWithMosaic}{{c}{9}{Retinal image\relax }{figure.caption.16}{}}
 \newlabel{fig:coneContrast}{{9d}{9}{Normalized cone contrast\relax }{figure.caption.16}{}}
 \newlabel{sub@fig:coneContrast}{{d}{9}{Normalized cone contrast\relax }{figure.caption.16}{}}
-\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 439}}{9}{Surface reflectance spectra}{figure.caption.16}{}}
+\newlabel{fig:sceneWithCroppedImage}{{\caption@xref {fig:sceneWithCroppedImage}{ on input line 438}}{9}{Surface reflectance spectra}{figure.caption.16}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces {\bf  Pipeline for generating labeled datasets:} The labeled images used in this paper are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image is cropped around the target object. (c) The retinal image corresponding to the rendered image is computed, which is then used to compute the number of photopigment isomerizations in the cone photoreceptors. The figure shows a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue). (d) The cone excitations are linearly interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized.\relax }}{9}{figure.caption.16}}
 \@writefile{toc}{\contentsline {section}{Computational luminance constancy}{9}{section*.18}}
 \newlabel{method:SupervisedLearning}{{}{9}{Computational luminance constancy}{section*.18}{}}
@@ -181,17 +181,22 @@
 \newlabel{sub@fig:case2RFResponseContrast}{{d}{12}{\centering {RF responses} \newline \centering {(Normalized contrast)}\relax }{figure.caption.25}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces {\bf  Condition 2 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the cone excitations. The relative RMSE is high (41.4\% for linear regression and 31.3\% for AMA based estimation). (b) Cone excitations projected onto AMA receptive fields. (c) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE of estimation is 9.3\% for linear regression and 1.2\% for AMA based estimator. (d) The contrast normalized cone excitations projected along the first two AMA receptive fields. The receptive fields were learned using AMA and the contrast normalized cone excitations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better when the input is contrast normalized cone excitations than when the input is the raw cone excitations.\relax }}{12}{figure.caption.25}}
 \newlabel{fig:Condition2}{{11}{12}{{\bf Condition 2 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the cone excitations. The relative RMSE is high (41.4\% for linear regression and 31.3\% for AMA based estimation). (b) Cone excitations projected onto AMA receptive fields. (c) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE of estimation is 9.3\% for linear regression and 1.2\% for AMA based estimator. (d) The contrast normalized cone excitations projected along the first two AMA receptive fields. The receptive fields were learned using AMA and the contrast normalized cone excitations. For Condition 2, the response corresponding to individual image patches at each LRV level separates much better when the input is contrast normalized cone excitations than when the input is the raw cone excitations.\relax }{figure.caption.25}{}}
-\newlabel{fig:case3Estimates}{{12a}{12}{LRV estimates\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3Estimates}{{a}{12}{LRV estimates\relax }{figure.caption.27}{}}
-\newlabel{fig:case3RFResponse}{{12b}{12}{Receptive field response\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3RFResponse}{{b}{12}{Receptive field response\relax }{figure.caption.27}{}}
-\newlabel{fig:case3RFs}{{12c}{12}{AMA receptive fields\relax }{figure.caption.27}{}}
-\newlabel{sub@fig:case3RFs}{{c}{12}{AMA receptive fields\relax }{figure.caption.27}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Condition 3 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE is 22.9\% for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected onto the first two AMA receptive fields. (c) First two AMA receptive fields learned using the contrast normalized cone excitations.\relax }}{12}{figure.caption.27}}
-\newlabel{fig:Condition3}{{12}{12}{{\bf Condition 3 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE is 22.9\% for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected onto the first two AMA receptive fields. (c) First two AMA receptive fields learned using the contrast normalized cone excitations.\relax }{figure.caption.27}{}}
+\@writefile{toc}{\contentsline {section}{Condition 3}{12}{section*.28}}
+\newlabel{fig:case3Estimates}{{12a}{13}{LRV estimates\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:case3Estimates}{{a}{13}{LRV estimates\relax }{figure.caption.27}{}}
+\newlabel{fig:case3RFResponse}{{12b}{13}{Receptive field response\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:case3RFResponse}{{b}{13}{Receptive field response\relax }{figure.caption.27}{}}
+\newlabel{fig:case3RFs}{{12c}{13}{AMA receptive fields\relax }{figure.caption.27}{}}
+\newlabel{sub@fig:case3RFs}{{c}{13}{AMA receptive fields\relax }{figure.caption.27}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {12}{\ignorespaces {\bf  Condition 3 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE is 22.9\% for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected onto the first two AMA receptive fields. (c) First two AMA receptive fields learned using the contrast normalized cone excitations.\relax }}{13}{figure.caption.27}}
+\newlabel{fig:Condition3}{{12}{13}{{\bf Condition 3 results:} (a) Mean estimated LRV $\pm $ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE is 22.9\% for linear regression and 13.0\% for AMA. (b) Contrast normalized cone excitations for the training set projected onto the first two AMA receptive fields. (c) First two AMA receptive fields learned using the contrast normalized cone excitations.\relax }{figure.caption.27}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {13}{\ignorespaces {\bf  Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in a, but plotted as a function of number of receptive fields. Performance converges around 6 RFs.\relax }}{13}{figure.caption.29}}
 \newlabel{fig:RMSEvsRF}{{13}{13}{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in a, but plotted as a function of number of receptive fields. Performance converges around 6 RFs.\relax }{figure.caption.29}{}}
-\@writefile{toc}{\contentsline {section}{Condition 3}{13}{section*.28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }}{14}{figure.caption.32}}
+\newlabel{fig:barGraphs}{{14}{14}{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {section}{Discussion}{14}{section*.30}}
+\newlabel{Discussion}{{}{14}{Discussion}{section*.30}{}}
+\@writefile{toc}{\contentsline {section}{Summary}{14}{section*.31}}
 \citation{burge2011optimal}
 \citation{burge2012optimal}
 \citation{burge2014optimal}
@@ -201,13 +206,7 @@
 \citation{girshick2011cardinal}
 \citation{burge2016estimating}
 \citation{goncalves2017not}
-\@writefile{lof}{\contentsline {figure}{\numberline {14}{\ignorespaces {\bf  Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }}{14}{figure.caption.32}}
-\newlabel{fig:barGraphs}{{14}{14}{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.\relax }{figure.caption.32}{}}
-\@writefile{toc}{\contentsline {section}{Discussion}{14}{section*.30}}
-\newlabel{Discussion}{{}{14}{Discussion}{section*.30}{}}
-\@writefile{toc}{\contentsline {section}{Summary}{14}{section*.31}}
 \@writefile{toc}{\contentsline {section}{Images of Virtual vs. Real Scenes}{15}{section*.33}}
-\@writefile{toc}{\contentsline {section}{Future Directions}{15}{section*.34}}
 \bibdata{references}
 \bibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
 \APACbibcite{albrecht1991motion}{\citeauthoryear {Albrecht\ \BBA{} Geisler}{Albrecht\ \BBA{} Geisler}{{\APACyear {1991}}}}
@@ -225,6 +224,9 @@
 \APACbibcite{BrainardColorConstancy}{\citeauthoryear {Brainard\ \BBA{} Radonjic}{Brainard\ \BBA{} Radonjic}{{\APACyear {2014}}}}
 \bibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}{\APACexlab {{\BCnt {1}}}}}}
 \APACbibcite{BrainardWandellRetinex}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}{\APACexlab {{\BCnt {1}}}}}}
+\@writefile{toc}{\contentsline {section}{Future Directions}{16}{section*.34}}
+\@writefile{toc}{\contentsline {section}{Linking to Human Performance}{16}{section*.35}}
+\@writefile{toc}{\contentsline {section}{References}{16}{section*.36}}
 \bibcite{brainard1986analysis}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}{\APACexlab {{\BCnt {2}}}}}}
 \APACbibcite{brainard1986analysis}{\citeauthoryear {Brainard\ \BBA{} Wandell}{Brainard\ \BBA{} Wandell}{{\APACyear {1986}}{\APACexlab {{\BCnt {2}}}}}}
 \bibcite{Buchsbaum80}{\citeauthoryear {Buchsbaum}{Buchsbaum}{{\APACyear {1980}}}}
@@ -237,8 +239,6 @@
 \APACbibcite{burge2012optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2012}}}}
 \bibcite{burge2014optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2014}}}}
 \APACbibcite{burge2014optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2014}}}}
-\@writefile{toc}{\contentsline {section}{Linking to Human Performance}{16}{section*.35}}
-\@writefile{toc}{\contentsline {section}{References}{16}{section*.36}}
 \bibcite{burge2015optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2015}}}}
 \APACbibcite{burge2015optimal}{\citeauthoryear {Burge\ \BBA{} Geisler}{Burge\ \BBA{} Geisler}{{\APACyear {2015}}}}
 \bibcite{burge2017accuracy}{\citeauthoryear {Burge\ \BBA{} Jaini}{Burge\ \BBA{} Jaini}{{\APACyear {2017}}}}

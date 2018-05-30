@@ -249,7 +249,6 @@ a surface reflectance function can be assigned to each object in the scene, and 
     \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over the properties illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects. All panels in the figure have a common scale factor and tone mapping.
 \label{fig:VWCCTransformations}}
 \end{figure}
-%% DHB: Need to generate these so that we display them all with a common scale factor and tone mapping. Then say so in the caption once it is done.
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
@@ -544,7 +543,9 @@ These receptive fields are chosen so that decoding their responses leads to mini
 This is possible because given a training set together with a set of N linear receptive fields and an explicit cost function, it is possible to determine the minimum-expected-cost estimator that maps the receptive field responses to the stimulus labels, on the assumption that all images in the training set are equally likely.
 Moreover, the corresponding expected estimation cost may be explicitly computed.
 Thus, AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
-Here we used the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
+We used the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and means squared cost function (corresponding to mean estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
+Both, the Kullback-Leibler divergence cost function and mean squared cost function gave similar results.
+The results in this work are for the Kullback-Leibler divergence cost function (see below).
 Details of how AMA learns filters and how the filter responses are optimally decoded are provided in previously published work \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}.
 For each condition, we learned the filters with a training set consisting of 90\% of the images.
 
@@ -556,8 +557,12 @@ To proceed, first we use the AMA optimal receptive fields and the training datas
 Then, we approximate these with multivariate Gaussian distributions.
 To estimate the LRV of the target object in a test image, we use Bayes' rule together with the Gaussian conditional distributions and a uniform prior to obtain the posterior distribution over LRV values given the filter responses.
 The optimal estimate is the LRV value that minimizes the expected value of the cost function, where the expectation is taken over the posterior.
-Here we again used a Kullback-Leibler divergence cost function, so that the optimal estimator is the maximum a posteriori estimate.
-The Gaussian approximations were estimated using the same training set that was used to learn the receptive fields.
+Here we again used both Kullback-Leibler divergence cost function and mean square cost function, so that the optimal estimator is the maximum a posteriori estimate and the mean estimate respectively.
+The results in both cases were comparable.
+We present the results for the Kullback-Leibler divergence cost function case as the estimates obtained by the mean squared cost function have a bias near the lower and the upper limits of the LRV values used in our simulations. 
+The bias results because the LRV values are bounded in the range [0.2, 0.6] in estimating the posterior.
+
+The Gaussian approximations for the posterior were estimated using the same training set that was used to learn the receptive fields.
 Estimation performance was evaluated using a test set consisting of the 10\% of images that were not in the training set.
 For our primary results, estimation was based on 6 receptive fields.
 %% JDB: I thought we were using a squared error cost function. See above?
@@ -753,10 +758,14 @@ Additionally, for this condition, the cone contrast needs to be compared across 
 A center-surround receptive field facilitates such comparison.
 However, one should not interpret too much into the features that arise due to the specific geometry of the scene.
 
+%% VS added ->
+Our software allows us to compare the effect of background surface reflectances on target object LRV with and without secondary reflections from background objects. 
+Our analysis shows that the secondary reflections have minimal effect on LRV estimates.
+The estimates without secondary reflections are comparable to that with reflections.
+This shows that the primary source of the estimation error is due to the variability in the contrast estimation due to finite number of samples in the background and not due to secondary reflections.
+
 %% DHB; We were going to vary the number of secondary reflections modeled in the rendering for one of the conditions, to
 % separate the two possible sources of influence of the background surfaces.
-% % VS: On switching off secondary reflections, the performance (rel RMSE) remains essentially the same. Which means that this is not the primary source of variation.
-% % VS: To ensure that secondary reflections were switched off, I checked that the multispectral values of the central patch of the rendered image and the corresponding cone isomerizations were the same for images that were generated with the same target and illuminant but different backgrounds. Then I performed the training and test as usual.
 
 \section{Discussion} \label{Discussion}
 
@@ -820,6 +829,9 @@ A second advantage is that we can control the variation in distinct scene factor
 This flexibility allows the study of individual scene factors as well as their combined effects.
 Here, we exploited this flexibility to quantify how variation in the shape of the reflectance spectrum of the target object, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation.
 We believe this basic approach can be extended to include parametric control over the amount of variation of different factors as well as to include variation in additional factors (see below).
+%% VS added ->
+For example, we could study the case without secondary of the light on the target object from background objects reflections in the scene, and show that such reflections have minimal effect on LRV estimation.
+Such analysis are not possible with real images.
 %% DHB: Update if we add additional analyses as per some of the comments above.
 % % JDB: I don't understand what the the concluding sentence above is saying.
 
