@@ -260,10 +260,6 @@ Buchsbaum, G.%
 \newblock
 \APACjournalVolNumPages{Journal of the Franklin Institute}{310}{1}{1-26}.
 \newblock
- \begin{APACrefURL}
-  \url{https://www.sciencedirect.com/science/article/pii/0016003280900587}
-  \end{APACrefURL}
-\newblock
 , doi:10.1016/0016-0032(80)90058-7
 \PrintBackRefs{\CurrentBib}
 
@@ -672,6 +668,59 @@ Funt, B\BPBI V.%
   on}\ (\BPGS\ 544--549).
 \newblock
  \begin{APACrefURL} \url{10.1109/CVPR.1988.196288} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Gattass%
+, Gross%
+\BCBL{}\ \BBA{} Sandell%
+}{%
+Gattass%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1981}}%
+}]{%
+gattass1981visual}%
+\APACinsertmetastar{%
+gattass1981visual}%
+Gattass, R.%
+, Gross, C.%
+\BCBL{}\ \BBA{} Sandell, J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1981}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Visual topography of V2 in the macaque}{Visual topography
+  of v2 in the macaque}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of Comparative Neurology}{201}{4}{519--539}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Gattass%
+, Sousa%
+\BCBL{}\ \BBA{} Gross%
+}{%
+Gattass%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{1988}}%
+}]{%
+gattass1988visuotopic}%
+\APACinsertmetastar{%
+gattass1988visuotopic}%
+Gattass, R.%
+, Sousa, A.%
+\BCBL{}\ \BBA{} Gross, C.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1988}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Visuotopic organization and extent of V3 and V4 of the
+  macaque}{Visuotopic organization and extent of v3 and v4 of the
+  macaque}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of Neuroscience}{8}{6}{1831--1845}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%

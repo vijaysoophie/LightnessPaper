@@ -10,7 +10,7 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: references.bib
-Repeated entry---line 265 of file references.bib
+Repeated entry---line 263 of file references.bib
  : @article{geisler2009optimal
  :                            ,
 I'm skipping whatever remains of this entry
@@ -38,45 +38,45 @@ Warning--No publisher in skauli2013collection
 Warning--No address in skauli2013collection
 `articleurl' is a missing field, not a string, for entry TkacikUpennHypersepctralData
 while executing---line 5275 of file jovcite.bst
-You've used 48 entries,
+You've used 50 entries,
             6399 wiz_defined-function locations,
-            1520 strings with 18890 characters,
-and the built_in function-call counts, 90442 in all, are:
-= -- 11290
-> -- 782
-< -- 4159
-+ -- 4393
-- -- 101
-* -- 5879
-:= -- 16247
-add.period$ -- 210
-call.type$ -- 48
-change.case$ -- 249
+            1530 strings with 19100 characters,
+and the built_in function-call counts, 93919 in all, are:
+= -- 11700
+> -- 820
+< -- 4321
++ -- 4549
+- -- 105
+* -- 6107
+:= -- 16861
+add.period$ -- 218
+call.type$ -- 50
+change.case$ -- 259
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 2413
-empty$ -- 3667
-format.name$ -- 1215
-if$ -- 17389
+cite$ -- 115
+duplicate$ -- 2515
+empty$ -- 3819
+format.name$ -- 1279
+if$ -- 18059
 int.to.chr$ -- 0
-int.to.str$ -- 100
+int.to.str$ -- 104
 missing$ -- 0
-newline$ -- 1177
-num.names$ -- 388
-pop$ -- 1538
+newline$ -- 1225
+num.names$ -- 404
+pop$ -- 1588
 preamble$ -- 1
-purify$ -- 192
+purify$ -- 200
 quote$ -- 0
-skip$ -- 5893
+skip$ -- 6129
 stack$ -- 0
-substring$ -- 5025
-swap$ -- 1485
-text.length$ -- 169
+substring$ -- 5195
+swap$ -- 1552
+text.length$ -- 173
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4416
+type$ -- 4576
 warning$ -- 15
-while$ -- 417
+while$ -- 441
 width$ -- 0
-write$ -- 1472
+write$ -- 1538
 (There were 5 error messages)
