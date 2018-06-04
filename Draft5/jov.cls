@@ -89,10 +89,10 @@
 
 %%% End of patchcmd code
 
-\textwidth 190mm
-\hoffset -35mm
-\textheight 230mm
-\voffset -20mm	
+\textwidth 180mm
+\hoffset -30mm
+\textheight 220mm
+\voffset -15mm	
 \linespread{1.3}
 
 \setlength{\parindent}{7mm}
@@ -146,7 +146,7 @@
 		\fi%
 	\fi%
 	\patchcommand\@authorsstring{}{%
-		\multirow{2}{*}{\Large\bf\textsf{#2 #1}} & \hspace{7cm}\sf #3 & \multirow{2}{*}{\Huge\href{#5}{\ding{118}} \href{mailto:#6}{\ding{41}}}\\%
+		\multirow{2}{*}{\Large\bf\textsf{#2 #1}} & \hspace{5cm}\sf #3 & \multirow{2}{*}{\Huge\href{#5}{\ding{118}} \href{mailto:#6}{\ding{41}}}\\%
 			 & \sf #4 & \\%
 			 \multicolumn{3}{c}{\hspace*{0.97\textwidth}}\\}%
 }
