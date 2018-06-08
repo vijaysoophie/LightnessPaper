@@ -707,7 +707,7 @@ However, contrast-based representations are less effective at supporting constan
 
 Condition 3 introduces variation in the reflectance spectra of the background objects, in addition to the sources of variation in Conditions 1 and 2.
 This condition models the sources of real-world spectral variation that is most relevant for the computational problem of luminance constancy.
-We again trained and evaluated AMA for labeled images patches, using the contrast normalized cone excitations.
+We again trained and evaluated AMA for labeled image patches, using the contrast normalized cone excitations.
 The LRV estimates obtained via AMA are more variable and less accurate than for the previous conditions (Figure~\ref{fig:case3Estimates}).
 Nevertheless, the estimates provide useful information about the target LRV.
 Indeed, the estimates track the true LRV on average, as seen by the fact that the mean estimate (red line) lies along the positive diagonal.
@@ -720,7 +720,7 @@ This overlap is due to the combined effect of the variation in the illumination 
 Recall, however, that the performance shown Figure~\ref{fig:case3Estimates} is based on six rather than two receptive fields;
 so that there is likely to be less overlap in the full six-dimensional response space.
 That is, inclusion of more receptive fields will in general reduce the ambiguity that is seen when we visualize the responses of just the first two receptive fields.
-This effect is shown the right panel of Figure~\ref{fig:RMSEvsRF}, which also illustrates the effect of training set size on estimation performance. 
+This effect is shown in the right panel of Figure~\ref{fig:RMSEvsRF}, which also illustrates the effect of training set size on estimation performance. 
 %% DHB: Johannes, please check rewrite of last two sentences: OK?
 
 % Figure RMSE vs N RFs
@@ -767,7 +767,7 @@ We studied the how the performance of the learned estimators changed with system
 \begin{figure}
 \centering
 \includegraphics[width=0.3\textwidth]{../FiguresDraft5/Figure14/Figure14.pdf}
-\caption{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set.}
+\caption{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. Relative RMSE is the square root of the mean of the squared difference between the estimated and true LRV divided by the true LRV. The mean is taken over all stimuli in the test set. The dotted line represents the relative RMSE for a naive method that estimates the LRV of each image as the mean LRV over the images in the set (LRV = 0.4).}
  \label{fig:barGraphs}
 \end{figure}
 
