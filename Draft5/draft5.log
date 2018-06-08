@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  4 JUN 2018 10:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  7 JUN 2018 14:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -877,16 +877,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 859.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 859.
 Package rerunfilecheck Info: File `draft5.out' has not changed.
 (rerunfilecheck)             Checksum: 8267162EEAE50AA4C99618F63E339741;992.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 859.
  ) 
 Here is how much of TeX's memory you used:
  8311 strings out of 493014
  131049 string characters out of 6133351
- 231512 words of memory out of 5000000
+ 231503 words of memory out of 5000000
  11566 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -903,7 +899,7 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft5.pdf (19 pages, 12110310 bytes).
+Output written on draft5.pdf (19 pages, 12110344 bytes).
 PDF statistics:
  1845 PDF objects out of 2073 (max. 8388607)
  1591 compressed objects within 16 object streams

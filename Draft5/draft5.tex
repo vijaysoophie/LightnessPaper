@@ -218,7 +218,7 @@ Finally, in Condition 3 three distinct scene factors--target object relative ref
 spectral power distribution of the light sources--varied in addition to the target object LRV.
 Conditions 1 and 2 had datasets consisting of 1000 scenes and images, 100 for each of 10 target object LRV values. 
 Condition 3 had a dataset consisting of 3000 scenes and images, 300 each for the 10 target LRV values.
-The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the relative reflectance spectrum of the target object could differ.
+The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, we generated a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the relative reflectance spectrum of the target object could differ.
 
 % Figure 4
 \begin{figure}
@@ -297,7 +297,7 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
 \subsubsection{Illumination spectra}
 To generate illumination spectra, we first developed a statistical model of the Granada daylight measurements (\citeNP{hernandez2001color}; \href{http://colorimaginglab.ugr.es/pages/Data}{http://colorimaginglab.ugr.es/pages/Data}) and then sampled randomly from the model (see appendix).
 To match the wavelength spacing we use in rendering, we resampled the wavelength spacing of the Granada spectra to
-to 31 evenly-spaced wavelengths between 400 nm and 700 nm.
+31 evenly-spaced wavelengths between 400 nm and 700 nm.
 
 % Figure 6
 \begin{figure}
@@ -534,7 +534,7 @@ Thus, AMA searches over the space of linear receptive fields to find the set tha
 For each condition, we learned the filters with a training set consisting of 90\% of the images.
 
 In our implementation of AMA, we explored both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
-Training with both cost functions yielded estimation performance; the results reported here are for the Kullback-Leibler divergence cost function.
+Training with both cost functions yielded similar estimation performance; the results reported here are for the Kullback-Leibler divergence cost function.
 We chose this cost function because the estimates it yields at the edges of the stimulus range are less biased than those obtained with the mean squared error cost function.
 
 Details of how AMA learns filters and how the filter responses are optimally decoded are provided in previously published work \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}.
@@ -547,7 +547,7 @@ To proceed, first we use the AMA optimal receptive fields and the training datas
 Then, we approximate these with multivariate Gaussian distributions.
 To estimate the LRV of the target object in a test image, we use Bayes' rule together with the Gaussian conditional distributions and a uniform prior to obtain the posterior distribution over LRV values given the filter responses.
 The optimal estimate is the LRV value that minimizes the expected value of the cost function, where the expectation is taken over the posterior.
-Here we again used the Kullback-Leibler divergence cost function for the result we report.
+Here we again used the Kullback-Leibler divergence cost function for the results we report.
 
 The Gaussian approximations for the posterior were estimated using the same training set that was used to learn the receptive fields.
 Estimation performance was evaluated using a test set consisting of the 10\% of images that were not in the training set.
@@ -595,7 +595,7 @@ We used accuracy maximization analysis (AMA) to learn a set of linear receptive 
 Decoding performance for the test set is shown in Figure~\ref{fig:case1Estimates}. 
 Figure~\ref{fig:case1Estimates} also shows the performance of the baseline linear regression method. 
 Both methods are trained and tested on different image sets.
-As expected, the LRV estimates obtained from decoding the AMA receptive field responses the LRV estimates from linear regression are essentially perfect.
+As expected, the LRV estimates obtained from decoding the AMA receptive field responses as well as the LRV estimates from linear regression are essentially perfect.
 
 Figure~\ref{fig:case1RFResponse} shows the responses of the first two AMA receptive fields to all the image patches in the training set.
 Each individual point represents the receptive field responses to an individual image patch.
