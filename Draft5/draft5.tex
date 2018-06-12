@@ -11,7 +11,7 @@
 
 \begin{document}
 
-\title{Luminance constancy under fixed geometry}
+\title{Luminance constancy in naturalistic scenes}
 %% Luminance constancy in naturalistic scenes
 %% Learned luminance constancy: something
 %% 
@@ -35,7 +35,6 @@ Our work provides a framework for evaluating how different sources of scene vari
  {}
  {Department of Psychology, University of Pennsylvania, PA, USA}
  {}{cottaris@sas.upenn.edu}
- 
  \author{Heasly}{Benjamin S.}
  {}
  {Department of Psychology, University of Pennsylvania, PA, USA}
@@ -205,7 +204,7 @@ a surface reflectance function can be assigned to each object in the scene, and 
 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a spherical target object of fixed shape and size into this scene.
-We generated three distinct datasets, which we refer to as Conditions 1-3 and describe below.
+We generated three distinct datasets, which we refer to as Conditions 1-3. These are describe below.
 Across these datasets the luminance constancy problem (i.e. estimating the target object LRV)
 becomes progressively more difficult (Fig.~\ref{fig:studiedCases}).
 
@@ -218,7 +217,7 @@ Finally, in Condition 3 three distinct scene factors--target object relative ref
 spectral power distribution of the light sources--varied in addition to the target object LRV.
 Conditions 1 and 2 had datasets consisting of 1000 scenes and images, 100 for each of 10 target object LRV values. 
 Condition 3 had a dataset consisting of 3000 scenes and images, 300 each for the 10 target LRV values.
-The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, we generated a different target surface reflectance spectra for each of the 100 scenes. Thus, for each target object LRV value, the relative reflectance spectrum of the target object could differ.
+The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, we generated a different target surface reflectance spectrum for each scene. Thus, for each target object LRV value, the relative reflectance spectrum of the target object could differ.
 
 % Figure 4
 \begin{figure}
@@ -258,7 +257,7 @@ The LRV values were equally spaced between 0.2 and 0.6. For each LRV value, we g
         \label{fig:backGroundVariation}
     \end{subfigure}
 
-    \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over the properties illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects. All panels in this figure are rendered with a common scale factor and tone mapping.
+    \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over these properties as illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects. All panels in this figure are rendered with a common scale factor and tone mapping.
 \label{fig:VWCCTransformations}}
 \end{figure}
 
@@ -711,7 +710,7 @@ We again trained and evaluated AMA for labeled image patches, using the contrast
 The LRV estimates obtained via AMA are more variable and less accurate than for the previous conditions (Figure~\ref{fig:case3Estimates}).
 Nevertheless, the estimates provide useful information about the target LRV.
 Indeed, the estimates track the true LRV on average, as seen by the fact that the mean estimate (red line) lies along the positive diagonal.
-The increased estimation variability is indicated by the increased width of the shaded red region, relative to its width for the Condition 1 and 2 results.
+The increased estimation variability is indicated by the increased width of the shaded red region, relative to its width for the results of Condition 1 and 2.
 Performance of the baseline linear regression method (also evaluated using contrast normalized cone excitations) is worse than that of the AMA-based estimates.
 
 Figure~\ref{fig:case3RFResponse} shows the responses of the first two AMA receptive fields to the training stimuli.
