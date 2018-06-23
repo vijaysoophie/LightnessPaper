@@ -12,9 +12,6 @@
 \begin{document}
 
 \title{Luminance Constancy Learned from Labeled Naturalistic Images}
-%% Luminance constancy in naturalistic scenes
-%% Learned luminance constancy: something
-%% 
 
 \abstract{
 The human visual system supports stable percepts of object color even though the light that reflects from object surfaces varies significantly with the scene illumination.
@@ -25,8 +22,6 @@ To do this, we applied supervised statistical learning methods to the simulated 
 The naturalistic images were rendered with computer graphics, with the underlying scene descriptions generated stochastically using statistical models
 of natural spectral variation.
 Optimally decoding target object LRV from the responses of a small learned set of task-specific linear filters that operate on a contrast representation of the cone excitations yields estimates that are within 13\% of the correct LRV.
-% We show that a decoding scheme used learned linear filters to process a contrast representation of the cone excitations can recover target object LRV to within about 13\% RMSE.
-% JDB: WE DIDN'T DEFINE RMSE SO IT MIGHT BE BEST TO AVOID USING THE ACRONYM HERE.
 Our work provides a framework for evaluating how different sources of scene variability limit performance on luminance constancy.}
 
 \author{Singh}{Vijay}
@@ -49,7 +44,7 @@ Our work provides a framework for evaluating how different sources of scene vari
  {}{brainard@psych.upenn.edu}
  
  \author{Burge}{Johannes}
- {}
+ {Neuroscience Graduate Group}
  {Department of Psychology, University of Pennsylvania, PA, USA}
  {}{jburge@psych.upenn.edu}
 
@@ -72,6 +67,7 @@ It is possible, however, to obtain stable color descriptors by jointly analyzing
 As a consequence, color constancy will be affected both by variation in the illumination and by variation in the surface reflectance of other objects in the scene.  Color constancy algorithms should therefore be evaluated with respect to variation in both of these factors \cite{BrainardWandellRetinex,BrainardFreeman}. 
 There has also been computational work that generalizes to more complex viewing geometries \cite{funt1988color, barron2012color}.
 % JDB: LAST SENTENCE DANGLES. HOW BOUT WE PUT IT LOWER DOWN IN THE MANUSCRIPT?
+% Vijay: I agree
 
 % Figure 1: Introduction
 \begin{figure}
@@ -193,11 +189,10 @@ statistical structure of natural scenes.
         \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_e.png}
         \label{fig:libraryWithChampagneBottle}
     \end{subfigure}
-\caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. Each image shows a different object inserted into the Library base scene. The rendering viewpoint was set so that the object was at the center of the images. The full rendered images have been croppedso that the inserted objects are easily visible.}\label{fig:libraryWithTarget}
+\caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. Each image shows a different object inserted into the Library base scene. The rendering viewpoint was set so that the object was at the center of the images. The full rendered images have been cropped so that the inserted objects are easily visible.}\label{fig:libraryWithTarget}
 \end{figure}
 
 The RenderToolbox4 package includes a collection of base scenes (Fig.~\ref{fig:baseScenes}).
-% JDB: THE ABOVE SENTENCE IS CORRECT?
 Base scenes specify an arrangement of objects and light sources.
 Base scenes may be enriched by the insertion of additional objects, chosen from an object library (Fig.~\ref{fig:libraryWithTarget}), and by the insertion of additional light sources.
 Once the position, size, and pose of the inserted objects and light sources have been set, 
@@ -344,6 +339,7 @@ To restore the overall intensity variation in the Granada dataset, which spans a
 % JDB: THE NUMBERS [0.15, 150] ARE ARBITRARY. THE RELEVANT INFO IS THE NEXT SENTENCE.
 % To restore the overall intensity variation in the Granada dataset, we scaled each randomly generated spectrum with a random number sampled from a log-uniform distribution in the range [0.15, 150].
 % This procedure restores the three-order of magnitude intensity variation present in the original dataset.
+% Vijay: This would needed by someone who wants to reproduce the results.
 The particular range of scale factors was chosen so that the mean number of cone isomerizations from the target object ranged from approximately 100 to 100,000, given a 100 ms cone integration time (see below).
 This range of cone isomerizations corresponds approximately to that of natural daylight viewing.
 
@@ -517,6 +513,7 @@ To make the magnitude of the three cone excitation images similar across cone cl
 normalized each cone excitation image by the summed (over wavelength) quantal efficiency of the corresponding cone class.
 The demosaicing and normalization do not alter the available information relative to that carried by the cone excitations themselves. 
 % JDB: SHOULD WE SWAP 'SIGNAL TO NOISE' FOR 'AVAILABLE INFORMATION'.
+% Vijay: No.
 
 To capture key properties of post-receptoral processing, such as contrast normalization \cite{heeger1992normalization,albrecht1991motion,carandini2012normalization}, 
 we processed the cone excitation images as follows:
@@ -535,8 +532,6 @@ AMA is a task-specific Bayesian method for dimensionality reduction.
 When provided with a labeled training set, a receptive field response model, a decoder that uses these responses to estimate the stimulus label, and a cost function, AMA returns a set of N linear receptive fields, where N is a parameter of the procedure.
 These receptive fields are chosen so that decoding their responses leads to minimum expected-cost estimation, relative to any other choice of N linear receptive fields.
 This is possible because given a training set together with a set of N linear receptive fields and an explicit cost function, it is possible to determine the minimum expected-cost estimator that maps receptive field responses to the stimulus labels.
-% , on the assumption that all images in the training set are equally likely.
-% JDB: CLAUSE SEEMS UNNECESSARY
 Moreover, a close approximation to the corresponding expected estimation cost may be explicitly computed.
 Thus, AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
 For each condition, we learned the filters with a training set consisting of 90\% of the images.
@@ -571,23 +566,22 @@ This second baseline method indirectly incorporates information carried in the i
 through their effect on the contrast normalized responses at the center of the target object. 
 We also evaluated the performance of a naive model that uses the mean LRV value in the training set as the estimate, irrespective
 of the image data; that is, the naive model always estimated the LRV to be equal to 0.4.
-% JDB: DOUBLE CHECK THAT THE ADDITIONIAL CLAUSE AT END OF LAST SENTENCE IS CORRECT.
 
 \section{Results} \label{Results}
 %% Figure 10: Results for Condition 1
 \begin{figure}
 \centering
-            \begin{subfigure}[b]{0.25 \textwidth}
+            \begin{subfigure}[b]{0.3 \textwidth}
         \caption{LRV estimates}
         \includegraphics[width=\textwidth, trim={0 0 0 1.3cm},clip]{../FiguresDraft5/Figure10/Figure10_a.pdf}
         \label{fig:case1Estimates}
     \end{subfigure} 
-        \begin{subfigure}[b]{0.26 \textwidth}
+        \begin{subfigure}[b]{0.31 \textwidth}
         \caption{RF responses}
         \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft5/Figure10/Figure10_b.pdf}
         \label{fig:case1RFResponse}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4 \textwidth}
+    \begin{subfigure}[b]{0.32 \textwidth}
 	\caption{AMA receptive fields}
 	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft5/Figure10/Figure10_c.pdf}
 	\label{fig:case1RFs}
@@ -595,10 +589,8 @@ of the image data; that is, the naive model always estimated the LRV to be equal
     \caption{{\bf Condition 1 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRV. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first two AMA receptive fields.}
 \label{fig:Condition1}
 \end{figure}
-%% DHB: "Linear Model" in panel a) should be "Regression".  Also in Figures 11 and 12.
-%% DHB: It is really hard to see the ellipses in b), even if I increase the mag in the PDF.  Can you make them more salient?
-%% DHB: Show first three RFs in (c) here and in Figure 12, I think.  Otherwise it is hard to understand why the ones in 12 change.
 %% JDB: VIJAY, If you recompute the reduction in AMA cost for RFs 1, 2, and 3 in order and then compute the reduction in AMA cost for RFs 1, 3, and 2 in order, which of the two orders gives lower cost with two filters? 
+% Vijay: See my email.
 
 \subsection{Condition 1}
 
@@ -630,6 +622,7 @@ contribution.
 The results in Figure~\ref{fig:Condition1} were obtained for one particular draw from our statistical model of illumination.
 We verified that performance remained excellent for other draws.
 %% VS to try a few more cases to make sure.
+% Vijay: Tried. Results are similar.
 
 %% DHB, VS: Maybe the above sentence is all we really need, and can delete what's below? Vijay's analysis did not actually use illuminants drawn
 % from the distribution, though.
@@ -699,17 +692,17 @@ However, contrast-based representations are less effective at supporting constan
 %% Figure 12: Results for Condition 3
 \begin{figure}
 \centering
-            \begin{subfigure}[b]{0.25 \textwidth}
+            \begin{subfigure}[b]{0.3 \textwidth}
         \caption{LRV estimates}
         \includegraphics[width=\textwidth, trim={0 0 0 1.3cm},clip]{../FiguresDraft5/Figure12/Figure12_a.pdf}
         \label{fig:case3Estimates}
     \end{subfigure} 
-        \begin{subfigure}[b]{0.26\textwidth}
+        \begin{subfigure}[b]{0.31\textwidth}
         \caption{Receptive field response}
         \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft5/Figure12/Figure12_b.pdf}
         \label{fig:case3RFResponse}
     \end{subfigure}
-    \begin{subfigure}[b]{0.4 \textwidth}
+    \begin{subfigure}[b]{0.32 \textwidth}
 	\caption{AMA receptive fields}
 	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft5/Figure12/Figure12_c.pdf}
 	\label{fig:case3RFs}
@@ -763,8 +756,6 @@ contribution.
 Additionally, for this condition, the optimal receptive fields compare normalized cone contrast between the target and background regions. 
 This comparison may serve to reduce the effect of light scattered from the background onto the target. 
 The specific geometry of the receptive fields should not be taken to be a general feature of the human visual system, as the RF geometry arises as a consequence of the fixed scene geometry used in the training set.
-%% DHB: Let's look at RFs in case where secondary reflections are turned off, to see if what I drafted in this paragraph
-% about RF structure is plausible.
 
 \section{Discussion} \label{Discussion}
 
@@ -807,11 +798,9 @@ Introducing variation in the surface reflectance spectra of the background objec
 the luminance constancy problem substantially more difficult. 
 Variation in the reflectance spectra of the background objects surfaces reduces how 
 reliably light reflected from those objects can be used as a cue to estimate the spectral power distribution of the illuminant.
-% JDB: Are we going to add in a constancy index, as we discussed doing a few meetings ago?
-% DHB: I think it is time to submit this paper.
 
 \subsection{Images of Virtual vs. Real Scenes}
-As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, kim2018lawful, burge2010natural, girshick2011cardinal, burge2016estimating, goncalves2017not}. 
+As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, sebastian2015defocus, kim2018lawful, burge2010natural, girshick2011cardinal, burge2016estimating, goncalves2017not}. 
 
 Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
 To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 

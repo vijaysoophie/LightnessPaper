@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: draft5.aux
+The style file: jovcite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+format.bvol.edition.pages.check is an unknown function---line 4328 of file jovcite.bst
+format.btitle.connect.check is an unknown function---line 4329 of file jovcite.bst
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: references.bib
+Repeated entry---line 243 of file references.bib
+ : @article{geisler2009optimal
+ :                            ,
+I'm skipping whatever remains of this entry
+apacite.bst [2007/09/03 v4.00 APA bibliography style]
+`articleurl' is a missing field, not a string, for entry albrecht1991motion
+while executing---line 5275 of file jovcite.bst
+`articleurl' is a missing field, not a string, for entry Buchsbaum80
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in burge2012optimal
+Warning--No address in burge2012optimal
+Warning--No publisher in ChakrabartiHyperspectral
+Warning--No address in ChakrabartiHyperspectral
+Warning--No address in CIE86
+Warning--No publisher in ciurea2003large
+Warning--No address in ciurea2003large
+Warning--No publisher in funt1988color
+Warning--No address in funt1988color
+`articleurl' is a missing field, not a string, for entry NascimentoFoster2016
+while executing---line 5275 of file jovcite.bst
+Warning--No publisher in skauli2013collection
+Warning--No address in skauli2013collection
+You've used 51 entries,
+            6397 wiz_defined-function locations,
+            1515 strings with 18292 characters,
+and the built_in function-call counts, 93609 in all, are:
+= -- 11661
+> -- 779
+< -- 4413
++ -- 4650
+- -- 107
+* -- 6091
+:= -- 17040
+add.period$ -- 211
+call.type$ -- 51
+change.case$ -- 255
+chr.to.int$ -- 0
+cite$ -- 113
+duplicate$ -- 2436
+empty$ -- 3762
+format.name$ -- 1311
+if$ -- 17878
+int.to.chr$ -- 0
+int.to.str$ -- 106
+missing$ -- 0
+newline$ -- 1226
+num.names$ -- 412
+pop$ -- 1529
+preamble$ -- 1
+purify$ -- 204
+quote$ -- 0
+skip$ -- 6119
+stack$ -- 0
+substring$ -- 5166
+swap$ -- 1451
+text.length$ -- 109
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 4528
+warning$ -- 11
+while$ -- 442
+width$ -- 0
+write$ -- 1546
+(There were 6 error messages)

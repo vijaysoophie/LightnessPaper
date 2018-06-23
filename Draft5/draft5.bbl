@@ -23,7 +23,9 @@ Albrecht, D\BPBI G.%
   simple cells in the visual cortex}{Motion selectivity and the
   contrast-response function of simple cells in the visual cortex}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Visual neuroscience}{7}{6}{531--546}.
+\APACjournalVolNumPages{Visual Neuroscience}{7}{6}{531-546}.
+\newblock
+, doi:10.1017/S0952523800010336
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -67,12 +69,11 @@ Barron, J\BPBI T.%
 \newblock
 \APACrefYearMonthDay{2015}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Convolutional color constancy}{Convolutional color
+\BBOQ{}\APACrefatitle{Convolutional Color Constancy}{Convolutional color
   constancy}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Proceedings of the IEEE International Conference on
-  Computer Vision}{Proceedings of the ieee international conference on computer
-  vision}\ (\BPGS\ 379--387).
+\APACjournalVolNumPages{IEEE International Conference on Computer Vision
+  (ICCV)}{}{}{379-387}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -97,12 +98,7 @@ Barron, J\BPBI T.%
 \BBOQ{}\APACrefatitle{Color constancy, intrinsic images, and shape
   estimation}{Color constancy, intrinsic images, and shape estimation}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{European Conference on Computer Vision}{European
-  conference on computer vision}\ (\BPGS\ 57--70).
-\newblock
- \begin{APACrefURL}
-  \url{https://link.springer.com/chapter/10.1007/978-3-642-33765-9_5}
-  \end{APACrefURL}
+\APACjournalVolNumPages{European Conference on Computer Vision}{}{}{57-70}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -124,7 +120,7 @@ Brainard, D\BPBI H.%
 \BBOQ{}\APACrefatitle{Color and the cone mosaic}{Color and the cone
   mosaic}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Annual review of vision science}{1}{}{519--546}.
+\APACjournalVolNumPages{Annual review of vision science}{1}{}{519-546}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -151,10 +147,6 @@ Brainard, D\BPBI H.%
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{14}{7}{1393-1411}.
-\newblock
- \begin{APACrefURL}
-  \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4A73DE-BFFB-35F6-AA30000149C16461_1807/josaa-14-7-1393.pdf?da=1&id=1807&seq=0&mobile=no}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -178,8 +170,8 @@ Brainard, D\BPBI H.%
 \newblock
 \BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
-\BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), \APACrefbtitle{The
-  New Visual Neurosciences}{The new visual neurosciences}\ (\BPG~545-556).
+\BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), The New Visual
+  Neurosciences.
 \newblock
 \APACaddressPublisher{Cambridge, MA}{MIT Press}.
 \PrintBackRefs{\CurrentBib}
@@ -208,10 +200,6 @@ Brainard, D\BPBI H.%
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{3}{10}{1651-1661}.
-\newblock
- \begin{APACrefURL}
-  \url{http://www.opticsinfobase.org/DirectPDFAccess/0D4EF4BB-D483-C92D-5D5F36D660104411_2473/josaa-3-10-1651.pdf?da=1&id=2473&seq=0&mobile=no}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -236,7 +224,8 @@ Brainard, D\BPBI H.%
 \BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
   of the retinex theory of color vision}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{JOSA A}{3}{10}{1651--1661}.
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{3}{10}{1651-1661}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -288,7 +277,7 @@ Burge, J.%
   predict how the figure--ground cue of convexity affects human depth
   perception}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Neuroscience}{30}{21}{7269--7280}.
+\APACjournalVolNumPages{Journal of Neuroscience}{30}{21}{7269-7280}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -314,7 +303,7 @@ Burge, J.%
   images}{Optimal defocus estimation in individual natural images}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Proceedings of the National Academy of
-  Sciences}{108}{40}{16849--16854}.
+  Sciences}{108}{40}{16849-16854}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -340,8 +329,7 @@ Burge, J.%
   autofocusing a digital camera}{Optimal defocus estimates from individual
   images for autofocusing a digital camera}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Digital Photography VIII}{Digital photography viii}\
-  (\BVOL\ 8299, \BPG~82990E).
+\BIn{} Digital Photography VIII.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -366,7 +354,7 @@ Burge, J.%
 \BBOQ{}\APACrefatitle{Optimal disparity estimation in natural stereo
   images}{Optimal disparity estimation in natural stereo images}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of vision}{14}{2}{1--1}.
+\APACjournalVolNumPages{Journal of Vision}{14}{2}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -392,7 +380,7 @@ Burge, J.%
   human performance}{Optimal speed estimation in natural image movies predicts
   human performance}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Nature communications}{6}{}{}.
+\APACjournalVolNumPages{Nature Communications}{6}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -420,7 +408,7 @@ Burge, J.%
   sensory-perceptual tasks: Computational improvements, filter robustness, and
   coding advantages for scaled additive noise}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{PLoS computational biology}{13}{2}{e1005281}.
+\APACjournalVolNumPages{PLoS Computational Biology}{13}{2}{e1005281}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -446,7 +434,7 @@ Burge, J.%
 \BBOQ{}\APACrefatitle{Estimating 3D tilt from local image cues in natural
   scenes}{Estimating 3d tilt from local image cues in natural scenes}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of vision}{16}{13}{2--2}.
+\APACjournalVolNumPages{Journal of Vision}{16}{13}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -471,7 +459,7 @@ Carandini, M.%
 \BBOQ{}\APACrefatitle{Normalization as a canonical neural
   computation}{Normalization as a canonical neural computation}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Nature Reviews Neuroscience}{13}{1}{51}.
+\APACjournalVolNumPages{Nature Reviews Neuroscience}{13}{1}{51-62}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -496,10 +484,8 @@ Chakrabarti, A.%
 \BBOQ{}\APACrefatitle{Statistics of real-world hyperspectral images}{Statistics
   of real-world hyperspectral images}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Proceedings of the IEEE Computer Society Conference on
-  Computer Vision and Pattern Recognition}{Proceedings of the ieee computer
-  society conference on computer vision and pattern recognition}\
-  (\BPG~193-200).
+\BIn{} Proceedings of the IEEE Computer Society Conference on Computer Vision
+  and Pattern Recognition.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -546,8 +532,7 @@ Ciurea, F.%
 \BBOQ{}\APACrefatitle{A large image database for color constancy research}{A
   large image database for color constancy research}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Color and Imaging Conference}{Color and imaging
-  conference}\ (\BVOL\ 2003, \BPGS\ 160--164).
+\BIn{} Color and Imaging Conference.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -575,10 +560,6 @@ D'Zmura, M.%
 \newblock
 \APACjournalVolNumPages{Journal Of The Optical Society Of America
   A}{11}{9}{2389-2400}.
-\newblock
- \begin{APACrefURL}
-  \url{http://www.opticsinfobase.org/DirectPDFAccess/3991999B-F1A4-66F5-1F0CA009799B4F7B_806/josaa-11-9-2389.pdf?da=1&id=806&seq=0&mobile=no}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -605,10 +586,8 @@ D'Zmura, M.%
   constancy}.\BBCQ{}
 \newblock
 \BIn{} R\BPBI D.~Luce, M.~D'Zmura, D.~Hoffman, G.~Iverson\BCBL{}\ \BBA{} A\BPBI
-  K.~Romney\ (\BEDS), \APACrefbtitle{Geometric Representations of Perceptual
-  Phenomena: Papers in Honor of Tarow Indow's 70th Birthday}{Geometric
-  representations of perceptual phenomena: Papers in honor of tarow indow's
-  70th birthday}\ (\BPG~187-202).
+  K.~Romney\ (\BEDS), Geometric Representations of Perceptual Phenomena: Papers
+  in Honor of Tarow Indow's 70th Birthday.
 \newblock
 \APACaddressPublisher{Mahwah, NJ}{Lawrence Erlbaum Associates}.
 \PrintBackRefs{\CurrentBib}
@@ -632,11 +611,6 @@ Foster, D\BPBI H.%
 \BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Vision Research}{51}{7}{674-700}.
-\newblock
- \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/20849875}
-  \end{APACrefURL}
-\newblock
-, doi:10.1016/j.visres.2010.09.006
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -662,12 +636,8 @@ Funt, B\BPBI V.%
   a finite dimensional linear model}{Color constancy computation in
   near-mondrian scenes using a finite dimensional linear model}.\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Computer Vision and Pattern Recognition, 1988.
-  Proceedings CVPR'88., Computer Society Conference on}{Computer vision and
-  pattern recognition, 1988. proceedings cvpr'88., computer society conference
-  on}\ (\BPGS\ 544--549).
-\newblock
- \begin{APACrefURL} \url{10.1109/CVPR.1988.196288} \end{APACrefURL}
+\BIn{} Computer Society Conference on Computer Vision and Pattern Recognition,
+  1988.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -693,7 +663,7 @@ Gattass, R.%
 \BBOQ{}\APACrefatitle{Visual topography of V2 in the macaque}{Visual topography
   of v2 in the macaque}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Comparative Neurology}{201}{4}{519--539}.
+\APACjournalVolNumPages{Journal of Comparative Neurology}{201}{4}{519-539}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -720,7 +690,7 @@ Gattass, R.%
   macaque}{Visuotopic organization and extent of v3 and v4 of the
   macaque}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Neuroscience}{8}{6}{1831--1845}.
+\APACjournalVolNumPages{Journal of Neuroscience}{8}{6}{1831-1845}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -746,7 +716,7 @@ Geisler, W\BPBI S.%
 \BBOQ{}\APACrefatitle{Optimal stimulus encoders for natural tasks}{Optimal
   stimulus encoders for natural tasks}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of vision}{9}{13}{17--17}.
+\APACjournalVolNumPages{Journal of Vision}{9}{13}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -773,7 +743,7 @@ Girshick, A\BPBI R.%
   knowledge of environmental statistics}{Cardinal rules: visual orientation
   perception reflects knowledge of environmental statistics}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Nature neuroscience}{14}{7}{926}.
+\APACjournalVolNumPages{Nature neuroscience}{14}{7}{926-932}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -795,10 +765,10 @@ Goncalves, N\BPBI R.%
 \newblock
 \APACrefYearMonthDay{2017}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{?What not? detectors help the brain see in depth}{?what
-  not? detectors help the brain see in depth}.\BBCQ{}
+\BBOQ{}\APACrefatitle{What not detectors help the brain see in depth}{What not
+  detectors help the brain see in depth}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Current Biology}{27}{10}{1403--1412}.
+\APACjournalVolNumPages{Current Biology}{27}{10}{1403-1412}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -830,7 +800,7 @@ Heasly, B\BPBI S.%
   that facilitate physically based stimulus rendering for vision
   research}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of vision}{14}{2}{6--6}.
+\APACjournalVolNumPages{Journal of Vision}{14}{2}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -856,7 +826,7 @@ Hecht, S.%
 \BBOQ{}\APACrefatitle{Energy, quanta, and vision}{Energy, quanta, and
   vision}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{The Journal of general physiology}{25}{6}{819--840}.
+\APACjournalVolNumPages{The Journal of general physiology}{25}{6}{819-840}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -878,7 +848,7 @@ Heeger, D\BPBI J.%
 \BBOQ{}\APACrefatitle{Normalization of cell responses in cat striate
   cortex}{Normalization of cell responses in cat striate cortex}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Visual neuroscience}{9}{2}{181--197}.
+\APACjournalVolNumPages{Visual Neuroscience}{9}{2}{181-197}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -906,7 +876,8 @@ Hern{\'a}ndez-Andr{\'e}s, J.%
 \BBOQ{}\APACrefatitle{Color and spectral analysis of daylight in southern
   Europe}{Color and spectral analysis of daylight in southern europe}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{JOSA A}{18}{6}{1325--1335}.
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{18}{6}{1325-1335}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -953,7 +924,7 @@ Jaini, P.%
   models of neural response}{Linking normative models of natural tasks to
   descriptive models of neural response}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of vision}{17}{12}{16--16}.
+\APACjournalVolNumPages{Journal of Vision}{17}{12}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -974,7 +945,7 @@ Jakob, W.%
 \newblock
 \BBOQ{}\APACrefatitle{Mitsuba renderer, 2010}{Mitsuba renderer, 2010}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{URL: http://www. mitsuba-renderer. org}{3}{}{10}.
+\APACjournalVolNumPages{URL: http://www. mitsuba-renderer. org}{3}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1001,7 +972,8 @@ Kelly, K\BPBI L.%
   from spectrophotometric measurements}{Tristimulus specification of the
   munsell book of color from spectrophotometric measurements}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{JOSA}{33}{7}{355--376}.
+\APACjournalVolNumPages{Journal of the Optical Society of
+  America}{33}{7}{355-376}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1050,9 +1022,6 @@ Land, E\BPBI H.%
   color vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Scientific American}{237}{6}{108-128}.
-\newblock
- \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/929159}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1077,7 +1046,7 @@ Land, E\BPBI H.%
   vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Proceedings of the national academy of
-  sciences}{83}{10}{3078--3080}.
+  sciences}{83}{10}{3078-3080}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1105,10 +1074,6 @@ Maloney, L.%
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
   A}{3}{}{29-33}.
-\newblock
- \begin{APACrefURL}
-  \url{http://www.opticsinfobase.org/DirectPDFAccess/0C84AF25-A90E-B3D5-AED2308AF33196BF_2286/josaa-3-1-29.pdf?da=1&id=2286&seq=0&mobile=no}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1134,7 +1099,8 @@ Marimont, D\BPBI H.%
   aberration}{Matching color images: the effects of axial chromatic
   aberration}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{JOSA A}{11}{12}{3113--3122}.
+\APACjournalVolNumPages{Journal of the Optical Society of America
+  A}{11}{12}{3113-3122}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1158,9 +1124,6 @@ Mollon, J\BPBI D.%
   where they grew..." the uses and origins of primate colour vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Experimental Biology}{146}{}{21-38}.
-\newblock
- \begin{APACrefURL} \url{http://jeb.biologists.org/content/146/1/21.full.pdf}
-  \end{APACrefURL}
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1189,9 +1152,6 @@ Nascimento, S\BPBI M.%
 \newblock
 \APACjournalVolNumPages{Vision Res}{120}{}{39-44}.
 \newblock
- \begin{APACrefURL} \url{http://www.ncbi.nlm.nih.gov/pubmed/26291072}
-  \end{APACrefURL}
-\newblock
 , doi:10.1016/j.visres.2015.07.005
 \PrintBackRefs{\CurrentBib}
 
@@ -1218,7 +1178,7 @@ Olmos, A.%
   shading and reflectance images}{A biologically inspired algorithm for the
   recovery of shading and reflectance images}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Perception}{33}{12}{1463--1473}.
+\APACjournalVolNumPages{Perception}{33}{12}{1463-1473}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1251,6 +1211,33 @@ Parraga, C\BPBI A.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Sebastian%
+, Burge%
+\BCBL{}\ \BBA{} Geisler%
+}{%
+Sebastian%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2015}}%
+}]{%
+sebastian2015defocus}%
+\APACinsertmetastar{%
+sebastian2015defocus}%
+Sebastian, S.%
+, Burge, J.%
+\BCBL{}\ \BBA{} Geisler, W\BPBI S.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Defocus blur discrimination in natural images with
+  natural optics}{Defocus blur discrimination in natural images with natural
+  optics}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Journal of Vision}{15}{5}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Skauli%
 \ \BBA{} Farrell%
 }{%
@@ -1273,7 +1260,7 @@ Skauli, T.%
   research.}{A collection of hyperspectral images for imaging systems
   research.}\BBCQ{}
 \newblock
-\BIn{} \APACrefbtitle{Digital Photography}{Digital photography}\ (\BPG~86600C).
+\BIn{} Digital Photography.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1301,12 +1288,6 @@ Tkacik, G.%
   eye}{Natural images from the birthplace of the human eye}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{PLoS ONE}{6}{6:e20409}{}.
-\newblock
- \begin{APACrefURL}
-  \url{http://www.plosone.org/article/info\%3Adoi\%2F10.1371\%2Fjournal.pone.0020409}
-  \end{APACrefURL}
-\newblock
-, doi:10.1371/journal.pone.0020409
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1332,7 +1313,7 @@ Vrhel, M\BPBI J.%
 \BBOQ{}\APACrefatitle{Measurement and analysis of object reflectance
   spectra}{Measurement and analysis of object reflectance spectra}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Color Research \& Application}{19}{1}{4--9}.
+\APACjournalVolNumPages{Color Research \& Application}{19}{1}{4-9}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}

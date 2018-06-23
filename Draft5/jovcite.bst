@@ -4325,8 +4325,8 @@ FUNCTION {incollection}
       %
   output.new.block
   format.in.editors.trans
-  format.bvol.edition.pages
-  booktitle  format.btitle.connect * add.period$
+  format.bvol.edition.pages.check
+  booktitle  format.btitle.connect.check * add.period$
       %
       % format address and publisher, check if publisher present
       %
