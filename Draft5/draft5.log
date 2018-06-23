@@ -1,6 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  18 JUN 2018 09:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  22 JUN 2018 22:40
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **draft5.tex
 (./draft5.tex
@@ -392,72 +393,72 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 56.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 58.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 56.
+LaTeX Font Info:    Try loading font information for U+msa on input line 58.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 56.
+LaTeX Font Info:    Try loading font information for U+msb on input line 58.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 58.
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 56.
+Package hyperref Warning: Suppressing link with empty target on input line 58.
 
 
-Overfull \vbox (7.80003pt too high) detected at line 56
+Overfull \vbox (7.80003pt too high) detected at line 58
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 56.
+Package hyperref Warning: Suppressing link with empty target on input line 58.
 
 
-Overfull \vbox (7.80003pt too high) detected at line 56
+Overfull \vbox (7.80003pt too high) detected at line 58
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 56.
+Package hyperref Warning: Suppressing link with empty target on input line 58.
 
 
-Overfull \vbox (7.80003pt too high) detected at line 56
+Overfull \vbox (7.80003pt too high) detected at line 58
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 56.
+Package hyperref Warning: Suppressing link with empty target on input line 58.
 
 
-Overfull \vbox (7.80003pt too high) detected at line 56
+Overfull \vbox (7.80003pt too high) detected at line 58
  []
 
 
-Package hyperref Warning: Suppressing link with empty target on input line 56.
+Package hyperref Warning: Suppressing link with empty target on input line 58.
 
 
-Overfull \vbox (7.80003pt too high) detected at line 56
+Overfull \vbox (7.80003pt too high) detected at line 58
  []
 
 
-Overfull \hbox (9.23186pt too wide) in paragraph at lines 56--56
+Overfull \hbox (9.23186pt too wide) in paragraph at lines 58--58
 [] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 65.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 67.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <8> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 65.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
  [1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
@@ -466,7 +467,7 @@ File: ../FiguresDraft5/Figure1/Figure1_a.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure1/Figure1_a.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure1/Figure1_a.png used on input l
-ine 80.
+ine 82.
 (pdftex.def)             Requested size: 204.8567pt x 153.63219pt.
 
 <../FiguresDraft5/Figure1/Figure1_b.pdf, id=126, 522.95375pt x 337.26pt>
@@ -474,17 +475,17 @@ File: ../FiguresDraft5/Figure1/Figure1_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure1/Figure1_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure1/Figure1_b.pdf used on input l
-ine 85.
+ine 87.
 (pdftex.def)             Requested size: 281.68384pt x 181.66481pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 98.
 
 <../FiguresDraft5/Figure2/Figure2_a.pdf, id=161, 322.20375pt x 241.90375pt>
 File: ../FiguresDraft5/Figure2/Figure2_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure2/Figure2_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure2/Figure2_a.pdf used on input l
-ine 124.
+ine 126.
 (pdftex.def)             Requested size: 112.67352pt x 84.59375pt.
 
 <../FiguresDraft5/Figure2/Figure2_b.pdf, id=162, 322.20375pt x 241.90375pt>
@@ -492,7 +493,7 @@ File: ../FiguresDraft5/Figure2/Figure2_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure2/Figure2_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure2/Figure2_b.pdf used on input l
-ine 130.
+ine 132.
 (pdftex.def)             Requested size: 112.67352pt x 84.59375pt.
 
 <../FiguresDraft5/Figure2/Figure2_c.pdf, id=163, 322.20375pt x 241.90375pt>
@@ -500,23 +501,23 @@ File: ../FiguresDraft5/Figure2/Figure2_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure2/Figure2_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure2/Figure2_c.pdf used on input l
-ine 136.
+ine 138.
 (pdftex.def)             Requested size: 112.67352pt x 84.59375pt.
  [2] [3 <../FiguresDraft5/Figure1/Figure1_a.png> <../FiguresDraft5/Figure1/Figu
 re1_b.pdf>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 142.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 144.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 142.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 144.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sl' in size <10> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 147.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 148.
 
 <../FiguresDraft5/Figure3/Figure3_a.png, id=233, 230.8625pt x 230.8625pt>
 File: ../FiguresDraft5/Figure3/Figure3_a.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure3/Figure3_a.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure3/Figure3_a.png used on input l
-ine 168.
+ine 169.
 (pdftex.def)             Requested size: 71.70062pt x 71.70049pt.
 
 <../FiguresDraft5/Figure3/Figure3_b.png, id=234, 230.8625pt x 230.8625pt>
@@ -524,7 +525,7 @@ File: ../FiguresDraft5/Figure3/Figure3_b.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure3/Figure3_b.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure3/Figure3_b.png used on input l
-ine 174.
+ine 175.
 (pdftex.def)             Requested size: 71.70062pt x 71.70049pt.
 
 <../FiguresDraft5/Figure3/Figure3_c.png, id=235, 230.8625pt x 230.8625pt>
@@ -532,7 +533,7 @@ File: ../FiguresDraft5/Figure3/Figure3_c.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure3/Figure3_c.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure3/Figure3_c.png used on input l
-ine 180.
+ine 181.
 (pdftex.def)             Requested size: 71.70062pt x 71.70049pt.
 
 <../FiguresDraft5/Figure3/Figure3_d.png, id=236, 230.8625pt x 230.8625pt>
@@ -540,7 +541,7 @@ File: ../FiguresDraft5/Figure3/Figure3_d.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure3/Figure3_d.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure3/Figure3_d.png used on input l
-ine 186.
+ine 187.
 (pdftex.def)             Requested size: 71.70062pt x 71.70049pt.
 
 <../FiguresDraft5/Figure3/Figure3_e.png, id=237, 230.8625pt x 230.8625pt>
@@ -548,7 +549,7 @@ File: ../FiguresDraft5/Figure3/Figure3_e.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure3/Figure3_e.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure3/Figure3_e.png used on input l
-ine 192.
+ine 193.
 (pdftex.def)             Requested size: 71.70062pt x 71.70049pt.
  [4 <../FiguresDraft5/Figure2/Figure2_a.pdf> <../FiguresDraft5/Figure2/Figure2_
 b.pdf> <../FiguresDraft5/Figure2/Figure2_c.pdf>]
@@ -557,7 +558,7 @@ File: ../FiguresDraft5/Figure4/Figure4_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure4/Figure4_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure4/Figure4_a.pdf used on input l
-ine 226.
+ine 228.
 (pdftex.def)             Requested size: 92.18317pt x 212.50911pt.
 
 <../FiguresDraft5/Figure4/Figure4_b.pdf, id=263, 322.20375pt x 742.775pt>
@@ -565,7 +566,7 @@ File: ../FiguresDraft5/Figure4/Figure4_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure4/Figure4_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure4/Figure4_b.pdf used on input l
-ine 233.
+ine 235.
 (pdftex.def)             Requested size: 92.18317pt x 212.50911pt.
 
 <../FiguresDraft5/Figure4/Figure4_c.pdf, id=264, 322.20375pt x 742.775pt>
@@ -573,7 +574,7 @@ File: ../FiguresDraft5/Figure4/Figure4_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure4/Figure4_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure4/Figure4_c.pdf used on input l
-ine 241.
+ine 243.
 (pdftex.def)             Requested size: 92.18317pt x 212.50911pt.
 
 <../FiguresDraft5/Figure4/Figure4_d.pdf, id=265, 322.20375pt x 742.775pt>
@@ -581,7 +582,7 @@ File: ../FiguresDraft5/Figure4/Figure4_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure4/Figure4_d.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure4/Figure4_d.pdf used on input l
-ine 248.
+ine 250.
 (pdftex.def)             Requested size: 92.18317pt x 212.50911pt.
 
 <../FiguresDraft5/Figure4/Figure4_e.pdf, id=266, 322.20375pt x 742.775pt>
@@ -589,13 +590,13 @@ File: ../FiguresDraft5/Figure4/Figure4_e.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure4/Figure4_e.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure4/Figure4_e.pdf used on input l
-ine 255.
+ine 257.
 (pdftex.def)             Requested size: 92.18317pt x 212.50911pt.
 File: ../FiguresDraft5/Figure1/Figure1_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure1/Figure1_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure1/Figure1_b.pdf used on input l
-ine 277.
+ine 279.
 (pdftex.def)             Requested size: 169.0103pt x 108.9958pt.
 
 <../FiguresDraft5/Figure5/Figure5_b.pdf, id=268, 522.95375pt x 337.26pt>
@@ -603,7 +604,7 @@ File: ../FiguresDraft5/Figure5/Figure5_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure5/Figure5_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure5/Figure5_b.pdf used on input l
-ine 282.
+ine 284.
 (pdftex.def)             Requested size: 169.0103pt x 108.9958pt.
 
 <../FiguresDraft5/Figure5/Figure5_c.pdf, id=269, 522.95375pt x 337.26pt>
@@ -611,7 +612,7 @@ File: ../FiguresDraft5/Figure5/Figure5_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure5/Figure5_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure5/Figure5_c.pdf used on input l
-ine 287.
+ine 289.
 (pdftex.def)             Requested size: 169.0103pt x 108.9958pt.
 
 <../FiguresDraft5/Figure6/Figure6_a.pdf, id=277, 552.0625pt x 501.875pt>
@@ -619,7 +620,7 @@ File: ../FiguresDraft5/Figure6/Figure6_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure6/Figure6_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure6/Figure6_a.pdf used on input l
-ine 306.
+ine 308.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure6/Figure6_b.pdf, id=278, 552.0625pt x 501.875pt>
@@ -627,7 +628,7 @@ File: ../FiguresDraft5/Figure6/Figure6_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure6/Figure6_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure6/Figure6_b.pdf used on input l
-ine 312.
+ine 314.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure6/Figure6_c.pdf, id=279, 552.0625pt x 501.875pt>
@@ -635,7 +636,7 @@ File: ../FiguresDraft5/Figure6/Figure6_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure6/Figure6_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure6/Figure6_c.pdf used on input l
-ine 318.
+ine 320.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure6/Figure6_d.pdf, id=280, 552.0625pt x 501.875pt>
@@ -643,7 +644,7 @@ File: ../FiguresDraft5/Figure6/Figure6_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure6/Figure6_d.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure6/Figure6_d.pdf used on input l
-ine 324.
+ine 326.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
  [5 <../FiguresDraft5/Figure3/Figure3_a.png> <../FiguresDraft5/Figure3/Figure3_
 b.png> <../FiguresDraft5/Figure3/Figure3_c.png> <../FiguresDraft5/Figure3/Figur
@@ -659,7 +660,7 @@ File: ../FiguresDraft5/Figure7/Figure7_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure7/Figure7_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure7/Figure7_a.pdf used on input l
-ine 352.
+ine 357.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure7/Figure7_b.pdf, id=588, 552.0625pt x 501.875pt>
@@ -667,7 +668,7 @@ File: ../FiguresDraft5/Figure7/Figure7_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure7/Figure7_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure7/Figure7_b.pdf used on input l
-ine 358.
+ine 363.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure7/Figure7_c.pdf, id=589, 552.0625pt x 501.875pt>
@@ -675,7 +676,7 @@ File: ../FiguresDraft5/Figure7/Figure7_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure7/Figure7_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure7/Figure7_c.pdf used on input l
-ine 364.
+ine 369.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure7/Figure7_d.pdf, id=590, 552.0625pt x 501.875pt>
@@ -683,7 +684,7 @@ File: ../FiguresDraft5/Figure7/Figure7_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure7/Figure7_d.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure7/Figure7_d.pdf used on input l
-ine 371.
+ine 376.
 (pdftex.def)             Requested size: 122.91872pt x 111.74532pt.
 
 <../FiguresDraft5/Figure8/Figure8.pdf, id=591, 552.0625pt x 501.875pt>
@@ -691,7 +692,7 @@ File: ../FiguresDraft5/Figure8/Figure8.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure8/Figure8.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure8/Figure8.pdf used on input lin
-e 381.
+e 386.
 (pdftex.def)             Requested size: 153.64644pt x 139.68166pt.
 
 <../FiguresDraft5/Figure9/Figure9_a.png, id=601, 1027.84pt x 770.88pt>
@@ -699,7 +700,7 @@ File: ../FiguresDraft5/Figure9/Figure9_a.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure9/Figure9_a.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure9/Figure9_a.png used on input l
-ine 403.
+ine 407.
 (pdftex.def)             Requested size: 128.0374pt x 96.01865pt.
 
 <../FiguresDraft5/Figure9/Figure9_b.png, id=602, 770.88pt x 770.88pt>
@@ -707,7 +708,7 @@ File: ../FiguresDraft5/Figure9/Figure9_b.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure9/Figure9_b.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure9/Figure9_b.png used on input l
-ine 411.
+ine 415.
 (pdftex.def)             Requested size: 97.30966pt x 97.30077pt.
 
 <../FiguresDraft5/Figure9/Figure9_c.png, id=603, 766.865pt x 770.88pt>
@@ -715,10 +716,10 @@ File: ../FiguresDraft5/Figure9/Figure9_c.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure9/Figure9_c.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure9/Figure9_c.png used on input l
-ine 419.
+ine 423.
 (pdftex.def)             Requested size: 97.30966pt x 97.81833pt.
 
-Underfull \hbox (badness 1377) in paragraph at lines 424--424
+Underfull \hbox (badness 1377) in paragraph at lines 428--428
 []\OT1/ptm/m/n/9 (d) |Nor-mal-ized cone con-
  []
 
@@ -727,7 +728,7 @@ File: ../FiguresDraft5/Figure9/Figure9_d.png Graphic file (type png)
 
 <use ../FiguresDraft5/Figure9/Figure9_d.png>
 Package pdftex.def Info: ../FiguresDraft5/Figure9/Figure9_d.png used on input l
-ine 425.
+ine 429.
 (pdftex.def)             Requested size: 102.42834pt x 98.04614pt.
  [8 <../FiguresDraft5/Figure7/Figure7_a.pdf> <../FiguresDraft5/Figure7/Figure7_
 b.pdf> <../FiguresDraft5/Figure7/Figure7_c.pdf> <../FiguresDraft5/Figure7/Figur
@@ -739,7 +740,7 @@ File: ../FiguresDraft5/Figure10/Figure10_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure10/Figure10_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure10/Figure10_a.pdf used on input
- line 572.
+ line 582.
 (pdftex.def)             Requested size: 128.0374pt x 118.59764pt.
 
 <../FiguresDraft5/Figure10/Figure10_b.pdf, id=1421, 501.875pt x 501.875pt>
@@ -747,7 +748,7 @@ File: ../FiguresDraft5/Figure10/Figure10_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure10/Figure10_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure10/Figure10_b.pdf used on input
- line 577.
+ line 587.
 (pdftex.def)             Requested size: 133.15607pt x 119.56876pt.
 
 <../FiguresDraft5/Figure10/Figure10_c.pdf, id=1423, 501.875pt x 301.125pt>
@@ -755,7 +756,7 @@ File: ../FiguresDraft5/Figure10/Figure10_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure10/Figure10_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure10/Figure10_c.pdf used on input
- line 582.
+ line 592.
 (pdftex.def)             Requested size: 204.8567pt x 120.80164pt.
  [11]
 <../FiguresDraft5/Figure11/Figure11_a.pdf, id=1438, 501.875pt x 501.875pt>
@@ -763,7 +764,7 @@ File: ../FiguresDraft5/Figure11/Figure11_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure11/Figure11_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure11/Figure11_a.pdf used on input
- line 643.
+ line 655.
 (pdftex.def)             Requested size: 112.67352pt x 103.0904pt.
 
 <../FiguresDraft5/Figure11/Figure11_b.pdf, id=1440, 501.875pt x 501.875pt>
@@ -771,7 +772,7 @@ File: ../FiguresDraft5/Figure11/Figure11_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure11/Figure11_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure11/Figure11_b.pdf used on input
- line 648.
+ line 660.
 (pdftex.def)             Requested size: 112.67352pt x 103.0904pt.
 
 <../FiguresDraft5/Figure11/Figure11_c.pdf, id=1442, 501.875pt x 501.875pt>
@@ -779,7 +780,7 @@ File: ../FiguresDraft5/Figure11/Figure11_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure11/Figure11_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure11/Figure11_c.pdf used on input
- line 653.
+ line 665.
 (pdftex.def)             Requested size: 112.67352pt x 103.0904pt.
 
 <../FiguresDraft5/Figure11/Figure11_d.pdf, id=1444, 501.875pt x 501.875pt>
@@ -787,42 +788,42 @@ File: ../FiguresDraft5/Figure11/Figure11_d.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure11/Figure11_d.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure11/Figure11_d.pdf used on input
- line 658.
+ line 670.
 (pdftex.def)             Requested size: 112.67352pt x 103.0904pt.
  [12 <../FiguresDraft5/Figure10/Figure10_a.pdf> <../FiguresDraft5/Figure10/Figu
 re10_b.pdf> <../FiguresDraft5/Figure10/Figure10_c.pdf>]
-<../FiguresDraft5/Figure12/Figure12_a.pdf, id=1522, 501.875pt x 501.875pt>
+<../FiguresDraft5/Figure12/Figure12_a.pdf, id=1523, 501.875pt x 501.875pt>
 File: ../FiguresDraft5/Figure12/Figure12_a.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure12/Figure12_a.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure12/Figure12_a.pdf used on input
- line 692.
+ line 704.
 (pdftex.def)             Requested size: 128.0374pt x 118.59764pt.
 
-<../FiguresDraft5/Figure12/Figure12_b.pdf, id=1524, 501.875pt x 501.875pt>
+<../FiguresDraft5/Figure12/Figure12_b.pdf, id=1525, 501.875pt x 501.875pt>
 File: ../FiguresDraft5/Figure12/Figure12_b.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure12/Figure12_b.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure12/Figure12_b.pdf used on input
- line 697.
+ line 709.
 (pdftex.def)             Requested size: 133.15607pt x 119.56876pt.
 
-<../FiguresDraft5/Figure12/Figure12_c.pdf, id=1526, 501.875pt x 301.125pt>
+<../FiguresDraft5/Figure12/Figure12_c.pdf, id=1527, 501.875pt x 301.125pt>
 File: ../FiguresDraft5/Figure12/Figure12_c.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure12/Figure12_c.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure12/Figure12_c.pdf used on input
- line 702.
+ line 714.
 (pdftex.def)             Requested size: 204.8567pt x 120.80164pt.
  [13 <../FiguresDraft5/Figure11/Figure11_a.pdf> <../FiguresDraft5/Figure11/Figu
 re11_b.pdf> <../FiguresDraft5/Figure11/Figure11_c.pdf> <../FiguresDraft5/Figure
 11/Figure11_d.pdf>]
-<../FiguresDraft5/Figure13/Figure13.pdf, id=1633, 1003.75pt x 501.875pt>
+<../FiguresDraft5/Figure13/Figure13.pdf, id=1634, 1003.75pt x 501.875pt>
 File: ../FiguresDraft5/Figure13/Figure13.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure13/Figure13.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure13/Figure13.pdf used on input l
-ine 732.
+ine 744.
 (pdftex.def)             Requested size: 307.29288pt x 153.64983pt.
  [14 <../FiguresDraft5/Figure12/Figure12_a.pdf> <../FiguresDraft5/Figure12/Figu
 re12_b.pdf> <../FiguresDraft5/Figure12/Figure12_c.pdf>]
@@ -831,7 +832,7 @@ File: ../FiguresDraft5/Figure14/Figure14.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure14/Figure14.pdf>
 Package pdftex.def Info: ../FiguresDraft5/Figure14/Figure14.pdf used on input l
-ine 772.
+ine 785.
 (pdftex.def)             Requested size: 153.64644pt x 153.64983pt.
  [15 <../FiguresDraft5/Figure13/Figure13.pdf>] [16 <../FiguresDraft5/Figure14/F
 igure14.pdf>] (./draft5.bbl
@@ -846,7 +847,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--216
 aa [] -3 [] -10 [] -1651 [] .pdf [] ?da = 1&id = 2473&seq =
  []
 
-[18]
+
 Underfull \hbox (badness 1184) in paragraph at lines 565--583
 \OT1/ptm/m/n/10 and sur-faces.  \OT1/ptm/m/it/10 Jour-nal Of The Op-ti-cal So-c
 i-ety Of Amer-ica A\OT1/ptm/m/n/10 , \OT1/ptm/m/it/10 11\OT1/ptm/m/n/10 (9), 23
@@ -859,31 +860,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 565--583
 -F1A4 [] -66F5 [] -1F0CA009799B4F7B [] []806 /
  []
 
-[19]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 1095--1113
 \OT1/pcr/m/n/10 DirectPDFAccess / 0C84AF25 [] -A90E [] -B3D5 [] -AED2308AF33196
 BF [] []2286 / josaa [] -3 [] -1 [] -29 [] .pdf [] ?da =
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 862.
+[19])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 873.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 862.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 873.
  (./draft5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 862.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 862.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 873.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 873.
 Package rerunfilecheck Info: File `draft5.out' has not changed.
 (rerunfilecheck)             Checksum: 8267162EEAE50AA4C99618F63E339741;992.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 862.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 873.
  ) 
 Here is how much of TeX's memory you used:
  8312 strings out of 493014
  131056 string characters out of 6133351
- 232453 words of memory out of 5000000
+ 232413 words of memory out of 5000000
  11566 multiletter control sequences out of 15000+600000
  30984 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -900,10 +897,10 @@ ts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type
 times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></
 usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on draft5.pdf (20 pages, 12125226 bytes).
+Output written on draft5.pdf (20 pages, 12109585 bytes).
 PDF statistics:
- 1851 PDF objects out of 2073 (max. 8388607)
- 1596 compressed objects within 16 object streams
+ 1850 PDF objects out of 2073 (max. 8388607)
+ 1595 compressed objects within 16 object streams
  107 named destinations out of 1000 (max. 500000)
  403 words of extra memory for PDF output out of 10000 (max. 10000000)
 
