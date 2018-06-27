@@ -24,8 +24,6 @@ Albrecht, D\BPBI G.%
   contrast-response function of simple cells in the visual cortex}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Visual Neuroscience}{7}{6}{531-546}.
-\newblock
-, doi:10.1017/S0952523800010336
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -102,6 +100,33 @@ Barron, J\BPBI T.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Benson%
+, Manning%
+\BCBL{}\ \BBA{} Brainard%
+}{%
+Benson%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2014}}%
+}]{%
+benson2014unsupervised}%
+\APACinsertmetastar{%
+benson2014unsupervised}%
+Benson, N\BPBI C.%
+, Manning, J\BPBI R.%
+\BCBL{}\ \BBA{} Brainard, D\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Unsupervised learning of cone spectral classes from
+  natural images}{Unsupervised learning of cone spectral classes from natural
+  images}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{PLoS computational biology}{10}{6}{e1003652}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Brainard%
 }{%
 Brainard%
@@ -120,7 +145,7 @@ Brainard, D\BPBI H.%
 \BBOQ{}\APACrefatitle{Color and the cone mosaic}{Color and the cone
   mosaic}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Annual review of vision science}{1}{}{519-546}.
+\APACjournalVolNumPages{Annual Review of Vision Science}{1}{}{519-546}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -170,10 +195,8 @@ Brainard, D\BPBI H.%
 \newblock
 \BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
-\BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), The New Visual
-  Neurosciences.
-\newblock
-\APACaddressPublisher{Cambridge, MA}{MIT Press}.
+\APACjournalVolNumPages{The New Visual Neurosciences,}{}{Chalupa, L. M. and
+  Werner, J. S. (Editors), MIT Press}{545-556}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -248,8 +271,6 @@ Buchsbaum, G.%
   spatial processor model for object colour perception}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Franklin Institute}{310}{1}{1-26}.
-\newblock
-, doi:10.1016/0016-0032(80)90058-7
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -329,7 +350,7 @@ Burge, J.%
   autofocusing a digital camera}{Optimal defocus estimates from individual
   images for autofocusing a digital camera}.\BBCQ{}
 \newblock
-\BIn{} Digital Photography VIII.
+\APACjournalVolNumPages{Digital Photography VIII}{8299}{}{82990E}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -438,6 +459,60 @@ Burge, J.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Burton%
+\ \BBA{} Moorhead%
+}{%
+Burton%
+\ \BBA{} Moorhead%
+}{%
+{\protect\APACyear{1987}}%
+}]{%
+burton1987color}%
+\APACinsertmetastar{%
+burton1987color}%
+Burton, G.%
+\BCBT{}\ \BBA{} Moorhead, I\BPBI R.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1987}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Color and spatial structure in natural scenes}{Color and
+  spatial structure in natural scenes}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Applied Optics}{26}{1}{157-170}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Butler%
+, Wulff%
+, Stanley%
+\BCBL{}\ \BBA{} Black%
+}{%
+Butler%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2012}}%
+}]{%
+Butler:ECCV:2012}%
+\APACinsertmetastar{%
+Butler:ECCV:2012}%
+Butler, D\BPBI J.%
+, Wulff, J.%
+, Stanley, G\BPBI B.%
+\BCBL{}\ \BBA{} Black, M\BPBI J.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{A naturalistic open source movie for optical flow
+  evaluation}{A naturalistic open source movie for optical flow
+  evaluation}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{European Conf. on Computer Vision (ECCV)}{}{}{611-625}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Carandini%
 \ \BBA{} Heeger%
 }{%
@@ -484,8 +559,8 @@ Chakrabarti, A.%
 \BBOQ{}\APACrefatitle{Statistics of real-world hyperspectral images}{Statistics
   of real-world hyperspectral images}.\BBCQ{}
 \newblock
-\BIn{} Proceedings of the IEEE Computer Society Conference on Computer Vision
-  and Pattern Recognition.
+\APACjournalVolNumPages{Proceedings of the IEEE Computer Society Conference on
+  Computer Vision and Pattern Recognition}{}{}{193-200}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -532,7 +607,7 @@ Ciurea, F.%
 \BBOQ{}\APACrefatitle{A large image database for color constancy research}{A
   large image database for color constancy research}.\BBCQ{}
 \newblock
-\BIn{} Color and Imaging Conference.
+\APACjournalVolNumPages{Color and Imaging Conference}{2003}{1}{160-164}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -585,11 +660,8 @@ D'Zmura, M.%
 \BBOQ{}\APACrefatitle{Probabilistic color constancy}{Probabilistic color
   constancy}.\BBCQ{}
 \newblock
-\BIn{} R\BPBI D.~Luce, M.~D'Zmura, D.~Hoffman, G.~Iverson\BCBL{}\ \BBA{} A\BPBI
-  K.~Romney\ (\BEDS), Geometric Representations of Perceptual Phenomena: Papers
-  in Honor of Tarow Indow's 70th Birthday.
-\newblock
-\APACaddressPublisher{Mahwah, NJ}{Lawrence Erlbaum Associates}.
+\APACjournalVolNumPages{Geometric Representations of Perceptual Phenomena:
+  Papers in Honor of Tarow Indow's 70th Birthday}{}{}{187-202}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -636,8 +708,8 @@ Funt, B\BPBI V.%
   a finite dimensional linear model}{Color constancy computation in
   near-mondrian scenes using a finite dimensional linear model}.\BBCQ{}
 \newblock
-\BIn{} Computer Society Conference on Computer Vision and Pattern Recognition,
-  1988.
+\APACjournalVolNumPages{Computer Society Conference on Computer Vision and
+  Pattern Recognition, 1988}{}{}{544-549}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1003,6 +1075,34 @@ Kim, S.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+Kovacs%
+, Bell%
+, Snavely%
+\BCBL{}\ \BBA{} Bala%
+}{%
+Kovacs%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2017}}%
+}]{%
+kovacs17shading}%
+\APACinsertmetastar{%
+kovacs17shading}%
+Kovacs, B.%
+, Bell, S.%
+, Snavely, N.%
+\BCBL{}\ \BBA{} Bala, K.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Shading Annotations in the Wild}{Shading annotations in
+  the wild}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Computer Vision and Pattern Recognition (CVPR)}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Land%
 }{%
 Land%
@@ -1151,8 +1251,6 @@ Nascimento, S\BPBI M.%
   scenes}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Vision Res}{120}{}{39-44}.
-\newblock
-, doi:10.1016/j.visres.2015.07.005
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1260,7 +1358,7 @@ Skauli, T.%
   research.}{A collection of hyperspectral images for imaging systems
   research.}\BBCQ{}
 \newblock
-\BIn{} Digital Photography.
+\APACjournalVolNumPages{Digital Photography}{}{}{86600C}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1287,7 +1385,7 @@ Tkacik, G.%
 \BBOQ{}\APACrefatitle{Natural images from the birthplace of the human
   eye}{Natural images from the birthplace of the human eye}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{PLoS ONE}{6}{6:e20409}{}.
+\APACjournalVolNumPages{PLoS ONE}{6}{6}{e20409}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
