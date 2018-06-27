@@ -189,4 +189,36 @@ File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Try loading font information for U+psy on input line 64.
 
-(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfs
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/upsy.fd
+File: upsy.fd 2001/06/04 font definitions for U/psy.
+))
+
+./jov.cls:120: LaTeX Error: Command \@ already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.120 \newcommand{\@titlestring}{}
+                                  
+? 
+./jov.cls:120: Emergency stop.
+ ...                                              
+                                                  
+l.120 \newcommand{\@titlestring}{}
+                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+ 
+Here is how much of TeX's memory you used:
+ 4671 strings out of 493014
+ 69591 string characters out of 6133351
+ 157894 words of memory out of 5000000
+ 8226 multiletter control sequences out of 15000+600000
+ 4330 words of font info for 16 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 29i,0n,21p,216b,78s stack positions out of 5000i,500n,10000p,200000b,80000s
+./jov.cls:120:  ==> Fatal error occurred, no output PDF file produced!
