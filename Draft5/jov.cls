@@ -163,8 +163,8 @@
 
 %%% header for title page:
 \def\ps@myheadings{\let\@mkboth\markboth
-	\def\@oddfoot{\protect{\hbox to\textwidth{\footnotesize\sf doi:\hspace*{7cm} Received: \today\hfill ISSN 1534--7362 \textcopyright{} 20?? ARVO}}}
-	\def\@oddhead{\protect{\hbox to\textwidth{\footnotesize\sf \textsl{Journal of Vision} (20??) ?, 1--?\hspace*{4cm} \href{http://journalofvision.org/}{http://journalofvision.org/?/?/?}\hfill\thepage}}}
+%	\def\@oddfoot{\protect{\hbox to\textwidth{\footnotesize\sf doi:\hspace*{7cm} Received: \today\hfill ISSN 1534--7362 \textcopyright{} 20?? ARVO}}}
+	\def\@oddhead{\protect{\hbox to\textwidth{\footnotesize\sf \hspace*{4cm} \hfill\thepage}}}
 	\def\sectionmark##1{\markright{\ifnum \c@secnumdepth >\z@
 		\thesection. \ \fi ##1}}}
 
@@ -172,7 +172,7 @@
 \def\ps@plain{\let\@mkboth\markboth
 	\def\@oddfoot{}
 	\def\@oddhead{%
-	\protect{\footnotesize\sf \textsl{Journal of Vision} (20??) ?, 1--?\hfill\@authorsheading\hfill\hspace*{37mm}\thepage}}
+	\protect{\footnotesize\sf \hspace*{37mm} \hfill\@authorsheading\hfill\hspace*{37mm}\thepage}}
 	%\ifnum\value{nauthors}=2%
 	%{\protect{\footnotesize\sf \textsl{Journal of Vision} (20??) ?, 1--?\hfill\@twoauthorsheading\hfill\hspace*{37mm}\thepage}}%
 	%\else%
