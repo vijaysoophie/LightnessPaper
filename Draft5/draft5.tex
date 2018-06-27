@@ -716,11 +716,11 @@ That figure also illustrates the effect of training set size on estimation perfo
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{../FiguresDraft5/Figure13/Figure13.pdf}
-\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs.}
+\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs.}
  \label{fig:RMSEvsRF}
 \end{figure}
 
-Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another
+Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another.
 Such secondary reflections were simulated for our primary results.
 When we turn off this feature of the rendering, we find (data not shown) that 
 that the secondary reflections have minimal effect on LRV estimation:
@@ -729,14 +729,14 @@ This suggests that the primary source of the estimation error in Condition 3 is 
 which in turn affects the normalized contrast representation of the target.
 
 Figure~\ref{fig:case3RFs} shows the first three receptive fields learned for Condition 3.
-The first and third of these are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted. 
+These are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted. 
 Additionally, the cone excitations at the target have opposite sign compared to background object locations.
 The specific geometry of the receptive fields, however, should not be taken to be a general feature of the human visual system,
 as the particular RF geometry arises partly as a consequence of the fixed scene geometry used in the training set.
 Indeed, aspects of the training image spatial structure can be seen in the RFs.
-The second receptive field weights the S cones most heavily.
-Although S cone signals do not contribute directly to luminance, for natural spectra S cone signals are correlated with
-those of L and M cones \cite{burton1987color, benson2014unsupervised}, so that S cone information can contribute to task performance.
+% The second receptive field weights the S cones most heavily.
+% Although S cone signals do not contribute directly to luminance, for natural spectra S cone signals are correlated with
+% those of L and M cones \cite{burton1987color, benson2014unsupervised}, so that S cone information can contribute to task performance.
 
 \section{Discussion} \label{Discussion}
 
