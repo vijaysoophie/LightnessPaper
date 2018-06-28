@@ -12,55 +12,49 @@ format.bvol.edition.pages.check is an unknown function---line 4328 of file jovci
 format.btitle.connect.check is an unknown function---line 4329 of file jovcite.bst
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Database file #1: references.bib
-Repeated entry---line 240 of file references.bib
- : @article{geisler2009optimal
- :                            ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 592 of file references.bib
- : @article{kovacs17shading
- :                         ,
-I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "BrainardWandellRetinex"
 apacite.bst [2007/09/03 v4.00 APA bibliography style]
+Warning--No address in BrainardColorConstancy
 Warning--No address in CIE86
-You've used 55 entries,
+You've used 54 entries,
             6397 wiz_defined-function locations,
-            1535 strings with 18912 characters,
-and the built_in function-call counts, 98877 in all, are:
-= -- 11990
-> -- 854
-< -- 4731
-+ -- 4952
-- -- 115
-* -- 6537
-:= -- 18254
-add.period$ -- 220
-call.type$ -- 55
-change.case$ -- 275
+            1543 strings with 18906 characters,
+and the built_in function-call counts, 97456 in all, are:
+= -- 11850
+> -- 837
+< -- 4655
++ -- 4882
+- -- 112
+* -- 6430
+:= -- 17961
+add.period$ -- 217
+call.type$ -- 54
+change.case$ -- 270
 chr.to.int$ -- 0
-cite$ -- 111
-duplicate$ -- 2683
-empty$ -- 4137
-format.name$ -- 1428
-if$ -- 18796
+cite$ -- 110
+duplicate$ -- 2641
+empty$ -- 4055
+format.name$ -- 1401
+if$ -- 18525
 int.to.chr$ -- 0
-int.to.str$ -- 114
+int.to.str$ -- 108
 missing$ -- 0
-newline$ -- 1319
-num.names$ -- 440
-pop$ -- 1421
+newline$ -- 1295
+num.names$ -- 434
+pop$ -- 1419
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 216
 quote$ -- 0
-skip$ -- 6484
+skip$ -- 6381
 stack$ -- 0
-substring$ -- 5483
-swap$ -- 1594
-text.length$ -- 117
+substring$ -- 5411
+swap$ -- 1582
+text.length$ -- 115
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4400
-warning$ -- 1
-while$ -- 474
+type$ -- 4384
+warning$ -- 2
+while$ -- 469
 width$ -- 0
-write$ -- 1670
-(There were 4 error messages)
+write$ -- 1638
+(There were 2 error messages)

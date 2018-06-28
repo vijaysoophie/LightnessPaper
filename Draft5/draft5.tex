@@ -103,7 +103,7 @@ These methods use the joint statistics of labeled images and scene variables to 
 This general approach has been useful for other perceptual problems in early and mid-level vision.
 For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear receptive fields optimized for particular perceptual tasks \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}. AMA has been used to develop ideal observers for estimating defocus blur, binocular disparity, and retinal motion estimation with natural stimuli. These ideal observers provide excellent predictions of human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
 
-Supervised learning requires large labeled datasets.  Such datasets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where surface reflectances of individual objects have been measured (\citeNP{funt1988color,ciurea2003large}), but these databases are not large enough to drive supervised learning. Finally, recent work has applied crowd-sourcing techniques to annotate natural images with surface reflectance descriptors \cite{kovacs17shading}.
+Supervised learning requires large labeled datasets.  Such datasets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where surface reflectances of individual objects have been measured (\citeNP{funt1988color,ciurea2003large}), but these databases are not large enough to drive supervised learning. Finally, recent work has applied crowd-sourcing techniques to annotate natural images with surface reflectance descriptors \cite{bell2014intrinsic}.
  
 In this paper, we use high-quality computer graphics to generate large datasets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We tackle the specific problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
@@ -716,24 +716,23 @@ That figure also illustrates the effect of training set size on estimation perfo
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{../FiguresDraft5/Figure13/Figure13.pdf}
-\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs. The error bars in each panel show +/- 1 SEM, with the variation taken across multiple runs with different sets if starting points for the numerical search used in our implementation of AMA. }
+\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs. The error bars in each panel show +/- 1 SEM, with the variation taken across multiple runs with different random initializations for the numerical search used in our implementation of AMA.}
  \label{fig:RMSEvsRF}
 \end{figure}
 
 Figure~\ref{fig:case3RFs} shows the first three receptive fields learned for Condition 3.
-The first two are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted. 
-In contrast to the Condition 1 RFs, there is also systematic contribution of cone excitations from background object locations, with both positive and negative
-contributions from background objects.
-The specific geometry of the receptive fields, however, should not be taken to be a general feature of the human visual system,
-as the particular RF geometry arises partly as a consequence of the fixed scene geometry used in the training set.
-Indeed, aspects of the training image spatial structure can be seen in the RFs.
-The third receptive field for Condition 3 places weight on the S cone excitations. 
-Although S cone signals do not contribute directly to luminance, for natural spectra S cone signals are correlated with
-those of L and M cones \cite{burton1987color, benson2014unsupervised}, so that S cone information can contribute to task performance.
-Finally, we note that there is some run-to-run variation in the structure of the optimal receptive fields that depends on the set of randomly-chosen starting
-points used for the numerical search used in our implementation of AMA.
-This variation also suggests that one should not over interpret details of the structure of the receptive fields.
-Such run-to-run RF variation leads only to very small changes in estimation error (see error bars in Figure~\ref{fig:RMSEvsRF}).
+The first two are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted.
+In contrast to the Condition 1 RFs, there is also systematic contribution of cone excitations from background object locations, with both positive and negative contributions from background objects. 
+The specific geometry of the receptive fields, however, should not be taken to be a strict prediction for receptive fields in the human visual system, as the particular RF geometry arises partly as a consequence of the fixed scene geometry used in the training set. 
+Indeed, aspects of spatial structure of the training images can be seen in the RFs. 
+Also, the third receptive field for Condition 3 places weight on the S cone excitations.
+Although S cone signals do not contribute directly to luminance,  S cone responses are correlated with
+L and M cone responses to natural spectra \cite{burton1987color, benson2014unsupervised}.
+Information from the S cones can therefore contribute usefully to performance in the task. 
+Finally, we note that there is some run-to-run variation in the structure of the optimal receptive fields that depends on the random initialization of the numerical search used in our implementation of AMA. 
+(The cost landscape is not convex so local minima are possible.) 
+However, such run-to-run RF variation leads only to very small changes in estimation error (see error bars in Figure~\ref{fig:RMSEvsRF}). 
+Furthermore, even if the order varies somewhat, the same set of RFs tends to be learned.
 
 Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another.
 Such secondary reflections were simulated for our primary results.
@@ -843,7 +842,7 @@ We think experiments and analyses along these lines represent an important futur
 
 \section{Acknowledgments} \label{Acknowledgments}
 
-Supported by RO1 EY100106 (DHB), Simons Foundation Collaboration on the Global Brain Grant 324759 (DHB) and the University of Pennsylvania Computational Neuroscience Initiative (VS).  Prelminary versions of this work were presented at the Computational Cognitive Neuroscience Conference (2017) and the Annual Meeting of the Society for Neuroscience (2017).
+Supported by startup funds from the University of Pennsylvania (JB), NIH grant R01 EY028571 from the National Eye Institute and the Office of Behavioral and Social Science Research (JB), NIH grant RO1 EY100106 (DHB) from the National Eye Institute, Simons Foundation Collaboration on the Global Brain Grant 324759 (DHB), and the University of Pennsylvania Computational Neuroscience Initiative (VS).  Preliminary versions of this work were presented at the Computational Cognitive Neuroscience Conference (2017) and the Annual Meeting of the Society for Neuroscience (2017).
 
 \bibliography{references}
 \bibliographystyle{jovcite}

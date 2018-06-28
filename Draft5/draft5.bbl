@@ -48,7 +48,7 @@ ASTM.%
   integrating-sphere reflectometers}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Renovations of Center for Historic
-  Preservation}{112}{}{}.
+  Preservation}{98}{A}{E1477}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -70,8 +70,8 @@ Barron, J\BPBI T.%
 \BBOQ{}\APACrefatitle{Convolutional Color Constancy}{Convolutional color
   constancy}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{IEEE International Conference on Computer Vision
-  (ICCV)}{}{}{379-387}.
+\APACjournalVolNumPages{Proceedings of the IEEE International Conference on
+  Computer Vision}{}{}{379-387}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -96,7 +96,34 @@ Barron, J\BPBI T.%
 \BBOQ{}\APACrefatitle{Color constancy, intrinsic images, and shape
   estimation}{Color constancy, intrinsic images, and shape estimation}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{European Conference on Computer Vision}{}{}{57-70}.
+\APACjournalVolNumPages{Proceedings of the European Conference on Computer
+  Vision (ECCV)}{}{}{57-70}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Bell%
+, Bala%
+\BCBL{}\ \BBA{} Snavely%
+}{%
+Bell%
+\ \protect\BOthers{.}}{%
+{\protect\APACyear{2014}}%
+}]{%
+bell2014intrinsic}%
+\APACinsertmetastar{%
+bell2014intrinsic}%
+Bell, S.%
+, Bala, K.%
+\BCBL{}\ \BBA{} Snavely, N.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Intrinsic images in the wild}{Intrinsic images in the
+  wild}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{ACM Transactions on Graphics (TOG)}{33}{4}{159}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -123,7 +150,7 @@ Benson, N\BPBI C.%
   natural images}{Unsupervised learning of cone spectral classes from natural
   images}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{PLoS computational biology}{10}{6}{e1003652}.
+\APACjournalVolNumPages{PLoS Computational Biology}{10}{6}{e1003652}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -195,8 +222,10 @@ Brainard, D\BPBI H.%
 \newblock
 \BBOQ{}\APACrefatitle{Color constancy}{Color constancy}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{The New Visual Neurosciences,}{}{Chalupa, L. M. and
-  Werner, J. S. (Editors), MIT Press}{545-556}.
+\BIn{} L\BPBI M.~Chalupa\ \BBA{} J\BPBI S.~Werner\ (\BEDS), {\em The New Visual
+  Neurosciences}.
+\newblock
+\APACaddressPublisher{}{MIT Press, 545-556}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -207,33 +236,7 @@ Brainard%
 \ \BBA{} Wandell%
 }{%
 {\protect\APACyear{1986}}%
-{\protect\APACexlab{{\protect\BCnt{1}}}}}]{%
-BrainardWandellRetinex}%
-\APACinsertmetastar{%
-BrainardWandellRetinex}%
-Brainard, D\BPBI H.%
-\BCBT{}\ \BBA{} Wandell, B\BPBI A.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1986{\protect\BCnt{1}}}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
-  of the retinex theory of color vision}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Journal of the Optical Society of America
-  A}{3}{10}{1651-1661}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Brainard%
-\ \BBA{} Wandell%
-}{%
-Brainard%
-\ \BBA{} Wandell%
-}{%
-{\protect\APACyear{1986}}%
-{\protect\APACexlab{{\protect\BCnt{2}}}}}]{%
+}]{%
 brainard1986analysis}%
 \APACinsertmetastar{%
 brainard1986analysis}%
@@ -242,7 +245,7 @@ Brainard, D\BPBI H.%
 %
 \unskip\
 \newblock
-\APACrefYearMonthDay{1986{\protect\BCnt{2}}}{}{}.
+\APACrefYearMonthDay{1986}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{Analysis of the retinex theory of color vision}{Analysis
   of the retinex theory of color vision}.\BBCQ{}
@@ -375,7 +378,7 @@ Burge, J.%
 \BBOQ{}\APACrefatitle{Optimal disparity estimation in natural stereo
   images}{Optimal disparity estimation in natural stereo images}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{14}{2}{}.
+\APACjournalVolNumPages{Journal of Vision}{14}{2}{1-18}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -401,7 +404,7 @@ Burge, J.%
   human performance}{Optimal speed estimation in natural image movies predicts
   human performance}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Nature Communications}{6}{}{}.
+\APACjournalVolNumPages{Nature Communications}{6}{}{7900}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -455,7 +458,7 @@ Burge, J.%
 \BBOQ{}\APACrefatitle{Estimating 3D tilt from local image cues in natural
   scenes}{Estimating 3d tilt from local image cues in natural scenes}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{16}{13}{}.
+\APACjournalVolNumPages{Journal of Vision}{16}{13}{1-25}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -509,7 +512,8 @@ Butler, D\BPBI J.%
   evaluation}{A naturalistic open source movie for optical flow
   evaluation}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{European Conf. on Computer Vision (ECCV)}{}{}{611-625}.
+\APACjournalVolNumPages{European Conference on Computer Vision
+  (ECCV)}{}{}{611-625}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -629,9 +633,10 @@ D'Zmura, M.%
 \newblock
 \APACrefYearMonthDay{1994}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Color constancy . III. General linear recovery of
-  spectral descriptions for lights and surfaces}{Color constancy . iii. general
-  linear recovery of spectral descriptions for lights and surfaces}.\BBCQ{}
+\BBOQ{}\APACrefatitle{Color constancy. III. {G}eneral linear recovery of
+  spectral descriptions for lights and surfaces}{Color constancy. iii.
+  {G}eneral linear recovery of spectral descriptions for lights and
+  surfaces}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal Of The Optical Society Of America
   A}{11}{9}{2389-2400}.
@@ -732,8 +737,8 @@ Gattass, R.%
 \newblock
 \APACrefYearMonthDay{1981}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Visual topography of V2 in the macaque}{Visual topography
-  of v2 in the macaque}.\BBCQ{}
+\BBOQ{}\APACrefatitle{Visual topography of {V}2 in the macaque}{Visual
+  topography of {V}2 in the macaque}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Comparative Neurology}{201}{4}{519-539}.
 \PrintBackRefs{\CurrentBib}
@@ -758,8 +763,8 @@ Gattass, R.%
 \newblock
 \APACrefYearMonthDay{1988}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Visuotopic organization and extent of V3 and V4 of the
-  macaque}{Visuotopic organization and extent of v3 and v4 of the
+\BBOQ{}\APACrefatitle{Visuotopic organization and extent of {V}3 and {V}4 of
+  the macaque}{Visuotopic organization and extent of {V}3 and {V}4 of the
   macaque}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Neuroscience}{8}{6}{1831-1845}.
@@ -788,7 +793,7 @@ Geisler, W\BPBI S.%
 \BBOQ{}\APACrefatitle{Optimal stimulus encoders for natural tasks}{Optimal
   stimulus encoders for natural tasks}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{9}{13}{}.
+\APACjournalVolNumPages{Journal of Vision}{9}{13}{1-6}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -837,8 +842,8 @@ Goncalves, N\BPBI R.%
 \newblock
 \APACrefYearMonthDay{2017}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{What not detectors help the brain see in depth}{What not
-  detectors help the brain see in depth}.\BBCQ{}
+\BBOQ{}\APACrefatitle{``{W}hat not{''} detectors help the brain see in
+  depth}{``{W}hat not{''} detectors help the brain see in depth}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Current Biology}{27}{10}{1403-1412}.
 \PrintBackRefs{\CurrentBib}
@@ -872,7 +877,7 @@ Heasly, B\BPBI S.%
   that facilitate physically based stimulus rendering for vision
   research}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{14}{2}{}.
+\APACjournalVolNumPages{Journal of Vision}{14}{2}{1-22}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -996,7 +1001,7 @@ Jaini, P.%
   models of neural response}{Linking normative models of natural tasks to
   descriptive models of neural response}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{17}{12}{}.
+\APACjournalVolNumPages{Journal of Vision}{17}{12}{1-26}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1004,7 +1009,7 @@ Jakob%
 }{%
 Jakob%
 }{%
-{\protect\APACyear{2015}}%
+{\protect\APACyear{2010}}%
 }]{%
 jakob2015mitsuba}%
 \APACinsertmetastar{%
@@ -1013,11 +1018,11 @@ Jakob, W.%
 %
 \unskip\
 \newblock
-\APACrefYearMonthDay{2015}{}{}.
+\APACrefYearMonthDay{2010}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Mitsuba renderer, 2010}{Mitsuba renderer, 2010}.\BBCQ{}
+\BBOQ{}\APACrefatitle{Mitsuba renderer}{Mitsuba renderer}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{URL: http://www. mitsuba-renderer. org}{3}{}{}.
+\APACjournalVolNumPages{http://www.mitsuba-renderer.org}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1072,34 +1077,6 @@ Kim, S.%
   natural scenes}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{eLife}{7}{}{e31448}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Kovacs%
-, Bell%
-, Snavely%
-\BCBL{}\ \BBA{} Bala%
-}{%
-Kovacs%
-\ \protect\BOthers{.}}{%
-{\protect\APACyear{2017}}%
-}]{%
-kovacs17shading}%
-\APACinsertmetastar{%
-kovacs17shading}%
-Kovacs, B.%
-, Bell, S.%
-, Snavely, N.%
-\BCBL{}\ \BBA{} Bala, K.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Shading Annotations in the Wild}{Shading annotations in
-  the wild}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Computer Vision and Pattern Recognition (CVPR)}{}{}{}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1219,9 +1196,10 @@ Mollon, J\BPBI D.%
 \newblock
 \APACrefYearMonthDay{1989}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{"Tho' she kneel'd in that place where they grew..." The
-  uses and origins of primate colour vision}{"tho' she kneel'd in that place
-  where they grew..." the uses and origins of primate colour vision}.\BBCQ{}
+\BBOQ{}\APACrefatitle{``{T}ho' she kneel'd in that place where they grew..."
+  {T}he uses and origins of primate colour vision}{``{T}ho' she kneel'd in that
+  place where they grew..." {T}he uses and origins of primate colour
+  vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Experimental Biology}{146}{}{21-38}.
 \PrintBackRefs{\CurrentBib}
