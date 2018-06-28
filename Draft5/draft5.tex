@@ -716,9 +716,24 @@ That figure also illustrates the effect of training set size on estimation perfo
 \begin{figure}
 \centering
 \includegraphics[width=0.6\textwidth]{../FiguresDraft5/Figure13/Figure13.pdf}
-\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs.}
+\caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around 3 RFs. The error bars in each panel show +/- 1 SEM, with the variation taken across multiple runs with different sets if starting points for the numerical search used in our implementation of AMA. }
  \label{fig:RMSEvsRF}
 \end{figure}
+
+Figure~\ref{fig:case3RFs} shows the first three receptive fields learned for Condition 3.
+The first two are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted. 
+In contrast to the Condition 1 RFs, there is also systematic contribution of cone excitations from background object locations, with both positive and negative
+contributions from background objects.
+The specific geometry of the receptive fields, however, should not be taken to be a general feature of the human visual system,
+as the particular RF geometry arises partly as a consequence of the fixed scene geometry used in the training set.
+Indeed, aspects of the training image spatial structure can be seen in the RFs.
+The third receptive field for Condition 3 places weight on the S cone excitations. 
+Although S cone signals do not contribute directly to luminance, for natural spectra S cone signals are correlated with
+those of L and M cones \cite{burton1987color, benson2014unsupervised}, so that S cone information can contribute to task performance.
+Finally, we note that there is some run-to-run variation in the structure of the optimal receptive fields that depends on the set of randomly-chosen starting
+points used for the numerical search used in our implementation of AMA.
+This variation also suggests that one should not over interpret details of the structure of the receptive fields.
+Such run-to-run RF variation leads only to very small changes in estimation error (see error bars in Figure~\ref{fig:RMSEvsRF}).
 
 Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another.
 Such secondary reflections were simulated for our primary results.
@@ -727,16 +742,6 @@ that the secondary reflections have minimal effect on LRV estimation:
 the estimates without secondary reflections were similar to those with reflections.
 This suggests that the primary source of the estimation error in Condition 3 is caused by image-to-image variation in the reflectance of the background objects,
 which in turn affects the normalized contrast representation of the target.
-
-Figure~\ref{fig:case3RFs} shows the first three receptive fields learned for Condition 3.
-These are similar to the receptive fields for Condition 1, in that the L and M cone excitations receive large weights, while the S cone excitations are less heavily weighted. 
-Additionally, the cone excitations at the target have opposite sign compared to background object locations.
-The specific geometry of the receptive fields, however, should not be taken to be a general feature of the human visual system,
-as the particular RF geometry arises partly as a consequence of the fixed scene geometry used in the training set.
-Indeed, aspects of the training image spatial structure can be seen in the RFs.
-% The second receptive field weights the S cones most heavily.
-% Although S cone signals do not contribute directly to luminance, for natural spectra S cone signals are correlated with
-% those of L and M cones \cite{burton1987color, benson2014unsupervised}, so that S cone information can contribute to task performance.
 
 \section{Discussion} \label{Discussion}
 
@@ -835,6 +840,10 @@ For example, one could study discrimination thresholds for target LRV using the 
 More specifically, we could ask how LRV discrimination thresholds are impacted by spectral variation in the illuminant, the background objects, and in the target object itself.
 Comparing human thresholds with the precision of AMA-based estimates would then allow inferences about how well human observers make use of the information available in the images for performing LRV discrimination.
 We think experiments and analyses along these lines represent an important future direction.
+
+\section{Acknowledgments} \label{Acknowledgments}
+
+Supported by RO1 EY100106 (DHB), Simons Foundation Collaboration on the Global Brain Grant 324759 (DHB) and the University of Pennsylvania Computational Neuroscience Initiative (VS).  Prelminary versions of this work were presented at the Computational Cognitive Neuroscience Conference (2017) and the Annual Meeting of the Society for Neuroscience (2017).
 
 \bibliography{references}
 \bibliographystyle{jovcite}
