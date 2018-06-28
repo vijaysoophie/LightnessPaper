@@ -820,7 +820,7 @@ Girshick, A\BPBI R.%
   knowledge of environmental statistics}{Cardinal rules: visual orientation
   perception reflects knowledge of environmental statistics}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Nature neuroscience}{14}{7}{926-932}.
+\APACjournalVolNumPages{Nature Neuroscience}{14}{7}{926-932}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -903,7 +903,7 @@ Hecht, S.%
 \BBOQ{}\APACrefatitle{Energy, quanta, and vision}{Energy, quanta, and
   vision}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{The Journal of general physiology}{25}{6}{819-840}.
+\APACjournalVolNumPages{The Journal of General Physiology}{25}{6}{819-840}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -973,7 +973,7 @@ Jacobs, G\BPBI H.%
 \newblock
 \APACrefYear{1981}.
 \newblock
-\APACrefbtitle{Comparative Color Vision}{Comparative color vision}.
+\APACrefbtitle{Comparative {C}olor {V}ision}{Comparative {C}olor {V}ision}.
 \newblock
 \APACaddressPublisher{New York}{Academic Press}.
 \PrintBackRefs{\CurrentBib}
@@ -1122,8 +1122,8 @@ Land, E\BPBI H.%
   for the computation of the designator in the retinex theory of color
   vision}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Proceedings of the national academy of
-  sciences}{83}{10}{3078-3080}.
+\APACjournalVolNumPages{Proceedings of the National Academy of
+  Sciences}{83}{10}{3078-3080}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1228,7 +1228,7 @@ Nascimento, S\BPBI M.%
   natural scenes}{Spatial distributions of local illumination color in natural
   scenes}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision Res}{120}{}{39-44}.
+\APACjournalVolNumPages{Vision Research}{120}{}{39-44}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1326,17 +1326,17 @@ skauli2013collection}%
 \APACinsertmetastar{%
 skauli2013collection}%
 Skauli, T.%
-\BCBT{}\ \BBA{} Farrell, J\BPBI E.%
+\BCBT{}\ \BBA{} Farrell, J.%
 %
 \unskip\
 \newblock
 \APACrefYearMonthDay{2013}{}{}.
 \newblock
 \BBOQ{}\APACrefatitle{A collection of hyperspectral images for imaging systems
-  research.}{A collection of hyperspectral images for imaging systems
-  research.}\BBCQ{}
+  research}{A collection of hyperspectral images for imaging systems
+  research}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Digital Photography}{}{}{86600C}.
+\APACjournalVolNumPages{Digital Photography IX}{8660}{}{86600C1-C7}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%

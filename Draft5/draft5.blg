@@ -18,37 +18,37 @@ Warning--No address in BrainardColorConstancy
 Warning--No address in CIE86
 You've used 54 entries,
             6397 wiz_defined-function locations,
-            1543 strings with 18906 characters,
-and the built_in function-call counts, 97456 in all, are:
-= -- 11850
+            1542 strings with 18861 characters,
+and the built_in function-call counts, 97401 in all, are:
+= -- 11839
 > -- 837
-< -- 4655
-+ -- 4882
+< -- 4653
++ -- 4874
 - -- 112
 * -- 6430
-:= -- 17961
+:= -- 17954
 add.period$ -- 217
 call.type$ -- 54
 change.case$ -- 270
 chr.to.int$ -- 0
 cite$ -- 110
-duplicate$ -- 2641
+duplicate$ -- 2638
 empty$ -- 4055
 format.name$ -- 1401
-if$ -- 18525
+if$ -- 18514
 int.to.chr$ -- 0
 int.to.str$ -- 108
 missing$ -- 0
 newline$ -- 1295
 num.names$ -- 434
-pop$ -- 1419
+pop$ -- 1418
 preamble$ -- 1
 purify$ -- 216
 quote$ -- 0
-skip$ -- 6381
+skip$ -- 6377
 stack$ -- 0
-substring$ -- 5411
-swap$ -- 1582
+substring$ -- 5401
+swap$ -- 1584
 text.length$ -- 115
 text.prefix$ -- 0
 top$ -- 1
