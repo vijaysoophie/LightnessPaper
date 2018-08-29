@@ -111,12 +111,12 @@ This approach allows us to investigate computational color constancy with natura
 
 We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of a target object's surface reflectance function.
 The LRV is a measure of the overall amount of light reflected by a surface \cite{astm1121477}.
-Estimating the LRV from a surface reflectance function proceeds in two steps.
+Defining the LRV from a surface reflectance function requires two steps.
 First, one computes the luminance of the light that would be reflected from the surface under a reference illuminant.
 Second, one normalizes the result by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
 Sometimes LRVs are expressed as a percentage.
-Here we express LRVs as proportions, so that they take on values between 0 and 1.
+Here we express LRVs as proportions, so that they take on values between 0.0 and 1.0. An LRV of 0.0 means that none of the light from the reference illuminant is reflected from the surface. An LRV of 1.0 means that all of the light from the reference illuminant is reflected from the surface.
 
 \section*{Methods} \label{Methods}
 % Figure 2
@@ -528,7 +528,7 @@ To model contrast normalization, we then divided the contrast images by the sum 
 We used our datasets to determine how well target object LRV can be estimated from cone excitations and from normalized cone contrasts.
 Studying both representations allows us to understand how early contrast coding and normalization affect luminance constancy.
 We applied accuracy maximization analysis (AMA) to learn the optimal receptive fields for estimating LRV,
-and evaluated the performance obtained when the responses of these receptive fields are optimally decoded.
+and evaluated performance when the responses of these receptive fields are optimally decoded.
 
 \subsubsection*{Learning optimal receptive fields}
 AMA is a task-specific Bayesian method for dimensionality reduction.
@@ -539,7 +539,7 @@ Moreover, a close approximation to the corresponding expected estimation cost ma
 Thus, AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
 For each condition, we learned the receptive fields with a training set consisting of 90\% of the images.
 
-In our implementation of AMA, we explored both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3).
+In our implementation of AMA, we used both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3). 
 Training with both cost functions yielded similar estimation performance; the results reported here are for the Kullback-Leibler divergence cost function.
 We chose this cost function because the estimates it yields at the boundaries of the LRV range are less biased than those obtained with the mean squared error cost function.
 
@@ -735,13 +735,11 @@ Finally, we note that there is some run-to-run variation in the structure of the
 However, such run-to-run RF variation leads only to very small changes in estimation error (see error bars in Figure~\ref{fig:RMSEvsRF}). 
 Furthermore, even if the order varies somewhat, the same set of RFs tends to be learned.
 
-Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another.
-Such secondary reflections were simulated for our primary results.
-When we turn off this feature of the rendering, we find (data not shown) that 
-that the secondary reflections have minimal effect on LRV estimation:
-the estimates without secondary reflections were similar to those with reflections.
-This suggests that the primary source of the estimation error in Condition 3 is caused by image-to-image variation in the reflectance of the background objects,
-which in turn affects the normalized contrast representation of the target.
+Our rendering software allows us to compare the effect of background surface reflectances on target object LRV with and without simulation of secondary reflections of light from one object onto another. 
+These secondary reflections were included in the dataset from which we report our primary results. 
+When we turn off this feature of the rendering, we find (data not shown) that LRV estimation performance is essentially unchanged. 
+Estimates with and without secondary reflections are very similar.
+This result suggests that the primary source of the estimation error in Condition 3 is caused by image-to-image variation in the reflectance of the background objects.
 
 \section{Discussion} \label{Discussion}
 
