@@ -40,7 +40,7 @@ Our work provides a framework for evaluating how different sources of scene vari
  
  \author{Brainard}{David H.}
  {}
- {Department of Psychology, University of Pennsylvania, PA, USA}
+ {Department of sychology, University of Pennsylvania, PA, USA}
  {}{brainard@psych.upenn.edu}
  
  \author{Burge}{Johannes}
@@ -64,9 +64,10 @@ The perceived color of an object has important behavioral implications because c
 The computational challenge underlying object color perception is that the light reflected from an object depends not just on the object's surface reflectance, but also 
 on object-extrinsic factors such as the scene illumination, the pose of the object, and the viewpoint of the observer in the scene (Fig.~\ref{fig:introSchematic}).
 To compute a perceptual representation of object color that is correlated with the object's physical surface reflectance, the visual system must account for these object-extrinsic factors.
-The ability of a visual system to compute a representation of object color that is stable against variation in object-extrinsic factors is called color constancy. 
+The ability of a visual system to compute a representation of object color that is stable against variation in object-extrinsic factors is called color constancy.
 Although human color constancy is not perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
 
+The computational problem of color constancy may be framed as how to obtain stable descriptions of the spectral surface reflectance functions of the objects in a scene.
 Early work on computational color constancy considered a simplified imaging model where scenes consisted of multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
 Subsequent work incorporated probabilistic descriptions of the statistics of naturally occurring scenes \cite{D'ZmuraConstancy3, D'ZmuraIversonSinger,BrainardFreeman}.
 A key insight from these computational studies is that stable color descriptors of a target object cannot be obtained solely from the light reflected from that target object.
@@ -103,7 +104,7 @@ These methods use the joint statistics of labeled images and scene variables to 
 This general approach has been useful for other perceptual problems in early and mid-level vision.
 For example, a recently developed technique called accuracy maximization analysis (AMA) learns linear receptive fields optimized for particular perceptual tasks \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}. AMA has been used to develop ideal observers for estimating defocus blur, binocular disparity, and retinal motion estimation with natural stimuli. These ideal observers provide excellent predictions of human performance \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal}.
 
-Supervised learning requires large labeled datasets.  Such datasets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where surface reflectances of individual objects have been measured (\citeNP{funt1988color,ciurea2003large}), but these databases are not large enough to drive supervised learning. Finally, recent work has applied crowd-sourcing techniques to annotate natural images with surface reflectance descriptors \cite{bell2014intrinsic}.
+Supervised learning requires large labeled datasets. Such datasets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where surface reflectances of individual objects have been measured (\citeNP{funt1988color,ciurea2003large}), but these databases are not large enough to drive supervised learning. Finally, recent work has applied crowd-sourcing techniques to annotate natural images with surface reflectance descriptors \cite{bell2014intrinsic}.
  
 In this paper, we use high-quality computer graphics to generate large datasets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We tackle the specific problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
