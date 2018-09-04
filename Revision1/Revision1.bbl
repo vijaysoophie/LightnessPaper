@@ -1,6 +1,28 @@
 \begin{thebibliography}{}
 
 \bibitem[\protect\citeauthoryear{%
+Adelson%
+}{%
+Adelson%
+}{%
+{\protect\APACyear{2000}}%
+}]{%
+adelson2000}%
+\APACinsertmetastar{%
+adelson2000}%
+Adelson, E\BPBI H.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2000}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Lightness Perception and Lightness Illusions}{Lightness
+  perception and lightness illusions}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{The New Cognitive Neurosciences}{339-351}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Albrecht%
 \ \BBA{} Geisler%
 }{%
@@ -203,10 +225,10 @@ Brainard, D\BPBI H.%
 
 \bibitem[\protect\citeauthoryear{%
 Brainard%
-\ \BBA{} Radonjic%
+\ \BBA{} Radonji{\'c}%
 }{%
 Brainard%
-\ \BBA{} Radonjic%
+\ \BBA{} Radonji{\'c}%
 }{%
 {\protect\APACyear{2014}}%
 }]{%
@@ -214,7 +236,7 @@ BrainardColorConstancy}%
 \APACinsertmetastar{%
 BrainardColorConstancy}%
 Brainard, D\BPBI H.%
-\BCBT{}\ \BBA{} Radonjic, A.%
+\BCBT{}\ \BBA{} Radonji{\'c}, A.%
 %
 \unskip\
 \newblock
@@ -793,7 +815,7 @@ Geisler, W\BPBI S.%
   discrimination, and identification}{Visual cortex neurons in monkeys and
   cats: detection, discrimination, and identification}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Visual neuroscience}{14}{5}{897--919}.
+\APACjournalVolNumPages{Visual neuroscience}{14}{5}{897-919}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -820,6 +842,27 @@ Geisler, W\BPBI S.%
   stimulus encoders for natural tasks}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of Vision}{9}{13}{1-6}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Gilchrist%
+}{%
+Gilchrist%
+}{%
+{\protect\APACyear{2006}}%
+}]{%
+gilchrist2006seeing}%
+\APACinsertmetastar{%
+gilchrist2006seeing}%
+Gilchrist, A.%
+%
+\unskip\
+\newblock
+\APACrefYear{2006}.
+\newblock
+\APACrefbtitle{Seeing black and white}{Seeing black and white}\ (\BNUM~40).
+\newblock
+\APACaddressPublisher{}{OUP USA}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1103,6 +1146,30 @@ Kim, S.%
   natural scenes}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{eLife}{7}{}{e31448}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+Kingdom%
+}{%
+Kingdom%
+}{%
+{\protect\APACyear{2011}}%
+}]{%
+kingdom2011lightness}%
+\APACinsertmetastar{%
+kingdom2011lightness}%
+Kingdom, F\BPBI A.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Lightness, brightness and transparency: A quarter century
+  of new ideas, captivating demonstrations and unrelenting
+  controversy}{Lightness, brightness and transparency: A quarter century of new
+  ideas, captivating demonstrations and unrelenting controversy}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Vision research}{51}{7}{652-673}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
