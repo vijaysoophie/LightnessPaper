@@ -1,0 +1,59 @@
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: diff2.aux
+The style file: jovcite.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+format.bvol.edition.pages.check is an unknown function---line 4328 of file jovcite.bst
+format.btitle.connect.check is an unknown function---line 4329 of file jovcite.bst
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Database file #1: references.bib
+apacite.bst [2007/09/03 v4.00 APA bibliography style]
+Warning--No address in BrainardColorConstancy
+Warning--No address in CIE86
+You've used 83 entries,
+            6397 wiz_defined-function locations,
+            1689 strings with 23167 characters,
+and the built_in function-call counts, 150004 in all, are:
+= -- 18225
+> -- 1286
+< -- 7193
++ -- 7525
+- -- 170
+* -- 9924
+:= -- 27650
+add.period$ -- 334
+call.type$ -- 83
+change.case$ -- 415
+chr.to.int$ -- 0
+cite$ -- 168
+duplicate$ -- 4067
+empty$ -- 6235
+format.name$ -- 2147
+if$ -- 28488
+int.to.chr$ -- 0
+int.to.str$ -- 166
+missing$ -- 0
+newline$ -- 1984
+num.names$ -- 668
+pop$ -- 2188
+preamble$ -- 1
+purify$ -- 332
+quote$ -- 0
+skip$ -- 9798
+stack$ -- 0
+substring$ -- 8328
+swap$ -- 2454
+text.length$ -- 176
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 6768
+warning$ -- 2
+while$ -- 723
+width$ -- 0
+write$ -- 2505
+(There were 2 error messages)

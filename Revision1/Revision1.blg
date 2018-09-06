@@ -1,5 +1,5 @@
-This is BibTeX, Version 0.99d (TeX Live 2016)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2017)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Revision1.aux
 The style file: jovcite.bst
 Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
@@ -15,46 +15,45 @@ Database file #1: references.bib
 apacite.bst [2007/09/03 v4.00 APA bibliography style]
 Warning--No address in BrainardColorConstancy
 Warning--No address in CIE86
-Warning--No address in gilchrist2006seeing
-You've used 58 entries,
+You've used 83 entries,
             6397 wiz_defined-function locations,
-            1561 strings with 19367 characters,
-and the built_in function-call counts, 104348 in all, are:
-= -- 12684
-> -- 883
-< -- 5011
-+ -- 5231
-- -- 120
-* -- 6893
-:= -- 19312
-add.period$ -- 233
-call.type$ -- 58
-change.case$ -- 290
+            1690 strings with 23190 characters,
+and the built_in function-call counts, 150004 in all, are:
+= -- 18225
+> -- 1286
+< -- 7193
++ -- 7525
+- -- 170
+* -- 9924
+:= -- 27650
+add.period$ -- 334
+call.type$ -- 83
+change.case$ -- 415
 chr.to.int$ -- 0
-cite$ -- 119
-duplicate$ -- 2801
-empty$ -- 4343
-format.name$ -- 1467
-if$ -- 19817
+cite$ -- 168
+duplicate$ -- 4067
+empty$ -- 6235
+format.name$ -- 2147
+if$ -- 28488
 int.to.chr$ -- 0
-int.to.str$ -- 116
+int.to.str$ -- 166
 missing$ -- 0
-newline$ -- 1382
-num.names$ -- 466
-pop$ -- 1532
+newline$ -- 1984
+num.names$ -- 668
+pop$ -- 2188
 preamble$ -- 1
-purify$ -- 232
+purify$ -- 332
 quote$ -- 0
-skip$ -- 6817
+skip$ -- 9798
 stack$ -- 0
-substring$ -- 5795
-swap$ -- 1682
-text.length$ -- 126
+substring$ -- 8328
+swap$ -- 2454
+text.length$ -- 176
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4704
-warning$ -- 3
-while$ -- 492
+type$ -- 6768
+warning$ -- 2
+while$ -- 723
 width$ -- 0
-write$ -- 1737
+write$ -- 2505
 (There were 2 error messages)

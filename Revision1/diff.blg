@@ -15,45 +15,45 @@ Database file #1: references.bib
 apacite.bst [2007/09/03 v4.00 APA bibliography style]
 Warning--No address in BrainardColorConstancy
 Warning--No address in CIE86
-You've used 55 entries,
+You've used 83 entries,
             6397 wiz_defined-function locations,
-            1545 strings with 18984 characters,
-and the built_in function-call counts, 99443 in all, are:
-= -- 12093
-> -- 851
-< -- 4763
-+ -- 4993
-- -- 114
-* -- 6572
-:= -- 18359
-add.period$ -- 221
-call.type$ -- 55
-change.case$ -- 275
+            1689 strings with 23165 characters,
+and the built_in function-call counts, 150004 in all, are:
+= -- 18225
+> -- 1286
+< -- 7193
++ -- 7525
+- -- 170
+* -- 9924
+:= -- 27650
+add.period$ -- 334
+call.type$ -- 83
+change.case$ -- 415
 chr.to.int$ -- 0
-cite$ -- 112
-duplicate$ -- 2687
-empty$ -- 4129
-format.name$ -- 1425
-if$ -- 18889
+cite$ -- 168
+duplicate$ -- 4067
+empty$ -- 6235
+format.name$ -- 2147
+if$ -- 28488
 int.to.chr$ -- 0
-int.to.str$ -- 110
+int.to.str$ -- 166
 missing$ -- 0
-newline$ -- 1319
-num.names$ -- 442
-pop$ -- 1443
+newline$ -- 1984
+num.names$ -- 668
+pop$ -- 2188
 preamble$ -- 1
-purify$ -- 220
+purify$ -- 332
 quote$ -- 0
-skip$ -- 6497
+skip$ -- 9798
 stack$ -- 0
-substring$ -- 5532
-swap$ -- 1613
-text.length$ -- 117
+substring$ -- 8328
+swap$ -- 2454
+text.length$ -- 176
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 4464
+type$ -- 6768
 warning$ -- 2
-while$ -- 476
+while$ -- 723
 width$ -- 0
-write$ -- 1668
+write$ -- 2505
 (There were 2 error messages)

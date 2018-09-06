@@ -1,7 +1,7 @@
 \documentclass{jov}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL draft5.tex      Thu Jun 28 16:10:54 2018
-%DIF ADD Revision1.tex   Wed Aug 29 16:20:02 2018
+%DIF ADD Revision1.tex   Thu Sep  6 16:53:11 2018
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{hyperref}
@@ -10,11 +10,13 @@
 \usepackage{amssymb}
 \usepackage{comment}
 
-\DeclareMathOperator*{\argmin}{arg\,min}
+%DIF < \DeclareMathOperator*{\argmin}{arg\,min}
+%DIF -------
 \usepackage{lineno} %DIF > 
 \linenumbers %DIF > 
 %DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
 %DIF BOLD PREAMBLE %DIF PREAMBLE
+%DIF PREAMBLE
 \providecommand{\DIFaddtex}[1]{{\bf #1}} %DIF PREAMBLE
 \providecommand{\DIFdeltex}[1]{} %DIF PREAMBLE
 %DIF SAFE PREAMBLE %DIF PREAMBLE
@@ -130,8 +132,10 @@ The perceived color of an object has important behavioral implications because c
 The computational challenge underlying object color perception is that the light reflected from an object depends not just on the object's surface reflectance, but also 
 on object-extrinsic factors such as the scene illumination, the pose of the object, and the viewpoint of the observer in the scene (Fig.~\ref{fig:introSchematic}).
 To compute a perceptual representation of object color that is correlated with the object's physical surface reflectance, the visual system must account for these object-extrinsic factors.
-The ability of a visual system to compute a representation of object color that is stable against variation in object-extrinsic factors is called color constancy.
-Although human color constancy is not perfect, it is often very good \cite{FosterColorConstancy, BrainardColorConstancy}. 
+The ability of a visual system to compute a representation of object color that is stable against variation in object-extrinsic factors is called color constancy. 
+\DIFdelbegin \DIFdel{Although human color constancy is }\DIFdelend \DIFaddbegin \DIFadd{A well-studied special case of color constancy is when the stimuli are restricted to be achromatic. 
+This special case is called lightness constancy \cite{gilchrist2006seeing}. 
+Although human lightness and color constancy are }\DIFaddend not perfect, \DIFdelbegin \DIFdel{it is }\DIFdelend \DIFaddbegin \DIFadd{they are }\DIFaddend often very good \DIFdelbegin \DIFdel{\cite{FosterColorConstancy, BrainardColorConstancy}}\DIFdelend \DIFaddbegin \DIFadd{\cite{FosterColorConstancy, BrainardColorConstancy,adelson2000,kingdom2011lightness}}\DIFaddend . 
 
 \DIFaddbegin \DIFadd{The computational problem of color constancy may be framed as how to obtain stable descriptions of the spectral surface reflectance functions of the objects in a scene.
 }\DIFaddend Early work on computational color constancy considered a simplified imaging model where scenes consisted of multiple flat matte objects and a single spatially diffuse illuminant \cite{LandRetinex,Buchsbaum80,MaloneyWandell86}.
@@ -175,9 +179,10 @@ Supervised learning requires large labeled datasets. Such datasets are not readi
 In this paper, we use high-quality computer graphics to generate large datasets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We tackle the specific problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
 
-We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of a target object's surface reflectance function\DIFaddbegin \footnote{\DIFadd{We distinguish luminance constancy and LRV from lightness constancy and albedo, respectively, as the latter terms refer to achromatic stimuli.}}\DIFaddend .
-The LRV is a measure of the overall amount of light reflected by a surface \cite{astm1121477}.
-\DIFdelbegin \DIFdel{Estimating }\DIFdelend \DIFaddbegin \DIFadd{Defining }\DIFaddend the LRV from a surface reflectance function \DIFdelbegin \DIFdel{proceeds in }\DIFdelend \DIFaddbegin \DIFadd{requires }\DIFaddend two steps.
+We define the computational problem of luminance constancy as that of estimating the light reflectance value (LRV) of a target object's surface reflectance function\DIFaddbegin \footnote{\DIFadd{In the literature, the term lightness constancy is generally used to denote color constancy for the special case when stimuli are restricted to be achromatic. This condition does not apply to our work - we consider full spectral variation in the stimuli. We chose the term luminance constancy to denote the generalization from achromatic stimuli, while at the same time acknowledging that we are not studying the full problem of color constancy but rather the estimation of a luminance-based summary of surface spectral reflectance.}}\DIFaddend .
+The LRV is a measure of the overall amount of light reflected by a surface \DIFdelbegin \DIFdel{\cite{astm1121477}.
+Estimating }\DIFdelend \DIFaddbegin \DIFadd{reflectance of the reference illuminant itself}\footnote{\DIFadd{LRV is related to albedo, but the concept of albedo does not incorporate the human luminosity function. It is also related to Munsell Value, but Munsell Value is defined with respect to a somewhat obsolete standard illuminant (CIE Illuminant C).}} \DIFadd{\cite{astm1121477}.
+Obtaining }\DIFaddend the LRV from a surface reflectance function \DIFdelbegin \DIFdel{proceeds in }\DIFdelend \DIFaddbegin \DIFadd{requires }\DIFaddend two steps.
 First, one computes the luminance of the light that would be reflected from the surface under a reference illuminant.
 Second, one normalizes the result by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
@@ -276,6 +281,7 @@ a surface reflectance function can be assigned to each object in the scene, and 
 In the present work, we used our package to generate datasets of naturalistic scenes and corresponding images.
 We used one fixed base scene and inserted a spherical target object of fixed size into this scene.
 \DIFaddbegin \DIFadd{All surfaces in the scene model were matte and did not have specularities.
+There were multiple light sources in the scene, and the rendering process simulated shadows as well as mutual reflection of light between nearby surfaces.
 }\DIFaddend We generated three distinct datasets, which we refer to as Conditions 1-3 (Fig.~\ref{fig:studiedCases}). These are described below.
 Across these datasets the luminance constancy problem (i.e. estimating the target object LRV)
 becomes progressively more difficult.
@@ -513,12 +519,14 @@ The excitations of these photoreceptors provide the information available to the
 Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone excitations
 to our scenes using a model of the early visual system.
 
-We focussed our analysis on image regions local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}).
+We \DIFdelbegin \DIFdel{focussed }\DIFdelend \DIFaddbegin \DIFadd{focused }\DIFaddend our analysis on image regions local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}).
 The local analysis is motivated by the fact that neural receptive fields early in the visual pathways (e.g., retina, primary visual cortex) pool information locally. 
 In primary visual cortex, foveal receptive fields have a maximum spatial extent of approximately 1 degree of visual angle \cite{gattass1981visual, gattass1988visuotopic}. 
+\DIFaddbegin \DIFadd{We sought to understand how well responses from AMA-learned receptive fields at a similar scale could be used to achieve luminance constancy.
+}\DIFaddend 
 
-We modeled a visual system having typical optical blurring (including axial chromatic aberration)\cite{marimont1994matching}, and typical spatial sampling with an interleaved rectangular mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (\citeNP{brainard2015color}; Fig.~\ref{fig:croppedImageWithMosaic}). 
-The cone mosaic contained L:M:S cones in the ratio 0.6:0.3:0.1 and with spectral sensitivities derived from the CIE physiological standard \cite{CIE86}.
+We modeled a visual system having typical optical blurring (including axial chromatic aberration\DIFdelbegin \DIFdel{)\cite{marimont1994matching}}\DIFdelend \DIFaddbegin \DIFadd{, \citeNP{marimont1994matching})}\DIFaddend , and typical spatial sampling with an interleaved rectangular mosaic of long (L), middle (M)  and short (S) wavelength-sensitive cones (\citeNP{brainard2015color}; Fig.~\ref{fig:croppedImageWithMosaic}). 
+The cone mosaic contained L:M:S cones in the ratio 0.6:0.3:0.1 \DIFaddbegin \DIFadd{(1523 L cones, 801 M cones, 277 S cones) }\DIFaddend and with spectral sensitivities derived from the CIE physiological standard \cite{CIE86}.
 Cone excitations were taken as the number of photopigment isomerizations, assuming an integration time of 100 msec. 
 % JDB: DO WE HAVE REFERENCE INDICATING THAT 100ms IS A REASONABLE INTEGRATION TIME TO ASSUME?
 % LEAVING HANGING FOR NOW.  MAYBE LOOK AT COHN TWO-FLASH DETECTION EXPERIMENTS OR TEMPORAL
@@ -613,7 +621,7 @@ Moreover, a close approximation to the corresponding expected estimation cost ma
 Thus, AMA searches over the space of linear receptive fields to find the set that minimizes the expected estimation cost.
 For each condition, we learned the receptive fields with a training set consisting of 90\% of the images.
 
-In our implementation of AMA, we \DIFdelbegin \DIFdel{explored }\DIFdelend \DIFaddbegin \DIFadd{used }\DIFaddend both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) and assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3 \DIFaddbegin \DIFadd{\citeNP{geisler1997visual}}\DIFaddend ). 
+In our implementation of AMA, we \DIFdelbegin \DIFdel{explored }\DIFdelend \DIFaddbegin \DIFadd{used }\DIFaddend both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{to evaluate the accuracy of the AMA estimates of LRV. We also }\DIFaddend assumed that receptive field responses were corrupted by scaled Gaussian noise (i.e. Poisson-like noise with a fano factor of 1.3  \DIFaddbegin \DIFadd{\citeNP{geisler1997visual}}\DIFaddend ). 
 Training with both cost functions yielded similar estimation performance; the results reported here are for the Kullback-Leibler divergence cost function.
 We chose this cost function because the estimates it yields at the boundaries of the LRV range are less biased than those obtained with the mean squared error cost function.
 
@@ -667,7 +675,7 @@ of the image data; that is, the naive model always estimated the LRV to be equal
 	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft5/Figure10/Figure10_c.pdf}
 	\label{fig:case1RFs}
     \end{subfigure}   
-    \caption{{\bf Condition 1 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRV. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first three AMA receptive fields.}
+    \caption{{\bf Condition 1 results:} (a) Mean estimated LRV $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The \DIFaddbeginFL \DIFaddFL{filled regions representing }\DIFaddendFL standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRV. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first three AMA receptive fields. \DIFaddbeginFL \DIFaddFL{These are specified over the same 1 x 1 degree patch as the stimuli.}\DIFaddendFL }
 \label{fig:Condition1}
 \end{figure}
 
@@ -817,8 +825,8 @@ Our rendering software allows us to compare the effect of background surface ref
 \DIFdelbegin \DIFdel{Such }\DIFdelend \DIFaddbegin \DIFadd{These }\DIFaddend secondary reflections were \DIFdelbegin \DIFdel{simulated for }\DIFdelend \DIFaddbegin \DIFadd{included in the dataset from which we report }\DIFaddend our primary results. 
 When we turn off this feature of the rendering, we find (data not shown) that \DIFdelbegin \DIFdel{that the secondary reflections have minimal effect on LRV estimation :
 the estimates }\DIFdelend \DIFaddbegin \DIFadd{LRV estimation performance is essentially unchanged. 
-Estimates with and }\DIFaddend without secondary reflections \DIFdelbegin \DIFdel{were similarto those with reflections.
-This }\DIFdelend \DIFaddbegin \DIFadd{are very similar.
+Estimates with and }\DIFaddend without secondary reflections \DIFdelbegin \DIFdel{were similarto those with reflections. 
+This }\DIFdelend \DIFaddbegin \DIFadd{are very similar. 
 This result }\DIFaddend suggests that the primary source of the estimation error in Condition 3 is caused by image-to-image variation in the reflectance of the background objects\DIFdelbegin \DIFdel{,
 which in turn affects the normalized contrast representation of the target}\DIFdelend .
 
@@ -866,27 +874,16 @@ reliably light reflected from those objects can be used as a cue to estimate the
 \subsection{Images of Virtual vs. Real Scenes}
 As noted in the introduction, supervised learning requires large labeled datasets. Labeled datasets of natural images have been useful for developing normative models of the estimation of defocus blur, binocular disparity, retinal image motion, and 3D surface orientation \cite{burge2011optimal, burge2012optimal, burge2014optimal, burge2015optimal, sebastian2015defocus, kim2018lawful, burge2010natural, girshick2011cardinal, burge2016estimating, goncalves2017not}. 
 
-Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
-To obtain ground truth information about the reflectance of objects in a natural image, it is necessary to make 
-an independent measurement of the of the reflectance function of each object (or of the illumination impinging on each object).
-Although this can be done at a small number of image locations by inserting discretely spaced reflectance standards into the scene, 
-interpolating to locations between such standards requires strong assumptions that are often unjustified in real scenes.
+\DIFdelbegin \DIFdel{Unfortunately, such datasets are not readily available for studying correlates of object surface reflectance.
+To obtain }\DIFdelend \DIFaddbegin \DIFadd{Large datasets of natural or posed scenes with }\DIFaddend ground truth information about \DIFdelbegin \DIFdel{the reflectance of objects in a natural image, it is necessary to make 
+an }\DIFdelend \DIFaddbegin \DIFadd{illuminant and object surface reflectance are difficult to obtain, as }\DIFaddend independent measurement of \DIFdelbegin \DIFdel{the of the reflectance function of each object (or of the illumination impinging on each object). Although this can be done at a small number of image locations by inserting discretely spaced reflectance standards into the scene, 
+interpolating to locations between such standards requires strong assumptions that are often unjustified in real scenes. }\DIFdelend \DIFaddbegin \DIFadd{illuminant and surface properties at each image location is painstaking. That noted, there are useful databases for evaluation of color constancy algorithms that provide information about illumination and/or surface reflectance (e.g., \citeNP{barnard2002data,ciurea2003large, cheng2014illuminant,NascimentoFoster2016}; see }\href{http://colorconstancy.com}{http://colorconstancy.com}\DIFadd{). Often the illumination is estimated through placement of a reflectance standard at a few image locations to allow estimation of the illumination impinging at those locations. This estimate is then interpolated/extrapolated across the image, an approximation whose quality is not yet well understood.  
+}\DIFaddend 
 
 Here we used labeled images rendered from virtual scene descriptions. 
-There are many advantages to using rendered images \cite{Butler:ECCV:2012}.
-One advantage is that they allow us to work with large number of labeled images where object reflectance is precisely known at each pixel.
-A second advantage is that we can control the variation in distinct scene factors that might affect the difficulty of the estimation problem.
-This flexibility allows the study of individual scene factors as well as their combined effects.
-Here, we exploited this flexibility to quantify how variation in the relative reflectance spectrum of the target object, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation.
-We also exploited our use of rendered images to explore how the presence or absence of secondary reflections from background objects affected estimation
-of target object LRV.
-This type of question cannot be addressed using real images.
-The basic approach we use here can be extended to include parametric control over the amount of variation of different factors.
-For example, we could systematically vary the variances of the distribution over the weights that control the relative spectrum
-of the illumination.
-\DIFaddbegin \DIFadd{Similarly, while the scenes rendered for this work were matte, 
-we could also introduce specularity and study interaction of its effect on luminance constancy.
-}\DIFaddend 
+\DIFaddbegin \DIFadd{A similar approach has been used previously to study the perception of lightness and specularity \cite{toscani2013optimal,wiebel2015statistical,toscani2017lightness}; our work adds to this approach through the addition of variation in color. 
+}\DIFaddend There are many advantages to using rendered images \cite{Butler:ECCV:2012}. 
+One advantage is that they allow us to work with large number of labeled images where object reflectance is precisely known at each pixel. A second advantage is that we can control the variation in distinct scene factors that might affect the difficulty of the estimation problem. This flexibility allows the study of individual scene factors as well as their combined effects. Here, we exploited this flexibility to quantify how variation in the relative reflectance spectrum of the target object, the spectrum of the illumination, and the reflectance spectrum of the background objects limit LRV estimation. We also exploited our use of rendered images to explore how the presence or absence of secondary reflections from background objects affected estimation of target object LRV. This type of question cannot be addressed using real images. The basic approach we use here can be extended to include parametric control over the amount of variation of different factors. For example, we could systematically vary the variances of the distribution over the weights that control the relative spectrum of the illumination.
 
 There are also disadvantages associated with using rendered images. 
 Virtual rendered scenes are not guaranteed to capture all of the task relevant variation that occurs in real scenes.
@@ -894,20 +891,16 @@ Even casual inspection of our images reveals that they are rendered, and not rea
 However, computer graphics is getting better and we expect that the gap between virtual and natural image databases will steadily close.
 Indeed, carefully constructed graphics images are now quite difficult to differentiate from real images.
 
-To increase the representativeness of our rendered images, we used datasets of  natural surface reflectance spectra and natural daylight illumination spectra.
-Although we believe these datasets provide reasonable approximations of the statistical variation in reflectance and illumination spectra, they can be extended and improved.
-For example, the surface reflectance datasets capture regularities in naturally occurring reflectance functions, but the surfaces in the datasets were not sampled to reflect the relative frequency of different reflectance spectra in natural viewing. 
-In addition, the dataset of illuminations does not include the artificial illuminations that we now live much of our lives under.
-Future work with virtual image datasets will benefit from targeted efforts to characterize additional features of the natural statistics of the scene components that are varied.
+To increase the representativeness of our rendered images, we used datasets of natural surface reflectance spectra and natural daylight illumination spectra. Although we believe these datasets provide reasonable approximations of the statistical variation in reflectance and illumination spectra, they can be extended and improved. For example, \DIFdelbegin \DIFdel{the surface reflectance datasets capture regularities in naturally occurring reflectance functions, but the surfaces in the datasets were not sampled to reflect }\DIFdelend \DIFaddbegin \DIFadd{there are additional datasets of measured surface reflectances that could be incorporated into future analyses, with some of these focused on the reflectance of objects (e.g. fruit) that are thought to be important for the evolution of primate color vision (e.g., \citeNP{sumner2000catarrhine, regan2001fruits, barnard2002data, ennis2018hyperspectral}). Another issue, not addressed by these datasets, is }\DIFaddend the relative frequency of \DIFaddbegin \DIFadd{occcurance of }\DIFaddend different reflectance spectra in natural viewing. \DIFdelbegin \DIFdel{In addition, the dataset of illuminations does not include the artificial illuminations that we now live much of our lives under. Future work with virtual image datasets will benefit from targeted efforts to characterize additional features of the natural statistics of the scene components that are varied}\DIFdelend \DIFaddbegin \DIFadd{\citeNP{attewell2007distribution} made a systematic survey, and found that a beta distribution provided a better description of the distribution of an LRV-like quantity than did a truncated Gaussian. Generalizing these measurements to better characterize the distribution of full reflectance functions remains an interesting goal}\DIFaddend . 
 
 \subsection{Future Directions}
-In the work presented here, we studied computational luminance constancy in virtual scenes with naturalistic spectral variation in light sources and in surface reflectance functions. 
-It is natural to begin with spectral variation, because this variation is at the heart of what makes luminance constancy a rich computational problem.
-In natural scenes, however, there are other sources of variation that add additional richness and make the problem more difficult to solve.
-These include variation in non-spectral properties of objects and lighting in the scene, including object texture, material\DIFaddbegin \DIFadd{, specularity}\DIFaddend , and shape as well as lighting geometry. 
-The methods we developed here may be generalized to study the effects of variation in these factors.
-One could incorporate these other sources of variation into the generation of the scenes and again learn estimators from the corresponding labeled images. 
-A challenge for this approach will be to thoughtfully control the increase in problem complexity, both to keep compute time feasible and to ensure that it is possible to extract meaningful insight from the results.
+\DIFaddbegin 
+
+\DIFaddend In the work presented here, we studied computational luminance constancy in virtual scenes with naturalistic spectral variation in light sources and in surface reflectance functions\DIFaddbegin \DIFadd{, with only matte surfaces in the scenes}\DIFaddend . It is natural to \DIFdelbegin \DIFdel{begin }\DIFdelend \DIFaddbegin \DIFadd{by studying }\DIFaddend with spectral variation, because this variation is at the heart of what makes luminance constancy a rich computational problem. In natural scenes, however, there are other sources of variation that add additional richness\DIFdelbegin \DIFdel{and make the problem more difficult to solve}\DIFdelend . These include variation in non-spectral properties of objects and lighting in the scene, including object texture, material \DIFaddbegin \DIFadd{(e.g. specularity)}\DIFaddend , and shape as well as lighting geometry. The methods we developed here may be generalized to study the effects of variation in these factors. \DIFdelbegin \DIFdel{One }\DIFdelend \DIFaddbegin \DIFadd{That is, one }\DIFaddend could incorporate these other sources of variation into the generation of the scenes and again learn estimators from the corresponding labeled images. A challenge for this approach will be to thoughtfully control the increase in problem complexity, both to keep compute time feasible and to ensure that it is possible to extract meaningful insight from the results\DIFaddbegin \DIFadd{. Extending the work to include variation of material may provide insights not only about luminance constancy but also for computations that relate to material perception (see \citeNP{fleming2017material}); extending the work to include variation in object shape and lighting geometry may clarify the role of object boundaries versus object interiors for providing information that supports perception of object color and lightness (see \citeNP{land1971lightness, rudd2016retinex}). We also note that there is a literature on how increasing stimulus complexity along the various lines listed above affects human color and lightness perception (e.g. \citeNP{beck1964effect,yang2001illuminant, yang2002stereo,todd2004lightness, snyder2005illumination, boyaci2003effect, xiao2008surface, kingdom2011lightness, xiao2012color, anderson2015perceptual, toscani2017lightness}), as well as the computational problem of color and lightness constancy (e.g. \citeNP{lee1986method, d1986mechanisms, funt1988color, tominaga1989standard, barron2012color, barron2015convolutional, finlayson2018colour}).
+}
+
+
+\DIFadd{We studied the information available for LRV estimation using a 1°x1° image patch. As noted above this choice of size was motivated in part to use a spatial scale roughly commensurate with the scale of information integration in early visual cortex. Our general methods could be extended to study larger regions, and doing so would quantify the value of spatially remote information for luminance constancy}\DIFaddend . 
 
 Luminance constancy is a special case of the more general problem of color constancy.
 The approach we developed here could also be generalized to the estimation of additional surface reflectance descriptors, such as object hue or chroma.
@@ -932,12 +925,4 @@ Supported by startup funds from the University of Pennsylvania (JB), NIH grant R
 
 \end{document}
 
-%% DHB: There are all sorts of problems with the citations.
-% a) Journal and book case should be (e.g.) "Journal of Vision" not (e.g.) "Journal of vision".  This is botched in many places.
-% b) In some cases we appear to be citing things that are one page long.  I think many of these are papers that have more than
-% one page, and those instances should be fixed.  In other cases, we may be citing abstracts and I would prefer not to cite those
-% unless there is a real need to.  
-% c) Sometimes page numbers are given by (e.g.) "112-173", other by (e.g.) ", yet others by (e.g.) "(pp. 112-173)".  Pick one style
-% and stick with it.
-% d) There are other glitches.  For example, the title of Goncalves and Welchman starts "?what not?".  Proofread carefully and fix up.
 
