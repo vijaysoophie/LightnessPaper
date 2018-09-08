@@ -19,7 +19,9 @@ Adelson, E\BPBI H.%
 \BBOQ{}\APACrefatitle{Lightness Perception and Lightness Illusions}{Lightness
   perception and lightness illusions}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{The New Cognitive Neurosciences}{339-351}{}{}.
+\BIn{} M.~Gazzaniga\ (\BED), {\em The New Cognitive Neurosciences}.
+\newblock
+\APACaddressPublisher{Cambridge, MA}{MIT Press, 339-351}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -49,6 +51,31 @@ Albrecht, D\BPBI G.%
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
+{American Society for Testing and Materials}%
+}{%
+{American Society for Testing and Materials}%
+}{%
+{\protect\APACyear{2017}}%
+}]{%
+astm1121477}%
+\APACinsertmetastar{%
+astm1121477}%
+{American Society for Testing and Materials}.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\BBOQ{}\APACrefatitle{Standard Test Method for Luminous Reflectance Factor of
+  Acoustical Materials by Use of Integrating-Sphere Reflectometers}{Standard
+  test method for luminous reflectance factor of acoustical materials by use of
+  integrating-sphere reflectometers}.\BBCQ{}
+\newblock
+\APACjournalVolNumPages{Renovations of Center for Historic
+  Preservation}{98}{A}{E1477}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
 Anderson%
 }{%
 Anderson%
@@ -68,34 +95,9 @@ Anderson, B\BPBI L.%
   and gloss}{The perceptual representation of transparency, lightness, and
   gloss}.\BBCQ{}
 \newblock
-\BIn{} J.~Wagemans\ (\BED), {\em Handbook of perceptual organization}.
+\BIn{} J.~Wagemans\ (\BED), {\em Handbook of Perceptual Organization}.
 \newblock
 \APACaddressPublisher{Oxford}{Oxford University Press.}
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-ASTM%
-}{%
-ASTM%
-}{%
-{\protect\APACyear{2017}}%
-}]{%
-astm1121477}%
-\APACinsertmetastar{%
-astm1121477}%
-ASTM.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{2017}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Standard Test Method for Luminous Reflectance Factor of
-  Acoustical Materials by Use of Integrating-Sphere Reflectometers}{Standard
-  test method for luminous reflectance factor of acoustical materials by use of
-  integrating-sphere reflectometers}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Renovations of Center for Historic
-  Preservation}{98}{A}{E1477}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -121,7 +123,7 @@ Attewell, D.%
   environment}{The distribution of reflectances within the visual
   environment}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision research}{47}{4}{548--554}.
+\APACjournalVolNumPages{Vision Research}{47}{4}{548-554}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -149,11 +151,7 @@ Barnard, K.%
 \BBOQ{}\APACrefatitle{A data set for color research}{A data set for color
   research}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Color Research \& Application: Endorsed by
-  Inter-Society Color Council, The Colour Group (Great Britain), Canadian
-  Society for Color, Color Science Association of Japan, Dutch Society for the
-  Study of Color, The Swedish Colour Centre Foundation, Colour Society of
-  Australia, Centre Fran{\c{c}}ais de la Couleur}{27}{3}{147--151}.
+\APACjournalVolNumPages{Color Research \& Application}{27}{3}{147-151}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -224,7 +222,7 @@ Beck, J.%
 \BBOQ{}\APACrefatitle{The effect of gloss on perceived lightness}{The effect of
   gloss on perceived lightness}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{The American journal of psychology}{77}{1}{54--63}.
+\APACjournalVolNumPages{The American Journal of Psychology}{77}{1}{54-63}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -304,7 +302,7 @@ Boyaci, H.%
   surface albedo in binocularly viewed scenes}{The effect of perceived surface
   orientation on perceived surface albedo in binocularly viewed scenes}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{3}{8}{}.
+\APACjournalVolNumPages{Journal of Vision}{3}{8}{541-553}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -747,29 +745,7 @@ Cheng, D.%
   methods work and the role of the color distribution}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
-  A}{31}{5}{1049--1058}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-CIE%
-}{%
-CIE%
-}{%
-{\protect\APACyear{1986}}%
-}]{%
-CIE86}%
-\APACinsertmetastar{%
-CIE86}%
-CIE.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1986}{}{}.
-\newblock
-\APACrefbtitle{Colorimetry, second edition}{Colorimetry, second edition}\
-  \APACbVolEdTR{}{\BTR{}\ \BNUM\ 15.2}.
-\newblock
-\APACaddressInstitution{}{Bureau Central de la CIE}.
+  A}{31}{5}{1049-1058}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -795,6 +771,28 @@ Ciurea, F.%
   large image database for color constancy research}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Color and Imaging Conference}{2003}{1}{160-164}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem[\protect\citeauthoryear{%
+{Commission Internationale de l{'}{\'e}clairage}%
+}{%
+{Commission Internationale de l{'}{\'e}clairage}%
+}{%
+{\protect\APACyear{1986}}%
+}]{%
+CIE86}%
+\APACinsertmetastar{%
+CIE86}%
+{Commission Internationale de l{'}{\'e}clairage}.%
+%
+\unskip\
+\newblock
+\APACrefYearMonthDay{1986}{}{}.
+\newblock
+\APACrefbtitle{Colorimetry, second edition}{Colorimetry, second edition}\
+  \APACbVolEdTR{}{\BTR{}\ \BNUM\ 15.2}.
+\newblock
+\APACaddressInstitution{}{Bureau Central de la CIE}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -904,7 +902,7 @@ Ennis, R.%
   vegetables}{Hyperspectral database of fruits and vegetables}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
-  A}{35}{4}{B256--B266}.
+  A}{35}{4}{B256-B266}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -947,7 +945,7 @@ Fleming, R\BPBI W.%
 \newblock
 \BBOQ{}\APACrefatitle{Material perception}{Material perception}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Annual Review of Vision Science}{3}{}{365--388}.
+\APACjournalVolNumPages{Annual Review of Vision Science}{3}{}{365-388}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -995,7 +993,7 @@ Funt, B\BPBI V.%
   near-mondrian scenes using a finite dimensional linear model}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Computer Society Conference on Computer Vision and
-  Pattern Recognition, 1988}{}{}{544-549}.
+  Pattern Recognition}{}{}{544-549}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1119,7 +1117,7 @@ Gilchrist, A.%
 \newblock
 \APACrefYear{2006}.
 \newblock
-\APACrefbtitle{Seeing black and white}{Seeing black and white}\ (\BNUM~40).
+\APACrefbtitle{Seeing Black and White}{Seeing black and white}.
 \newblock
 \APACaddressPublisher{Oxford}{Oxford University Press}.
 \PrintBackRefs{\CurrentBib}
@@ -1373,9 +1371,9 @@ Kelly, K\BPBI L.%
 \newblock
 \APACrefYearMonthDay{1943}{}{}.
 \newblock
-\BBOQ{}\APACrefatitle{Tristimulus specification of the Munsell Book of Color
+\BBOQ{}\APACrefatitle{Tristimulus specification of the {M}unsell Book of Color
   from spectrophotometric measurements}{Tristimulus specification of the
-  munsell book of color from spectrophotometric measurements}.\BBCQ{}
+  {M}unsell book of color from spectrophotometric measurements}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of
   America}{33}{7}{355-376}.
@@ -1501,7 +1499,7 @@ Land, E\BPBI H.%
   theory}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of
-  America}{61}{1}{1--11}.
+  America}{61}{1}{1-11}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1525,7 +1523,7 @@ Lee, H\BHBI C.%
   chromaticity from specular highlights}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
-  A}{3}{10}{1694--1699}.
+  A}{3}{10}{1694-1699}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1713,7 +1711,7 @@ Regan, B\BPBI C.%
   vision}{Fruits, foliage and the evolution of primate colour vision}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Philosophical Transactions of the Royal Society of
-  London B: Biological Sciences}{356}{1407}{229--283}.
+  London B: Biological Sciences}{356}{1407}{229-283}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1737,7 +1735,7 @@ Rudd, M\BPBI E.%
   human lightness perception and their possible realization in visual
   cortex}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Electronic Imaging}{2016}{6}{1--8}.
+\APACjournalVolNumPages{Electronic Imaging}{2016}{6}{1-8}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1817,7 +1815,7 @@ Snyder, J\BPBI L.%
   and without specular cues}{Illumination estimation in three-dimensional
   scenes with and without specular cues}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{5}{10}{8--8}.
+\APACjournalVolNumPages{Journal of Vision}{5}{10}{863-877}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1843,26 +1841,24 @@ Sumner, P.%
   targets against a foliage background}{Catarrhine photopigments are optimized
   for detecting targets against a foliage background}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Experimental Biology}{203}{13}{1963--1986}.
+\APACjournalVolNumPages{Journal of Experimental Biology}{203}{13}{1963-1986}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
-Tkacik%
-\ \protect\BOthers{.}}{%
-Tkacik%
-\ \protect\BOthers{.}}{%
+{Tkacik, G., Garrigan, P., Ratliff, C., Milcinski, G., Klein, J. M., Sterling,
+  P., Brainard, D. H., \& Balasubramanian, V.}%
+}{%
+{Tkacik, G., Garrigan, P., Ratliff, C., Milcinski, G., Klein, J. M., Sterling,
+  P., Brainard, D. H., \& Balasubramanian, V.}%
+}{%
 {\protect\APACyear{2011}}%
 }]{%
 TkacikUpennHypersepctralData}%
 \APACinsertmetastar{%
 TkacikUpennHypersepctralData}%
-Tkacik, G.%
-, Garrigan, P.%
-, Ratliff, C.%
-, Milcinski, G.%
-, Klein, J\BPBI M.%
-, Sterling, P.%
-\BCBL{}\ \BOthersPeriod{.}%
+{Tkacik, G., Garrigan, P., Ratliff, C., Milcinski, G., Klein, J. M., Sterling,
+  P., Brainard, D. H., \& Balasubramanian, V.}%
+%
 \unskip\
 \newblock
 \APACrefYearMonthDay{2011}{}{}.
@@ -1897,7 +1893,7 @@ Todd, J\BPBI T.%
   highlights}{Lightness constancy in the presence of specular
   highlights}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Psychological Science}{15}{1}{33--39}.
+\APACjournalVolNumPages{Psychological Science}{15}{1}{33-39}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1924,7 +1920,7 @@ Tominaga, S.%
   estimation}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Journal of the Optical Society of America
-  A}{6}{4}{576--584}.
+  A}{6}{4}{576-584}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1952,7 +1948,7 @@ Toscani, M.%
   judgments}.\BBCQ{}
 \newblock
 \APACjournalVolNumPages{Proceedings of the National Academy of
-  Sciences}{110}{27}{11163--11168}.
+  Sciences}{110}{27}{11163-11168}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -1978,7 +1974,7 @@ Toscani, M.%
 \BBOQ{}\APACrefatitle{Lightness perception for matte and glossy complex
   shapes}{Lightness perception for matte and glossy complex shapes}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision research}{131}{}{82--95}.
+\APACjournalVolNumPages{Vision Research}{131}{}{82-95}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -2030,7 +2026,7 @@ Wiebel, C\BPBI B.%
 \BBOQ{}\APACrefatitle{Statistical correlates of perceived gloss in natural
   images}{Statistical correlates of perceived gloss in natural images}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision research}{115}{}{175--187}.
+\APACjournalVolNumPages{Vision Research}{115}{}{175-187}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -2055,7 +2051,7 @@ Xiao, B.%
 \BBOQ{}\APACrefatitle{Surface gloss and color perception of 3D objects}{Surface
   gloss and color perception of 3d objects}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Visual Neuroscience}{25}{3}{371--385}.
+\APACjournalVolNumPages{Visual Neuroscience}{25}{3}{371-385}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -2083,7 +2079,7 @@ Xiao, B.%
 \BBOQ{}\APACrefatitle{The color constancy of three-dimensional objects}{The
   color constancy of three-dimensional objects}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Journal of Vision}{12}{4}{6--6}.
+\APACjournalVolNumPages{Journal of Vision}{12}{4}{6-6}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -2109,7 +2105,7 @@ Yang, J\BPBI N.%
   three candidate cues}{Illuminant cues in surface color perception: Tests of
   three candidate cues}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision Research}{41}{20}{2581--2600}.
+\APACjournalVolNumPages{Vision Research}{41}{20}{2581-2600}.
 \PrintBackRefs{\CurrentBib}
 
 \bibitem[\protect\citeauthoryear{%
@@ -2134,7 +2130,7 @@ Yang, J\BPBI N.%
 \BBOQ{}\APACrefatitle{Stereo disparity improves color constancy}{Stereo
   disparity improves color constancy}.\BBCQ{}
 \newblock
-\APACjournalVolNumPages{Vision Research}{42}{16}{1979--1989}.
+\APACjournalVolNumPages{Vision Research}{42}{16}{1979-1989}.
 \PrintBackRefs{\CurrentBib}
 
 \end{thebibliography}
