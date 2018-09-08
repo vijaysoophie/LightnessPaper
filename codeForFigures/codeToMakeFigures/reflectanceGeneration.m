@@ -93,6 +93,7 @@ ylimit=get(gca,'ylim');
 yticks([0:0.2:1]);
 yticklabels({'0.0' '0.2' '0.4' '0.6' '0.8' '1.0'});
 save2pdf('Figure7_a.pdf',fig,600);
+save2eps('Figure7_a.eps',fig,600);
 close;
 
 fig=figure;
@@ -112,6 +113,7 @@ set(gca,'FontSize',FS);
 % title('Statistical model','FontSize',FS);
 set(gca,'FontSize',FS);
 save2pdf('Figure7_b.pdf',fig,600);
+save2eps('Figure7_b.eps',fig,600);
 close;
 
 %%
@@ -128,6 +130,7 @@ set(gca,'FontSize',FS);
 legend({'Natural reflectance','Random samples'}, 'Location', 'southeast','FontSize',20);
 axis square;
 save2pdf('Figure7_c.pdf',fig,600);
+save2eps('Figure7_c.eps',fig,600);
 close;
 
 %%
@@ -142,6 +145,7 @@ ylim([0.5 10.5]);
 set(gca,'FontSize',FS);
 axis off;
 save2pdf('Figure7_d.pdf',fig,600);
+save2eps('Figure7_d.eps',fig,600);
 close;
 %%
 fig=figure;
@@ -161,7 +165,7 @@ yticks([1:10]);
 xticks([1:10]);
 currentaxes.YTickLabel={'0.20' '0.24' '0.29' '0.33' '0.38' '0.42' '0.47' '0.51' '0.56' '0.60'};
 xlabel('Sample Index');
-ylabel('LRV');
+ylabel('LRF');
 
 % save2pdf('Figure8.pdf',fig,600);
 %close;
