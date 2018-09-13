@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 10:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 10:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -882,7 +882,7 @@ ine 846.
  [15 <../FiguresDraft5/Figure12/Figure12_a.pdf> <../FiguresDraft5/Figure12/Figu
 re12_b.pdf> <../FiguresDraft5/Figure12/Figure12_c.pdf>] [16 <../FiguresDraft5/F
 igure13/Figure13.pdf>]
-<../FiguresDraft5/Figure14/Figure14.pdf, id=1811, 501.875pt x 501.875pt>
+<../FiguresDraft5/Figure14/Figure14.pdf, id=1777, 501.875pt x 501.875pt>
 File: ../FiguresDraft5/Figure14/Figure14.pdf Graphic file (type pdf)
 
 <use ../FiguresDraft5/Figure14/Figure14.pdf>
@@ -951,10 +951,10 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on diff2.pdf (23 pages, 16673671 bytes).
+Output written on diff2.pdf (23 pages, 16672293 bytes).
 PDF statistics:
- 2035 PDF objects out of 2073 (max. 8388607)
- 1770 compressed objects within 18 object streams
+ 2001 PDF objects out of 2073 (max. 8388607)
+ 1736 compressed objects within 18 object streams
  147 named destinations out of 1000 (max. 500000)
  411 words of extra memory for PDF output out of 10000 (max. 10000000)
 
