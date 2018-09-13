@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 10:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -939,7 +939,7 @@ Here is how much of TeX's memory you used:
  12077 multiletter control sequences out of 15000+600000
  37616 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,9n,40p,1669b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,9n,40p,1663b,527s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -951,7 +951,7 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on diff2.pdf (23 pages, 16672293 bytes).
+Output written on diff2.pdf (23 pages, 16672265 bytes).
 PDF statistics:
  2001 PDF objects out of 2073 (max. 8388607)
  1736 compressed objects within 18 object streams
