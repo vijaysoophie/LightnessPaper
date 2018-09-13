@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  8 SEP 2018 10:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  13 SEP 2018 10:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -930,16 +930,12 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 985.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 985.
 Package rerunfilecheck Info: File `diff2.out' has not changed.
 (rerunfilecheck)             Checksum: 2842148D0307BFC4FBFBE0F566DB0547;1045.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 985.
  ) 
 Here is how much of TeX's memory you used:
  8866 strings out of 492995
  139960 string characters out of 6132704
- 286500 words of memory out of 5000000
+ 286530 words of memory out of 5000000
  12077 multiletter control sequences out of 15000+600000
  37616 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -955,7 +951,7 @@ ist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/
 type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/
 times/utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/
 uzdr.pfb>
-Output written on diff2.pdf (23 pages, 16673636 bytes).
+Output written on diff2.pdf (23 pages, 16673671 bytes).
 PDF statistics:
  2035 PDF objects out of 2073 (max. 8388607)
  1770 compressed objects within 18 object streams
