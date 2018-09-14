@@ -1051,32 +1051,6 @@ Gattass, R.%
 
 \bibitem[\protect\citeauthoryear{%
 Geisler%
-\ \BBA{} Albrecht%
-}{%
-Geisler%
-\ \BBA{} Albrecht%
-}{%
-{\protect\APACyear{1997}}%
-}]{%
-geisler1997visual}%
-\APACinsertmetastar{%
-geisler1997visual}%
-Geisler, W\BPBI S.%
-\BCBT{}\ \BBA{} Albrecht, D\BPBI G.%
-%
-\unskip\
-\newblock
-\APACrefYearMonthDay{1997}{}{}.
-\newblock
-\BBOQ{}\APACrefatitle{Visual cortex neurons in monkeys and cats: detection,
-  discrimination, and identification}{Visual cortex neurons in monkeys and
-  cats: detection, discrimination, and identification}.\BBCQ{}
-\newblock
-\APACjournalVolNumPages{Visual Neuroscience}{14}{5}{897-919}.
-\PrintBackRefs{\CurrentBib}
-
-\bibitem[\protect\citeauthoryear{%
-Geisler%
 , Najemnik%
 \BCBL{}\ \BBA{} Ing%
 }{%
