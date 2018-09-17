@@ -6,6 +6,7 @@
 \usepackage{bbm}
 \usepackage{amssymb}
 \usepackage{comment}
+\usepackage{gensymb}
 
 \usepackage{lineno}
 \linenumbers
@@ -110,16 +111,16 @@ Supervised learning requires large labeled datasets. Such datasets are not readi
 In this paper, we use high-quality computer graphics to generate large datasets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We tackle the specific problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introExampleFigure}). 
 
-We define the computational problem of luminance constancy as that of estimating the luminous reflectance factor (LRF) of a target object's surface reflectance function\footnote{In the literature, the term lightness constancy is generally used to denote color constancy for the special case when stimuli are restricted to be achromatic. This condition does not apply to our work - we consider full spectral variation in the stimuli. We chose the term luminance constancy to denote the generalization from achromatic stimuli. At the same time, we acknowledge that we are not studying the full problem of color constancy. Rather, we are studying the estimation of a luminance-based summary of surface spectral reflectance.}.
+We define the computational problem of luminance constancy\footnote{In the literature, the term lightness constancy is generally used to denote color constancy for the special case when stimuli are restricted to be achromatic. This condition does not apply to our work - we consider full spectral variation in the stimuli. We chose the term luminance constancy to denote the generalization from achromatic stimuli. At the same time we acknowledge that we are not studying the full problem of color constancy. Rather, we are studying the estimation of a luminance-based summary of surface spectral reflectance.} as that of estimating the luminous reflectance factor (LRF) of a target object's surface reflectance function.
 The LRF is a measure of the overall amount of light reflected by a surface relative to the reference illuminant itself\footnote{LRF is related to albedo, but the concept of albedo does not incorporate the human luminosity function.} \cite{astm1121477}.
 Obtaining the LRF from a known surface reflectance function requires two steps.
 First, one computes the luminance of the light that would be reflected from the surface under a reference illuminant.
 Second, one normalizes the result by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
 Sometimes LRFs are expressed as a percentage.
-Here we express LRFs as proportions, so that they take on values between 0.0 and 1.0. 
-An LRF of 0.0 means that none of the light from the reference illuminant is reflected from the surface. 
-An LRF of 1.0 means that all of the light from the reference illuminant is reflected from the surface.
+Here we express LRFs as proportions, so that they take on values between 0 and 1. 
+An LRF of 0 means that none of the light from the reference illuminant is reflected from the surface. 
+An LRF of 1 means that the luminance of the surface reflectance under the reference illuminant is the same as the luminance of a perfect reflector under that same illuminant.
 
 \section*{Methods} \label{Methods}
 % Figure 2
@@ -272,7 +273,7 @@ For each LRF value, we generated a different relative target object surface refl
 We used the Library base scene and a spherical target object.
 The Library base scene contains 2 area lights. 
 We inserted one additional spherical light source into the scene.
-In condition 2 and 3, the overall intensity of the three light source illumination spectra were equal, while their relative shape varied.
+In Conditions 2 and 3, the overall intensities of the three light source illumination spectra were equal, while their relative shape varied. 
 The overall intensity varied from scene to scene.
 The position and size of the inserted object, the inserted light source, and the viewpoint on the scene were held fixed across all 
 scenes. The geometry is shown in Figure~\ref{fig:3DScene} below.
@@ -446,7 +447,7 @@ The excitations of these photoreceptors provide the information available to the
 Because we are interested in how well luminance constancy may be achieved by the human visual system, we simulated the cone excitations
 to our scenes using a model of the early visual system.
 
-We focused our analysis on image regions local to the target by cropping the rendered images to $1 \times 1$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}).
+We focused our analysis on image regions local to the target by cropping the rendered images to $1\degree \times 1\degree$ degrees of visual angle around the target object ($51 \times 51$ pixels; Figure~\ref{fig:croppedImage}).
 The local analysis is motivated by the fact that neural receptive fields early in the visual pathways (e.g., retina, primary visual cortex) pool information locally. 
 In primary visual cortex, foveal receptive fields have a maximum spatial extent of approximately 1 degree of visual angle \cite{gattass1981visual, gattass1988visuotopic}. 
 We sought to understand how well responses from AMA-learned receptive fields at a similar scale could be used to achieve luminance constancy.
@@ -545,7 +546,7 @@ Thus, AMA searches over the space of linear receptive fields to find the set tha
 For each condition, we learned the receptive fields with a training set consisting of 90\% of the images.
 
 In our implementation of AMA, we used both the Kullback-Leibler divergence cost function (corresponding to the maximum a posteriori estimator) and the mean squared error cost function (corresponding to the posterior mean estimator) to evaluate the accuracy of the AMA estimates of LRF.
-Training with both cost functions yielded similar estimation performance; the results reported here are for the Kullback-Leibler divergence cost function.
+Training with both cost functions yielded similar estimation performance; the results reported here are for when the Kullback-Leibler divergence cost function was used in training.
 We chose this cost function because the estimates it yields at the boundaries of the LRF range are less biased than those obtained with the mean squared error cost function.
 
 Details of how AMA learns receptive fields and how the receptive field responses are optimally decoded are provided in previously published work \cite{geisler2009optimal,burge2017accuracy,jaini2017linking}.
@@ -748,7 +749,7 @@ Our rendering software allows us to compare the effect of background surface ref
 These secondary reflections were included in the dataset from which we report our primary results. 
 When we turn off this feature of the rendering, we find (data not shown) that LRF estimation performance is essentially unchanged. 
 Estimates with and without secondary reflections are very similar. 
-This result suggests that the primary source of the estimation error in Condition 3 is caused by image-to-image variation in the reflectance of the background objects.
+This result suggests that the primary source of the estimation error in Condition 3 is caused by direct effects of image-to-image variation in the reflectance of the background objects on the AMA responses.
 
 \section{Discussion} \label{Discussion}
 
@@ -808,14 +809,14 @@ Even casual inspection of our images reveals that they are rendered, and not rea
 However, computer graphics is getting better and we expect that the gap between virtual and natural image databases will steadily close.
 Indeed, carefully constructed graphics images are now quite difficult to differentiate from real images.
 
-To increase the representativeness of our rendered images, we used datasets of natural surface reflectance spectra and natural daylight illumination spectra. Although we believe these datasets provide reasonable approximations of the statistical variation in reflectance and illumination spectra, they can be extended and improved. For example, there are additional datasets of measured surface reflectances that could be incorporated into future analyses. Some of these datasets focused on the reflectance of objects (e.g. fruit) that are thought to be important for the evolution of primate color vision (e.g., \citeNP{sumner2000catarrhine, regan2001fruits, barnard2002data, ennis2018hyperspectral}). Another issue, not addressed by these datasets, is relative frequency of different surface reflectivities in natural viewing. \citeNP{attewell2007distribution} performed a systematic survey, and report the distribution of an LRF-like quantity in natural scenes. Generalizing these measurements to better characterize the distribution of full reflectance functions remains an interesting goal. 
+To increase the representativeness of our rendered images, we used datasets of natural surface reflectance spectra and natural daylight illumination spectra. Although we believe these datasets provide reasonable approximations of the statistical variation in reflectance and illumination spectra, they can be extended and improved. For example, there are additional datasets of measured surface reflectances that could be incorporated into future analyses. Some of these datasets focused on the reflectance of objects (e.g. fruit) that are thought to be important for the evolution of primate color vision (e.g., \citeNP{sumner2000catarrhine, regan2001fruits, barnard2002data, ennis2018hyperspectral}). Another issue, not addressed by these datasets, is relative frequency of different surface reflectances in natural viewing. \citeNP{attewell2007distribution} performed a systematic survey, and report the distribution of an LRF-like quantity in natural scenes. Generalizing these measurements to better characterize the distribution of full reflectance functions remains an interesting goal. 
 
 \subsection{Future Directions}
 
 In the work presented here, we studied computational luminance constancy in virtual scenes with naturalistic spectral variation in light sources and in surface reflectance functions, with only matte surfaces in the scenes. It is natural to start with spectral variation, because this variation is at the heart of what makes luminance constancy a rich computational problem. In natural scenes, however, there are other sources of variation that add additional richness. These include variation in non-spectral properties of lighting and objects in the scene. Examples include lighting geometry, object texture, object material (e.g. specularity), and object shape. The methods we developed here may be generalized to study the effects of variation in these factors. That is, one could incorporate these factors into the generation of the scenes and again learn estimators from the corresponding labeled images. A challenge for this approach will be to thoughtfully control the increase in problem complexity, both to keep compute time feasible and to ensure that it is possible to extract meaningful insight from the results. Extending the work to include variation of material may provide insights not only about luminance constancy but also for computations that relate to material perception (see \citeNP{fleming2017material}). Extending the work to include variation in object shape and lighting geometry may clarify the role of object boundaries versus object interiors for providing information that supports perception of object color and lightness (see \citeNP{land1971lightness, rudd2016retinex}). We also note that there is a literature on how increasing stimulus complexity along the various lines listed above affects human color and lightness perception (e.g. \citeNP{beck1964effect,yang2001illuminant, yang2002stereo,todd2004lightness, snyder2005illumination, boyaci2003effect, xiao2008surface, kingdom2011lightness, xiao2012color, anderson2015perceptual, toscani2017lightness}), and the computational problem of color and lightness constancy (e.g. \citeNP{lee1986method, d1986mechanisms, funt1988color, tominaga1989standard, barron2012color, barron2015convolutional, finlayson2018colour}).
 
 
-We studied the information available for LRF estimation using a 1°x1° image patch. As noted above this choice of size was motivated in part to use a spatial scale roughly commensurate with the scale of information integration in early visual cortex. Our general methods could be extended to study larger regions, and doing so would quantify the value of spatially remote information for luminance constancy. 
+We studied the information available for LRF estimation using a $1\degree \times 1 \degree$ image patch. As noted above this choice of size was motivated in part to use a spatial scale roughly commensurate with the scale of information integration in early visual cortex. Our general methods could be extended to study larger regions, and doing so would quantify the value of spatially remote information for luminance constancy. 
 
 Luminance constancy is a special case of the more general problem of color constancy.
 The approach we developed here could also be generalized to the estimation of additional surface reflectance descriptors, such as object hue or chroma.
