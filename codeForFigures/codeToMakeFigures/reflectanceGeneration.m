@@ -81,8 +81,8 @@ set(fig,'Position', [100, 100,550, 500]);
 hold on;
 box on; axis square;
 for ii = 1 : size(sur_all,2)
-    rescaledFig = plot(SToWls(S),sur_all(:,ii),'k');
-    rescaledFig.Color(4)=0.2;
+    rescaledFig = plot(SToWls(S),sur_all(:,ii),'k','linewidth',0.1);
+    rescaledFig.Color(4)=0.6;
 end
 % title('Natural Surface Spectra','FontSize',FSTitle);
 xlabel('Wavelength (nm)','FontSize',FS);
@@ -92,8 +92,8 @@ set(gca,'FontSize',FS);
 ylimit=get(gca,'ylim');
 yticks([0:0.2:1]);
 yticklabels({'0.0' '0.2' '0.4' '0.6' '0.8' '1.0'});
-save2pdf('Figure7_a.pdf',fig,600);
-save2eps('Figure7_a.eps',fig,600);
+save2pdf('Figure7_a.pdf',fig,1000);
+save2eps('Figure7_a.eps',fig,1000);
 close;
 
 fig=figure;
@@ -102,7 +102,7 @@ hold on;
 box on; axis square;
 for ii = 1 : size(newSurfaces,2)
     rescaledFig = plot(SToWls(S),newSurfaces(:,ii),'k');
-    rescaledFig.Color(4)=0.4;
+    rescaledFig.Color(4)=0.8;
 end
 ylim([0 1]);
 yticks([0:0.2:1]);

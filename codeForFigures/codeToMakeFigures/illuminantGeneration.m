@@ -102,15 +102,16 @@ yticks([0 0.5 1 1.5 2]);
 yticklabels({'0.0' '0.5' '1.0' '1.5' '2.0'});
 axis square;
 save2pdf('Figure6_a.pdf',fig,1000);
+save2eps('Figure6_a.eps',fig,1000);
 close;
-
+%%
 % Figure 6 b
 fig=figure;
 box on; axis square; hold on;
 set(fig,'Position', [100, 100,550, 500]);
 for ii = 1 : size(newIlluminance,2)
     rescaledFig2 = plot(SToWls(S),newIlluminance(:,ii),'k');
-    rescaledFig2.Color(4)=0.3;
+    rescaledFig2.Color(4)=1;
 end
 ylim([0 2]);
 yticks([0 0.5 1 1.5 2]);
@@ -121,6 +122,7 @@ ylabel('Normalized Irradiance','FontSize',FS)
 set(gca,'FontSize',FS);
 axis square;
 save2pdf('Figure6_b.pdf',fig,600);
+save2eps('Figure6_b.eps',fig,600);
 close;
 
 % Figure 6 c
@@ -140,6 +142,7 @@ legend('Normalized dataset','Random samples','Location', 'northwest');
 set(gca,'FontSize',FS);
 axis square;
 save2pdf('Figure6_c.pdf',fig,600);
+save2eps('Figure6_c.eps',fig,600);
 close;
 
 % Figure 6d
@@ -151,6 +154,7 @@ image(theIlluminationImage);
 set(gca,'FontSize',FS);
 axis square;
 axis off;
-%save2pdf('Figure6_d.pdf',fig,600);
+save2pdf('Figure6_d.pdf',fig,600);
+save2eps('Figure6_d.eps',fig,600);
 % close;
 
