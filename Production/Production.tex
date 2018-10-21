@@ -79,18 +79,7 @@ As a consequence, color constancy will be affected both by variation in the illu
 % Figure 1: Introduction
 \begin{figure}
 \centering
-%\begin{subfigure}{0.4 \textwidth}
-%	\centering
-%	\caption{}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure1/Figure1_a.png}
-%        \label{fig:introSchematic}
-%    \end{subfigure}
-%    \begin{subfigure}{0.55 \textwidth}   
-%        \caption{}    
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure1/Figure1_b.pdf}
-%        \label{fig:introExampleFigure}
-%    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure1.eps}    
+\includegraphics{Figure1.eps}    
     \caption{{\bf Color and luminance constancy:} (a)  The light reflected from an object to the eye depends both on the surface reflectance of the object and on the scene illumination. 
 The reflected light also depends on geometric factors, such as the object's shape, pose, and position. 
 The human visual system accounts for variations in reflected light due to object-extrinsic factors and produces a percept of object color that is relatively stable across such variations. 
@@ -127,24 +116,7 @@ An LRF of 1 means that the luminance of the surface reflectance under the refere
 % Figure 2
 \begin{figure}
 \centering
-%\begin{subfigure}[b]{0.22 \textwidth}
-%        \caption{Library }
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure2/Figure2_a.pdf}
-%        \label{fig:baseSceneLibrary}
-%    \end{subfigure}
-%    ~
-%    \begin{subfigure}[b]{0.22 \textwidth}
-%        \caption{Mill}    
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure2/Figure2_b.pdf}
-%        \label{fig:baseSceneMill}
-%    \end{subfigure}    
-%    ~
-%    \begin{subfigure}[b]{0.22 \textwidth}
-%        \caption{Table-Chairs}    
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure2/Figure2_c.pdf}
-%        \label{fig:baseSceneTableChairs}
-%    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure2.eps}
+\includegraphics{Figure2.eps}
     \caption{{\bf Base scenes.} Each image shows a rendering of one base scene without additional inserted objects.  The reflectance spectra of the distinct surfaces and the spectral power distributions of the light sources in each scene have been assigned randomly from statistical models of naturally occurring spectra. The images have been scaled and tone mapped individually for illustrative purposes.}
 \label{fig:baseScenes}
 \end{figure}
@@ -172,36 +144,7 @@ statistical structure of natural scenes.
 % Figure 3
 \begin{figure}
 \centering
-%    \begin{subfigure}[b]{0.14 \textwidth}
-%        \caption{Big-ball}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_a.png}
-%        \label{fig:libraryWithBigBall}
-%    \end{subfigure}
-%     ~ 
-%    \begin{subfigure}[b]{0.14 \textwidth}
-%        \caption{Xylophone}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_b.png}
-%        \label{fig:libraryWithXylophone}
-%    \end{subfigure}
-%     ~ 
-%    \begin{subfigure}[b]{0.14 \textwidth}
-%        \caption{Barrel}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_c.png}
-%        \label{fig:libraryWithBarrel}
-%         \end{subfigure}
-%    ~
-%	\begin{subfigure}[b]{0.14 \textwidth}
-%        \caption{Ring toy}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_d.png}
-%        \label{fig:libraryWithRingToy}
-%    \end{subfigure}
-%        ~
-%    	\begin{subfigure}[b]{0.14 \textwidth}
-%        \caption{Bottle}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure3/Figure3_e.png}
-%        \label{fig:libraryWithChampagneBottle}
-%    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure3.eps}
+\includegraphics{Figure3.eps}
 \caption{{\bf Library base scene with inserted objects.} The rendering package can be used to insert objects into base scenes. Each image shows a different object inserted into the Library base scene. The rendering viewpoint was set so that the object was at the center of the images. The full rendered images have been cropped so that the inserted objects are easily visible.}\label{fig:libraryWithTarget}
 \end{figure}
 
@@ -232,44 +175,10 @@ The dataset for Condition 3 consisted of 3000 scenes and images, 300 each for th
 The LRF values were equally spaced between 0.2 and 0.6.
 More than 90\% of the surface reflectance spectra (generated as described below) fell within this range.
 For each LRF value, we generated a different relative target object surface reflectance for each scene. 
+
 % Figure 4
 \begin{figure}
-%	\begin{subfigure}{0.18 \textwidth}
-%    \centering
-%        \caption{Target position}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure4/Figure4_a.pdf}
-%        \label{fig:targetPositionVariation}
-%    \end{subfigure}
-%    ~
-%	\begin{subfigure}{0.18 \textwidth}
-%    \centering
-%        \caption{Target size/pose}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure4/Figure4_b.pdf}
-%        \label{fig:targetSizeOrientation}
-%    \end{subfigure}
-%~
-%\centering
-%	\begin{subfigure}{0.18 \textwidth}
-%    \centering
-%        \caption{Target spectra}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure4/Figure4_c.pdf}
-%        \label{fig:targetVariation}
-%    \end{subfigure}
-%    ~
-%    \begin{subfigure}{0.18 \textwidth}
-%    \centering
-%        \caption{Illumination spectra}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure4/Figure4_d.pdf}
-%        \label{fig:illuminationVariation}
-%    \end{subfigure}
-%          ~  
-%    \begin{subfigure}{0.18 \textwidth}
-%    \centering
-%        \caption{Background spectra}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure4/Figure4_e.pdf}
-%        \label{fig:backGroundVariation}
-%    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure4.eps}
+\includegraphics{Figure4.eps}
     \caption{{\bf Scene transformations.} The properties of a visual scene can be broadly classified into two groups: geometrical (a-b) and spectral (c-e). Our rendering package provides control over these properties as illustrated by the columns of the figure. (a) Variation in inserted object positions. (b) Variation in object size and pose. (c) Variation in the surface reflectance of the target object. (d) Variation in the spectral power distributions of the light sources. (e) Variation in surface reflectance of the background objects. All images in this figure are rendered with common scaling and tone mapping.
 \label{fig:VWCCTransformations}}
 \end{figure}
@@ -286,24 +195,8 @@ Multispectral images ($320 \times 240$ pixels) were rendered at 31 evenly-spaced
 
 % Figure 5: Conditions Studied
 \begin{figure}
-\centering
-%	\begin{subfigure}{0.33 \textwidth}
-%		\caption{Condition 1}
-%%		\includegraphics[width=\textwidth]{../FiguresDraft5/Figure2/Figure2_a.png}
-%		\includegraphics[width=\textwidth]{../FiguresDraft5/Figure1/Figure1_b.pdf}
-% 		\label{fig:backgroundVarying}
-%	\end{subfigure}
-%	\begin{subfigure}{0.33 \textwidth}
-%        \caption{Condition 2}	
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure5/Figure5_b.pdf}
-%        \label{fig:targetIlluminantVarying}
-%    \end{subfigure}
-%	\begin{subfigure}{0.33 \textwidth}
-%	\caption{Condition 3}	
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure5/Figure5_c.pdf}        
-%        \label{fig:allSpectraVarying}
-%    \end{subfigure}    
-\includegraphics[width=\textwidth]{Figure5.eps}        
+\centering   
+\includegraphics{Figure5.eps}        
     \caption{{\bf Conditions 1-3:} Illustrative images for the three types of spectral variations studied in this paper. (a) Condition 1: variable target object relative reflectance spectrum, fixed light source spectra, fixed background object spectra (same as Fig.~\ref{fig:introFigure}b). 
 (b) Condition 2: variable target object relative reflectance spectrum, variable light source spectra, fixed background object spectra. (c) Condition 3: variable target object relative reflectance spectrum, variable light source spectra, variable background object spectra. The spheres in each row of each panel have the same LRF, while the spheres in each column of each panel have the same relative surface reflectance spectrum.  Across panels a-c, spheres in corresponding locations have the same surface reflectance. In all three panels, the overall light source spectra scale factors (see \nameref{Methods}) were drawn from a uniform distribution on the range [0.5, 1.5]. This is smaller than the variation we studied, but allows us to show the variation within the dynamic range available for display in publication. All images in this figure are rendered with common scaling and tone mapping.} 
 \label{fig:studiedCases}
@@ -317,31 +210,7 @@ To match the wavelength spacing we use in rendering, we resampled the wavelength
 % Figure 6
 \begin{figure}
 \centering
-%    \begin{subfigure}[b]{0.24 \textwidth}
-%    \centering
-%	\caption{Granada dataset}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure6/Figure6_a.pdf}
-%        \label{fig:granadaData}
-%    \end{subfigure}
-%	\begin{subfigure}[b]{0.24 \textwidth}
-%    \centering
-%        \caption{Statistical model}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure6/Figure6_b.pdf}
-%        \label{fig:illuminantSamples}
-%    \end{subfigure}
-%      	\begin{subfigure}[b]{0.24 \textwidth}
-%    \centering
-%        \caption{CIE xy chromaticity}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure6/Figure6_c.pdf}
-%        \label{fig:xyDiagram}
-%        \end{subfigure}
-%      	\begin{subfigure}[b]{0.24 \textwidth}
-%    \centering
-%        \caption{Color swatches}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure6/Figure6_d.pdf}
-%        \label{fig:sRGBIlluminant}
-%    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure6.eps}
+\includegraphics{Figure6.eps}
     \caption{{\bf Statistical model of illumination spectra:} (a) Normalized Granada dataset. Each spectrum is normalized by its mean power. (b) Sample spectra generated using the statistical model derived from normalized Granada dataset. (c) CIE xy chromaticities of the Granda dataset (black) and the samples shown in panel b (red). (d) sRGB renditions of the samples shown in panel b.}
 \label{fig:illuminant}
 \end{figure}
@@ -363,32 +232,7 @@ This range of cone isomerizations corresponds approximately to that of natural d
 % Figure 7 Surface Reflectance Data and Model
 \begin{figure}
 \centering
-%	\begin{subfigure}{0.24 \textwidth}
-%    \centering
-%            \caption{Munsell and Vrhel dataset}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure7/Figure7_a.pdf}
-%        \label{fig:reflectanceSpectra}
-%    \end{subfigure}
-%    \begin{subfigure}{0.24 \textwidth}
-%    \centering
-%        \caption{Statistical model}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure7/Figure7_b.pdf}
-%        \label{fig:reflectanceSamples}
-%    \end{subfigure}
-%    \begin{subfigure}{0.24 \textwidth}
-%    \centering
-%    \caption{CIE xy chromaticity}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure7/Figure7_c.pdf}
-%        \label{fig:xyChroReflectance}
-%    \end{subfigure}    
-%    \centering
-%	\begin{subfigure}{0.24 \textwidth}
-%    \centering
-%        \caption{Color swatches}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure7/Figure7_d.pdf}
-%        \label{fig:backgroundSwatches}
-%    \end{subfigure}
-    \includegraphics[width=\textwidth]{Figure7.eps}
+    \includegraphics{Figure7.eps}
     \caption{{\bf Statistical model of surface reflectance:} (a) Surface reflectance spectra from the Munsell and Vrhel datasets. (b) Sample spectra generated using the surface reflectance statistical model. (c) CIE xy chromaticity diagram of the Munsell and Vrhel reflectances (black) and the sample spectra shown in panel b (red). (d) sRGB renditions of the samples shown in panel b, rendered under the CIE D65 daylight spectrum.}
 \label{fig:surfaceReflectanceGeneration}
 \end{figure}
@@ -414,36 +258,7 @@ Figure \ref{fig:targetSwatches} shows color renderings of target reflectance spe
 % Figure 9: Methods
 \begin{figure}
 \centering
-%\begin{subfigure}[b]{0.25 \textwidth}
-%		\centering
-%        \caption{sRGB rendering of a 3D scene}
-%                \vspace{1.2mm}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure9/Figure9_a.png}
-%        \label{fig:3DScene}
-%    \end{subfigure}
-%    ~ 
-%    \begin{subfigure}[b]{0.19 \textwidth}   
-%    \hspace{0.1 \textwidth}
-%        \caption{Cropped image}
-%        \vspace{2.5mm}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure9/Figure9_b.png}
-%        \label{fig:croppedImage}
-%    \end{subfigure}
-%    ~ 
-%    \begin{subfigure}[b]{0.19 \textwidth}
-%    \hspace{0.1 \textwidth}
-%        \caption{Retinal image}
-%        \vspace{2.5mm}
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure9/Figure9_c.png}
-%        \label{fig:croppedImageWithMosaic}
-%    \end{subfigure}
-%    ~
-%    \begin{subfigure}[b]{0.205 \textwidth}
-%        \caption{Normalized cone contrast}        
-%        \includegraphics[width=\textwidth]{../FiguresDraft5/Figure9/Figure9_d.png}
-%        \label{fig:coneContrast}
-%    \end{subfigure}
-    \includegraphics[width=\textwidth]{Figure9.eps}
+    \includegraphics{Figure9.eps}
     \label{fig:sceneWithCroppedImage}
     \caption{{\bf Pipeline for generating labeled datasets:}  The labeled images used in this paper are generated as follows: (a) A 3D virtual scene, containing a target object is created. The rendering viewpoint is selected so that the target object is in the center of the image. Spectra are assigned to the target object, illuminants, and other objects in the scene using the statistical models described in the text. A multispectral image of the scene is then rendered. (b) The central portion of the rendered image is cropped around the target object. (c) The retinal image corresponding to the rendered image is computed, which is then used to compute the number of photopigment isomerizations in the cone photoreceptors. The figure shows a rendering of the retinal image after optical blurring, with the location and identity of the cones indicated by an overlay (L cones: red, M cones: green, S cones: blue).  (d) The cone excitations are linearly interpolated to estimate the responses of all the three types of cone at each location (demosaicing). Finally, the demosaiced images are contrast normalized.}
 \label{fig:figure9}
@@ -535,22 +350,7 @@ We quantified the performance of AMA and the baseline methods at estimating LRF 
 %% Figure 10: Results for Condition 1
 \begin{figure}
 \centering
-%\begin{subfigure}[b]{0.3 \textwidth}
-%        \caption{LRF estimates}
-%        \includegraphics[width=\textwidth, trim={0 0 0 1.3cm},clip]{../FiguresDraft5/Figure10/Figure10_a.pdf}
-%        \label{fig:case1Estimates}
-%    \end{subfigure} 
-%        \begin{subfigure}[b]{0.31 \textwidth}
-%        \caption{RF responses}
-%        \includegraphics[width=\textwidth, trim={0 3mm 0 15mm},clip]{../FiguresDraft5/Figure10/Figure10_b.pdf}
-%        \label{fig:case1RFResponse}
-%    \end{subfigure}
-%    \begin{subfigure}[b]{0.32 \textwidth}
-%	\caption{AMA receptive fields}
-%	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft5/Figure10/Figure10_c.pdf}
-%	\label{fig:case1RFs}
-%    \end{subfigure}   
-\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{Figure10.eps}
+\includegraphics{Figure10.eps}
     \caption{{\bf Condition 1 results:} (a) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The filled regions representing standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRF. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first three AMA receptive fields. These are specified over the same 1 x 1 degree patch as the stimuli.}
 \label{fig:Condition1}
 \end{figure}
@@ -607,7 +407,7 @@ We verified that performance remained excellent for other draws.
 %        \includegraphics[width=\textwidth, trim={0 0 0 1.5cm},clip]{../FiguresDraft5/Figure11/Figure11_d.pdf}
 %        \label{fig:case2RFResponseContrast}
 %    \end{subfigure}
-\includegraphics[width=\textwidth]{Figure11.eps}
+\includegraphics{Figure11.eps}
     \caption{{\bf Condition 2 results:} (a) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the cone excitations. The relative RMSE is high (41.4\% for linear regression and 26.4\% for AMA-based estimation). (b) Cone excitations projected onto AMA receptive fields. (c) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE of estimation is 9.3\% for linear regression and 1.2\% for the AMA-based estimator. (d) The contrast normalized cone excitations projected along the first two AMA receptive fields. The receptive fields were learned using AMA and the contrast normalized cone excitations. For Condition 2, the response corresponding to individual image patches at each LRF level separates much better when the input is the contrast normalized cone excitations than when the input is the raw cone excitations.}
 \label{fig:Condition2}
 \end{figure}
@@ -652,7 +452,7 @@ However, contrast-based representations are less effective at supporting constan
 %	\includegraphics[width=1.0\textwidth, trim={0.2cm -0.cm 0 0.3cm}]{../FiguresDraft5/Figure12/Figure12_c.pdf}
 %	\label{fig:case3RFs}
 %    \end{subfigure}
-\includegraphics[width=1.0\textwidth]{Figure12.eps}
+\includegraphics{Figure12.eps}
     \caption{{\bf Condition 3 results:} (a) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression from the contrast normalized cone excitations. The relative RMSE is 23.9\%  for linear regression and 12.6\% for AMA. (b) Contrast normalized cone excitations for the training set projected onto the first two AMA receptive fields. (c) First three AMA receptive fields learned using the contrast normalized cone excitations.}
 \label{fig:Condition3}
 \end{figure}
@@ -680,7 +480,7 @@ That figure also illustrates the effect of training set size on estimation perfo
 % Figure RMSE vs N RFs
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{Figure13.eps}
+\includegraphics{Figure13.eps}
 \caption{{\bf Change of relative RMSE with number of receptive fields (RFs) and size of training set:} (a) Change of relative RMSE for Condition 3 with the size of training set. The relative RMSE converges around 2000 images. To make this plot, the 300 image test set for Condition 3 was used in each case, while the training set size varied between 300 to 2700 images. The number of receptive fields used was varied between 1 and 6. (b) Same data as in panel a, but plotted as a function of number of receptive fields. Performance converges around three receptive fields (RFs). The error bars in each panel show +/- 1 SEM, with the variation taken across multiple runs with different random initializations for the numerical search used in our implementation of AMA.}
  \label{fig:RMSEvsRF}
 \end{figure}
@@ -720,7 +520,7 @@ We studied the how the performance of the learned estimators changed with system
 % Figure Error Bar Graphs
 \begin{figure}
 \centering
-\includegraphics[width=\textwidth]{Figure14.eps}
+\includegraphics{Figure14.eps}
 \caption{{\bf Summary of luminance constancy performance:} Relative RMSE estimation error for each method and condition. The dotted line represents the relative RMSE for a naive method that estimates the LRF of each image as the mean LRF over the images in the set (LRF = 0.4).}
  \label{fig:barGraphs}
 \end{figure}
