@@ -344,7 +344,7 @@ We quantified the performance of AMA and the baseline methods at estimating LRF 
 \begin{figure}
 \centering
 \includegraphics{Figure10.eps}
-    \caption{{\bf Condition 1 results:} (a) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted blue) indicates veridical estimation. The filled regions representing standard deviations are too small to be visible. Relative RMSE (see Fig.\ref{fig:barGraphs}) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRF. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first three AMA receptive fields. These are specified over the same 1 x 1 degree patch as the stimuli.}
+    \caption{{\bf Condition 1 results:} (a) Mean estimated LRF $\pm$ 1 standard deviation for images in the test set obtained using the AMA-based estimator and linear regression on the cone excitations. Solid lines show the mean estimate, the filled region in lighter color shows $\pm$ 1 standard deviation. The diagonal identity line (dotted black) indicates veridical estimation. The filled regions representing standard deviations are too small to be visible. Relative RMSE (see Methods: Quantifying estimation performance) is 0.7\% for linear regression and 1.1\%  for AMA-based estimation. (b) Training image cone excitations in Condition 1 projected onto the first two AMA receptive fields. Each cluster of responses represents the image patches associated with a particular LRF. The response clusters are approximated by a multivariate Gaussians whose means and covariances are represented by the ellipses shown in the figure. (c) The first three AMA receptive fields. These are specified over the same 1 x 1 degree patch as the stimuli.}
 \label{fig:Condition1}
 \end{figure}
 
@@ -360,7 +360,7 @@ Figure~\ref{fig:Condition1}b shows the responses of the first two AMA receptive 
 Each individual point represents the receptive field responses to an individual image patch and
 is color coded by target object LRF.
 The responses segregate according to the target LRF, which supports the high level 
-of estimation performance shown in Figure~\ref{fig:Condition1}a.LRF
+of estimation performance shown in Figure~\ref{fig:Condition1}a.
 Note that even the responses of the first receptive field separate well (vertical lines would accurately
 distinguish the LRFs), so that that one receptive field is sufficient for accurately performing the task.
 
@@ -508,7 +508,7 @@ We used the labeled datasets to learn estimators for the target object LRF.
 Across scenes, we varied the LRF of the target object, the relative reflectance spectrum of the target object, 
 the spectral power distributions of the light sources, and the reflectance spectra of the background objects in the scene.
 These spectral variations were based on statistical models of natural surface reflectance spectra and natural illumination spectra.
-We studied the how the performance of the learned estimators changed with systematic manipulation of the spectral variation in the datasets.
+We studied how the performance of the learned estimators changed with systematic manipulation of the spectral variation in the datasets.
 
 % Figure Error Bar Graphs
 \begin{figure}

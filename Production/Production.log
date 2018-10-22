@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 OCT 2018 12:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 OCT 2018 14:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -577,17 +577,12 @@ Package epstopdf Info: Source file: <Figure6.eps>
 (epstopdf)                    date: 2018-10-22 12:29:45
 (epstopdf)                    size: 9104022 bytes
 (epstopdf)             Output file: <Figure6-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-22 12:29:23
-(epstopdf)                    size: 285941 bytes
+(epstopdf)                    date: 2018-10-22 12:30:05
+(epstopdf)                    size: 285953 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure6-eps-converted-to.p
 df Figure6.eps>
 (epstopdf)             \includegraphics on input line 206.
-runsystem(repstopdf --outfile=Figure6-eps-converted-to.pdf Figure6.eps)...execu
-ted safely (allowed).
-
-Package epstopdf Info: Result file: <Figure6-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-22 12:30:05
-(epstopdf)                    size: 285953 bytes.
+Package epstopdf Info: Output file is already uptodate.
 
 <Figure6-eps-converted-to.pdf, id=303, 492.84125pt x 128.48pt>
 File: Figure6-eps-converted-to.pdf Graphic file (type pdf)
@@ -680,7 +675,7 @@ pdf Figure11.eps>
 (epstopdf)             \includegraphics on input line 403.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure11-eps-converted-to.pdf, id=626, 489.83pt x 140.525pt>
+<Figure11-eps-converted-to.pdf, id=623, 489.83pt x 140.525pt>
 File: Figure11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure11-eps-converted-to.pdf>
@@ -698,7 +693,7 @@ pdf Figure12.eps>
 (epstopdf)             \includegraphics on input line 448.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure12-eps-converted-to.pdf, id=736, 427.5975pt x 143.53625pt>
+<Figure12-eps-converted-to.pdf, id=733, 427.5975pt x 143.53625pt>
 File: Figure12-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure12-eps-converted-to.pdf>
@@ -715,7 +710,7 @@ pdf Figure13.eps>
 (epstopdf)             \includegraphics on input line 476.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure13-eps-converted-to.pdf, id=741, 351.3125pt x 177.66376pt>
+<Figure13-eps-converted-to.pdf, id=738, 351.3125pt x 177.66376pt>
 File: Figure13-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure13-eps-converted-to.pdf>
@@ -734,7 +729,7 @@ pdf Figure14.eps>
 (epstopdf)             \includegraphics on input line 516.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure14-eps-converted-to.pdf, id=846, 180.675pt x 180.675pt>
+<Figure14-eps-converted-to.pdf, id=843, 180.675pt x 180.675pt>
 File: Figure14-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure14-eps-converted-to.pdf>
@@ -755,7 +750,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 589.
 Here is how much of TeX's memory you used:
  8314 strings out of 492995
  127431 string characters out of 6132704
- 231131 words of memory out of 5000000
+ 231155 words of memory out of 5000000
  11579 multiletter control sequences out of 15000+600000
  33658 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -771,10 +766,10 @@ nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on Production.pdf (22 pages, 4063906 bytes).
+Output written on Production.pdf (22 pages, 4064037 bytes).
 PDF statistics:
- 1077 PDF objects out of 1200 (max. 8388607)
- 670 compressed objects within 7 object streams
+ 1075 PDF objects out of 1200 (max. 8388607)
+ 669 compressed objects within 7 object streams
  145 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 

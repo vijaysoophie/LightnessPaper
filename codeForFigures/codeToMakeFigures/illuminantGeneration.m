@@ -101,9 +101,8 @@ ylim([0 2]);
 yticks([0 0.5 1 1.5 2]);
 yticklabels({'0.0' '0.5' '1.0' '1.5' '2.0'});
 axis square;
-fig.CurrentAxes.LineWidth = 1;
-save2pdf('Figure6_a.pdf',fig,600);
-save2eps('Figure6_a.eps',fig,600);
+save2pdf('Figure6_a.pdf',fig,1000);
+save2eps('Figure6_a.eps',fig,1000);
 close;
 %%
 % Figure 6 b
