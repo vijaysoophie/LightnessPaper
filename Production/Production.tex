@@ -45,16 +45,10 @@ Our work provides a framework for evaluating how different sources of scene vari
  
  \author{Burge}{Johannes}
  {Neuroscience Graduate Group}
+ %, Bioengineering Graduate Group
  {Department of Psychology, University of Pennsylvania, PA, USA}
  {}{jburge@psych.upenn.edu}
  
- %% Possible reviewers:
- %
- %  Tom Serre, Brown
- %  Bill Freeman, Google Research
- %  Roland Fleming, Geissen
- %  Kavita Bala, Cornell
-
 \keywords{color constancy, luminance constancy, supervised learning}
 
 \maketitle
@@ -99,7 +93,7 @@ For example, a recently developed technique called accuracy maximization analysi
 Supervised learning requires large labeled datasets. Such datasets are not readily available for the study of color constancy. Although there are datasets of calibrated color images, these do not provide ground truth information about surface reflectance and illumination at each image location \cite{ChakrabartiHyperspectral,NascimentoFoster2016,ParragaHyperspectralData,TkacikUpennHypersepctralData,skauli2013collection,olmos2004biologically}. There are a few databases consisting of images of posed scenes where surface reflectances of individual objects have been measured (\citeNP{funt1988color,ciurea2003large}), but these databases are not large enough to drive supervised learning. Finally, recent work has applied crowd-sourcing techniques to annotate natural images with surface reflectance descriptors \cite{bell2014intrinsic}.
  
 In this paper, we use high-quality computer graphics to generate large datasets of naturalistic images where the surface reflectance corresponding to each image pixel is known. 
-This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We tackle the specific problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introFigure}b). 
+This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We specifically tackle the problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\ref{fig:introFigure}b). 
 
 We define the computational problem of luminance constancy\footnote{In the literature, the term lightness constancy is generally used to denote color constancy for the special case when stimuli are restricted to be achromatic. This condition does not apply to our work - we consider full spectral variation in the stimuli. We chose the term luminance constancy to denote the generalization from achromatic stimuli. At the same time we acknowledge that we are not studying the full problem of color constancy. Rather, we are studying the estimation of a luminance-based summary of surface spectral reflectance.} as that of estimating the luminous reflectance factor (LRF) of a target object's surface reflectance function.
 The LRF is a measure of the overall amount of light reflected by a surface relative to the reference illuminant itself\footnote{LRF is related to albedo, but the concept of albedo does not incorporate the human luminosity function.} \cite{astm1121477}.
