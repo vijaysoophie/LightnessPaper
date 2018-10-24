@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  22 OCT 2018 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 OCT 2018 12:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -647,58 +647,73 @@ Package pdftex.def Info: Figure9-eps-converted-to.pdf used on input line 254.
  [9 <./Figure8-eps-converted-to.pdf>]
 [10 <./Figure9-eps-converted-to.pdf>] [11]
 Package epstopdf Info: Source file: <Figure10.eps>
-(epstopdf)                    date: 2018-10-21 15:20:07
-(epstopdf)                    size: 4451946 bytes
+(epstopdf)                    date: 2018-10-24 12:01:48
+(epstopdf)                    size: 4469238 bytes
 (epstopdf)             Output file: <Figure10-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-10-21 15:20:07
 (epstopdf)                    size: 510318 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure10-eps-converted-to.
 pdf Figure10.eps>
 (epstopdf)             \includegraphics on input line 346.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=Figure10-eps-converted-to.pdf Figure10.eps)...exe
+cuted safely (allowed).
 
-<Figure10-eps-converted-to.pdf, id=540, 421.575pt x 144.54pt>
+Package epstopdf Info: Result file: <Figure10-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-24 12:01:55
+(epstopdf)                    size: 511086 bytes.
+
+<Figure10-eps-converted-to.pdf, id=540, 421.575pt x 151.56625pt>
 File: Figure10-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure10-eps-converted-to.pdf>
 Package pdftex.def Info: Figure10-eps-converted-to.pdf used on input line 346.
-(pdftex.def)             Requested size: 421.57396pt x 144.53963pt.
+(pdftex.def)             Requested size: 421.57396pt x 151.56587pt.
  [12 <./Figure10-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figure11.eps>
-(epstopdf)                    date: 2018-10-21 16:02:18
-(epstopdf)                    size: 7475806 bytes
+(epstopdf)                    date: 2018-10-24 11:59:39
+(epstopdf)                    size: 7477458 bytes
 (epstopdf)             Output file: <Figure11-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-10-21 16:02:41
 (epstopdf)                    size: 277511 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure11-eps-converted-to.
 pdf Figure11.eps>
 (epstopdf)             \includegraphics on input line 403.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=Figure11-eps-converted-to.pdf Figure11.eps)...exe
+cuted safely (allowed).
 
-<Figure11-eps-converted-to.pdf, id=623, 489.83pt x 140.525pt>
+Package epstopdf Info: Result file: <Figure11-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-24 12:01:59
+(epstopdf)                    size: 277925 bytes.
+
+<Figure11-eps-converted-to.pdf, id=623, 489.83pt x 141.52875pt>
 File: Figure11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure11-eps-converted-to.pdf>
 Package pdftex.def Info: Figure11-eps-converted-to.pdf used on input line 403.
-(pdftex.def)             Requested size: 489.8288pt x 140.52464pt.
+(pdftex.def)             Requested size: 489.8288pt x 141.5284pt.
  [13 <./Figure11-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figure12.eps>
-(epstopdf)                    date: 2018-10-22 12:12:30
-(epstopdf)                    size: 2462734 bytes
+(epstopdf)                    date: 2018-10-24 12:01:41
+(epstopdf)                    size: 2490854 bytes
 (epstopdf)             Output file: <Figure12-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-10-22 12:12:37
 (epstopdf)                    size: 460585 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure12-eps-converted-to.
 pdf Figure12.eps>
 (epstopdf)             \includegraphics on input line 448.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=Figure12-eps-converted-to.pdf Figure12.eps)...exe
+cuted safely (allowed).
 
-<Figure12-eps-converted-to.pdf, id=733, 427.5975pt x 143.53625pt>
+Package epstopdf Info: Result file: <Figure12-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-10-24 12:02:00
+(epstopdf)                    size: 461968 bytes.
+
+<Figure12-eps-converted-to.pdf, id=733, 427.5975pt x 153.57375pt>
 File: Figure12-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure12-eps-converted-to.pdf>
 Package pdftex.def Info: Figure12-eps-converted-to.pdf used on input line 448.
-(pdftex.def)             Requested size: 427.59645pt x 143.53589pt.
+(pdftex.def)             Requested size: 427.59645pt x 153.57336pt.
 Package epstopdf Info: Source file: <Figure13.eps>
 (epstopdf)                    date: 2018-10-22 12:07:21
 (epstopdf)                    size: 429622 bytes
@@ -766,7 +781,7 @@ nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on Production.pdf (22 pages, 4064037 bytes).
+Output written on Production.pdf (22 pages, 4066738 bytes).
 PDF statistics:
  1075 PDF objects out of 1200 (max. 8388607)
  669 compressed objects within 7 object streams

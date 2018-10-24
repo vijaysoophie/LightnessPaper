@@ -1,7 +1,7 @@
 \documentclass{jov}
 %DIF LATEXDIFF DIFFERENCE FILE
 %DIF DEL Revision1.tex    Tue Sep 18 14:21:14 2018
-%DIF ADD Production.tex   Mon Oct 22 14:53:50 2018
+%DIF ADD Production.tex   Wed Oct 24 12:02:44 2018
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{hyperref}
@@ -195,8 +195,14 @@ In this paper, we use high-quality computer graphics to generate large datasets 
 This approach allows us to investigate computational color constancy with naturalistic stimuli, while retaining the ability to control the properties of objects and illuminants. We \DIFdelbegin \DIFdel{tackle the specific }\DIFdelend \DIFaddbegin \DIFadd{specifically tackle the }\DIFaddend problem of luminance constancy, a constitutive component of the more general color constancy problem (Fig.~\DIFdelbegin \DIFdel{\ref{fig:introExampleFigure}}\DIFdelend \DIFaddbegin \DIFadd{\ref{fig:introFigure}b}\DIFaddend ). 
 
 We define the computational problem of luminance constancy\footnote{In the literature, the term lightness constancy is generally used to denote color constancy for the special case when stimuli are restricted to be achromatic. This condition does not apply to our work - we consider full spectral variation in the stimuli. We chose the term luminance constancy to denote the generalization from achromatic stimuli. At the same time we acknowledge that we are not studying the full problem of color constancy. Rather, we are studying the estimation of a luminance-based summary of surface spectral reflectance.} as that of estimating the luminous reflectance factor (LRF) of a target object's surface reflectance function.
-The LRF is a measure of the overall amount of light reflected by a surface relative to the reference illuminant itself\footnote{LRF is related to albedo, but the concept of albedo does not incorporate the human luminosity function.} \cite{astm1121477}.
-Obtaining the LRF from a known surface reflectance function requires two steps.
+The LRF is a measure of the overall amount of light reflected by a surface relative to the reference illuminant itself\DIFdelbegin \footnote{\DIFdel{LRF is related to albedo, but the concept of albedo does not incorporate the human luminosity function.}} %DIFAUXCMD
+\addtocounter{footnote}{-1}%DIFAUXCMD
+\DIFdel{\mbox{%DIFAUXCMD
+\cite{astm1121477}}%DIFAUXCMD
+.}\DIFdelend \DIFaddbegin \DIFadd{.}\footnote{\DIFadd{LRF is related to albedo, but the concept of albedo does not incorporate the human luminosity function. The terminology surrounding LRF and the related concept light reflectance value (LRV) varies somewhat in the literature. Here we follow the definition of LRF given by the \mbox{%DIFAUXCMD
+\citeNP{astm1121477}}%DIFAUXCMD
+.}}
+\DIFaddend Obtaining the LRF from a known surface reflectance function requires two steps.
 First, one computes the luminance of the light that would be reflected from the surface under a reference illuminant.
 Second, one normalizes the result by the luminance of the reference illuminant itself.
 Here we use CIE daylight D65 as the reference illuminant and the CIE 1931 photopic luminosity function to compute luminance \cite{CIE86}.
