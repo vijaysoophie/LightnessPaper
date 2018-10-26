@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 OCT 2018 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  24 OCT 2018 13:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -508,7 +508,7 @@ df Figure2.eps>
 (epstopdf)             \includegraphics on input line 112.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure2-eps-converted-to.pdf, id=231, 502.87875pt x 140.525pt>
+<Figure2-eps-converted-to.pdf, id=230, 502.87875pt x 140.525pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure2-eps-converted-to.pdf>
@@ -532,7 +532,7 @@ df Figure3.eps>
 (epstopdf)             \includegraphics on input line 140.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure3-eps-converted-to.pdf, id=261, 511.9125pt x 115.43124pt>
+<Figure3-eps-converted-to.pdf, id=259, 511.9125pt x 115.43124pt>
 File: Figure3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure3-eps-converted-to.pdf>
@@ -550,7 +550,7 @@ df Figure4.eps>
 (epstopdf)             \includegraphics on input line 174.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure4-eps-converted-to.pdf, id=293, 506.89375pt x 238.8925pt>
+<Figure4-eps-converted-to.pdf, id=291, 506.89375pt x 238.8925pt>
 File: Figure4-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure4-eps-converted-to.pdf>
@@ -567,7 +567,7 @@ df Figure5.eps>
 (epstopdf)             \includegraphics on input line 192.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure5-eps-converted-to.pdf, id=295, 505.89pt x 127.47626pt>
+<Figure5-eps-converted-to.pdf, id=293, 505.89pt x 127.47626pt>
 File: Figure5-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure5-eps-converted-to.pdf>
@@ -584,7 +584,7 @@ df Figure6.eps>
 (epstopdf)             \includegraphics on input line 206.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure6-eps-converted-to.pdf, id=303, 492.84125pt x 128.48pt>
+<Figure6-eps-converted-to.pdf, id=301, 492.84125pt x 128.48pt>
 File: Figure6-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure6-eps-converted-to.pdf>
@@ -602,7 +602,7 @@ df Figure7.eps>
 (epstopdf)             \includegraphics on input line 228.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure7-eps-converted-to.pdf, id=342, 495.8525pt x 128.48pt>
+<Figure7-eps-converted-to.pdf, id=340, 495.8525pt x 128.48pt>
 File: Figure7-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure7-eps-converted-to.pdf>
@@ -619,7 +619,7 @@ df Figure8.eps>
 (epstopdf)             \includegraphics on input line 242.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure8-eps-converted-to.pdf, id=351, 252.945pt x 233.87375pt>
+<Figure8-eps-converted-to.pdf, id=349, 252.945pt x 233.87375pt>
 File: Figure8-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure8-eps-converted-to.pdf>
@@ -638,7 +638,7 @@ df Figure9.eps>
 (epstopdf)             \includegraphics on input line 254.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure9-eps-converted-to.pdf, id=461, 476.78125pt x 112.42pt>
+<Figure9-eps-converted-to.pdf, id=459, 476.78125pt x 112.42pt>
 File: Figure9-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure9-eps-converted-to.pdf>
@@ -650,19 +650,14 @@ Package epstopdf Info: Source file: <Figure10.eps>
 (epstopdf)                    date: 2018-10-24 12:01:48
 (epstopdf)                    size: 4469238 bytes
 (epstopdf)             Output file: <Figure10-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-21 15:20:07
-(epstopdf)                    size: 510318 bytes
+(epstopdf)                    date: 2018-10-24 12:01:55
+(epstopdf)                    size: 511086 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure10-eps-converted-to.
 pdf Figure10.eps>
 (epstopdf)             \includegraphics on input line 346.
-runsystem(repstopdf --outfile=Figure10-eps-converted-to.pdf Figure10.eps)...exe
-cuted safely (allowed).
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <Figure10-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-24 12:01:55
-(epstopdf)                    size: 511086 bytes.
-
-<Figure10-eps-converted-to.pdf, id=540, 421.575pt x 151.56625pt>
+<Figure10-eps-converted-to.pdf, id=538, 421.575pt x 151.56625pt>
 File: Figure10-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure10-eps-converted-to.pdf>
@@ -673,19 +668,14 @@ Package epstopdf Info: Source file: <Figure11.eps>
 (epstopdf)                    date: 2018-10-24 11:59:39
 (epstopdf)                    size: 7477458 bytes
 (epstopdf)             Output file: <Figure11-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-21 16:02:41
-(epstopdf)                    size: 277511 bytes
+(epstopdf)                    date: 2018-10-24 12:01:59
+(epstopdf)                    size: 277925 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure11-eps-converted-to.
 pdf Figure11.eps>
 (epstopdf)             \includegraphics on input line 403.
-runsystem(repstopdf --outfile=Figure11-eps-converted-to.pdf Figure11.eps)...exe
-cuted safely (allowed).
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <Figure11-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-24 12:01:59
-(epstopdf)                    size: 277925 bytes.
-
-<Figure11-eps-converted-to.pdf, id=623, 489.83pt x 141.52875pt>
+<Figure11-eps-converted-to.pdf, id=621, 489.83pt x 141.52875pt>
 File: Figure11-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure11-eps-converted-to.pdf>
@@ -696,19 +686,14 @@ Package epstopdf Info: Source file: <Figure12.eps>
 (epstopdf)                    date: 2018-10-24 12:01:41
 (epstopdf)                    size: 2490854 bytes
 (epstopdf)             Output file: <Figure12-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-22 12:12:37
-(epstopdf)                    size: 460585 bytes
+(epstopdf)                    date: 2018-10-24 12:02:00
+(epstopdf)                    size: 461968 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure12-eps-converted-to.
 pdf Figure12.eps>
 (epstopdf)             \includegraphics on input line 448.
-runsystem(repstopdf --outfile=Figure12-eps-converted-to.pdf Figure12.eps)...exe
-cuted safely (allowed).
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <Figure12-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-10-24 12:02:00
-(epstopdf)                    size: 461968 bytes.
-
-<Figure12-eps-converted-to.pdf, id=733, 427.5975pt x 153.57375pt>
+<Figure12-eps-converted-to.pdf, id=731, 427.5975pt x 153.57375pt>
 File: Figure12-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure12-eps-converted-to.pdf>
@@ -725,7 +710,7 @@ pdf Figure13.eps>
 (epstopdf)             \includegraphics on input line 476.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure13-eps-converted-to.pdf, id=738, 351.3125pt x 177.66376pt>
+<Figure13-eps-converted-to.pdf, id=736, 351.3125pt x 177.66376pt>
 File: Figure13-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure13-eps-converted-to.pdf>
@@ -744,7 +729,7 @@ pdf Figure14.eps>
 (epstopdf)             \includegraphics on input line 516.
 Package epstopdf Info: Output file is already uptodate.
 
-<Figure14-eps-converted-to.pdf, id=843, 180.675pt x 180.675pt>
+<Figure14-eps-converted-to.pdf, id=841, 180.675pt x 180.675pt>
 File: Figure14-eps-converted-to.pdf Graphic file (type pdf)
 
 <use Figure14-eps-converted-to.pdf>
@@ -781,10 +766,10 @@ nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/times/
 utmri8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.p
 fb>
-Output written on Production.pdf (22 pages, 4066738 bytes).
+Output written on Production.pdf (22 pages, 4066588 bytes).
 PDF statistics:
- 1075 PDF objects out of 1200 (max. 8388607)
- 669 compressed objects within 7 object streams
+ 1073 PDF objects out of 1200 (max. 8388607)
+ 667 compressed objects within 7 object streams
  145 named destinations out of 1000 (max. 500000)
  223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
